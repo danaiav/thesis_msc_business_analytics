@@ -44,7 +44,7 @@ range;company;</title>;</html>;</body>;</div>;</span>;Correct
 44;PepsiCo;YES;NO;YES;NO;YES;NO
 45;United Technologies;YES;YES;NO;NO;YES;NO
 46;Aetna;YES;YES;YES;YES;YES;YES
-47;Loweís;YES;YES;YES;YES;YES;YES
+47;Lowe‚Äôs;YES;YES;YES;YES;YES;YES
 48;UPS;YES;NO;NO;YES;YES;NO
 49;AIG;YES;YES;YES;YES;YES;YES
 50;Prudential Financial;YES;NO;YES;NO;YES;NO
@@ -98,13 +98,13 @@ range;company;</title>;</html>;</body>;</div>;</span>;Correct
 100;Northwestern Mutual;YES;NO;YES;YES;YES;NO
 101;DuPont;YES;YES;YES;YES;YES;YES
 102;Avnet;YES;YES;YES;YES;YES;YES
-103;Macyís;YES;YES;YES;YES;YES;YES
+103;Macy‚Äôs;YES;YES;YES;YES;YES;YES
 104;Enterprise Products Partners;YES;YES;YES;YES;YES;YES
 105;Travelers Cos.;YES;YES;YES;NO;YES;NO
 106;Philip Morris International;YES;YES;YES;NO;YES;NO
 107;Rite Aid;YES;YES;YES;YES;YES;YES
 108;Tech Data;YES;YES;YES;YES;YES;YES
-109;McDonaldís;YES;YES;YES;YES;YES;YES
+109;McDonald‚Äôs;YES;YES;YES;YES;YES;YES
 110;Qualcomm;YES;NO;YES;YES;YES;NO
 111;Sears Holdings;YES;NO;YES;YES;YES;NO
 112;Capital One Financial;YES;NO;YES;YES;YES;NO
@@ -137,7 +137,7 @@ range;company;</title>;</html>;</body>;</div>;</span>;Correct
 141;Eli Lilly;YES;NO;YES;YES;YES;NO
 143;Penske Automotive Group;YES;YES;YES;YES;YES;YES
 144;ManpowerGroup;YES;YES;YES;YES;YES;YES
-145;Kohlís;YES;YES;YES;YES;YES;YES
+145;Kohl‚Äôs;YES;YES;YES;YES;YES;YES
 146;Starbucks;YES;NO;YES;YES;YES;NO
 147;Paccar;YES;YES;YES;NO;YES;NO
 148;Cummins;YES;YES;YES;YES;YES;YES
@@ -205,7 +205,7 @@ range;company;</title>;</html>;</body>;</div>;</span>;Correct
 212;Synnex;YES;YES;YES;YES;YES;YES
 213;Viacom;YES;YES;YES;YES;YES;YES
 214;HollyFrontier;YES;YES;YES;YES;YES;YES
-215;Land OíLakes;YES;YES;YES;YES;YES;YES
+215;Land O‚ÄôLakes;YES;YES;YES;YES;YES;YES
 216;Devon Energy;YES;NO;YES;YES;YES;NO
 218;Yum Brands;YES;YES;YES;YES;YES;YES
 219;Texas Instruments;YES;YES;YES;YES;YES;YES
@@ -229,7 +229,7 @@ range;company;</title>;</html>;</body>;</div>;</span>;Correct
 237;Ross Stores;YES;NO;YES;YES;YES;NO
 238;Bed Bath & Beyond;YES;NO;NO;NO;YES;NO
 239;CSX;YES;YES;YES;YES;YES;YES
-240;Toys ìRî Us;YES;NO;YES;YES;YES;NO
+240;Toys ‚ÄúR‚Äù Us;YES;NO;YES;YES;YES;NO
 241;Las Vegas Sands;YES;NO;YES;YES;YES;NO
 242;Leucadia National;YES;YES;YES;YES;YES;YES
 244;United States Steel;YES;YES;YES;YES;YES;YES
@@ -299,7 +299,7 @@ range;company;</title>;</html>;</body>;</div>;</span>;Correct
 310;Autoliv;YES;YES;YES;YES;YES;YES
 312;Republic Services;YES;NO;YES;YES;YES;NO
 313;Corning;YES;NO;YES;NO;YES;NO
-314;Peter Kiewit Sonsí;YES;YES;YES;NO;YES;NO
+314;Peter Kiewit Sons‚Äô;YES;YES;YES;NO;YES;NO
 315;Univar;YES;YES;YES;YES;YES;YES
 316;Mosaic;YES;YES;YES;NO;YES;NO
 317;Core-Mark Holding;YES;NO;YES;YES;YES;NO
@@ -326,7 +326,7 @@ range;company;</title>;</html>;</body>;</div>;</span>;Correct
 339;BorgWarner;YES;YES;YES;YES;YES;YES
 340;PVH;YES;NO;YES;YES;YES;NO
 341;Ball;YES;YES;YES;YES;YES;YES
-342;OíReilly Automotive;YES;YES;YES;YES;YES;YES
+342;O‚ÄôReilly Automotive;YES;YES;YES;YES;YES;YES
 343;Eversource Energy;YES;NO;YES;YES;YES;NO
 344;Franklin Resources;YES;YES;YES;YES;YES;YES
 345;Masco;YES;NO;YES;YES;YES;NO
@@ -348,7 +348,7 @@ range;company;</title>;</html>;</body>;</div>;</span>;Correct
 361;Foot Locker;YES;YES;YES;YES;YES;YES
 362;Hershey;YES;YES;YES;YES;YES;YES
 363;CenterPoint Energy;YES;NO;YES;YES;YES;NO
-365;Dickís Sporting Goods;YES;YES;NO;YES;YES;NO
+365;Dick‚Äôs Sporting Goods;YES;YES;NO;YES;YES;NO
 366;Live Nation Entertainment;YES;YES;YES;YES;YES;YES
 367;Mutual of Omaha Insurance;YES;YES;YES;YES;YES;YES
 368;W.R. Berkley;YES;YES;YES;YES;YES;YES
@@ -357,13 +357,13 @@ range;company;</title>;</html>;</body>;</div>;</span>;Correct
 371;Darden Restaurants;YES;NO;YES;YES;YES;NO
 372;Kindred Healthcare;YES;YES;YES;YES;YES;YES
 373;Weyerhaeuser;YES;NO;YES;NO;YES;NO
-374;Caseyís General Stores;YES;NO;YES;YES;YES;NO
+374;Casey‚Äôs General Stores;YES;NO;YES;YES;YES;NO
 375;Sealed Air;YES;NO;YES;YES;YES;NO
 376;Fifth Third Bancorp;YES;NO;NO;NO;YES;NO
 377;Dover;YES;YES;YES;NO;YES;NO
 378;Huntington Ingalls Industries;YES;YES;YES;YES;YES;YES
 379;Netflix;YES;YES;YES;YES;YES;YES
-380;Dillardís;YES;YES;YES;YES;YES;YES
+380;Dillard‚Äôs;YES;YES;YES;YES;YES;YES
 381;EMCOR Group;YES;NO;YES;NO;YES;NO
 382;Jones Financial;YES;NO;YES;YES;YES;NO
 383;AK Steel Holding;YES;YES;YES;YES;YES;YES
