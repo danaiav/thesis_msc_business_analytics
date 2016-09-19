@@ -45,7 +45,7 @@ range;Company;Site;Loading times;png;dib;jpg;jpeg;bmp;jpe;gif;tif;tiff;total_ima
 44;PepsiCo;www.pepsico.com;0,155;32;0;36;2;0;2;2;0;0;74;913;306;298;10;288;YES;NO;YES;NO;YES;NO;YES;YES;YES;YES;YES;0,155
 45;United Technologies;www.utc.com;0,856;18;0;109;5;0;5;1;1;0;139;908;361;231;7;224;YES;YES;NO;NO;YES;NO;YES;YES;YES;NO;YES;0,856
 46;Aetna;www.aetna.com;1,329;30;0;12;0;0;0;3;10;0;55;903;253;279;57;222;YES;YES;YES;YES;YES;YES;YES;YES;NO;NO;YES;1,329
-47;Loweís;www.lowes.com;0,722;3;0;0;0;0;0;1;0;0;4;965;406;121;10;111;YES;YES;YES;YES;YES;YES;YES;YES;YES;YES;YES;0,722
+47;Lowe‚Äôs;www.lowes.com;0,722;3;0;0;0;0;0;1;0;0;4;965;406;121;10;111;YES;YES;YES;YES;YES;YES;YES;YES;YES;YES;YES;0,722
 48;UPS;www.ups.com;0,04;0;0;0;0;0;0;12;0;0;12;486;308;6;0;6;YES;NO;NO;YES;YES;NO;NO;NO;NO;NO;NO;0,04
 49;AIG;www.aig.com;0,473;3;0;31;0;0;0;0;6;0;40;649;344;107;14;93;YES;YES;YES;YES;YES;YES;YES;YES;NO;NO;YES;0,473
 50;Prudential Financial;www.prudential.com;10,229;13;0;9;0;0;0;13;3;0;38;1021;394;218;13;205;YES;NO;YES;NO;YES;NO;NO;NO;NO;NO;NO;10,229
@@ -101,13 +101,13 @@ range;Company;Site;Loading times;png;dib;jpg;jpeg;bmp;jpe;gif;tif;tiff;total_ima
 100;Northwestern Mutual;www.northwesternmutual.com;1,781;13;0;1;0;0;0;1;2;0;17;858;446;128;26;102;YES;NO;YES;YES;YES;NO;YES;YES;YES;YES;YES;1,781
 101;DuPont;www.dupont.com;2,182;31;0;12;0;0;0;4;2;0;49;1046;482;113;2;111;YES;YES;YES;YES;YES;YES;YES;YES;NO;NO;YES;2,182
 102;Avnet;www.avnet.com;3,964;45;0;14;0;0;0;1;4;0;64;922;459;142;16;126;YES;YES;YES;YES;YES;YES;YES;YES;NO;NO;YES;3,964
-103;Macyís;www.macysinc.com;1,298;0;0;8;0;0;0;0;0;0;8;386;210;76;0;76;YES;YES;YES;YES;YES;YES;NO;NO;NO;NO;NO;1,298
+103;Macy‚Äôs;www.macysinc.com;1,298;0;0;8;0;0;0;0;0;0;8;386;210;76;0;76;YES;YES;YES;YES;YES;YES;NO;NO;NO;NO;NO;1,298
 104;Enterprise Products Partners;www.enterpriseproducts.com;4,038;15;0;5;0;0;0;2;21;0;43;1164;632;130;2;128;YES;YES;YES;YES;YES;YES;YES;YES;NO;NO;NO;4,038
 105;Travelers Cos.;www.travelers.com;0,273;6;0;9;0;0;0;0;1;0;16;775;342;188;5;183;YES;YES;YES;NO;YES;NO;YES;YES;NO;NO;YES;0,273
 106;Philip Morris International;www.pmi.com;0,576;9;0;32;0;0;0;5;8;0;54;1069;380;285;10;275;YES;YES;YES;NO;YES;NO;YES;YES;NO;NO;YES;0,576
 107;Rite Aid;www.riteaid.com;0,526;14;0;6;1;0;1;1;0;0;23;854;291;182;38;144;YES;YES;YES;YES;YES;YES;YES;YES;NO;NO;YES;0,526
 108;Tech Data;www.techdata.com;0,036;15;0;9;0;0;0;0;1;0;25;571;315;34;3;31;YES;YES;YES;YES;YES;YES;NO;NO;NO;NO;YES;0,036
-109;McDonaldís;www.aboutmcdonalds.com;0,346;35;0;12;0;0;0;0;16;0;63;555;257;95;1;94;YES;YES;YES;YES;YES;YES;YES;YES;NO;YES;YES;0,346
+109;McDonald‚Äôs;www.aboutmcdonalds.com;0,346;35;0;12;0;0;0;0;16;0;63;555;257;95;1;94;YES;YES;YES;YES;YES;YES;YES;YES;NO;YES;YES;0,346
 110;Qualcomm;www.qualcomm.com;0,013;12;0;2;0;0;0;0;0;0;14;460;222;133;44;89;YES;NO;YES;YES;YES;NO;YES;NO;NO;NO;NO;0,013
 111;Sears Holdings;www.searsholdings.com;0,703;11;0;9;0;0;0;0;0;0;20;436;231;114;5;109;YES;NO;YES;YES;YES;NO;YES;YES;NO;NO;YES;0,703
 112;Capital One Financial;www.capitalone.com;2,322;18;0;5;1;0;1;2;2;0;29;884;319;262;155;107;YES;NO;YES;YES;YES;NO;YES;YES;YES;NO;YES;2,322
@@ -143,7 +143,7 @@ range;Company;Site;Loading times;png;dib;jpg;jpeg;bmp;jpe;gif;tif;tiff;total_ima
 142;Southwest Airlines;www.southwest.com;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 143;Penske Automotive Group;www.penskeautomotive.com;0,241;54;0;12;0;0;0;2;0;0;68;503;275;127;1;126;YES;YES;YES;YES;YES;YES;YES;YES;NO;NO;YES;0,241
 144;ManpowerGroup;www.manpowergroup.com;0,318;8;0;5;0;0;0;0;0;0;13;580;365;35;4;31;YES;YES;YES;YES;YES;YES;NO;YES;NO;NO;YES;0,318
-145;Kohlís;www.kohlscorporation.com;0,052;2;2;31;0;0;0;9;0;0;44;611;322;120;11;109;YES;YES;YES;YES;YES;YES;YES;YES;YES;YES;YES;0,052
+145;Kohl‚Äôs;www.kohlscorporation.com;0,052;2;2;31;0;0;0;9;0;0;44;611;322;120;11;109;YES;YES;YES;YES;YES;YES;YES;YES;YES;YES;YES;0,052
 146;Starbucks;www.starbucks.com;0,167;12;0;16;1;0;1;26;2;0;58;1230;561;375;26;349;YES;NO;YES;YES;YES;NO;YES;YES;YES;YES;YES;0,167
 147;Paccar;www.paccar.com;0,42;14;0;13;0;0;0;1;0;0;28;512;171;169;0;169;YES;YES;YES;NO;YES;NO;NO;NO;NO;NO;NO;0,42
 148;Cummins;www.cummins.com;0,125;4;0;0;0;0;1;1;0;0;6;864;470;213;10;203;YES;YES;YES;YES;YES;YES;YES;YES;YES;NO;YES;0,125
@@ -213,7 +213,7 @@ range;Company;Site;Loading times;png;dib;jpg;jpeg;bmp;jpe;gif;tif;tiff;total_ima
 212;Synnex;www.synnex.com;0;0;0;0;0;0;0;0;0;0;0;23;13;0;0;0;YES;YES;YES;YES;YES;YES;NO;NO;NO;NO;NO;0
 213;Viacom;www.viacom.com;0,124;15;0;3;0;0;0;1;3;0;22;611;340;59;1;58;YES;YES;YES;YES;YES;YES;YES;YES;NO;NO;NO;0,124
 214;HollyFrontier;www.hollyfrontier.com;0,367;11;0;5;0;0;0;2;1;0;19;525;241;141;0;141;YES;YES;YES;YES;YES;YES;NO;NO;NO;NO;NO;0,367
-215;Land OíLakes;www.landolakesinc.com;0,214;8;0;6;0;0;0;0;0;0;14;486;249;51;4;47;YES;YES;YES;YES;YES;YES;YES;YES;NO;NO;YES;0,214
+215;Land O‚ÄôLakes;www.landolakesinc.com;0,214;8;0;6;0;0;0;0;0;0;14;486;249;51;4;47;YES;YES;YES;YES;YES;YES;YES;YES;NO;NO;YES;0,214
 216;Devon Energy;www.devonenergy.com;0,205;21;0;9;0;0;0;0;0;0;30;611;319;142;8;134;YES;NO;YES;YES;YES;NO;NO;YES;NO;NO;NO;0,205
 217;PBF Energy;www.pbfenergy.com;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 218;Yum Brands;www.yum.com;0,926;23;0;1;0;0;0;0;0;0;24;784;267;229;1;228;YES;YES;YES;YES;YES;YES;NO;YES;NO;NO;NO;0,926
@@ -238,7 +238,7 @@ range;Company;Site;Loading times;png;dib;jpg;jpeg;bmp;jpe;gif;tif;tiff;total_ima
 237;Ross Stores;www.rossstores.com;0,308;5;0;12;0;0;0;3;0;0;20;494;207;83;5;78;YES;NO;YES;YES;YES;NO;YES;NO;YES;NO;YES;0,308
 238;Bed Bath & Beyond;www.bedbathandbeyond.com;0,195;16;0;19;0;0;0;65;12;0;112;1459;570;183;4;179;YES;NO;NO;NO;YES;NO;YES;YES;YES;YES;YES;0,195
 239;CSX;www.csx.com;0,597;80;0;27;0;0;0;0;3;0;110;863;423;144;13;131;YES;YES;YES;YES;YES;YES;YES;YES;YES;NO;YES;0,597
-240;Toys ìRî Us;www.toysrusinc.com;0,171;15;0;20;0;0;0;0;0;0;35;356;117;127;10;117;YES;NO;YES;YES;YES;NO;YES;YES;YES;YES;YES;0,171
+240;Toys ‚ÄúR‚Äù Us;www.toysrusinc.com;0,171;15;0;20;0;0;0;0;0;0;35;356;117;127;10;117;YES;NO;YES;YES;YES;NO;YES;YES;YES;YES;YES;0,171
 241;Las Vegas Sands;www.sands.com;0,006;6;0;17;0;0;0;0;0;0;23;274;144;55;4;51;YES;NO;YES;YES;YES;NO;YES;YES;YES;NO;NO;0,006
 242;Leucadia National;www.leucadia.com;0,144;1;0;0;0;0;0;0;0;0;1;247;167;12;0;12;YES;YES;YES;YES;YES;YES;NO;NO;NO;NO;NO;0,144
 243;Dominion Resources;www.dom.com;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -312,7 +312,7 @@ range;Company;Site;Loading times;png;dib;jpg;jpeg;bmp;jpe;gif;tif;tiff;total_ima
 311;Fidelity National Financial;www.fnf.com;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 312;Republic Services;www.republicservices.com;0,002;1;0;0;0;0;0;0;0;0;1;127;75;6;0;6;YES;NO;YES;YES;YES;NO;NO;NO;NO;NO;YES;0,002
 313;Corning;www.corning.com;0,073;15;0;296;14;0;14;2;3;0;344;811;256;176;19;157;YES;NO;YES;NO;YES;NO;YES;YES;NO;NO;YES;0,073
-314;Peter Kiewit Sonsí;www.kiewit.com;0,302;4;0;10;0;0;0;14;3;0;31;570;301;141;0;141;YES;YES;YES;NO;YES;NO;YES;YES;NO;NO;YES;0,302
+314;Peter Kiewit Sons‚Äô;www.kiewit.com;0,302;4;0;10;0;0;0;14;3;0;31;570;301;141;0;141;YES;YES;YES;NO;YES;NO;YES;YES;NO;NO;YES;0,302
 315;Univar;www.univar.com;1,18;3;0;1;0;0;0;2;14;0;20;648;352;87;2;85;YES;YES;YES;YES;YES;YES;YES;YES;NO;NO;NO;1,18
 316;Mosaic;www.mosaicco.com;0,181;5;0;8;0;0;0;15;0;0;28;455;248;95;3;92;YES;YES;YES;NO;YES;NO;YES;YES;NO;NO;YES;0,181
 317;Core-Mark Holding;www.core-mark.com;0,242;3;0;5;0;0;1;1;0;0;10;405;225;71;9;62;YES;NO;YES;YES;YES;NO;YES;YES;NO;NO;YES;0,242
@@ -340,7 +340,7 @@ range;Company;Site;Loading times;png;dib;jpg;jpeg;bmp;jpe;gif;tif;tiff;total_ima
 339;BorgWarner;www.borgwarner.com;0,242;6;0;13;0;0;0;3;0;0;22;563;264;85;5;80;YES;YES;YES;YES;YES;YES;YES;NO;NO;NO;YES;0,242
 340;PVH;www.pvh.com;0,075;0;0;0;0;0;0;0;0;0;0;401;181;94;2;92;YES;NO;YES;YES;YES;NO;YES;NO;NO;NO;NO;0,075
 341;Ball;www.ball.com;0,499;1;0;4;0;0;0;0;0;0;5;632;370;119;5;114;YES;YES;YES;YES;YES;YES;YES;YES;YES;YES;NO;0,499
-342;OíReilly Automotive;www.oreillyauto.com;0,566;2;0;8;0;0;0;11;15;0;36;848;361;255;2;253;YES;YES;YES;YES;YES;YES;YES;YES;YES;NO;YES;0,566
+342;O‚ÄôReilly Automotive;www.oreillyauto.com;0,566;2;0;8;0;0;0;11;15;0;36;848;361;255;2;253;YES;YES;YES;YES;YES;YES;YES;YES;YES;NO;YES;0,566
 343;Eversource Energy;www.eversource.com;0,129;10;0;13;0;0;0;0;0;0;23;693;262;168;8;160;YES;NO;YES;YES;YES;NO;YES;YES;YES;NO;YES;0,129
 344;Franklin Resources;www.franklinresources.com;0,059;1;0;0;0;0;0;5;1;0;7;554;289;118;0;118;YES;YES;YES;YES;YES;YES;NO;NO;NO;NO;NO;0,059
 345;Masco;www.masco.com;0,016;11;0;13;0;0;0;3;1;0;28;519;279;81;1;80;YES;NO;YES;YES;YES;NO;YES;YES;NO;NO;NO;0,016
@@ -363,7 +363,7 @@ range;Company;Site;Loading times;png;dib;jpg;jpeg;bmp;jpe;gif;tif;tiff;total_ima
 362;Hershey;www.thehersheycompany.com;0,133;21;0;26;0;0;0;1;1;0;49;618;286;128;8;120;YES;YES;YES;YES;YES;YES;YES;YES;YES;YES;YES;0,133
 363;CenterPoint Energy;www.centerpointenergy.com;0,079;5;0;0;0;0;0;2;4;0;11;553;205;45;4;41;YES;NO;YES;YES;YES;NO;NO;NO;NO;NO;NO;0,079
 364;Williams;www.williams.com;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-365;Dickís Sporting Goods;www.dickssportinggoods.com;0,093;14;0;1;0;0;0;1;1;0;17;759;271;389;7;382;YES;YES;NO;YES;YES;NO;YES;YES;NO;YES;YES;0,093
+365;Dick‚Äôs Sporting Goods;www.dickssportinggoods.com;0,093;14;0;1;0;0;0;1;1;0;17;759;271;389;7;382;YES;YES;NO;YES;YES;NO;YES;YES;NO;YES;YES;0,093
 366;Live Nation Entertainment;www.livenation.com;0,082;4;0;0;0;0;0;1;1;0;6;493;269;25;1;24;YES;YES;YES;YES;YES;YES;YES;YES;YES;YES;YES;0,082
 367;Mutual of Omaha Insurance;www.mutualofomaha.com;0,458;5;0;3;0;0;0;16;2;0;26;799;418;159;23;136;YES;YES;YES;YES;YES;YES;YES;YES;NO;NO;NO;0,458
 368;W.R. Berkley;www.wrberkley.com;0,115;13;0;9;0;0;0;0;1;0;23;396;160;91;5;86;YES;YES;YES;YES;YES;YES;NO;YES;NO;NO;NO;0,115
@@ -372,13 +372,13 @@ range;Company;Site;Loading times;png;dib;jpg;jpeg;bmp;jpe;gif;tif;tiff;total_ima
 371;Darden Restaurants;www.darden.com;0,416;8;0;0;0;0;0;8;2;0;18;600;288;138;19;119;YES;NO;YES;YES;YES;NO;NO;YES;NO;NO;YES;0,416
 372;Kindred Healthcare;www.kindredhealthcare.com;0,539;15;0;11;0;0;0;11;1;0;38;650;363;91;1;90;YES;YES;YES;YES;YES;YES;YES;YES;NO;YES;YES;0,539
 373;Weyerhaeuser;www.weyerhaeuser.com;0,772;16;0;4;0;0;0;0;34;0;54;1035;300;553;12;541;YES;NO;YES;NO;YES;NO;YES;YES;NO;NO;NO;0,772
-374;Caseyís General Stores;www.caseys.com;0,193;11;0;12;0;0;0;1;1;0;25;622;256;162;15;147;YES;NO;YES;YES;YES;NO;YES;YES;YES;NO;YES;0,193
+374;Casey‚Äôs General Stores;www.caseys.com;0,193;11;0;12;0;0;0;1;1;0;25;622;256;162;15;147;YES;NO;YES;YES;YES;NO;YES;YES;YES;NO;YES;0,193
 375;Sealed Air;www.sealedair.com;0,216;7;0;9;0;0;0;1;0;0;17;692;304;124;21;103;YES;NO;YES;YES;YES;NO;YES;YES;NO;NO;YES;0,216
 376;Fifth Third Bancorp;www.53.com;0,366;4;0;6;0;0;0;0;0;0;10;931;389;280;7;273;YES;NO;NO;NO;YES;NO;YES;YES;NO;NO;YES;0,366
 377;Dover;www.dovercorporation.com;0,52;5;0;13;0;0;0;5;12;0;35;537;249;75;0;75;YES;YES;YES;NO;YES;NO;NO;NO;NO;NO;YES;0,52
 378;Huntington Ingalls Industries;www.huntingtoningalls.com;0,339;23;0;12;0;0;0;1;2;0;38;758;220;280;14;266;YES;YES;YES;YES;YES;YES;YES;YES;YES;YES;YES;0,339
 379;Netflix;www.netflix.com;0,963;321;0;28;12;0;12;14;27;0;414;2059;669;190;150;40;YES;YES;YES;YES;YES;YES;YES;YES;NO;NO;NO;0,963
-380;Dillardís;www.dillards.com;0,17;11;0;15;0;0;0;3;0;0;29;667;247;137;10;127;YES;YES;YES;YES;YES;YES;YES;YES;YES;YES;YES;0,17
+380;Dillard‚Äôs;www.dillards.com;0,17;11;0;15;0;0;0;3;0;0;29;667;247;137;10;127;YES;YES;YES;YES;YES;YES;YES;YES;YES;YES;YES;0,17
 381;EMCOR Group;www.emcorgroup.com;0,263;22;0;5;0;0;0;0;0;0;27;632;380;99;2;97;YES;NO;YES;NO;YES;NO;YES;NO;NO;NO;YES;0,263
 382;Jones Financial;www.edwardjones.com;0,475;24;0;4;0;0;0;0;0;0;28;666;314;113;11;102;YES;NO;YES;YES;YES;NO;YES;YES;NO;NO;YES;0,475
 383;AK Steel Holding;www.aksteel.com;0,171;0;0;14;0;0;0;2;0;0;16;367;246;67;3;64;YES;YES;YES;YES;YES;YES;NO;NO;NO;NO;NO;0,171
