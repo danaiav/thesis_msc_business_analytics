@@ -1,0 +1,1804 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <base href="https://www.duke-energy.com/">
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Everything you need to know about energy savings and information regarding energy service for you home from Duke Energy."/>
+<meta name="title" content="Savings and Information - For Your Home - Duke Energy"/>
+<meta name="Jurisdiction" content="ALL"/>
+<link rel="canonical" href="https://www.duke-energy.com:443/home" />
+<title>Savings and Information - For Your Home - Duke Energy</title>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <!-- Latest compiled and minified CSS -->
+
+<link href="/Assets/vendor/css/app.min.css" rel="stylesheet" />
+<link href="/Assets/site/css/common.min.css" rel="stylesheet" />
+<link href="/Assets/vendor/css/bootstrap-toggle.min.css" rel="stylesheet" />
+<link href="/Assets/vendor/css/datatables.bootstrap.min.css" rel="stylesheet"/>
+<link href="/Assets/vendor/css/select.min.css" rel="stylesheet"/>
+
+</head>
+<body ng-app="dukeEnergy" ng-class="{true: 'mobile-open'} [openMobile]" scroll resize>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-N6GDT9" height="0" width="0"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N6GDT9');</script>
+<!-- End Google Tag Manager -->
+
+<!-- New HTML - START -->
+
+<div class="primary-navigation-container" ng-controller="navigationController">
+    <!--
+_CompareBill.cshtml
+
+*Style :
+Assets/site/css/sass/shared/base/_navigation.scss
+*JS:
+Assets/site/js/app.js
+Assets/site/js/navigation.js
+
+<a href="#" class="state-select ci-icon-state-x dropdown-state" ng-if="checkStateSelection()" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" ng-class="{true: 'active'} [stateContainer]" ng-click="showStates()"></a>
+-->
+<!--starts Desktop Navigation-->
+<nav class="navbar navbar-default main-nav" role="navigation" aria-label="Primary Navigation">
+    <div class="container">
+        <div class="row">
+            <!--starts Hamburger Icon-->
+            <div class="col-xs-1 col-sm-1 visible-xs visible-sm navbar-side hamburger-navbar">
+                <div class="hamburger-container" ng-class="{'active': openMobile}" ng-click="showMobile()">
+                    <div class="hamburger-top"></div>
+                    <div class="hamburger-bottom"></div>
+                </div>
+            </div>
+            <!--ends Hamburger Icon-->
+            <div class="col-xs-1 col-sm-2 visible-sm visible-xs logo-container">
+                <a href="/" class="duke-logo" title="Duke Energy">
+                        <img src="https://www.duke-energy.com/_/media/images/common/logoduke.png" alt="Duke Energy" class="duke-logo-img" />
+                </a>
+            </div>
+            <!--starts Menu Items-->
+            <div class="hidden-sm hidden-xs col-md-7 col-lg-7">
+                <div class="nav-container-left">
+                    <div class="state-container">
+                        <a role="button" tabindex="1" data-category="primary_navigation" ng-navhelper="state-list-desktop" data-label="Select Your State" data-action="{{relativeURL}}" class="ci-icon-location state-select dropdown-state" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-class="{'active': stateContainer, 'intercept-active':interceptVisible}" ng-enterclick ng-click="showStates()">Select Your State</a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                            <li  class="active">
+                                <a tabindex="0" href="http://www.duke-energy.com/home">For Your Home</a>
+
+                            </li>
+                            <li >
+                                <a tabindex="0" href="http://www.duke-energy.com/business">For Your Business</a>
+
+                            </li>
+                            <li >
+                                <a tabindex="0" href="http://www.duke-energy.com/our-company">Our Company</a>
+
+                            </li>
+                            <li >
+                                <a tabindex="0" href="http://www.duke-energy.com/partner-with-us">Partner With Us</a>
+
+                            </li>
+                    </ul>
+                </div>
+            </div>
+            <!--ends Menu Items-->
+            <!--starts extra Menu Items-->
+<div class="col-xs-2 col-sm-9 col-md-5 col-lg-5 navbar-side" ng-class="{'opacity':openMobile}">
+    <div class="nav-container-right pull-right">
+        <ul class="nav navbar-nav">
+            <li>
+<a href='/outages' class='outages ci-icon-safety' tabindex='0' >                    <span class="inner-text">Outages</span>
+</a>            </li>
+            <li>
+<a href='/customer-service' class='customer-service' tabindex='0' >                    <span class="glyphicon glyphicon-earphone icon-customer-service" aria-hidden="true"></span>
+                    <span class="inner-text">Customer Service</span>
+</a>            </li>
+            <li class="sign-in-button" ng-init="init();" ng-mouseover="showDropdownNav($event)" ng-mouseleave="hideDropdownNav($event)" ng-click="goToSignIn($event)" data-href="https://www.duke-energy.com/sign-in" ng-keydown="toggleDropdown($event)">
+                <a tabindex="0" data-category="{{loggedIn ? '' : 'primary_navigation'}}" data-label="{{loggedIn ? '' : 'My Account'}}" data-action="{{loggedIn ? '' : 'Login'}}" class=" signin ci-icon-person hidden-xs hidden-sm"><span class="inner-text">My Account</span></a>
+                <a tabindex="0" data-category="{{loggedIn ? '' : 'primary_navigation'}}" data-label="{{loggedIn ? '' : 'My Account'}}" data-action="{{loggedIn ? '' : 'Login'}}" class=" signin ci-icon-person visible-xs visible-sm"><span class="inner-text">My Account</span></a>
+                
+                <ul class="dropdown-menu">
+                            <li><a href='/sign-in' data-category='sign_in' ng-click='event.stopPropagation();' tabindex='0' data-label='My account' data-action='My Account Home' >My Account Home</a></li>
+                            <li><a href='/sign-in' data-category='sign_in' ng-click='event.stopPropagation();' tabindex='0' data-label='My account' data-action='Sign Out' >Sign Out</a></li>
+                </ul>
+            </li>
+            <li><a tabindex="0" role="button" class="search ci-icon-search" ng-click="showSearch()" ng-class="{true: 'active'} [openSearch]" title="Search Bar Toggle" ng-buttondown="showSearch()"></a></li>
+        </ul>
+    </div>
+</div>
+<!--ends extra Menu Items-->
+        </div>
+    </div>
+</nav>
+<!--ends Desktop Navigation-->
+<!--starts states container-->
+<div ng-controller="jurisdictionController" ng-if="!interceptVisible" aria-labelledby="jurisdiction-select-header">
+    <input type="hidden" name="selectedState" id="selectedState" />
+    <!--starts skinny prompt-->
+    <div id="" class="state-list skinny-prompt alert alert-dismissible fade in active" role="alert">
+        <!--to show the skinny prompt, add class "active" from this div; to hide it remove class "active"-->
+        <div class="state-list-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 text-center">
+                        <button type="button" class="hidden-xs ci-icon-state-x blue-x close-skinny" data-dismiss="alert" aria-label="Close" ng-click=chooseLater()></button>
+                        <div class="header-container">
+                            <h3 class="header-3 no-overflow">
+                                Welcome to Duke Energy.
+                                <span class="duotone as-link "
+                                      ng-click=slideJurisdiction(&#39;skinny-prompt&#39;)>Please Select Your State.</span> <!--If Geolocation is used, please add the class "hide" from this span-->
+                                    <span class="duotone hide">It looks like you're in <span></span>.</span> <!--If Geolocation is used, just remove the class "hide" from this span-->
+                                </h3>
+                                <p class="body-copy text-center">
+                                    Knowing where your account is located will help us serve you better.
+                                    <span class="hide">
+                                        <span class="skinny-link" ng-click="setJurisdiction($event, '')"><span class="hide"></span> Confirm</span> or <span class="skinny-link" ng-click="slideJurisdiction('skinny-prompt')">CHANGE STATE</span>
+                                    </span>
+                                </p> <!--If Geolocation is used, just remove the class "hide" from the first span-->
+                                <div class="choose-later visible-xs">
+                                    <a data-dismiss="alert" aria-label="Close"> Close <span class="ci-icon-state-x blue-x"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--ends skinny prompt-->
+        <!--starts states container-->
+        <div class="state-list state-list-desktop hidden-xs hidden-sm " ng-class="{'active': stateContainer}">
+            <div class="state-list-wrapper">
+                <div class="states-list-container container ">
+                    <div class="states-list-inner" ng-class="{true: 'next-state'} [nextState]" ng-init="initJurisdiction('zipcodeForm','https://www.duke-energy.com')">
+                        <!-- starts state selection-->|
+                        <div class="state-selection pull-left" id="state-selector" ng-class="{invisible  : statesInVisible}">
+                            <div class="row">
+                                <div class="col-md-12 col-lg-12 text-center">
+                                    <div class="header-container">
+                                        <h2 id="jurisdiction-select-header" class="header-2 no-overflow">
+                                            Welcome to Duke Energy. <span class="duotone">Please Select Your State.</span>
+                                        </h2>
+                                        <p class="body-copy text-center">Knowing where your account is located will help us serve you better.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row select-state">
+                                    <div class="col-md-2 col-lg-2 state-item" ng-click="setJurisdiction($event, 'FL')" ng-buttondown="setJurisdiction($event, 'FL')" data-statename="" tabindex="0">
+                                        <a role="button" href="#" class="ci-icon-state-florida" tabindex="-1" data-label="Florida" data-action="/home" data-category="jurisdiction">
+                                            <span>Florida</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-2 col-lg-2 state-item" ng-click="setJurisdiction($event, 'IN')" ng-buttondown="setJurisdiction($event, 'IN')" data-statename="" tabindex="0">
+                                        <a role="button" href="#" class="ci-icon-state-indiana" tabindex="-1" data-label="Indiana" data-action="/home" data-category="jurisdiction">
+                                            <span>Indiana</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-2 col-lg-2 state-item" ng-click="setJurisdiction($event, 'KY')" ng-buttondown="setJurisdiction($event, 'KY')" data-statename="" tabindex="0">
+                                        <a role="button" href="#" class="ci-icon-state-kentucky" tabindex="-1" data-label="Kentucky" data-action="/home" data-category="jurisdiction">
+                                            <span>Kentucky</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-2 col-lg-2 state-item state-next-stage" ng-click="setJurisdiction($event, 'NC')" ng-buttondown="setJurisdiction($event, 'NC')" data-statename="north-state" tabindex="0">
+                                        <a role="button" href="#" class="ci-icon-state-northcarolina" tabindex="-1" data-label="North Carolina" data-action="/home" data-category="jurisdiction">
+                                            <span>North Carolina</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-2 col-lg-2 state-item" ng-click="setJurisdiction($event, 'OH')" ng-buttondown="setJurisdiction($event, 'OH')" data-statename="" tabindex="0">
+                                        <a role="button" href="#" class="ci-icon-state-ohio" tabindex="-1" data-label="Ohio" data-action="/home" data-category="jurisdiction">
+                                            <span>Ohio</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-2 col-lg-2 state-item state-next-stage" ng-click="setJurisdiction($event, 'SC')" ng-buttondown="setJurisdiction($event, 'SC')" data-statename="south-state" tabindex="0">
+                                        <a role="button" href="#" class="ci-icon-state-southcarolina" tabindex="-1" data-label="South Carolina" data-action="/home" data-category="jurisdiction">
+                                            <span>South Carolina</span>
+                                        </a>
+                                    </div>
+                            </div>
+                            <div class="row choose-later">
+                                <div class="col-md-12 col-lg-12">
+                                    <a href="" ng-click=chooseLaterJurisdiction()>
+                                        CHOOSE LATER<span class="ci-icon-state-x blue-x"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end state selection-->
+                        <!-- starts region selection -->
+                        <div class="region-selection pull-left" ng-class="{invisible  : regionsInVisible}">
+                            <div class="row">
+                                <div class="col-md-12 col-lg-12 text-center">
+                                    <div class="header-container">
+                                        <h2 class="header-2 no-overflow">
+                                            Where is your service in <span class="region-selection-name"></span>?
+                                        </h2>
+                                        <a tabindex="0" role="button" class="back-to-states ci-icon-left-arrow-slim" ng-click=backStatesJurisdiction() ng-buttondown=backStatesJurisdiction()>BACK TO STATES</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-5 col-lg-5 no-right-padding">
+                                    <div class="input-zip">
+                                        <form action="" id="zipcodeForm" name="zipcodeForm" ng-submit="submitService($event,'zipcodeForm')" novalidate>
+                                            <div class="address-display" ng-class="{'no-visible': !requiredAddress}">
+                                                <p>Based on your ZIP code, we need to know your street address so we can customize your experience.</p>
+                                                <div ng-show=requiredAddress>
+                                                    <!--to show the Invalid Address Error message, remove all this: ng-class="{'hide': !requiredAddress}" -->
+                                                    <label for="state-address" class="sr-only">Enter Street Address</label>
+                                                    
+                                                    <input tabindex="0" type="text" id="state-address" aria-label="zip code" ng-class="{'error-input':invalidAddress}" class="jurisdiction-address input-frameless state-address-handle"placeholder="Enter Street Address"ng-model="jformData.jurisdictionAddress">
+                                                    <div class="error-code" ng-class="{'no-visible':!invalidAddress}">
+                                                        <!--to show the Invalid Address Error message, remove class "hide"; to hide the Invalid Address Error Msg, add class "hide"-->
+                                                        <span>The address you entered is not serviced by Duke Energy</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="region-buttons">
+                                                <div>
+                                                    
+                                                    <input tabindex="0" type="text" id="state-zip-select" focus-on-condition="zipcodeActive" ng-class="{'error-input':invalidZipCode}" ng-change="zipCodeValidation('mobileZipcodeForm');" class="zipcode-input input-frameless state-zip-select-handle"placeholder="Enter Zip Code"maxlength=" 5" ng-model="jformData.jurisdictionZipCode" required>
+                                                    <button tabindex="0" aria-label="submit" type="submit" class="btn-main-blue" value="SUBMIT">SUBMIT</button>
+                                                </div>
+                                                <div class="error-code" ng-class="{'no-visible':!invalidZipCode}">
+                                                    <!--to show the Invalid ZipCode Error message, remove class "hide"; to hide the Invalid ZipCode Error Msg, add class "hide"-->
+                                                    <span>Please enter a valid zip code</span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 col-lg-2 center-or">
+                                    <p>Or</p>
+
+                                </div>
+                                <div class="col-md-5 col-lg-5" id="state-map-selector">
+                                    <div class="state-map" ng-show="!northSouth" aria-labelledby="state-map-selector">
+                                        <div class="state-map-north" ng-class="{'map-normal':statesNorthSouth==1, 'map-progress': statesNorthSouth==2}">
+                                            <img src="/Assets/site/img/core/state-image-nc-sprite.gif" usemap="#northMap" alt="Duke Energy Progress" />
+                                            <map name="northMap">
+                                                <!-- map North Carolina Duke Energy: Please insert the service key on setServiceKey('01')-->
+                                                <area class="state-image-area" ng-mouseenter="statesNorthSouth=1; deHover=1" ng-click="setServiceKey($event,'01')"
+                                                      ng-mouseleave="statesNorthSouth=0; deHover=0" shape="poly" coords="107,26,116,25,120,23,124,12,133,8,140,11,145,4,207,4,207,10,215,17,223,18,229,22,243,21,243,25,236,35,231,38,213,39,200,36,186,42,182,51,177,56,179,62,179,73,174,74,171,72,170,87,165,92,151,91,143,76,141,78,140,74,81,70,51,80,48,75,36,79,29,79,28,76,21,74,18,76,11,76,11,64,14,56,23,50,35,50,45,46,46,51,48,58,48,62,52,64,58,68,65,60,79,60,84,57,87,56,86,53,86,48,90,45,92,40,96,39,102,32,106,32,107,28" href="" alt="Duke Energy">
+                                                <!-- map North Carolina Duke Energy Progress: Please insert the service key on setServiceKey('02')-->
+                                                <area class="state-image-area" ng-mouseenter="statesNorthSouth=2; deHover=2" ng-click="setServiceKey($event,'02')"
+                                                      ng-mouseleave="statesNorthSouth=0; deHover=0" shape="poly" coords="208,4,277,4,286,10,292,16,299,22,295,31,299,40,310,45,327,45,331,52,328,64,335,68,331,78,342,81,352,79,332,103,318,99,289,114,353,123,352,133,271,142,247,142,196,92,166,92,171,87,171,73,176,75,180,73,180,61,177,56,184,51,186,43,200,36,211,40,230,39,236,36,245,25,243,19,229,21,223,17,216,17,208,9" href="" alt="Duke Energy Progress">
+                                                <area class="state-image-area" ng-mouseenter="statesNorthSouth=2; deHover=2" ng-click="setServiceKey($event,'02')"
+                                                      ng-mouseleave="statesNorthSouth=0; deHover=0" shape="poly"
+                                                      coords="68,58,81,58,84,56,88,54,86,47,89,41,94,40,96,38,101,30,106,31,106,26,102,21,96,24,94,23,89,23,80,30,74,26,70,28,68,28,67,31,63,32,62,36,60,39,56,39,53,39,48,42,45,45,48,51,50,58,56,62,62,65,65,60,67,58"
+                                                      href="" alt="Duke Energy Progress">
+                                            </map>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <a role="button" tabindex="0" class="de-normal" ng-class="{'active': deHover==1}"
+                                                   ng-mouseenter="statesNorthSouth=1"
+                                                   ng-mouseleave="statesNorthSouth=0"
+                                                   ng-buttondown="setServiceKey($event,'01')"
+                                                   ng-focus="statesNorthSouth=1"
+                                                   ng-blur="statesNorthSouth=0"
+                                                   ng-click="setServiceKey($event,'01')">
+                                                    <span>Duke Energy</span>
+                                                </a>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <a role="button" tabindex="0" class="de-progress" ng-class="{'active': deHover==2}"
+                                                   ng-mouseenter="statesNorthSouth=2"
+                                                   ng-mouseleave="statesNorthSouth=0"
+                                                   ng-buttondown="setServiceKey($event,'02')"
+                                                   ng-focus="statesNorthSouth=2"
+                                                   ng-blur="statesNorthSouth=0"
+                                                   ng-click="setServiceKey($event,'02')">
+                                                    <span>Duke Energy<br>Progress</span>
+                                                </a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="state-map" ng-show="northSouth" aria-labelledby="state-map-selector">
+                                        <div class="state-map-south" ng-class="{'map-normal':statesNorthSouth==1, 'map-progress': statesNorthSouth==2}">
+                                            <img src="/Assets/site/img/core/state-image-sc-sprite.gif" usemap="#southMap" alt="" />
+                                            <map name="southMap">
+                                                <area class="state-image-area" ng-mouseenter="statesNorthSouth=1; deHover=1" ng-click="setServiceKey($event,'01')"
+                                                      ng-mouseleave="statesNorthSouth=0; deHover=0" shape="poly" coords="13,0,74,0,98,19,104,22,110,30,108,37,123,37,128,45,115,56,111,55,110,56,106,52,106,46,89,46,83,46,80,40,76,42,81,50,84,62,83,66,80,68,75,68,66,65,64,66,56,77,48,77,47,78,46,77,43,73,38,71,33,71,29,72,26,68,16,53,1,41" href="" alt="Duke Energy">
+                                                <area class="state-image-area" ng-mouseenter="statesNorthSouth=2; deHover=2" ng-click="setServiceKey($event,'02')"
+                                                      ng-mouseleave="statesNorthSouth=0; deHover=0" shape="poly" coords="157,37,207,86,229,106,229,129,192,129,180,119,159,110,147,101,141,100,138,102,128,103,117,89,117,72,111,70,107,62,110,55,115,57,128,45,123,36" href="" alt="Duke Energy Progress">
+                                            </map>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <a role="button" tabindex="0" class="de-normal" ng-class="{'active': deHover==1}"
+                                                   ng-mouseenter="statesNorthSouth=1"
+                                                   ng-mouseleave="statesNorthSouth=0"
+                                                   ng-focus="statesNorthSouth=1"
+                                                   ng-blur="statesNorthSouth=0"
+                                                   ng-click="setServiceKey($event,'01')">
+                                                    <span>Duke Energy</span>
+                                                </a>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <a role="button" tabindex="0" class="de-progress" ng-class="{'active': deHover==2}"
+                                                   ng-mouseenter="statesNorthSouth=2"
+                                                   ng-mouseleave="statesNorthSouth=0"
+                                                   ng-mouseleave="statesNorthSouth=0"
+                                                   ng-focus="statesNorthSouth=2"
+                                                   ng-blur="statesNorthSouth=0"
+                                                   ng-click="setServiceKey($event,'02')">
+                                                    <span>Duke Energy<br>Progress</span>
+                                                </a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="row choose-later">
+                                <div class="col-md-12 col-lg-12">
+                                    <a role="button" class="region-choose-later" ng-click=chooseLaterJurisdiction() ng-buttondown=chooseLaterJurisdiction() tabindex="0">
+                                        CHOOSE LATER<span class="ci-icon-state-x blue-x"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end region selection -->
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--end states container-->
+    </div>
+
+
+    
+<!--
+_GlobalAlerts.cshtml
+
+*Style :
+    Assets/site/css/sass/shared/modules/_global-alerts.scss
+*JS:
+   No Js
+-->
+<!--starts Global Alerts section-->
+<section class="global-alerts-container">
+</section>
+<!--ends Global Alerts section-->
+    
+    <div class="search-second-container hidden-xs hidden-sm">
+        <!--
+_SearchBar.cshtml
+
+*Style :
+    Assets/site/css/sass/shared/base/_navigation.scss
+*JS:
+    Assets/site/js/app.js
+    Assets/site/js/navigation.js
+-->
+<!-- starts Search Bar Section-->
+<div class="search-bar" ng-controller="searchBarController" ng-init="initProcess('38')" ng-class="{'active': openSearch, 'show': mobileOpenSearch}">
+    <!--If you want to show the search bar: for Desktop add class "active"; for Tablet/Mobile add class "show" to this div. Ex. <div class="search-bar show" >-->
+    <section class="search-input-module">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-12 col-lg-12">
+                    <!-- starts Search Bar Input-->
+                    <form class="search-form" method="GET" action="Search%20Results">
+                        <div class="input-style">
+                            <label for="searchInput" class="sr-only">Have a question? Type it here</label>
+                            <input autocomplete="off" type="text" name="searchInput" id="searchInput" class="input-frameless" ng-model="searchInputText" placeholder="Have a question? Type it here" ng-blur="hideQuestionWrapper()" ng-change="getResults(searchInputText)" focus-me>
+                            <button class="btn-search ci-icon-search" type="submit" data-category="search" data-label="{{searchInputText}}"><span class="sr-only">Search Submit</span></button>
+                        </div>
+                    </form>
+                    <!-- ends Search Bar Input-->
+                </div>
+            </div>
+            <!-- starts Search Bar Questions Section-->
+            <div class="questions-wrapper" ng-class="{'active':showResults}">
+
+                <!--If you want to show the search results, add class " active" to this div. ex. <div class="questions-wrapper active">-->
+                <div class="row questions-container" ng-if="predictive_results" aria-labelledby="commonQuestions">
+                    <div class="hidden-xs col-sm-3 col-md-5 col-lg-5 questions-left">
+                        <span id="commonQuestions">Related Questions</span>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-7 col-lg-7 questions-right">
+                        <ul class="list-questions">
+                            <li ng-repeat="item in predictive_results | limitTo: 3">
+                                <a role="button" title="Common Questions Result" tabindex="0" ng-click="openModal(item, 'predictive');" ng-buttondown="openModal(item, 'predictive');" data-category="search_results" data-label="Related Questions - {{item.value}}" data-action="{{searchInputText}}"><span class="question-data">{{item.value}}</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row questions-container recommended-results" ng-show="results.RecommendedResults.ResultItems.length" aria-labelledby="recommendedResults">
+                    <div class="hidden-xs col-sm-3 col-md-5 col-lg-5 questions-left">
+                        <span id="recommendedResults">Recommended Results</span>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-7 col-lg-7 questions-right">
+                        <ul class="list-questions">
+                            <li ng-repeat="item in results.RecommendedResults.ResultItems">
+                                <!--For ADA: aria-labelled-by attribute should contains the id of the title of the result section-->
+                                <a href="{{item.Url}}" aria-labelledby="recommendedresults" data-category="search_results" data-label="Recommended Results - {{item.Title}}" data-action="{{searchInputText}}">
+                                    <span ng-bind-html="trustAsHtml(item.Title)" class="question-data"></span>
+                                    <span ng-bind-html="trustAsHtml(item.Description)" class=" question-answer"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row questions-container" ng-show="results.CommonSearches.ResultItems.length" aria-labelledby="commonSearches">
+                    <div class="hidden-xs col-sm-3 col-md-5 col-lg-5 questions-left">
+                        <span id="commonSearches">Common Searches</span>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-7 col-lg-7 questions-right">
+                        <ul class="list-questions">
+                            <li ng-repeat="item in results.CommonSearches.ResultItems">
+                                <a href="Search%20Results/?searchInput={{item.Title}}" aria-labelledby="commonsearches" class="common-searches" data-category="search_results" data-label="Common Searches - {{item.Title}}" data-action="{{searchInputText}}"> <span class="ci-icon-search question-data">{{item.Title}}</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- ends Search Bar Questions Section-->
+
+        </div>
+    </section>
+    <!-- Modal -->
+
+    <div id="intelliresponse">
+        <div class="modal fade" id="searchBar-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-lg search-bar-modal" role="document">
+                <div class="modal-content" ng-class="{'modal-mutiple': modal.type==='multiple' }">
+                    <button type="button" class="close close-main-blue ng-scope" ng-click="closeModal()"><span>×</span></button><!--close modal-->
+                    <div class="row">
+                        <div ng-hide="modal.type==='no answer'" class="col-md-12 col-lg-12 col-xs-4 col-sm-12">
+                            <div class="modal-section prime" ng-class="{'modal-mutiple': modal.type==='multiple' }">
+
+                                <div class="defined" ng-if="modal.type=='defined'">
+                                    <h3 class="header-3-link">{{modal.title}}</h3> <!--Title-->
+                                    <p class="answer" ng-if="modal.body" ng-bind-html="trustAsHtml(modal.body)"></p> <!--answer-->
+                                </div>
+
+                                <div class="suggested" ng-if="modal.type=='suggested'">
+                                    <h3 class="header-3-link">We matched your question to:</h3> <!--Title-->
+                                    <p ng-if="modal.search" class="search">{{modal.search}}</p> <!--search-->
+                                    <h3 class="header-3-link">Best Response:</h3> <!--Title 2-->
+                                    <p class="answer" ng-if="modal.body" ng-bind-html="trustAsHtml(modal.body)"></p> <!--answer-->
+                                </div>
+
+                                <div class="ambiguous" ng-if="modal.type=='ambiguous'">
+                                    <h3 class="header-3-link">We matched your question to:</h3> <!--Title-->
+                                    <p ng-if="modal.search" class="search">{{modal.search}}</p> <!--search-->
+                                    <h3 class="header-3-link">Best Response:</h3> <!--Title 2-->
+                                    <p>Where you looking for the following information?</p>
+                                    <ul ng-if="modal.partial">
+                                        <li ng-repeat="q in modal.partial" ng-click="openModal(q, 'link', '3');"><a>{{q.title}}</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="multiple" ng-if="modal.type=='multiple'">
+                                    <h3 class="header-3-link">We found multiple responses to your question.</h3><!--Title-->
+                                    <p>Please choose the response below that best suits your needs:</p>
+                                    <ul ng-if="multiples">
+                                        <li ng-repeat="q in multiples" ng-click="openModal(q, 'link', '5');"><a>{{q.title}}</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div ng-hide="modal.type==='multiple' || modal.type=='ambiguous'" class="modal-section poll">
+                                <h3 class="header-3-link">How satisfied are you with the answer?</h3>
+                                <form ng-if="!responsed" class="form-inline ng-pristine ng-valid ng-scope">
+                                    <fieldset>
+                                        <legend class="sr-only">How satisfied are you with the answer?</legend>
+                                            <div class="radio">
+                                                <label for="Yes" role="button" tabindex="0" ng-buttondown="sendRadio(100)" ng-click="sendRadio(100)">
+                                                    <input type="radio"
+                                                           data-category="intelliresponse"
+                                                           data-label="Yes"
+                                                           data-action="Satisfaction survey - {{intelliresponse.current.question}}"
+                                                           ng-model="rating"
+                                                           name="optionsRadios-Yes"
+                                                           id="Yes"
+                                                           value="100"
+                                                           class="sr-only"
+                                                           tabindex="-1">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label for="Somewhat" role="button" tabindex="0" ng-buttondown="sendRadio(50)" ng-click="sendRadio(50)">
+                                                    <input type="radio"
+                                                           data-category="intelliresponse"
+                                                           data-label="Somewhat"
+                                                           data-action="Satisfaction survey - {{intelliresponse.current.question}}"
+                                                           ng-model="rating"
+                                                           name="optionsRadios-Somewhat"
+                                                           id="Somewhat"
+                                                           value="50"
+                                                           class="sr-only"
+                                                           tabindex="-1">
+                                                    Somewhat
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label for="No" role="button" tabindex="0" ng-buttondown="sendRadio(0)" ng-click="sendRadio(0)">
+                                                    <input type="radio"
+                                                           data-category="intelliresponse"
+                                                           data-label="No"
+                                                           data-action="Satisfaction survey - {{intelliresponse.current.question}}"
+                                                           ng-model="rating"
+                                                           name="optionsRadios-No"
+                                                           id="No"
+                                                           value="0"
+                                                           class="sr-only"
+                                                           tabindex="-1">
+                                                    No
+                                                </label>
+                                            </div>
+                                    </fieldset>
+                                </form>
+                                <p ng-show="responsed">Thanks for your response!</p>
+
+                            </div>
+
+                            <div ng-if="recomended.length" class="modal-section interest" ng-class="{'modal-mutiple': modal.type==='multiple' }">
+                                <h3 class="header-3-link">You may also be interested in...</h3>
+                                <ul>
+                                    <li ng-repeat="q in recomended" ng-click="openModal(q, 'link', '2');"><a>{{q.title}}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!--No Answers-->
+                        <div ng-show="modal.type==='no answer'" class="col-md-12 col-lg-12 col-xs-4 col-sm-12">
+                            <div class="modal-section nomatch">
+                                <h3 class="header-3-link text-center">We were unable to find a direct answer to your question.</h3> <!--Title-->
+                                <p class="text-center">Please try rephrasing your question as you <a href='search our site.' >search our site.</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="visible-xs hidden-sm hidden-md hidden-lg">
+                        <button ng-hide="modal.type==='no answer'" type="button" class="close text close-main-blue ng-scope" ng-click="closeModal();">
+                            <span class="close-text">Close</span>
+                            <span>&times;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Modal-->
+    <!--END Intelliresponse Modal-->
+    <!-- GSA Sitemap-->
+    <a href="/gsa-sitemap" style="display: none;"></a>
+</div>
+<!-- ends Search Bar Section-->
+<!--Intelliresponse Modal-->
+            <!-- starts Secondary Navigation -->
+    <div class="secondary-nav hidden-xs hidden-sm" ng-class="{true: 'sticky-nav'} [stickyNav]" role="navigation" aria-label="Secondary Navigation">
+        <div class="container">
+            <div class="row row-centered" vertilize-container>
+                <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2 centered-logo">
+                    <a tabindex="0" href="/" class="duke-logo" title="Duke Energy">
+                            <img src="https://www.duke-energy.com/_/media/images/common/logoduke.png" alt="Duke Energy" class="duke-logo-img" />
+                    </a>
+                </div>
+                    <div class="col-xs-9 col-sm-9 col-md-10 col-lg-10 logo-container" ng-show="true">
+                        <ul class="sublinks-nav nav nav-pills hidden-xs hidden-sm">
+
+                                <li role="presentation">
+                                    <a tabindex="0" href="http://www.duke-energy.com/home/my-account" ><span>My Account</span></a>
+
+                                </li>
+                                <li role="presentation">
+                                    <a tabindex="0" href="http://www.duke-energy.com/home/billing" ><span>Billing &amp; Payment</span></a>
+
+                                </li>
+                                <li role="presentation">
+                                    <a tabindex="0" href="http://www.duke-energy.com/home/start-stop-move" ><span>Start, Stop &amp; Move</span></a>
+
+                                </li>
+                                <li role="presentation">
+                                    <a tabindex="0" href="http://www.duke-energy.com/home/savings" ><span>Save Energy &amp; Money</span></a>
+
+                                </li>
+                                <li role="presentation">
+                                    <a tabindex="0" href="http://www.duke-energy.com/home/products" ><span>Products &amp; Services</span></a>
+
+                                </li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <!-- ends Secondary Navigation -->
+
+        
+    </div>
+    <!--
+_MobileNav.cshtml
+
+*Style :
+    Assets/site/css/sass/shared/base/_navigation.scss
+*JS:
+    Assets/site/js/app.js
+    Assets/site/js/navigation.js
+-->
+<!-- start mobile navigation -->
+<div class="mobile-nav" ng-controller="jurisdictionController" ng-class="{true: 'active'} [openMobile]">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4 col-sm-12 mobile-item">
+                <ul id="side-navigation-bar" role="tablist" aria-multiselectable="false" class="nav nav-stacked">
+                    <!--starts mobile state selection-->
+                    <li class="state-select panel panel-default" ng-class="{'open-search': mobileOpenSearch}" role="tab" ng-hide="interceptVisible">
+                        <a class="state-anchor ci-i-cross ci-icon-navigation collapsed" data-toggle="collapse" data-parent="#side-navigation-bar" data-category="primary_navigation" data-label="Select Your State" data-action="{{relativeURL}}" href="#menu-forStates" aria-expanded="false" aria-controls="menu-forStates" ng-click="resetStatesMobile($event)">
+    <span class=" ci-icon-location">
+    </span>
+    <span class="dropdown-state">Select Your State</span>
+</a>
+<nav class="state-list active submenu-dropdown panel-collapse collapse" role="tabpanel" id="menu-forStates">
+    <div class="state-list-wrapper">
+        <div class="states-list-container container" ng-init="formName = 'mobileZipcodeForm'" ng-class="{'auto-height': nextState}">
+            <div class="states-list-inner" ng-class="{'next-state': nextState}">
+                <!-- starts states selection -->
+                <div class="state-selection pull-left">
+                    <div class="select-state container">
+                        <div class="row">
+                                <div class="col-xs-2 col-sm-6 state-item" ng-click="setJurisdiction($event, 'FL')" data-statename="">
+                                    <a href="" class="ci-icon-state-florida" data-label="Florida" data-action="/home" data-category="jurisdiction">
+                                        <span>Florida</span>
+                                    </a>
+                                </div>
+                                <div class="col-xs-2 col-sm-6 state-item" ng-click="setJurisdiction($event, 'IN')" data-statename="">
+                                    <a href="" class="ci-icon-state-indiana" data-label="Indiana" data-action="/home" data-category="jurisdiction">
+                                        <span>Indiana</span>
+                                    </a>
+                                </div>
+                                <div class="col-xs-2 col-sm-6 state-item" ng-click="setJurisdiction($event, 'KY')" data-statename="">
+                                    <a href="" class="ci-icon-state-kentucky" data-label="Kentucky" data-action="/home" data-category="jurisdiction">
+                                        <span>Kentucky</span>
+                                    </a>
+                                </div>
+                                <div class="col-xs-2 col-sm-6 state-item state-next-stage" ng-click="setJurisdiction($event, 'NC')" data-statename="north-state">
+                                    <a href="" class="ci-icon-state-northcarolina" data-label="North Carolina" data-action="/home" data-category="jurisdiction">
+                                        <span>North Carolina</span>
+                                    </a>
+                                </div>
+                                <div class="col-xs-2 col-sm-6 state-item" ng-click="setJurisdiction($event, 'OH')" data-statename="">
+                                    <a href="" class="ci-icon-state-ohio" data-label="Ohio" data-action="/home" data-category="jurisdiction">
+                                        <span>Ohio</span>
+                                    </a>
+                                </div>
+                                <div class="col-xs-2 col-sm-6 state-item state-next-stage" ng-click="setJurisdiction($event, 'SC')" data-statename="south-state">
+                                    <a href="" class="ci-icon-state-southcarolina" data-label="South Carolina" data-action="/home" data-category="jurisdiction">
+                                        <span>South Carolina</span>
+                                    </a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end states selection -->
+                <!-- starts region selection -->
+                <div class="region-selection pull-left">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-12 text-center">
+                            <div class="header-container">
+                                <h2 class="header-2 no-overflow">
+                                    Where is your service in <span class="region-selection-name"></span>?
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4 col-sm-12">
+                            <div class="input-zip">
+                                <!--when showing address input, add class "invalid-error-address" to this div-->
+                                <form action="#" id="mobileZipcodeForm" name="mobileZipcodeForm" ng-submit="submitService($event,'mobileZipcodeForm')" novalidate>
+                                    <div class="address-display" ng-class="{'no-visible': !requiredAddress}">
+                                        <!--to show the Invalid Address Error message, remove all this: ng-class="{'no-visible': !requiredAddress}" -->
+                                        <p ng-class="{'hide': !requiredAddress}">
+                                            Based on your ZIP code, we need to know your street address so we can customize your experience.
+                                        </p>
+                                        <div>
+                                            <!--to show the Invalid Address Error message, remove all this: ng-class="{'hide': !requiredAddress}" -->
+                                            <input type="text" id="state-address" ng-class="{'error-input':invalidAddress}" class="jurisdiction-address input-frameless state-address-handle"
+                                                   placeholder="Enter Street Address"
+                                                   ng-model="jformData.jurisdictionAddress">
+
+                                            <div class="error-code" ng-class="{'no-visible': !invalidAddress}">
+                                                <!--to show the Invalid Address Error message, remove class "hide"; to hide the Invalid Address Error Msg, add class "hide"-->
+                                                <span>The address you entered is not serviced by Duke Energy</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="region-buttons text-center">
+                                        <div ng-class="{'no-add': !requiredAddress}">
+                                            <input type="text" id="state-zip-select" focus-on-condition="zipcodeActive" ng-class="{'error-input':invalidZipCode}" ng-change="zipCodeValidation('mobileZipcodeForm');" class="zipcode-input input-frameless state-zip-select-handle"
+                                                   placeholder="Enter Zip Code"
+                                                   maxlength="5" ng-model="jformData.jurisdictionZipCode" required>
+
+                                            <div class="error-code" ng-class="{'no-visible': !invalidZipCode}">
+                                                <!--to show the Invalid Code Error message, remove class "hide"-->
+                                                <span>Please enter a valid zip code</span>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn-small btn-main-blue" value="Submit">SUBMIT</button>
+                                    </div>
+                                </form>
+                                <span class="back-to-states ci-icon-left-arrow-slim" ng-click="backStatesJurisdiction()">BACK TO STATES</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end region selection -->
+            </div>
+        </div>
+    </div>
+</nav>
+                    </li>
+                    <!--end state mobile selection-->
+                    <!-- starts mobile menu items -->
+                        <li ng-class="{'open-search': mobileOpenSearch}" class="panel panel-default" role="tab" tabindex="-1">
+                            <a class="ci-i-cross collapsed" data-toggle="collapse" data-parent="#side-navigation-bar" data-category="primary_navigation" data-label="For Your Home" data-action="{{relativeURL}}" href="#menu-ForYourHome" aria-expanded="false" aria-controls="menu-ForYourHome"><span>For Your Home</span></a>
+                            <ul class="submenu-dropdown panel-collapse collapse" role="tabpanel" id="menu-ForYourHome">
+                                <li><a href="http://www.duke-energy.com/home"><span>Overview</span></a></li>
+                                <li>
+                                            <a tabindex="0" href="http://www.duke-energy.com/home/my-account"><span>My Account</span></a>
+
+                                </li>
+                                <li>
+                                            <a tabindex="0" href="http://www.duke-energy.com/home/billing"><span>Billing &amp; Payment</span></a>
+
+                                </li>
+                                <li>
+                                            <a tabindex="0" href="http://www.duke-energy.com/home/start-stop-move"><span>Start, Stop &amp; Move</span></a>
+
+                                </li>
+                                <li>
+                                            <a tabindex="0" href="http://www.duke-energy.com/home/savings"><span>Save Energy &amp; Money</span></a>
+
+                                </li>
+                                <li>
+                                            <a tabindex="0" href="http://www.duke-energy.com/home/products"><span>Products &amp; Services</span></a>
+
+                                </li>
+                            </ul>
+                        </li>
+                        <li ng-class="{'open-search': mobileOpenSearch}" class="panel panel-default" role="tab" tabindex="-1">
+                            <a class="ci-i-cross collapsed" data-toggle="collapse" data-parent="#side-navigation-bar" data-category="primary_navigation" data-label="For Your Business" data-action="{{relativeURL}}" href="#menu-ForYourBusiness" aria-expanded="false" aria-controls="menu-ForYourBusiness"><span>For Your Business</span></a>
+                            <ul class="submenu-dropdown panel-collapse collapse" role="tabpanel" id="menu-ForYourBusiness">
+                                <li><a href="http://www.duke-energy.com/business"><span>Overview</span></a></li>
+                                <li>
+                                            <a tabindex="0" href="http://www.duke-energy.com/business/my-account"><span>My Account</span></a>
+
+                                </li>
+                                <li>
+                                            <a tabindex="0" href="http://www.duke-energy.com/business/billing"><span>Billing &amp; Payment</span></a>
+
+                                </li>
+                                <li>
+                                            <a tabindex="0" href="http://www.duke-energy.com/business/start-stop-move"><span>Start, Stop &amp; Move</span></a>
+
+                                </li>
+                                <li>
+                                            <a tabindex="0" href="http://www.duke-energy.com/business/savings"><span>Save Energy &amp; Money</span></a>
+
+                                </li>
+                                <li>
+                                            <a tabindex="0" href="http://www.duke-energy.com/business/products"><span>Products &amp; Services</span></a>
+
+                                </li>
+                            </ul>
+                        </li>
+                        <li ng-class="{'open-search': mobileOpenSearch}" class="panel panel-default" role="tab" tabindex="-1">
+                            <a class="ci-i-cross collapsed" data-toggle="collapse" data-parent="#side-navigation-bar" data-category="primary_navigation" data-label="Our Company" data-action="{{relativeURL}}" href="#menu-OurCompany" aria-expanded="false" aria-controls="menu-OurCompany"><span>Our Company</span></a>
+                            <ul class="submenu-dropdown panel-collapse collapse" role="tabpanel" id="menu-OurCompany">
+                                <li><a href="http://www.duke-energy.com/our-company"><span>Overview</span></a></li>
+                                <li>
+                                            <a tabindex="0" href="http://www.duke-energy.com/our-company/about-us"><span>About Us</span></a>
+
+                                </li>
+                                <li>
+                                            <a tabindex="0" href="http://www.duke-energy.com/our-company/sustainability"><span>Sustainability</span></a>
+
+                                </li>
+                                <li>
+                                            <a tabindex="0" href="http://www.duke-energy.com/our-company/environment"><span>Environment</span></a>
+
+                                </li>
+                                <li>
+                                                <a tabindex="0" href="http://news.duke-energy.com" target=""><span>News Center</span></a>
+
+                                </li>
+                                <li>
+                                            <a tabindex="0" href="http://www.duke-energy.com/our-company/careers"><span>Careers</span></a>
+
+                                </li>
+                                <li>
+                                            <a tabindex="0" href="http://www.duke-energy.com/our-company/investors"><span>Investors</span></a>
+
+                                </li>
+                                <li>
+                                            <a tabindex="0" href="http://www.duke-energy.com/our-company/social-media"><span>Social Media</span></a>
+
+                                </li>
+                            </ul>
+                        </li>
+                        <li ng-class="{'open-search': mobileOpenSearch}" class="panel panel-default" role="tab" tabindex="-1">
+                            <a class="ci-i-cross collapsed" data-toggle="collapse" data-parent="#side-navigation-bar" data-category="primary_navigation" data-label="Partner With Us" data-action="{{relativeURL}}" href="#menu-PartnerWithUs" aria-expanded="false" aria-controls="menu-PartnerWithUs"><span>Partner With Us</span></a>
+                            <ul class="submenu-dropdown panel-collapse collapse" role="tabpanel" id="menu-PartnerWithUs">
+                                <li><a href="http://www.duke-energy.com/partner-with-us"><span>Overview</span></a></li>
+                                <li>
+                                            <a tabindex="0" href="http://www.duke-energy.com/partner-with-us/suppliers"><span>Suppliers Resources</span></a>
+
+                                </li>
+                                <li>
+                                            <a tabindex="0" href="http://www.duke-energy.com/partner-with-us/asset-recovery"><span>Asset Recovery</span></a>
+
+                                </li>
+                                <li>
+                                            <a tabindex="0" href="http://www.duke-energy.com/partner-with-us/builders-developers-and-contractors"><span>Builders, Developers &amp; Contractors</span></a>
+
+                                </li>
+                                <li>
+                                            <a tabindex="0" href="http://www.duke-energy.com/partner-with-us/economic-development"><span>Economic Development</span></a>
+
+                                </li>
+                                <li>
+                                            <a tabindex="0" href="http://www.duke-energy.com/partner-with-us/real-estate-properties"><span>Real Estate Properties</span></a>
+
+                                </li>
+                            </ul>
+                        </li>
+                    <!-- ends mobile menu items -->
+                    <li ng-class="{'open-search': mobileOpenSearch}" tabindex="-1">
+                        <a class="mobile-search-item ci-i-cross ci-icon-navigation" title="Search Bar Toggle" ng-class="{'active': mobileOpenSearch}" ng-click="mobileSearch()">
+                            <span class="ci-icon-search"><span class="sr-only">Search Icon</span></span>
+                            <span>Search</span>
+                        </a>
+                        <div class="submenu-dropdown">
+                            <!--
+_SearchBar.cshtml
+
+*Style :
+    Assets/site/css/sass/shared/base/_navigation.scss
+*JS:
+    Assets/site/js/app.js
+    Assets/site/js/navigation.js
+-->
+<!-- starts Search Bar Section-->
+<div class="search-bar" ng-controller="searchBarController" ng-init="initProcess('38')" ng-class="{'active': openSearch, 'show': mobileOpenSearch}">
+    <!--If you want to show the search bar: for Desktop add class "active"; for Tablet/Mobile add class "show" to this div. Ex. <div class="search-bar show" >-->
+    <section class="search-input-module">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-9 col-md-12 col-lg-12">
+                    <!-- starts Search Bar Input-->
+                    <form class="search-form" method="GET" action="Search%20Results">
+                        <div class="input-style">
+                            <label for="searchInput" class="sr-only">Have a question? Type it here</label>
+                            <input autocomplete="off" type="text" name="searchInput" id="searchInput" class="input-frameless" ng-model="searchInputText" placeholder="Have a question? Type it here" ng-blur="hideQuestionWrapper()" ng-change="getResults(searchInputText)" focus-me>
+                            <button class="btn-search ci-icon-search" type="submit" data-category="search" data-label="{{searchInputText}}"><span class="sr-only">Search Submit</span></button>
+                        </div>
+                    </form>
+                    <!-- ends Search Bar Input-->
+                </div>
+            </div>
+            <!-- starts Search Bar Questions Section-->
+            <div class="questions-wrapper" ng-class="{'active':showResults}">
+
+                <!--If you want to show the search results, add class " active" to this div. ex. <div class="questions-wrapper active">-->
+                <div class="row questions-container" ng-if="predictive_results" aria-labelledby="commonQuestions">
+                    <div class="hidden-xs col-sm-3 col-md-5 col-lg-5 questions-left">
+                        <span id="commonQuestions">Related Questions</span>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-7 col-lg-7 questions-right">
+                        <ul class="list-questions">
+                            <li ng-repeat="item in predictive_results | limitTo: 3">
+                                <a role="button" title="Common Questions Result" tabindex="0" ng-click="openModal(item, 'predictive');" ng-buttondown="openModal(item, 'predictive');" data-category="search_results" data-label="Related Questions - {{item.value}}" data-action="{{searchInputText}}"><span class="question-data">{{item.value}}</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row questions-container recommended-results" ng-show="results.RecommendedResults.ResultItems.length" aria-labelledby="recommendedResults">
+                    <div class="hidden-xs col-sm-3 col-md-5 col-lg-5 questions-left">
+                        <span id="recommendedResults">Recommended Results</span>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-7 col-lg-7 questions-right">
+                        <ul class="list-questions">
+                            <li ng-repeat="item in results.RecommendedResults.ResultItems">
+                                <!--For ADA: aria-labelled-by attribute should contains the id of the title of the result section-->
+                                <a href="{{item.Url}}" aria-labelledby="recommendedresults" data-category="search_results" data-label="Recommended Results - {{item.Title}}" data-action="{{searchInputText}}">
+                                    <span ng-bind-html="trustAsHtml(item.Title)" class="question-data"></span>
+                                    <span ng-bind-html="trustAsHtml(item.Description)" class=" question-answer"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row questions-container" ng-show="results.CommonSearches.ResultItems.length" aria-labelledby="commonSearches">
+                    <div class="hidden-xs col-sm-3 col-md-5 col-lg-5 questions-left">
+                        <span id="commonSearches">Common Searches</span>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-7 col-lg-7 questions-right">
+                        <ul class="list-questions">
+                            <li ng-repeat="item in results.CommonSearches.ResultItems">
+                                <a href="Search%20Results/?searchInput={{item.Title}}" aria-labelledby="commonsearches" class="common-searches" data-category="search_results" data-label="Common Searches - {{item.Title}}" data-action="{{searchInputText}}"> <span class="ci-icon-search question-data">{{item.Title}}</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- ends Search Bar Questions Section-->
+
+        </div>
+    </section>
+    <!-- Modal -->
+
+    <div id="intelliresponse">
+        <div class="modal fade" id="searchBar-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-lg search-bar-modal" role="document">
+                <div class="modal-content" ng-class="{'modal-mutiple': modal.type==='multiple' }">
+                    <button type="button" class="close close-main-blue ng-scope" ng-click="closeModal()"><span>×</span></button><!--close modal-->
+                    <div class="row">
+                        <div ng-hide="modal.type==='no answer'" class="col-md-12 col-lg-12 col-xs-4 col-sm-12">
+                            <div class="modal-section prime" ng-class="{'modal-mutiple': modal.type==='multiple' }">
+
+                                <div class="defined" ng-if="modal.type=='defined'">
+                                    <h3 class="header-3-link">{{modal.title}}</h3> <!--Title-->
+                                    <p class="answer" ng-if="modal.body" ng-bind-html="trustAsHtml(modal.body)"></p> <!--answer-->
+                                </div>
+
+                                <div class="suggested" ng-if="modal.type=='suggested'">
+                                    <h3 class="header-3-link">We matched your question to:</h3> <!--Title-->
+                                    <p ng-if="modal.search" class="search">{{modal.search}}</p> <!--search-->
+                                    <h3 class="header-3-link">Best Response:</h3> <!--Title 2-->
+                                    <p class="answer" ng-if="modal.body" ng-bind-html="trustAsHtml(modal.body)"></p> <!--answer-->
+                                </div>
+
+                                <div class="ambiguous" ng-if="modal.type=='ambiguous'">
+                                    <h3 class="header-3-link">We matched your question to:</h3> <!--Title-->
+                                    <p ng-if="modal.search" class="search">{{modal.search}}</p> <!--search-->
+                                    <h3 class="header-3-link">Best Response:</h3> <!--Title 2-->
+                                    <p>Where you looking for the following information?</p>
+                                    <ul ng-if="modal.partial">
+                                        <li ng-repeat="q in modal.partial" ng-click="openModal(q, 'link', '3');"><a>{{q.title}}</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="multiple" ng-if="modal.type=='multiple'">
+                                    <h3 class="header-3-link">We found multiple responses to your question.</h3><!--Title-->
+                                    <p>Please choose the response below that best suits your needs:</p>
+                                    <ul ng-if="multiples">
+                                        <li ng-repeat="q in multiples" ng-click="openModal(q, 'link', '5');"><a>{{q.title}}</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div ng-hide="modal.type==='multiple' || modal.type=='ambiguous'" class="modal-section poll">
+                                <h3 class="header-3-link">How satisfied are you with the answer?</h3>
+                                <form ng-if="!responsed" class="form-inline ng-pristine ng-valid ng-scope">
+                                    <fieldset>
+                                        <legend class="sr-only">How satisfied are you with the answer?</legend>
+                                            <div class="radio">
+                                                <label for="Yes" role="button" tabindex="0" ng-buttondown="sendRadio(100)" ng-click="sendRadio(100)">
+                                                    <input type="radio"
+                                                           data-category="intelliresponse"
+                                                           data-label="Yes"
+                                                           data-action="Satisfaction survey - {{intelliresponse.current.question}}"
+                                                           ng-model="rating"
+                                                           name="optionsRadios-Yes"
+                                                           id="Yes"
+                                                           value="100"
+                                                           class="sr-only"
+                                                           tabindex="-1">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label for="Somewhat" role="button" tabindex="0" ng-buttondown="sendRadio(50)" ng-click="sendRadio(50)">
+                                                    <input type="radio"
+                                                           data-category="intelliresponse"
+                                                           data-label="Somewhat"
+                                                           data-action="Satisfaction survey - {{intelliresponse.current.question}}"
+                                                           ng-model="rating"
+                                                           name="optionsRadios-Somewhat"
+                                                           id="Somewhat"
+                                                           value="50"
+                                                           class="sr-only"
+                                                           tabindex="-1">
+                                                    Somewhat
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label for="No" role="button" tabindex="0" ng-buttondown="sendRadio(0)" ng-click="sendRadio(0)">
+                                                    <input type="radio"
+                                                           data-category="intelliresponse"
+                                                           data-label="No"
+                                                           data-action="Satisfaction survey - {{intelliresponse.current.question}}"
+                                                           ng-model="rating"
+                                                           name="optionsRadios-No"
+                                                           id="No"
+                                                           value="0"
+                                                           class="sr-only"
+                                                           tabindex="-1">
+                                                    No
+                                                </label>
+                                            </div>
+                                    </fieldset>
+                                </form>
+                                <p ng-show="responsed">Thanks for your response!</p>
+
+                            </div>
+
+                            <div ng-if="recomended.length" class="modal-section interest" ng-class="{'modal-mutiple': modal.type==='multiple' }">
+                                <h3 class="header-3-link">You may also be interested in...</h3>
+                                <ul>
+                                    <li ng-repeat="q in recomended" ng-click="openModal(q, 'link', '2');"><a>{{q.title}}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!--No Answers-->
+                        <div ng-show="modal.type==='no answer'" class="col-md-12 col-lg-12 col-xs-4 col-sm-12">
+                            <div class="modal-section nomatch">
+                                <h3 class="header-3-link text-center">We were unable to find a direct answer to your question.</h3> <!--Title-->
+                                <p class="text-center">Please try rephrasing your question as you <a href='search our site.' >search our site.</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="visible-xs hidden-sm hidden-md hidden-lg">
+                        <button ng-hide="modal.type==='no answer'" type="button" class="close text close-main-blue ng-scope" ng-click="closeModal();">
+                            <span class="close-text">Close</span>
+                            <span>&times;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Modal-->
+    <!--END Intelliresponse Modal-->
+    <!-- GSA Sitemap-->
+    <a href="/gsa-sitemap" style="display: none;"></a>
+</div>
+<!-- ends Search Bar Section-->
+<!--Intelliresponse Modal-->
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<!--end mobile navigation-->
+</div>
+<!--starts Industry Selector-->
+
+<!--ends Industry Selector-->
+<!-- New HTML - END -->
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4 col-sm-12 col-md-12 col-lg-12">
+            </div>
+        </div>
+    </div>
+    <!-- Page Content-->
+    <div>
+          <!--starts mismatch prompt as in SANDBOX-->
+<!--to show this option of mismatch prompt, remove class "hide" from this div; to hide it add class "hide"-->
+
+    <section class="full-width hero-container"  ng-class="{'video-hero': componentHero==3}" >
+        
+            <div ng-controller="SlidesShowCtrl" ng-init="init('5000')" class="carousel">
+                <carousel interval="myInterval" no-wrap="noWrapSlides" class="carousel-hero">
+        
+
+    <slide class="light-hero" ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()">
+        <div class="hidden-xs">
+            <img ng-src="/_/media/images/hero/hero-new-site-welcome-desktop.jpg" style="margin: auto;" alt="smiling woman looking at tablet">
+        </div>
+        <div class="visible-xs">
+            <img ng-src="/_/media/images/hero/hero-new-site-welcome-mobile.jpg" alt="smiling woman looking at tablet">
+        </div>
+    
+    <div class="caption-container">
+        <div class="carousel-caption container">
+            <h2>
+                It's here.
+            </h2>
+            <p class="hidden-xs">
+Introducing the new duke-energy.com.            </p>
+            
+            
+                    <a href="/info/duke-energy" data-category="carousel" data-label="It&#39;s here. Introducing the new duke-energy.com." data-action="https://www.duke-energy.com/home">Take a look around</a>
+
+        </div>
+    </div>
+
+</slide>
+                    </carousel>
+            </div>
+                    <div class="hero-inner-container">
+                
+<div class="signin-module sigin-wrapper hidden-xs" ng-controller="signInController">
+        <form class="sigin-form" id="mobile-login" name="loginForm" method="post" ng-submit="submitLogInForm($event, loginForm)" action="https://ols.duke-energy.com/037/EnterpriseSingleSignOn/SharedLoginServlet" novalidate>
+            <span class="form-title">Sign in</span>
+            <a href="/registration" class="register" data-category="sign_in" data-label="Register New Account" data-action="/home">Register New Account</a>
+            <div class="input-container" ng-class="{ 'has-error' : loginForm.userId.$invalid && loginForm.userId.$touched  }">
+                <input type="text" placeholder="User Name" init-value="" id="login-username" name="userId" ng-model="user.userId" ng-minlength="4" required>
+                <span class="ci-icon-alert"></span>
+            </div>
+            <div class="input-container" ng-class="{ 'has-error' : loginForm.userPassword.$invalid && loginForm.userPassword.$touched }">
+                <input type="password" placeholder="Password" id="login-password" name="userPassword" ng-model="user.userPassword" required>
+                <span class="ci-icon-alert"></span>
+            </div>
+            <div class="remember-container">
+                <input type="checkbox" id="loginRemember" name="loginRemember" >
+                
+                <label class=" login-remember" for="loginRemember">Remember user name</label>
+            </div>
+            <input type="hidden" name="returnURL" value="https://www.duke-energy.com/sign-in" />
+            <input type="hidden" name="deviceprofile" value="desktop" />
+            <input class="btn-medium btn-reverse" type="submit" value="Sign In" data-category="sign_in" data-label="Sign In" data-action="/home" />
+            <a class="help-link" href="/sign-in-help" data-category="sign_in" data-label="Help Signing In?" data-action="/home">Help Signing In?</a>
+        </form>
+</div>
+            </div>
+
+    </section>
+        <div class="container">
+            
+<div class="full-width signin-mobile-container" ng-controller="signInController">
+        <div class="row home-mobile-menu visible-xs">
+            <div>
+                <a href="#" class=" ci-i-cross" ng-click="signInAccordion()">
+                    Sign in
+                </a>
+            </div>
+        </div>
+        <div class="row sigin-mobile home-submenu">
+            <div class="sigin-wrapper">
+                <div class="signin-box">
+                    <a href="/registration" class="register" data-category="sign_in" data-label="Register New Account" data-action="/home">Register New Account</a>
+                    <form class="sigin-form" id="mobile-login" name="loginForm" method="post" ng-submit="submitLogInForm($event, loginForm)" action="https://ols.duke-energy.com/037/EnterpriseSingleSignOn/SharedLoginServlet" novalidate>
+                        <div class="input-container" ng-class="{ 'has-error' : loginForm.userId.$invalid && !loginForm.userId.$pristine }">
+                            <input type="text" placeholder="User Name" init-value="" id="login-username" name="userId" ng-model="user.userId" ng-minlength="3" required>
+                            <span class="ci-icon-alert"></span>
+                        </div>
+                        <div class="input-container" ng-class="{ 'has-error' : loginForm.userPassword.$invalid && !loginForm.userPassword.$pristine }">
+                            <input type="password" placeholder="Password" id="login-password" name="userPassword" ng-model=" user.userPassword" required>
+                            <span class="ci-icon-alert"></span>
+                        </div>
+                        <div class="remember-container">
+                            <input type="checkbox" id="m-loginRemember" name="loginRemember" >
+                            
+                            <label class=" login-remember" for="m-loginRemember">Remember user name</label>
+                        </div>
+                        <input type="hidden" name="returnURL" value="https://www.duke-energy.com/sign-in" />
+                        <input type="hidden" name="deviceprofile" value="mobile" />
+                        <input class="btn-medium btn-reverse" type="submit" value="Sign In" data-category="sign_in" data-label="Sign In" data-action="/home" />
+                        <a class="help-link" href="/sign-in-help" data-category="sign_in" data-label="Help Signing In?" data-action="/home">Help Signing In?</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+
+
+
+        </div>
+
+<!--
+_QuickLinks.cshtml
+
+*Style :
+Assets/site/css/sass/shared/modules/_account.scss
+*JS:
+Assets/site/js/app.js
+Assets/site/js/quick-links.js
+Assets/vendor/js/angular-vertilize.js
+-->
+<!--starts Quick Links section-->
+    <div class="container">
+        <section class="quick-links-container" ng-controller="quickLinksController">
+            <div class="full-width">
+                <div class="row home-mobile-menu visible-xs">
+                    <div class="">
+                        <a class="ci-i-cross" ng-click="slideQuickLink()" ng-class="{ 'active': isItemOpen }">Quick Links</a><!--If you want to set into expanded state: for Mobile add class "active" to this anchor; Ex. <a class="ci-i-cross active"> -->
+                    </div>
+                </div>
+                    <div class="row quick-items-wrapper row-centered" ng-class="{ 'active': isItemOpen }" aria-labelledby="quick-item" vertilize-container ng-focus-nav>
+                    </div>
+            </div>
+        </section>
+    </div>
+<!--ends Quick Links section-->
+<!--
+    Styles: _intelliresponse.scss
+    Js : _intelliresponse.js
+-->
+<!--
+_Flipboard.cshtml
+
+*Style :
+Assets/site/css/sass/shared/modules/_flipboard.scss
+*JS:
+Assets/vendor/js/angular-vertilize.js
+Assets/site/js/app.js
+-->
+<!-- starts Flipboard Item-->
+        <section class="full-width more-ways-container shaded-bg" ng-controller="podsController">
+            <!-- for white background add class "white-bg"; for alternate background color: add class "shaded-bg" to this section . Example: <section class="full-width more-ways-container shaded-bg"> -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-4 col-sm-12 col-md-12 col-lg-12">
+                        <div class="header-container">
+                            <!--for the image small icon: add the class "small icon"-->
+                            <h2 class="header-2">Save Energy &amp; Money</h2> <!-- for Header 2 Duotone use a span with class "duotone"; to break line add class="break" to span-->
+                            <p class="intro-txt rich-text-editor">
+                                Smart energy tips, savings calculators, incentive programs&nbsp;<span>–</span>&nbsp;find the tools and resources you need to live comfortably and use energy more efficiently every day of the year.<br />
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="flipboard-pod-items-b2236f12-e501-4ff1-b749-8ff3c0f2b8c5" class="row row-centered" ng-init="typeLayout('flipboard-pod-items-b2236f12-e501-4ff1-b749-8ff3c0f2b8c5', 2)" vertilize-container>
+
+                        <div class="col-xs-4 flipboard-item-wrapper" ng-class="typeLayoutclass" vertilize>
+<a href='/home/savings/winter-heating-energy-savings' aria-labelledby='ACKR88Cd9EuWk8tRNqjnMQ' data-category='flipboard' data-label='Tile - Cool Weather Savings Tips' data-action='Save Energy &amp; Money' title='Cool Weather Savings Tips' role='button' aria-describedby='JzVkWrdFwk2nq1cBtnA20g' >                                        <div class="flipboard-item tile-gray">
+                                                <div><img src='/_/media/images/flipboard/flipboard-winter-savings-tips.jpg?h=280&amp;w=280&amp;la=en' class='img-circle' alt='Winter Savings' /></div>
+                                                <span id="ACKR88Cd9EuWk8tRNqjnMQ">Cool Weather Savings Tips</span>
+                                                <div class="flipboard-overlay">
+                                                    <div class="overlay-text-container">
+                                                        <p id="JzVkWrdFwk2nq1cBtnA20g">Find smart tips that can help you save energy and money during the cooler temperatures.</p>
+                                                    </div>
+                                                    <div class="btn-reverse btn-small">Learn More</div>
+                                                </div>
+                                        </div>
+</a>                        </div>
+                        <div class="col-xs-4 flipboard-item-wrapper" ng-class="typeLayoutclass" vertilize>
+<a href='/home/savings/lower-my-bill-toolkit/savings-calculators' aria-labelledby='ACKR88Cd9EuWk8tRNqjnMQ' data-category='flipboard' data-label='Tile - Calculators' data-action='Save Energy &amp; Money' title='Calculators' role='button' aria-describedby='JzVkWrdFwk2nq1cBtnA20g' >                                        <div class="flipboard-item tile-dark-red">
+                                                <div><img src='/_/media/images/flipboard/flipboard-calculator.jpg?h=280&amp;w=280&amp;la=en' class='img-circle' alt='Image' /></div>
+                                                <span id="ACKR88Cd9EuWk8tRNqjnMQ">Calculators</span>
+                                                <div class="flipboard-overlay">
+                                                    <div class="overlay-text-container">
+                                                        <p id="JzVkWrdFwk2nq1cBtnA20g">Do the math. Use our online calculators to estimate your home&#39;s energy usage and see how it all adds up.</p>
+                                                    </div>
+                                                    <div class="btn-reverse btn-small">Learn More</div>
+                                                </div>
+                                        </div>
+</a>                        </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-4 col-sm-12 col-md-12 col-lg-12 btn-ways text-center">
+<a href='/home/savings' data-category='flipboard' title='View All' data-action='Save Energy &amp; Money' class='btn-main-blue btn-medium' data-label='View All' >View All</a>                    </div>
+                </div>
+            </div>
+        </section>
+<!-- ends Flipboard Item-->
+    <section class="pod-layout full-width white-bg" aria-labelledby="">
+    <!-- for white background add class "white-bg"; for alternate background color: add class "shaded-bg" to this section -->
+    <div class="container">
+        <div class="pod-container row " >
+                <div class="col-xs-4 col-sm-12 col-md-12 col-lg-12">
+                    <div class="header-container">
+                        <img src='/_/media/images/svg/lights/iconoutdoorlight.svg?h=100&amp;w=100&amp;la=en' class='small-icon' alt='Image' /> <!--for the image small icon: add the class "small icon"-->
+                            <h2  class="header-2">
+                                <!-- for Header 2 Duotone use a span with class "duotone"; to break line add class="break" to span-->
+                                Products &amp; Services
+                            </h2>
+
+                            <p  class="intro-txt">
+                                Find the products and services you need to bring energy efficiency to light.
+                            </p>
+                    </div>
+                </div>
+        </div>
+        <div class="pod-items">
+            <!--Rectangular pod Items-->
+            <div id="rectangular-pod-items-e214eee5-36f4-47d1-ac82-0c875647e38d" class="rectangular-pod-items row row-centered" ng-controller="podsController" ng-init="typeLayout('rectangular-pod-items-e214eee5-36f4-47d1-ac82-0c875647e38d', 1)" vertilize-container>
+                            <div class="item-wrapper col-xs-4" ng-class="typeLayoutclass">
+<a href='/home/products/outdoor-lighting' aria-labelledby='a22095bf-5ec6-448c-b95f-f748e2b4a9d2' data-category='navigation_pod' aria-describedby='r-pod-a22095bf-5ec6-448c-b95f-f748e2b4a9d2-1' data-label='Rectangular - Turnkey Outdoor Lighting' vertilize='' title='Turnkey Outdoor Lighting' class='item' data-action='Products &amp; Services' target='_self' >                                            <div class="pod-item-img">
+                                                <img src='/_/media/images/rectangular-pod/rectangular-pod-res-outdoor-lighting.jpg?h=190&amp;w=300&amp;la=en' aria-labelledby='a22095bf-5ec6-448c-b95f-f748e2b4a9d2' alt='Image' />
+                                            </div>
+                                                <div class="header-3-link">
+                                                    <span id="a22095bf-5ec6-448c-b95f-f748e2b4a9d2" class=" inner-wrapper">Turnkey Outdoor Lighting<span class="ci-i-right-arrow-slim"></span></span>
+                                                </div>
+                                            <p class="body-copy" id="r-pod-a22095bf-5ec6-448c-b95f-f748e2b4a9d2-1">
+                                                Our worry-free solution keeps your home covered with little-to-no upfront costs.
+                                            </p>
+</a>                            </div>
+                            <div class="item-wrapper col-xs-4" ng-class="typeLayoutclass">
+<a href='/home/billing/paperless' aria-labelledby='82dda17c-2e24-481c-89ee-5c4d8720d0b5' data-category='navigation_pod' aria-describedby='r-pod-82dda17c-2e24-481c-89ee-5c4d8720d0b5-1' data-label='Rectangular - Less paper... more control' vertilize='' title='Less paper... more control' class='item' data-action='Products &amp; Services' target='_self' >                                            <div class="pod-item-img">
+                                                <img src='/_/media/images/rectangular-pod/rectangular-pod-paperless-billing.jpg?h=190&amp;w=300&amp;la=en' aria-labelledby='82dda17c-2e24-481c-89ee-5c4d8720d0b5' alt='Image' />
+                                            </div>
+                                                <div class="header-3-link">
+                                                    <span id="82dda17c-2e24-481c-89ee-5c4d8720d0b5" class=" inner-wrapper">Less paper... more control<span class="ci-i-right-arrow-slim"></span></span>
+                                                </div>
+                                            <p class="body-copy" id="r-pod-82dda17c-2e24-481c-89ee-5c4d8720d0b5-1">
+                                                Go paperless and check reminders or pay bills by email anytime, from any place.
+                                            </p>
+</a>                            </div>
+                            <div class="item-wrapper col-xs-4" ng-class="typeLayoutclass">
+<a href='/outages/alerts' aria-labelledby='84020a92-78de-4497-90e7-61fd2672c078' data-category='navigation_pod' aria-describedby='r-pod-84020a92-78de-4497-90e7-61fd2672c078-1' data-label='Rectangular - Stay in the know wherever you go' vertilize='' title='Stay in the know wherever you go' class='item' data-action='Products &amp; Services' target='_self' >                                            <div class="pod-item-img">
+                                                <img src='/_/media/images/rectangular-pod/rectangular-pod-proactive-outage-alerts.jpg?h=190&amp;w=300&amp;la=en' aria-labelledby='84020a92-78de-4497-90e7-61fd2672c078' alt='Image' />
+                                            </div>
+                                                <div class="header-3-link">
+                                                    <span id="84020a92-78de-4497-90e7-61fd2672c078" class=" inner-wrapper">Stay in the know wherever you go<span class="ci-i-right-arrow-slim"></span></span>
+                                                </div>
+                                            <p class="body-copy" id="r-pod-84020a92-78de-4497-90e7-61fd2672c078-1">
+                                                Get power outage alerts by text, phone call or email.
+                                            </p>
+</a>                            </div>
+            </div>
+            <!--Ends Rectangular pod Items-->
+
+        <!--Starts Big icon pod Items-->
+        <!--Ends Big icon pod Items-->
+        <!--Starts Centered pod Items-->
+        <!--Ends Centered pod Items-->
+        </div>
+        <div class="call-to-action">
+            <div class="row">
+                <div class="col-xs-4 col-sm-12 col-md-12 col-lg-12 text-center">
+<a href='/home/products' data-category='navigation_pod' data-label='Rectangular - View All' title='View All' class='btn-main-blue btn-medium' data-action='Products &amp; Services' target='' >View All</a>                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+<!--
+_ShortCopy.cshtml
+
+*Style :
+Assets/site/css/sass/shared/modules/_short-copy.scss
+*JS:
+none
+-->
+<!-- starts Short Copy component-->
+<!-- ends Short Copy component-->
+    </div>
+</div>
+<!--Email Signup-->
+
+<section id="email-signup" ng-controller="emailSignupController as esCtrl" ng-class="{ 'open': esCtrl.isFormOpen }">
+    <div class="header" ng-click="esCtrl.toggleSignupBox()" ng-keydown="esCtrl.kbHandler($event)" role="button" tabindex="0" aria-expanded="{{ esCtrl.isFormOpen }}">
+        <img src='/_/media/images/svg/misc/iconsignupforemail.svg?h=100&amp;w=100&amp;la=en' class='icon-email' alt='Sign up for email icon' /><span>Sign up for email</span>
+    </div>
+    <button type="button" class="btn-close-form" ng-click="esCtrl.dismissSignupBox()" aria-label="Close">×</button>
+    <div class="form-container">
+        <!--
+        <params>
+            src: URL where the email signup form will is hosted.
+            title: Description of inner content
+        </params>
+        -->
+        <iframe src="https://www.pages02.net/dukeenergycorporation-reside/email-signup" title="Email Signup Link"></iframe>
+    </div>
+</section><!--End Email Signup-->
+<!-- Page Footer -->
+<!-- starts Footer-->
+
+<!--
+_Footer.cshtml
+
+*Style :
+    Assets/site/css/sass/shared/base/_footer.scss
+    Assets/site/css/sass/shared/modules/_social-media-links.scss
+
+*JS:
+    Assets/site/js/app.js
+    Assets/site/js/footer.js
+-->
+<script type="text/ng-template" id="group-template.html">
+    <div class="accordion-container">
+        <div class="accordion-tab accordion-trigger-text text-left" ng-keypress="toggleOpen($event)">
+            <h3>
+                <a href tabindex="0" class="header-3-link accordion-toggle" ng-click="toggleOpen(); $parent.toggleAccordeonStyles($event)" uib-accordion-transclude="heading">
+                    <span ng-class="{'text-muted': isDisabled}" class="inner-wrapper">{{heading}}</span>
+                    <span class="icon ci-i-cross" ng-class="{'ci-i-minus': isOpen, 'ci-i-cross': !isOpen}"></span>
+                </a>
+            </h3>
+        </div>
+
+        <div class="accordion-content collapse" collapse="!isOpen">
+            <div class="body-copy" ng-transclude></div>
+        </div>
+    </div>
+</script>
+<!-- starts Footer-->
+<footer>
+    <div ng-controller="footerController" class="complete-footer">
+<!-- starts Social Media section-->
+<div class="social-wrapper text-center" ng-controller="podsController">
+    <div class="container" ng-init="typeLayout('footer-items', 4)">
+        <div id="footer-items" class="row row-centered social-share">
+                    <div class="social-item col-sm-1" ng-class="typeLayoutclass">
+<a href='http://www.facebook.com/DukeEnergy' class='social-fb-icon' title='Facebook' target='_blank' >                            <span class="sr-only">Facebook</span>
+</a>
+                    </div>
+                    <div class="social-item col-sm-1" ng-class="typeLayoutclass">
+<a href='http://www.twitter.com/DukeEnergy' class='social-twitter-icon' title='Twitter' target='_blank' >                            <span class="sr-only">Twitter</span>
+</a>
+                    </div>
+                    <div class="social-item col-sm-1" ng-class="typeLayoutclass">
+<a href='http://www.linkedin.com/company/duke-energy-corporation' class='social-linkedin-icon' title='LinkedIn' target='_blank' >                            <span class="sr-only">LinkedIn</span>
+</a>
+                    </div>
+                    <div class="social-item col-sm-1" ng-class="typeLayoutclass">
+<a href='http://www.youtube.com/DukeEnergyMediaCtr' class='social-youtube-icon' title='YouTube' target='_blank' >                            <span class="sr-only">YouTube</span>
+</a>
+                    </div>
+                    <div class="social-item col-sm-1" ng-class="typeLayoutclass">
+<a href='https://news.duke-energy.com/rss' class='social-rss-icon' title='RSS' target='_blank' >                            <span class="sr-only">RSS</span>
+</a>
+                    </div>
+                    <div class="social-item col-sm-1" ng-class="typeLayoutclass">
+<a href='https://www.instagram.com/duke_energy' title='Instagram' >                            <span class="sr-only">Instagram</span>
+</a>
+                    </div>
+        </div>
+    </div>
+</div>
+<!-- ends Social Media section-->
+<!-- starts Fat Footer section -->
+<!--Use this block for desktop-->
+<div class="visible-md visible-lg hidden-xs hidden-sm">
+    <div class="fat-footer">
+            <div class="container footer-nav-wrapper">
+                <section class="row footer-links">
+                            <div class="col-xs-4 col-sm-12 col-md-2 col-lg-2 footer-col-1">
+                                    <div class="footer-links-item">
+                                        <h1>
+<a href='/our-company/about-us' class='heading-link' target='_parent' data-view='large' title='OUR COMPANY' >                                        <span>OUR COMPANY<i class="icon ci-i-cross"></i></span>
+</a>
+                                        </h1>
+                                        <ul class="group-links">
+                                            <li>
+                                                <a href="" class="hidden-md hidden-lg">
+                                                    <span>Overview</span>
+                                                </a>
+                                            </li>
+                                                <li><a href="/our-company/about-us" target="_parent" title="About Us"><span>About Us</span></a></li>
+                                                <li><a href="/our-company/environment" target="" title=""><span>Environment</span></a></li>
+                                                <li><a href="/our-company/careers" target="" title=""><span>Careers</span></a></li>
+                                                <li><a href="/our-company/sustainability" target="" title=""><span>Sustainability</span></a></li>
+                                                <li><a href="/our-company/investors" target="" title=""><span>Investors</span></a></li>
+                                                <li><a href="/our-company/social-media" target="" title=""><span>Social Media</span></a></li>
+                                        </ul>
+                                    </div>
+                            </div>
+                            <div class="col-xs-4 col-sm-12 col-md-2 col-lg-2 footer-col-2">
+                                    <div class="footer-links-item">
+                                        <h1>
+<a href='/partner-with-us' class='heading-link' data-view='large' >                                        <span>Partner With Us<i class="icon ci-i-cross"></i></span>
+</a>
+                                        </h1>
+                                        <ul class="group-links">
+                                            <li>
+                                                <a href="" class="hidden-md hidden-lg">
+                                                    <span>Overview</span>
+                                                </a>
+                                            </li>
+                                                <li><a href="/partner-with-us/suppliers" target="" title=""><span>Suppliers</span></a></li>
+                                                <li><a href="/partner-with-us/asset-recovery" target="" title=""><span>Asset Recovery</span></a></li>
+                                                <li><a href="/partner-with-us/builders-developers-and-contractors" target="" title=""><span>Builders Developers and Contractors</span></a></li>
+                                                <li><a href="/partner-with-us/economic-development" target="" title=""><span>Economic Development</span></a></li>
+                                                <li><a href="/partner-with-us/real-estate-properties" target="" title=""><span>Real Estate Properties</span></a></li>
+                                        </ul>
+                                    </div>
+                            </div>
+                            <div class="col-xs-4 col-sm-12 col-md-2 col-lg-2 footer-col-3">
+                                    <div class="footer-links-item">
+                                        <h1>
+<a href='/safety-and-preparedness' class='heading-link' data-view='large' >                                        <span>Safety and Preparedness<i class="icon ci-i-cross"></i></span>
+</a>
+                                        </h1>
+                                        <ul class="group-links">
+                                            <li>
+                                                <a href="" class="hidden-md hidden-lg">
+                                                    <span>Overview</span>
+                                                </a>
+                                            </li>
+                                                <li><a href="/safety-and-preparedness/storm-safety" target="" title=""><span>Storm Safety</span></a></li>
+                                                <li><a href="/safety-and-preparedness/natural-gas-safety" target="" title=""><span>Natural Gas Safety</span></a></li>
+                                                <li><a href="/safety-and-preparedness/overhead-power-lines" target="" title=""><span>Overhead Power Lines</span></a></li>
+                                                <li><a href="/safety-and-preparedness/electric-safety" target="" title=""><span>Electric Safety</span></a></li>
+                                                <li><a href="/safety-and-preparedness/nuclear-safety" target="" title=""><span>Nuclear Safety</span></a></li>
+                                                <li><a href="/safety-and-preparedness/call-before-you-dig" target="" title=""><span>Call Before You Dig</span></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="footer-links-item">
+                                        <h1>
+<a href='/energy-education' class='heading-link' data-view='large' >                                        <span>Energy Education<i class="icon ci-i-cross"></i></span>
+</a>
+                                        </h1>
+                                        <ul class="group-links">
+                                            <li>
+                                                <a href="" class="hidden-md hidden-lg">
+                                                    <span>Overview</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                            </div>
+                            <div class="col-xs-4 col-sm-12 col-md-2 col-lg-2 footer-col-4">
+                                    <div class="footer-links-item">
+                                        <h1>
+<a href='/community' class='heading-link' data-view='large' >                                        <span>Community<i class="icon ci-i-cross"></i></span>
+</a>
+                                        </h1>
+                                        <ul class="group-links">
+                                            <li>
+                                                <a href="" class="hidden-md hidden-lg">
+                                                    <span>Overview</span>
+                                                </a>
+                                            </li>
+                                                <li><a href="/community/duke-energy-foundation" target="" title=""><span>Duke Energy Foundation</span></a></li>
+                                                <li><a href="/community/employee-engagement" target="" title=""><span>Employee Engagement</span></a></li>
+                                                <li><a href="/community/customer-assistance-programs" target="" title=""><span>Energy Assistance Programs</span></a></li>
+                                                <li><a href="/community/lakes" target="" title=""><span>Lakes</span></a></li>
+                                                <li><a href="/community/trees-and-rights-of-way" target="" title=""><span>Trees and Rights of Way</span></a></li>
+                                                <li><a href="/community/retirees" target="" title=""><span>Retirees</span></a></li>
+                                        </ul>
+                                    </div>
+                            </div>
+                            <div class="col-xs-4 col-sm-12 col-md-2 col-lg-2 footer-col-5">
+                                    <div class="footer-links-item">
+                                        <h1>
+<a href='/home-and-energy-services/home-services' class='heading-link' data-view='large' >                                        <span>Home Services<i class="icon ci-i-cross"></i></span>
+</a>
+                                        </h1>
+                                        <ul class="group-links">
+                                            <li>
+                                                <a href="" class="hidden-md hidden-lg">
+                                                    <span>Overview</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="footer-links-item">
+                                        <h1>
+<a href='/home-and-energy-services/energy-services' class='heading-link' data-view='large' >                                        <span>Energy Services<i class="icon ci-i-cross"></i></span>
+</a>
+                                        </h1>
+                                        <ul class="group-links">
+                                            <li>
+                                                <a href="" class="hidden-md hidden-lg">
+                                                    <span>Overview</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                            </div>
+                </section>
+
+            </div>
+    </div>
+</div>
+<!--Use this block for desktop end-->
+<!--Accordion for tablet and mobile-->
+<div class="visible-xs visible-sm hidden-md hidden-lg">
+    <div class="fat-footer">
+            <div class="container">
+                <section class="row footer-links">
+                    <div class="footer-links-item">
+                        <div class="row">
+                            
+                            <accordion close-others="true">
+                                
+                                    <accordion-group template-url="group-template.html" heading="OUR COMPANY">
+                                        
+                                        <ul class="group-links dropup">
+                                            <li>
+                                                <a href="/our-company/about-us" class="hidden-md hidden-lg">
+                                                    <span>Overview</span><i class="caret"></i>
+                                                </a>
+                                            </li>
+                                                <li><a href="/our-company/about-us" target="_parent" title="About Us"><span>About Us</span></a></li>
+                                                <li><a href="/our-company/environment" target="" title=""><span>Environment</span></a></li>
+                                                <li><a href="/our-company/careers" target="" title=""><span>Careers</span></a></li>
+                                                <li><a href="/our-company/sustainability" target="" title=""><span>Sustainability</span></a></li>
+                                                <li><a href="/our-company/investors" target="" title=""><span>Investors</span></a></li>
+                                                <li><a href="/our-company/social-media" target="" title=""><span>Social Media</span></a></li>
+                                        </ul>
+                                        
+                                        
+                                    </accordion-group>
+                                    <accordion-group template-url="group-template.html" heading="PARTNER WITH US">
+                                        
+                                        <ul class="group-links dropup">
+                                            <li>
+                                                <a href="/partner-with-us" class="hidden-md hidden-lg">
+                                                    <span>Overview</span><i class="caret"></i>
+                                                </a>
+                                            </li>
+                                                <li><a href="/partner-with-us/suppliers" target="" title=""><span>Suppliers</span></a></li>
+                                                <li><a href="/partner-with-us/asset-recovery" target="" title=""><span>Asset Recovery</span></a></li>
+                                                <li><a href="/partner-with-us/builders-developers-and-contractors" target="" title=""><span>Builders Developers and Contractors</span></a></li>
+                                                <li><a href="/partner-with-us/economic-development" target="" title=""><span>Economic Development</span></a></li>
+                                                <li><a href="/partner-with-us/real-estate-properties" target="" title=""><span>Real Estate Properties</span></a></li>
+                                        </ul>
+                                        
+                                        
+                                    </accordion-group>
+                                    <accordion-group template-url="group-template.html" heading="SAFETY AND PREPAREDNESS">
+                                        
+                                        <ul class="group-links dropup">
+                                            <li>
+                                                <a href="/safety-and-preparedness" class="hidden-md hidden-lg">
+                                                    <span>Overview</span><i class="caret"></i>
+                                                </a>
+                                            </li>
+                                                <li><a href="/safety-and-preparedness/storm-safety" target="" title=""><span>Storm Safety</span></a></li>
+                                                <li><a href="/safety-and-preparedness/natural-gas-safety" target="" title=""><span>Natural Gas Safety</span></a></li>
+                                                <li><a href="/safety-and-preparedness/overhead-power-lines" target="" title=""><span>Overhead Power Lines</span></a></li>
+                                                <li><a href="/safety-and-preparedness/electric-safety" target="" title=""><span>Electric Safety</span></a></li>
+                                                <li><a href="/safety-and-preparedness/nuclear-safety" target="" title=""><span>Nuclear Safety</span></a></li>
+                                                <li><a href="/safety-and-preparedness/call-before-you-dig" target="" title=""><span>Call Before You Dig</span></a></li>
+                                        </ul>
+                                        
+                                        
+                                    </accordion-group>
+                                    <accordion-group template-url="group-template.html" heading="ENERGY EDUCATION">
+                                        
+                                        <ul class="group-links dropup">
+                                            <li>
+                                                <a href="/energy-education" class="hidden-md hidden-lg">
+                                                    <span>Overview</span><i class="caret"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        
+                                        
+                                    </accordion-group>
+                                    <accordion-group template-url="group-template.html" heading="COMMUNITY">
+                                        
+                                        <ul class="group-links dropup">
+                                            <li>
+                                                <a href="/community" class="hidden-md hidden-lg">
+                                                    <span>Overview</span><i class="caret"></i>
+                                                </a>
+                                            </li>
+                                                <li><a href="/community/duke-energy-foundation" target="" title=""><span>Duke Energy Foundation</span></a></li>
+                                                <li><a href="/community/employee-engagement" target="" title=""><span>Employee Engagement</span></a></li>
+                                                <li><a href="/community/customer-assistance-programs" target="" title=""><span>Energy Assistance Programs</span></a></li>
+                                                <li><a href="/community/lakes" target="" title=""><span>Lakes</span></a></li>
+                                                <li><a href="/community/trees-and-rights-of-way" target="" title=""><span>Trees and Rights of Way</span></a></li>
+                                                <li><a href="/community/retirees" target="" title=""><span>Retirees</span></a></li>
+                                        </ul>
+                                        
+                                        
+                                    </accordion-group>
+                                    <accordion-group template-url="group-template.html" heading="HOME SERVICES">
+                                        
+                                        <ul class="group-links dropup">
+                                            <li>
+                                                <a href="/home-and-energy-services/home-services" class="hidden-md hidden-lg">
+                                                    <span>Overview</span><i class="caret"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        
+                                        
+                                    </accordion-group>
+                                    <accordion-group template-url="group-template.html" heading="ENERGY SERVICES">
+                                        
+                                        <ul class="group-links dropup">
+                                            <li>
+                                                <a href="/home-and-energy-services/energy-services" class="hidden-md hidden-lg">
+                                                    <span>Overview</span><i class="caret"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        
+                                        
+                                    </accordion-group>
+                                
+                                
+                                
+                            </accordion>
+                            
+                        </div>
+                    </div>
+                </section>
+            </div>
+    </div>
+</div>
+<!--Accordion for tablet and mobile ends-->
+<!-- ends Fat Footer section --><!-- starts Skinny Footer section -->
+<section class="skinny-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-4 col-lg-4 hidden-xs hidden-sm">
+                <div class="copyright">
+                    <p>© Duke Energy Corporation. All Rights Reserved.</p>
+                </div>
+            </div>
+            <div class="col-xs-4 col-sm-12 col-md-6 col-lg-6 ">
+                <!-- if it's the option of the skinny footer with No TRUSTEe, change the class of this div to class="col-xs-4 col-sm-12 col-md-8 col-lg-8"-->
+                        <div class="group-links">
+<a href='/legal/privacy' >                                        <span>Privacy</span>
+</a><a href="" target="" title=""><span></span></a><a href='/spanish' >                                        <span>Spanish</span>
+</a><a href='/legal/terms-of-use' >                                        <span>Terms of Use</span>
+</a><a href='/customer-service/report-environmental-concern' >                                        <span>Report Environmental Concern</span>
+</a>                        </div>
+
+            </div>
+                <div class="col-xs-4 col-sm-12 col-md-2 col-lg-2 links">
+                    <div class="trust-e">
+                        <a href="https://privacy.truste.com/privacy-seal/Duke-Energy-Corporation/validation?rid=7f241103-1ab4-4712-bee3-75a6d4642415" target="_blank">
+                            <img src="https://privacy-policy.truste.com/privacy-seal/Duke-Energy-Corporation/seal?rid=7f241103-1ab4-4712-bee3-75a6d4642415" alt="TRUSTe online privacy certification">
+                        </a>
+                    </div>
+                </div>
+
+            <div class="col-xs-4 visible-xs visible-sm">
+                <div class="copyright">
+                    <p>© Duke Energy Corporation. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ends Skinny footer section -->    </div>
+</footer>
+
+<!-- ends Footer-->
+
+<!-- Scripts -->
+<script src="/Assets/vendor/js/jquery.min.js"></script>
+<script src="/Assets/vendor/js/jquery.dataTables.min.js"></script>
+<script src="/Assets/vendor/js/bootstrap.min.js"></script>
+<script src="/Assets/vendor/js/angular.min.js"></script>
+<script src="/Assets/vendor/js/angular-cookies.js"></script>
+<script src="/Assets/vendor/js/bootstrap-toggle.min.js"></script>
+<script src="/Assets/vendor/js/angular-animate.js"></script>
+<script src="/Assets/vendor/js/angular-sanitize.min.js"></script>
+<script src="/Assets/vendor/js/ui-bootstrap-tpls-0.13.3.js"></script>
+<script src="/Assets/vendor/js/angular-vertilize.js"></script>
+<script src="/Assets/vendor/js/shieldui-all.min.js"></script>
+<script src="/Assets/vendor/js/jquery.jplayer.min.js"></script>
+<script src='/Assets/vendor/js/lodash.min.js'></script>
+<script src="/Assets/vendor/js/angular-touch.min.js"></script>
+<script src="/Assets/vendor/js/angular-scroll.min.js"></script>
+<script src="/Assets/vendor/js/angular-datatables.min.js"></script>
+<script src="/Assets/vendor/js/iframeResizer.min.js"></script>
+<script src="/Assets/vendor/js/iframeResizer.contentWindow.min.js"></script>
+<script src="/Assets/vendor/js/iframe-resizer.min.js"></script>
+<script src="/Assets/vendor/js/mask.min.js"></script>
+<script src="/Assets/site/js/app.min.js"></script>
+<script src="/Assets/site/js/components.min.js"></script>
+<script src="https://www.google.com/recaptcha/api.js?onload=vcRecaptchaApiLoaded&render=explicit" async defer></script>
+<script src="/Assets/vendor/js/angular-recaptcha.min.js"></script>
+<script src="/Assets/vendor/js/angular-beforeunload.js"></script>
+<script src="/Assets/vendor/js/angularjs-dropdown-multiselect.js"></script>
+<script src="/Assets/vendor/js/select.min.js"></script>
+<script src="/Assets/vendor/js/nsPopover.js"></script>
+<script src="/Assets/vendor/js/checklist-model.js"></script>
+
+
+
+
+
+</body>
+</html>
