@@ -73,4 +73,10 @@ par(mfrow=c(1,1))
 loadtime <- table(total_500.sub$loading.time)
 hist(loadtime,col = "DARKRED")
 #########################################################################################################
+#Now we will see the words in total and fo unique count
+par(mfrow=c(2,1))
+total_words <- table(total_500.sub$total_words)
+u_words <- table(total_500.sub$unique_words)
+plot(total_words,col = "DARKRED")
+plot(u_words,col = "darkgreen")
 
