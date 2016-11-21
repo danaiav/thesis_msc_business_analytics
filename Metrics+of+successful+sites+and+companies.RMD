@@ -12,16 +12,24 @@ total_500 <- read.csv("F:/Dropbox/Dani/Spinellis - Diplwmatiki/Jupyter markdown/
 dim(total_500)
 names(total_500)
 str(total_500)
-#since we know that some pages where not downloaded we have to create a subset that we do not include those pages so as not to have n/a
+
+#We make the factors numbers where it is possible
 total_500.sub <- total_500
+total_500.sub$Assets.. <- gsub(",", ".", total_500.sub$Assets.. )
+total_500.sub$Market.value.. <- gsub(",", ".", total_500.sub$Market.value.. )
+total_500.sub$Revenues.. <- gsub(",", ".", total_500.sub$Revenues.. )
+total_500.sub$Total.Stockholder.Equity.. <- gsub(",", ".", total_500.sub$Total.Stockholder.Equity.. )
+num <- c(2,3,4,5,6,9,10,11,12,13,14,22,24,25,757:767)
+for(i in 1:27){
+  k <- num[i]
+  total_500.sub[,k] <- as.numeric(as.character(total_500.sub[,k]))}  
+str(total_500.sub)
+#since we know that some pages where not downloaded we have to create a subset that we do not include those pages so as not to have n/a
 not_downloadable_sites= c(15,64,86,90,97,118,131,135,141,161,164,216,239,242,275,306,326,363,397,414,416,441,455,464)
 for (i in 1:24) {
   nds <- not_downloadable_sites[i]
   total_500.sub <- subset(total_500.sub, X != nds)
 }
-str(total_500.sub)
-names(total_500.sub)
-total_500.sub$X
 #we remove the extra value X since it is not necessary for the analysis
 total_500.sub$X <- NULL
 #we upload the libraries beneath that we will use in the analysis
@@ -50,10 +58,6 @@ barplot(social_media_linkedin,horiz = FALSE,col = "DARKBLUE") + title ("linkedin
 par(mfrow=c(1,1))
 #########################################################################################################
 #We will now check the links by creating an histogram
-#First we need to convert the variables for factors to integers
-total_500.sub$external <- as.numeric(as.character(total_500.sub$external))
-total_500.sub$internal <- as.numeric(as.character(total_500.sub$internal))
-total_500.sub$total.links <- as.numeric(as.character(total_500.sub$total.links))
 #Then we create tables in order to see in what frequency the links appear
 social_media_external <- table(total_500.sub$external)
 social_media_internal <- table(total_500.sub$internal)
@@ -63,4 +67,5 @@ par(mfrow=c(3,1))
 barplot(social_media_external,col = "DARKRED") + title ("External links frequency")
 barplot(social_media_internal,col = "DARKRED") + title ("Internal links frequency")
 barplot(social_media_total_links,col = "DARKRED") + title ("Total links frequency")
+#########################################################################################################
 ```
