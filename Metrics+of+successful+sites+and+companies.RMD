@@ -64,8 +64,13 @@ social_media_internal <- table(total_500.sub$internal)
 social_media_total_links <- table(total_500.sub$total.links)
 #Finally we create barplots to see the frequency
 par(mfrow=c(3,1))
-barplot(social_media_external,col = "DARKRED") + title ("External links frequency")
+plot(social_media_external,col = "DARKRED") + title ("External links frequency")
 barplot(social_media_internal,col = "DARKRED") + title ("Internal links frequency")
 barplot(social_media_total_links,col = "DARKRED") + title ("Total links frequency")
 #########################################################################################################
-```
+#Now we will see the loading time per site
+par(mfrow=c(1,1))
+loadtime <- table(total_500.sub$loading.time)
+hist(loadtime,col = "DARKRED")
+#########################################################################################################
+
