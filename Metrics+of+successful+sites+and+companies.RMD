@@ -79,4 +79,10 @@ total_words <- table(total_500.sub$total_words)
 u_words <- table(total_500.sub$unique_words)
 plot(total_words,col = "DARKRED")
 plot(u_words,col = "darkgreen")
+#########################################################################################################
+#Now we will see the readability of the sites
+par(mfrow=c(1,1))
+readability <- table(total_500.sub$Readability)
+plot(readability,col = "DARKRED")
+#########################################################################################################
 
