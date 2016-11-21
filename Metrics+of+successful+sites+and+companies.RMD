@@ -85,4 +85,10 @@ par(mfrow=c(1,1))
 readability <- table(total_500.sub$Readability)
 plot(readability,col = "DARKRED")
 #########################################################################################################
-
+names(total_500.sub)
+images <- table(total_500.sub$total.images)
+plot(images)
+########################################################################################################
+bmp <- table(total_500.sub$.bmp, total_500.sub$company)
+mosaicplot(bmp)
+  
