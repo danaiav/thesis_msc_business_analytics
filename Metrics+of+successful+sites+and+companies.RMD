@@ -19,8 +19,8 @@ total_500.sub$Assets.. <- gsub(",", ".", total_500.sub$Assets.. )
 total_500.sub$Market.value.. <- gsub(",", ".", total_500.sub$Market.value.. )
 total_500.sub$Revenues.. <- gsub(",", ".", total_500.sub$Revenues.. )
 total_500.sub$Total.Stockholder.Equity.. <- gsub(",", ".", total_500.sub$Total.Stockholder.Equity.. )
-num <- c(2,3,4,5,6,9,10,11,12,13,14,22,24,25,757:767)
-for(i in 1:27){
+num <- c(2,3,4,5,6,9,13,14,12,24,25,766,767)
+for(i in 1:13){
   k <- num[i]
   total_500.sub[,k] <- as.numeric(as.character(total_500.sub[,k]))}  
 str(total_500.sub)
@@ -36,8 +36,6 @@ total_500.sub$X <- NULL
 library(ggplot2)
 library(reshape2)
 library(DAAG)
-#We make the variables numeric in order to test them
-total_500.sub[,766] <- as.numeric(total_500.sub[,766])
 ##########################################################################################################
 #Firstly we will analyze the social media relevance with the sites.
 total_500_social_media <- total_500.sub[,c(6,22,14,15,16,17,18,19)]
@@ -89,6 +87,5 @@ names(total_500.sub)
 images <- table(total_500.sub$total.images)
 plot(images)
 ########################################################################################################
-bmp <- table(total_500.sub$.bmp, total_500.sub$company)
-mosaicplot(bmp)
+b <- ggplot(total_500.sub$images,aes(total_500.sub$company))
   
