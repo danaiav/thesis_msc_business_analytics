@@ -87,5 +87,6 @@ names(total_500.sub)
 images <- table(total_500.sub$total.images)
 plot(images)
 ########################################################################################################
-b <- ggplot(total_500.sub$images,aes(total_500.sub$company))
+b <- ggplot(total_500.sub$images,aes(total_500.sub$company)) 
+#change factor to logical or boolean 1 - 0
   
