@@ -23,8 +23,8 @@ total_500.sub$Assets.. <- gsub(",", ".", total_500.sub$Assets.. )
 total_500.sub$Market.value.. <- gsub(",", ".", total_500.sub$Market.value.. )
 total_500.sub$Revenues.. <- gsub(",", ".", total_500.sub$Revenues.. )
 total_500.sub$Total.Stockholder.Equity.. <- gsub(",", ".", total_500.sub$Total.Stockholder.Equity.. )
-num <- c(2,3,4,5,6,9,10,11,13,14,15,12,24,25,757,758,759,760,761,762,763,764,765,766,767)
-for(i in 1:25){
+num <- c(2,3,4,5,6,9,10,11,13,14,12,24,25,757,758,759,760,761,762,763,764,765,766,767)
+for(i in 1:24){
   k <- num[i]
   total_500.sub[,k] <- as.numeric(as.character(total_500.sub[,k]))}  
 str(total_500.sub[757:767])
@@ -61,37 +61,26 @@ barplot(social_media_linkedin,horiz = FALSE,col = "DARKBLUE") + title ("linkedin
 par(mfrow=c(1,1))
 #########################################################################################################
 #We will now check the links by creating an histogram
-#Then we create tables in order to see in what frequency the links appear
-social_media_external <- table(total_500.sub$external)
-social_media_internal <- table(total_500.sub$internal)
-social_media_total_links <- table(total_500.sub$total.links)
-#Finally we create barplots to see the frequency
-par(mfrow=c(3,1))
-plot(social_media_external,col = "DARKRED") + title ("External links frequency")
-barplot(social_media_internal,col = "DARKRED") + title ("Internal links frequency")
-barplot(social_media_total_links,col = "DARKRED") + title ("Total links frequency")
+#Then we create ggplots in order to see in what frequency the links appear
+library(ggplot2)
+ggplot(data=total_500.sub,aes(x=external))+geom_histogram()
+ggplot(data=total_500.sub,aes(x=internal))+geom_histogram()
+ggplot(data=total_500.sub,aes(x=total.links))+geom_histogram()
 #########################################################################################################
 #Now we will see the loading time per site
-par(mfrow=c(1,1))
-loadtime <- table(total_500.sub$loading.time)
-hist(loadtime,col = "DARKRED")
+ggplot(data=total_500.sub,aes(x=loading.time))+geom_histogram()
 #########################################################################################################
 #Now we will see the words in total and fo unique count
-par(mfrow=c(2,1))
-total_words <- table(total_500.sub$total_words)
-u_words <- table(total_500.sub$unique_words)
-plot(total_words,col = "DARKRED")
-plot(u_words,col = "darkgreen")
+ggplot(data=total_500.sub,aes(x=total_words))+geom_histogram()
+ggplot(data=total_500.sub,aes(x=unique_words))+geom_histogram()
 #########################################################################################################
 #Now we will see the readability of the sites
 par(mfrow=c(1,1))
 readability <- table(total_500.sub$Readability)
 plot(readability,col = "DARKRED")
 #########################################################################################################
-names(total_500.sub)
-images <- table(total_500.sub$total.images)
-plot(images)
-########################################################################################################
-b <- ggplot(total_500.sub$images,aes(total_500.sub$company)) 
-#change factor to logical or boolean 1 - 0
+ggplot(data=total_500.sub,aes(x=total.images))+geom_histogram()
+ggplot(data=total_500.sub,aes(x=.tif))+geom_histogram()
+ggplot(data=total_500.sub,aes(x=.bmp))+geom_histogram()
+ggplot(data=total_500.sub,aes(x=.tiff))+geom_histogram()
   
