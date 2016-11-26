@@ -7,7 +7,7 @@ output: html_document
 
 ```{r}
 #we upload the dataset
-total_500 <- read.csv("F:/Dropbox/Dani/Spinellis - Diplwmatiki/Jupyter markdown/total_500.csv", sep=";")
+total_500 <- read.csv("F:/Dropbox/Dani/Spinellis - Diplwmatiki/Jupyter markdown/total_500_nanull.csv", sep=";")
 #we see how many observations and how many variables we have and then the names of the variables we have
 dim(total_500)
 names(total_500)
@@ -19,11 +19,13 @@ total_500.sub$Assets.. <- gsub(",", ".", total_500.sub$Assets.. )
 total_500.sub$Market.value.. <- gsub(",", ".", total_500.sub$Market.value.. )
 total_500.sub$Revenues.. <- gsub(",", ".", total_500.sub$Revenues.. )
 total_500.sub$Total.Stockholder.Equity.. <- gsub(",", ".", total_500.sub$Total.Stockholder.Equity.. )
-num <- c(2,3,4,5,6,9,13,14,12,24,25,766,767)
-for(i in 1:13){
+num <- c(2,3,4,5,6,9,13,14,12,24,25,757,758,759,760,761,762,763,764,765,766,767)
+for(i in 1:22){
   k <- num[i]
   total_500.sub[,k] <- as.numeric(as.character(total_500.sub[,k]))}  
-str(total_500.sub)
+total_500.sub[10:11] <- lapply(total_500.sub[10:11], as.numeric)
+total_500.sub[15] <- lapply(total_500.sub[15], as.numeric)
+str(total_500.sub[757:766])
 #since we know that some pages where not downloaded we have to create a subset that we do not include those pages so as not to have n/a
 not_downloadable_sites= c(15,64,86,90,97,118,131,135,141,161,164,216,239,242,275,306,326,363,397,414,416,441,455,464)
 for (i in 1:24) {
@@ -32,6 +34,7 @@ for (i in 1:24) {
 }
 #we remove the extra value X since it is not necessary for the analysis
 total_500.sub$X <- NULL
+str(total_500.sub)
 #we upload the libraries beneath that we will use in the analysis
 library(ggplot2)
 library(reshape2)
