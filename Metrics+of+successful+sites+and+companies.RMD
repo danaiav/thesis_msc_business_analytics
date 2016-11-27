@@ -83,15 +83,18 @@ ggplot(data=total_500_final,aes(x=loading.time))+geom_histogram(binwidth=1, colo
 ggplot(data=total_500_final,aes(x=total_words,fill=Readability))+geom_histogram(binwidth=50)
 ggplot(data=total_500_final,aes(x=unique_words, fill=Readability))+geom_histogram(binwidth=50)
 #########################################################################################################
-#Now we will see the readability of the sites
-par(mfrow=c(1,1))
-readability <- table(total_500_final$Readability)
-plot(readability,col = "DARKRED")
-#########################################################################################################
 ggplot(data=total_500_final,aes(x=total.images))+geom_histogram()
 ggplot(data=total_500_final,aes(x=.tif))+geom_histogram()
 ggplot(data=total_500_final,aes(x=.bmp))+geom_histogram()
 ggplot(data=total_500_final,aes(x=.tiff))+geom_histogram()
 #########################################################################################################
-names(total_500_final)
-  
+#We will see now the frequency of image types that is being used
+par(mfrow=c(3,3))
+k = c(756,757,758,759,760,761,762,763,764)
+for(i in 1:9){
+  a <- k[i]
+  image_type<- round(table(total_500_final[,a])/439,3)
+  barplot(image_type,xlab=names(total_500_final)[a],ylab = "Shares of images per site", col = "dark green")}
+#It is obvious that the most common images type are .jpg,.png and .gif
+##########################################################################################################
+
