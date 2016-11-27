@@ -77,11 +77,11 @@ ggplot(data=total_500_final,aes(x=external))+geom_histogram(binwidth=50, colour 
 ggplot(data=total_500_final,aes(x=internal))+geom_histogram(binwidth=50, colour = "darkgreen", fill ="green")
 #########################################################################################################
 #Now we will see the loading time per site
-ggplot(data=total_500_final,aes(x=loading.time))+geom_histogram()
+ggplot(data=total_500_final,aes(x=loading.time))+geom_histogram(binwidth=1, colour = "pink", fill ="purple")
 #########################################################################################################
-#Now we will see the words in total and fo unique count
-ggplot(data=total_500_final,aes(x=total_words))+geom_histogram()
-ggplot(data=total_500_final,aes(x=unique_words))+geom_histogram()
+#Now we will see the words in total and in unique count in relation with the readability index
+ggplot(data=total_500_final,aes(x=total_words,fill=Readability))+geom_histogram(binwidth=50)
+ggplot(data=total_500_final,aes(x=unique_words, fill=Readability))+geom_histogram(binwidth=50)
 #########################################################################################################
 #Now we will see the readability of the sites
 par(mfrow=c(1,1))
