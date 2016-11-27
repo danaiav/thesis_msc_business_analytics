@@ -84,9 +84,6 @@ ggplot(data=total_500_final,aes(x=total_words,fill=Readability))+geom_histogram(
 ggplot(data=total_500_final,aes(x=unique_words, fill=Readability))+geom_histogram(binwidth=50)
 #########################################################################################################
 ggplot(data=total_500_final,aes(x=total.images))+geom_histogram()
-ggplot(data=total_500_final,aes(x=.tif))+geom_histogram()
-ggplot(data=total_500_final,aes(x=.bmp))+geom_histogram()
-ggplot(data=total_500_final,aes(x=.tiff))+geom_histogram()
 #########################################################################################################
 #We will see now the frequency of image types that is being used
 par(mfrow=c(3,3))
@@ -97,4 +94,7 @@ for(i in 1:9){
   barplot(image_type,xlab=names(total_500_final)[a],ylab = "Shares of images per site", col = "dark green")}
 #It is obvious that the most common images type are .jpg,.png and .gif
 ##########################################################################################################
-
+ggplot(data=total_500_final,aes(x=Assets..))+geom_histogram()
+ggplot(data=total_500_final,aes(x=Market.value..))+geom_histogram()
+ggplot(data=total_500_final,aes(x=Revenues..))+geom_histogram()
+ggplot(data=total_500_final,aes(x=Total.Stockholder.Equity..))+geom_histogram()
