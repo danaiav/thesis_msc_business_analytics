@@ -66,14 +66,15 @@ social_media_linkedin <- round(table(total_500_final$linkedin)/439,3)
 social_media_linkedin
 slicelable <- c(paste(47.6,"% no"),paste(52.4,"% yes"))
 pie(social_media_linkedin,label = slicelable,main="Share of companies with Linkedin",col=rainbow(length(social_media_linkedin)))
-par(mfrow=c(1,1))
+
 #########################################################################################################
 #We will now check the links by creating an histogram
 #Then we create ggplots in order to see in what frequency the links appear
+par(mfrow=c(3,1))
 library(ggplot2)
-ggplot(data=total_500_final,aes(x=external))+geom_histogram()
-ggplot(data=total_500_final,aes(x=internal))+geom_histogram()
-ggplot(data=total_500_final,aes(x=total.links))+geom_histogram()
+ggplot(data=total_500_final,aes(x=total.links))+geom_histogram(binwidth=50, colour = "darkblue", fill ="blue")
+ggplot(data=total_500_final,aes(x=external))+geom_histogram(binwidth=50, colour = "darkred", fill ="red")
+ggplot(data=total_500_final,aes(x=internal))+geom_histogram(binwidth=50, colour = "darkgreen", fill ="green")
 #########################################################################################################
 #Now we will see the loading time per site
 ggplot(data=total_500_final,aes(x=loading.time))+geom_histogram()
