@@ -7,7 +7,7 @@ output: html_document
 
 ```{r}
 #we upload the dataset
-total_500 <- read.csv("~/GitHub/thesis_msc_business_analytics/total_500.csv", sep=";", na.strings="n/a"
+total_500 <- read.csv("~/GitHub/thesis_msc_business_analytics/total_500.csv", sep=";", na.strings="n/a")
 #total_500 <- read.csv("F:/Dropbox/Dani/Spinellis - Diplwmatiki/Jupyter markdown/total_500.csv", sep=";")
 #we see how many observations and how many variables we have and then the names of the variables we have
 dim(total_500)
@@ -68,7 +68,11 @@ social_media_linkedin
 slicelable <- c(paste(45.4,"% no"),paste(54.6,"% yes"))
 pie(social_media_linkedin,label = slicelable,main="Share of companies with Linkedin",col=rainbow(length(social_media_linkedin)))
 #And we can also see for correlations
+total_500_social_media <- total_500_final[,c(15:20)]
+par(mfrow=c(1,1))
+library(corrplot)
 cor(total_500_social_media)
+corrplot(cor(total_500_social_media),method="number")
 #The most high correlation is between facebook and twitter 68%
 #While the second highest is between twitter and linkedIn
 #########################################################################################################
@@ -115,7 +119,7 @@ for(i in 1:706){
 #total_500_final_sub$num_companies <- NULL
 #total_500_final_sub$url <- NULL
 #total_500_final_sub$Readability <- NULL
-#total_500_social_media <- total_500_final_sub[,c(14:19)]
+#
 #pairs(total_500_social_media)
  
 
