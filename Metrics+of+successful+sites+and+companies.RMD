@@ -113,11 +113,19 @@ for(i in 1:706){
   barplot(image_type,xlab=names(total_500_final)[a],ylab = "Shares of images per site", col = "dark red")}
 ###########################################################################################################
 #we make a sub data frame without the image sizes for the time being
-revenue <- table(total_500_final$)
 ggplot(data=total_500_final,aes(x=Revenues..))+geom_histogram(binwidth=50)
+rev <- cut(total_500_final$Revenues..,c(-1,50,483))
+round(table(rev)/436,3)
 ggplot(data=total_500_final,aes(x=Assets..))+geom_histogram(binwidth=100)
+as <- cut(total_500_final$Assets..,c(-1,300,1000))
+round(table(as)/436,3)
 ggplot(data=total_500_final,aes(x=Market.value..))+geom_histogram(binwidth=100)
+mv <- cut(total_500_final$Market.value..,c(-1,400,1000))
+round(table(mv)/436,3)
 ggplot(data=total_500_final,aes(x=Total.Stockholder.Equity..))+geom_histogram(binwidth=100)
-
+stock <- cut(total_500_final$Total.Stockholder.Equity..,c(-1000,250,1000))
+round(table(stock)/436,3)
+#we create a binomial variable as the one to see how the other variables are related to the revenue of the companies
+total_500_final$rev <- cut(total_500_final$Revenues..,c(-1,50,483))
  
 
