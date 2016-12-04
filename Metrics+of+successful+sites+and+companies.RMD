@@ -253,7 +253,8 @@ par(mfrow=c(3,2))
 plot(model_a,which=1:6)
 #dhmiourgoume ta diastimata empistosunis twn syntelestwn tou modelou
 confint(model_a)
-
+######################################################################################################
+#Next we will try to see which variables play more important roll for the market value of a company
 
 
 
