@@ -84,6 +84,7 @@ library(ggplot2)
 ggplot(data=total_500_final,aes(x=total.links))+geom_histogram(binwidth=50, colour = "darkblue", fill ="blue")
 ggplot(data=total_500_final,aes(x=external))+geom_histogram(binwidth=50, colour = "darkred", fill ="red")
 ggplot(data=total_500_final,aes(x=internal))+geom_histogram(binwidth=50, colour = "darkgreen", fill ="green")
+par(mfrow=c(1,1))
 #########################################################################################################
 #Now we will see the loading time per site
 ggplot(data=total_500_final,aes(x=loading.time))+geom_histogram(binwidth=1, colour = "pink", fill ="purple")
@@ -103,6 +104,7 @@ for(i in 1:9){
   image_type<- round(table(total_500_final[,a])/436,3)
   barplot(image_type,xlab=names(total_500_final)[a],ylab = "Shares of images per site", col = "dark green")}
 #It is obvious that the most common images type are .jpg,.png and .gif
+par(mfrow=c(1,1))
 ##########################################################################################################
 total_500_final$num_companies <- c(1:436)
 par(mfrow=c(3,3))
@@ -125,7 +127,101 @@ round(table(mv)/436,3)
 ggplot(data=total_500_final,aes(x=Total.Stockholder.Equity..))+geom_histogram(binwidth=100)
 stock <- cut(total_500_final$Total.Stockholder.Equity..,c(-1000,250,1000))
 round(table(stock)/436,3)
-#we create a binomial variable as the one to see how the other variables are related to the revenue of the companies
-total_500_final$rev <- cut(total_500_final$Revenues..,c(-1,50,483))
- 
+names(total_500_final)
+str(total_500_final[1:25])
+str(total_500_final[731:744])
+#We will try to create a regression model to see which of the variables of the websites play the most important part regarding the total reveneue of the company. 
+#######################################################################################################
+#We create the empty lm model
+model_null = lm(Revenues..~1,data=total_500_final)
+summary(model_null)
+#And we create a full model
+total_500_final$Rank <- total_500_final$X +1
+total_500_final_for_regression <- total_500_final
+total_500_final_for_regression$X <- NULL
+total_500_final_for_regression$The_page_opened <- NULL
+total_500_final_for_regression$company <- NULL
+total_500_final_for_regression$url <- NULL
+total_500_final_for_regression$num_companies <- NULL
+total_500_final_for_regression$Assets.. <- NULL
+total_500_final_for_regression$Market.value.. <- NULL
+total_500_final_for_regression$Total.Stockholder.Equity.. <- NULL
+total_500_final_for_regression$Revenues...1 <- NULL
+full_model <- lm(Revenues..~.,data=total_500_final_for_regression)
+anova(full_model)
+#############
+#Use of LASSO
+library(glmnet)
+#for posts_no a first approach (we remove LDA04 since it gives us NA)
+full <- lm(Revenues..~.,data=total_500_final_for_regression)
+anova(full)
+x <- model.matrix(full) [,-1]
+dim(x)
+lasso <- glmnet (x, total_500_final_for_regression$Revenues..)
+par(mfrow=c(1,1),no.readonly = TRUE)
+plot(lasso,label=T)
+plot(lasso, xvar='lambda', label=T)
+
+lassob <- cv.glmnet(x,total_500_final_for_regression$Revenues..)
+lassob$lambda.min
+lassob$lambda.1se
+plot(lassob)
+
+#coefiecinets for lammda min with the min CV - MSE for posts3
+blasso <- coef(lassob, s="lambda.min")
+blasso
+dim(blasso)
+zblasso <- blasso[-1] * apply(x,2,sd)
+zbolt <- coef (full) [-1] * apply (x,2,sd)
+azbolt <- abs(zbolt)
+sum(azbolt)
+#since the sum is NA that means we have to substract some variables
+# in order to find which variables to substract we run the coefficients and we see which of them has NA as result
+coef(full)
+#Now we create a new model with only the variables with coef different from NA
+
+s <- sum(abs(zblasso))/sum(abs(zbolt))
+s
+
+blassob <- coef(lassob, s="lambda.1se")
+blassob
+zblassob <- blassob[-1] * apply(x,2,sd)
+zboltb <- coef (full) [-1] * apply (x,2,sd)
+s <- sum(abs(zblassob))/sum(abs(zboltb))
+s
+
+
+
+
+
+model_a <- step(model_null, scope = list(lower = model_null, upper=full_model), direction = "forward")
+summary(model_a)
+ad_r_sq_ma <- summary(model_a)$adj.r.squared
+ad_r_sq_ma
+# with the forward method we had a cut off to 8 variables but with worst adjusted R2
+ma_residuals <- model_a$residuals
+ma_fitted_values <- model_a$fitted.values
+
+pa <- qplot(ma_fitted_values,ma_residuals) 
+pa <- pa + ggtitle("Residual Plot model a")
+pa <- pa + theme(plot.title = element_text(lineheight=.8, face="bold"))
+pa <- pa + xlab("Fitted Values")  
+pa <- pa + ylab("Residuals")
+
+pa
+
+par(mfrow=c(1,1))
+qqnorm(ma_residuals, main = "Normal Q-Q Plot for Revenues")
+qqline(ma_residuals)
+
+aic_ma <- AIC(model_a)
+aic_ma
+
+par(mfrow=c(3,2))
+plot(model_a,which=1:6)
+#dhmiourgoume ta diastimata empistosunis twn syntelestwn tou modelou
+confint(model_a)
+
+
+
 
