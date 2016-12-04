@@ -130,8 +130,8 @@ round(table(stock)/436,3)
 names(total_500_final)
 str(total_500_final[1:25])
 str(total_500_final[731:744])
-#We will try to create a regression model to see which of the variables of the websites play the most important part regarding the total reveneue of the company. 
 #######################################################################################################
+#We will try to create a regression model to see which of the variables of the websites play the most important part regarding the total reveneue of the company. 
 #We create the empty lm model
 model_null = lm(Revenues..~1,data=total_500_final)
 summary(model_null)
@@ -161,12 +161,10 @@ lasso <- glmnet (x, total_500_final_for_regression$Revenues..)
 par(mfrow=c(1,1),no.readonly = TRUE)
 plot(lasso,label=T)
 plot(lasso, xvar='lambda', label=T)
-
 lassob <- cv.glmnet(x,total_500_final_for_regression$Revenues..)
 lassob$lambda.min
 lassob$lambda.1se
 plot(lassob)
-
 #coefiecinets for lammda min with the min CV - MSE for posts3
 blasso <- coef(lassob, s="lambda.min")
 blasso
@@ -179,45 +177,78 @@ sum(azbolt)
 # in order to find which variables to substract we run the coefficients and we see which of them has NA as result
 coef(full)
 #Now we create a new model with only the variables with coef different from NA
-total_500_final_for_regression_sub <- total_500_final_for_regression[,c(-)]
-full <- lm(Revenues..~.,data=total_500_final_for_regression)
+total_500_final_for_regression_sub <- total_500_final_for_regression[,-c(7,15,20,23,28:31,34,37:41,44:47,50:53,58,60,62,65,66,68,74:76,78:81,83,86,87,89,90,95:100,103:107,109,112:119,121,122,124,125,126,128,129,130,133,137:142,144,147:149,152,156:168,170:177,179,180,182:185,187,189,190,192:204,206,208,209,211,212,215:218,220:230,232,2326,237,240:242,244,247,248,250,252:268,270:272,276:280,282,283,286:290,292,295,297,298,300,302,304,306:308,310:316,318,319,322,324,326,328:333,335,337:339,341,343:345,347:349,351,354,356:364,366:368,370:383,385:388,391,392,394:398,400:414,416:420,422:424,426,427,430,431,433:440,442:445,447,449:452,456:472,474,476:478,480,481,485,487:494,496,497,499,501:505,507,509:516,519,522:524,526,527,532,533,535:592,594:606,609:612,614:616,620:626,628:630,632:641,644,645,646,648,649,651,653,654,656,659,661:664,667,668,670:674,676,678:683,688,689,691:694,696,698:700,702,703,705:713,718:722,724,734,736)]
+full_2 <- lm(Revenues..~.,data=total_500_final_for_regression_sub)
+anova(full_2)
+x <- model.matrix(full_2) [,-1]
+dim(x)
+lasso <- glmnet (x, total_500_final_for_regression_sub$Revenues..)
+par(mfrow=c(1,1),no.readonly = TRUE)
+plot(lasso,label=T)
+plot(lasso, xvar='lambda', label=T)
+lassob <- cv.glmnet(x,total_500_final_for_regression_sub$Revenues..)
+lassob$lambda.min
+lassob$lambda.1se
+plot(lassob)
+#coefiecinets for lammda min with the min CV - MSE for posts3
+blasso <- coef(lassob, s="lambda.min")
+blasso
+dim(blasso)
+zblasso <- blasso[-1] * apply(x,2,sd)
+zbolt <- coef (full_2) [-1] * apply (x,2,sd)
+azbolt <- abs(zbolt)
+sum(azbolt)
+#we do the same thing here sinze again the sum is NA
+coef (full_2)
+names(total_500_final_for_regression_sub)
+total_500_final_for_regression_sub_2 <- total_500_final_for_regression_sub[,-c(86,91,92,94,97,103,106,108,118,129,135,142,149,155,165,169,170,174,177,178,182,185,189,191,194,197,198,201,206,207)]
+full_3 <- lm(Revenues..~.,data=total_500_final_for_regression_sub_2)
+anova(full_3)
+x <- model.matrix(full_3) [,-1]
+dim(x)
+lasso <- glmnet (x, total_500_final_for_regression_sub_2$Revenues..)
+par(mfrow=c(1,1),no.readonly = TRUE)
+plot(lasso,label=T)
+plot(lasso, xvar='lambda', label=T)
+lassob <- cv.glmnet(x,total_500_final_for_regression_sub_2$Revenues..)
+lassob$lambda.min
+lassob$lambda.1se
+plot(lassob)
+#coefiecinets for lammda min with the min CV - MSE for posts3
+blasso <- coef(lassob, s="lambda.min")
+blasso
+dim(blasso)
+zblasso <- blasso[-1] * apply(x,2,sd)
+zbolt <- coef (full_3) [-1] * apply (x,2,sd)
+azbolt <- abs(zbolt)
+sum(azbolt)
 s <- sum(abs(zblasso))/sum(abs(zbolt))
 s
-
 blassob <- coef(lassob, s="lambda.1se")
 blassob
 zblassob <- blassob[-1] * apply(x,2,sd)
-zboltb <- coef (full) [-1] * apply (x,2,sd)
+zboltb <- coef (full_3) [-1] * apply (x,2,sd)
 s <- sum(abs(zblassob))/sum(abs(zboltb))
 s
-
-
-
-
-
-model_a <- step(model_null, scope = list(lower = model_null, upper=full_model), direction = "forward")
+#We use the forward method to compare the full model woth the null model to see how many variables are indeed important
+model_a <- step(model_null, scope = list(lower = model_null, upper=full_3), direction = "forward")
 summary(model_a)
 ad_r_sq_ma <- summary(model_a)$adj.r.squared
 ad_r_sq_ma
 # with the forward method we had a cut off to 8 variables but with worst adjusted R2
 ma_residuals <- model_a$residuals
 ma_fitted_values <- model_a$fitted.values
-
 pa <- qplot(ma_fitted_values,ma_residuals) 
 pa <- pa + ggtitle("Residual Plot model a")
 pa <- pa + theme(plot.title = element_text(lineheight=.8, face="bold"))
 pa <- pa + xlab("Fitted Values")  
 pa <- pa + ylab("Residuals")
-
 pa
-
 par(mfrow=c(1,1))
 qqnorm(ma_residuals, main = "Normal Q-Q Plot for Revenues")
 qqline(ma_residuals)
-
 aic_ma <- AIC(model_a)
 aic_ma
-
 par(mfrow=c(3,2))
 plot(model_a,which=1:6)
 #dhmiourgoume ta diastimata empistosunis twn syntelestwn tou modelou
