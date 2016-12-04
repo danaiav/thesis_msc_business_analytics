@@ -179,7 +179,8 @@ sum(azbolt)
 # in order to find which variables to substract we run the coefficients and we see which of them has NA as result
 coef(full)
 #Now we create a new model with only the variables with coef different from NA
-
+total_500_final_for_regression_sub <- total_500_final_for_regression[,c(-)]
+full <- lm(Revenues..~.,data=total_500_final_for_regression)
 s <- sum(abs(zblasso))/sum(abs(zbolt))
 s
 
