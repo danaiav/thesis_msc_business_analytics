@@ -255,6 +255,17 @@ plot(model_a,which=1:6)
 confint(model_a)
 ######################################################################################################
 #Next we will try to see which variables play more important roll for the market value of a company
-
-
+library(psych)
+for(i in 1:742){
+total_500_final[,i] <- as.numeric(total_500_final[,i])}
+total_500_final_images <- total_500_final[,-c(1,2,4:23,729:742)]
+total_500_final_without_images <- total_500_final[,c(3,6:23,729:742)]
+str(total_500_final_without_images)
+fit <- principal(total_500_final, nfactors=5)
+plot(fit)
+library(ggfortify)
+#Revenue
+autoplot(prcomp(total_500_final), data = total_500_final, colour = 'rev')
+#Market Value
+summary(total_500_final$Market.value..)
 
