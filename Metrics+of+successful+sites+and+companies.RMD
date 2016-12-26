@@ -502,8 +502,15 @@ confint(RV_model_a)
 #From this model we can conlude that for the Revenue the variables that play the most important role are
 #whether or not they use medium images,the assets, total images, jpg, total sh equity, png
 #############################################################################################################
-#Now that we have a first glimps of the important variables we will check again the variables that can affect the Ranking but we will begin by keeping only the ones that were dimmed important in the previous models
-
-
-
-
+#Now that we have a first glimps of the important variables we will check again the variables that can affect the Ranking but we will begin by keeping only the ones that were dimmed important in the previous models but without any other information from the fortune 500 just to see the site variables
+names(total_500_final)
+total_500_final_after_reg <- total_500_final[,c(1,9,10,13,16,23,24,25,29,30,31)]
+par(mfrow=c(1,1))
+corrplot(cor(total_500_final_after_reg),method="number")
+model_after <- lm(Ranking~.,data=total_500_final_after_reg)
+summary(model_after)
+#From this model we can confer that the most important variables for a sites ranking good in fortune 500
+#Are the number of external links
+#Whether they have or not pinterest
+#whether they use medium and small images
+#And also the number of warning and the total images that the site has
