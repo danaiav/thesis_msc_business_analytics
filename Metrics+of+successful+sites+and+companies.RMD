@@ -13,26 +13,56 @@ total_500 <- read.csv("~/GitHub/thesis_msc_business_analytics/total_500.csv", se
 dim(total_500)
 names(total_500)
 str(total_500)
-total_500.sub <- total_500
-#We make the factors numbers where it is possible
-total_500.sub$Assets.. <- gsub(",", ".", total_500.sub$Assets.. )
-total_500.sub$Market.value.. <- gsub(",", ".", total_500.sub$Market.value.. )
-total_500.sub$Revenues.. <- gsub(",", ".", total_500.sub$Revenues.. )
-total_500.sub$Total.Stockholder.Equity.. <- gsub(",", ".", total_500.sub$Total.Stockholder.Equity.. )
-num <- c(2,3,4,5,6,9,10,11,13,14,12,24,25,757,758,759,760,761,762,763,764,765,766,767)
-for(i in 1:24){
-  k <- num[i]
-  total_500.sub[,k] <- as.numeric(as.character(total_500.sub[,k]))}  
-str(total_500.sub[757:767])
+total_500_sub <- total_500
+str(total_500_sub[720:741])
+#Change the decimal point for the 4 variables
+total_500_sub$Assets.. <- gsub(",", ".", total_500_sub$Assets.. )
+total_500_sub$Market.value.. <- gsub(",", ".", total_500_sub$Market.value.. )
+total_500_sub$Revenues.. <- gsub(",", ".", total_500_sub$Revenues.. )
+total_500_sub$Total.Stockholder.Equity.. <- gsub(",", ".", total_500_sub$Total.Stockholder.Equity.. )
+#Make the variables numeric
+for(i in 1:741){
+  total_500_sub[,i] <- as.numeric(total_500_sub[,i])}  
+str(total_500_sub[720:741])
 #We omit the nas from the analysis
-total_500_final <- na.omit(total_500.sub)
+total_500_final <- na.omit(total_500_sub)
 #we remove the extra value X since it is not necessary for the analysis
 #total_500_final$X <- NULL
 str(total_500_final)
+#we make the variables from fortune binomial so as to be more easily examined
+#In order to achieve that we first see their summary and then we create their histogram so as to have a 
+#good grasp of how they are distributed
 #we upload the libraries beneath that we will use in the analysis
 library(ggplot2)
 library(reshape2)
 library(DAAG)
+summary(total_500_final$Revenues..)
+ggplot(data=total_500_final,aes(x=Revenues..))+geom_histogram(binwidth=50)
+total_500_final$Revenues.. <- cut(total_500_final$Revenues..,c(-1,50,483))
+summary(total_500_final$Assets..)
+ggplot(data=total_500_final,aes(x=Assets..))+geom_histogram(binwidth=100)
+total_500_final$Assets.. <- cut(total_500_final$Assets..,c(-1,500,1000))
+summary(total_500_final$Market.value..)
+ggplot(data=total_500_final,aes(x=Market.value..))+geom_histogram(binwidth=100)
+total_500_final$Market.value.. <- cut(total_500_final$Market.value..,c(-1,400,1000))
+summary(total_500_final$Total.Stockholder.Equity..)
+ggplot(data=total_500_final,aes(x=Total.Stockholder.Equity..))+geom_histogram(binwidth=100)
+total_500_final$Total.Stockholder.Equity.. <- cut(total_500_final$Total.Stockholder.Equity..,c(-1000,250,1000))
+names(total_500_final)
+#######################################################################################################
+names(total_500_final)[1]
+#Change the names of some variables to be more easily readable
+colnames(total_500_final)[1] <- "Ranking"
+colnames(total_500_final)[2] <- "Assets"
+colnames(total_500_final)[3] <- "Market_Value"
+colnames(total_500_final)[4] <- "Revenues"
+colnames(total_500_final)[6] <- "Total_SH_Equity"
+#Delete the variables we will not need
+total_500_final[5] <- NULL #Revenues %
+total_500_final[6] <- NULL #company name
+total_500_final[21] <- NULL # company url
+total_500_final[20] <- NULL # readability index
+names(total_500_final)
 ##########################################################################################################
 #Firstly we will analyze the social media relevance with the sites.
 #We will see how many of the sites have social media and what type of social media
@@ -114,23 +144,7 @@ for(i in 1:706){
   image_type<- round(table(total_500_final[,a])/436,3)
   barplot(image_type,xlab=names(total_500_final)[a],ylab = "Shares of images per site", col = "dark red")}
 ###########################################################################################################
-#we make a sub data frame without the image sizes for the time being
-ggplot(data=total_500_final,aes(x=Revenues..))+geom_histogram(binwidth=50)
-rev <- cut(total_500_final$Revenues..,c(-1,50,483))
-round(table(rev)/436,3)
-ggplot(data=total_500_final,aes(x=Assets..))+geom_histogram(binwidth=100)
-as <- cut(total_500_final$Assets..,c(-1,300,1000))
-round(table(as)/436,3)
-ggplot(data=total_500_final,aes(x=Market.value..))+geom_histogram(binwidth=100)
-mv <- cut(total_500_final$Market.value..,c(-1,400,1000))
-round(table(mv)/436,3)
-ggplot(data=total_500_final,aes(x=Total.Stockholder.Equity..))+geom_histogram(binwidth=100)
-stock <- cut(total_500_final$Total.Stockholder.Equity..,c(-1000,250,1000))
-round(table(stock)/436,3)
-names(total_500_final)
-str(total_500_final[1:25])
-str(total_500_final[731:744])
-#######################################################################################################
+
 #We will try to create a regression model to see which of the variables of the websites play the most important part regarding the total reveneue of the company. 
 #We create the empty lm model
 model_null = lm(Revenues..~1,data=total_500_final)
