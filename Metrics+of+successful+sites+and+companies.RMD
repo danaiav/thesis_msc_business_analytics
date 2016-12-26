@@ -57,6 +57,8 @@ colnames(total_500_final)[2] <- "Assets"
 colnames(total_500_final)[3] <- "Market_Value"
 colnames(total_500_final)[4] <- "Revenues"
 colnames(total_500_final)[6] <- "Total_SH_Equity"
+total_500_final$Ranking <- cut(total_500_final$Ranking,c(-1,9,500)) #we start from -1 so as to take 0 also
+total_500_final$Ranking <- as.numeric(total_500_final$Ranking)
 #Delete the variables we will not need
 total_500_final[5] <- NULL #Revenues %
 total_500_final[6] <- NULL #company name
@@ -98,11 +100,12 @@ social_media_linkedin
 slicelable <- c(paste(45.4,"% no"),paste(54.6,"% yes"))
 pie(social_media_linkedin,label = slicelable,main="Share of companies with Linkedin",col=rainbow(length(social_media_linkedin)))
 #And we can also see for correlations
-total_500_social_media <- total_500_final[,c(15:20)]
+total_500_social_media <- total_500_final[,c(1,13:18)]
 par(mfrow=c(1,1))
 library(corrplot)
 library(caret)
 sm <- cor(total_500_social_media)
+sm
 corrplot(cor(total_500_social_media),method="number")
 #The most high correlation is between facebook and twitter 68%
 #While the second highest is between twitter and linkedIn
@@ -115,6 +118,14 @@ ggplot(data=total_500_final,aes(x=total.links))+geom_histogram(binwidth=50, colo
 ggplot(data=total_500_final,aes(x=external))+geom_histogram(binwidth=50, colour = "darkred", fill ="red")
 ggplot(data=total_500_final,aes(x=internal))+geom_histogram(binwidth=50, colour = "darkgreen", fill ="green")
 par(mfrow=c(1,1))
+#And we can also see for correlations
+total_500_links <- total_500_final[,c(1,10:12)]
+par(mfrow=c(1,1))
+library(corrplot)
+library(caret)
+tl <- cor(total_500_links)
+tl
+corrplot(cor(total_500_links),method="number")
 #########################################################################################################
 #Now we will see the loading time per site
 ggplot(data=total_500_final,aes(x=loading.time))+geom_histogram(binwidth=1, colour = "pink", fill ="purple")
@@ -124,16 +135,24 @@ ggplot(data=total_500_final,aes(x=total_words,fill=Readability))+geom_histogram(
 ggplot(data=total_500_final,aes(x=unique_words, fill=Readability))+geom_histogram(binwidth=50)
 #########################################################################################################
 ggplot(data=total_500_final,aes(x=total.images))+geom_histogram(binwidth=100)
-table(total_500_final$total.images)
 #########################################################################################################
 #We will see now the frequency of image types that is being used
 par(mfrow=c(3,3))
-k = c(731,732,733,734,735,736,737,738,739)
+k = c(727:735)
 for(i in 1:9){
   a <- k[i]
   image_type<- round(table(total_500_final[,a])/436,3)
   barplot(image_type,xlab=names(total_500_final)[a],ylab = "Shares of images per site", col = "dark green")}
 #It is obvious that the most common images type are .jpg,.png and .gif
+#So they will be the ones that we will keep
+#Delete the variables we will not need
+total_500_final[727] <- NULL #.bmp
+total_500_final[727] <- NULL #.dib
+total_500_final[728] <- NULL # .jpe
+total_500_final[728] <- NULL # .jpeg
+total_500_final[730] <- NULL # .tif
+total_500_final[730] <- NULL # .tiff
+names(total_500_final)
 par(mfrow=c(1,1))
 ##########################################################################################################
 total_500_final$num_companies <- c(1:436)
