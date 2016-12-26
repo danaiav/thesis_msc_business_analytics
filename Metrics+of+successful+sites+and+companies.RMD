@@ -173,6 +173,23 @@ names(total_500_final)
 #x1x1 [24], x11x8 [42], x [44], x1x700 [50], X1x10 [53], "X10x1" [54],"X1x660" [56],"X19x1"[57], 2x2 [60],  x0x0 [74],"X1x110"[208], "autox100." [249],"autox200" [250], "X2x213" [255],
 total_500_final <- total_500_final[,-c(24,42,44,50,53,54,56,57,60,74,208,249,250,255)]
 names(total_500_final)
+#We still have many bariables in order to make a regression model
+#So we will group the sizes based  on the following 6 categories so as to have a more calable information
+#If at least one of the dimensions belongs to a category we choose the higher category that a dimension belongs
+#Very large size: more than 800pixels
+#Large: 500 - 799 pixels
+#Medium: 300 - 499 pixels
+#Small: 100 - 299 pixels
+#Thumbnail: 75 - 100 pixels
+#Thumb: less than 75
+verylarge <- c(24,34,53,54,61,62,69,70,74,75,76,80,81,83,97,98,99,114,122,123,131,138,140,141,145,153,157,182,209,210,212,213,214,215,216,217,219,220,221,222,228,234,258,274,277,280,285,286,287)
+total_500_final$im_s_verylarge <- 0
+for(i in 1:49){
+  vl <- verylarge[i]
+  total_500_final$im_s_verylarge <- total_500_final$im_s_verylarge + total_500_final[,vl]}
+total_500_final$im_s_verylarge <- total_500_final$im_s_verylarge/length(verylarge)
+par(mfrow=c(1,1))
+plot(total_500_final$im_s_verylarge)
 ###########################################################################################################
 
 #We will try to create a regression model to see which of the variables of the websites play the most important part regarding the total reveneue of the company. 
