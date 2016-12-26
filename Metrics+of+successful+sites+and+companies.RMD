@@ -254,14 +254,19 @@ barplot(table(total_500_final$im_s_thumbnail))
 ###########################################################################################################
 #Now we will substract the sizes variables an keep only the new ones we created
 total_500_final <- total_500_final[,-c(22:290)]
+str(total_500_final)
+total_500_final$Market_Value <- as.numeric(total_500_final$Market_Value)
+total_500_final$Assets <- as.numeric(total_500_final$Assets)
+total_500_final$Revenues <- as.numeric(total_500_final$Revenues)
+total_500_final$Total_SH_Equity <- as.numeric(total_500_final$Total_SH_Equity)
 #We will try to create a regression model to see which of the variables of the websites play the most important part regarding the Ranking of the company. 
 #We create the empty lm model
 model_null = lm(Ranking~1,data=total_500_final)
 summary(model_null)
-#And we create a full model
+#And we create a full model to check which variables influence the ranking
 full_model <- lm(Ranking~.,data=total_500_final)
 anova(full_model)
-#############
+#####################################################################################################
 #Use of LASSO
 library(glmnet)
 #for posts_no a first approach (we remove LDA04 since it gives us NA)
@@ -289,16 +294,16 @@ sum(azbolt)
 # in order to find which variables to substract we run the coefficients and we see which of them has NA as result
 coef(full)
 #Now we create a new model with only the variables with coef different from NA
-total_500_final <- total_500_final[,-c(6,12)]
-full_2 <- lm(Ranking~.,data=total_500_final)
+total_500_final_r <- total_500_final[,-c(6,12)]
+full_2 <- lm(Ranking~.,data=total_500_final_r)
 anova(full_2)
 x <- model.matrix(full_2) [,-1]
 dim(x)
-lasso <- glmnet (x, total_500_final$Ranking)
+lasso <- glmnet (x, total_500_final_r$Ranking)
 par(mfrow=c(1,1),no.readonly = TRUE)
 plot(lasso,label=T)
 plot(lasso, xvar='lambda', label=T)
-lassob <- cv.glmnet(x,total_500_final$Ranking)
+lassob <- cv.glmnet(x,total_500_final_r$Ranking)
 lassob$lambda.min
 lassob$lambda.1se
 plot(lassob)
@@ -323,27 +328,95 @@ model_a <- step(model_null, scope = list(lower = model_null, upper=full_2), dire
 summary(model_a)
 ad_r_sq_ma <- summary(model_a)$adj.r.squared
 ad_r_sq_ma
-# with the forward method we had a cut off to 8 variables but with worst adjusted R2
-ma_residuals <- model_a$residuals
-ma_fitted_values <- model_a$fitted.values
-pa <- qplot(ma_fitted_values,ma_residuals) 
-pa <- pa + ggtitle("Residual Plot model a")
-pa <- pa + theme(plot.title = element_text(lineheight=.8, face="bold"))
-pa <- pa + xlab("Fitted Values")  
-pa <- pa + ylab("Residuals")
-pa
-par(mfrow=c(1,1))
-qqnorm(ma_residuals, main = "Normal Q-Q Plot for Revenues")
-qqline(ma_residuals)
 aic_ma <- AIC(model_a)
 aic_ma
-par(mfrow=c(3,2))
-plot(model_a,which=1:6)
-#dhmiourgoume ta diastimata empistosunis twn syntelestwn tou modelou
+par(mfrow=c(3,1))
+plot(model_a,which=1:3)
+1
+2
+3
+#We create the intevals of the model
 confint(model_a)
 #From this model we can conlude that for the Ranking the variables that play the most important role are
 #whether or not they use small images, medium images, the number of external links, whether or not they have pinterest, the number of warnings in the html code and the number of total images
 ######################################################################################################
 #Next we will try to see which variables play more important roll for the market value of a company
-
-
+#We create the empty lm model
+MV_model_null = lm(Market_Value~1,data=total_500_final)
+summary(MV_model_null)
+#And we create a full model to check which variables influence the Market_Value
+MV_full_model <- lm(Market_Value~.,data=total_500_final)
+anova(MV_full_model)
+#####################################################################################################
+#Use of LASSO
+library(glmnet)
+#for posts_no a first approach (we remove LDA04 since it gives us NA)
+MV_full <- lm(Market_Value~.,data=total_500_final)
+anova(MV_full)
+MV_x <- model.matrix(MV_full) [,-1]
+dim(MV_x)
+MV_lasso <- glmnet (MV_x, total_500_final$Market_Value)
+par(mfrow=c(1,1),no.readonly = TRUE)
+plot(MV_lasso,label=T)
+plot(MV_lasso, xvar='lambda', label=T)
+MV_lassob <- cv.glmnet(MV_x,total_500_final$Market_Value)
+MV_lassob$lambda.min
+MV_lassob$lambda.1se
+plot(MV_lassob)
+#coefiecinets for lammda min with the min CV - MSE for posts3
+MV_blasso <- coef(MV_lassob, s="lambda.min")
+MV_blasso
+dim(MV_blasso)
+MV_zblasso <- MV_blasso[-1] * apply(MV_x,2,sd)
+MV_zbolt <- coef (MV_full) [-1] * apply (MV_x,2,sd)
+MV_azbolt <- abs(MV_zbolt)
+sum(MV_azbolt)
+#since the sum is NA that means we have to substract some variables
+# in order to find which variables to substract we run the coefficients and we see which of them has NA as result
+coef(MV_full)
+#Now we create a new model with only the variables with coef different from NA
+MV_total_500_final <- total_500_final[,-c(6,12)]
+MV_full_2 <- lm(Market_Value~.,data=MV_total_500_final)
+anova(MV_full_2)
+MV_x <- model.matrix(MV_full_2) [,-1]
+dim(MV_x)
+MV_lasso <- glmnet (MV_x, MV_total_500_final$Market_Value)
+par(mfrow=c(1,1),no.readonly = TRUE)
+plot(MV_lasso,label=T)
+plot(MV_lasso, xvar='lambda', label=T)
+MV_lassob <- cv.glmnet(MV_x,MV_total_500_final$Market_Value)
+MV_lassob$lambda.min
+MV_lassob$lambda.1se
+plot(MV_lassob)
+#coefiecinets for lammda min with the min CV - MSE for posts3
+MV_blasso <- coef(MV_lassob, s="lambda.min")
+MV_blasso
+dim(MV_blasso)
+MV_zblasso <- MV_blasso[-1] * apply(MV_x,2,sd)
+MV_zbolt <- coef (MV_full_2) [-1] * apply (MV_x,2,sd)
+MV_azbolt <- abs(MV_zbolt)
+sum(MV_azbolt)
+MV_s <- sum(abs(MV_zblasso))/sum(abs(MV_azbolt))
+MV_s
+MV_blassob <- coef(MV_lassob, s="lambda.1se")
+MV_blassob
+MV_zblassob <- MV_blassob[-1] * apply(MV_x,2,sd)
+MV_zboltb <- coef (MV_full_2) [-1] * apply (MV_x,2,sd)
+MV_s <- sum(abs(MV_zblassob))/sum(abs(MV_zboltb))
+MV_s
+#We use the forward method to compare the full model woth the null model to see how many variables are indeed important
+MV_model_a <- step(MV_model_null, scope = list(lower = MV_model_null, upper=MV_full_2), direction = "forward")
+summary(MV_model_a)
+MV_ad_r_sq_ma <- summary(MV_model_a)$adj.r.squared
+MV_ad_r_sq_ma
+MV_aic_ma <- AIC(MV_model_a)
+MV_aic_ma
+par(mfrow=c(3,1))
+plot(MV_model_a,which=1:3)
+1
+2
+3
+#We create the intevals of the model
+confint(MV_model_a)
+#From this model we can conlude that for the Market Value the variables that play the most important role are
+#whether or not they use thumbnail images,whether or not they have facebook and the total sh equity
