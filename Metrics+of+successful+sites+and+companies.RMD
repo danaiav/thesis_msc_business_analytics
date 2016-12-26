@@ -174,55 +174,106 @@ names(total_500_final)
 total_500_final <- total_500_final[,-c(24,42,44,50,53,54,56,57,60,74,208,249,250,255)]
 names(total_500_final)
 #We still have many bariables in order to make a regression model
-#So we will group the sizes based  on the following 6 categories so as to have a more calable information
+#So we will group the sizes based  on the following 5 categories so as to have a more calable information
 #If at least one of the dimensions belongs to a category we choose the higher category that a dimension belongs
 #Very large size: more than 800pixels
 #Large: 500 - 799 pixels
 #Medium: 300 - 499 pixels
 #Small: 100 - 299 pixels
-#Thumbnail: 75 - 100 pixels
-#Thumb: less than 75
+#Thumbnail: less than 100 pixels
+############################################################################################################
 verylarge <- c(24,34,53,54,61,62,69,70,74,75,76,80,81,83,97,98,99,114,122,123,131,138,140,141,145,153,157,182,209,210,212,213,214,215,216,217,219,220,221,222,228,234,258,274,277,280,285,286,287)
 total_500_final$im_s_verylarge <- 0
 for(i in 1:49){
   vl <- verylarge[i]
   total_500_final$im_s_verylarge <- total_500_final$im_s_verylarge + total_500_final[,vl]}
 total_500_final$im_s_verylarge <- total_500_final$im_s_verylarge/length(verylarge)
+for(i in 1:439){
+  if (total_500_final$im_s_verylarge[i] >1){
+    total_500_final$im_s_verylarge[i] <- 2
+  }
+}
 par(mfrow=c(1,1))
-plot(total_500_final$im_s_verylarge)
+barplot(table(total_500_final$im_s_verylarge))
 ###########################################################################################################
-
-#We will try to create a regression model to see which of the variables of the websites play the most important part regarding the total reveneue of the company. 
+large <- c(23,45,52,65,100,113,118,119,129,137,139,150,159,211,218,232,235,249,265)
+total_500_final$im_s_large <- 0
+for(i in 1:19){
+  l <- large[i]
+  total_500_final$im_s_large <- total_500_final$im_s_large + total_500_final[,l]}
+total_500_final$im_s_large <- total_500_final$im_s_large/length(large)
+for(i in 1:439){
+  if (total_500_final$im_s_large[i] >1){
+    total_500_final$im_s_large[i] <- 2
+  }
+}
+par(mfrow=c(1,1))
+barplot(table(total_500_final$im_s_large))
+###########################################################################################################
+medium <- c(37,67,68,71,85,87,94,96,121,124,154,180,183,198,207,227,238,269,281,288,290)
+total_500_final$im_s_medium <- 0
+for(i in 1:21){
+  medium <- medium[i]
+  total_500_final$im_s_medium <- total_500_final$im_s_medium + total_500_final[,medium]}
+total_500_final$im_s_medium <- total_500_final$im_s_medium/length(medium)
+for(i in 1:439){
+  if (total_500_final$im_s_medium[i] >1){
+    total_500_final$im_s_medium[i] <- 2
+  }
+}
+par(mfrow=c(1,1))
+barplot(table(total_500_final$im_s_medium))
+###########################################################################################################
+small <- c(25,26,30,31,32,33,38,39,40,43,44,46,47,51,55,57,60,63,72,73,78,79,88,89,90,95,101,102,103,106,107,109,112,117,120,128,135,143,146,147,148,149,151,152,156,160,161,162,163,164,165,166,167,168,170,171,174,189,190,192,194,196,197,199,201,203,204,206,208,225,226,230,231,233,236,236,237,242,244,246,247,248,252,257,263,264,266,268,271,272,273,275,278,279,282,283,284,289)
+total_500_final$im_s_small <- 0
+for(i in 1:98){
+  small <- small[i]
+  total_500_final$im_s_small <- total_500_final$im_s_small + total_500_final[,small]}
+total_500_final$im_s_small <- total_500_final$im_s_small/length(small)
+for(i in 1:439){
+  if (total_500_final$im_s_small[i] >1){
+    total_500_final$im_s_small[i] <- 2
+  }
+}
+par(mfrow=c(1,1))
+barplot(table(total_500_final$im_s_small))
+###########################################################################################################
+thumbnail<- c(22,41,64,84,91,92,93,108,126,127,169,224,240,245,250,27,142,28,144,29,155,35,158,36,172,42,173,175,48,176,49,177,50,178,56,179,58,181,184,59,185,66,186,187,188,77,82,191,86,193,195,104,200,105,202,110,111,205,115,116,223,229,125,239,241,130,132,243,133,134,136,251,253,254,255,256,259,260,261,262,267,270,276)
+total_500_final$im_s_thumbnail <- 0
+for(i in 1:83){
+  thumbnail <- thumbnail[i]
+  total_500_final$im_s_thumbnail <- total_500_final$im_s_thumbnail + total_500_final[,thumbnail]}
+total_500_final$im_s_thumbnail <- total_500_final$im_s_thumbnail/length(thumbnail)
+for(i in 1:439){
+  if (total_500_final$im_s_thumbnail[i] >1){
+    total_500_final$im_s_thumbnail[i] <- 2
+  }
+}
+par(mfrow=c(1,1))
+barplot(table(total_500_final$im_s_thumbnail))
+###########################################################################################################
+#Now we will substract the sizes variables an keep only the new ones we created
+total_500_final <- total_500_final[,-c(22:290)]
+#We will try to create a regression model to see which of the variables of the websites play the most important part regarding the Ranking of the company. 
 #We create the empty lm model
-model_null = lm(Revenues..~1,data=total_500_final)
+model_null = lm(Ranking~1,data=total_500_final)
 summary(model_null)
 #And we create a full model
-total_500_final$Rank <- total_500_final$X +1
-total_500_final_for_regression <- total_500_final
-total_500_final_for_regression$X <- NULL
-total_500_final_for_regression$The_page_opened <- NULL
-total_500_final_for_regression$company <- NULL
-total_500_final_for_regression$url <- NULL
-total_500_final_for_regression$num_companies <- NULL
-total_500_final_for_regression$Assets.. <- NULL
-total_500_final_for_regression$Market.value.. <- NULL
-total_500_final_for_regression$Total.Stockholder.Equity.. <- NULL
-total_500_final_for_regression$Revenues...1 <- NULL
-full_model <- lm(Revenues..~.,data=total_500_final_for_regression)
+full_model <- lm(Ranking~.,data=total_500_final)
 anova(full_model)
 #############
 #Use of LASSO
 library(glmnet)
 #for posts_no a first approach (we remove LDA04 since it gives us NA)
-full <- lm(Revenues..~.,data=total_500_final_for_regression)
+full <- lm(Ranking~.,data=total_500_final)
 anova(full)
 x <- model.matrix(full) [,-1]
 dim(x)
-lasso <- glmnet (x, total_500_final_for_regression$Revenues..)
+lasso <- glmnet (x, total_500_final$Ranking)
 par(mfrow=c(1,1),no.readonly = TRUE)
 plot(lasso,label=T)
 plot(lasso, xvar='lambda', label=T)
-lassob <- cv.glmnet(x,total_500_final_for_regression$Revenues..)
+lassob <- cv.glmnet(x,total_500_final$Ranking)
 lassob$lambda.min
 lassob$lambda.1se
 plot(lassob)
@@ -238,16 +289,16 @@ sum(azbolt)
 # in order to find which variables to substract we run the coefficients and we see which of them has NA as result
 coef(full)
 #Now we create a new model with only the variables with coef different from NA
-total_500_final_for_regression_sub <- total_500_final_for_regression[,-c(7,15,20,23,28:31,34,37:41,44:47,50:53,58,60,62,65,66,68,74:76,78:81,83,86,87,89,90,95:100,103:107,109,112:119,121,122,124,125,126,128,129,130,133,137:142,144,147:149,152,156:168,170:177,179,180,182:185,187,189,190,192:204,206,208,209,211,212,215:218,220:230,232,2326,237,240:242,244,247,248,250,252:268,270:272,276:280,282,283,286:290,292,295,297,298,300,302,304,306:308,310:316,318,319,322,324,326,328:333,335,337:339,341,343:345,347:349,351,354,356:364,366:368,370:383,385:388,391,392,394:398,400:414,416:420,422:424,426,427,430,431,433:440,442:445,447,449:452,456:472,474,476:478,480,481,485,487:494,496,497,499,501:505,507,509:516,519,522:524,526,527,532,533,535:592,594:606,609:612,614:616,620:626,628:630,632:641,644,645,646,648,649,651,653,654,656,659,661:664,667,668,670:674,676,678:683,688,689,691:694,696,698:700,702,703,705:713,718:722,724,734,736)]
-full_2 <- lm(Revenues..~.,data=total_500_final_for_regression_sub)
+total_500_final <- total_500_final[,-c(6,12)]
+full_2 <- lm(Ranking~.,data=total_500_final)
 anova(full_2)
 x <- model.matrix(full_2) [,-1]
 dim(x)
-lasso <- glmnet (x, total_500_final_for_regression_sub$Revenues..)
+lasso <- glmnet (x, total_500_final$Ranking)
 par(mfrow=c(1,1),no.readonly = TRUE)
 plot(lasso,label=T)
 plot(lasso, xvar='lambda', label=T)
-lassob <- cv.glmnet(x,total_500_final_for_regression_sub$Revenues..)
+lassob <- cv.glmnet(x,total_500_final$Ranking)
 lassob$lambda.min
 lassob$lambda.1se
 plot(lassob)
@@ -259,40 +310,16 @@ zblasso <- blasso[-1] * apply(x,2,sd)
 zbolt <- coef (full_2) [-1] * apply (x,2,sd)
 azbolt <- abs(zbolt)
 sum(azbolt)
-#we do the same thing here sinze again the sum is NA
-coef (full_2)
-names(total_500_final_for_regression_sub)
-total_500_final_for_regression_sub_2 <- total_500_final_for_regression_sub[,-c(86,91,92,94,97,103,106,108,118,129,135,142,149,155,165,169,170,174,177,178,182,185,189,191,194,197,198,201,206,207)]
-full_3 <- lm(Revenues..~.,data=total_500_final_for_regression_sub_2)
-anova(full_3)
-x <- model.matrix(full_3) [,-1]
-dim(x)
-lasso <- glmnet (x, total_500_final_for_regression_sub_2$Revenues..)
-par(mfrow=c(1,1),no.readonly = TRUE)
-plot(lasso,label=T)
-plot(lasso, xvar='lambda', label=T)
-lassob <- cv.glmnet(x,total_500_final_for_regression_sub_2$Revenues..)
-lassob$lambda.min
-lassob$lambda.1se
-plot(lassob)
-#coefiecinets for lammda min with the min CV - MSE for posts3
-blasso <- coef(lassob, s="lambda.min")
-blasso
-dim(blasso)
-zblasso <- blasso[-1] * apply(x,2,sd)
-zbolt <- coef (full_3) [-1] * apply (x,2,sd)
-azbolt <- abs(zbolt)
-sum(azbolt)
-s <- sum(abs(zblasso))/sum(abs(zbolt))
+s <- sum(abs(zblasso))/sum(abs(azbolt))
 s
 blassob <- coef(lassob, s="lambda.1se")
 blassob
 zblassob <- blassob[-1] * apply(x,2,sd)
-zboltb <- coef (full_3) [-1] * apply (x,2,sd)
+zboltb <- coef (full_2) [-1] * apply (x,2,sd)
 s <- sum(abs(zblassob))/sum(abs(zboltb))
 s
 #We use the forward method to compare the full model woth the null model to see how many variables are indeed important
-model_a <- step(model_null, scope = list(lower = model_null, upper=full_3), direction = "forward")
+model_a <- step(model_null, scope = list(lower = model_null, upper=full_2), direction = "forward")
 summary(model_a)
 ad_r_sq_ma <- summary(model_a)$adj.r.squared
 ad_r_sq_ma
@@ -314,19 +341,9 @@ par(mfrow=c(3,2))
 plot(model_a,which=1:6)
 #dhmiourgoume ta diastimata empistosunis twn syntelestwn tou modelou
 confint(model_a)
+#From this model we can conlude that for the Ranking the variables that play the most important role are
+#whether or not they use small images, medium images, the number of external links, whether or not they have pinterest, the number of warnings in the html code and the number of total images
 ######################################################################################################
 #Next we will try to see which variables play more important roll for the market value of a company
-library(psych)
-for(i in 1:742){
-total_500_final[,i] <- as.numeric(total_500_final[,i])}
-total_500_final_images <- total_500_final[,-c(1,2,4:23,729:742)]
-total_500_final_without_images <- total_500_final[,c(3,6:23,729:742)]
-str(total_500_final_without_images)
-fit <- principal(total_500_final, nfactors=5)
-plot(fit)
-library(ggfortify)
-#Revenue
-autoplot(prcomp(total_500_final), data = total_500_final, colour = 'rev')
-#Market Value
-summary(total_500_final$Market.value..)
+
 
