@@ -420,3 +420,90 @@ plot(MV_model_a,which=1:3)
 confint(MV_model_a)
 #From this model we can conlude that for the Market Value the variables that play the most important role are
 #whether or not they use thumbnail images,whether or not they have facebook and the total sh equity
+######################################################################################################
+#Next we will try to see which variables play more important roll for the Revenue of a company
+#We create the empty lm model
+RV_model_null = lm(Revenues~1,data=total_500_final)
+summary(RV_model_null)
+#And we create a full model to check which variables influence the Market_Value
+RV_full_model <- lm(Revenues~.,data=total_500_final)
+anova(RV_full_model)
+#####################################################################################################
+#Use of LASSO
+library(glmnet)
+#for posts_no a first approach (we remove LDA04 since it gives us NA)
+RV_full <- lm(Revenues~.,data=total_500_final)
+anova(RV_full)
+RV_x <- model.matrix(RV_full) [,-1]
+dim(RV_x)
+RV_lasso <- glmnet (RV_x, total_500_final$Revenues)
+par(mfrow=c(1,1),no.readonly = TRUE)
+plot(RV_lasso,label=T)
+plot(RV_lasso, xvar='lambda', label=T)
+RV_lassob <- cv.glmnet(RV_x,total_500_final$Revenues)
+RV_lassob$lambda.min
+RV_lassob$lambda.1se
+plot(RV_lassob)
+#coefiecinets for lammda min with the min CV - MSE for posts3
+RV_blasso <- coef(RV_lassob, s="lambda.min")
+RV_blasso
+dim(RV_blasso)
+RV_zblasso <- RV_blasso[-1] * apply(RV_x,2,sd)
+RV_zbolt <- coef (RV_full) [-1] * apply (RV_x,2,sd)
+RV_azbolt <- abs(RV_zbolt)
+sum(RV_azbolt)
+#since the sum is NA that means we have to substract some variables
+# in order to find which variables to substract we run the coefficients and we see which of them has NA as result
+coef(RV_full)
+#Now we create a new model with only the variables with coef different from NA
+RV_total_500_final <- total_500_final[,-c(6,12)]
+RV_full_2 <- lm(Revenues~.,data=RV_total_500_final)
+anova(RV_full_2)
+RV_x <- model.matrix(RV_full_2) [,-1]
+dim(RV_x)
+RV_lasso <- glmnet (RV_x, RV_total_500_final$Revenues)
+par(mfrow=c(1,1),no.readonly = TRUE)
+plot(RV_lasso,label=T)
+plot(RV_lasso, xvar='lambda', label=T)
+RV_lassob <- cv.glmnet(RV_x,RV_total_500_final$Revenues)
+RV_lassob$lambda.min
+RV_lassob$lambda.1se
+plot(RV_lassob)
+#coefiecinets for lammda min with the min CV - MSE for posts3
+RV_blasso <- coef(RV_lassob, s="lambda.min")
+RV_blasso
+dim(RV_blasso)
+RV_zblasso <- RV_blasso[-1] * apply(RV_x,2,sd)
+RV_zbolt <- coef (RV_full_2) [-1] * apply (RV_x,2,sd)
+RV_azbolt <- abs(RV_zbolt)
+sum(RV_azbolt)
+RV_s <- sum(abs(RV_zblasso))/sum(abs(RV_azbolt))
+RV_s
+RV_blassob <- coef(RV_lassob, s="lambda.1se")
+RV_blassob
+RV_zblassob <- RV_blassob[-1] * apply(RV_x,2,sd)
+RV_zboltb <- coef (RV_full_2) [-1] * apply (RV_x,2,sd)
+RV_s <- sum(abs(RV_zblassob))/sum(abs(RV_zboltb))
+RV_s
+#We use the forward method to compare the full model woth the null model to see how many variables are indeed important
+RV_model_a <- step(RV_model_null, scope = list(lower = RV_model_null, upper=RV_full_2), direction = "forward")
+summary(RV_model_a)
+RV_ad_r_sq_ma <- summary(RV_model_a)$adj.r.squared
+RV_ad_r_sq_ma
+RV_aic_ma <- AIC(RV_model_a)
+RV_aic_ma
+par(mfrow=c(3,1))
+plot(RV_model_a,which=1:3)
+1
+2
+3
+#We create the intevals of the model
+confint(RV_model_a)
+#From this model we can conlude that for the Revenue the variables that play the most important role are
+#whether or not they use medium images,the assets, total images, jpg, total sh equity, png
+#############################################################################################################
+#Now that we have a first glimps of the important variables we will check again the variables that can affect the Ranking but we will begin by keeping only the ones that were dimmed important in the previous models
+
+
+
+
