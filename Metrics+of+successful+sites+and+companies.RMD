@@ -121,6 +121,7 @@ sm
 corrplot(cor(total_500_social_media),method="number")
 #The most high correlation is between facebook and twitter 69%
 #While the second highest is between twitter and linkedIn 59%
+#So we will not include the twitter variable in the regression model
 #########################################################################################################
 ```
 
@@ -139,6 +140,8 @@ library(caret)
 tl <- cor(total_500_links)
 tl
 corrplot(cor(total_500_links),method="number")
+#We can see that the total links with the internal links have a correlation almost 97%.
+#So we will not include the total links in the regression model
 #########################################################################################################
 #Now we will see the loading time per site
 ggplot(data=total_500_final,aes(x=loading.time))+geom_histogram(binwidth=1, colour = "pink", fill ="purple")
@@ -279,14 +282,13 @@ total_500_final <- total_500_final[,-c(22:290)]
 total_500_final$Market_Value <- as.numeric(total_500_final$Market_Value)
 total_500_final$Assets <- as.numeric(total_500_final$Assets)
 total_500_final$Revenues <- NULL #we also remove the variable Revenues as we said in the beggining
+total_500_final$total.links <- NULL
+total_500_final$twitter <- NULL
 total_500_final$Total_SH_Equity <- as.numeric(total_500_final$Total_SH_Equity)
 #We will try to create a regression model to see which of the variables of the websites play the most important part regarding the Ranking of the company. 
 #We create the empty lm model
 model_null = lm(Ranking~1,data=total_500_final)
 summary(model_null)
-#And we create a full model to check which variables influence the ranking
-full_model <- lm(Ranking~.,data=total_500_final)
-anova(full_model)
 #####################################################################################################
 #Use of LASSO
 library(glmnet)
@@ -303,7 +305,7 @@ lassob <- cv.glmnet(x,total_500_final$Ranking)
 lassob$lambda.min
 lassob$lambda.1se
 plot(lassob)
-#coefiecinets for lammda min with the min CV - MSE for posts3
+#We see the coefficients for lamda min
 blasso <- coef(lassob, s="lambda.min")
 blasso
 dim(blasso)
@@ -315,7 +317,7 @@ sum(azbolt)
 # in order to find which variables to substract we run the coefficients and we see which of them has NA as result
 coef(full)
 #Now we create a new model with only the variables with coef different from NA
-total_500_final_r <- total_500_final[,-c(5,11)]
+total_500_final_r <- total_500_final[,-c(5)]
 full_2 <- lm(Ranking~.,data=total_500_final_r)
 anova(full_2)
 x <- model.matrix(full_2) [,-1]
@@ -328,7 +330,7 @@ lassob <- cv.glmnet(x,total_500_final_r$Ranking)
 lassob$lambda.min
 lassob$lambda.1se
 plot(lassob)
-#coefiecinets for lammda min with the min CV - MSE for posts3
+#coefiecinets for lammda min
 blasso <- coef(lassob, s="lambda.min")
 blasso
 dim(blasso)
@@ -344,20 +346,21 @@ zblassob <- blassob[-1] * apply(x,2,sd)
 zboltb <- coef (full_2) [-1] * apply (x,2,sd)
 s <- sum(abs(zblassob))/sum(abs(zboltb))
 s
-#We use the both method to compare the full model woth the null model to see how many variables are indeed important
-model_a <- step(model_null, scope = list(lower = model_null, upper=full), direction = "both")
+#We use the "both" method to compare the full model woth the null model to see how many variables are indeed important
+model_a <- step(model_null, scope = list(lower = model_null, upper=full_2), direction = "both")
 summary(model_a)
 ad_r_sq_ma <- summary(model_a)$adj.r.squared
 ad_r_sq_ma
 aic_ma <- AIC(model_a)
 aic_ma
 par(mfrow=c(1,1))
+#We create the 2 basic plots so as to be able to explain the regression model
 plot(model_a,which=1:3)
 1
 2
 3
-#Based on those results we will try to cluster the companies based on the results of the regrssion
-total_500_final_reg <- total_500_final[,c(1,8,9,15,24,28,29)]
+#Based on those results we will try to cluster the companies based on the results of the regression
+total_500_final_reg <- total_500_final[,c(1,8,9,14,22,26,27)]
 set.seed(20)
 fortuneCluster <- kmeans(total_500_final_reg[, 2:7], 3, nstart = 20)
 fortuneCluster
