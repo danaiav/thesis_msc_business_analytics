@@ -1,0 +1,22 @@
+\contentsline {section}{\numberline {1}Introduction}{3}
+\contentsline {section}{\numberline {2}Data gathering}{4}
+\contentsline {subsection}{\numberline {2.1}Data Source - Fortune 500}{4}
+\contentsline {subsection}{\numberline {2.2}Metrics}{4}
+\contentsline {subsection}{\numberline {2.3}Python}{4}
+\contentsline {subsection}{\numberline {2.4}Scripts}{4}
+\contentsline {subsubsection}{\numberline {2.4.1}Fortune data}{4}
+\contentsline {subsubsection}{\numberline {2.4.2}Html download}{4}
+\contentsline {subsubsection}{\numberline {2.4.3}Social media existence}{4}
+\contentsline {subsubsection}{\numberline {2.4.4}Readability index}{4}
+\contentsline {subsubsection}{\numberline {2.4.5}...}{4}
+\contentsline {paragraph}{Note}{4}
+\contentsline {section}{\numberline {3}Data Analysis}{5}
+\contentsline {subsection}{\numberline {3.1}Data loading}{5}
+\contentsline {subsection}{\numberline {3.2}R}{5}
+\contentsline {subsection}{\numberline {3.3}Scripts}{5}
+\contentsline {subsubsection}{\numberline {3.3.1}Statistical Analysis}{5}
+\contentsline {subsubsection}{\numberline {3.3.2}Regression Model}{5}
+\contentsline {subsubsection}{\numberline {3.3.3}Clustering}{5}
+\contentsline {section}{\numberline {4}Conclusions}{6}
+\contentsline {section}{\numberline {5}Bibliography}{7}
+\contentsline {section}{\numberline {6}Appendix}{8}
