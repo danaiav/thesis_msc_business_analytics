@@ -28,13 +28,20 @@ colnames(total_500_final)[1] <- "Ranking"
 library(ggplot2)
 library(reshape2)
 library(DAAG)
-#We make plots to see how the variables we got from Fortune 500 are related with each other
-ggplot(total_500_final, aes(Assets..,Market.value.. , color = Ranking)) + geom_point()
-ggplot(total_500_final, aes(Assets.., Revenues.., color = Ranking)) + geom_point()
-ggplot(total_500_final, aes(Assets.., Total.Stockholder.Equity.., color = Ranking)) + geom_point()
-ggplot(total_500_final, aes(Market.value.., Revenues.. , color = Ranking)) + geom_point()
-ggplot(total_500_final, aes(Market.value.., Total.Stockholder.Equity.. , color = Ranking)) + geom_point()
-ggplot(total_500_final, aes(Total.Stockholder.Equity.., Revenues.. , color = Ranking)) + geom_point()
+#######################################################################################################
+#we first see the summary of the Fortune variables and then we create their histogram so as to have a 
+#good grasp of how they are distributed
+ggplot(data=total_500_final,aes(x=Revenues..))+geom_histogram(binwidth=50, colour = "green", fill ="darkgreen")
+ggplot(data=total_500_final,aes(x=Assets..))+geom_histogram(binwidth=100, colour = "red", fill ="darkred")
+ggplot(data=total_500_final,aes(x=Market.value..))+geom_histogram(binwidth=100, colour = "blue", fill ="darkblue")
+ggplot(data=total_500_final,aes(x=Total.Stockholder.Equity..))+geom_histogram(binwidth=100, colour = "purple", fill ="pink")
+###############################################################################################
+#We make plots to see how the variables we got from Fortune 500 are related with the Ranking
+ggplot(total_500_final, aes(Assets..,Ranking)) + geom_point()
+ggplot(total_500_final, aes(Market.value.., Ranking)) + geom_point()
+ggplot(total_500_final, aes(Total.Stockholder.Equity.. , Ranking)) + geom_point()
+ggplot(total_500_final, aes(Revenues.. , Ranking)) + geom_point()
+#We can see that the Ranking has a linear relationship with the Revenues so we will use one of those 2 variables to check the relationships with the websites metrics
 #In order to have a more clear look we also create a correlation diagram
 total_500_fortune <- total_500_final[,c(1:6)]
 library(corrplot)
@@ -43,23 +50,6 @@ sm <- cor(total_500_fortune)
 sm
 corrplot(cor(total_500_fortune),method="number")
 #From this plot we understand that the Ranking and teh Revenues have very high correlation.
-#This means that since we will examine the Ranking as a variable we can exclude the Revenue and the Revenue..1 from the final model before the regression
-#######################################################################################################
-#We make the variables from fortune binomial so as to be more easily examined
-#In order to achieve that we first see their summary and then we create their histogram so as to have a 
-#good grasp of how they are distributed
-summary(total_500_final$Revenues..)
-ggplot(data=total_500_final,aes(x=Revenues..))+geom_histogram(binwidth=50, colour = "green", fill ="darkgreen")
-total_500_final$Revenues.. <- cut(total_500_final$Revenues..,c(-1,50,483))
-summary(total_500_final$Assets..)
-ggplot(data=total_500_final,aes(x=Assets..))+geom_histogram(binwidth=100, colour = "red", fill ="darkred")
-total_500_final$Assets.. <- cut(total_500_final$Assets..,c(-1,500,1000))
-summary(total_500_final$Market.value..)
-ggplot(data=total_500_final,aes(x=Market.value..))+geom_histogram(binwidth=100, colour = "blue", fill ="darkblue")
-total_500_final$Market.value.. <- cut(total_500_final$Market.value..,c(-1,400,1000))
-summary(total_500_final$Total.Stockholder.Equity..)
-ggplot(data=total_500_final,aes(x=Total.Stockholder.Equity..))+geom_histogram(binwidth=100, colour = "purple", fill ="pink")
-total_500_final$Total.Stockholder.Equity.. <- cut(total_500_final$Total.Stockholder.Equity..,c(-1000,250,1000))
 #######################################################################################################
 #Change the names of some variables to be more easily readable
 colnames(total_500_final)[2] <- "Assets"
@@ -67,8 +57,8 @@ colnames(total_500_final)[3] <- "Market_Value"
 colnames(total_500_final)[4] <- "Revenues"
 colnames(total_500_final)[6] <- "Total_SH_Equity"
 #We make the Ranking variable binomial dividing the observations to the top 10 and the rest until the top 500
-total_500_final$Ranking <- cut(total_500_final$Ranking,c(-1,9,500)) #we start from -1 so as to take 0 also
-total_500_final$Ranking <- as.numeric(total_500_final$Ranking)
+#total_500_final$Ranking <- cut(total_500_final$Ranking,c(-1,9,500)) #we start from -1 so as to take 0 also
+#total_500_final$Ranking <- as.numeric(total_500_final$Ranking)
 #Delete the variables we will not need
 total_500_final[5] <- NULL #Revenues %
 total_500_final[6] <- NULL #company name
@@ -80,40 +70,44 @@ total_500_final[20] <- NULL # readability index
 ```{r}
 #Firstly we will analyze the social media relevance with the sites.
 #We will see how many of the sites have social media and what type of social media
-par(mfrow=c(1,2))
 #Facebook
 social_media_facebook <- round(table(total_500_final$facebook)/439,3)
 social_media_facebook
 slicelable <- c(paste(38.8,"% no"),paste(61.2,"% yes"))
 pie(social_media_facebook,label = slicelable,main="Share of companies with Facebook",col=rainbow(length(social_media_facebook)))
+ggplot(total_500_final, aes(Revenues, facebook)) + geom_point(size=3, colour = "darkblue")
 #Twitter
 social_media_twitter <- round(table(total_500_final$twitter)/439,3)
 social_media_twitter
 slicelable <- c(paste(33.7,"% no"),paste(66.3,"% yes"))
 pie(social_media_twitter,label = slicelable,main="Share of companies with Twitter",col=rainbow(length(social_media_twitter)))
+ggplot(total_500_final, aes(Revenues, twitter)) + geom_point(size=3, colour = "darkgreen")
 #Instagram
 social_media_instagram <- round(table(total_500_final$instagram)/439,3)
 social_media_instagram
 slicelable <- c(paste(79.1,"% no"),paste(20.9,"% yes"))
 pie(social_media_instagram,label = slicelable,main="Share of companies with Instagram",col=rainbow(length(social_media_instagram)))
+ggplot(total_500_final, aes(Revenues, instagram)) + geom_point(size=3, colour = "pink")
 #Pinterest
 social_media_pinterest <- round(table(total_500_final$pinterest)/439,3)
 social_media_pinterest
 slicelable <- c(paste(90.4,"% no"),paste(9.6,"% yes"))
 pie(social_media_pinterest,label = slicelable,main="Share of companies with Pinterest",col=rainbow(length(social_media_pinterest)))
+ggplot(total_500_final, aes(Revenues, pinterest)) + geom_point(size=3, colour = "darkred")
 #Youtube
 social_media_youtube <- round(table(total_500_final$youtube)/439,3)
 social_media_youtube
 slicelable <- c(paste(44.3,"% no"),paste(55.7,"% yes"))
 pie(social_media_youtube,label = slicelable,main="Share of companies with Youtube",col=rainbow(length(social_media_youtube)))
+ggplot(total_500_final, aes(Revenues, youtube)) + geom_point(size=3, colour = "red")
 #LinkedIn
 social_media_linkedin <- round(table(total_500_final$linkedin)/439,3)
 social_media_linkedin
 slicelable <- c(paste(45.4,"% no"),paste(54.6,"% yes"))
 pie(social_media_linkedin,label = slicelable,main="Share of companies with Linkedin",col=rainbow(length(social_media_linkedin)))
+ggplot(total_500_final, aes(Revenues, linkedin)) + geom_point(size=3, colour = "blue")
 #And we can also see for correlations
 total_500_social_media <- total_500_final[,c(1,13:18)]
-par(mfrow=c(1,1))
 library(corrplot)
 library(caret)
 sm <- cor(total_500_social_media)
@@ -131,8 +125,11 @@ corrplot(cor(total_500_social_media),method="number")
 par(mfrow=c(1,1))
 library(ggplot2)
 ggplot(data=total_500_final,aes(x=total.links))+geom_histogram(binwidth=50, colour = "darkblue", fill ="blue")
+ggplot(total_500_final, aes(Revenues, total.links)) + geom_point(size=3, colour = "darkblue")
 ggplot(data=total_500_final,aes(x=external))+geom_histogram(binwidth=50, colour = "darkred", fill ="red")
+ggplot(total_500_final, aes(Revenues, external)) + geom_point(size=3, colour = "darkred")
 ggplot(data=total_500_final,aes(x=internal))+geom_histogram(binwidth=50, colour = "darkgreen", fill ="green")
+ggplot(total_500_final, aes(Revenues, internal)) + geom_point(size=3, colour = "darkgreen")
 #And we can also see for correlations
 total_500_links <- total_500_final[,c(1,10:12)]
 library(corrplot)
@@ -145,10 +142,17 @@ corrplot(cor(total_500_links),method="number")
 #########################################################################################################
 #Now we will see the loading time per site
 ggplot(data=total_500_final,aes(x=loading.time))+geom_histogram(binwidth=1, colour = "pink", fill ="purple")
+ggplot(total_500_final, aes(Revenues, loading.time)) + geom_point(size=3, colour = "purple")
 #########################################################################################################
 #Now we will see the words in total and in unique count in relation with the readability index
 ggplot(data=total_500_final,aes(x=total_words,fill=Readability))+geom_histogram(binwidth=50, colour = "darkred", fill ="red")
 ggplot(data=total_500_final,aes(x=unique_words, fill=Readability))+geom_histogram(binwidth=50, colour = "darkred", fill ="red")
+#########################################################################################################
+#Now we will see the number of errors and warnings alone and in relationship with the Revenues
+ggplot(data=total_500_final,aes(x=number_of_errors))+geom_histogram(binwidth=50, colour = "red")
+ggplot(total_500_final, aes(Revenues, number_of_errors)) + geom_point(size=3, colour = "dark red")
+ggplot(data=total_500_final,aes(x=number_of_warning))+geom_histogram(binwidth=20, colour = "red")
+ggplot(total_500_final, aes(Revenues, number_of_warning)) + geom_point(size=3, colour = "dark blue")
 #########################################################################################################
 ```
 
@@ -209,9 +213,9 @@ for(i in 1:49){
 total_500_final$im_s_verylarge <- total_500_final$im_s_verylarge/length(verylarge)
 for(i in 1:439){
   if (total_500_final$im_s_verylarge[i] >1){
-    total_500_final$im_s_verylarge[i] <- 2 #they have images of this size
+    total_500_final$im_s_verylarge[i] <- 1 #they have images of this size
   }else{
-    total_500_final$im_s_verylarge[i] <- 1 #they do not have images of this size
+    total_500_final$im_s_verylarge[i] <- 0 #they do not have images of this size
   }
 }
 par(mfrow=c(1,1))
@@ -225,7 +229,9 @@ for(i in 1:19){
 total_500_final$im_s_large <- total_500_final$im_s_large/length(large)
 for(i in 1:439){
   if (total_500_final$im_s_large[i] >1){
-    total_500_final$im_s_large[i] <- 2
+    total_500_final$im_s_large[i] <- 1
+  }else{
+    total_500_final$im_s_large[i] <- 0 #they do not have images of this size
   }
 }
 par(mfrow=c(1,1))
@@ -239,7 +245,9 @@ for(i in 1:21){
 total_500_final$im_s_medium <- total_500_final$im_s_medium/length(medium)
 for(i in 1:439){
   if (total_500_final$im_s_medium[i] >1){
-    total_500_final$im_s_medium[i] <- 2
+    total_500_final$im_s_medium[i] <- 1
+  }else{
+    total_500_final$im_s_medium[i] <- 0 #they do not have images of this size
   }
 }
 par(mfrow=c(1,1))
@@ -253,7 +261,9 @@ for(i in 1:98){
 total_500_final$im_s_small <- total_500_final$im_s_small/length(small)
 for(i in 1:439){
   if (total_500_final$im_s_small[i] >1){
-    total_500_final$im_s_small[i] <- 2
+    total_500_final$im_s_small[i] <- 1
+  }else{
+    total_500_final$im_s_small[i] <- 0 #they do not have images of this size
   }
 }
 par(mfrow=c(1,1))
@@ -267,7 +277,9 @@ for(i in 1:83){
 total_500_final$im_s_thumbnail <- total_500_final$im_s_thumbnail/length(thumbnail)
 for(i in 1:439){
   if (total_500_final$im_s_thumbnail[i] >1){
-    total_500_final$im_s_thumbnail[i] <- 2
+    total_500_final$im_s_thumbnail[i] <- 1
+  }else{
+    total_500_final$im_s_thumbnail[i] <- 0 #they do not have images of this size
   }
 }
 par(mfrow=c(1,1))
@@ -279,29 +291,29 @@ barplot(table(total_500_final$im_s_thumbnail),col = "blue", main="Thumbnail imag
 #Now we will substract the sizes variables an keep only the new ones we created
 total_500_final <- total_500_final[,-c(22:290)]
 #str(total_500_final)
-total_500_final$Market_Value <- as.numeric(total_500_final$Market_Value)
-total_500_final$Assets <- as.numeric(total_500_final$Assets)
-total_500_final$Revenues <- NULL #we also remove the variable Revenues as we said in the beggining
+total_500_final$Market_Value <- NULL
+total_500_final$Assets <- NULL
+total_500_final$Ranking <- NULL #we also remove the variable Ranking and we keep only the Revenues varibale from the Fortune 500 variables as we said in the beggining
 total_500_final$total.links <- NULL
 total_500_final$twitter <- NULL
-total_500_final$Total_SH_Equity <- as.numeric(total_500_final$Total_SH_Equity)
+total_500_final$Total_SH_Equity <- NULL
 #We will try to create a regression model to see which of the variables of the websites play the most important part regarding the Ranking of the company. 
 #We create the empty lm model
-model_null = lm(Ranking~1,data=total_500_final)
+model_null = lm(Revenues~1,data=total_500_final)
 summary(model_null)
 #####################################################################################################
-#Use of LASSO
+#LASSO and Logistic Regression models
 library(glmnet)
 #We create a full model for the variable Ranking
-full <- lm(Ranking~.,data=total_500_final)
-anova(full)
+full <- lm(Revenues~.,data=total_500_final)
+summary(full)
 x <- model.matrix(full) [,-1]
 dim(x)
-lasso <- glmnet (x, total_500_final$Ranking)
+lasso <- glmnet (x, total_500_final$Revenues)
 par(mfrow=c(1,1),no.readonly = TRUE)
 plot(lasso,label=T)
 plot(lasso, xvar='lambda', label=T)
-lassob <- cv.glmnet(x,total_500_final$Ranking)
+lassob <- cv.glmnet(x,total_500_final$Revenues)
 lassob$lambda.min
 lassob$lambda.1se
 plot(lassob)
@@ -317,16 +329,16 @@ sum(azbolt)
 # in order to find which variables to substract we run the coefficients and we see which of them has NA as result
 coef(full)
 #Now we create a new model with only the variables with coef different from NA
-total_500_final_r <- total_500_final[,-c(5)]
-full_2 <- lm(Ranking~.,data=total_500_final_r)
-anova(full_2)
+total_500_final_r <- total_500_final[,-c(2)]
+full_2 <- lm(Revenues~.,data=total_500_final_r)
+summary(full_2)
 x <- model.matrix(full_2) [,-1]
 dim(x)
-lasso <- glmnet (x, total_500_final_r$Ranking)
+lasso <- glmnet (x, total_500_final_r$Revenues)
 par(mfrow=c(1,1),no.readonly = TRUE)
 plot(lasso,label=T)
 plot(lasso, xvar='lambda', label=T)
-lassob <- cv.glmnet(x,total_500_final_r$Ranking)
+lassob <- cv.glmnet(x,total_500_final_r$Revenues)
 lassob$lambda.min
 lassob$lambda.1se
 plot(lassob)
@@ -340,50 +352,79 @@ azbolt <- abs(zbolt)
 sum(azbolt)
 s <- sum(abs(zblasso))/sum(abs(azbolt))
 s
+#The model based on the lasso method bu taking the lambda.min is
+full_3 <- lm(Revenues~ number_of_errors+number_of_warning+external+internal+instagram+pinterest+youtube+total_words+total.images+loading.time+ im_s_verylarge+ im_s_large+ im_s_medium+ im_s_small+ im_s_thumbnail,data=total_500_final_r)
+summary(full_3)
+adj_r_square_full3 <- summary(full_3)$adj.r.squared
+aic_full3 <- AIC(full_3)
+par(mfrow=c(1,1))
+#We create the 2 basic plots so as to be able to explain the regression model
+plot(full_3,which=1:3)
+1
+2
+3
+##############################################
 blassob <- coef(lassob, s="lambda.1se")
 blassob
 zblassob <- blassob[-1] * apply(x,2,sd)
 zboltb <- coef (full_2) [-1] * apply (x,2,sd)
 s <- sum(abs(zblassob))/sum(abs(zboltb))
 s
-#We use the "both" method to compare the full model woth the null model to see how many variables are indeed important
-model_a <- step(model_null, scope = list(lower = model_null, upper=full_2), direction = "both")
-summary(model_a)
+#The model based on the lasso method bu taking the lambda.1se is
+full_4 <- lm(Revenues~ im_s_large+ im_s_medium+ im_s_small+ im_s_thumbnail,data=total_500_final_r)
+summary(full_4)
+adj_r_square_full4 <- summary(full_4)$adj.r.squared
+aic_full4 <- AIC(full_4)
+par(mfrow=c(1,1))
+#We create the 2 basic plots so as to be able to explain the regression model
+plot(full_4,which=1:3)
+1
+2
+3
+###############################################
+#We use the "both" method to compare the full_3 model with the null model to see how many variables are indeed important
+model_a <- step(model_null, scope = list(lower = model_null, upper=full_3), direction = "both")
+coef <- round(summary(model_a)$coefficients,2)
+coef
 ad_r_sq_ma <- summary(model_a)$adj.r.squared
-ad_r_sq_ma
 aic_ma <- AIC(model_a)
-aic_ma
 par(mfrow=c(1,1))
 #We create the 2 basic plots so as to be able to explain the regression model
 plot(model_a,which=1:3)
 1
 2
 3
+################
+#We compare the Adjusted R squares of the models and also the AIC of the models we created to find the best one
+adj_r_square_full3
+adj_r_square_full4
+ad_r_sq_ma
+#The best Adkusted R square is the one in model a (the closer to 1 the better)
+aic_full3
+aic_full4
+aic_ma 
+#Also the best AIC is for model a as well (the smaller the better)
+###################################################################################################
+#Clustering
 #Based on those results we will try to cluster the companies based on the results of the regression
-total_500_final_reg <- total_500_final[,c(1,8,9,14,22,26,27)]
+total_500_final_reg <- total_500_final_r[,c(1,3,4,6,10,11,18,19,21,22,23,24)]
+names(total_500_final_reg)
 set.seed(20)
-fortuneCluster <- kmeans(total_500_final_reg[, 2:7], 3, nstart = 20)
-fortuneCluster
-table(fortuneCluster$cluster, total_500_final_reg$Ranking)
+fortuneCluster <- kmeans(total_500_final_reg[, 1:11], 5, nstart = 20)
+table(fortuneCluster$cluster)
 fortuneCluster$cluster <- as.factor(fortuneCluster$cluster)
-ggplot(total_500_final_reg, aes(number_of_warning, external, color = fortuneCluster$cluster)) + geom_point()
-ggplot(total_500_final_reg, aes(number_of_warning, pinterest, color = fortuneCluster$cluster)) + geom_point()
-ggplot(total_500_final_reg, aes(number_of_warning, total.images, color = fortuneCluster$cluster)) + geom_point()
-ggplot(total_500_final_reg, aes(number_of_warning, im_s_medium, color = fortuneCluster$cluster)) + geom_point()
-ggplot(total_500_final_reg, aes(number_of_warning, im_s_small, color = fortuneCluster$cluster)) + geom_point()
-ggplot(total_500_final_reg, aes(external, pinterest, color = fortuneCluster$cluster)) + geom_point()
-ggplot(total_500_final_reg, aes(external, total.images, color = fortuneCluster$cluster)) + geom_point()
-ggplot(total_500_final_reg, aes(external, im_s_medium, color = fortuneCluster$cluster)) + geom_point()
-ggplot(total_500_final_reg, aes(external, im_s_small, color = fortuneCluster$cluster)) + geom_point()
-ggplot(total_500_final_reg, aes(pinterest, total.images, color = fortuneCluster$cluster)) + geom_point()
-ggplot(total_500_final_reg, aes(pinterest, im_s_medium, color = fortuneCluster$cluster)) + geom_point()
-ggplot(total_500_final_reg, aes(pinterest, im_s_small, color = fortuneCluster$cluster)) + geom_point()
-ggplot(total_500_final_reg, aes(total.images, im_s_medium, color = fortuneCluster$cluster)) + geom_point()
-ggplot(total_500_final_reg, aes(total.images, im_s_small, color = fortuneCluster$cluster)) + geom_point()
-ggplot(total_500_final_reg, aes(im_s_small, im_s_medium, color = fortuneCluster$cluster)) + geom_point()
-#From this model we can conlude that for the Ranking the variables that play the most important role are
-#whether or not they use small images, medium images, the number of external links, whether or not they have pinterest, the number of warnings in the html code and the number of total images
-#More over the total images have a very high price that makes the clustering seperations a little f=different than the seperation we have made with the top 10. So if we make 3 clusters we can see that we have also a similar seperation as the one we have.
+ggplot(total_500_final_reg, aes(Revenues, number_of_errors, color = fortuneCluster$cluster)) + geom_point(size=3)
+ggplot(total_500_final_reg, aes(Revenues, number_of_warning, color = fortuneCluster$cluster)) + geom_point(size=3)
+ggplot(total_500_final_reg, aes(number_of_warning, number_of_errors, color = fortuneCluster$cluster)) + geom_point(size=3)
+ggplot(total_500_final_reg, aes(Revenues, internal, color = fortuneCluster$cluster)) + geom_point(size=3)
+ggplot(total_500_final_reg, aes(Revenues, pinterest, color = fortuneCluster$cluster)) + geom_point(size=3)
+ggplot(total_500_final_reg, aes(Revenues, youtube, color = fortuneCluster$cluster)) + geom_point(size=3)
+ggplot(total_500_final_reg, aes(Revenues, total.images, color = fortuneCluster$cluster)) + geom_point(size=3)
+ggplot(total_500_final_reg, aes(Revenues, loading.time, color = fortuneCluster$cluster)) + geom_point(size=3)
+ggplot(total_500_final_reg, aes(Revenues, im_s_large, color = fortuneCluster$cluster)) + geom_point(size=3)
+ggplot(total_500_final_reg, aes(Revenues, im_s_medium, color = fortuneCluster$cluster)) + geom_point(size=3)
+ggplot(total_500_final_reg, aes(Revenues, im_s_small, color = fortuneCluster$cluster)) + geom_point(size=3)
+ggplot(total_500_final_reg, aes(Revenues, im_s_thumbnail, color = fortuneCluster$cluster)) + geom_point(size=3)
 ######################################################################################################
 ```
 
