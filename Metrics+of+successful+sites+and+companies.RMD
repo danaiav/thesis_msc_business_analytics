@@ -39,8 +39,6 @@ library(ggplot2)
 library(reshape2)
 library(DAAG)
 #######################################################################################################
-
-#######################################################################################################
 #we first see the summary of the Fortune variables and then we create their histogram so as to have a 
 #good grasp of how they are distributed
 ggplot(data=total_500_final,aes(x=Revenues))+geom_histogram(binwidth=50, colour = "green", fill ="darkgreen")
@@ -152,6 +150,14 @@ ggplot(total_500_final, aes(Revenues, number_of_errors)) + geom_point(size=3, co
 ggplot(data=total_500_final,aes(x=number_of_warning))+geom_histogram(binwidth=20, colour = "red")
 ggplot(total_500_final, aes(Revenues, number_of_warning)) + geom_point(size=3, colour = "dark blue")
 #########################################################################################################
+#########################################################################################################
+#Now we will see the non.document.error and the page not opened variables alone and in relationship with the Revenues
+ggplot(data=total_500_final,aes(x=non.document.error))+geom_histogram(binwidth=50, colour = "red")
+ggplot(total_500_final, aes(Revenues, non.document.error)) + geom_point(size=3, colour = "dark red")
+ggplot(data=total_500_final,aes(x=The_page_opened))+geom_histogram(binwidth=20, colour = "red")
+ggplot(total_500_final, aes(Revenues, The_page_opened)) + geom_point(size=3, colour = "dark blue")
+#In the page not opened we can see that the variable has only the price 1 that means that the page opened so there is no point in using it in the analysis as it does not affect the outcome
+#########################################################################################################
 ```
 
 ```{r}
@@ -205,11 +211,11 @@ total_500_final$im_s_verylarge <- 0
 k<-0
 for(i in 1:49){
   k <- verylarge[i]
-  for(i in 1:375){
+  for(i in 1:439){
     total_500_final$im_s_verylarge[i] <- total_500_final$im_s_verylarge[i] + total_500_final[i,k]
   }}
 total_500_final$im_s_verylarge <- total_500_final$im_s_verylarge/length(verylarge)
-for(i in 1:375){
+for(i in 1:439){
   if (total_500_final$im_s_verylarge[i] >1){
     total_500_final$im_s_verylarge[i] <- 1 #they have images of this size
   }else{
@@ -225,7 +231,7 @@ for(i in 1:19){
   l <- large[i]
   total_500_final$im_s_large <- total_500_final$im_s_large + total_500_final[,l]}
 total_500_final$im_s_large <- total_500_final$im_s_large/length(large)
-for(i in 1:375){
+for(i in 1:439){
   if (total_500_final$im_s_large[i] >1){
     total_500_final$im_s_large[i] <- 1
   }else{
@@ -241,7 +247,7 @@ for(i in 1:21){
   m <- medium[i]
   total_500_final$im_s_medium <- total_500_final$im_s_medium + total_500_final[,m]}
 total_500_final$im_s_medium <- total_500_final$im_s_medium/length(medium)
-for(i in 1:375){
+for(i in 1:439){
   if (total_500_final$im_s_medium[i] >1){
     total_500_final$im_s_medium[i] <- 1
   }else{
@@ -257,7 +263,7 @@ for(i in 1:98){
   sl <- small[i]
   total_500_final$im_s_small <- total_500_final$im_s_small + total_500_final[,sl]}
 total_500_final$im_s_small <- total_500_final$im_s_small/length(small)
-for(i in 1:375){
+for(i in 1:439){
   if (total_500_final$im_s_small[i] >1){
     total_500_final$im_s_small[i] <- 1
   }else{
@@ -273,7 +279,7 @@ for(i in 1:83){
   tl <- thumbnail[i]
   total_500_final$im_s_thumbnail <- total_500_final$im_s_thumbnail + total_500_final[,tl]}
 total_500_final$im_s_thumbnail <- total_500_final$im_s_thumbnail/length(thumbnail)
-for(i in 1:375){
+for(i in 1:439){
   if (total_500_final$im_s_thumbnail[i] >1){
     total_500_final$im_s_thumbnail[i] <- 1
   }else{
@@ -295,6 +301,7 @@ total_500_final$Ranking <- NULL #we also remove the variable Ranking and we keep
 total_500_final$total.links <- NULL
 total_500_final$twitter <- NULL
 total_500_final$Total_SH_Equity <- NULL
+total_500_final$The_page_opened <- NULL
 #We split the set to training and test set
 library(caret)
 set.seed(20)
@@ -332,18 +339,16 @@ sum(azbolt)
 #since the sum is NA that means we have to substract some variables
 # in order to find which variables to substract we run the coefficients and we see which of them has NA as result
 coef(full)
-
 #Now we create a new model with only the variables with coef different from NA
-total_500_final_r <- total_500_final[,-c(2,22)]
-full_2 <- lm(Revenues~.,data=total_500_final_r)
+full_2 <- lm(Revenues~. -im_s_large,data=total_500_final_train)
 summary(full_2)
 x <- model.matrix(full_2) [,-1]
 dim(x)
-lasso <- glmnet (x, total_500_final_r$Revenues)
+lasso <- glmnet (x, total_500_final_train$Revenues)
 par(mfrow=c(1,1),no.readonly = TRUE)
 plot(lasso,label=T)
 plot(lasso, xvar='lambda', label=T)
-lassob <- cv.glmnet(x,total_500_final_r$Revenues)
+lassob <- cv.glmnet(x,total_500_final_train$Revenues)
 lassob$lambda.min
 lassob$lambda.1se
 plot(lassob)
@@ -358,7 +363,7 @@ sum(azbolt)
 s <- sum(abs(zblasso))/sum(abs(azbolt))
 s
 #The model based on the lasso method bu taking the lambda.min is
-full_3 <- lm(Revenues~ non.document.error+external+instagram+youtube+total.images+im_s_verylarge+im_s_medium+ im_s_small+ im_s_thumbnail,data=total_500_final_r)
+full_3 <- lm(Revenues~ non.document.error+external+instagram+youtube+total.images+im_s_verylarge+im_s_medium+ im_s_small+ im_s_thumbnail,data=total_500_final_train)
 summary(full_3)
 adj_r_square_full3 <- summary(full_3)$adj.r.squared
 aic_full3 <- AIC(full_3)
@@ -376,7 +381,7 @@ zboltb <- coef (full_2) [-1] * apply (x,2,sd)
 s <- sum(abs(zblassob))/sum(abs(zboltb))
 s
 #The model based on the lasso method bu taking the lambda.1se is
-full_4 <- lm(Revenues~ im_s_verylarge+im_s_medium+ im_s_small+ im_s_thumbnail,data=total_500_final_r)
+full_4 <- lm(Revenues~ im_s_verylarge+im_s_medium+ im_s_small+ im_s_thumbnail,data=total_500_final_train)
 summary(full_4)
 adj_r_square_full4 <- summary(full_4)$adj.r.squared
 aic_full4 <- AIC(full_4)
@@ -408,34 +413,37 @@ ad_r_sq_ma
 aic_full3
 aic_full4
 aic_ma 
-#Also the best AIC is for full 3 as well (the smaller the better)
+#The best AIC is for full ma but the difference is not very big  in comparison to the full 3 model that has the best Adjusted R square
 predictions <- predict(full_3, total_500_final_test)
 summary(predictions)
-mse_fv <- compute_mse(full_3$fitted.values, total_500_final_test$Revenues)
-mse_fv
-mse_p <- compute_mse(predictions, total_500_final_test$Revenues)
-mse_p
+#######################################################################################################
+predictions <- predict(full_3,total_500_final_test)
+Actual_Revenues<- total_500_final_test$Revenues
+par(mfrow=c(1,2))
+plot (Actual_Revenues, col = "blue")
+plot (predictions, col = "Red")
+#From the plots above we can see that the actual Revenues have a more smooth way of leveling up except from the Revenues of the #1 ranking company that are extremely high in relationship with the other sites.
+#The prediction model is pretty close to the actual prices if we exclude the first price that is an outsider and not so easily predicted
 ###################################################################################################
 #Clustering
 #Based on those results we will try to cluster the companies based on the results of the regression
-total_500_final_reg <- total_500_final_r[,c(1,2,5,8,11,20,21,22,23)]
+names(total_500_final_train)
+total_500_final_reg <- total_500_final_train[,c(1,2,5,8,18,20,22,23,24)]
 names(total_500_final_reg)
-set.seed(20)
-fortuneCluster <- kmeans(total_500_final_reg[, 1:9], 5, nstart = 20)
-table(fortuneCluster$cluster)
+set.seed(220)
+fortuneCluster <- kmeans(total_500_final_reg[, 2:9], 8, iter.max = 100,nstart = 1)
+cluster <- table(fortuneCluster$cluster)
+plot (cluster)
 fortuneCluster$cluster <- as.factor(fortuneCluster$cluster)
-ggplot(total_500_final_reg, aes(Revenues, number_of_errors, color = fortuneCluster$cluster)) + geom_point(size=3)
-ggplot(total_500_final_reg, aes(Revenues, number_of_warning, color = fortuneCluster$cluster)) + geom_point(size=3)
-ggplot(total_500_final_reg, aes(number_of_warning, number_of_errors, color = fortuneCluster$cluster)) + geom_point(size=3)
-ggplot(total_500_final_reg, aes(Revenues, internal, color = fortuneCluster$cluster)) + geom_point(size=3)
-ggplot(total_500_final_reg, aes(Revenues, pinterest, color = fortuneCluster$cluster)) + geom_point(size=3)
-ggplot(total_500_final_reg, aes(Revenues, youtube, color = fortuneCluster$cluster)) + geom_point(size=3)
+ggplot(total_500_final_reg, aes(Revenues, non.document.error, color = fortuneCluster$cluster)) + geom_point(size=3)
+ggplot(total_500_final_reg, aes(Revenues, external, color = fortuneCluster$cluster)) + geom_point(size=3)
+ggplot(total_500_final_reg, aes(Revenues, instagram, color = fortuneCluster$cluster)) + geom_point(size=3)
 ggplot(total_500_final_reg, aes(Revenues, total.images, color = fortuneCluster$cluster)) + geom_point(size=3)
-ggplot(total_500_final_reg, aes(Revenues, loading.time, color = fortuneCluster$cluster)) + geom_point(size=3)
-ggplot(total_500_final_reg, aes(Revenues, im_s_large, color = fortuneCluster$cluster)) + geom_point(size=3)
+ggplot(total_500_final_reg, aes(Revenues, im_s_verylarge, color = fortuneCluster$cluster)) + geom_point(size=3)
 ggplot(total_500_final_reg, aes(Revenues, im_s_medium, color = fortuneCluster$cluster)) + geom_point(size=3)
 ggplot(total_500_final_reg, aes(Revenues, im_s_small, color = fortuneCluster$cluster)) + geom_point(size=3)
 ggplot(total_500_final_reg, aes(Revenues, im_s_thumbnail, color = fortuneCluster$cluster)) + geom_point(size=3)
+#We can see from the plots that the variable that plays the most important part on the creation of the clusters is the number of total images.
 ######################################################################################################
 ```
 
