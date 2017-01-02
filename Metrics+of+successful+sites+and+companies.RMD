@@ -169,22 +169,55 @@ par(mfrow=c(3,3))
 k = c(727:735)
 for(i in 1:9){
   a <- k[i]
-  image_type<- round(table(total_500_final[,a])/375,3)
+  image_type<- round(table(total_500_final[,a])/439,3)
   barplot(image_type,xlab=names(total_500_final)[a],ylab = "Shares of images per site", col = "dark green")}
 #It is obvious that the most common images type are .jpg,.png and .gif
 #So they will be the ones that we will keep
 #Delete the variables we will not need
-total_500_final[727] <- NULL #.bmp
-total_500_final[727] <- NULL #.dib
-total_500_final[728] <- NULL # .jpe
-total_500_final[728] <- NULL # .jpeg
-total_500_final[730] <- NULL # .tif
-total_500_final[730] <- NULL # .tiff
+#total_500_final[727] <- NULL #.bmp
+#total_500_final[727] <- NULL #.dib
+#total_500_final[728] <- NULL # .jpe
+#total_500_final[728] <- NULL # .jpeg
+#total_500_final[730] <- NULL # .tif
+#total_500_final[730] <- NULL # .tiff
 ##########################################################################################################
 #Now we will check the sizes of the images used
 #2 means YES and 1 means NO
 dev.off()
+verylarge <- c()
+large <- c()
+medium <- c()
+small <- c()
+thumb <- c()
 par(mfrow=c(3,3))
+images_t <- total_500_final[,c(22:726)]
+names(images_t)
+images_only_x <- images_t[,-c(5,6,23,47,65,76,96,102,154,170)]
+is.letter <- function(x) grepl("[[:alpha:]]", x)
+for(i in 1:695){
+x <- names(images_only_x)[i]
+x2 <- strsplit(x, "X")
+x3 <- x2[[1]]
+x4 <- strsplit(x3[2], "x")
+x5 <- x4[[1]]
+a <- x5[1]
+b <- x5[2]
+a <- as.numeric(a)
+b <- as.numeric(b)
+if (a >= 800 | b >=800){
+  verylarge <- union(verylarge, c(i))
+}else if((a >= 500 | b >=500) && (a < 800 | b < 800)){
+  large <- union(large, c(i))
+}else if((a >=300 | b>=300) && (a < 500 | b < 500)){
+  medium <- union(medium, c(i))
+}else if((a >= 100 | b>=100) && (a < 300 | b < 300)){
+  small <- union(small, c(i))
+}else {
+  thumb <- union(thumb, c(i))
+}
+}
+
+
 ks = c(22:726)
 for(i in 1:705){
   a <- ks[i]
