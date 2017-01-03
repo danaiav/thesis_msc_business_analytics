@@ -111,7 +111,6 @@ sm
 corrplot(cor(total_500_social_media),method="number")
 #The most high correlation is between facebook and twitter 69%
 #While the second highest is between twitter and linkedIn 59%
-#So we will not include the twitter variable in the regression model
 #########################################################################################################
 ```
 
@@ -172,17 +171,14 @@ for(i in 1:9){
   image_type<- round(table(total_500_final[,a])/439,3)
   barplot(image_type,xlab=names(total_500_final)[a],ylab = "Shares of images per site", col = "dark green")}
 #It is obvious that the most common images type are .jpg,.png and .gif
-#So they will be the ones that we will keep
-#Delete the variables we will not need
-#total_500_final[727] <- NULL #.bmp
-#total_500_final[727] <- NULL #.dib
-#total_500_final[728] <- NULL # .jpe
-#total_500_final[728] <- NULL # .jpeg
-#total_500_final[730] <- NULL # .tif
-#total_500_final[730] <- NULL # .tiff
 ##########################################################################################################
-#Now we will check the sizes of the images used
-#2 means YES and 1 means NO
+#We have too many variables of image sizes in order to make a regression model
+#So we will group the sizes based  on the following 5 categories so as to have a more calable information
+#Very large size: more than 800pixels
+#Large: 500 - 799 pixels
+#Medium: 300 - 499 pixels
+#Small: 100 - 299 pixels
+#Thumbnail: less than 100 pixels
 dev.off()
 verylarge <- c()
 large <- c()
@@ -192,9 +188,16 @@ thumb <- c()
 par(mfrow=c(3,3))
 images_t <- total_500_final[,c(22:726)]
 names(images_t)
-images_only_x <- images_t[,-c(5,6,23,47,65,76,96,102,154,170)]
-is.letter <- function(x) grepl("[[:alpha:]]", x)
-for(i in 1:695){
+images_only_x <- images_t
+for(i in 1:705){
+  names(images_only_x)[i] <- gsub("px", "", names(images_only_x)[i])
+  names(images_only_x)[i] <- gsub(".r.n", "", names(images_only_x)[i])
+  names(images_only_x)[i] <- gsub("auto", "X0", names(images_only_x)[i])
+  names(images_only_x)[i] <- gsub("\\.", "0", names(images_only_x)[i])
+}  
+names(images_only_x)
+images_only_x$x<- NULL
+for(i in 1:704){
 x <- names(images_only_x)[i]
 x2 <- strsplit(x, "X")
 x3 <- x2[[1]]
@@ -216,53 +219,33 @@ if (a >= 800 | b >=800){
   thumb <- union(thumb, c(i))
 }
 }
-
-
-ks = c(22:726)
-for(i in 1:705){
-  a <- ks[i]
-  image_type<- round(table(total_500_final[,a])/375,3)
-  barplot(image_type,xlab=names(total_500_final)[a],ylab = "Shares of images per site", col = "dark red")}
-#Firstly we will keep the image sizes that exist in more than the half od the sites that we are examining
-#So we will keep until the size x210x420 [304]
-total_500_final <- total_500_final[,-c(305:726)]
-#We will also subtrack the sizes that are not clear
-#x1x1 [24], x11x8 [42], x [44], x1x700 [50], X1x10 [53], "X10x1" [54],"X1x660" [56],"X19x1"[57], 2x2 [60],  x0x0 [74],"X1x110"[208], "autox100." [249],"autox200" [250], "X2x213" [255],
-total_500_final <- total_500_final[,-c(24,42,44,50,53,54,56,57,60,74,208,249,250,255)]
-#names(total_500_final)
-#We still have many bariables in order to make a regression model
-#So we will group the sizes based  on the following 5 categories so as to have a more calable information
-#If at least one of the dimensions belongs to a category we choose the higher category that a dimension belongs
-#Very large size: more than 800pixels
-#Large: 500 - 799 pixels
-#Medium: 300 - 499 pixels
-#Small: 100 - 299 pixels
-#Thumbnail: less than 100 pixels
-############################################################################################################
-verylarge <- c(24,34,53,54,61,62,69,70,74,75,76,80,81,83,97,98,99,114,122,123,131,138,140,141,145,153,157,182,209,210,212,213,214,215,216,217,219,220,221,222,228,234,258,274,277,280,285,286,287)
+#######################################
+length(verylarge)
 total_500_final$im_s_verylarge <- 0
 k<-0
-for(i in 1:49){
-  k <- verylarge[i]
+for(y in 1:105){
+  k <- verylarge[y]
   for(i in 1:439){
-    total_500_final$im_s_verylarge[i] <- total_500_final$im_s_verylarge[i] + total_500_final[i,k]
+    total_500_final$im_s_verylarge[i] <- total_500_final$im_s_verylarge[i] + images_only_x[i,k]
   }}
 total_500_final$im_s_verylarge <- total_500_final$im_s_verylarge/length(verylarge)
 for(i in 1:439){
-  if (total_500_final$im_s_verylarge[i] >1){
+ if (total_500_final$im_s_verylarge[i] >1){
     total_500_final$im_s_verylarge[i] <- 1 #they have images of this size
   }else{
     total_500_final$im_s_verylarge[i] <- 0 #they do not have images of this size
   }
 }
 par(mfrow=c(1,1))
-barplot(table(total_500_final$im_s_verylarge),col = "darkred", main="Very Large images 1:NO, 2:YES")
+barplot(table(total_500_final$im_s_verylarge),col = "darkred", main="Very Large images 0:NO, 1:YES")
 ###########################################################################################################
-large <- c(23,45,52,65,100,113,118,119,129,137,139,150,159,211,218,232,235,249,265)
+length(large)
 total_500_final$im_s_large <- 0
-for(i in 1:19){
-  l <- large[i]
-  total_500_final$im_s_large <- total_500_final$im_s_large + total_500_final[,l]}
+for(y in 1:63){
+  k <- large[y]
+  for(i in 1:439){
+    total_500_final$im_s_large[i] <- total_500_final$im_s_large[i] + images_only_x[i,k]
+  }}
 total_500_final$im_s_large <- total_500_final$im_s_large/length(large)
 for(i in 1:439){
   if (total_500_final$im_s_large[i] >1){
@@ -272,13 +255,15 @@ for(i in 1:439){
   }
 }
 par(mfrow=c(1,1))
-barplot(table(total_500_final$im_s_large),col = "darkblue", main="Large images 1:NO, 2:YES")
+barplot(table(total_500_final$im_s_large),col = "darkblue", main="Large images 0:NO, 1:YES")
 ###########################################################################################################
-medium <- c(37,67,68,71,85,87,94,96,121,124,154,180,183,198,207,227,238,269,281,288,290)
+length(medium)
 total_500_final$im_s_medium <- 0
-for(i in 1:21){
-  m <- medium[i]
-  total_500_final$im_s_medium <- total_500_final$im_s_medium + total_500_final[,m]}
+for(y in 1:70){
+   k <- medium[y]
+  for(i in 1:439){
+    total_500_final$im_s_medium[i] <- total_500_final$im_s_medium[i] + images_only_x[i,k]
+  }}
 total_500_final$im_s_medium <- total_500_final$im_s_medium/length(medium)
 for(i in 1:439){
   if (total_500_final$im_s_medium[i] >1){
@@ -288,13 +273,15 @@ for(i in 1:439){
   }
 }
 par(mfrow=c(1,1))
-barplot(table(total_500_final$im_s_medium),col = "darkgreen", main="Medium images 1:NO, 2:YES")
+barplot(table(total_500_final$im_s_medium),col = "darkgreen", main="Medium images 0:NO, 1:YES")
 ###########################################################################################################
-small <- c(25,26,30,31,32,33,38,39,40,43,44,46,47,51,55,57,60,63,72,73,78,79,88,89,90,95,101,102,103,106,107,109,112,117,120,128,135,143,146,147,148,149,151,152,156,160,161,162,163,164,165,166,167,168,170,171,174,189,190,192,194,196,197,199,201,203,204,206,208,225,226,230,231,233,236,236,237,242,244,246,247,248,252,257,263,264,266,268,271,272,273,275,278,279,282,283,284,289)
+length(small)
 total_500_final$im_s_small <- 0
-for(i in 1:98){
-  sl <- small[i]
-  total_500_final$im_s_small <- total_500_final$im_s_small + total_500_final[,sl]}
+for(y in 1:243){
+  k <- small[y]
+  for(i in 1:439){
+    total_500_final$im_s_small[i] <- total_500_final$im_s_small[i] + images_only_x[i,k]
+  }}
 total_500_final$im_s_small <- total_500_final$im_s_small/length(small)
 for(i in 1:439){
   if (total_500_final$im_s_small[i] >1){
@@ -304,14 +291,16 @@ for(i in 1:439){
   }
 }
 par(mfrow=c(1,1))
-barplot(table(total_500_final$im_s_small),col = "red", main="Small images 1:NO, 2:YES")
+barplot(table(total_500_final$im_s_small),col = "red", main="Small images 0:NO, 1:YES")
 ###########################################################################################################
-thumbnail<- c(22,41,64,84,91,92,93,108,126,127,169,224,240,245,250,27,142,28,144,29,155,35,158,36,172,42,173,175,48,176,49,177,50,178,56,179,58,181,184,59,185,66,186,187,188,77,82,191,86,193,195,104,200,105,202,110,111,205,115,116,223,229,125,239,241,130,132,243,133,134,136,251,253,254,255,256,259,260,261,262,267,270,276)
+length(thumb)
 total_500_final$im_s_thumbnail <- 0
-for(i in 1:83){
-  tl <- thumbnail[i]
-  total_500_final$im_s_thumbnail <- total_500_final$im_s_thumbnail + total_500_final[,tl]}
-total_500_final$im_s_thumbnail <- total_500_final$im_s_thumbnail/length(thumbnail)
+for(y in 1:223){
+   k <- thumb[y]
+   for(i in 1:439){
+    total_500_final$im_s_thumbnail[i] <- total_500_final$im_s_thumbnail[i] + images_only_x[i,k]
+   }}
+total_500_final$im_s_thumbnail <- total_500_final$im_s_thumbnail/length(thumb)
 for(i in 1:439){
   if (total_500_final$im_s_thumbnail[i] >1){
     total_500_final$im_s_thumbnail[i] <- 1
@@ -320,21 +309,23 @@ for(i in 1:439){
   }
 }
 par(mfrow=c(1,1))
-barplot(table(total_500_final$im_s_thumbnail),col = "blue", main="Thumbnail images 1:NO, 2:YES")
+barplot(table(total_500_final$im_s_thumbnail),col = "blue", main="Thumbnail images 0:NO, 1:YES")
 ###########################################################################################################
+#Now that we created the 5 new variables that describe the size of the image we will substract the variables with the individual sizes
+total_500_final <- total_500_final[,-c(22:726)]
+names(total_500_final)
+############################################################################################################
 ```
 
 ```{r}
-#Now we will substract the sizes variables an keep only the new ones we created
-total_500_final <- total_500_final[,-c(22:290)]
-#str(total_500_final)
+#Also we remove the other Fortune 500 variables since they will interfer in the outcome of the model and we keep only the variable we want to examine the Revenues
 total_500_final$Market_Value <- NULL
 total_500_final$Assets <- NULL
-total_500_final$Ranking <- NULL #we also remove the variable Ranking and we keep only the Revenues varibale from the Fortune 500 variables as we said in the beggining
+total_500_final$Ranking <- NULL 
 total_500_final$total.links <- NULL
-total_500_final$twitter <- NULL
 total_500_final$Total_SH_Equity <- NULL
 total_500_final$The_page_opened <- NULL
+corrplot(cor(total_500_final),method="number")
 #We split the set to training and test set
 library(caret)
 set.seed(20)
@@ -373,9 +364,9 @@ sum(azbolt)
 # in order to find which variables to substract we run the coefficients and we see which of them has NA as result
 coef(full)
 #Now we create a new model with only the variables with coef different from NA
-full_2 <- lm(Revenues~. -im_s_large,data=total_500_final_train)
+full_2 <- lm(Revenues~. -im_s_large - total.images,data=total_500_final_train)
 summary(full_2)
-x <- model.matrix(full_2) [,-1]
+x <- model.matrix(full_2) [,-c(25,28)]
 dim(x)
 lasso <- glmnet (x, total_500_final_train$Revenues)
 par(mfrow=c(1,1),no.readonly = TRUE)
@@ -396,7 +387,7 @@ sum(azbolt)
 s <- sum(abs(zblasso))/sum(abs(azbolt))
 s
 #The model based on the lasso method bu taking the lambda.min is
-full_3 <- lm(Revenues~ non.document.error+external+instagram+youtube+total.images+im_s_verylarge+im_s_medium+ im_s_small+ im_s_thumbnail,data=total_500_final_train)
+full_3 <- lm(Revenues~ external+instagram+youtube+.bmp+.jpe+im_s_medium+ im_s_verylarge+ im_s_thumbnail,data=total_500_final_train)
 summary(full_3)
 adj_r_square_full3 <- summary(full_3)$adj.r.squared
 aic_full3 <- AIC(full_3)
@@ -414,7 +405,7 @@ zboltb <- coef (full_2) [-1] * apply (x,2,sd)
 s <- sum(abs(zblassob))/sum(abs(zboltb))
 s
 #The model based on the lasso method bu taking the lambda.1se is
-full_4 <- lm(Revenues~ im_s_verylarge+im_s_medium+ im_s_small+ im_s_thumbnail,data=total_500_final_train)
+full_4 <- lm(Revenues~ im_s_verylarge+im_s_medium+ im_s_thumbnail,data=total_500_final_train)
 summary(full_4)
 adj_r_square_full4 <- summary(full_4)$adj.r.squared
 aic_full4 <- AIC(full_4)
@@ -426,7 +417,7 @@ plot(full_4,which=1:3)
 3
 ###############################################
 #We use the "both" method to compare the full_3 model with the null model to see how many variables are indeed important
-model_a <- step(model_null, scope = list(lower = model_null, upper=full_3), direction = "both")
+model_a <- step(model_null, scope = list(lower = model_null, upper=full), direction = "both")
 coef <- round(summary(model_a)$coefficients,2)
 summary(model_a)
 ad_r_sq_ma <- summary(model_a)$adj.r.squared
@@ -447,37 +438,115 @@ aic_full3
 aic_full4
 aic_ma 
 #The best AIC is for full ma but the difference is not very big  in comparison to the full 3 model that has the best Adjusted R square
-predictions <- predict(full_3, total_500_final_test)
-summary(predictions)
 #######################################################################################################
-predictions <- predict(full_3,total_500_final_test)
+predictions_ma <- predict(model_a,total_500_final_test)
 Actual_Revenues<- total_500_final_test$Revenues
-par(mfrow=c(1,2))
+par(mfrow=c(2,2))
 plot (Actual_Revenues, col = "blue")
-plot (predictions, col = "Red")
+plot (predictions_ma, col = "Red",main = "Model A")
+#####################################
+predictions_full3 <- predict(full_3,total_500_final_test)
+plot (predictions_full3, col = "Red",main = "Full_3 model")
+#####################################
+predictions_full4 <- predict(full_4,total_500_final_test)
+plot (predictions_full4, col = "Red",main = "Full_4 model")
 #From the plots above we can see that the actual Revenues have a more smooth way of leveling up except from the Revenues of the #1 ranking company that are extremely high in relationship with the other sites.
-#The prediction model is pretty close to the actual prices if we exclude the first price that is an outsider and not so easily predicted
-###################################################################################################
+#The prediction model that is more smooth is the model a which has as we said before the best Adjusted R Square and the best AIC price
+par(mfrow=c(1,1))
+corrplot(cor(total_500_final_reg),method="number")
+#We xan see here that the variable im_small has a very high correlation with the variable very_large and also the variable very large has also a very high correlation with the variable thumbnail.
+#So we can try creating a new model excluding this 1 variable to see if the results will be better
+dev.off()
+full_5 <- lm(Revenues~ external+instagram+.bmp+.jpe+im_s_medium+im_s_small+im_s_thumbnail,data=total_500_final_train)
+summary(full_5)
+adj_r_square_full5 <- summary(full_5)$adj.r.squared
+aic_full5 <- AIC(full_5)
+par(mfrow=c(1,1))
+#We create the 2 basic plots so as to be able to explain the regression model
+plot(full_5,which=1:3)
+1
+2
+3
+ad_r_sq_ma
+adj_r_square_full5 
+aic_ma 
+aic_full5 
+#The adjusted R square and the aic are a little worse than before
+#######################################################################################################
+##################################################################################################
 #Clustering
 #Based on those results we will try to cluster the companies based on the results of the regression
 names(total_500_final_train)
-total_500_final_reg <- total_500_final_train[,c(1,2,5,8,18,20,22,23,24)]
-names(total_500_final_reg)
+total_500_final_reg <- total_500_final_train[,c(1,5,16,19,27,29,30,31)]
+
 set.seed(220)
-fortuneCluster <- kmeans(total_500_final_reg[, 2:9], 8, iter.max = 100,nstart = 1)
+fortuneCluster <- kmeans(total_500_final_reg[, 1:8], 3, iter.max = 100,nstart = 1)
 cluster <- table(fortuneCluster$cluster)
 plot (cluster)
 fortuneCluster$cluster <- as.factor(fortuneCluster$cluster)
-ggplot(total_500_final_reg, aes(Revenues, non.document.error, color = fortuneCluster$cluster)) + geom_point(size=3)
 ggplot(total_500_final_reg, aes(Revenues, external, color = fortuneCluster$cluster)) + geom_point(size=3)
-ggplot(total_500_final_reg, aes(Revenues, instagram, color = fortuneCluster$cluster)) + geom_point(size=3)
-ggplot(total_500_final_reg, aes(Revenues, total.images, color = fortuneCluster$cluster)) + geom_point(size=3)
 ggplot(total_500_final_reg, aes(Revenues, im_s_verylarge, color = fortuneCluster$cluster)) + geom_point(size=3)
-ggplot(total_500_final_reg, aes(Revenues, im_s_medium, color = fortuneCluster$cluster)) + geom_point(size=3)
 ggplot(total_500_final_reg, aes(Revenues, im_s_small, color = fortuneCluster$cluster)) + geom_point(size=3)
-ggplot(total_500_final_reg, aes(Revenues, im_s_thumbnail, color = fortuneCluster$cluster)) + geom_point(size=3)
-#We can see from the plots that the variable that plays the most important part on the creation of the clusters is the number of total images.
+#We can see from the plots that the variable that plays the most important part on the creation of the clusters is the number are the number of external links.
 ######################################################################################################
+#So we can try to substract this variable to see how the model changes
+dev.off()
+full_6 <- lm(Revenues~ im_s_verylarge+instagram+.bmp+.jpe+im_s_medium+im_s_small+im_s_thumbnail,data=total_500_final_train)
+summary(full_6)
+adj_r_square_full6 <- summary(full_6)$adj.r.squared
+aic_full6 <- AIC(full_6)
+par(mfrow=c(1,1))
+#We create the 2 basic plots so as to be able to explain the regression model
+plot(full_6,which=1:3)
+1
+2
+3
+ad_r_sq_ma
+adj_r_square_full6
+aic_ma 
+aic_full6 
+##############################################################
+predictions_ma <- predict(model_a,total_500_final_test)
+Actual_Revenues<- total_500_final_test$Revenues
+par(mfrow=c(2,2))
+plot (Actual_Revenues, col = "blue")
+plot (predictions_ma, col = "Red",main = "Model A")
+#####################################
+predictions_full5 <- predict(full_5,total_500_final_test)
+plot (predictions_full5, col = "Red",main = "Full_5 model")
+#####################################
+predictions_full6 <- predict(full_6,total_500_final_test)
+plot (predictions_full6, col = "Red",main = "Full_6 model")
+#######################################################
+#Full model 6 is very close to the model a but since the model a still has better adjusted r square and aic price we will conlude that this is the best model. Which gives us the variables (metrics of the site) that most affect the company's Revenues.
+summary(model_a)
+#We can see from the model that the basic things that can effect a companys success are related with the images and the links.
+#We will also try to make a model that we will not take into consideration the images at all just in order to see how it will explain the revenues
+full_no_im <- lm(Revenues~.-.bmp-.dib-.gif-.jpe-.jpeg-.jpg-.png-.tif-.tiff-total.images-im_s_verylarge - im_s_large - im_s_medium -im_s_small - im_s_thumbnail,data=total_500_final_train)
+model_b <- step(model_null, scope = list(lower = model_null, upper=full_no_im), direction = "both")
+coefb <- round(summary(model_b)$coefficients,2)
+summary(model_b)
+ad_r_sq_mb <- summary(model_b)$adj.r.squared
+aic_mb <- AIC(model_b)
+par(mfrow=c(1,1))
+#We create the 2 basic plots so as to be able to explain the regression model
+plot(model_b,which=1:3)
+1
+2
+3
+predictions_ma <- predict(model_a,total_500_final_test)
+Actual_Revenues<- total_500_final_test$Revenues
+par(mfrow=c(2,2))
+plot (Actual_Revenues, col = "blue")
+plot (predictions_ma, col = "Red",main = "Model A")
+#####################################
+predictions_model_b <- predict(model_b,total_500_final_test)
+plot (predictions_model_b, col = "Red",main = "model_b model")
+#####################################
+predictions_full_no_im <- predict(full_no_im,total_500_final_test)
+plot (predictions_full_no_im, col = "Red",main = "full_no_im model")
+#######################################################
+#We can see that here the prediction of the 2 new models is not at all good so now that we have checked this option as well we can conclude that the most important factor are the ones of model_a
 ```
 
 
