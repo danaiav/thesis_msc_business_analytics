@@ -22,7 +22,7 @@ The Fortune 500 is an annual list compiled and published by Fortune magazine tha
 For the purposes of this paper we will use this list of companies and we will examine their websites in order to understand if they indeed have something in common or if their success is irrelevant with their on-line presence.\\
 The first thing that we will need is a list of the names that are include in the fortune 500. The easiest way to obtain this list is from the following article:
 \href{url}{http://www.zyxware.com/articles/4344/list-of-fortune-500-companies-and-their-websites}.\ The way that we will obtain the list will be explained in the 2.4 Scripts section of this chapter.
-In the following table one can see the 50 most succesful companies that are included in the Fortune 500 during the period this paper is taking place. The rest of the list is available in the Appendix A.\cite{key3}
+In the following table one can see the 50 most succesful companies that are included in the Fortune 500 during the period this paper is taking place. The rest of the list is available in the Appendix A.\ref{App:AppendixA}
 \begin{table}[H]
 \centering
 \caption{Fortune 500 - 50 first companies}
@@ -84,10 +84,18 @@ In the following table one can see the 50 most succesful companies that are incl
 \end{tabular}
 \end{table}
 
-
-
 \subsection{Metrics}
-Now that we have declared the companies that we are going to use we will also need to decide which metrics are we going to examine for each site.
+Now that we have declared the companies that we are going to use we will also need to decide which metrics are we going to examine for each site. Since we cannot have access to metrics such as traffic we will have to examine metrics that are more related to how the site is structure and what exactly does the initial page of each site includes. Initially we can divide the metrics in two major categories:
+\begin{itemize}
+\item What we see?
+\item What lays behind of what we see?
+\end{itemize}
+In the first category we are referring to metrics that can easily be conceived by the naked eye as well. For example the images that a website is using in its landing page. How many there are and if they are big or small.\\
+The second category is not so obvious and it includes informations that usually is visible only to the web developer or the creator of the page. The information here are being given from the html code of a site. For instance we can see if the html code has any errors, that can lead to some malfunction in the site for example.\\
+Now that we have a first understanding of the two main categories that the metrics we will use are divided in, we can see in detail the metrics that will be examined in this paper:
+\paragraph{Loading time:}One aspect of a website that is crucial is the time it takes for it to load. Nowadays that the internet speed is going higher and higher most people do not have the patient to wait for a page to load. That is why we think that a metrics that should be definitely included in this research in the loading time of the initial page of a site.
+\paragraph{Number of links:}When someone is browsing through the internet in many cases they are not completely sure what exactly they are looking for and that is why in a website it would be wise to have some links that can direct the user to find what he wants.These links can either direct the user in another page of the same site, in which case the link will be characterized as an internal link. Or they can lead the user to another site, where in that case the link is characterized as an external link.For the purpose of this paper since it is not so clear which type of links are more important to a user we will examine both the internal and the external links.
+\paragraph{Social media:}Our era is marked by the social media wave that has change our lifestyle and our daily habits. So it would be considered an overview if we didn't take under consideration the number of social media that the company chooses to participate in. Even though they can also be considered as external links of the website we will examine them separately in order to see if any particular social medium effects the company's revenues.
 \subsection{Python}
 A few words about the language i used and why
 \subsection{Scripts}
