@@ -5,21 +5,32 @@
 \contentsline {paragraph}{Loading time:}{5}{section*.2}
 \contentsline {paragraph}{Number of links:}{5}{section*.3}
 \contentsline {paragraph}{Social media:}{5}{section*.4}
-\contentsline {subsection}{\numberline {2.3}Python}{6}{subsection.2.3}
-\contentsline {subsection}{\numberline {2.4}Scripts}{6}{subsection.2.4}
-\contentsline {subsubsection}{\numberline {2.4.1}Fortune data}{6}{subsubsection.2.4.1}
-\contentsline {subsubsection}{\numberline {2.4.2}Html download}{6}{subsubsection.2.4.2}
-\contentsline {subsubsection}{\numberline {2.4.3}Social media existence}{6}{subsubsection.2.4.3}
-\contentsline {subsubsection}{\numberline {2.4.4}Readability index}{6}{subsubsection.2.4.4}
-\contentsline {subsubsection}{\numberline {2.4.5}...}{6}{subsubsection.2.4.5}
-\contentsline {paragraph}{Note}{6}{section*.5}
-\contentsline {section}{\numberline {3}Data Analysis}{7}{section.3}
-\contentsline {subsection}{\numberline {3.1}Data loading}{7}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}R}{7}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Scripts}{7}{subsection.3.3}
-\contentsline {subsubsection}{\numberline {3.3.1}Statistical Analysis}{7}{subsubsection.3.3.1}
-\contentsline {subsubsection}{\numberline {3.3.2}Regression Model}{7}{subsubsection.3.3.2}
-\contentsline {subsubsection}{\numberline {3.3.3}Clustering}{7}{subsubsection.3.3.3}
-\contentsline {section}{\numberline {4}Conclusions}{8}{section.4}
-\contentsline {section}{\numberline {5}Bibliography}{9}{section.5}
-\contentsline {section}{\numberline {A}\\Appendix A: Fortune 500 Companies}{10}{appendix.A}
+\contentsline {paragraph}{Number and size of images:}{6}{section*.5}
+\contentsline {paragraph}{Type of images:}{6}{section*.6}
+\contentsline {paragraph}{Number of words:}{6}{section*.7}
+\contentsline {paragraph}{Readability index:}{6}{section*.8}
+\contentsline {paragraph}{HTML Validation:}{6}{section*.9}
+\contentsline {subsection}{\numberline {2.3}Python}{7}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Scripts}{7}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}Fortune data}{7}{subsubsection.2.4.1}
+\contentsline {paragraph}{Step 1}{9}{section*.10}
+\contentsline {paragraph}{Step 2}{9}{section*.11}
+\contentsline {paragraph}{Step 3}{9}{section*.12}
+\contentsline {paragraph}{Step 4}{9}{section*.13}
+\contentsline {paragraph}{Step 5}{9}{section*.14}
+\contentsline {paragraph}{Step 6}{10}{section*.15}
+\contentsline {subsubsection}{\numberline {2.4.2}Html download}{10}{subsubsection.2.4.2}
+\contentsline {subsubsection}{\numberline {2.4.3}Social media existence}{10}{subsubsection.2.4.3}
+\contentsline {subsubsection}{\numberline {2.4.4}Readability index}{10}{subsubsection.2.4.4}
+\contentsline {subsubsection}{\numberline {2.4.5}...}{10}{subsubsection.2.4.5}
+\contentsline {paragraph}{Note}{10}{section*.16}
+\contentsline {section}{\numberline {3}Data Analysis}{11}{section.3}
+\contentsline {subsection}{\numberline {3.1}Data loading}{11}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}R}{11}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Scripts}{11}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Statistical Analysis}{11}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}Regression Model}{11}{subsubsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.3}Clustering}{11}{subsubsection.3.3.3}
+\contentsline {section}{\numberline {4}Conclusions}{12}{section.4}
+\contentsline {section}{\numberline {5}Bibliography}{13}{section.5}
+\contentsline {section}{\numberline {A}\\Appendix A: Fortune 500 Companies}{14}{appendix.A}

@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage{hyperref}
 \usepackage{float}
+\usepackage{listings}
 \begin{document}
 \title{Metrics of successful websites and companies}
 \author{Danai Avratoglou}
@@ -95,13 +96,90 @@ The second category is not so obvious and it includes informations that usually 
 Now that we have a first understanding of the two main categories that the metrics we will use are divided in, we can see in detail the metrics that will be examined in this paper:
 \paragraph{Loading time:}One aspect of a website that is crucial is the time it takes for it to load. Nowadays that the internet speed is going higher and higher most people do not have the patient to wait for a page to load. That is why we think that a metrics that should be definitely included in this research in the loading time of the initial page of a site.
 \paragraph{Number of links:}When someone is browsing through the internet in many cases they are not completely sure what exactly they are looking for and that is why in a website it would be wise to have some links that can direct the user to find what he wants.These links can either direct the user in another page of the same site, in which case the link will be characterized as an internal link. Or they can lead the user to another site, where in that case the link is characterized as an external link.For the purpose of this paper since it is not so clear which type of links are more important to a user we will examine both the internal and the external links.
-\paragraph{Social media:}Our era is marked by the social media wave that has change our lifestyle and our daily habits. So it would be considered a
+\paragraph{Social media:}Our era is marked by the social media wave that has changed our lifestyle and our daily habits. So it would be considered an overview if we didn't take under consideration the number of social media that the company chooses to participate in. Even though they can also be considered as external links of the website we will examine them separately in order to see if any particular social medium effects the company's revenues.
+\paragraph{Number and size of images:}Since the site is the first thing that a user will see for the company and there is a famous quote that says that \textit{"First impressions counts"} we should also examine how the companies decide to visualize their landing page. In other words to see how many images they include in it and more on that what sizes are those images.\\ It is completely different to see only one huge image in the landing page of a site with not many words or descriptions than to see many small images with different information. The purpose is to examine if these type of diversities between the examined websites are actually related to how they are doing profit wise.
+\paragraph{Type of images:} This kind of information is a little more complicated for a simple user to understand, but in many cases it plays a very important role. For example some websites are using specific type of images or banners that are not compatible with all the browsers, leading the user to see some break points in the website and even stop visiting it. That is why we believe is important to review this metric as well.
+\paragraph{Number of words:} They say a picture worth a thousand words but that is not enough in our case. After exploring the number, sizes and type of pictures that a website is using we should also explore the number of words it is using to accompany the images and complete the outcome that a user will come across. The metrics we will use will be two. The first one will be the total words that are being used in the landing page and the other one will be the total unique words that are being used. When we are referring to unique words we mean words that are not so commonly use such as "a" or "and" and they give an air of individuality to the text. By using this metric we would try to see if the words that are being used are just as important as the actual content and if the words can make a difference.
+\paragraph{Readability index:}In order for the previous metrics to be completed we will also have to take under consideration how comprehending is the text used in the websites for the users. This information can be obtained by calculating the readability index of the website.How the readability index is being calculating will be furthered explained in another section.
+\paragraph{HTML Validation:} Moreover we will have to check the quality of the html code behind the website we are seeing. Are there any mistakes in the code for example any brackets that opened and never closed or any links that do not work. We will examine again two different metrics here the number of errors and the number of warnings. The warning are parts of the code that even though they work at the time there is a good chance to malfunction if any changes or addition are to be made to the html code. 
 \subsection{Python}
-A few words about the language i used and why
+After having a first look into the variables/ metrics we will use in order to contact this research we should also see how we are going to obtain all this information.\\
+Since all of this information can be subtract from the html code of a company's website we should use a programming language in order to download the html pages and then to extract the specific metrics we want to examine from them.\\
+For the purposes of this paper the programming language that will be used for downloading the metrics from the websites is Python. More specifically the version of Python that will be used is the 2.7 one. Python is a widely used high-level programming language used for general-purpose programming, created by Guido van Rossum and first released in 1991. An interpreted language, Python has a design philosophy which emphasizes code readability (notably using white space indentation to delimit code blocks rather than curly braces or keywords), and a syntax which allows programmers to express concepts in fewer lines of code than possible in languages such as C++ or Java. \\
+The language provides constructs intended to enable writing clear programs on both a small and large scale. Furthermore the way that Python allows a user to programming is common to all users which gives this language a leverage as a program build in Python can be easily understood from another user without any difficulty.\\
+The environment that is going to be used is from the Anaconda package which is a free open source distribution of the Python and R programming languages for large-scale data processing, predictive analytics, and scientific computing, that aims to simplify package management and deployment. To be more precise from this package we are going to use the Jupyter Notebook.\cite{key4} \\
 \subsection{Scripts}
-With what codes did I downloaded the metrics I needed
+In order to gather all the needed metrics we had to create many small scripts so as to collect them. In this section we will present in detail the code that was used in order to extract the information that later will help us contact the analysis of the relationship between those metrics and the company's status.
 \subsubsection{Fortune data}
-With what codes did I downloaded the metrics I needed
+The first step is to download and gather the names of the companies that we are going to examine and also the url of their websites and finally their ranking.Those information can be found in the following url as he have already mentioned in the beginning.\href{url}{http://www.zyxware.com/articles/4344/list-of-fortune-500-companies-and-their-websites}.\\
+The way to keep only the those three informations as seperate variables is by separating from the html code of this page the needed information.\\
+The first step is to create the empty lists where we will include the informations we are going to extract.In order to extract the needed informations we will create 3 lists. The first one will contain the rank of each site, the second one will contain the name of the company and the 3rd one will contain the actual link of the company's site. Before creating the function we should make some initial empty lists that we will use.:
+\begin{lstlisting}[language=Python]
+list_company_number =[]
+list_company_name = []
+list_company_website = []
+\end{lstlisting}
+Also we need to upload some libraries that will help us creating the functions we need for gathering the information we want.
+\begin{lstlisting}[language=Python]
+import urllib
+import urllib2
+import time
+import os
+from bs4 import BeautifulSoup
+import re
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+\end{lstlisting}
+For achieving this purpose we will create a function that will in its turn create those three list. \\
+\begin{lstlisting}[language=Python]
+def websites (url): 
+    from time import time
+    start = time ()
+    browser = urllib2.build_opener() 
+    browser.addheaders = [('User-agent', 'Mozilla/5.0')]
+    response = browser.open(url)
+    myHTML = response.read()
+    soup = BeautifulSoup(myHTML,"lxml")    
+    o = 0
+    td_list =[]
+    for row2 in soup.html.body.findAll('td'):
+        td_list.insert(o, row2)
+        o = o + 1
+    a = 0
+    b = 1
+    c = 2
+    list_numbering = 0
+    for i in range (0,500):        
+        num = str(td_list[a])
+        company = str(td_list[b])
+        site = str(td_list[c])
+        c_num = re.findall('>(.+?)</td>',num)  
+        c_num = str(c_num[0])
+        c_name = re.findall('>(.+?)</td>',company)
+        c_name = str(c_name[0])
+        c_site = re.findall('">(.+?)</a>',site)
+        c_site = str(c_site[0])        
+        list_company_number.insert(list_numbering,c_num)
+        list_company_name.insert(list_numbering,c_name)
+        list_company_website.insert(list_numbering,c_site)
+        a = a + 3
+        b = b + 3
+        c = c + 3
+        list_numbering =  list_numbering + 1 
+    end = time ()
+    duration = round (end - start, 1)
+    minutes = round (duration /60, 1)
+    print 'The lists are ready in ', duration, ' seconds'
+    print 'The lists are ready in ', minutes, ' minutes'
+\end{lstlisting}
+The steps we followed to create the following function are the following:
+\paragraph{Step 1} We create a fake browser that we are going to use in order to open the page and downloaded. The reason we do that is that many sites do not allow us to download their page because they are afraid of stealing important information. Since we are not using any private information we use this method to avoid issues while trying to open the html page at hand.    
+\paragraph{Step 2} We open the url and we read it while saving it in the variable "myHTML".
+\paragraph{Step 3} With the help of the BeautifulSoup library we read the page as a lxml file and then for each row of this file we are looking for the "td" parts of the code where the informations we want are included.
+\paragraph{Step 4} Since we need the names and the urls of all the 500 sites we created a loop from 0 to 500 where for each i we try to isolate the part of the code that contains the information that we want. Moreover even thought it seems that with this loop we calculate 501 numbers since in Python the second bracket is always open we actually count from zero to 499.
+\paragraph{Step 5} We use reg expressions\footnote{A regular expression is a special sequence of characters that helps you match or find other strings or sets of strings, using a specialized syntax held in a pattern.} in order to state precisely what part of the already selected code we want to keep.
+\paragraph{Step 6} We insert with a specific order the names, the ranking and the url to the corresponding lists and finally we create a text that will appear when the function is completed. Here we have also calculated the time that this function took to be completed and we will appear it as well along with the text.
 \subsubsection{Html download}
 With what codes did I downloaded the metrics I needed
 \subsubsection{Social media existence}
@@ -136,7 +214,7 @@ With what codes did I downloaded the metrics I needed
 \bibitem{key1}$https://en.wikipedia.org/wiki/Fortune_500$
 \bibitem{key2}$http://beta.fortune.com/fortune500$
 \bibitem{key3}$http://www.tablesgenerator.com/$
-
+\bibitem{key4}$https://www.continuum.io/downloads$
 \end{thebibliography}
 
 
