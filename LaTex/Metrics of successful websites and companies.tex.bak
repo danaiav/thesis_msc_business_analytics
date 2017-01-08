@@ -23,21 +23,16 @@ For the purposes of this paper we will use this list of companies and we will ex
 The first thing that we will need is a list of the names that are include in the fortune 500. The easiest way to obtain this list is from the following article:
 \href{url}{http://www.zyxware.com/articles/4344/list-of-fortune-500-companies-and-their-websites}.\ The way that we will obtain the list will be explained in the 2.4 Scripts section of this chapter.
 The companies that are included in the Fortune 500 during the period this paper is taking place are the following ones\cite{key3}:
-\begin{table}[H]
+\begin{table}[]
 \centering
 \caption{My caption}
 \label{my-label}
-\begin{tabular}{lllll}
- &  &  &  &  \\
- &  &  &  &  \\
- &  &  &  &  \\
- &  &  &  &  \\
- &  &  &  &  \\
- &  &  &  &  \\
- &  &  &  &  \\
- &  &  &  &  \\
- &  &  &  &  \\
- &  &  &  & 
+\begin{tabular}{llllllllll}
+ &  &  &  &  &  &  &  &  &  \\
+ &  &  &  &  &  &  &  &  &  \\
+ &  &  &  &  &  &  &  &  &  \\
+ &  &  &  &  &  &  &  &  &  \\
+ &  &  &  &  &  &  &  &  & 
 \end{tabular}
 \end{table}
 
