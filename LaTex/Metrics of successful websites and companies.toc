@@ -35,9 +35,9 @@
 \contentsline {section}{\numberline {3}Data Analysis}{38}{section.3}
 \contentsline {subsection}{\numberline {3.1}R and R-Studio}{38}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Scripts}{38}{subsection.3.2}
-\contentsline {subsubsection}{\numberline {3.2.1}Statistical Analysis}{38}{subsubsection.3.2.1}
-\contentsline {subsubsection}{\numberline {3.2.2}Regression Model}{38}{subsubsection.3.2.2}
-\contentsline {subsubsection}{\numberline {3.2.3}Clustering}{38}{subsubsection.3.2.3}
-\contentsline {section}{\numberline {4}Conclusions}{39}{section.4}
-\contentsline {section}{\numberline {5}Bibliography}{40}{section.5}
-\contentsline {section}{\numberline {A}\\Appendix A: Fortune 500 Companies}{41}{appendix.A}
+\contentsline {subsubsection}{\numberline {3.2.1}Statistical Analysis}{39}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}Regression Model}{39}{subsubsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.3}Clustering}{39}{subsubsection.3.2.3}
+\contentsline {section}{\numberline {4}Conclusions}{40}{section.4}
+\contentsline {section}{\numberline {5}Bibliography}{41}{section.5}
+\contentsline {section}{\numberline {A}\\Appendix A: Fortune 500 Companies}{42}{appendix.A}
