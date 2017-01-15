@@ -1,4 +1,12 @@
 \documentclass{article}
+
+\usepackage{titlesec}
+\setcounter{secnumdepth}{4}
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
 \usepackage{hyperref}
 \usepackage{float}
 \usepackage{listings}
@@ -7,17 +15,15 @@
 \author{Danai Avratoglou}
 \date{January 2017}
 \maketitle
-\pagebreak 
+\newpage
 \tableofcontents
-\pagebreak  
+\newpage
 \section{Introduction}
  
 An on-line presence of a company was not an important factor of its success until a few years ago. Taking although into account the vast spread of the impact that internet has on consumers regarding their choices this hypothesis is not valid any more. Companies are obliged by the trends to be active on-line and to maintain a website that depicts the image they want their consumers to perceive. The purpose of this paper is to understand the relationship that exists between the website of a company and its success. Trying to comprehend this relationship a comparison will take place between specific metrics of the websites of the Fortune's 500 more successful companies  and their financial status. By performing regression models and statistical analysis this paper will try to explore which metrics of a company's website influence its success.   
- 
-\pagebreak 
+\newpage
 \section{Data gathering}
 The first step in order to contact this research is to conclude to the companies that are going to be examined. Since the purpose of this paper is to see if the website metrics that will be examined are influencing the success of the company it is a good idea to examine websites of some already successful companies and try to find out what they have in common.
-
 \subsection{Data Source - Fortune 500}
 The Fortune 500 is an annual list compiled and published by Fortune magazine that ranks 500 of the largest U.S. corporations by total revenue for their respective fiscal years. The list includes public companies, along with privately held companies for which revenues are publicly available.\cite{key1, key2}\\ 
 For the purposes of this paper we will use this list of companies and we will examine their websites in order to understand if they indeed have something in common or if their success is irrelevant with their on-line presence.\\
@@ -1408,7 +1414,7 @@ final3.to_csv('total_500.csv', sep=';')
 data500 = pd.read_csv("total_500.csv", sep=';') 
 data500.head(3)
 \end{lstlisting}
-\pagebreak  
+\newpage  
 \section{Data Analysis}
 Now that we have gathered all the information needed the next step is to proceed to their analysis. For the purposes of this assignment we will use the programming language R to perform this analysis.
 \subsection{R and R-Studio}
@@ -1416,7 +1422,7 @@ R is a programming language and software environment for statistical computing a
 Furthermore R is freely available under the GNU General Public License, and pre-compiled binary versions are provided for various operating systems. While R has a command line interface, there are several graphical front-ends available.\\
 For the purpose of this paper we will use the R-Studio which  is a free and open-source integrated development environment (IDE) for R.
 \subsection{Scripts}
-The analysis that we are going to perform will be done in the following steps:
+In this chapter we are going to present the scripts that we used throughout the analysis and we will explain elaborately how we reached to the conclusions. The analysis that we are going to perform will be explained by the following order as we performed it:
 \begin{enumerate}
 \item Data cleansing
 \item Variable analysis and correlation
@@ -1449,14 +1455,58 @@ The analysis that we are going to perform will be done in the following steps:
 \item Final model
 \end{enumerate}
 \end{enumerate}
-\subsubsection{Statistical Analysis}
-With what codes did I downloaded the metrics I needed
-\subsubsection{Regression Model}
-With what codes did I downloaded the metrics I needed
-\subsubsection{Clustering}
-With what codes did I downloaded the metrics I needed
+\subsubsection{Data cleansing}
+The first step in order to perform the analysis is to upload the final csv we have created and then change any miss fitted value or type of variable so as to be easier for us to examine them.
+
+\subsubsection{Variable analysis and correlation}
+Now that the variables are cleansed we can perform the first step of the analysis. We should see how the prices are distributed and get a first look of what we are examining.
+\paragraph{Fortune variables correlation}
+The first step is to determine the variable with which we will compare all the other ones. Obviously this variable will be one of the metrics we downloaded from the fortune 500 site so as to have an actual variable that shows the status of the company and compare the rest of the variables with it. 
+\paragraph{Social media analysis and correlation}
+Now that we have reach to the conclusion that the metric we will use from the Fortune 500 is the Revenues we will proceed with analysing the social media variables to see how they are distributed and then to see how they are correlated with the chosen variable.
+\paragraph{Links analysis and correlations}
+Next step is to analyse the distribution of the internal, external and total links and of course their correlation with each other and with the Revenues.
+\paragraph{Words analysis and correlation}
+Continuing with the analysis of the unique words and the total words with correlation to the readability index.
+\paragraph{HTML validation variables analysis and correlation}
+During the extraction of the html validation variables we created 4 different metrics: the number of errors, the number of warnings the non document error and the page not opened one. In this chapter we are going to analyse the distributions of those variables and also their correlation with the Revenues.
+\paragraph{Image types analysis and correlation}
+Last but not least we should analyse the distribution of the different types of images that are being used on the websites that we are examining and also compare the total images with the Revenues to see the correlation.
+\subsubsection{Data manipulation}
+In this chapter we are going to change some of the variables that we have created in order to make them more easy to be analysed and explained in relationship to the Revenues. 
+\paragraph{Image sizes variables reconstruction}
+After implementing the python code for the size images (2.4.10) we created almost 700 different variables. This number is almost prohibited when it comes to regression models especially when the actual number of the examined cases are a lot fewer (500). That is why we decide to group this 700 variables to 5 new ones that we will be able to incorporate to this analysis.
+\paragraph{Remove variables}
+Now that we have created and analysed all the needed variables we can subtract from the data frame the variables that we have decide not to include in the regression analysis that will follow.
+\subsubsection{Logistic Regression}
+In this chapter we will perform logistic regression to the chosen data frame in order to determine the variables that affect most the price of the Revenues of a company
+\paragraph{Training and test set creation}
+Before we begin with the regression we have to divide the data frame to 2 data frames so as to be able to test the model we will create. We will make a training set and a test set.
+\paragraph{Null and Full model creation}
+The first step is by using the training set to create a null model (that includes only the Revenues) and a full model (that includes all the variables)
+\paragraph{Lasso Method}
+The next step is to implement the Lasso method
+\paragraph{Both Method}
+We will continue by applying the both method of the logistic regression in order to see if the variables that will be kept are the same or less than the lasso method.
+\paragraph{Predictions and comparison of models}
+Now we will make the predictions using the test set in order to compare how well do the model that we created work in practise.
+\subsubsection{Comparisons and other methods}
+Now that we have a first idea of the metrics that are considered more important it would be wise to use other methods to double check the results.
+\paragraph{Correlation testing}
+By seeing the correlations of the chosen variables we could create models by subtracting some of them to see if the results will be improved.
+\paragraph{Clustering testing}
+We will use the clustering method to see how the variables are being group together. And which variables play the most important role.
+\paragraph{Final testing}
+Now we will compare the results to see if we can test any other theory so as to be sure about the final results.
+\paragraph{Final model}
+After completing the analysis we can conclude that the most important variable of the websites that can play a crucial role to the actual revenues of a company are the images. More specifically the sizes and the type of the images along with the external links.
 \pagebreak  
 \section{Conclusions}
+This conclusion can be easily explained from the fact that the eye is drowned to specific stimulations. There are many studies that shows that where the eye is going in the first seconds that a user is visiting a page can be crucial. So the right type of image with a correct structure and use of specific image sizes can make a site more likeable and friendly to the users.\\
+Example - Testing of where does the eye drops first\\
+Example - Images and the importance to the psychology\\
+Example - Type of images more easily and rapid loading\\
+Example - Information that the user is looking for not confined only inside the same website\\
 \pagebreak  
 \section{Bibliography}
 \begin{thebibliography}{widest-label}
@@ -1471,12 +1521,10 @@ With what codes did I downloaded the metrics I needed
 
 \end{thebibliography}
 
-
 \newpage
 \appendix
-\section{\\Appendix A: Fortune 500 Companies} \label{App:AppendixA}
+\section{Appendix A: Fortune 500 Companies} 
 % the \\ insures the section title is centered below the phrase: AppendixA
-
 \begin{table}[H]
 \centering
 \caption{Fortune 500 - Companies Ranked: 51 - 100}
