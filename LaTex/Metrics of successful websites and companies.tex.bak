@@ -110,16 +110,16 @@ The language provides constructs intended to enable writing clear programs on bo
 The environment that is going to be used is from the Anaconda package which is a free open source distribution of the Python and R programming languages for large-scale data processing, predictive analytics, and scientific computing, that aims to simplify package management and deployment. To be more precise from this package we are going to use the Jupyter Notebook.\cite{key4} \\
 \subsection{Scripts}
 In order to gather all the needed metrics we had to create many small scripts so as to collect them. In this section we will present in detail the code that was used in order to extract the information that later will help us contact the analysis of the relationship between those metrics and the company's status.
-\subsubsection{Fortune data}
+\subsubsection{Fortune data - list download}
 The first step is to download and gather the names of the companies that we are going to examine and also the url of their websites and finally their ranking.Those information can be found in the following url as he have already mentioned in the beginning.\href{url}{http://www.zyxware.com/articles/4344/list-of-fortune-500-companies-and-their-websites}.\\
-The way to keep only the those three informations as seperate variables is by separating from the html code of this page the needed information.\\
-The first step is to create the empty lists where we will include the informations we are going to extract.In order to extract the needed informations we will create 3 lists. The first one will contain the rank of each site, the second one will contain the name of the company and the 3rd one will contain the actual link of the company's site. Before creating the function we should make some initial empty lists that we will use.:
+The way to keep only the those three informations as separate variables is by separating from the html code of this page the needed information.\\
+The first step is to create 3 empty lists where we will include the informations we are going to extract. The first list will contain the rank of each site, the second one will contain the name of the company and the 3rd one will contain the actual link of the company's site:
 \begin{lstlisting}[language=Python]
 list_company_number =[]
 list_company_name = []
 list_company_website = []
 \end{lstlisting}
-Also we need to upload some libraries that will help us creating the functions we need for gathering the information we want.
+The second step is to upload some libraries that will help us create this function but also the ones that are going to follow.
 \begin{lstlisting}[language=Python]
 import urllib
 import urllib2
@@ -131,7 +131,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 \end{lstlisting}
-For achieving this purpose we will create a function that will in its turn create those three list. \\
+Finally the third step is to create the function that will firstly download the html code of the url at hand, secondly keep only the part of the code that we need to examine and thirdly save this part into the empty lists we created above. This function is called websites and takes as variable to work only the url of the site we need to examine: 
 \begin{lstlisting}[language=Python]
 def websites (url): 
     from time import time
@@ -180,23 +180,1242 @@ The steps we followed to create the following function are the following:
 \paragraph{Step 4} Since we need the names and the urls of all the 500 sites we created a loop from 0 to 500 where for each i we try to isolate the part of the code that contains the information that we want. Moreover even thought it seems that with this loop we calculate 501 numbers since in Python the second bracket is always open we actually count from zero to 499.
 \paragraph{Step 5} We use reg expressions\footnote{A regular expression is a special sequence of characters that helps you match or find other strings or sets of strings, using a specialized syntax held in a pattern.} in order to state precisely what part of the already selected code we want to keep.
 \paragraph{Step 6} We insert with a specific order the names, the ranking and the url to the corresponding lists and finally we create a text that will appear when the function is completed. Here we have also calculated the time that this function took to be completed and we will appear it as well along with the text.
-\subsubsection{Html download}
-With what codes did I downloaded the metrics I needed
-\subsubsection{Social media existence}
-With what codes did I downloaded the metrics I needed
+\subsubsection{Page validation}
+Validate whether the page we are going to download is safe in order to proceed to the actual download of the html code of the pages.In order for the validation to take place we will have to install first the validators package in Python.
+\begin{lstlisting}[language=Python]
+#Try to validate each page url #pip install validators
+import validators
+nv = 0
+for num in range(len(list_company_website)):
+    line = 'http://' + str(list_company_website[num])
+    x = validators.url(line)    
+    if x != True:
+        nv = nv +1
+print "The validation is complete! There were" , nv, "not valid pages"
+\end{lstlisting}
+\subsubsection{HTML download}
+Download the actual html code of the initial pages of the 500 websites we will examine.
+\begin{lstlisting}[language=Python]
+#def list_company_HTML (list_company_website,list_company_name,start,end):
+import time
+browser2 = urllib2.build_opener()
+browser2.addheaders = [('User-agent', 'Mozilla/5.0')]
+for i in range (0,500):
+    k = str(i + 1)
+    lc = str(list_company_website[i])
+    lc = lc.replace("'","")
+    lc = lc.replace("[","")
+    lc = lc.replace("]","")
+    lcn = str(list_company_name[i])
+    lcn = lcn.replace("'","")
+    lcn = lcn.replace("[","")
+    lcn = lcn.replace("]","")
+    url2= 'http://' + lc
+    #print (url2)
+    list500_names.insert(i,lcn)
+    list500_url.insert(i,lc)
+    list500_num.insert(i,k)
+    if i == 118 or i == 464:#The site 118(119) has a problem and the whole code is stacking 
+        #when I run it so we will thing of this site as a not downloadable
+        list500_sites.insert(i,0)
+        #print ("The site " + k + " has NOT been downloaded!")
+    else:
+        #an exception might be thrown, so the code should be in a try-except block
+        try:
+            response2=browser2.open(url2)
+        except Exception: # this describes what to do if an exception is thrown
+            list500_sites.insert(i,0)
+            print ("The site " + str(i) + " has NOT been downloaded!") 
+            continue     
+            #read the response in html format. This is essentially a long piece of text
+        myHTML2=response2.read()
+        list500_sites.insert(i,myHTML2)
+        #wait for 2 seconds
+        time.sleep(2)
+        #print ("The site " + k + " has been downloaded!")    
+    #print "We saved: ",str(i + 1)," sites!"
+    #print (len(list500_names),list500_names)
+\end{lstlisting}
+\subsubsection{Not downloadable pages}
+By performing the previous code we could see that some pages could not be downloaded. In order to know from the beginning which companies sites will not be available for further exploration we created this part of the code which creates a list with the names of those companies.
+\begin{lstlisting}[language=Python]
+#As we can see there is one site that hasn't been downloaded in order
+#to keep track of the sites that we could not download
+#we will create a new list that we will keep them all together there
+not_d = []
+not_d_n = []
+num = []
+def not_downloadables (list500_names,list500_sites):
+    met = 0       
+    for i in range(len(list500_names)):       
+        if list500_sites[i] == 0:
+            ct = list500_names[i]
+            not_d.insert(met,ct)
+            not_d_n.insert(met,str(i))
+            num.insert(met,met)
+            met = met + 1
+   
+ 
+
+
+ 
+#Now we will run the function to see which sites havent been downloaded
+not_downloadables (list500_names,list500_sites)
+d = {'company' : pd.Series(not_d, index=[num]),
+     'number' : pd.Series(not_d_n, index=[num])}
+nd = pd.DataFrame(d)    
+nd
+\end{lstlisting}
+
 \subsubsection{Readability index}
-With what codes did I downloaded the metrics I needed
-\subsubsection{...}
-With what codes did I downloaded the metrics I needed
-\paragraph{Note}
-Write the sites I needed and see where to put the codes
+Now that we have downloaded the html code we would like to see how easy would be for someone to read this code. We will use a site that will help us evaluate and create the readability index.
+\begin{lstlisting}[language=Python]
+#Now we will perfom a reliability test for the text that is 
+#included in the html code of the company's page
+from pattern import metrics
+readability = []
+rdb = []
+ 
+
+
+ 
+def readable (list500_names,list500_sites):
+    for i in range (len(list500_names)):
+            myHTML = list500_sites[i]
+            if myHTML == 0:
+                readability.insert(i,"n/a")
+                rdb.insert(i,"n/a")
+            else:
+                a = metrics.flesch_reading_ease(myHTML) * 100
+                a = round (a, 1)
+                if a > 90:    
+                    readability.insert(i,"Very easy")
+                    rdb.insert(i,6)
+                elif a > 80:
+                    readability.insert(i,"Easy")
+                    rdb.insert(i,5)
+                elif a > 70:
+                    readability.insert(i,"Fairly easy")
+                    rdb.insert(i,4)
+                elif a > 60:
+                    readability.insert(i,"Standard")
+                    rdb.insert(i,3)
+                elif a > 50:
+                    readability.insert(i,"Fairly difficult")
+                    rdb.insert(i,2)
+                elif a > 30:
+                    readability.insert(i,"Difficult")
+                    rdb.insert(i,1)
+                else:
+                    readability.insert(i,"Very Confusing")
+                    rdb.insert(i,0)                    
+    print "The function is completed!"
+ 
+
+
+ 
+readable (list500_names,list500_sites)
+ 
+
+    The function is completed!
+    
+
+
+ 
+d1 = {'company' : pd.Series(list500_names, index=[list500_num]),
+      'url' : pd.Series(list500_url, index=[list500_num]),
+      'Readability' : pd.Series(readability, index=[list500_num]),
+      'Readability_index' : pd.Series(rdb, index=[list500_num])}
+fre = pd.DataFrame(d1)    
+fre.tail(3) #we see the first 3 in the data frame
+\end{lstlisting}
+\subsubsection{Social media}
+Now we will see how many and which companies include in their initial page the link to specific social media.
+\begin{lstlisting}[language=Python]
+#Retreiving the social media from each site
+#First create empty lists for the ones that 
+#we will need to calculate
+sm_f = []
+sm_t = []
+sm_i = []
+sm_p = []
+sm_y = []
+sm_l = []   
+sm_nm = [] 
+nm = []
+sm_url = []
+ 
+
+
+ 
+#Then create a function that will feel in those 
+#lists so as to make the data frame later on
+def socialmedia (list500_sites,list500_names,list500_url):
+    from time import time 
+    # I used it to see how much time it does to run the function
+    start = time ()
+    for i in range(len(list500_names)):        
+            myHTML = list500_sites[i]
+            sm = ['facebook.com','twitter.com',
+                  'instagram.com','pinterest.com',
+                  'youtube.com','linkedin.com'] 
+            if myHTML == 0:
+                #print(str(i),"no")
+                sm_nm.insert(i,list500_names[i]) 
+                nm.insert(i,i)
+                sm_url.insert(i,list500_url[i])
+                sm_f.insert(i,'n/a')
+                sm_t.insert(i,'n/a')
+                sm_i.insert(i,'n/a')
+                sm_p.insert(i,'n/a')
+                sm_y.insert(i,'n/a')
+                sm_l.insert(i,'n/a')
+            else:
+                for index in range(len(sm)):
+                    x = sm[index]
+                    social = re.findall(x,myHTML)                                
+                    if (len(social) > 0):
+                        if x == 'facebook.com':
+                            answerf = 'TRUE'
+                        if x == 'twitter.com':
+                            answert = 'TRUE'
+                        if x == 'instagram.com':
+                            answeri = 'TRUE'
+                        if x == 'pinterest.com':
+                            answerp = 'TRUE'
+                        if x == 'youtube.com':
+                            answery = 'TRUE'
+                        if x =='linkedin.com':
+                            answerl = 'TRUE'                   
+                    else:
+                         if x == 'facebook.com':
+                            answerf = 'FALSE'
+                         if x == 'twitter.com':
+                            answert = 'FALSE'
+                         if x == 'instagram.com':
+                            answeri = 'FALSE'
+                         if x == 'pinterest.com':
+                            answerp = 'FALSE'
+                         if x == 'youtube.com':
+                            answery = 'FALSE'
+                         if x =='linkedin.com':
+                            answerl = 'FALSE'                
+                sm_nm.insert(i,list500_names[i]) 
+                nm.insert(i,i)
+                sm_url.insert(i,list500_url[i])
+                sm_f.insert(i,answerf)
+                sm_t.insert(i,answert)
+                sm_i.insert(i,answeri)
+                sm_p.insert(i,answerp)
+                sm_y.insert(i,answery)
+                sm_l.insert(i,answerl)
+    end = time ()
+    duration = round (end - start, 3)
+    minutes = round (duration /60, 1)
+    print 'The lists are completed in ', minutes, ' minutes' 
+    print 'The lists are ready in ', duration, ' seconds'
+ 
+
+
+ 
+#Now we will run the function for the 25 first sites for starters
+socialmedia (list500_sites,list500_names,list500_url)
+ 
+
+    The lists are completed in  0.0  minutes
+    The lists are ready in  0.259  seconds
+    
+
+
+ 
+#Finally we create the data frame with the elements we found            
+d2 = {'company' : pd.Series(sm_nm, index=[nm]),
+     'facebook' : pd.Series(sm_f, index=[nm]),
+      'twitter' : pd.Series(sm_t, index=[nm]),
+     'instagram' : pd.Series(sm_i, index=[nm]),
+      'pinterest' : pd.Series(sm_p, index=[nm]),
+     'youtube' : pd.Series(sm_y, index=[nm]),
+      'linkedin' : pd.Series(sm_l, index=[nm]),}
+social_media = pd.DataFrame(d2)    
+social_media.tail(3) #we see the first 3 in the data frame
+\end{lstlisting}
+\subsubsection{Links - Internal and External}
+Next step is to see how many internal, external and finally total links each html code has.
+\begin{lstlisting}[language=Python]
+#Create the lists we will need for the data frame
+l_nm = []
+l_ex = []
+l_in = []
+l_t = []
+nm = []
+l_url = []
+ 
+
+
+ 
+#create the function that will calculate the different type of links
+def links (list500_sites,list500_names,list500_url):
+    from time import time 
+    # I used it to see how much time it does to run the function
+    start = time ()
+    for num in range(len(list500_names)):        
+            myHTML = list500_sites[num]
+            if myHTML == 0:
+                l_nm.insert(num,list500_names[num])            
+                l_ex.insert(num,'n/a')
+                l_t.insert(num,'n/a')
+                l_in.insert(num,'n/a')
+                nm.insert(num,num)                
+            else: 
+                href = re.findall('href',myHTML)
+                external = re.findall('href="https:',myHTML)
+                ex = (len(external))
+                alllinks = (len(href))
+                internal =  (len(href) - len(external))
+                l_nm.insert(num,list500_names[num])            
+                l_ex.insert(num,ex)
+                l_t.insert(num,alllinks)
+                l_in.insert(num,internal)
+                nm.insert(num,num)                
+    end = time ()
+    duration = round (end - start, 3)
+    minutes = round (duration /60, 1)
+    print 'The lists are ready in ', minutes, ' minutes'
+    print 'The lists are ready in ', duration, ' seconds'
+ 
+
+
+ 
+#Run the function in order to find the external, 
+#internal and total links of each site
+#For now we are running for the first 25 sites only
+links (list500_sites,list500_names,list500_url)
+ 
+
+    The lists are ready in  0.0  minutes
+    The lists are ready in  0.088  seconds
+    
+
+
+ 
+#Create a dataframe so as to be able to see 
+#the results of the function we run
+d3 = {'company' : pd.Series(l_nm, index=[nm]),
+      'external' : pd.Series(l_ex, index=[nm]),
+      'internal' : pd.Series(l_in, index=[nm]),
+     'total links' : pd.Series(l_t, index=[nm])}
+sites_links = pd.DataFrame(d3)    
+sites_links.tail(3) #we see the first 3 in the data frame
+\end{lstlisting}
+\subsubsection{Loading time}
+One very important factor as we mentioned before is the time that the site does to be loaded and with this part of the code we will count exactly that.
+\begin{lstlisting}[language=Python]
+#The initial lists we will need in order 
+#to calculate the loading time
+lt_nm = [] 
+lt_time = []
+nm = []
+lt_url = []
+ 
+
+
+ 
+#the function that will calculate the loading time
+def loadtime (list_company_website,list500_names,list500_url):
+    from time import time
+    browser2 = urllib2.build_opener()
+    browser2.addheaders = [('User-agent', 'Mozilla/5.0')]
+    for num in range(len(list500_names)):
+        lc = str(list_company_website[num])        
+        lc = lc.replace("'","")   
+        lc = lc.replace("[","")
+        lc = lc.replace("]","")
+        url2 = 'http://' + lc
+        if num == 118 or num == 464:
+            #The site 118(119) has a problem and the whole code 
+            #is stacking when I run it so we will thing of this 
+            #site as a not downloadable
+            lt_nm.insert(num,list500_names[num])            
+            lt_time.insert(num,'n/a')
+            nm.insert(num,num)
+            lt_url.insert(num,list500_url[num])
+            #print ("The site " + str(num) + " has NOT been loaded!")
+        else:
+            try:
+                response2 = browser2.open(url2)
+            except Exception:
+                lt_time.insert(num,'n/a')
+                lt_nm.insert(num,list500_names[num])  
+                nm.insert(num,num)
+                print ("The site " + str(num)+ " has NOT been loaded!")
+                continue     
+            start_time = time()
+            myHTML2 = response2.read()
+            end_time = time()
+            response2.close()
+            l_t = round(end_time-start_time, 3) 
+            #in order to be more readable we rounded the time
+            loadt = str(l_t)
+            lt_nm.insert(num,list500_names[num])            
+            lt_time.insert(num,loadt)
+            nm.insert(num,num)
+            lt_url.insert(num,list500_url[num])
+            #print ("The site " + str(num) + " has been loaded!")
+    print "The function is completed!"
+ 
+
+
+ 
+#running the function for the first 25 sites
+loadtime (list_company_website,list500_names,list500_url)
+
+#creating the data frame with the loading times
+d4 = {'company' : pd.Series(lt_nm, index=[nm]),
+      'loading time' : pd.Series(lt_time, index=[nm])}
+loading_time = pd.DataFrame(d4)    
+loading_time.head(3) #we see the first 3 in the data frame
+\end{lstlisting}
+\subsubsection{Types and number of images}
+There are many different types of images that can be used in a site. Here we will examine which ones are being preferred from the majority of the examined companies and in what amount. In other words we will count the number of each type of image and then calculate the total number of images appearing in this initial page.
+\begin{lstlisting}[language=Python]
+#Find out how many and what type of images each site has
+#first we create the initially empty lists
+p_p = []
+p_d = []
+p_jpg = []
+p_jpeg = []
+p_gif = []
+p_tif = []
+p_tiff = []
+p_bmp = []
+p_jpe = []
+p_nm = []
+p_tt =[]
+nm = []
+p_url = []
+ 
+
+
+ 
+#Then we create the function that will explore 
+#the html pages and search for the images
+def images (list500_sites,list500_names,list500_url):
+    from time import time # I used it to see 
+    #how much time it does to run the function
+    start = time ()
+    for num in range(len(list500_names)):
+            myHTML = list500_sites[num] 
+            image = ['.png','.dib','.jpg','.jpeg',
+                     '.bmp','.jpe','.gif','.tif','.tiff'] 
+            totalnumber = 0 
+            if myHTML == 0:
+                p_nm.insert(num,list500_names[num])            
+                p_p.insert(num,'n/a')  
+                p_d.insert(num,'n/a')  
+                p_jpg.insert(num,'n/a')  
+                p_jpeg.insert(num,'n/a')  
+                p_gif.insert(num,'n/a')  
+                p_tif.insert(num,'n/a')  
+                p_tiff.insert(num,'n/a')  
+                p_bmp.insert(num,'n/a')  
+                p_jpe.insert(num,'n/a')  
+                p_tt.insert(num,'n/a')
+                nm.insert(num,num)
+                p_url.insert(num,list500_url[num])          
+            else: 
+                for index in range(len(image)):
+                    x = image[index]
+                    photo = re.findall(x,myHTML)
+                    if x == '.png':
+                        p = str (len(photo))
+                    if x == '.dib':
+                        d = str (len(photo))
+                    if x == '.jpg':
+                        jpg = str (len(photo))
+                    if x == '.jpeg':
+                        jpeg = str (len(photo))
+                    if x == '.gif':
+                        gif = str (len(photo))
+                    if x == '.tif':
+                        tif = str (len(photo))
+                    if x == '.tiff':
+                        tiff = str (len(photo))
+                    if x == '.bmp':
+                        bmp = str (len(photo))
+                    if x == '.jpe':
+                        jpe = str (len(photo))
+                    totalnumber = len(photo) + totalnumber
+                total = str (totalnumber)
+                p_nm.insert(num,list500_names[num])            
+                p_p.insert(num,p)  
+                p_d.insert(num,d)  
+                p_jpg.insert(num,jpg)  
+                p_jpeg.insert(num,jpeg)  
+                p_gif.insert(num,gif)  
+                p_tif.insert(num,tif)  
+                p_tiff.insert(num,tiff)  
+                p_bmp.insert(num,bmp)  
+                p_jpe.insert(num,jpe)  
+                p_tt.insert(num,total)
+                nm.insert(num,num)
+                p_url.insert(num,list500_url[num])
+    end = time ()
+    duration = round (end - start, 3)
+    minutes = round (duration /60, 1)
+    print 'The lists are ready in ', minutes, ' minutes'
+    print 'The lists are ready in ', duration, ' seconds'
+ 
+
+
+ 
+#Then we run the function for the first 20 sites for now
+images (list500_sites,list500_names,list500_url)
+ 
+
+    The lists are ready in  0.1  minutes
+    The lists are ready in  3.341  seconds
+    
+
+
+ 
+#Finally we create a dataframe in order to see the results of the function
+d5 = {'company' : pd.Series(p_nm, index=[nm]),
+      '.png' : pd.Series(p_p, index=[nm]),
+      '.dib' : pd.Series(p_d, index=[nm]),
+      '.jpg' : pd.Series(p_jpg, index=[nm]),
+      '.jpeg' : pd.Series(p_jpeg, index=[nm]),
+      '.bmp' : pd.Series(p_bmp, index=[nm]),
+      '.jpe' : pd.Series(p_jpe, index=[nm]),
+      '.gif' : pd.Series(p_gif, index=[nm]),
+      '.tif' : pd.Series(p_tif, index=[nm]),
+      '.tiff' : pd.Series(p_tiff, index=[nm]), 
+      'total images' : pd.Series(p_tt, index=[nm])}
+images_types = pd.DataFrame(d5)    
+images_types.head(3) #we see the first 3 in the data frame
+\end{lstlisting}
+\subsubsection{Size of images}
+Aside from the number of images another important factor is the size of each image. The following code will find the different sizes that are being used in the companies at hand and keep only the unique sizes.
+\begin{lstlisting}[language=Python]
+ 
+#Now we will find the different dimensions that each site uses
+#initially we create the empty lists we will need
+nm = []
+s_comp = []
+s_dimensions = []
+s_times = []
+s_tt_dif_dim = []
+ht = [] #list of different heights in each case
+wt = [] #list of different widths in each case
+h_w = [] # combinations of height and width
+dif_size = []  
+un_size = [] 
+s_url = []
+ 
+
+
+ 
+#With the below function we will gather 
+#in a variable all the different dimensions 
+#and in another one all the times that each 
+#dimension occures for each html code
+def find_dif_sizes (list_company_website,list500_names,list500_url):
+    from time import time # I used it to see how much time it does to run the function
+    start = time ()
+    for num in range(len(list500_names)):
+            nm.insert(num,num)                  
+            s_comp.insert(num,list500_names[num])
+            s_url.insert(num,list500_url[num])
+            myHTML = list500_sites[num] 
+            if myHTML == 0:
+                s_dimensions.insert(num,0)
+                s_times.insert(num,0)    
+            else: 
+                soup = BeautifulSoup(myHTML, "lxml")
+                # we create 2 local variables so as to gather the 
+                #different dimensions and occurencies  of each page seperately
+                s_dimensions_local = []
+                s_times_local = []
+                hw = 0 
+                # we use it for the lists of height and width
+                # find all the img in the first site html.Since in some 
+                #cases either the height or the width is missing we would 
+                #like to keep only the ones that have both dimensions
+                for tag in soup.find_all('img'):
+                    h = tag.attrs.get('height', None)
+                    w = tag.attrs.get('width', None)
+                    #we use if to check which ones have both 
+                    if h != None:
+                        if w != None:
+                            ht.insert(hw,h)
+                            wt.insert(hw,w)
+                            hw = hw + 1                        
+                hw2 = 0
+                for l in range(len(ht)):
+                    h_w_c = ht[l] + 'x' + wt[l]    
+                    #we create a str with the form (300x300) 
+                    #so as to be more easily to read later on 
+                    h_w.insert(hw2,h_w_c)  
+                    #we put it in a new list
+                    hw2 = hw2 + 1    
+                if h_w == []:#we check if there are not any dimensions available
+                    nm.insert(num,num)                  
+                    s_comp.insert(num,list500_names[num])
+                    s_dimensions.insert(num,0)
+                    s_times.insert(num,0)    
+                if h_w != []:#now we continue with the cases 
+                    #where the dimensions are indeed available             
+                    from collections import Counter
+                    hw_unique = Counter(h_w)
+                    hw_unique2 = str(hw_unique) 
+                    #the unique different dimensions for the specific site
+                    #Due to the fact that we are talking about 
+                    #a list we have to split the parts we need 
+                    split1 = hw_unique2.split('{')
+                    a = split1[1]
+                    split2 = a.split('}')
+                    b = split2[0]
+                    split3 = b.split(',')
+                    finalsplit = []
+                    fs = []
+                    z = 0
+                    m = 1
+                    j = 0
+                    z1 = 0
+                    m1 = 1
+                    #each of the items in split3 has a form '300x300 : 15'
+                    #and in order to create the dataframe we have 
+                    #to split this form and keep the informations in different list
+                    for numb in split3:                
+                        oldstring = numb
+                        newstring = oldstring.replace("'", "")
+                        new = newstring.replace("'","")
+                        string = new.replace(" ","")
+                        finalstring = string.split(':')
+                        #the finalstring is a list that contains the dimensions
+                        #and the occurencies in order toseperate in different
+                        #lists we create an additional loop
+                        for xx in range(len(finalstring)):
+                            ax = finalstring[xx]
+                            if 'x' in ax:
+                                s_dimensions_local.insert(z1,finalstring[xx])
+                                z1 = z1 + 1
+                            else:
+                                s_times_local.insert(m1,finalstring[xx])
+                                m1 = m1 + 1  
+                    #Now we can add to the lists the parts we created so as
+                    #to have them all gathered together             
+                    s_dimensions.insert(num,s_dimensions_local)
+                    s_times.insert(num,s_times_local)                
+    end = time ()
+    duration = round (end - start, 3)
+    minutes = round (duration /60, 1)
+    print 'The lists are ready in ', minutes, ' minutes'
+    print 'The lists are ready in ', duration, ' seconds'
+ 
+
+
+ 
+#Run the function for the first 20 sites
+find_dif_sizes (list500_sites,list500_names,list500_url)
+ 
+
+    The lists are ready in  1.4  minutes
+    The lists are ready in  81.813  seconds
+    
+
+
+ 
+#Find the unique different image dimensions and put them on a list
+def unique_dif_sizes (s_dimensions,list500_names):
+    ds = 0
+    for num in range(len(list500_names)):
+        asw = s_dimensions[num]
+        if asw != 0 :
+            for s in range(len(asw)):
+                ss = asw[s]
+                dif_size.insert(ds,ss)
+                ds = ds + 1    
+    dsu = 0
+    for i in dif_size:
+        if i not in un_size:
+            un_size.insert(dsu,i)
+            dsu = dsu + 1
+    print(un_size)          
+ 
+
+
+ 
+#Run the function unique_dif_sizes
+unique_dif_sizes (s_dimensions,list500_names)
+
+#The lists we will need for the next function
+t_f_s = []
+ttf = []
+nm = []
+com = []
+ 
+
+
+ 
+#Function in order to check whether or not each 
+#company has these dimensions
+def dimensions_per_company (un_size,list500_names):
+    from time import time 
+    # I used it to see how much time it does to run the function
+    start = time ()
+    #t_f_s.insert(0,un_size)
+    #ttf.insert(0,t_f_s)
+    for num in range(len(list500_names)): 
+        #print(str(num))
+        s1a = s_dimensions[num] 
+        #dimensions of site num
+        where = [] #empty list
+        wh = 0
+        haveornot = []
+        for er in range (len(un_size)):
+            if s1a != 0 :
+                for sizea in s1a:
+                    if sizea == un_size[er]:
+                        where.insert(wh,str(er))
+                        wh = wh +1
+                        break
+            if str(er) in where:
+                haveornot.insert(er,True)                    
+            else:
+                haveornot.insert(er,False)
+                    
+        t_f_s.insert(num,haveornot)
+        ttf.insert(num,t_f_s)
+        nm.insert(num,num)
+        com.insert(num,list500_names[num])
+    end = time ()
+    duration = round (end - start, 3)
+    minutes = round (duration /60, 1)
+    print 'The lists are ready in ', minutes, ' minutes'
+    print 'The lists are ready in ', duration, ' seconds'
+ 
+
+
+ 
+#Run the function dimensions_per_company
+dimensions_per_company (un_size,list500_names)
+ 
+
+    The lists are ready in  0.1  minutes
+    The lists are ready in  3.699  seconds
+    
+
+
+ 
+#Create an initial dataframe where we will add the sizes later on
+d6 = {'company' : pd.Series(com, index=[nm])}
+sizess = pd.DataFrame(d6)    
+sizess.head(3)
+
+####################################################
+#Now we want to break the variable t_f_s 
+#in order to add the columns to the dataframe                  
+#Finally we create the data frame with the elements we found 
+def final_dimensions_dataframe (un_size,t_f_s,list500_names):
+    from time import time 
+    # I used it to see how much time it does to run the function
+    start = time ()
+    for q in range(len(un_size)):
+        names = un_size[q]
+        var = []
+        for num in range(len(list500_names)):
+            a = t_f_s[num]
+            var.insert(num,a[q])
+        sizess[names] = pd.Series(var, index=sizess.index) 
+    end = time ()
+    duration = round (end - start, 3)
+    minutes = round (duration /60, 1)
+    print 'The lists are ready in ', minutes, ' minutes'
+    print 'The lists are ready in ', duration, ' seconds'
+ 
+
+
+ 
+#Run the function final_dimensions_dataframe
+final_dimensions_dataframe (un_size,t_f_s,list500_names)
+ 
+
+    The lists are ready in  0.0  minutes
+    The lists are ready in  0.414  seconds
+    
+
+
+ 
+sizess.tail(3)
+\end{lstlisting}
+\subsubsection{Number of words - Unique and Total}
+As it was mentioned and before words are exactly as important in a html page as the images. So we have to calculate the number of unique words and the total words that are being appeared in each companies html code.
+\begin{lstlisting}[language=Python]
+ 
+#Now we would like to find the words in the text 
+#and the unique words of each html page
+#First of all we need to have a dictionary with which 
+#we would check if the word we found truly exists
+#The dictionary is available in the internet from a 
+#github acount from where we are going to read it
+url_dictionary = "https://raw.githubusercontent.com/dwyl/english-words/master/words.txt"
+browser = urllib2.build_opener()
+browser.addheaders = [('User-agent', 'Mozilla/5.0')]
+response = browser.open(url_dictionary)
+html_dictionary = response.read()
+html_dictionary
+dicti = str(html_dictionary)
+#dicti
+ 
+
+
+ 
+#dict_new = dicti.split("\\n")
+dict_new = dicti.split("\n")
+dict_new[49] 
+#the first 49 parts are not words so we have to remove them from the list
+ 
+
+
+
+
+    'a1'
+
+
+
+
+ 
+dict_final = []
+df = 0
+for i in range (50,len(dict_new)):
+    forfinal = dict_new[i]
+    forfinal = forfinal.replace("'","")
+    dict_final.insert(df,forfinal)
+    df = df + 1
+dict_final[0] 
+#This is the original dictionary with which we will check each word
+ 
+
+
+
+
+    'aa'
+
+
+
+
+ 
+#And now we will find each html file which words has inside
+empty = []
+wordsin = []
+ocin = []
+def html_which_word (list500_names):
+    from time import time 
+    # I used it to see how much time it does to run the function
+    start_t = time()
+    for num in range(len(list500_sites)):
+            line = list500_sites[num] 
+            if line == 0:
+                wordsin.insert(num,0)
+                ocin.insert(num,0)                 
+            else: 
+                wordcount={}
+                simeiastiksis = ["/",".",",","=",">","<","?","|",":"
+                                 ,"_","]","[","$","&","%","(",")","{"
+                                 ,"}",'"',";","\\","-","!","+","#","="
+                                 ,"@","^","*","'"]
+                for ss in range(len(simeiastiksis)):
+                    simeio = simeiastiksis[ss]     
+                    line = line.replace(simeio, " ")
+                for word1 in line.split():
+                    word1 = word1.lower()
+                    if word1 in dict_final:
+                        if word1 not in wordcount:
+                            wordcount[word1] = 1
+                        else:
+                            wordcount[word1] += 1     
+                wordsin_local = []
+                wl = 0
+                ocin_local = []
+                for k,v in wordcount.items():
+                       #print (k,v)
+                       wordsin_local.insert(wl,str(k))
+                       ocin_local.insert(wl,str(v))
+                       wl = wl + 1
+                wordsin.insert(num,wordsin_local) 
+                # final list with all the words in each site
+                ocin.insert(num,ocin_local)  
+                #final list with all the occurencies of the words in each site
+            #print('The site', str(num +1), ' has been checked')
+    end_t = time()
+    total_t = round(end_t - start_t,3)
+    total_ = round(total_t / 60,1)
+    print('finished ',str(x) ,' sites in: ', str(total_),' minutes')
+ 
+
+
+ 
+html_which_word (list500_names)
+ 
+
+    ('finished ', 'True', ' sites in: ', '197.6', ' minutes')
+    
+
+
+ 
+#Create the dataframe for the words and unique words
+d7 = {'company' : pd.Series(list500_names, index=[nm])}
+wordss = pd.DataFrame(d7)    
+wordss.head(3) 
+
+###########################################
+#Create the two lists we will need in order to make the dataframe
+l1 = []
+l2 = []
+for num in range(len(list500_names)):
+        line = list500_sites[num] 
+        if wordsin[num] == 0 :             
+            l1.insert(num,'n/a')
+            l2.insert(num,'n/a')
+        else:
+            total_words = len(wordsin[num])
+            occurencies = ocin[num] 
+            l1.insert(num,total_words)
+            count = 0 
+            for a in occurencies :
+                if a == '1':
+                    count = count + 1
+            l2.insert(num,count)
+wordss['total_words'] = pd.Series(l1, index=sizess.index)
+wordss['unique_words'] = pd.Series(l2, index=sizess.index)          
+wordss.head(3)                        
+\end{lstlisting}
+\subsubsection{HTML Validation}
+Now that we have downloaded and kept in data frames the basic metrics that we will need for the analysis we should also check the quality of the html code.
+\begin{lstlisting}[language=Python]
+ 
+#In order to validate the html code we will use the w3 validator
+#We will validate each url and then we will open the url of the validation page
+#so as to extract the errors, the info warnings and the non-document-error io informations 
+#First we create the empty lists we would use later on
+num_errors = []
+num_info_warnings = []
+num_non_doc = [] 
+nm = []
+num_open_page = []
+empty = ""
+ 
+
+
+ 
+#Then we create the function that will pull the informations we want
+def html_validation (list500_url,list500_names):
+    from time import time # I used it to see how much time it does to run the function
+    start = time ()
+    for num in range(len(list500_names)):
+        line = list500_url[num] 
+        url_check = "https://validator.w3.org/nu/?doc=https://" + line
+        browser = urllib2.build_opener()
+        browser.addheaders = [('User-agent', 'Mozilla/5.0')]
+        response = browser.open(url_check)
+        html_check = response.read()
+        html_check
+        check = str(html_check)
+        er = 0
+        err = 0
+        errr = 0
+        e = False
+        if check != empty:
+            e = True
+            soup = BeautifulSoup(check,"lxml")
+            o = 0
+            keyf = []
+            for row in soup.html.body.findAll('div'):
+                keyf.insert(o,row)
+                o = o + 1
+            #print(len(keyf),list500_url[num], "site number: ", str(num))        
+            if len(keyf) != 0:       
+                    keyfin = str(keyf[2]) 
+                    #the elements we need is in the 2nd div of the code
+                    dol= re.findall('class="error"',keyfin)            
+                    er = er + len(dol)
+                    doll= re.findall('class="info warning"'
+                                     ,keyfin)            
+                    err = err + len(doll)
+                    dolll= re.findall('class="non-document-error io"'
+                                      ,keyfin)            
+                    errr = errr + len(dolll)
+        num_errors.insert(num,er)
+        num_info_warnings.insert(num,err)
+        num_non_doc.insert(num,errr)  
+        nm.insert(num,num) 
+        num_open_page.insert(num,e)
+    end = time ()
+    duration = round (end - start, 3)
+    minutes = round (duration /60, 1)
+    print 'The lists are ready in ', minutes, ' minutes'
+ 
+
+
+ 
+#Now we will run the function we created
+html_validation (list500_url,list500_names)
+ 
+
+    The lists are ready in  37.0  minutes
+    
+
+
+ 
+#After the checks we will create the dataframe with the informations we want
+d8 = {'company' : pd.Series(list500_names, index=[nm]),
+      'The_page_opened' : pd.Series(num_open_page, index=[nm])
+      ,'number_of_errors' : pd.Series(num_errors, index=[nm]),
+      'number_of_warning' : pd.Series(num_info_warnings, index=[nm])
+      ,'non-document-error' : pd.Series(num_non_doc, index=[nm])}
+html_val = pd.DataFrame(d8)    
+html_val.head(3) 
+\end{lstlisting}
+\subsubsection{Fortune 500 - Metrics download}
+Just in order to have some metrics that will depict the status of the companies we are going to analyse we will also download some metrics from the fortune 500 sites for each company.
+\begin{lstlisting}[language=Python]
+#The next step is to take some informations from the fortune 500 site for each company
+#In order to achieve that we should open the pages for each one of the sites seperately
+#Since there is a pattern in the way the pages are named it shouldn't be difficult
+#Firstly we should create the pattern with which we will download the pages
+#By running the code we can see that the names of each comany are not 
+#written exactly as we have saved them
+#So we do need to alter the names first in order for the below function to run
+ 
+
+
+ 
+#creating a new list with alterations in order for the names
+#to match the ones that fortune 500 uses so that we can download the html page
+list_company_name_new = []
+for num in range (0,500):
+    cn = list_company_name[num]
+    cn = cn.replace(" ", "-")
+    cn = cn.replace("&", "")
+    cn = cn.replace("β€™", "")
+    cn = cn.replace(".", "-")
+    cn = cn.replace("amp;", "")    
+    company = cn.lower()
+    list_company_name_new.insert(num,cn)
+ 
+
+
+ 
+fortune_pages = []
+def fortune500 (list_company_name_new):
+    from time import time # I used it to see how much time it does to run the function
+    start = time ()
+    for num3 in range (0,500):
+        i = str (num3 +1)    
+        companyname =  list_company_name_new[num3]
+        browser = urllib2.build_opener() 
+        #because i work from different computers with different 
+        #pyhton version some commands are not recognizable in each version
+        browser.addheaders = [('User-agent', 'Mozilla/5.0')]
+        site_fortune = "http://beta.fortune.com/fortune500/"+companyname+"-"+ i    
+        page_fortune = browser.open(site_fortune)
+        html_fortune = page_fortune.read()    
+        #print("fortune page for company: ", list_company_name_new[num3],i)
+        fortune_pages.insert(num3, html_fortune)
+    end = time ()
+    duration = round (end - start, 3)
+    minutes = round (duration /60, 1)
+    print 'The lists are ready in ', minutes, ' minutes'
+    print 'The lists are ready in ', duration, ' seconds'
+ 
+
+
+ 
+#Run the function we created
+fortune500 (list_company_name_new)
+ 
+
+    The lists are ready in  21.6  minutes
+    The lists are ready in  1295.917  seconds
+    
+
+
+ 
+#Now that we have opened the url we are going to extract 
+#some informations that we need from them
+#In order to do that initially we have to create 
+#the variables we will need
+keyf =[]
+per =[]
+rev_dol = []
+rev_per = []
+prof_dol = []
+prof_per = []
+assets_dol = []
+assets_per = []
+tse_dol = []
+tse_per = []
+mar_dol = []
+mar_per = []
+market = []
+nm = []
+ln = []
+urln = []
+empty = []
+ 
+
+
+ 
+def fortune_metrics (list_company_name,list_company_website):
+    x = 0
+    for n in range (0,500):   #we put 25 for testing
+        nm.insert(x,x)
+        ln.insert(x,list_company_name[n])
+        urln.insert(x,list_company_website[n])
+        files = fortune_pages[x]
+        soup = BeautifulSoup(files,"lxml")
+        o=0
+        for row in soup.html.body.findAll('tbody'):
+            keyf.insert(o,row)
+            o=o+1
+        keyfin = keyf[0] 
+        #the elements we need is in the first tbody of the code
+        data = keyfin.findAll('td')
+
+        one = str(data[0]) 
+        # revenue
+        two = str(data[1]) 
+        # revenue in dollars we need to extract this
+        revdol= re.findall('>\$(.+?)</td>',two) 
+        #we keep only the numbers
+        if revdol[0] != empty:
+            w = revdol[0]
+            a = w.replace("[", "")
+            r = a.replace("]","")
+            rev_dol.insert(x,r)
+        else:
+            rev_dol.insert(x,'not available')
+        tria = str(data[2])
+        # revenue in percentage we need to extract this as well
+        revper= re.findall('>(.+?)%</td>',tria) 
+        #we keep only the numbers
+        if revper != empty:    
+            w = revper[0]
+            a = w.replace("[", "")
+            r1 = a.replace("]","")    
+            rev_per.insert(x,r1) 
+        else:
+            rev_per.insert(x,'not available')
+        four = str(data[3])   # profit     
+        five = str(data[4])   
+        # profit in dollars we need to extract this   
+        profdol= re.findall('>\$(.+?)</td>',five) 
+        #we keep only the numbers
+        if profdol != empty:
+            w = profdol[0]
+            a = w.replace("[", "")
+            p = a.replace("]","")
+            prof_dol.insert(x,p)
+        else:
+            prof_dol.insert(x,'not available')
+        six = str(data[5])    
+        # profit in percentage we need to extract this as well   
+        profper = re.findall('>(.+?)%</td>',six) 
+        #we keep only the numbers
+        if profper != empty:
+            w = profper[0]
+            a = w.replace("[", "")
+            p1 = a.replace("]","")    
+            prof_per.insert(x,p1)
+        else:
+            prof_per.insert(x,'not available')
+        seven = str(data[6]) #assets
+        eight = str(data[7]) #assets in dollars we need to extract this
+        assetsdol= re.findall('>\$(.+?)</td>',eight) 
+        #we keep only the numbers
+        if assetsdol != empty:
+            w = assetsdol[0]
+            a = w.replace("[", "")
+            ass = a.replace("]","")
+            assets_dol.insert(x,ass)
+        else:
+            assets_dol.insert(x,'not available')
+        ten = str(data[9]) #Total Stockholder Equity ($M)    
+        eleven = str(data[10]) 
+        #Total Stockholder Equity ($M) in dollars we need to extract this
+        tsedol= re.findall('>\$(.+?)</td>',eleven) 
+        #we keep only the numbers
+        if tsedol != empty:
+            w = tsedol[0]
+            a = w.replace("[", "")
+            ts = a.replace("]","")
+            tse_dol.insert(x,ts)
+        else:
+            tse_dol.insert(x,'not available')
+        thirteen = str(data[12]) # market value
+        fourteen = str(data[13]) 
+        # market value in dollars we need to extract this
+        mardol= re.findall('>\$(.+?)</td>',fourteen) 
+        #we keep only the numbers
+        if mardol != empty:
+            w = mardol[0]
+            a = w.replace("[", "")
+            mar = a.replace("]","")
+            mar_dol.insert(x,mar)
+        else:
+            mar_dol.insert(x,'not available')
+        x = x + 1
+    print "The function is complete!"
+ 
+
+
+ 
+fortune_metrics (list_company_name,list_company_website)
+ 
+
+    The function is complete!
+    
+
+
+
+d9 = {'company' : pd.Series(ln, index=[nm]),
+      'Revenues $' : pd.Series(rev_dol, index=[nm]),
+      'Revenues %' : pd.Series(rev_per, index=[nm]),
+      'Assets $' : pd.Series(assets_dol, index=[nm]),
+      'Total Stockholder Equity $' : pd.Series(tse_dol, index=[nm]),
+      'Market value $' : pd.Series(mar_dol, index=[nm])}
+fort500 = pd.DataFrame(d9)    
+fort500.head(3)
+\end{lstlisting}
+\subsubsection{Merge data-frames and extract final csv file}
+The final step of the code is to create a final data frame which will include all the information gathered and then create a csv file that will be used for the further analysis that will be take place with the use of the program language R.
+\begin{lstlisting}[language=Python]
+fort500.merge(html_val, left_on='company', right_on='company',
+how='outer')
+fort500.head(3)
+result = pd.merge(fort500, html_val, how='inner', on=['company', 'company'])
+result2 = pd.merge(social_media, fre, how='inner', on=['company', 'company'])
+result3 = pd.merge(wordss, sizess, how='inner', on=['company', 'company'])
+result4 = pd.merge(images_types, loading_time, how='inner',
+ on=['company', 'company'])
+result5 = pd.merge(result, sites_links, how='inner', on=['company', 'company'])
+result6 = pd.merge(result5, result2, how='inner', on=['company', 'company'])
+result7 = pd.merge(result6, result3, how='inner', on=['company', 'company'])
+final3 = pd.merge(result7, result4, how='inner', on=['company', 'company'])
+final3.head(3)
+final3.to_csv('total_500.csv', sep=';')
+
+data500 = pd.read_csv("total_500.csv", sep=';') 
+data500.head(3)
+\end{lstlisting}
 \pagebreak  
 \section{Data Analysis}
-To see the other commands in action, suppose at this point of text I type
-\subsection{Data loading}
-What metrics I needed to download
+Now that we have gathered all the information needed the next step is to proceed to their analysis. For the purposes of this assignment we will use the programming language R to perform this analysis.
 \subsection{R}
-A few words about the language i used and why
+R is a programming language and software environment for statistical computing and graphics supported by the R Foundation for Statistical Computing.The R language is widely used among statisticians and data miners for developing statistical software and data analysis. 
+Furthermore R is freely available under the GNU General Public License, and pre-compiled binary versions are provided for various operating systems. While R has a command line interface, there are several graphical front-ends available.
+For the purpose of this paper we will use the R-Studio which  is a free and open-source integrated development environment (IDE) for R.
+
 \subsection{Scripts}
 With what codes did I downloaded the metrics I needed
 \subsubsection{Statistical Analysis}
@@ -215,6 +1434,10 @@ With what codes did I downloaded the metrics I needed
 \bibitem{key2}$http://beta.fortune.com/fortune500$
 \bibitem{key3}$http://www.tablesgenerator.com/$
 \bibitem{key4}$https://www.continuum.io/downloads$
+\bibitem{key5}$https://validator.w3.org/$
+\bibitem{key6}Rui Miguel Forte,Mastering Predictive Analytics with R,Packt Publishing Ltd.,June 2015
+
+
 \end{thebibliography}
 
 

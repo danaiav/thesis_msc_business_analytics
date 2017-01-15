@@ -12,25 +12,32 @@
 \contentsline {paragraph}{HTML Validation:}{6}{section*.9}
 \contentsline {subsection}{\numberline {2.3}Python}{7}{subsection.2.3}
 \contentsline {subsection}{\numberline {2.4}Scripts}{7}{subsection.2.4}
-\contentsline {subsubsection}{\numberline {2.4.1}Fortune data}{7}{subsubsection.2.4.1}
+\contentsline {subsubsection}{\numberline {2.4.1}Fortune data - list download}{7}{subsubsection.2.4.1}
 \contentsline {paragraph}{Step 1}{9}{section*.10}
 \contentsline {paragraph}{Step 2}{9}{section*.11}
 \contentsline {paragraph}{Step 3}{9}{section*.12}
 \contentsline {paragraph}{Step 4}{9}{section*.13}
 \contentsline {paragraph}{Step 5}{9}{section*.14}
 \contentsline {paragraph}{Step 6}{10}{section*.15}
-\contentsline {subsubsection}{\numberline {2.4.2}Html download}{10}{subsubsection.2.4.2}
-\contentsline {subsubsection}{\numberline {2.4.3}Social media existence}{10}{subsubsection.2.4.3}
-\contentsline {subsubsection}{\numberline {2.4.4}Readability index}{10}{subsubsection.2.4.4}
-\contentsline {subsubsection}{\numberline {2.4.5}...}{10}{subsubsection.2.4.5}
-\contentsline {paragraph}{Note}{10}{section*.16}
-\contentsline {section}{\numberline {3}Data Analysis}{11}{section.3}
-\contentsline {subsection}{\numberline {3.1}Data loading}{11}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}R}{11}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Scripts}{11}{subsection.3.3}
-\contentsline {subsubsection}{\numberline {3.3.1}Statistical Analysis}{11}{subsubsection.3.3.1}
-\contentsline {subsubsection}{\numberline {3.3.2}Regression Model}{11}{subsubsection.3.3.2}
-\contentsline {subsubsection}{\numberline {3.3.3}Clustering}{11}{subsubsection.3.3.3}
-\contentsline {section}{\numberline {4}Conclusions}{12}{section.4}
-\contentsline {section}{\numberline {5}Bibliography}{13}{section.5}
-\contentsline {section}{\numberline {A}\\Appendix A: Fortune 500 Companies}{14}{appendix.A}
+\contentsline {subsubsection}{\numberline {2.4.2}Page validation}{10}{subsubsection.2.4.2}
+\contentsline {subsubsection}{\numberline {2.4.3}HTML download}{10}{subsubsection.2.4.3}
+\contentsline {subsubsection}{\numberline {2.4.4}Not downloadable pages}{11}{subsubsection.2.4.4}
+\contentsline {subsubsection}{\numberline {2.4.5}Readability index}{12}{subsubsection.2.4.5}
+\contentsline {subsubsection}{\numberline {2.4.6}Social media}{13}{subsubsection.2.4.6}
+\contentsline {subsubsection}{\numberline {2.4.7}Links - Internal and External}{16}{subsubsection.2.4.7}
+\contentsline {subsubsection}{\numberline {2.4.8}Loading time}{17}{subsubsection.2.4.8}
+\contentsline {subsubsection}{\numberline {2.4.9}Types and number of images}{19}{subsubsection.2.4.9}
+\contentsline {subsubsection}{\numberline {2.4.10}Size of images}{21}{subsubsection.2.4.10}
+\contentsline {subsubsection}{\numberline {2.4.11}Number of words - Unique and Total}{27}{subsubsection.2.4.11}
+\contentsline {subsubsection}{\numberline {2.4.12}HTML Validation}{30}{subsubsection.2.4.12}
+\contentsline {subsubsection}{\numberline {2.4.13}Fortune 500 - Metrics download}{32}{subsubsection.2.4.13}
+\contentsline {subsubsection}{\numberline {2.4.14}Merge data-frames and extract final csv file}{37}{subsubsection.2.4.14}
+\contentsline {section}{\numberline {3}Data Analysis}{38}{section.3}
+\contentsline {subsection}{\numberline {3.1}R and R-Studio}{38}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Scripts}{38}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Statistical Analysis}{38}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}Regression Model}{38}{subsubsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.3}Clustering}{38}{subsubsection.3.2.3}
+\contentsline {section}{\numberline {4}Conclusions}{39}{section.4}
+\contentsline {section}{\numberline {5}Bibliography}{40}{section.5}
+\contentsline {section}{\numberline {A}\\Appendix A: Fortune 500 Companies}{41}{appendix.A}
