@@ -206,9 +206,15 @@ print "The validation is complete! There were" , nv,
 \end{lstlisting}
 In our case all the urls where valid so we are eligible to proceed at the next part of the code.
 \subsubsection{HTML download}
-Download the actual html code of the initial pages of the 500 websites we will examine.
+After checking the validity of the urls that we have saved in the list the next step is to download the actual html code of the initial pages of each one of the 500 websites we want to examine.\\
+As we did in the section 2.4.1 we have to create a fake browser so as the to be able to download the html code without contacting any problems. In our case we created a Mozilla browser.\\
+In order for the url to be opened we must first bring it to the correct form. Initially we create again a loop and for each loop we will examine a specific url. We first replace some symbols on the string that will not be recognized if we try to open the url in this form and then we add the "http://" in the begging of each url.\\ 
+Before starting downloading we create some rules for some exceptions. For example the sites 119 (Arrow Electronics) and 465 (St. Jude Medical) in ranking create problem when we tried to download them and the code is stop working. So in order to avoid such incidents we created an exception and the python code will not even try to download these sites and in their position in the new list with the html pages that we will create a zero will be saved.The same thing would happen if an exception is thrown in the function if that we are creating. In any other case we will open the site and save this action in the variable response2.\\
+After saving the action we will use the command read and we will save the html code which is essentially a long piece of text and then we will save this "text" in the list.\\
+Finally we will wait for 2 seconds in order for the browser not to be suspicious from the extreme speed that we are going to open the next page. In that way we avoid having any crushing incidents on the code.\\
+After completing this procedure for all the site we will have a list that in each position the html code will be held as a very large text. Except from the sites that were not able to be opened.\\
+The code that was created for this procedure is the following:
 \begin{lstlisting}[language=Python]
-#def list_company_HTML (list_company_website,list_company_name,start,end):
 import time
 browser2 = urllib2.build_opener()
 browser2.addheaders = [('User-agent', 'Mozilla/5.0')]
@@ -227,26 +233,18 @@ for i in range (0,500):
     list500_names.insert(i,lcn)
     list500_url.insert(i,lc)
     list500_num.insert(i,k)
-    if i == 118 or i == 464:#The site 118(119) has a problem and the whole code is stacking 
-        #when I run it so we will thing of this site as a not downloadable
-        list500_sites.insert(i,0)
-        #print ("The site " + k + " has NOT been downloaded!")
-    else:
-        #an exception might be thrown, so the code should be in a try-except block
+    if i == 118 or i == 464:
+        list500_sites.insert(i,0)        
+    else:       
         try:
             response2=browser2.open(url2)
-        except Exception: # this describes what to do if an exception is thrown
+        except Exception: 
             list500_sites.insert(i,0)
             print ("The site " + str(i) + " has NOT been downloaded!") 
-            continue     
-            #read the response in html format. This is essentially a long piece of text
+            continue          
         myHTML2=response2.read()
-        list500_sites.insert(i,myHTML2)
-        #wait for 2 seconds
-        time.sleep(2)
-        #print ("The site " + k + " has been downloaded!")    
-    #print "We saved: ",str(i + 1)," sites!"
-    #print (len(list500_names),list500_names)
+        list500_sites.insert(i,myHTML2)        
+        time.sleep(2)        
 \end{lstlisting}
 \subsubsection{Not downloadable pages}
 By performing the previous code we could see that some pages could not be downloaded. In order to know from the beginning which companies sites will not be available for further exploration we created this part of the code which creates a list with the names of those companies.
