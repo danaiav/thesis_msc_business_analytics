@@ -186,19 +186,25 @@ The steps we followed to create the following function are the following:
 \paragraph{Step 4} Since we need the names and the urls of all the 500 sites we created a loop from 0 to 500 where for each i we try to isolate the part of the code that contains the information that we want. Moreover even thought it seems that with this loop we calculate 501 numbers since in Python the second bracket is always open we actually count from zero to 499.
 \paragraph{Step 5} We use reg expressions\footnote{A regular expression is a special sequence of characters that helps you match or find other strings or sets of strings, using a specialized syntax held in a pattern.} in order to state precisely what part of the already selected code we want to keep.
 \paragraph{Step 6} We insert with a specific order the names, the ranking and the url to the corresponding lists and finally we create a text that will appear when the function is completed. Here we have also calculated the time that this function took to be completed and we will appear it as well along with the text.
-\subsubsection{Page validation}
-Validate whether the page we are going to download is safe in order to proceed to the actual download of the html code of the pages.In order for the validation to take place we will have to install first the validators package in Python.
+\subsubsection{Url validation}
+Now that we have saved in the three lists the names, the ranking and the urls of the companies that we are going to examine we first have to check whether or not those urls are valid in order to proceed with the download of the html code behind the initial web page of each one of those companies.\\
+We first have to install the validators package in python so as to proceed with the validation of the url. In the command prompt window that opens when you open the Jupyter Notebook you have to write: "pip install validators" and then press enter in order for the package to be installed. This specific package currently supports python versions 2.7, 3.3, 3.4, 3.5 and PyPy.\footnote{https://validators.readthedocs.io/en/latest} 
+The function that we are going to use from this package is called validators.url. This functions returns True if the url at hand is a valid url or False if it is not.\\
+Below one can see that we created a loop that will run as many time as the length of the list that we created in the previous section.\\
+During this loop we create a string variable where we use the urls that we have saved in the list, one at each time, and we add the "http://" prefix.\\
+Now that we have create the correct way that a url is supposed to be written we will use the function of the validators package and we will create an if function that will check if the answer to a site is different from True and if it is it would add a unit in the variable nv so as to know at the end how many sites did not had valid urls.\\
+Finally we ask from the programme to print the final result so as to know how many urls are not valid. The code that was created for this procedure is the following one:
 \begin{lstlisting}[language=Python]
-#Try to validate each page url #pip install validators
-import validators
 nv = 0
 for num in range(len(list_company_website)):
     line = 'http://' + str(list_company_website[num])
     x = validators.url(line)    
     if x != True:
         nv = nv +1
-print "The validation is complete! There were" , nv, "not valid pages"
+print "The validation is complete! There were" , nv,
+ "not valid pages"
 \end{lstlisting}
+In our case all the urls where valid so we are eligible to proceed at the next part of the code.
 \subsubsection{HTML download}
 Download the actual html code of the initial pages of the 500 websites we will examine.
 \begin{lstlisting}[language=Python]
