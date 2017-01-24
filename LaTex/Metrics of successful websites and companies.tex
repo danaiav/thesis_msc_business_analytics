@@ -247,11 +247,11 @@ for i in range (0,500):
         time.sleep(2)        
 \end{lstlisting}
 \subsubsection{Not downloadable pages}
-By performing the previous code we could see that some pages could not be downloaded. In order to know from the beginning which companies sites will not be available for further exploration we created this part of the code which creates a list with the names of those companies.
+As we explained in the previous section there are some pages that were not able to be downloaded. In order to know which are those pages and more specifically which companies sites will not be available for further exploration we created this part of the code which creates a list with the names of those companies.\\
+In the previous code we used a zero in each position that we weren't able to download the site. Here we will use this information in order to gather in a new list only the parts of the list that did get a zero.\\
+Here we actually created a small function that is called $"not_downloadables"$. In the first part of the code we create the function and in the second part we run the function for our lists. Finally we create a data frame with the results so as to be more easy on the eyes.\\
+The code that was created is the following:
 \begin{lstlisting}[language=Python]
-#As we can see there is one site that hasn't been downloaded in order
-#to keep track of the sites that we could not download
-#we will create a new list that we will keep them all together there
 not_d = []
 not_d_n = []
 num = []
@@ -264,18 +264,50 @@ def not_downloadables (list500_names,list500_sites):
             not_d_n.insert(met,str(i))
             num.insert(met,met)
             met = met + 1
-   
- 
-
-
- 
-#Now we will run the function to see which sites havent been downloaded
 not_downloadables (list500_names,list500_sites)
 d = {'company' : pd.Series(not_d, index=[num]),
      'number' : pd.Series(not_d_n, index=[num])}
 nd = pd.DataFrame(d)    
 nd
 \end{lstlisting}
+In the following table we can see the sites that were not downloaded: 
+\begin{table}[H]
+\centering
+\caption{Not downloadable sites}
+\begin{tabular}{ll}
+\hline
+ &  \\
+14.Costco 
+& 15. Fannie Mae \\
+37. Target
+& 62. HCA Holdings \\
+90. Nike 
+& 97. Tesoro \\
+118. Arrow Electronics 
+& 127. Emerson Electric \\
+135. AutoNation
+& 141. Southwest Airlines \\
+161. Southern 
+& 164. American Electric Power\\ 
+209. Loews 
+& 216. PBF Energy \\
+239. Toys “R” Us 
+& 242. Dominion Resources \\
+275. Global Partners 
+& 306. PayPal Holdings\\ 
+326. News Corp. 
+& 363. Williams \\
+414. Tractor Supply 
+& 424. Ameren \\
+441. Old Republic International 
+& 464. St. Jude Medical \\
+481. Raymond James Financial &
+ \\ \hline
+
+\end{tabular}
+\end{table}
+
+
 
 \subsubsection{Readability index}
 Now that we have downloaded the html code we would like to see how easy would be for someone to read this code. We will use a site that will help us evaluate and create the readability index.

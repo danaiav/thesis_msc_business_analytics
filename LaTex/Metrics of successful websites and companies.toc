@@ -28,9 +28,9 @@
 \contentsline {subsubsection}{\numberline {2.4.8}Loading time}{19}{subsubsection.2.4.8}
 \contentsline {subsubsection}{\numberline {2.4.9}Types and number of images}{20}{subsubsection.2.4.9}
 \contentsline {subsubsection}{\numberline {2.4.10}Size of images}{23}{subsubsection.2.4.10}
-\contentsline {subsubsection}{\numberline {2.4.11}Number of words - Unique and Total}{28}{subsubsection.2.4.11}
+\contentsline {subsubsection}{\numberline {2.4.11}Number of words - Unique and Total}{29}{subsubsection.2.4.11}
 \contentsline {subsubsection}{\numberline {2.4.12}HTML Validation}{32}{subsubsection.2.4.12}
-\contentsline {subsubsection}{\numberline {2.4.13}Fortune 500 - Metrics download}{33}{subsubsection.2.4.13}
+\contentsline {subsubsection}{\numberline {2.4.13}Fortune 500 - Metrics download}{34}{subsubsection.2.4.13}
 \contentsline {subsubsection}{\numberline {2.4.14}Merge data-frames and extract final csv file}{38}{subsubsection.2.4.14}
 \contentsline {section}{\numberline {3}Data Analysis}{40}{section.3}
 \contentsline {subsection}{\numberline {3.1}R and R-Studio}{40}{subsection.3.1}
