@@ -310,17 +310,14 @@ In the following table we can see the sites that were not downloaded:
 
 
 \subsubsection{Readability index}
-Now that we have downloaded the html code we would like to see how easy would be for someone to read this code. We will use a site that will help us evaluate and create the readability index.
+Now that we have downloaded the html code we should start extracting some of the variables we are going to use for the analysis in the next chapter.\\
+The first thing we are going to check is how easy it is for a user to read the content of each site. In order to make this test we will perform a reliability test for the text that is included in the html code of the company's page.\\
+We will use the flesh reading test and we will implemented in the HMTL code with the help of an on-line checking site called "http://www.webpagefx.com/tools/read-able/".\\
+The flesch reading test is dividing the html pages texts into the following categories:
 \begin{lstlisting}[language=Python]
-#Now we will perfom a reliability test for the text that is 
-#included in the html code of the company's page
 from pattern import metrics
 readability = []
-rdb = []
- 
-
-
- 
+rdb = [] 
 def readable (list500_names,list500_sites):
     for i in range (len(list500_names)):
             myHTML = list500_sites[i]
@@ -353,16 +350,7 @@ def readable (list500_names,list500_sites):
                     rdb.insert(i,0)                    
     print "The function is completed!"
  
-
-
- 
 readable (list500_names,list500_sites)
- 
-
-    The function is completed!
-    
-
-
  
 d1 = {'company' : pd.Series(list500_names, index=[list500_num]),
       'url' : pd.Series(list500_url, index=[list500_num]),
@@ -370,6 +358,239 @@ d1 = {'company' : pd.Series(list500_names, index=[list500_num]),
       'Readability_index' : pd.Series(rdb, index=[list500_num])}
 fre = pd.DataFrame(d1)    
 fre.tail(3) #we see the first 3 in the data frame
+\end{lstlisting}
+\subsubsection{Number of words - Unique and Total}
+As it was mentioned and before words are exactly as important in a html page as the images. So we have to calculate the number of unique words and the total words that are being appeared in each companies html code.
+\begin{lstlisting}[language=Python]
+ 
+#Now we would like to find the words in the text 
+#and the unique words of each html page
+#First of all we need to have a dictionary with which 
+#we would check if the word we found truly exists
+#The dictionary is available in the internet from a 
+#github acount from where we are going to read it
+url_dictionary = "https://raw.githubusercontent.com/dwyl/english-words/master/words.txt"
+browser = urllib2.build_opener()
+browser.addheaders = [('User-agent', 'Mozilla/5.0')]
+response = browser.open(url_dictionary)
+html_dictionary = response.read()
+html_dictionary
+dicti = str(html_dictionary)
+#dicti
+ 
+
+
+ 
+#dict_new = dicti.split("\\n")
+dict_new = dicti.split("\n")
+dict_new[49] 
+#the first 49 parts are not words so we have to remove them from the list
+ 
+
+
+
+
+    'a1'
+
+
+
+
+ 
+dict_final = []
+df = 0
+for i in range (50,len(dict_new)):
+    forfinal = dict_new[i]
+    forfinal = forfinal.replace("'","")
+    dict_final.insert(df,forfinal)
+    df = df + 1
+dict_final[0] 
+#This is the original dictionary with which we will check each word
+ 
+
+
+
+
+    'aa'
+
+
+
+
+ 
+#And now we will find each html file which words has inside
+empty = []
+wordsin = []
+ocin = []
+def html_which_word (list500_names):
+    from time import time 
+    # I used it to see how much time it does to run the function
+    start_t = time()
+    for num in range(len(list500_sites)):
+            line = list500_sites[num] 
+            if line == 0:
+                wordsin.insert(num,0)
+                ocin.insert(num,0)                 
+            else: 
+                wordcount={}
+                simeiastiksis = ["/",".",",","=",">","<","?","|",":"
+                                 ,"_","]","[","$","&","%","(",")","{"
+                                 ,"}",'"',";","\\","-","!","+","#","="
+                                 ,"@","^","*","'"]
+                for ss in range(len(simeiastiksis)):
+                    simeio = simeiastiksis[ss]     
+                    line = line.replace(simeio, " ")
+                for word1 in line.split():
+                    word1 = word1.lower()
+                    if word1 in dict_final:
+                        if word1 not in wordcount:
+                            wordcount[word1] = 1
+                        else:
+                            wordcount[word1] += 1     
+                wordsin_local = []
+                wl = 0
+                ocin_local = []
+                for k,v in wordcount.items():
+                       #print (k,v)
+                       wordsin_local.insert(wl,str(k))
+                       ocin_local.insert(wl,str(v))
+                       wl = wl + 1
+                wordsin.insert(num,wordsin_local) 
+                # final list with all the words in each site
+                ocin.insert(num,ocin_local)  
+                #final list with all the occurencies of the words in each site
+            #print('The site', str(num +1), ' has been checked')
+    end_t = time()
+    total_t = round(end_t - start_t,3)
+    total_ = round(total_t / 60,1)
+    print('finished ',str(x) ,' sites in: ', str(total_),' minutes')
+ 
+
+
+ 
+html_which_word (list500_names)
+ 
+
+    ('finished ', 'True', ' sites in: ', '197.6', ' minutes')
+    
+
+
+ 
+#Create the dataframe for the words and unique words
+d7 = {'company' : pd.Series(list500_names, index=[nm])}
+wordss = pd.DataFrame(d7)    
+wordss.head(3) 
+
+###########################################
+#Create the two lists we will need in order to make the dataframe
+l1 = []
+l2 = []
+for num in range(len(list500_names)):
+        line = list500_sites[num] 
+        if wordsin[num] == 0 :             
+            l1.insert(num,'n/a')
+            l2.insert(num,'n/a')
+        else:
+            total_words = len(wordsin[num])
+            occurencies = ocin[num] 
+            l1.insert(num,total_words)
+            count = 0 
+            for a in occurencies :
+                if a == '1':
+                    count = count + 1
+            l2.insert(num,count)
+wordss['total_words'] = pd.Series(l1, index=sizess.index)
+wordss['unique_words'] = pd.Series(l2, index=sizess.index)          
+wordss.head(3)                        
+\end{lstlisting}
+\subsubsection{HTML Validation}
+Now that we have downloaded and kept in data frames the basic metrics that we will need for the analysis we should also check the quality of the html code.\\
+Most pages on the World Wide Web are written in computer languages (such as HTML) that allow Web authors to structure text, add multimedia content, and specify what appearance, or style, the result should have.\\
+As for every language, these have their own grammar, vocabulary and syntax, and every document written with these computer languages are supposed to follow these rules. \\
+However, Just as texts in a natural language can include spelling or grammar errors, documents using Markup languages may (for various reasons) not be following these rules. The process of verifying whether a document actually follows the rules for the language(s) it uses is called validation, and the tool used for that is a validator. A document that passes this process with success is called valid.\\
+With these concepts in mind, we can define "markup validation" as the process of checking a Web document against the grammar (generally a DTD\footnote{DTT: Document Type definition}) it claims to be using.\\
+For the purposes of this paper we will use an on-line validator site called W3C\footnote{https://validator.w3.org/} which will help as see how many errors and warnings does each site have.
+\begin{lstlisting}[language=Python]
+ 
+#In order to validate the html code we will use the w3 validator
+#We will validate each url and then we will open the url of the validation page
+#so as to extract the errors, the info warnings and the non-document-error io informations 
+#First we create the empty lists we would use later on
+num_errors = []
+num_info_warnings = []
+num_non_doc = [] 
+nm = []
+num_open_page = []
+empty = ""
+ 
+
+
+ 
+#Then we create the function that will pull the informations we want
+def html_validation (list500_url,list500_names):
+    from time import time # I used it to see how much time it does to run the function
+    start = time ()
+    for num in range(len(list500_names)):
+        line = list500_url[num] 
+        url_check = "https://validator.w3.org/nu/?doc=https://" + line
+        browser = urllib2.build_opener()
+        browser.addheaders = [('User-agent', 'Mozilla/5.0')]
+        response = browser.open(url_check)
+        html_check = response.read()
+        html_check
+        check = str(html_check)
+        er = 0
+        err = 0
+        errr = 0
+        e = False
+        if check != empty:
+            e = True
+            soup = BeautifulSoup(check,"lxml")
+            o = 0
+            keyf = []
+            for row in soup.html.body.findAll('div'):
+                keyf.insert(o,row)
+                o = o + 1
+            #print(len(keyf),list500_url[num], "site number: ", str(num))        
+            if len(keyf) != 0:       
+                    keyfin = str(keyf[2]) 
+                    #the elements we need is in the 2nd div of the code
+                    dol= re.findall('class="error"',keyfin)            
+                    er = er + len(dol)
+                    doll= re.findall('class="info warning"'
+                                     ,keyfin)            
+                    err = err + len(doll)
+                    dolll= re.findall('class="non-document-error io"'
+                                      ,keyfin)            
+                    errr = errr + len(dolll)
+        num_errors.insert(num,er)
+        num_info_warnings.insert(num,err)
+        num_non_doc.insert(num,errr)  
+        nm.insert(num,num) 
+        num_open_page.insert(num,e)
+    end = time ()
+    duration = round (end - start, 3)
+    minutes = round (duration /60, 1)
+    print 'The lists are ready in ', minutes, ' minutes'
+ 
+
+
+ 
+#Now we will run the function we created
+html_validation (list500_url,list500_names)
+ 
+
+    The lists are ready in  37.0  minutes
+    
+
+
+ 
+#After the checks we will create the dataframe with the informations we want
+d8 = {'company' : pd.Series(list500_names, index=[nm]),
+      'The_page_opened' : pd.Series(num_open_page, index=[nm])
+      ,'number_of_errors' : pd.Series(num_errors, index=[nm]),
+      'number_of_warning' : pd.Series(num_info_warnings, index=[nm])
+      ,'non-document-error' : pd.Series(num_non_doc, index=[nm])}
+html_val = pd.DataFrame(d8)    
+html_val.head(3) 
 \end{lstlisting}
 \subsubsection{Social media}
 Now we will see how many and which companies include in their initial page the link to specific social media.
@@ -990,234 +1211,7 @@ final_dimensions_dataframe (un_size,t_f_s,list500_names)
  
 sizess.tail(3)
 \end{lstlisting}
-\subsubsection{Number of words - Unique and Total}
-As it was mentioned and before words are exactly as important in a html page as the images. So we have to calculate the number of unique words and the total words that are being appeared in each companies html code.
-\begin{lstlisting}[language=Python]
- 
-#Now we would like to find the words in the text 
-#and the unique words of each html page
-#First of all we need to have a dictionary with which 
-#we would check if the word we found truly exists
-#The dictionary is available in the internet from a 
-#github acount from where we are going to read it
-url_dictionary = "https://raw.githubusercontent.com/dwyl/english-words/master/words.txt"
-browser = urllib2.build_opener()
-browser.addheaders = [('User-agent', 'Mozilla/5.0')]
-response = browser.open(url_dictionary)
-html_dictionary = response.read()
-html_dictionary
-dicti = str(html_dictionary)
-#dicti
- 
 
-
- 
-#dict_new = dicti.split("\\n")
-dict_new = dicti.split("\n")
-dict_new[49] 
-#the first 49 parts are not words so we have to remove them from the list
- 
-
-
-
-
-    'a1'
-
-
-
-
- 
-dict_final = []
-df = 0
-for i in range (50,len(dict_new)):
-    forfinal = dict_new[i]
-    forfinal = forfinal.replace("'","")
-    dict_final.insert(df,forfinal)
-    df = df + 1
-dict_final[0] 
-#This is the original dictionary with which we will check each word
- 
-
-
-
-
-    'aa'
-
-
-
-
- 
-#And now we will find each html file which words has inside
-empty = []
-wordsin = []
-ocin = []
-def html_which_word (list500_names):
-    from time import time 
-    # I used it to see how much time it does to run the function
-    start_t = time()
-    for num in range(len(list500_sites)):
-            line = list500_sites[num] 
-            if line == 0:
-                wordsin.insert(num,0)
-                ocin.insert(num,0)                 
-            else: 
-                wordcount={}
-                simeiastiksis = ["/",".",",","=",">","<","?","|",":"
-                                 ,"_","]","[","$","&","%","(",")","{"
-                                 ,"}",'"',";","\\","-","!","+","#","="
-                                 ,"@","^","*","'"]
-                for ss in range(len(simeiastiksis)):
-                    simeio = simeiastiksis[ss]     
-                    line = line.replace(simeio, " ")
-                for word1 in line.split():
-                    word1 = word1.lower()
-                    if word1 in dict_final:
-                        if word1 not in wordcount:
-                            wordcount[word1] = 1
-                        else:
-                            wordcount[word1] += 1     
-                wordsin_local = []
-                wl = 0
-                ocin_local = []
-                for k,v in wordcount.items():
-                       #print (k,v)
-                       wordsin_local.insert(wl,str(k))
-                       ocin_local.insert(wl,str(v))
-                       wl = wl + 1
-                wordsin.insert(num,wordsin_local) 
-                # final list with all the words in each site
-                ocin.insert(num,ocin_local)  
-                #final list with all the occurencies of the words in each site
-            #print('The site', str(num +1), ' has been checked')
-    end_t = time()
-    total_t = round(end_t - start_t,3)
-    total_ = round(total_t / 60,1)
-    print('finished ',str(x) ,' sites in: ', str(total_),' minutes')
- 
-
-
- 
-html_which_word (list500_names)
- 
-
-    ('finished ', 'True', ' sites in: ', '197.6', ' minutes')
-    
-
-
- 
-#Create the dataframe for the words and unique words
-d7 = {'company' : pd.Series(list500_names, index=[nm])}
-wordss = pd.DataFrame(d7)    
-wordss.head(3) 
-
-###########################################
-#Create the two lists we will need in order to make the dataframe
-l1 = []
-l2 = []
-for num in range(len(list500_names)):
-        line = list500_sites[num] 
-        if wordsin[num] == 0 :             
-            l1.insert(num,'n/a')
-            l2.insert(num,'n/a')
-        else:
-            total_words = len(wordsin[num])
-            occurencies = ocin[num] 
-            l1.insert(num,total_words)
-            count = 0 
-            for a in occurencies :
-                if a == '1':
-                    count = count + 1
-            l2.insert(num,count)
-wordss['total_words'] = pd.Series(l1, index=sizess.index)
-wordss['unique_words'] = pd.Series(l2, index=sizess.index)          
-wordss.head(3)                        
-\end{lstlisting}
-\subsubsection{HTML Validation}
-Now that we have downloaded and kept in data frames the basic metrics that we will need for the analysis we should also check the quality of the html code.
-\begin{lstlisting}[language=Python]
- 
-#In order to validate the html code we will use the w3 validator
-#We will validate each url and then we will open the url of the validation page
-#so as to extract the errors, the info warnings and the non-document-error io informations 
-#First we create the empty lists we would use later on
-num_errors = []
-num_info_warnings = []
-num_non_doc = [] 
-nm = []
-num_open_page = []
-empty = ""
- 
-
-
- 
-#Then we create the function that will pull the informations we want
-def html_validation (list500_url,list500_names):
-    from time import time # I used it to see how much time it does to run the function
-    start = time ()
-    for num in range(len(list500_names)):
-        line = list500_url[num] 
-        url_check = "https://validator.w3.org/nu/?doc=https://" + line
-        browser = urllib2.build_opener()
-        browser.addheaders = [('User-agent', 'Mozilla/5.0')]
-        response = browser.open(url_check)
-        html_check = response.read()
-        html_check
-        check = str(html_check)
-        er = 0
-        err = 0
-        errr = 0
-        e = False
-        if check != empty:
-            e = True
-            soup = BeautifulSoup(check,"lxml")
-            o = 0
-            keyf = []
-            for row in soup.html.body.findAll('div'):
-                keyf.insert(o,row)
-                o = o + 1
-            #print(len(keyf),list500_url[num], "site number: ", str(num))        
-            if len(keyf) != 0:       
-                    keyfin = str(keyf[2]) 
-                    #the elements we need is in the 2nd div of the code
-                    dol= re.findall('class="error"',keyfin)            
-                    er = er + len(dol)
-                    doll= re.findall('class="info warning"'
-                                     ,keyfin)            
-                    err = err + len(doll)
-                    dolll= re.findall('class="non-document-error io"'
-                                      ,keyfin)            
-                    errr = errr + len(dolll)
-        num_errors.insert(num,er)
-        num_info_warnings.insert(num,err)
-        num_non_doc.insert(num,errr)  
-        nm.insert(num,num) 
-        num_open_page.insert(num,e)
-    end = time ()
-    duration = round (end - start, 3)
-    minutes = round (duration /60, 1)
-    print 'The lists are ready in ', minutes, ' minutes'
- 
-
-
- 
-#Now we will run the function we created
-html_validation (list500_url,list500_names)
- 
-
-    The lists are ready in  37.0  minutes
-    
-
-
- 
-#After the checks we will create the dataframe with the informations we want
-d8 = {'company' : pd.Series(list500_names, index=[nm]),
-      'The_page_opened' : pd.Series(num_open_page, index=[nm])
-      ,'number_of_errors' : pd.Series(num_errors, index=[nm]),
-      'number_of_warning' : pd.Series(num_info_warnings, index=[nm])
-      ,'non-document-error' : pd.Series(num_non_doc, index=[nm])}
-html_val = pd.DataFrame(d8)    
-html_val.head(3) 
-\end{lstlisting}
 \subsubsection{Fortune 500 - Metrics download}
 Just in order to have some metrics that will depict the status of the companies we are going to analyse we will also download some metrics from the fortune 500 sites for each company.
 \begin{lstlisting}[language=Python]
