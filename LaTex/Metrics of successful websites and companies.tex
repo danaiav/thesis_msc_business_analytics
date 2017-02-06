@@ -20,16 +20,16 @@
 \newpage
 \section{Introduction}
  
-An on-line presence of a company was not an important factor of its success until a few years ago. Taking although into account the vast spread of the impact that internet has on consumers regarding their choices this hypothesis is not valid any more. Companies are obliged by the trends to be active on-line and to maintain a website that depicts the image they want their consumers to perceive. The purpose of this paper is to understand the relationship that exists between the website of a company and its success. Trying to comprehend this relationship a comparison will take place between specific metrics of the websites of the Fortune's 500 more successful companies  and their financial status. By performing regression models and statistical analysis this paper will try to explore which metrics of a company's website influence its success.   
+An on-line presence of a company was not an important factor of the overall success that the enterprise would have until a few years ago. Taking although into account the vast spread of the impact that internet has on consumers regarding their brand choices and their products this hypothesis is not valid any more. Companies are obliged by the trends to be active on-line and to maintain a website that depicts the image they want their consumers to perceive. By creating a more consumer orientated image they lead the users to create a positive idea regarding the company and this could potentially lead to bigger sales. The purpose of this paper is to understand the relationship that exists between the website of a company and its success. As success we will consider the amount of revenues of the company. Trying to comprehend this relationship a comparison will take place between the enterprises that were deemed as the more successful ones from Fortune 500  based on their revenues and a number of website metrics in order to see by performing regression models and statistical analysis which metrics do affect the most or are related the most with a company's success.
 \newpage
 \section{Data gathering}
-The first step in order to contact this research is to conclude to the companies that are going to be examined. Since the purpose of this paper is to see if the website metrics that will be examined are influencing the success of the company it is a good idea to examine websites of some already successful companies and try to find out what they have in common.
+The first step in order to contact this research is to find which companies we are going to examine. Since the purpose of this paper is to see if the website metrics that will be examined are influencing the success of the company it is a good idea to examine websites of some already successful companies and try to find out what they have in common. Thus as it is mentioned in the introduction we will examine the 500 companies that were ranked as the most successful ones from Fortune 500.
 \subsection{Data Source - Fortune 500}
-The Fortune 500 is an annual list compiled and published by Fortune magazine that ranks 500 of the largest U.S. corporations by total revenue for their respective fiscal years. The list includes public companies, along with privately held companies for which revenues are publicly available.\cite{key1, key2}\\ 
+The Fortune 500 is an annual list compiled and published by Fortune magazine that ranks 500 of the largest United States corporations by total revenue for their respective fiscal years. The list includes public companies, along with privately held companies for which revenues are publicly available.\cite{key1, key2}\\ 
 For the purposes of this paper we will use this list of companies and we will examine their websites in order to understand if they indeed have something in common or if their success is irrelevant with their on-line presence.\\
 The first thing that we will need is a list of the names that are include in the fortune 500. The easiest way to obtain this list is from the following article:
-\href{url}{http://www.zyxware.com/articles/4344/list-of-fortune-500-companies-and-their-websites}.\ The way that we will obtain the list will be explained in the 2.4 Scripts section of this chapter.
-In the following table one can see the 50 most succesful companies that are included in the Fortune 500 during the period this paper is taking place. The rest of the list is available in the Appendix A.\ref{App:AppendixA}
+\href{url}{http://www.zyxware.com/articles/4344/list-of-fortune-500-companies-and-their-websites}.\ The way that we will obtain the list will be explained further along in this paper.\\
+In the following table one can see the 50 most successful companies that are included in the Fortune 500 during the period this paper is taking place. The rest of the list is available in the Appendix A.\ref{App:AppendixA}
 \begin{table}[H]
 \centering
 \caption{Fortune 500 - 50 first companies}
@@ -98,27 +98,28 @@ Now that we have declared the companies that we are going to use we will also ne
 \item What lays behind of what we see?
 \end{itemize}
 In the first category we are referring to metrics that can easily be conceived by the naked eye as well. For example the images that a website is using in its landing page. How many there are and if they are big or small.\\
-The second category is not so obvious and it includes informations that usually is visible only to the web developer or the creator of the page. The information here are being given from the html code of a site. For instance we can see if the html code has any errors, that can lead to some malfunction in the site for example.\\
+The second category is not so obvious and it includes informations that usually is visible only to the web developer or the creator of the page. The information here are being given from the html code of a site. For instance we can see the actual type and size of an image, an information not visible with the naked eye.\\
 Now that we have a first understanding of the two main categories that the metrics we will use are divided in, we can see in detail the metrics that will be examined in this paper:
-\paragraph{Loading time:}One aspect of a website that is crucial is the time it takes for it to load. Nowadays that the internet speed is going higher and higher most people do not have the patient to wait for a page to load. That is why we think that a metrics that should be definitely included in this research in the loading time of the initial page of a site.
-\paragraph{Number of links:}When someone is browsing through the internet in many cases they are not completely sure what exactly they are looking for and that is why in a website it would be wise to have some links that can direct the user to find what he wants.These links can either direct the user in another page of the same site, in which case the link will be characterized as an internal link. Or they can lead the user to another site, where in that case the link is characterized as an external link.For the purpose of this paper since it is not so clear which type of links are more important to a user we will examine both the internal and the external links.
-\paragraph{Social media:}Our era is marked by the social media wave that has changed our lifestyle and our daily habits. So it would be considered an overview if we didn't take under consideration the number of social media that the company chooses to participate in. Even though they can also be considered as external links of the website we will examine them separately in order to see if any particular social medium effects the company's revenues.
-\paragraph{Number and size of images:}Since the site is the first thing that a user will see for the company and there is a famous quote that says that \textit{"First impressions counts"} we should also examine how the companies decide to visualize their landing page. In other words to see how many images they include in it and more on that what sizes are those images.\\ It is completely different to see only one huge image in the landing page of a site with not many words or descriptions than to see many small images with different information. The purpose is to examine if these type of diversities between the examined websites are actually related to how they are doing profit wise.
-\paragraph{Type of images:} This kind of information is a little more complicated for a simple user to understand, but in many cases it plays a very important role. For example some websites are using specific type of images or banners that are not compatible with all the browsers, leading the user to see some break points in the website and even stop visiting it. That is why we believe is important to review this metric as well.
-\paragraph{Number of words:} They say a picture worth a thousand words but that is not enough in our case. After exploring the number, sizes and type of pictures that a website is using we should also explore the number of words it is using to accompany the images and complete the outcome that a user will come across. The metrics we will use will be two. The first one will be the total words that are being used in the landing page and the other one will be the total unique words that are being used. When we are referring to unique words we mean words that are not so commonly use such as "a" or "and" and they give an air of individuality to the text. By using this metric we would try to see if the words that are being used are just as important as the actual content and if the words can make a difference.
-\paragraph{Readability index:}In order for the previous metrics to be completed we will also have to take under consideration how comprehending is the text used in the websites for the users. This information can be obtained by calculating the readability index of the website.How the readability index is being calculating will be furthered explained in another section.
-\paragraph{HTML Validation:} Moreover we will have to check the quality of the html code behind the website we are seeing. Are there any mistakes in the code for example any brackets that opened and never closed or any links that do not work. We will examine again two different metrics here the number of errors and the number of warnings. The warning are parts of the code that even though they work at the time there is a good chance to malfunction if any changes or addition are to be made to the html code. 
+\subsubsection{Loading time:}One aspect of a website that is crucial is the time it takes for it to load. Nowadays that the internet speed is going higher and higher most people do not have the patient to wait for a page to load. That is why we think that a metrics that should be definitely included in this research in the loading time of the initial page of a site.
+\subsubsection{Number of links:}When someone is browsing through the internet in many cases they are not completely sure what exactly they are looking for and that is why in a website it would be wise to have some links that can direct the user to find what he wants.These links can either direct the user in another page of the same site, in which case the link will be characterized as an internal link. Or they can lead the user to another site, where in that case the link is characterized as an external link.For the purpose of this paper since it is not so clear which type of links are more important to a user we will examine both the internal and the external links.
+\subsubsection{Social media:}Our era is marked by the social media wave that has changed our lifestyle and our daily habits. So it would be considered an overview if we didn't take under consideration the number of social media that the company chooses to participate in. Even though they can also be considered as external links of the website we will examine them separately in order to see if any particular social medium effects the company's revenues.
+\subsubsection{Number, type and sizes of images:}Since the site is the first thing that a user will see for the company and there is a famous quote that says that \textit{"First impressions counts"} we should also examine how the companies decide to visualize their landing page. In other words to see how many images they include in it and more on that what sizes are those images.\\ It is completely different to see only one huge image in the landing page of a site with not many words or descriptions than to see many small images with different information. The purpose is to examine if these type of diversities between the examined websites are actually related to how they are doing profit wise.\\ Moreover a kind of information a little more complicated for a simple user to understand, but plays a very important role in many cases is the type of the image. For example some websites are using specific type of images or banners that are not compatible with all the browsers, leading the user to see some break points in the website and even stop visiting it. That is why we believe is important to review this metric as well.
+\subsubsection{Content:} They say a picture worth a thousand words but that is not enough in our case. After exploring the number, sizes and type of pictures that a website is using we should also explore the number of words it is using to accompany the images and complete the outcome that a user will come across. The metrics we will use will be two. The first one will be the total words that are being used in the landing page and the other one will be the total unique words that are being used. When we are referring to unique words we mean words that are not so commonly use such as "a" or "and" and they give an air of individuality to the text. By using this metric we would try to see if the words that are being used are just as important as the actual content and if the words can make a difference.\\
+Furthermore we should also take under consideration how comprehending is the text used in the websites for the users. This information can be obtained by calculating the readability index of the website and also the number of sentences that exists in a page (a metric that comes to complete the previous ones).How the readability index is being calculating will be furthered explained in another section.
+\subsubsection{HTML Validation:} Moreover we will have to check the quality of the html code behind the website we are seeing. Are there any mistakes in the code for example any brackets that opened and never closed or any links that do not work. We will examine again two different metrics here the number of errors and the number of warnings. The warning are parts of the code that even though they work at the time there is a good chance to malfunction if any changes or addition are to be made to the html code. 
 \subsection{Python}
-After having a first look into the variables/ metrics we will use in order to contact this research we should also see how we are going to obtain all this information.\\
+After having a first look into the variables/ metrics we will use in order to contact this research we should now see how we are going to obtain all this information.\\
 Since all of this information can be subtract from the html code of a company's website we should use a programming language in order to download the html pages and then to extract the specific metrics we want to examine from them.\\
-For the purposes of this paper the programming language that will be used for downloading the metrics from the websites is Python. More specifically the version of Python that will be used is the 2.7 one. Python is a widely used high-level programming language used for general-purpose programming, created by Guido van Rossum and first released in 1991. An interpreted language, Python has a design philosophy which emphasizes code readability (notably using white space indentation to delimit code blocks rather than curly braces or keywords), and a syntax which allows programmers to express concepts in fewer lines of code than possible in languages such as C++ or Java. \\
+For the purposes of this paper the programming language that will be used for downloading the metrics from the websites is Python. More specifically the version of Python that will be used is the 2.7 one.\\
+Python is a widely used high-level programming language used for general-purpose programming, created by Guido van Rossum and first released in 1991. An interpreted language, Python has a design philosophy which emphasizes code readability (notably using white space indentation to delimit code blocks rather than curly braces or keywords), and a syntax which allows programmers to express concepts in fewer lines of code than possible in languages such as C++ or Java. \\
 The language provides constructs intended to enable writing clear programs on both a small and large scale. Furthermore the way that Python allows a user to programming is common to all users which gives this language a leverage as a program build in Python can be easily understood from another user without any difficulty.\\
 The environment that is going to be used is from the Anaconda package which is a free open source distribution of the Python and R programming languages for large-scale data processing, predictive analytics, and scientific computing, that aims to simplify package management and deployment. To be more precise from this package we are going to use the Jupyter Notebook.\cite{key4} \\
 \subsection{Scripts}
-In order to gather all the needed metrics we had to create many small scripts so as to collect them. In this section we will present in detail the code that was used in order to extract the information that later will help us contact the analysis of the relationship between those metrics and the company's status.
-\subsubsection{Fortune data - list download}
-The first step is to download and gather the names of the companies that we are going to examine and also the url of their websites and finally their ranking.Those information can be found in the following url as he have already mentioned in the beginning.\href{url}{http://www.zyxware.com/articles/4344/list-of-fortune-500-companies-and-their-websites}.\\
-The way to keep only the those three informations as separate variables is by separating from the html code of this page the needed information.\\
+In order to gather all the needed metrics we had to create a variety of small scripts so as to collect them. In this section we will present in detail the procedure and the actual scripts that were used in order to extract the information that later will help us contact the analysis of the relationship between those metrics and the company's status.
+\subsubsection{Companies ranking, names and url}
+For starters we need to create a list with the names, the ranking and the URL of the sites that we will later download and extract the necessary info from them. So as it was mentioned in the previous section the first step that needs to be done is to download and gather those informations into a data frame\footnote{a table in Python environment with rows and columns} so as to be able to use them later on.\\
+The most easy way to obtain those informations is by extracting them from an already existing list. This list in our case was available in the following link:\href{url}{http://www.zyxware.com/articles/4344/list-of-fortune-500-companies-and-their-websites}.\\
+The way to keep only those three informations as three different variables is by separating from the html code of this page the needed information.\\
 The first step is to create 3 empty lists where we will include the informations we are going to extract. The first list will contain the rank of each site, the second one will contain the name of the company and the 3rd one will contain the actual link of the company's site:
 \begin{lstlisting}[language=Python]
 list_company_number =[]
@@ -186,14 +187,14 @@ The steps we followed to create the following function are the following:
 \paragraph{Step 4} Since we need the names and the urls of all the 500 sites we created a loop from 0 to 500 where for each i we try to isolate the part of the code that contains the information that we want. Moreover even thought it seems that with this loop we calculate 501 numbers since in Python the second bracket is always open we actually count from zero to 499.
 \paragraph{Step 5} We use reg expressions\footnote{A regular expression is a special sequence of characters that helps you match or find other strings or sets of strings, using a specialized syntax held in a pattern.} in order to state precisely what part of the already selected code we want to keep.
 \paragraph{Step 6} We insert with a specific order the names, the ranking and the url to the corresponding lists and finally we create a text that will appear when the function is completed. Here we have also calculated the time that this function took to be completed and we will appear it as well along with the text.
-\subsubsection{Url validation}
-Now that we have saved in the three lists the names, the ranking and the urls of the companies that we are going to examine we first have to check whether or not those urls are valid in order to proceed with the download of the html code behind the initial web page of each one of those companies.\\
+\subsubsection{URL validation}
+Now that we have saved in the three lists the names, the ranking and the URL of the companies that we are going to examine we first have to check whether or not those URL are valid in order to proceed with the download of the html code behind the initial web page of each one of those companies.\\
 We first have to install the validators package in python so as to proceed with the validation of the url. In the command prompt window that opens when you open the Jupyter Notebook you have to write: "pip install validators" and then press enter in order for the package to be installed. This specific package currently supports python versions 2.7, 3.3, 3.4, 3.5 and PyPy.\footnote{https://validators.readthedocs.io/en/latest} 
 The function that we are going to use from this package is called validators.url. This functions returns True if the url at hand is a valid url or False if it is not.\\
 Below one can see that we created a loop that will run as many time as the length of the list that we created in the previous section.\\
-During this loop we create a string variable where we use the urls that we have saved in the list, one at each time, and we add the "http://" prefix.\\
-Now that we have create the correct way that a url is supposed to be written we will use the function of the validators package and we will create an if function that will check if the answer to a site is different from True and if it is it would add a unit in the variable nv so as to know at the end how many sites did not had valid urls.\\
-Finally we ask from the programme to print the final result so as to know how many urls are not valid. The code that was created for this procedure is the following one:
+During this loop we create a string variable where we use the URL that we have saved in the list, one at each time, and we add the "http://" prefix.\\
+Now that we have create the correct way that a url is supposed to be written we will use the function of the validators package and we will create an if function that will check if the answer to a site is different from True and if it is it would add a unit in the variable nv so as to know at the end how many sites did not had valid URL.\\
+Finally we ask from the programme to print the final result so as to know how many URL are not valid. The code that was created for this procedure is the following one:
 \begin{lstlisting}[language=Python]
 nv = 0
 for num in range(len(list_company_website)):
@@ -204,12 +205,12 @@ for num in range(len(list_company_website)):
 print "The validation is complete! There were" , nv,
  "not valid pages"
 \end{lstlisting}
-In our case all the urls where valid so we are eligible to proceed at the next part of the code.
+In our case all the URL where valid so we are eligible to proceed at the next part of the code.
 \subsubsection{HTML download}
-After checking the validity of the urls that we have saved in the list the next step is to download the actual html code of the initial pages of each one of the 500 websites we want to examine.\\
+After checking the validity of the URL that we have saved in the list the next step is to download the actual html code of the initial pages of each one of the 500 websites we want to examine.\\
 As we did in the section 2.4.1 we have to create a fake browser so as the to be able to download the html code without contacting any problems. In our case we created a Mozilla browser.\\
 In order for the url to be opened we must first bring it to the correct form. Initially we create again a loop and for each loop we will examine a specific url. We first replace some symbols on the string that will not be recognized if we try to open the url in this form and then we add the "http://" in the begging of each url.\\ 
-Before starting downloading we create some rules for some exceptions. For example the sites 119 (Arrow Electronics) and 465 (St. Jude Medical) in ranking create problem when we tried to download them and the code is stop working. So in order to avoid such incidents we created an exception and the python code will not even try to download these sites and in their position in the new list with the html pages that we will create a zero will be saved.The same thing would happen if an exception is thrown in the function if that we are creating. In any other case we will open the site and save this action in the variable response2.\\
+Before starting downloading we create some rules for some exceptions. For example the sites 71 (Best Bay),119 (Arrow Electronics) and 465 (St. Jude Medical) in ranking create problem when we tried to download them and the code is stop working. So in order to avoid such incidents we created an exception and the python code will not even try to download these sites and in their position in the new list with the html pages that we will create a zero will be saved.The same thing would happen if an exception is thrown in the function if that we are creating. In any other case we will open the site and save this action in the variable response2.\\
 After saving the action we will use the command read and we will save the html code which is essentially a long piece of text and then we will save this "text" in the list.\\
 Finally we will wait for 2 seconds in order for the browser not to be suspicious from the extreme speed that we are going to open the next page. In that way we avoid having any crushing incidents on the code.\\
 After completing this procedure for all the site we will have a list that in each position the html code will be held as a very large text. Except from the sites that were not able to be opened.\\
@@ -229,22 +230,26 @@ for i in range (0,500):
     lcn = lcn.replace("[","")
     lcn = lcn.replace("]","")
     url2= 'http://' + lc
-    #print (url2)
     list500_names.insert(i,lcn)
     list500_url.insert(i,lc)
     list500_num.insert(i,k)
-    if i == 118 or i == 464:
-        list500_sites.insert(i,0)        
-    else:       
+    if i == 118 or i == 464 or i == 70:
+        list500_sites.insert(i,0)  
+        print ("The site " + str(i) 
+        + " has NOT been downloaded!")
+    else:
         try:
             response2=browser2.open(url2)
-        except Exception: 
+            print ("The site " + str(i) 
+            + " has been downloaded!")
+        except Exception:
             list500_sites.insert(i,0)
-            print ("The site " + str(i) + " has NOT been downloaded!") 
-            continue          
+            print ("The site " + str(i) 
+            + " has NOT been downloaded from exception!")           
+            continue 
         myHTML2=response2.read()
         list500_sites.insert(i,myHTML2)        
-        time.sleep(2)        
+        time.sleep(2)         
 \end{lstlisting}
 \subsubsection{Not downloadable pages}
 As we explained in the previous section there are some pages that were not able to be downloaded. In order to know which are those pages and more specifically which companies sites will not be available for further exploration we created this part of the code which creates a list with the names of those companies.\\
@@ -264,7 +269,9 @@ def not_downloadables (list500_names,list500_sites):
             not_d_n.insert(met,str(i))
             num.insert(met,met)
             met = met + 1
+
 not_downloadables (list500_names,list500_sites)
+
 d = {'company' : pd.Series(not_d, index=[num]),
      'number' : pd.Series(not_d_n, index=[num])}
 nd = pd.DataFrame(d)    
@@ -276,231 +283,176 @@ In the following table we can see the sites that were not downloaded:
 \caption{Not downloadable sites}
 \begin{tabular}{ll}
 \hline
- &  \\
-14.Costco 
-& 15. Fannie Mae \\
-37. Target
-& 62. HCA Holdings \\
-90. Nike 
-& 97. Tesoro \\
-118. Arrow Electronics 
-& 127. Emerson Electric \\
-135. AutoNation
-& 141. Southwest Airlines \\
-161. Southern 
-& 164. American Electric Power\\ 
-209. Loews 
-& 216. PBF Energy \\
-239. Toys “R” Us 
-& 242. Dominion Resources \\
-275. Global Partners 
-& 306. PayPal Holdings\\ 
-326. News Corp. 
-& 363. Williams \\
-414. Tractor Supply 
-& 424. Ameren \\
-441. Old Republic International 
-& 464. St. Jude Medical \\
-481. Raymond James Financial &
- \\ \hline
+ &  \\ 
+16. Fannie Mae 
+& 63. HCA Holdings \\
+71. Best Buy
+& 91. Nike \\
+98. Tesoro 
+& 119. Arrow Electronics\\
+136. AutoNation
+& 142. Southwest Airlines \\
+162. Southern 
+& 165. American Electric Power\\
+196. Office Depot 
+& 217. PBF Energy \\
+229. Consolidated Edison
+& 240. Toys “R” Us \\
+243. Dominion Resources 
+& 276. Global Partners\\
+307. PayPal Holdings 
+& 327. News Corp. \\
+364. Williams 
+& 415. Tractor Supply\\ 
+442. Old Republic International 
+& 465. St. Jude Medical \\
+\hline
 
 \end{tabular}
 \end{table}
 
 
-
-\subsubsection{Readability index}
+\subsubsection{Content}
 Now that we have downloaded the html code we should start extracting some of the variables we are going to use for the analysis in the next chapter.\\
-The first thing we are going to check is how easy it is for a user to read the content of each site. In order to make this test we will perform a reliability test for the text that is included in the html code of the company's page.\\
-We will use the flesh reading test and we will implemented in the HMTL code with the help of an on-line checking site called "http://www.webpagefx.com/tools/read-able/".\\
-The flesch reading test is dividing the html pages texts into the following categories:
+The first thing we are going to check is how easy it is for a user to read the content of each site. In order to check this performance indicator we will need to gather 4 variables:
+\begin{enumerate}
+\item Number of Words
+\item Number of Unique Words
+\item Number of Sentences
+\item Flesch score
+\end{enumerate}
+The three first are quite clear. The number of words are the total words that appear in the texts that the user is seeing in a website. The number of unique words are the words that are not very common and can attract the readers attention or even make it harder for him to comprehend the text. The number of sentences is related to those variables as we can understand from this is comparison to the number of total words how big or short is the sentence and as a conclusion how easy or not is the complete text.//
+Finally the flesh score is referring to the Flesh reading ease test score.In the Flesch reading-ease test, higher scores indicate material that is easier to read; lower numbers mark passages that are more difficult to read. The formula for the Flesch reading-ease score (FRES) test is:\\ \\
+$206.835 - 1.015 (total words/total sentences) - 84.6 (total syllables/total words)$\\
+\\
+We will calculate the flesh reading test and the other three aforementioned variables with the help of an on-line checking site called: \\
+"http://www.webpagefx.com/tools/read-able/".\\
+This site calculates and return all these results that we need. The way to implement them in a new data frame to our python code is by dividing the html code, behind the page with the results for each site, and keeping only the actual numbers and sizes that we seek. \\
 \begin{lstlisting}[language=Python]
-from pattern import metrics
+import time 
+for num in range(0,500):
+    site = list500_sites[num]
+    line = list500_url[num] 
+    url_check = "http://www.webpagefx.com/tools/
+    read-able/check.php?tab=Test+By+Url&uri=http://"+ line
+    browser = urllib2.build_opener()
+    browser.addheaders = [('User-agent', 'Mozilla/5.0')]
+    if site == 0 or num == 107:
+        print("Site", str(num), "is not validated from sites")
+        flesch.insert(num,"n/a")
+        sentence.insert(num,"n/a")
+        word.insert(num,"n/a")
+        unique_w.insert(num,"n/a")  
+    else:
+        try:
+            response = browser.open(url_check)
+        except Exception: 
+            flesch.insert(num,"n/a")
+            sentence.insert(num,"n/a")
+            word.insert(num,"n/a")
+            unique_w.insert(num,"n/a")
+            print("Site", str(num), "is not validated from check")
+            continue        
+        html_r = response.read()
+        check = str(html_r)       
+        if check != empty:                
+                soup = BeautifulSoup(check,"lxml")
+                o = 0
+                keyf = []
+                for row in soup.html.body.findAll('tr'):
+                    keyf.insert(o,row)
+                    o = o + 1
+                if keyf != empty:                        
+                        print("Site", str(num), "is validated")
+                        #Flesh measurement
+                        if keyf[0] != empty:
+                            readability = str(keyf[0])
+                            split1 = readability.split('>')
+                            readability2 = str(split1[4])
+                            split2 = readability2.split('<')
+                            readability3 = str(split2[0])
+                            flesch.insert(num,readability3)
+                        else:
+                            flesch.insert(num,"n/a")
+                            sentence.insert(num,"n/a")
+                            word.insert(num,"n/a")
+                            unique_w.insert(num,"n/a")   
+                        #Number of sentences   
+                        if keyf[6] != empty:
+                            sentences = str(keyf[6])
+                            spli1 = sentences.split('>')
+                            sentences2 = str(spli1[4])
+                            spli2 = sentences2.split('<')
+                            sentences3 = str(spli2[0])
+                            sentence.insert(num,sentences3)
+                        else:
+                            flesch.insert(num,"n/a")
+                            sentence.insert(num,"n/a")
+                            word.insert(num,"n/a")
+                            unique_w.insert(num,"n/a")  
+                        #Number of words
+                        if keyf[7] != empty:
+                            words = str(keyf[7])
+                            spl1 = words.split('>')
+                            words2 = str(spl1[4])
+                            spl2 = words2.split('<')
+                            words3 = str(spl2[0])
+                            word.insert(num,words3)
+                        else:
+                            flesch.insert(num,"n/a")
+                            sentence.insert(num,"n/a")
+                            word.insert(num,"n/a")
+                            unique_w.insert(num,"n/a")  
+                        #No. of complex words
+                        if keyf[7] != empty:
+                            unique_ws = str(keyf[8])
+                            sp1 = unique_ws.split('>')
+                            unique_ws2 = str(sp1[4])
+                            sp2 = unique_ws2.split('<')
+                            unique_ws3 = str(sp2[0])
+                            unique_w.insert(num,unique_ws3)
+                        else:
+                            flesch.insert(num,"n/a")
+                            sentence.insert(num,"n/a")
+                            word.insert(num,"n/a")
+                            unique_w.insert(num,"n/a")  
+                else:
+                        print("Site", str(num), "is not validated from check 2")
+                        flesch.insert(num,"n/a")
+                        sentence.insert(num,"n/a")
+                        word.insert(num,"n/a")
+                        unique_w.insert(num,"n/a")            
+    time.sleep(2)
+\end{lstlisting}
+Now that we have the for key indicators that we will use later on the analysis we should also create a more easily comprehend variable that is related to the flesh measure variable we just created. The numbers that each site gathered mean different things. So we will try to create a correlation and build a variable called readability that will say in text how easily read or not a site is.
+\begin{lstlisting}[language=Python]
 readability = []
-rdb = [] 
-def readable (list500_names,list500_sites):
-    for i in range (len(list500_names)):
-            myHTML = list500_sites[i]
-            if myHTML == 0:
-                readability.insert(i,"n/a")
-                rdb.insert(i,"n/a")
+def readable (flesch):
+    for i in range (len(flesch)):
+            f_n = flesch[i]
+            if f_n == "n/a":
+                readability.insert(i,"n/a")                
             else:
-                a = metrics.flesch_reading_ease(myHTML) * 100
-                a = round (a, 1)
+                a = int(float(f_n))
                 if a > 90:    
-                    readability.insert(i,"Very easy")
-                    rdb.insert(i,6)
+                    readability.insert(i,"Very easy")                    
                 elif a > 80:
                     readability.insert(i,"Easy")
-                    rdb.insert(i,5)
                 elif a > 70:
                     readability.insert(i,"Fairly easy")
-                    rdb.insert(i,4)
                 elif a > 60:
                     readability.insert(i,"Standard")
-                    rdb.insert(i,3)
                 elif a > 50:
                     readability.insert(i,"Fairly difficult")
-                    rdb.insert(i,2)
                 elif a > 30:
                     readability.insert(i,"Difficult")
-                    rdb.insert(i,1)
                 else:
-                    readability.insert(i,"Very Confusing")
-                    rdb.insert(i,0)                    
+                    readability.insert(i,"Very Confusing")                    
     print "The function is completed!"
- 
-readable (list500_names,list500_sites)
- 
-d1 = {'company' : pd.Series(list500_names, index=[list500_num]),
-      'url' : pd.Series(list500_url, index=[list500_num]),
-      'Readability' : pd.Series(readability, index=[list500_num]),
-      'Readability_index' : pd.Series(rdb, index=[list500_num])}
-fre = pd.DataFrame(d1)    
-fre.tail(3) #we see the first 3 in the data frame
+
+readable (flesch)
 \end{lstlisting}
-\subsubsection{Number of words - Unique and Total}
-As it was mentioned and before words are exactly as important in a html page as the images. So we have to calculate the number of unique words and the total words that are being appeared in each companies html code.
-\begin{lstlisting}[language=Python]
- 
-#Now we would like to find the words in the text 
-#and the unique words of each html page
-#First of all we need to have a dictionary with which 
-#we would check if the word we found truly exists
-#The dictionary is available in the internet from a 
-#github acount from where we are going to read it
-url_dictionary = "https://raw.githubusercontent.com/dwyl/english-words/master/words.txt"
-browser = urllib2.build_opener()
-browser.addheaders = [('User-agent', 'Mozilla/5.0')]
-response = browser.open(url_dictionary)
-html_dictionary = response.read()
-html_dictionary
-dicti = str(html_dictionary)
-#dicti
- 
 
-
- 
-#dict_new = dicti.split("\\n")
-dict_new = dicti.split("\n")
-dict_new[49] 
-#the first 49 parts are not words so we have to remove them from the list
- 
-
-
-
-
-    'a1'
-
-
-
-
- 
-dict_final = []
-df = 0
-for i in range (50,len(dict_new)):
-    forfinal = dict_new[i]
-    forfinal = forfinal.replace("'","")
-    dict_final.insert(df,forfinal)
-    df = df + 1
-dict_final[0] 
-#This is the original dictionary with which we will check each word
- 
-
-
-
-
-    'aa'
-
-
-
-
- 
-#And now we will find each html file which words has inside
-empty = []
-wordsin = []
-ocin = []
-def html_which_word (list500_names):
-    from time import time 
-    # I used it to see how much time it does to run the function
-    start_t = time()
-    for num in range(len(list500_sites)):
-            line = list500_sites[num] 
-            if line == 0:
-                wordsin.insert(num,0)
-                ocin.insert(num,0)                 
-            else: 
-                wordcount={}
-                simeiastiksis = ["/",".",",","=",">","<","?","|",":"
-                                 ,"_","]","[","$","&","%","(",")","{"
-                                 ,"}",'"',";","\\","-","!","+","#","="
-                                 ,"@","^","*","'"]
-                for ss in range(len(simeiastiksis)):
-                    simeio = simeiastiksis[ss]     
-                    line = line.replace(simeio, " ")
-                for word1 in line.split():
-                    word1 = word1.lower()
-                    if word1 in dict_final:
-                        if word1 not in wordcount:
-                            wordcount[word1] = 1
-                        else:
-                            wordcount[word1] += 1     
-                wordsin_local = []
-                wl = 0
-                ocin_local = []
-                for k,v in wordcount.items():
-                       #print (k,v)
-                       wordsin_local.insert(wl,str(k))
-                       ocin_local.insert(wl,str(v))
-                       wl = wl + 1
-                wordsin.insert(num,wordsin_local) 
-                # final list with all the words in each site
-                ocin.insert(num,ocin_local)  
-                #final list with all the occurencies of the words in each site
-            #print('The site', str(num +1), ' has been checked')
-    end_t = time()
-    total_t = round(end_t - start_t,3)
-    total_ = round(total_t / 60,1)
-    print('finished ',str(x) ,' sites in: ', str(total_),' minutes')
- 
-
-
- 
-html_which_word (list500_names)
- 
-
-    ('finished ', 'True', ' sites in: ', '197.6', ' minutes')
-    
-
-
- 
-#Create the dataframe for the words and unique words
-d7 = {'company' : pd.Series(list500_names, index=[nm])}
-wordss = pd.DataFrame(d7)    
-wordss.head(3) 
-
-###########################################
-#Create the two lists we will need in order to make the dataframe
-l1 = []
-l2 = []
-for num in range(len(list500_names)):
-        line = list500_sites[num] 
-        if wordsin[num] == 0 :             
-            l1.insert(num,'n/a')
-            l2.insert(num,'n/a')
-        else:
-            total_words = len(wordsin[num])
-            occurencies = ocin[num] 
-            l1.insert(num,total_words)
-            count = 0 
-            for a in occurencies :
-                if a == '1':
-                    count = count + 1
-            l2.insert(num,count)
-wordss['total_words'] = pd.Series(l1, index=sizess.index)
-wordss['unique_words'] = pd.Series(l2, index=sizess.index)          
-wordss.head(3)                        
-\end{lstlisting}
 \subsubsection{HTML Validation}
 Now that we have downloaded and kept in data frames the basic metrics that we will need for the analysis we should also check the quality of the html code.\\
 Most pages on the World Wide Web are written in computer languages (such as HTML) that allow Web authors to structure text, add multimedia content, and specify what appearance, or style, the result should have.\\
