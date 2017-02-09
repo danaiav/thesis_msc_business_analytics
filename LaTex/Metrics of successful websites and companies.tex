@@ -206,7 +206,7 @@ print "The validation is complete! There were" , nv,
  "not valid pages"
 \end{lstlisting}
 In our case all the URL where valid so we are eligible to proceed at the next part of the code.
-\subsubsection{HTML download}
+\subsubsection{Download sites html code}
 After checking the validity of the URL that we have saved in the list the next step is to download the actual html code of the initial pages of each one of the 500 websites we want to examine.\\
 As we did in the section 2.4.1 we have to create a fake browser so as the to be able to download the html code without contacting any problems. In our case we created a Mozilla browser.\\
 In order for the url to be opened we must first bring it to the correct form. Initially we create again a loop and for each loop we will examine a specific url. We first replace some symbols on the string that will not be recognized if we try to open the url in this form and then we add the "http://" in the begging of each url.\\ 
@@ -321,14 +321,20 @@ The first thing we are going to check is how easy it is for a user to read the c
 \item Number of Sentences
 \item Flesch score
 \end{enumerate}
-The three first are quite clear. The number of words are the total words that appear in the texts that the user is seeing in a website. The number of unique words are the words that are not very common and can attract the readers attention or even make it harder for him to comprehend the text. The number of sentences is related to those variables as we can understand from this is comparison to the number of total words how big or short is the sentence and as a conclusion how easy or not is the complete text.//
-Finally the flesh score is referring to the Flesh reading ease test score.In the Flesch reading-ease test, higher scores indicate material that is easier to read; lower numbers mark passages that are more difficult to read. The formula for the Flesch reading-ease score (FRES) test is:\\ \\
+The three first are quite clear. The number of words are the total words that appear in the texts that the user is seeing in a website. The number of unique words are the words that are not very common and can attract the readers attention or even make it harder for him to comprehend the text. The number of sentences is related to those variables as we can understand from this is comparison to the number of total words how big or short is the sentence and as a conclusion how easy or not is the complete text.\\
+Finally regarding the forth variable the flesh score is referring to the Flesh reading ease test score.In the Flesch reading-ease test, higher scores indicate material that is easier to read; lower numbers mark passages that are more difficult to read. The formula for the Flesch reading-ease score (FRES) test is:\\ \\
 $206.835 - 1.015 (total words/total sentences) - 84.6 (total syllables/total words)$\\
 \\
 We will calculate the flesh reading test and the other three aforementioned variables with the help of an on-line checking site called: \\
 "http://www.webpagefx.com/tools/read-able/".\\
 This site calculates and return all these results that we need. The way to implement them in a new data frame to our python code is by dividing the html code, behind the page with the results for each site, and keeping only the actual numbers and sizes that we seek. \\
 \begin{lstlisting}[language=Python]
+flesch = []
+sentence = []
+word = []
+unique_w =[]
+empty =[]
+
 import time 
 for num in range(0,500):
     site = list500_sites[num]
@@ -424,7 +430,22 @@ for num in range(0,500):
                         unique_w.insert(num,"n/a")            
     time.sleep(2)
 \end{lstlisting}
-Now that we have the for key indicators that we will use later on the analysis we should also create a more easily comprehend variable that is related to the flesh measure variable we just created. The numbers that each site gathered mean different things. So we will try to create a correlation and build a variable called readability that will say in text how easily read or not a site is.
+\textbf{Step 1} \\We create four lists where we will save the variables that we are looking for. Then we start a loop for the 500 sites where in each loop we change the value of the 3 main variables the sites that contain the html code the url that contain the url of the company at hand each time and the url check where we save the part of the web address that remains the same while doing the on line check and we add at the end the url of the site we want to check. Also we open the browser as we have done in previous scripts as well.\\\\
+\textbf{Step 2} \\Then we create an if part where we check that the variable site is not zero and that we will not examine the site 108 (Tech Data) as the code seems to have a problem in that case. In this check we put on the respective sites n/a values so as to be clear that we did not retrieve these info for them.\\\\
+\textbf{Step 3} \\We open the browser link and we check whether or not we drop to any exception in which case we also put n/a values in the respective companies.\\\\
+\textbf{Step 4} \\We read the link and after checking that it is not empty (this we  can check by comparing it with an empty list that we have created for this use) we use the beautiful soup package to extract the part of the code that we need.\\\\
+\textbf{Step 5} \\After taking a look at the html code of the pages we find out that the parts that we need are between the following brackets <tr>...</tr> so we will extract each such bracket from the code and save them in a list. By checking the list we found which numbers of the list items we want and we saved them in the variables we have created. Always of course checking first that the specific prices exist or in any other way we again put n/a.\\\\
+\textbf{Step 6} \\Now that we have the for key indicators that we will use later on the analysis we should also create a more easily comprehend variable that is related to the flesh measure variable we just created. The numbers that each site gathered mean different things. So we will try to create a correlation and build a variable called readability that will say in text how easily read or not a site is. The score can be interpreted by the following logic:\\\\
+\begin{itemize}
+\item Flesch measure $<$ 30 : Very Confusing
+\item Flesch measure $>$ 30 : Difficult
+\item Flesch measure $>$ 50 : Fairly Difficult
+\item Flesch measure $>$ 60 : Standard
+\item Flesch measure $>$ 70 : Fairly Easy
+\item Flesch measure $>$ 80 : Easy
+\item Flesch measure $>$ 90 : Very Easy
+\end{itemize}
+We created a function that creates a new list where the flesh measure variable is being saved as the above descriptions based on the scores each of the site achieved. 
 \begin{lstlisting}[language=Python]
 readability = []
 def readable (flesch):
@@ -454,27 +475,24 @@ readable (flesch)
 \end{lstlisting}
 
 \subsubsection{HTML Validation}
-Now that we have downloaded and kept in data frames the basic metrics that we will need for the analysis we should also check the quality of the html code.\\
-Most pages on the World Wide Web are written in computer languages (such as HTML) that allow Web authors to structure text, add multimedia content, and specify what appearance, or style, the result should have.\\
-As for every language, these have their own grammar, vocabulary and syntax, and every document written with these computer languages are supposed to follow these rules. \\
-However, Just as texts in a natural language can include spelling or grammar errors, documents using Markup languages may (for various reasons) not be following these rules. The process of verifying whether a document actually follows the rules for the language(s) it uses is called validation, and the tool used for that is a validator. A document that passes this process with success is called valid.\\
-With these concepts in mind, we can define "markup validation" as the process of checking a Web document against the grammar (generally a DTD\footnote{DTT: Document Type definition}) it claims to be using.\\
-For the purposes of this paper we will use an on-line validator site called W3C\footnote{https://validator.w3.org/} which will help as see how many errors and warnings does each site have.
+After downloading and saving in data frames the first batch of metrics that we will need for the analysis we should also check the quality of the html code.\\
+Most pages on the World Wide Web are written in computer languages (such as HTML). One of the advantages of writing in a computer language is that it allows the developer to structure text, add multimedia content, and specify what appearance, or style, the result should have based on his needs.\\
+As for every language, the computer languages have their own grammar, vocabulary and syntax too. Each document that is written in these computer languages is supposed to follow these rules as well. \\
+However, just as texts in a natural language can include spelling or grammar errors, documents using computer languages may (for various reasons) not be following these rules as well.\\
+The process of verifying whether or not a document actually follows the rules for the language it uses is called validation, and the tool used for that is a validator. A document that passes this process with success is called valid.\\
+With these concepts in mind, we can define "validation" as the process of checking a web document against the grammar (generally a DTD\footnote{DTT: Document Type definition}) it claims to be using.\\
+For the purposes of this paper we will use an on-line validator site called W3C\footnote{https://validator.w3.org/} which will help as see how many errors and warnings does each site have. \\
+\textbf{Step 1}\
+Initially we create the empty lists in which we will save the variables we will extract that will give as a clear glance on how many errors does each page has, how many warnings, how many weren't recognized as documents and how many pages did open during the process.\\
+\textbf{Step 2}\
+The next step is to create a function that 
 \begin{lstlisting}[language=Python]
- 
-#In order to validate the html code we will use the w3 validator
-#We will validate each url and then we will open the url of the validation page
-#so as to extract the errors, the info warnings and the non-document-error io informations 
-#First we create the empty lists we would use later on
 num_errors = []
 num_info_warnings = []
 num_non_doc = [] 
 nm = []
 num_open_page = []
 empty = ""
- 
-
-
  
 #Then we create the function that will pull the informations we want
 def html_validation (list500_url,list500_names):
