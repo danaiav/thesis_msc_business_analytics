@@ -779,10 +779,28 @@ d4 = {'company' : pd.Series(lt_nm, index=[nm]),
 loading_time = pd.DataFrame(d4)    
 \end{lstlisting}
 \subsubsection{Number, type and sizes of images}
-There are many different types of images that can be used in a site. Here we will examine which ones are being preferred from the majority of the examined companies and in what amount. In other words we will count the number of each type of image and then calculate the total number of images appearing in this initial page.
+We reach to the final group of variables that we are going to examine regarding the home pages of the websites of the companies at hand. This group has to do with the images of each site. We can divide the informations that we want to extract into 3 major categories:
+\begin{enumerate}
+\item Type of images
+\item Number of images
+\item Different image sizes
+\end{enumerate}
+\paragraph{Type of images}
+There are many different types of images that can be used in a site. Here we will try to see between the most common types which ones are the most preferable from the sites and later on in the analysis to see if this has any correlation to their success. The type of images that we will examine are the following ones:
+\begin{itemize}
+\item \textbf{PNG}: Portable Network Graphics (PNG) is a raster graphics file format that supports lossless data compression\footnote{Lossless compression is a class of data compression algorithms that allows the original data to be perfectly reconstructed from the compressed data}.
+\item \textbf{BMP}: Bitmap (BMP) is a raster graphics image file format used to store bitmap digital images, independently of the display device (such as a graphics adapter), especially on Microsoft Windows and OS operating systems.
+\item \textbf{DIB}: Device-Independent Bitmap (DIB) is a graphics file format used by Windows. DIB files are bitmapped graphics that represent color formats. Similar to BMP format, except they have a different header. DIB files can be opened and edited in most image editing programs.
+\item \textbf{JPEG/JPG/JPE}: The term (JPEG) is an acronym for the Joint Photographic Experts Group, which created the standard method of lossy compression for digital images, particularly for those images produced by digital photography. The degree of compression can be adjusted, allowing a selectable trade-off between storage size and image quality. JPEG typically achieves 10:1 compression with little perceptible loss in image quality.
+\item \textbf{GIF}: The Graphics Interchange Format (GIF) is a bitmap image format that supports up to 8 bits per pixel for each image, allowing a single image to reference its own palette of up to 256 different colors chosen from the 24-bit RGB color space. It also supports animations and allows a separate palette of up to 256 colors for each frame. These palette limitations make the GIF format less suitable for reproducing color photographs and other images with continuous color, but it is well-suited for simpler images such as graphics or logos with solid areas of color.
+\item \textbf{TIFF/TIF}:Tagged Image File Format (TIFF or TIF) is a computer file format for storing raster graphics images, popular among graphic artists, the publishing industry and photographers. The TIFF format is widely supported by image-manipulation applications, by publishing and page layout applications, and by scanning, faxing, word processing, optical character recognition and other applications.
+\end{itemize}
+As we can see some of the type of images have more than one ways that can appear so in order to be precise we will examine all nine different endings.\\
+The procedure we will follow is the same one. Initially we create the lists we will use then we create the function and the loop for the 500 sites. For each site we check if the html code is not empty and then we search for all the endings that exists in each site and we save in the lists the number of times the ending appeared so as to know how many such images the site has.
+\paragraph{Number of images}
+The total number of images is the sum of all the different types of images and the number of each of those in a site. So in order to catch to birds with one stone we create a variable in the same function where in each loop for each different type of image it adds them in this variable so as to have the total images in the end.\\
+In the end of the function we export the time the function did to run again. The next step is to run the function and finally create the data frame with the variables we created.
 \begin{lstlisting}[language=Python]
-#Find out how many and what type of images each site has
-#first we create the initially empty lists
 p_p = []
 p_d = []
 p_jpg = []
@@ -796,15 +814,9 @@ p_nm = []
 p_tt =[]
 nm = []
 p_url = []
- 
 
-
- 
-#Then we create the function that will explore 
-#the html pages and search for the images
 def images (list500_sites,list500_names,list500_url):
-    from time import time # I used it to see 
-    #how much time it does to run the function
+    from time import time 
     start = time ()
     for num in range(len(list500_names)):
             myHTML = list500_sites[num] 
@@ -867,21 +879,9 @@ def images (list500_sites,list500_names,list500_url):
     minutes = round (duration /60, 1)
     print 'The lists are ready in ', minutes, ' minutes'
     print 'The lists are ready in ', duration, ' seconds'
- 
 
-
- 
-#Then we run the function for the first 20 sites for now
 images (list500_sites,list500_names,list500_url)
- 
 
-    The lists are ready in  0.1  minutes
-    The lists are ready in  3.341  seconds
-    
-
-
- 
-#Finally we create a dataframe in order to see the results of the function
 d5 = {'company' : pd.Series(p_nm, index=[nm]),
       '.png' : pd.Series(p_p, index=[nm]),
       '.dib' : pd.Series(p_d, index=[nm]),
@@ -894,10 +894,9 @@ d5 = {'company' : pd.Series(p_nm, index=[nm]),
       '.tiff' : pd.Series(p_tiff, index=[nm]), 
       'total images' : pd.Series(p_tt, index=[nm])}
 images_types = pd.DataFrame(d5)    
-images_types.head(3) #we see the first 3 in the data frame
 \end{lstlisting}
-\subsubsection{Size of images}
-Aside from the number of images another important factor is the size of each image. The following code will find the different sizes that are being used in the companies at hand and keep only the unique sizes.
+\paragraph{Different image sizes}
+Aside from the number of images and the types that are being used another important factor is the size of each image. There is a vast majority of different sizes and it won't be wise to restrict the research to specific sizes so in the following code will find the different sizes that are being used in the companies.
 \begin{lstlisting}[language=Python]
  
 #Now we will find the different dimensions that each site uses
