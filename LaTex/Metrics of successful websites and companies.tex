@@ -896,11 +896,9 @@ d5 = {'company' : pd.Series(p_nm, index=[nm]),
 images_types = pd.DataFrame(d5)    
 \end{lstlisting}
 \paragraph{Different image sizes}
-Aside from the number of images and the types that are being used another important factor is the size of each image. There is a vast majority of different sizes and it won't be wise to restrict the research to specific sizes so in the following code will find the different sizes that are being used in the companies.
+Aside from the number of images and the types that are being used another important factor is the size of each image. There is a vast majority of different sizes and it won't be wise to restrict the research to specific sizes so in the following code will find the different sizes that are being used in the companies.\\
+\textbf{Step 1}: The first step is to find the different dimensions that each site uses. We initially create the lists that we will use. In the script there are also comments of what each list represents. Then we create a function that will gather all the different dimensions from all the sites and in another variable all the times each of this dimension appears. Next with the help of the package Beautiful soup we search and gather every mention of the <img>...</img> part of the code. Then we try to separate the height and the weight since in some cases there aren't available both the dimensions and in order to be more precise we will keep only the sizes that have both the dimensions available.
 \begin{lstlisting}[language=Python]
- 
-#Now we will find the different dimensions that each site uses
-#initially we create the empty lists we will need
 nm = []
 s_comp = []
 s_dimensions = []
@@ -912,16 +910,9 @@ h_w = [] # combinations of height and width
 dif_size = []  
 un_size = [] 
 s_url = []
- 
 
-
- 
-#With the below function we will gather 
-#in a variable all the different dimensions 
-#and in another one all the times that each 
-#dimension occures for each html code
 def find_dif_sizes (list_company_website,list500_names,list500_url):
-    from time import time # I used it to see how much time it does to run the function
+    from time import time 
     start = time ()
     for num in range(len(list500_names)):
             nm.insert(num,num)                  
@@ -932,20 +923,13 @@ def find_dif_sizes (list_company_website,list500_names,list500_url):
                 s_dimensions.insert(num,0)
                 s_times.insert(num,0)    
             else: 
-                soup = BeautifulSoup(myHTML, "lxml")
-                # we create 2 local variables so as to gather the 
-                #different dimensions and occurencies  of each page seperately
+                soup = BeautifulSoup(myHTML, "lxml") 
                 s_dimensions_local = []
                 s_times_local = []
-                hw = 0 
-                # we use it for the lists of height and width
-                # find all the img in the first site html.Since in some 
-                #cases either the height or the width is missing we would 
-                #like to keep only the ones that have both dimensions
+                hw = 0  
                 for tag in soup.find_all('img'):
                     h = tag.attrs.get('height', None)
                     w = tag.attrs.get('width', None)
-                    #we use if to check which ones have both 
                     if h != None:
                         if w != None:
                             ht.insert(hw,h)
@@ -959,19 +943,14 @@ def find_dif_sizes (list_company_website,list500_names,list500_url):
                     h_w.insert(hw2,h_w_c)  
                     #we put it in a new list
                     hw2 = hw2 + 1    
-                if h_w == []:#we check if there are not any dimensions available
+                if h_w == []:
                     nm.insert(num,num)                  
                     s_comp.insert(num,list500_names[num])
                     s_dimensions.insert(num,0)
                     s_times.insert(num,0)    
-                if h_w != []:#now we continue with the cases 
-                    #where the dimensions are indeed available             
-                    from collections import Counter
+                if h_w != []:
                     hw_unique = Counter(h_w)
-                    hw_unique2 = str(hw_unique) 
-                    #the unique different dimensions for the specific site
-                    #Due to the fact that we are talking about 
-                    #a list we have to split the parts we need 
+                    hw_unique2 = str(hw_unique)                    
                     split1 = hw_unique2.split('{')
                     a = split1[1]
                     split2 = a.split('}')
@@ -983,19 +962,13 @@ def find_dif_sizes (list_company_website,list500_names,list500_url):
                     m = 1
                     j = 0
                     z1 = 0
-                    m1 = 1
-                    #each of the items in split3 has a form '300x300 : 15'
-                    #and in order to create the dataframe we have 
-                    #to split this form and keep the informations in different list
+                    m1 = 1                    
                     for numb in split3:                
                         oldstring = numb
                         newstring = oldstring.replace("'", "")
                         new = newstring.replace("'","")
                         string = new.replace(" ","")
-                        finalstring = string.split(':')
-                        #the finalstring is a list that contains the dimensions
-                        #and the occurencies in order toseperate in different
-                        #lists we create an additional loop
+                        finalstring = string.split(':')                       
                         for xx in range(len(finalstring)):
                             ax = finalstring[xx]
                             if 'x' in ax:
@@ -1004,8 +977,6 @@ def find_dif_sizes (list_company_website,list500_names,list500_url):
                             else:
                                 s_times_local.insert(m1,finalstring[xx])
                                 m1 = m1 + 1  
-                    #Now we can add to the lists the parts we created so as
-                    #to have them all gathered together             
                     s_dimensions.insert(num,s_dimensions_local)
                     s_times.insert(num,s_times_local)                
     end = time ()
@@ -1013,21 +984,11 @@ def find_dif_sizes (list_company_website,list500_names,list500_url):
     minutes = round (duration /60, 1)
     print 'The lists are ready in ', minutes, ' minutes'
     print 'The lists are ready in ', duration, ' seconds'
- 
 
-
- 
-#Run the function for the first 20 sites
 find_dif_sizes (list500_sites,list500_names,list500_url)
- 
+\end{lstlisting} 
 
-    The lists are ready in  1.4  minutes
-    The lists are ready in  81.813  seconds
-    
-
-
- 
-#Find the unique different image dimensions and put them on a list
+\begin{lstlisting}[language=Python]
 def unique_dif_sizes (s_dimensions,list500_names):
     ds = 0
     for num in range(len(list500_names)):
@@ -1045,20 +1006,16 @@ def unique_dif_sizes (s_dimensions,list500_names):
     print(un_size)          
  
 
-
- 
-#Run the function unique_dif_sizes
 unique_dif_sizes (s_dimensions,list500_names)
+\end{lstlisting}
 
+\begin{lstlisting}[language=Python]
 #The lists we will need for the next function
 t_f_s = []
 ttf = []
 nm = []
 com = []
- 
 
-
- 
 #Function in order to check whether or not each 
 #company has these dimensions
 def dimensions_per_company (un_size,list500_names):
@@ -1095,26 +1052,16 @@ def dimensions_per_company (un_size,list500_names):
     minutes = round (duration /60, 1)
     print 'The lists are ready in ', minutes, ' minutes'
     print 'The lists are ready in ', duration, ' seconds'
- 
 
-
- 
 #Run the function dimensions_per_company
 dimensions_per_company (un_size,list500_names)
- 
 
-    The lists are ready in  0.1  minutes
-    The lists are ready in  3.699  seconds
-    
-
-
- 
 #Create an initial dataframe where we will add the sizes later on
 d6 = {'company' : pd.Series(com, index=[nm])}
 sizess = pd.DataFrame(d6)    
-sizess.head(3)
+\end{lstlisting}
 
-####################################################
+\begin{lstlisting}[language=Python]
 #Now we want to break the variable t_f_s 
 #in order to add the columns to the dataframe                  
 #Finally we create the data frame with the elements we found 
@@ -1134,21 +1081,8 @@ def final_dimensions_dataframe (un_size,t_f_s,list500_names):
     minutes = round (duration /60, 1)
     print 'The lists are ready in ', minutes, ' minutes'
     print 'The lists are ready in ', duration, ' seconds'
- 
 
-
- 
-#Run the function final_dimensions_dataframe
 final_dimensions_dataframe (un_size,t_f_s,list500_names)
- 
-
-    The lists are ready in  0.0  minutes
-    The lists are ready in  0.414  seconds
-    
-
-
- 
-sizess.tail(3)
 \end{lstlisting}
 
 \subsubsection{Fortune 500 - Metrics download}
