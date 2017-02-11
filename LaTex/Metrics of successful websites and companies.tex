@@ -668,23 +668,27 @@ d2 = {'company' : pd.Series(sm_nm, index=[nm]),
 social_media = pd.DataFrame(d2) 
 \end{lstlisting}
 \subsubsection{Links - Internal and External}
-Next step is to see how many internal, external and finally total links each html code has.
+Next step is to see how many internal, external and finally total links each html code has. The links show in how many other pages does this home page leads to. If the links are external that means as we said before that they lead in a page that is not of this website. While the internal links lead to other pages in the same website.\\
+By extracting this information we want to see if it is important for the user to have the ability to browse in various pages inside the site from the home page and also if it plays any role the use of external links that give the user the opportunity to be transferred in another site that is relative of course with the one he is looking in.\\
+One easy way to spot the links in an html code is the prefix that they all use which is "href". So the first step (after creating the initial lists of course and the loop we do in each script) is to locate how many times does the expression "href" appears in the code. The result of this search will give us the total links of the site.\\
+Next step is to separate somehow the internal and the external ones. An easy way to do that is to find all the "href" references that are followed by "="https: ". By locating specifically those expressions we have located all the external links because unlike the internal links that do not need to be written in this form the external links since they lead to other sites they should always begin with this expression.\\
+Now that we have the total links and the external links as well we can easily find the internal links with a simple subtraction.:\
+\begin{center}
+\textit{total links - external links = internal links}
+\end{center}
+Finally we put the results in the respective lists for each site and we export the time we did to run the script.\\
+Now that the function is completed we run it and then we create a data frame as we have done in the previous scripts as well.
 \begin{lstlisting}[language=Python]
-#Create the lists we will need for the data frame
 l_nm = []
 l_ex = []
 l_in = []
 l_t = []
 nm = []
 l_url = []
- 
 
 
- 
-#create the function that will calculate the different type of links
 def links (list500_sites,list500_names,list500_url):
-    from time import time 
-    # I used it to see how much time it does to run the function
+    from time import time    
     start = time ()
     for num in range(len(list500_names)):        
             myHTML = list500_sites[num]
@@ -711,29 +715,13 @@ def links (list500_sites,list500_names,list500_url):
     print 'The lists are ready in ', minutes, ' minutes'
     print 'The lists are ready in ', duration, ' seconds'
  
-
-
- 
-#Run the function in order to find the external, 
-#internal and total links of each site
-#For now we are running for the first 25 sites only
 links (list500_sites,list500_names,list500_url)
- 
 
-    The lists are ready in  0.0  minutes
-    The lists are ready in  0.088  seconds
-    
-
-
- 
-#Create a dataframe so as to be able to see 
-#the results of the function we run
 d3 = {'company' : pd.Series(l_nm, index=[nm]),
       'external' : pd.Series(l_ex, index=[nm]),
       'internal' : pd.Series(l_in, index=[nm]),
      'total links' : pd.Series(l_t, index=[nm])}
 sites_links = pd.DataFrame(d3)    
-sites_links.tail(3) #we see the first 3 in the data frame
 \end{lstlisting}
 \subsubsection{Loading time}
 One very important factor as we mentioned before is the time that the site does to be loaded and with this part of the code we will count exactly that.
