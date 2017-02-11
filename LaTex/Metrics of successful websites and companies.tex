@@ -435,7 +435,7 @@ for num in range(0,500):
 \textbf{Step 3} \\We open the browser link and we check whether or not we drop to any exception in which case we also put n/a values in the respective companies.\\\\
 \textbf{Step 4} \\We read the link and after checking that it is not empty (this we  can check by comparing it with an empty list that we have created for this use) we use the beautiful soup package to extract the part of the code that we need.\\\\
 \textbf{Step 5} \\After taking a look at the html code of the pages we find out that the parts that we need are between the following brackets <tr>...</tr> so we will extract each such bracket from the code and save them in a list. By checking the list we found which numbers of the list items we want and we saved them in the variables we have created. Always of course checking first that the specific prices exist or in any other way we again put n/a.\\\\
-\textbf{Step 6} \\Now that we have the for key indicators that we will use later on the analysis we should also create a more easily comprehend variable that is related to the flesh measure variable we just created. The numbers that each site gathered mean different things. So we will try to create a correlation and build a variable called readability that will say in text how easily read or not a site is. The score can be interpreted by the following logic:\\\\
+\textbf{Step 6} \\Now that we have the for key indicators that we will use later on the analysis we should also create a more easily comprehend variable that is related to the flesh measure variable we just created. The numbers that each site gathered mean different things. So we will try to create a correlation and build a variable called readability that will say in text how easily read or not a site is. The score can be interpreted by the following logic:
 \begin{itemize}
 \item Flesch measure $<$ 30 : Very Confusing
 \item Flesch measure $>$ 30 : Difficult
@@ -445,7 +445,10 @@ for num in range(0,500):
 \item Flesch measure $>$ 80 : Easy
 \item Flesch measure $>$ 90 : Very Easy
 \end{itemize}
-We created a function that creates a new list where the flesh measure variable is being saved as the above descriptions based on the scores each of the site achieved. 
+\textbf{Step 7} \\
+We created a function that creates a new list where the flesh measure variable is being saved as the above descriptions based on the scores each of the site achieved.\\\\
+\textbf{Step 8} \\
+Now that we have all the needed informations in lists we should combine them by creating one data frame with the use of the variable company name again in order to have a common key so as to merge all the data frames that we will create in the end.
 \begin{lstlisting}[language=Python]
 readability = []
 def readable (flesch):
@@ -472,20 +475,35 @@ def readable (flesch):
     print "The function is completed!"
 
 readable (flesch)
+
+d1 = {'company' : pd.Series(list500_names, index=[list500_num]),
+      'url' : pd.Series(list500_url, index=[list500_num]),
+      'Readability' : pd.Series(readability, index=[list500_num]),
+      'Flesh_Mesaure' : pd.Series(flesch,index=[list500_num]),
+'Sentences' : pd.Series(sentence, index=[list500_num]),
+'Words' : pd.Series(word, index=[list500_num]),
+'Unique words' : pd.Series(unique_w, index=[list500_num])}
+fre = pd.DataFrame(d1)    
 \end{lstlisting}
 
 \subsubsection{HTML Validation}
-After downloading and saving in data frames the first batch of metrics that we will need for the analysis we should also check the quality of the html code.\\
+After downloading and saving in data frames the first batch of metrics that we will need for the analysis that we will do further along we should also check the quality of the html code.\\
 Most pages on the World Wide Web are written in computer languages (such as HTML). One of the advantages of writing in a computer language is that it allows the developer to structure text, add multimedia content, and specify what appearance, or style, the result should have based on his needs.\\
-As for every language, the computer languages have their own grammar, vocabulary and syntax too. Each document that is written in these computer languages is supposed to follow these rules as well. \\
+As every speaking language,so the computer languages do have their own grammar, vocabulary and syntax too. Each document that is written in these computer languages is supposed to follow these rules in order to consider it well structure and written.\\
 However, just as texts in a natural language can include spelling or grammar errors, documents using computer languages may (for various reasons) not be following these rules as well.\\
 The process of verifying whether or not a document actually follows the rules for the language it uses is called validation, and the tool used for that is a validator. A document that passes this process with success is called valid.\\
 With these concepts in mind, we can define "validation" as the process of checking a web document against the grammar (generally a DTD\footnote{DTT: Document Type definition}) it claims to be using.\\
-For the purposes of this paper we will use an on-line validator site called W3C\footnote{https://validator.w3.org/} which will help as see how many errors and warnings does each site have. \\
-\textbf{Step 1}\
-Initially we create the empty lists in which we will save the variables we will extract that will give as a clear glance on how many errors does each page has, how many warnings, how many weren't recognized as documents and how many pages did open during the process.\\
-\textbf{Step 2}\
-The next step is to create a function that 
+For the purposes of this paper we will use an on-line validator site called W3C\footnote{https://validator.w3.org/} which will help as see how many errors and warnings does each site have. \\\\
+\textbf{Step 1}\\
+Initially we create the empty lists in which we will save the variables we will extract that will give as a clear glance on how many errors does each page has, how many warnings, how many pages weren't recognized as documents and how many pages did open during the process.\\\\
+\textbf{Step 2}\\
+The next step is to create a function that will do a similar job as the script we used to extract the previous variables. Initially we locate the part of the url that remains the same when the check is completed and we see the part that does change where the name of the url we want to examine should go. In order for the code to recognize that we save the result in a variable that in the end is a new url that when we open it, it will show as the page of the results for each site in each loop that we are examining.\\\\
+\textbf{Step 3}\\
+One difference in this script is that now the part of the code that we need is not between <tr>..</tr> but between <div>...</div> parts of the code. So we follow the same procedure as before and we locate in the list of all the divs that we create with the help of the Beatuful soup package the parts that gives us the informations we want to keep.\\\\
+\textbf{Step 4}\\
+One other difference is that here after the procedure ends we have counted the actual time we needed to complete this procedure. Then next step is to run the function we created.\\\\
+\textbf{Step 5}\\
+Finally we save the lists that we created in a new data frame where the common column remains the name of the company as it already is in the previous dataframes we have created.
 \begin{lstlisting}[language=Python]
 num_errors = []
 num_info_warnings = []
@@ -494,7 +512,6 @@ nm = []
 num_open_page = []
 empty = ""
  
-#Then we create the function that will pull the informations we want
 def html_validation (list500_url,list500_names):
     from time import time # I used it to see how much time it does to run the function
     start = time ()
@@ -518,11 +535,9 @@ def html_validation (list500_url,list500_names):
             keyf = []
             for row in soup.html.body.findAll('div'):
                 keyf.insert(o,row)
-                o = o + 1
-            #print(len(keyf),list500_url[num], "site number: ", str(num))        
+                o = o + 1                    
             if len(keyf) != 0:       
-                    keyfin = str(keyf[2]) 
-                    #the elements we need is in the 2nd div of the code
+                    keyfin = str(keyf[2])                     
                     dol= re.findall('class="error"',keyfin)            
                     er = er + len(dol)
                     doll= re.findall('class="info warning"'
@@ -542,18 +557,9 @@ def html_validation (list500_url,list500_names):
     print 'The lists are ready in ', minutes, ' minutes'
  
 
-
- 
-#Now we will run the function we created
 html_validation (list500_url,list500_names)
  
 
-    The lists are ready in  37.0  minutes
-    
-
-
- 
-#After the checks we will create the dataframe with the informations we want
 d8 = {'company' : pd.Series(list500_names, index=[nm]),
       'The_page_opened' : pd.Series(num_open_page, index=[nm])
       ,'number_of_errors' : pd.Series(num_errors, index=[nm]),
@@ -563,11 +569,20 @@ html_val = pd.DataFrame(d8)
 html_val.head(3) 
 \end{lstlisting}
 \subsubsection{Social media}
-Now we will see how many and which companies include in their initial page the link to specific social media.
+One other group of variables that we should include in our analysis is the social media that each company choose to use. Since this era is being characterized from the massive use of social media we can't help but wonder if some of them could actually play a crucial role in a business success.\\
+The way we are going to see which social media does a company use is quite simple. We will create a list with the name of each of the  six most well known social media with the suffix ".com" and then we will check if the expression appears in the html code of each company. If an expression does exists that means that the specific company does indeed uses this specific social media and as so it appears a respective link in it's home page so as the user to have the opportunity to subscribe in it.\\
+The procedure we will use is similar to the previous ones. Firstly we create the lists for the social media that we want to examine. More specifically the social media we will search for are the following:
+\begin{itemize}
+\item\textbf{Facebook}: a social media that lets you upload images, thoughts, songs and lets you interact with your friends
+\item\textbf{Twitter}: an on-line news and social networking service where users post and interact with messages, "tweets," restricted to 140 characters
+\item\textbf{Pinterest}: an internet photo sharing and publishing service that allows users to "Pin" pictures they like and upload their own recommendations to their "pinboards".
+\item\textbf{YouTube}: a free video sharing website that lets people upload, view, and share videos. 
+\item\textbf{Instagram}: an online photo and video sharing social networking service. It allows users to take pictures and videos, apply digital filters to them and share them to their followers. 
+\item\textbf{Linkedin}: a social networking website for people in professional jobs. Users can make connections with other people they have worked with, post their work experience and skills, look for jobs, and look for workers.
+\end{itemize}
+The next step is to create a function that first creates the lists with the 6 elements we would search on each html code. Then after checking that the html code for each specific site has been downloaded properly (in other words is not equal to zero) we search in a loop for each of the social media at hand if it exists in the html code. If it exists we put True in the respective list.After completing this procedure we export also the time we did to run the function.\\
+Now that we have the function ready we run it and afterwards we again save the results in a new data frame.
 \begin{lstlisting}[language=Python]
-#Retreiving the social media from each site
-#First create empty lists for the ones that 
-#we will need to calculate
 sm_f = []
 sm_t = []
 sm_i = []
@@ -578,14 +593,8 @@ sm_nm = []
 nm = []
 sm_url = []
  
-
-
- 
-#Then create a function that will feel in those 
-#lists so as to make the data frame later on
 def socialmedia (list500_sites,list500_names,list500_url):
     from time import time 
-    # I used it to see how much time it does to run the function
     start = time ()
     for i in range(len(list500_names)):        
             myHTML = list500_sites[i]
@@ -593,7 +602,6 @@ def socialmedia (list500_sites,list500_names,list500_url):
                   'instagram.com','pinterest.com',
                   'youtube.com','linkedin.com'] 
             if myHTML == 0:
-                #print(str(i),"no")
                 sm_nm.insert(i,list500_names[i]) 
                 nm.insert(i,i)
                 sm_url.insert(i,list500_url[i])
@@ -648,20 +656,8 @@ def socialmedia (list500_sites,list500_names,list500_url):
     print 'The lists are completed in ', minutes, ' minutes' 
     print 'The lists are ready in ', duration, ' seconds'
  
-
-
- 
-#Now we will run the function for the 25 first sites for starters
 socialmedia (list500_sites,list500_names,list500_url)
- 
 
-    The lists are completed in  0.0  minutes
-    The lists are ready in  0.259  seconds
-    
-
-
- 
-#Finally we create the data frame with the elements we found            
 d2 = {'company' : pd.Series(sm_nm, index=[nm]),
      'facebook' : pd.Series(sm_f, index=[nm]),
       'twitter' : pd.Series(sm_t, index=[nm]),
@@ -669,8 +665,7 @@ d2 = {'company' : pd.Series(sm_nm, index=[nm]),
       'pinterest' : pd.Series(sm_p, index=[nm]),
      'youtube' : pd.Series(sm_y, index=[nm]),
       'linkedin' : pd.Series(sm_l, index=[nm]),}
-social_media = pd.DataFrame(d2)    
-social_media.tail(3) #we see the first 3 in the data frame
+social_media = pd.DataFrame(d2) 
 \end{lstlisting}
 \subsubsection{Links - Internal and External}
 Next step is to see how many internal, external and finally total links each html code has.
