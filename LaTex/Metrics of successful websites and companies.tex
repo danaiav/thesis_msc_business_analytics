@@ -724,19 +724,16 @@ d3 = {'company' : pd.Series(l_nm, index=[nm]),
 sites_links = pd.DataFrame(d3)    
 \end{lstlisting}
 \subsubsection{Loading time}
-One very important factor as we mentioned before is the time that the site does to be loaded and with this part of the code we will count exactly that.
+One very important factor as we mentioned before is the time that the site does to be loaded and with this part of the code we will count exactly that.\\
+We have already counted in previous scripts the time they did to be completed. In a similar logic we will count the time it does for the browser create after opening the url to read it.\\
+The procedure is the same, firstly we create the empty list where we will save the time it does to open for each site. Then we create the function and we create the loop for the 500 sites. In case of an exception we put "n/a" in the respective list position or if the site is the number 119(Arrow Electronics) or 465(St. Jude Medical)\footnote{or 118/464 in the loop's numbering since it start from zero} which create a problem in the code and we continue. In the end of the function we appear a text that lets us know that the process has been completed.\\
+Next step is to run the function and finally create a data frame with the results.
 \begin{lstlisting}[language=Python]
-#The initial lists we will need in order 
-#to calculate the loading time
 lt_nm = [] 
 lt_time = []
 nm = []
 lt_url = []
- 
 
-
- 
-#the function that will calculate the loading time
 def loadtime (list_company_website,list500_names,list500_url):
     from time import time
     browser2 = urllib2.build_opener()
@@ -747,15 +744,11 @@ def loadtime (list_company_website,list500_names,list500_url):
         lc = lc.replace("[","")
         lc = lc.replace("]","")
         url2 = 'http://' + lc
-        if num == 118 or num == 464:
-            #The site 118(119) has a problem and the whole code 
-            #is stacking when I run it so we will thing of this 
-            #site as a not downloadable
+        if num == 118 or num == 464:            
             lt_nm.insert(num,list500_names[num])            
             lt_time.insert(num,'n/a')
             nm.insert(num,num)
-            lt_url.insert(num,list500_url[num])
-            #print ("The site " + str(num) + " has NOT been loaded!")
+            lt_url.insert(num,list500_url[num])           
         else:
             try:
                 response2 = browser2.open(url2)
@@ -778,20 +771,14 @@ def loadtime (list_company_website,list500_names,list500_url):
             lt_url.insert(num,list500_url[num])
             #print ("The site " + str(num) + " has been loaded!")
     print "The function is completed!"
- 
 
-
- 
-#running the function for the first 25 sites
 loadtime (list_company_website,list500_names,list500_url)
 
-#creating the data frame with the loading times
 d4 = {'company' : pd.Series(lt_nm, index=[nm]),
       'loading time' : pd.Series(lt_time, index=[nm])}
 loading_time = pd.DataFrame(d4)    
-loading_time.head(3) #we see the first 3 in the data frame
 \end{lstlisting}
-\subsubsection{Types and number of images}
+\subsubsection{Number, type and sizes of images}
 There are many different types of images that can be used in a site. Here we will examine which ones are being preferred from the majority of the examined companies and in what amount. In other words we will count the number of each type of image and then calculate the total number of images appearing in this initial page.
 \begin{lstlisting}[language=Python]
 #Find out how many and what type of images each site has
