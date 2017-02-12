@@ -24,7 +24,7 @@
 \BOOKMARK [3][-]{subsubsection.2.4.12}{Merge data-frames and extract final csv file}{subsection.2.4}% 24
 \BOOKMARK [1][-]{section.3}{Data Analysis}{}% 25
 \BOOKMARK [2][-]{subsection.3.1}{R and R-Studio}{section.3}% 26
-\BOOKMARK [2][-]{subsection.3.2}{Scripts}{section.3}% 27
+\BOOKMARK [2][-]{subsection.3.2}{Analysis}{section.3}% 27
 \BOOKMARK [3][-]{subsubsection.3.2.1}{Data cleansing}{subsection.3.2}% 28
 \BOOKMARK [3][-]{subsubsection.3.2.2}{Variable analysis and correlation}{subsection.3.2}% 29
 \BOOKMARK [3][-]{subsubsection.3.2.3}{Data manipulation}{subsection.3.2}% 30
@@ -33,3 +33,6 @@
 \BOOKMARK [1][-]{section.4}{Conclusions}{}% 33
 \BOOKMARK [1][-]{section.5}{Bibliography}{}% 34
 \BOOKMARK [1][-]{appendix.A}{Appendix A: Fortune 500 Companies}{}% 35
+\BOOKMARK [1][-]{appendix.B}{Appendix B: Python Scripts}{}% 36
+\BOOKMARK [1][-]{appendix.C}{Appendix C: R Scripts}{}% 37
+\BOOKMARK [2][-]{subsubsection.C.0.1}{Data cleansing}{appendix.C}% 38
