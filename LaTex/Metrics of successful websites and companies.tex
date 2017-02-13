@@ -1409,15 +1409,174 @@ In order to see which variable we will use as the comparison metric we should ch
 \centering
 \caption{Assets vs Ranking}
 \begin{center}
-\includegraphics[scale=0.6]{../../../../Pictures/R/RANKING_ASSETS.png} 
+\includegraphics[scale=0.5]{../../../../Pictures/R/RANKING_ASSETS.png} \\
+\textit{We can see that there is no specific pattern that goes along with the Ranking here. Most companies have Assets until 100 million dollars.}
 \end{center}
 \end{table}
+
+\begin{table}[H]
+\centering
+\caption{Market Value vs Ranking}
+\begin{center}
+\includegraphics[scale=0.5]{../../../../Pictures/R/RANKING_MARKETVALUE.png}  \\
+\textit{Market value even though in the most high ranking (the lowest prices of ranking) shows a small differentiation and is bigger that in the lowest ranking still there is not a clear pattern.}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Total Stockholder Equity  vs Ranking}
+\begin{center}
+\includegraphics[scale=0.5]{../../../../Pictures/R/RANKING_TE.png}  \\
+\textit{Most company total stockholder equity is until 50 million dollars but it does not change based on the Ranking.}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Revenues vs Ranking}
+\begin{center}
+\includegraphics[scale=0.5]{../../../../Pictures/R/RANKING_REVENUE.png} \\
+\textit{As it was expected the smaller the Ranking (closer to top1 the bigger the Revenues. We can see a linear correlation between the two variables}
+\end{center}
+\end{table}
+
+Based on the above diagrams we can conclude that the variable that we will use in order to see the influence of the websites variables in the company is the Revenues. As it is clear from the last diagram the Revenues have a linear correlation with the Ranking. The better the ranking the highest the Revenues so it is the ideal variable to see the actual success of each company in relation to the variables we have created. We can double check those finding with the help of the libraries corrplot and caret. We run a correlation plot with all the variables we have seen above:
+
+\begin{table}[H]
+\centering
+\caption{Fortune variables correlation plot}
+\begin{center}
+\includegraphics[scale=0.6]{../../../../Pictures/R/cor_ranking.png}  \\
+\textit{From the chart we see that the strongest negative correlation is between Ranking and Revenues as we already have seen.}
+\end{center}
+\end{table}
+
+Moreover the code that was used to create these diagrams is available in the Appendix.\ref{r: van: fortune}
 \paragraph{Social media analysis and correlation}
-Now that we have reach to the conclusion that the metric we will use from the Fortune 500 is the Revenues we will proceed with analysing the social media variables to see how they are distributed and then to see how they are correlated with the chosen variable.
+Now that we have reach to the conclusion that the metric we will use from the Fortune 500 is the Revenues we will proceed with analysing the social media variables to see how they are distributed and then to see how they are correlated with the chosen variable.\\
+\begin{table}[H]
+\centering
+\caption{Facebook}
+\begin{center}
+\includegraphics[scale=0.5]{../../../../Pictures/R/facebook.png}  \\
+\textit{Almost the 65 percent of the companies that we are examining have Facebook links on their home page.}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Twitter}
+\begin{center}
+\includegraphics[scale=0.5]{../../../../Pictures/R/twitter.png}  \\
+\textit{Almost the 67 percent of the companies that we are examining have Twitter links on their home page.}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Instagram}
+\begin{center}
+\includegraphics[scale=0.5]{../../../../Pictures/R/instagram.png}  \\
+\textit{Only the 22 percent of the companies that we are examining have instagram links on their home page.}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Pinterest}
+\begin{center}
+\includegraphics[scale=0.5]{../../../../Pictures/R/pinterest.png}  \\
+\textit{Only a small 10 percent of the companies that we are examining have pinterest links on their home page.}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{YouTube}
+\begin{center}
+\includegraphics[scale=0.5]{../../../../Pictures/R/youtube.png}  \\
+\textit{The 58 percent of the companies that we are examining have YouTube links on their home page.}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{LinkedIn}
+\begin{center}
+\includegraphics[scale=0.5]{../../../../Pictures/R/linkedin.png}  \\
+\textit{The 57 percent of the companies that we are examining have YouTube links on their home page.}
+\end{center}
+\end{table}
+From the above pie charts we can conclude that the most frequently used social media is Facebook and Twitter and the least used ones is Instagram and Pinterest. The first conclusion can be easily confirmed since those two first social media are the most widely known. Nevertheless instagram is being used from a great majority of people and many companies use it for campaigns.\\
+The next step is to create a correlation chart with all the social media and the Ranking variable so as to see their relation:
+
+\begin{table}[H]
+\centering
+\caption{Social media correlation}
+\begin{center}
+\includegraphics[scale=0.5]{../../../../Pictures/R/corralation_sm.png}  \\
+\textit{Facebook has correlation more than 50 percent with twitter, youtube and linkedin and that the smallest correlations are those of pinterest and instagram.}
+\end{center}
+\end{table}
+
+The same conclusions can derive from the correlation plot as well. The code we used to create those charts is available in the Appendix.\ref{r: van: sm}
 \paragraph{Links analysis and correlations}
-Next step is to analyse the distribution of the internal, external and total links and of course their correlation with each other and with the Revenues.
-\paragraph{Words analysis and correlation}
-Continuing with the analysis of the unique words and the total words with correlation to the readability index.
+Next step is to analyse the distribution of the internal, external and total links and of course their correlation with each other and with the Revenues. We begin with the distribution of the variables in correlation with the Revenue variable:
+
+\begin{table}[H]
+\centering
+\caption{Total Links}
+\begin{center}
+\includegraphics[scale=0.5]{../../../../Pictures/R/t_links.png}  \\
+\textit{We can see that as the Revenues increase the total links are steadily going under 400.}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{External links}
+\begin{center}
+\includegraphics[scale=0.5]{../../../../Pictures/R/ex_links.png}  \\
+\textit{Again as in the previous table as the Revenues increase the external links tend to go very low.}
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Internal links}
+\begin{center}
+\includegraphics[scale=0.5]{../../../../Pictures/R/in_links.png}  \\
+\textit{The internal links have a very similar distribution to the total links which is logical since the one is a subset of the other.}
+\end{center}
+\end{table}
+
+Now that we have the first glimpse of the variables and we understand that when the Revenues are increasing the number of the link is under some specific margins we can create also the correlation table to see if we can extract any other useful information:
+
+\begin{table}[H]
+\centering
+\caption{Links correlation table}
+\begin{center}
+\includegraphics[scale=0.5]{../../../../Pictures/R/cor_links.png}  \\
+\textit{The internal links are extremely correlated with the total links.}
+\end{center}
+\end{table}
+
+The observation we have with the previous charts that the internal links distribution in relation to the Revenues is very similar to the one of the total links can also be supported by the correlation table where we can see that those to variables are 95 percent correlated. This information might come handy later on when we are going to create regression models. The code for this section is available in the Appendix.\ref{r: van: l}
+\paragraph{Loading time analysis and correlation}
+The loading time of the sites is a very important key performance indicator usually in website performance so it is very interesting to see if it has any strong correlation with the Revenues of these very successful companies that we are examining.:
+\begin{table}[H]
+\centering
+\caption{Loading time}
+\begin{center}
+\includegraphics[scale=0.5]{../../../../Pictures/R/l_time.png}  \\
+\textit{Low loading time in the sites with the most Revenues.}
+\end{center}
+\end{table}
+
+Maybe the correlation is not completely linear but it is obvious that the companies that have the most high Revenues they have also a very small loading time. As well as we can see that the biggest loading times exist in the very low Revenue wise companies. The code for this table is available in the Appendix.\ref{r: van: load}
+\paragraph{Content analysis and correlation}
+Continuing with the analysis of the unique words, the total words, the sentences and the readability regarding their distribution and their correlation to the Revenues variable.
 \paragraph{HTML validation variables analysis and correlation}
 During the extraction of the html validation variables we created 4 different metrics: the number of errors, the number of warnings the non document error and the page not opened one. In this chapter we are going to analyse the distributions of those variables and also their correlation with the Revenues.
 \paragraph{Image types analysis and correlation}
@@ -2099,5 +2258,145 @@ library(DAAG)
 dim(total_500_final)
 \end{lstlisting}
 
+\subsubsection{Variable analysis and correlation}
 
+\paragraph{Fortune variables correlation}\label{r: van: fortune}
+\begin{lstlisting}[language=R] 
+#we first see the summary of the Fortune variables and then we create their histogram so as to have a 
+#good grasp of how they are distributed
+ggplot(data=total_500_final,aes(x=Revenues))
++geom_histogram(binwidth=50, colour = "green", fill ="darkgreen")
+ggplot(data=total_500_final,aes(x=Assets))
++geom_histogram(binwidth=100, colour = "red", fill ="darkred")
+ggplot(data=total_500_final,aes(x=Market_Value))
++geom_histogram(binwidth=100, colour = "blue", fill ="darkblue")
+ggplot(data=total_500_final,aes(x=Total_SH_Equity))
++geom_histogram(binwidth=100, colour = "purple", fill ="pink")
+
+#We make plots to see how the variables we got from Fortune 500 are related with the Ranking
+ggplot(total_500_final, aes(Assets,Ranking)) 
++ geom_point(colour = "red")
+ggplot(total_500_final, aes(Market_Value, Ranking)) 
++ geom_point(colour = "blue")
+ggplot(total_500_final, aes(Total_SH_Equity, Ranking))
+ + geom_point(colour = "purple")
+ggplot(total_500_final, aes(Revenues, Ranking))
+ + geom_point(colour = "green")
+#We can see that the Ranking has a linear relationship with the Revenues so we will use one of those 2 variables to check the relationships with the websites metrics
+#In order to have a more clear look we also create a correlation diagram
+total_500_fortune <- total_500_final[,c(1:5)]
+library(corrplot)
+library(caret)
+sm <- cor(total_500_fortune)
+sm
+corrplot(cor(total_500_fortune),method="number")
+#From this plot we understand that the Ranking and the Revenues have very high correlation. 
+\end{lstlisting}
+
+\paragraph{Social media analysis}\label{r: van: sm}
+\begin{lstlisting}[language=R] 
+#Facebook
+social_media_facebook <- round(table(total_500_final$facebook)/408,3)
+social_media_facebook
+slicelable <- c(paste(35.3,"% no"),paste(64.7,"% yes"))
+pie(social_media_facebook,label = slicelable,
+main="Share of companies with Facebook",
+col=rainbow(length(social_media_facebook)))
+ggplot(total_500_final, aes(Revenues, facebook)) 
++ geom_point(size=3, colour = "darkblue")
+
+#Twitter
+social_media_twitter <- round(table(total_500_final$twitter)/408,3)
+social_media_twitter
+slicelable <- c(paste(31.4,"% no"),paste(68.6,"% yes"))
+pie(social_media_twitter,label = slicelable,
+main="Share of companies with Twitter",
+col=rainbow(length(social_media_twitter)))
+ggplot(total_500_final, aes(Revenues, twitter)) 
++ geom_point(size=3, colour = "darkgreen")
+
+#Instagram
+social_media_instagram <- round(table(total_500_final$instagram)/408,3)
+social_media_instagram
+slicelable <- c(paste(77.7,"% no"),paste(22.3,"% yes"))
+pie(social_media_instagram,label = slicelable,
+main="Share of companies with Instagram",
+col=rainbow(length(social_media_instagram)))
+ggplot(total_500_final, aes(Revenues, instagram)) 
++ geom_point(size=3, colour = "pink")
+
+#Pinterest
+social_media_pinterest <- round(table(total_500_final$pinterest)/408,3)
+social_media_pinterest
+slicelable <- c(paste(90.2,"% no"),paste(9.8,"% yes"))
+pie(social_media_pinterest,label = slicelable,
+main="Share of companies with Pinterest",
+col=rainbow(length(social_media_pinterest)))
+ggplot(total_500_final, aes(Revenues, pinterest)) 
++ geom_point(size=3, colour = "darkred")
+
+#Youtube
+social_media_youtube <- round(table(total_500_final$youtube)/408,3)
+social_media_youtube
+slicelable <- c(paste(41.7,"% no"),paste(58.3,"% yes"))
+pie(social_media_youtube,label = slicelable,
+main="Share of companies with Youtube",
+col=rainbow(length(social_media_youtube)))
+ggplot(total_500_final, aes(Revenues, youtube)) 
++ geom_point(size=3, colour = "red")
+
+#LinkedIn
+social_media_linkedin <- round(table(total_500_final$linkedin)/408,3)
+social_media_linkedin
+slicelable <- c(paste(42.9,"% no"),paste(57.1,"% yes"))
+pie(social_media_linkedin,label = slicelable,
+main="Share of companies with Linkedin",
+col=rainbow(length(social_media_linkedin)))
+ggplot(total_500_final, aes(Revenues, linkedin)) 
++ geom_point(size=3, colour = "blue")
+
+#And we can also see for correlations
+total_500_social_media <- total_500_final[,c(4,10:15)]
+library(corrplot)
+library(caret)
+sm <- cor(total_500_social_media)
+sm
+corrplot(cor(total_500_social_media),method="number")
+\end{lstlisting}
+
+\paragraph{Links analysis}\label{r: van: l}
+\begin{lstlisting}[language=R] 
+par(mfrow=c(1,1))
+library(ggplot2)
+ggplot(data=total_500_final,aes(x=total.links))
++geom_histogram(binwidth=50, colour = "darkblue", fill ="blue")
+ggplot(total_500_final, aes(Revenues, total.links)) 
++ geom_point(size=3, colour = "darkblue")
+ggplot(data=total_500_final,aes(x=external))
++geom_histogram(binwidth=50, colour = "darkred", fill ="red")
+ggplot(total_500_final, aes(Revenues, external)) 
++ geom_point(size=3, colour = "darkred")
+ggplot(data=total_500_final,aes(x=internal))
++geom_histogram(binwidth=50, colour = "darkgreen", fill ="green")
+ggplot(total_500_final, aes(Revenues, internal)) 
++ geom_point(size=3, colour = "darkgreen")
+
+#And we can also see for correlations
+total_500_links <- total_500_final[,c(1,21:23)]
+library(corrplot)
+library(caret)
+tl <- cor(total_500_links)
+tl
+corrplot(cor(total_500_links),method="number")
+
+ \end{lstlisting}
+ 
+ 
+\paragraph{Loadin time analysis}\label{r: van: load}
+\begin{lstlisting}[language=R] 
+ggplot(data=total_500_final,aes(x=loading.time))
++geom_histogram(binwidth=1, colour = "pink", fill ="purple")
+ggplot(total_500_final, aes(Revenues, loading.time)) 
++ geom_point(size=3, colour = "purple")
+ \end{lstlisting}
 \end{document}
