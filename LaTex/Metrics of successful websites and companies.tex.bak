@@ -336,7 +336,7 @@ In the following table we can see the sites that were not downloaded:
 
 \end{tabular}
 \end{table}
-\subsubsection{Content}
+\subsubsection{Content}\label{content}
 Now that we have downloaded the html code we should start extracting some of the variables we are going to use for the analysis in the next chapter.\\
 The first thing we are going to check is how easy it is for a user to read the content of each site. In order to check this performance indicator we will need to gather 4 variables:
 \begin{enumerate}
@@ -1561,8 +1561,7 @@ Now that we have the first glimpse of the variables and we understand that when 
 \textit{The internal links are extremely correlated with the total links.}
 \end{center}
 \end{table}
-
-The observation we have with the previous charts that the internal links distribution in relation to the Revenues is very similar to the one of the total links can also be supported by the correlation table where we can see that those to variables are 95 percent correlated. This information might come handy later on when we are going to create regression models. The code for this section is available in the Appendix.\ref{r: van: l}
+From the correlation table we can see that the observation we made based on the previous charts, that the internal links distribution in relation to the Revenues is very similar to the one of the total links, can also be supported from this table were the correlation between the 2 variables is 95\%. This information might come handy later on when we are going to create regression models. The code for this section is available in the Appendix.\ref{r: van: l}
 \paragraph{Loading time analysis and correlation}
 The loading time of the sites is a very important key performance indicator usually in website performance so it is very interesting to see if it has any strong correlation with the Revenues of these very successful companies that we are examining.:
 \begin{table}[H]
@@ -1573,10 +1572,71 @@ The loading time of the sites is a very important key performance indicator usua
 \textit{Low loading time in the sites with the most Revenues.}
 \end{center}
 \end{table}
-
-Maybe the correlation is not completely linear but it is obvious that the companies that have the most high Revenues they have also a very small loading time. As well as we can see that the biggest loading times exist in the very low Revenue wise companies. The code for this table is available in the Appendix.\ref{r: van: load}
+From the table above we can see that the loading time in relation to the Revenues has a small correlation. The companies that have the highest Revenues have also a very small loading time. Moreover we can see that the companies that have more than 100 million Revenues have loading times under 1 second. This observation shows that maybe the loading time is in fact a very important factor regarding the success of a website and moreover of a company overall success. The code for this table is available in the Appendix.\ref{r: van: load}
 \paragraph{Content analysis and correlation}
-Continuing with the analysis of the unique words, the total words, the sentences and the readability regarding their distribution and their correlation to the Revenues variable.
+The next step is to analyse the distribution of the variables that are related to the content and the text of the websites in relation to the Revenues of the companies at hand. As we explained in the Python chapter\ref{M:Content} we gathered 3 variables that are related to the grammatical overview of the text that is being used in the sites - which are the numbers of words, the number of unique words and the number of sentences - and 2 variables that are trying to explain if the content of this text is comprehensible from the majority of the users or not. Following below we have the charts with the distribution of those variables prices across the sites under examination and their relation to the Revenues.
+\begin{table}[H]
+\centering
+\caption{Number of Sentences vs Revenues}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/33_sent_rev.png}  \\
+\textit{In high Revenues the number of sentences is smaller that 500.}
+\end{center}
+\end{table}
+From the table we can see that most sites have less than 500 sentences in their home page. Moreover while the Revenues price is going up the number of sentences seems to getting lower. For the sites that have more than 100 million dollars in Revenues the number of sentences drops under 250. Half the number of sentences that we can see in sites with lower Revenues.
+\begin{table}[H]
+\centering
+\caption{Number of Words vs Revenues}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/37_w_rev.png}   \\
+\textit{In high Revenues the number of words is smaller that 1000.}
+\end{center}
+\end{table}
+By the same logic as the sentences in relation to the revenues so does the number of words seems to drop when the revenues go up. Furthermore here we can see that the decrease starts in lower revenues prices (around the 50 million dollars). This is expected if we take under consideration that the number of words is always correlated to the number of sentences. Most sites do not want to have very long sentences in order not to bore the reader. So since the number of sentences incline when the revenues are increasing we anticipate that the number of words will have the same reaction to the revenues.
+\begin{table}[H]
+\centering
+\caption{Number of Unique Words vs Revenues}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/35_uw_rev.png}    \\
+\textit{In high Revenues the number of unique words is close to zero.}
+\end{center}
+\end{table}
+The number of unique words differs from the actual number of all the words. Here we are trying to see how many not commonly used words does each site uses. Here the distribution is not so clear as it was for the two previous variables but still we can see that in the most sites that have high Revenues the number of unique words are very small. 
+\begin{table}[H]
+\centering
+\caption{Correlation table}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/38_words_corr.png}    \\
+\textit{Sentences, words and unique words are highly correlated.}
+\end{center}
+\end{table}
+From the correlation table we can also observe that the three variables we examined regarding the text of the websites are highly correlated with each other which as we already explained is an expected outcome.Moreover we can see that the Revenues with the loading time has a small negative correlation. This means that when the one variable price is going up the others' variable price should go down. This is also an expected outcome since as we said before the time a site does to open is very important to the users as they can easily grow impatient and look somewhere else. This is due to the grand variety of choices available on-line that makes the user feeling powerful.\\
+Now that we analysed the 3 variables regarding the text attributes we should also analyse the 2 variables regarding the readability index of the websites' texts. Since of course the flesch measure variable was the source for calculating the readability variable we will analyse here only the readability variable thoroughly while the diagrammatically analysis of the flesh measure variable will be available in the Appendix.
+\begin{table}[H]
+\centering
+\caption{Readability distribution table}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/41_read_dist.png}    \\
+\textit{Most sites are difficult to read.}
+\end{center}
+\end{table}
+\begin{table}[H]
+\centering
+\caption{Readability vs Revenues table}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/42_read_rev.png}   \\
+\textit{Most sites are difficult to read.}
+\end{center}
+\end{table}
+From the above two charts we can see that firstly the most sites are difficult to be read and secondly that the readability index in relation to the Revenues does not show a clear pattern. The two sites with the most Revenues seems to be fairly difficult to read. What we can definitely see is that the sites that are very easy to be read all have revenues under 50 million dollars. This could mean that even though the users do not want to read very difficult texts they also do not want extremely easy ones. Maybe the correlation plot could help us have a clearer view of the relationship between the 2 variables.
+\begin{table}[H]
+\centering
+\caption{Correlation table}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/43_read_cor.png}    \\
+\textit{Most sites are difficult to read.}
+\end{center}
+\end{table}
 \paragraph{HTML validation variables analysis and correlation}
 During the extraction of the html validation variables we created 4 different metrics: the number of errors, the number of warnings the non document error and the page not opened one. In this chapter we are going to analyse the distributions of those variables and also their correlation with the Revenues.
 \paragraph{Image types analysis and correlation}
@@ -2382,7 +2442,7 @@ ggplot(total_500_final, aes(Revenues, internal))
 + geom_point(size=3, colour = "darkgreen")
 
 #And we can also see for correlations
-total_500_links <- total_500_final[,c(1,21:23)]
+total_500_links <- total_500_final[,c(4,21:23)]
 library(corrplot)
 library(caret)
 tl <- cor(total_500_links)
