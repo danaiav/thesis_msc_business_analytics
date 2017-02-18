@@ -1,7 +1,7 @@
 ---
 title: "Metrics of Succesful websites and companies"
 author: "Danai Avratoglou"
-date: "31 Οκτωβρίου 2016"
+date: "18 February 2017"
 output: html_document
 ---
 
@@ -127,7 +127,7 @@ ggplot(total_500_final, aes(Revenues, linkedin)) + geom_point(size=3, colour = "
 
 ```{r}
 #And we can also see for correlations
-total_500_social_media <- total_500_final[,c(1,10:15)]
+total_500_social_media <- total_500_final[,c(4,10:15)]
 library(corrplot)
 library(caret)
 sm <- cor(total_500_social_media)
@@ -150,7 +150,7 @@ ggplot(total_500_final, aes(Revenues, external)) + geom_point(size=3, colour = "
 ggplot(data=total_500_final,aes(x=internal))+geom_histogram(binwidth=50, colour = "darkgreen", fill ="green")
 ggplot(total_500_final, aes(Revenues, internal)) + geom_point(size=3, colour = "darkgreen")
 #And we can also see for correlations
-total_500_links <- total_500_final[,c(1,21:23)]
+total_500_links <- total_500_final[,c(4,21:23)]
 library(corrplot)
 library(caret)
 tl <- cor(total_500_links)
@@ -180,6 +180,15 @@ ggplot(data=total_500_final,aes(x=Words))+geom_histogram(binwidth=50, colour = "
 ggplot(total_500_final, aes(Revenues, Words)) + geom_point(size=3, colour = "purple")
 #############################
 ```
+```{r}
+#And we can also see for correlations
+total_500_lt_w <- total_500_final[,c(4,18:20,727)]
+library(corrplot)
+library(caret)
+tl <- cor(total_500_lt_w)
+tl
+corrplot(cor(total_500_lt_w),method="number")
+```
 
 ```{r}
 ################################
@@ -191,17 +200,34 @@ ggplot(total_500_final, aes(Revenues, Flesh_Mesaure)) + geom_point(size=3, colou
 ```
 
 ```{r}
-total_500_final$Readability <- gsub("Very easy", "1", total_500_final$Readability )
-total_500_final$Readability <- gsub("Easy", "2", total_500_final$Readability )
-total_500_final$Readability <- gsub("Fairly easy", "3", total_500_final$Readability )
-total_500_final$Readability <- gsub("Standard", "4", total_500_final$Readability )
-total_500_final$Readability <- gsub("Fairly difficult", "5", total_500_final$Readability )
-total_500_final$Readability <- gsub("Difficult", "6", total_500_final$Readability )
-total_500_final$Readability <- gsub("Very Confusing", "7", total_500_final$Readability )
+total_500_final$Readability <- gsub("Very easy", "01_VE", total_500_final$Readability )
+total_500_final$Readability <- gsub("Easy", "02_E", total_500_final$Readability )
+total_500_final$Readability <- gsub("Fairly easy", "03_FE", total_500_final$Readability )
+total_500_final$Readability <- gsub("Standard", "04_St", total_500_final$Readability )
+total_500_final$Readability <- gsub("Fairly difficult", "05_FD", total_500_final$Readability )
+total_500_final$Readability <- gsub("Difficult", "06_D", total_500_final$Readability )
+total_500_final$Readability <- gsub("Very Confusing", "07_VC", total_500_final$Readability )
+barplot(table(total_500_final$Readability),col ="dark red")
+```
+
+```{r}
+total_500_final$Readability <- gsub("01_VE","1", total_500_final$Readability )
+total_500_final$Readability <- gsub("02_E", "2", total_500_final$Readability )
+total_500_final$Readability <- gsub("03_FE", "3", total_500_final$Readability )
+total_500_final$Readability <- gsub("04_St", "4", total_500_final$Readability )
+total_500_final$Readability <- gsub("05_FD", "5", total_500_final$Readability )
+total_500_final$Readability <- gsub("06_D", "6" ,total_500_final$Readability )
+total_500_final$Readability <- gsub("07_VC", "7",total_500_final$Readability )
 total_500_final$Readability <- as.numeric(total_500_final$Readability )
 ggplot(data=total_500_final,aes(x=Readability))+geom_bar(binwidth=1, colour = "darkred", fill ="red")
-
 ggplot(total_500_final, aes(Revenues, Readability)) + geom_point(size=3, colour = "purple")
+#And we can also see for correlations
+total_500_r <- total_500_final[,c(4,16,17)]
+library(corrplot)
+library(caret)
+tl <- cor(total_500_r)
+tl
+corrplot(cor(total_500_r),method="number")
 
 ```
 
@@ -216,12 +242,19 @@ ggplot(total_500_final, aes(Revenues, number_of_warning)) + geom_point(size=3, c
 #########################################################################################################
 #########################################################################################################
 #Now we will see the non.document.error and the page not opened variables alone and in relationship with the Revenues
-ggplot(data=total_500_final,aes(x=non.document.error))+geom_histogram(binwidth=50, colour = "red")
-ggplot(total_500_final, aes(Revenues, non.document.error)) + geom_point(size=3, colour = "dark red")
-ggplot(data=total_500_final,aes(x=The_page_opened))+geom_histogram(binwidth=20, colour = "red")
+ggplot(data=total_500_final,aes(x=non.document.error))+geom_histogram(binwidth=1, colour = "red")
+ggplot(total_500_final, aes(Revenues, non.document.error)) + geom_point(size=1, colour = "dark red")
+ggplot(data=total_500_final,aes(x=The_page_opened))+geom_histogram(binwidth=1, colour = "red")
 ggplot(total_500_final, aes(Revenues, The_page_opened)) + geom_point(size=3, colour = "dark blue")
 #In the page not opened we can see that the variable has only the price 1 that means that the page opened so there is no point in using it in the analysis as it does not affect the outcome
 #########################################################################################################
+#And we can also see for correlations
+total_500_html <- total_500_final[,c(4,7:9)]
+library(corrplot)
+library(caret)
+tl <- cor(total_500_html)
+tl
+corrplot(cor(total_500_html),method="number")
 ```
 
 ```{r}
@@ -237,7 +270,7 @@ ggplot(total_500_final, aes(Revenues, total.images)) + geom_point(size=3, colour
 #########################################################################################################
 #We will see now the frequency of image types that is being used
 
-par(mfrow=c(3,3))
+par(mfrow=c(1,1))
 k = c(717:725)
 for(i in 1:9){
   a <- k[i]
@@ -246,15 +279,30 @@ for(i in 1:9){
 ```
 
 ```{r}
-#It is obvious that the most common images type are .jpg and .png
-#We will check those 2 in relationship with the revenues
+#It is obvious that the most common images type are .jpg, gif and .png
+#We will check now the types in relationship with the revenues
+ggplot(total_500_final, aes(Revenues, .bmp)) + geom_point(size=3, colour = "dark blue")
+ggplot(total_500_final, aes(Revenues, .dib)) + geom_point(size=3, colour = "dark blue")
+ggplot(total_500_final, aes(Revenues, .gif)) + geom_point(size=3, colour = "dark blue")
+ggplot(total_500_final, aes(Revenues, .jpe)) + geom_point(size=3, colour = "dark blue")
+ggplot(total_500_final, aes(Revenues, .jpeg)) + geom_point(size=3, colour = "dark blue")
 ggplot(total_500_final, aes(Revenues, .jpg)) + geom_point(size=3, colour = "dark blue")
+ggplot(total_500_final, aes(Revenues, .png)) + geom_point(size=3, colour = "dark blue")
+ggplot(total_500_final, aes(Revenues, .tif)) + geom_point(size=3, colour = "dark blue")
+ggplot(total_500_final, aes(Revenues, .tiff)) + geom_point(size=3, colour = "dark blue")
+```
+```{r}
+#And we can also see for correlations
+total_500_im<- total_500_final[,c(4,717:726)]
+library(corrplot)
+library(caret)
+tl <- cor(total_500_im)
+tl
+corrplot(cor(total_500_im),method="number")
 ```
 
-```{r}
-ggplot(total_500_final, aes(Revenues, .png)) + geom_point(size=3, colour = "dark blue")
-##########################################################################################################
-```
+
+
 ```{r}
 #We will see now the frequency of image sizes that is being used
 k = c()
