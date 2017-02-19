@@ -2072,9 +2072,109 @@ Before we explain the results more elaborately we should first test some other m
 \subsubsection{Comparisons and other methods}
 Now that we have a first idea of the metrics that are considered more important it would be wise to use other methods to double check the results.
 \paragraph{Correlation testing}
-By seeing the correlations of the chosen variables we could create models by subtracting some of them to see if the results will be improved.
+The next step of the analysis is to create a correlation table with the variables that are included in the model that had the best accuracy.\\
+\begin{table}[H]
+\centering
+\caption{Correlation graph of the best models' variables}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/86_model_cor.png}     \\
+\end{center}
+\end{table}
+From the table we can see that as expected the revenues are quite correlated with all the variables. But another observation that we can make is that some variables are highly correlated with each other as well. This means that we can try subtracting some of the variables (that are highly correlated with other variables) of the model and test whether or not it makes a difference in the final accuracy of it.\\
+The highest correlations are between the variables 8x15 and 44x556 (82\% correlated positive) and also between the variables 24px x 133px and 400x300 (83\% positive correlation). From those four variables we will subtract one of each pair in order to see if the model that will be created will perform the same, better or worse from the initial one. We decided to remove from the model the variables 8x15 and 24px x 133px and the new model that was created is the following one:
+\begin{itemize}
+\item \textbf{New model (from the both method) without the 2 variables}:\\
+\textit{Revenues = 394.88 - 88.71 (60x60) - 63.78 (44x556) - 39.25 (400x300) + 2.53 (bmp) - 5.54 (loading time) + 0.039 (jpeg)+ 1.04 (readability) + 2.3284 (instagram) }
+\begin{itemize}
+\item Residuals standard error : 14.16 on 339 degrees of freedom (any prediction will be off by 4.17\%)
+\item Adjusted R-squared : 0.8014 (80,14\%)
+\item p-value $<$ 0.05
+\end{itemize}
+\end{itemize}
+From the results of the new model we can see that by this subtraction the model became a little worse. The Adjusted R squared decreased while the percentage of not accuracy went up. So we can conclude that this change wasn't the best solution and even thought the variables are correlated they are also contribute to the better description of the dependent variable. 
 \paragraph{Clustering testing}
-We will use the clustering method to see how the variables are being group together. And which variables play the most important role.
+The next step is to create three clusters of the variables that are included in the model we created and to see if the way that they are grouping can also explain the revenues. If this hypothesis can be confirmed this means that the model we examined is indeed quite accurate.\\
+The observations of the variables should have a clear pattern regarding the revenues in the way that they are grouped together. In order to check that we created the following plots:
+\begin{table}[H]
+\centering
+\caption{Loading time vs Revenues Clustering}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/91_clust_ld.png}   \\
+\end{center}
+\end{table}
+In the graph regarding the loading time we can see that the clusters are divided very clearly. The first cluster contains all the companies that have revenues more than 75 million dollars while the 3rd cluster contains all the companies that have less than 75 million dollars in revenues. The second cluster contains only one observation. It is not clear from this graph why this observation has been clustered alone but by continuing with the further analysis of the clusters with the other variables it would be more clear why the groups were divided in this way.
+\begin{table}[H]
+\centering
+\caption{Readability vs Revenues Clustering}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/92_clust_read.png}   \\
+\end{center}
+\end{table}
+Again here the deviation happened in the revenue values of 75 million dollars except from the one observation of the second cluster.
+\begin{table}[H]
+\centering
+\caption{Instagram vs Revenues Clustering}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/93_clust_inst.png}   \\
+\end{center}
+\end{table}
+The same pattern also appears in the instagram variable graph. Here we can see that the variables of the cluster 1 that have the biggest revenues do not have instagram.
+\begin{table}[H]
+\centering
+\caption{Bmp vs Revenues Clustering}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/94_clust_bmp.png}   \\
+\end{center}
+\end{table}
+By the same logic is the graph for the bmp image type divided. Here we can see that the only site that have many bmp images is part of the high revenues cluster.
+\begin{table}[H]
+\centering
+\caption{Jpeg vs Revenues Clustering}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/95_clust_jpe.png}   \\
+\end{center}
+\end{table}
+From the jpeg graph we can finally understand which variable was responsible for the second cluster. The number of jpeg images in this specific site were extremely high and that lead the clustering algorithm to create a unique group for the specific observation.\\
+The next graphs are from the image sizes that are included in the model. As we have already seen in the analysis before we expect that the observations with the highest revenues won't have those type of images. And we expect the clustering to show this clearly.
+\begin{table}[H]
+\centering
+\caption{Image size: 60 x 60 vs Revenues Clustering}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/96_clust_60.png}   \\
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Image size: 44 x 556 vs Revenues Clustering}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/97_clust_44.png}   \\
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Image size: 400 x 300 vs Revenues Clustering}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/98_clust_400.png}   \\
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Image size: 8 x 15 vs Revenues Clustering}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/99_clust_8x15.png}   \\
+\end{center}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Image size: 24px x 133px vs Revenues Clustering}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/99_clust_24px.png}   \\
+\end{center}
+\end{table}
 \paragraph{Final testing}
 Now we will compare the results to see if we can test any other theory so as to be sure about the final results.
 \paragraph{Final model}

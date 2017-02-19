@@ -390,6 +390,9 @@ names(total_500_final)
 total_500_final$X15x12<- gsub("1","0", total_500_final$X15x12)
 total_500_final$X15x12 <- gsub("2", "1", total_500_final$X15x12 )
 
+total_500_final$X60x60<- gsub("1","0", total_500_final$X60x60)
+total_500_final$X60x60 <- gsub("2", "1", total_500_final$X60x60 )
+
 total_500_final$X15x75<- gsub("1","0", total_500_final$X15x75)
 total_500_final$X15x75 <- gsub("2", "1", total_500_final$X15x75 )
 
@@ -707,6 +710,13 @@ ggplot(total_500_final_reg, aes(Revenues, X44x556, color = fortuneCluster$cluste
 
 ```{r}
 ggplot(total_500_final_reg, aes(Revenues, X400x300, color = fortuneCluster$cluster)) + geom_point(size=3)
+```
+```{r}
+ggplot(total_500_final_reg, aes(Revenues, X8x15, color = fortuneCluster$cluster)) + geom_point(size=3)
+```
+
+```{r}
+ggplot(total_500_final_reg, aes(Revenues, X24pxx133px, color = fortuneCluster$cluster)) + geom_point(size=3)
 ```
 
 ```{r}

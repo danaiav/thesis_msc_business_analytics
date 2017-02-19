@@ -54,17 +54,17 @@
 \contentsline {paragraph}{\numberline {3.2.4.5}Predictions and comparison of models}{83}{paragraph.3.2.4.5}
 \contentsline {subsubsection}{\numberline {3.2.5}Comparisons and other methods}{84}{subsubsection.3.2.5}
 \contentsline {paragraph}{\numberline {3.2.5.1}Correlation testing}{84}{paragraph.3.2.5.1}
-\contentsline {paragraph}{\numberline {3.2.5.2}Clustering testing}{84}{paragraph.3.2.5.2}
-\contentsline {paragraph}{\numberline {3.2.5.3}Final testing}{84}{paragraph.3.2.5.3}
-\contentsline {paragraph}{\numberline {3.2.5.4}Final model}{84}{paragraph.3.2.5.4}
-\contentsline {section}{\numberline {4}Conclusions}{85}{section.4}
-\contentsline {section}{\numberline {5}Bibliography}{86}{section.5}
-\contentsline {section}{\numberline {A}Appendix A: Fortune 500 Companies}{87}{appendix.A}
-\contentsline {section}{\numberline {B}Appendix B: Python Scripts}{91}{appendix.B}
-\contentsline {section}{\numberline {C}Appendix C: R Scripts}{91}{appendix.C}
-\contentsline {subsubsection}{\numberline {C.0.1}Data cleansing}{91}{subsubsection.C.0.1}
-\contentsline {subsubsection}{\numberline {C.0.2}Variable analysis and correlation}{92}{subsubsection.C.0.2}
-\contentsline {paragraph}{\numberline {C.0.2.1}Fortune variables correlation}{92}{paragraph.C.0.2.1}
-\contentsline {paragraph}{\numberline {C.0.2.2}Social media analysis}{93}{paragraph.C.0.2.2}
-\contentsline {paragraph}{\numberline {C.0.2.3}Links analysis}{94}{paragraph.C.0.2.3}
-\contentsline {paragraph}{\numberline {C.0.2.4}Loadin time analysis}{95}{paragraph.C.0.2.4}
+\contentsline {paragraph}{\numberline {3.2.5.2}Clustering testing}{85}{paragraph.3.2.5.2}
+\contentsline {paragraph}{\numberline {3.2.5.3}Final testing}{91}{paragraph.3.2.5.3}
+\contentsline {paragraph}{\numberline {3.2.5.4}Final model}{91}{paragraph.3.2.5.4}
+\contentsline {section}{\numberline {4}Conclusions}{92}{section.4}
+\contentsline {section}{\numberline {5}Bibliography}{93}{section.5}
+\contentsline {section}{\numberline {A}Appendix A: Fortune 500 Companies}{94}{appendix.A}
+\contentsline {section}{\numberline {B}Appendix B: Python Scripts}{98}{appendix.B}
+\contentsline {section}{\numberline {C}Appendix C: R Scripts}{98}{appendix.C}
+\contentsline {subsubsection}{\numberline {C.0.1}Data cleansing}{98}{subsubsection.C.0.1}
+\contentsline {subsubsection}{\numberline {C.0.2}Variable analysis and correlation}{99}{subsubsection.C.0.2}
+\contentsline {paragraph}{\numberline {C.0.2.1}Fortune variables correlation}{99}{paragraph.C.0.2.1}
+\contentsline {paragraph}{\numberline {C.0.2.2}Social media analysis}{100}{paragraph.C.0.2.2}
+\contentsline {paragraph}{\numberline {C.0.2.3}Links analysis}{101}{paragraph.C.0.2.3}
+\contentsline {paragraph}{\numberline {C.0.2.4}Loadin time analysis}{102}{paragraph.C.0.2.4}
