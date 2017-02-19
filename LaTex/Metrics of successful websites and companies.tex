@@ -939,7 +939,7 @@ d5 = {'company' : pd.Series(p_nm, index=[nm]),
       'total images' : pd.Series(p_tt, index=[nm])}
 images_types = pd.DataFrame(d5)    
 \end{lstlisting}
-\paragraph{Different image sizes}
+\paragraph{Different image sizes}\label{dif_img_s} 
 Aside from the number of images and the types that are being used another important factor is the size of each image. There is a vast majority of different sizes and it won't be wise to restrict the research to specific sizes so in the following code will find the different sizes that are being used in the companies.\\
 \textbf{Step 1}: The first step is to find the different dimensions that each site uses. We initially create the lists that we will use for this first function. In the script there are also comments of what each list represents. Then we create a function that will gather all the different dimensions from all the sites and in another variable all the times each of this dimension appears. \\\\
 \textbf{Step 2}: Next with the help of the library Beautiful soup we read the html code as lxml and we save the result into a new variable. Then we search in this new variable with the help of the same library all the elements that are between the <img>...</img> parts of the code.\\\\
@@ -1639,15 +1639,212 @@ From the above two charts we can see that firstly the most sites are difficult t
 \end{table}
 From the correlation plot we can see that the Revenues have a very small negative correlation with the readability variable. While the readability variable and the flesh measure variable as it was expected they have a negative correlation. This means that the bigger the price in the flesch measure the lower the price in the readability variable. If we consider that the best prices of the flesh measure are the highest while respectively for the readability variable are the lowest then it is a normal correlation.
 \paragraph{HTML validation variables analysis and correlation}
-During the extraction of the html validation variables we created 4 different metrics: the number of errors, the number of warnings the non document error and the page not opened one. In this chapter we are going to analyse the distributions of those variables and also their correlation with the Revenues.
+During the extraction of the html validation variables we created 4 different metrics: the number of errors, the number of warnings the non document error and the page not opened one. In this section we are going to analyse the distributions of those variables and also their correlation with the Revenues.
+\begin{table}[H]
+\centering
+\caption{Number of errors vs Revenues table}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/45_errors_rev.png}    \\
+\textit{Number of errors in highest revenues are small.}
+\end{center}
+\end{table}
+\begin{table}[H]
+\centering
+\caption{Number of warnings vs Revenues table}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/47_warn_rev.png}    \\
+\textit{Number of warnings in highest revenues are relatively small.}
+\end{center}
+\end{table}
+\begin{table}[H]
+\centering
+\caption{Non document error vs Revenues table}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/49_nde_rev.png}    \\
+\textit{In highest revenues there is no document error.}
+\end{center}
+\end{table}
+\begin{table}[H]
+\centering
+\caption{Correlation table}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/51_html_cor.png}    \\
+\textit{Number of errors positive correlated with number of warnings.}
+\end{center}
+\end{table}
+The table of the document opened variable which is available in the Appendix is not included since it has the same price for all the sites thus it has no meaning examine its impact to the revenues. Regarding the four tables above we can see that the number of errors and the number of warning in the majority of the websites are getting smaller while the revenues are getting bigger - although a small number of sites doesn't seem to follow that logic and this can be seen from the correlation table as well that shows a very small (next to zero) positive relation between the pair of variables. Moreover the variable non document error has a negative correlation to the revenues since as the revenues increase the variable tends to become zero. This means that in sites with high revenues the documents of their sites had no errors.
 \paragraph{Image types analysis and correlation}
-Last but not least we should analyse the distribution of the different types of images that are being used on the websites that we are examining and also compare the total images with the Revenues to see the correlation.
+Last but not least we should analyse the distribution of the different types of images that are being used on the websites we are examining and also compare the total images with the Revenues to see their correlation.
+\begin{table}[H]
+\centering
+\caption{Total images vs Revenue table}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/53_timg_rev.png}    \\
+\textit{Most sites under 250 images.}
+\end{center}
+\end{table}
+From the above chart we can see that the most sites have less than 250 images. Although there is one site that has more than 2000 images. Moreover we can see that the sites with more than 100 million dollars revenues have even less than 175 images one their home page. Now that we have a first glance of the total images in the sites we should examine the nine different types of images that we have gathered.
+\begin{table}[H]
+\centering
+\caption{BMP vs Revenue table}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/54_bmp_rev.png}    \\
+\textit{Most sites do not have bmp images.}
+\end{center}
+\end{table}
+From this chart we can see that only 4 sites actually uses bmp images.
+\begin{table}[H]
+\centering
+\caption{DIB vs Revenue table}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/55_dib_rev.png}    \\
+\textit{Only used by sites with small revenues.}
+\end{center}
+\end{table}
+The .dib type is being used from more sites but all of them are making less than 100 million dollars.
+\begin{table}[H]
+\centering
+\caption{GIF vs Revenue table}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/56_gif_rev.png}    \\
+\textit{Used a lot in companies with the smallest revenues.}
+\end{center}
+\end{table}
+The .gif type is being used from many sites but in the highest revenues the number of gif images are being reduced to very small numbers.
+\begin{table}[H]
+\centering
+\caption{JPE vs Revenue table}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/57_jpe_rev.png}    \\
+\textit{Very small number of companies use this type of images.}
+\end{center}
+\end{table}
+The jpe images is not being used from many sites and the ones that are using them are under 100 million dollars of revenues
+\begin{table}[H]
+\centering
+\caption{JPEG vs Revenue table}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/58_jpeg_rev.png}    \\
+\textit{Very small number of companies use this type of images.}
+\end{center}
+\end{table}
+Again this type is being used by very few companies sites and all of them have less than 100 million dollars revenues.
+\begin{table}[H]
+\centering
+\caption{JPG vs Revenue table}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/59_jpg_rev.png}    \\
+\textit{Frequent use in websites.}
+\end{center}
+\end{table}
+The jpg type of image is widely used in almost every website. We can see that when the revenues decrease the number of jpg images is increasing. 
+\begin{table}[H]
+\centering
+\caption{PNG vs Revenue table}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/60_png_rev.png}    \\
+\textit{Frequent use in websites.}
+\end{center}
+\end{table}
+Also the .png type is being used from most companies. Here we can see that companies with more than 100 million dollars use a large amount of png photos in their home page.
+\begin{table}[H]
+\centering
+\caption{TIF vs Revenue table}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/61_tif_rev.png}    \\
+\textit{Used by low revenue sites.}
+\end{center}
+\end{table}
+The tif type even though it doesn't seem to be as widely used as the png one it appears to be used from many sites but most of them belong to companies with less than 150 million dollars.
+\begin{table}[H]
+\centering
+\caption{TIFF vs Revenue table}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/62_tiff_rev.png}    \\
+\textit{Not used often in websites.}
+\end{center}
+\end{table}
+The .tiff type is used only in four sites and in very low quantity of images. while the companies that are using this type have less than 25(\$M)revenues.
+\begin{table}[H]
+\centering
+\caption{Correlation table}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/63_img_cor.png}    \\
+\textit{Number of errors positive correlated with number of warnings.}
+\end{center}
+\end{table}
+From the correlation table we can see that the revenues are positively related to every type of images except from the .tif and the .gif. A hypothesis that if we take into account that the largest number of those type of photos occurred in companies with small revenues can be easily supported.\\
+Furthermore it seems to be a very high correlation between three types of images the .dib the .jpe and the .jpeg. Also the total images is highly correlated with all the types which is logical since the total images is an outcome of the sum of all the occurrences of all the types of images at hand. In addition based on all the previous tables of this section we can conclude that from all the types of images that were examined the most commonly used types are the .png and the .jpg.
 \subsubsection{Data manipulation}
-In this chapter we are going to change some of the variables that we have created in order to make them more easy to be analysed and explained in relationship to the Revenues. 
+Even though we concluded the analysis part of the variables we still haven't examined the different image sizes we have gathered from the python scripts. Due to the very large amount of different sizes that we were able to gather we should find a way to reduce those variables in order to make it possible to run regression models. In this chapter we are going to examine those variables that we have created in order to see which ones are more meaningful to take further along on the analysis.
 \paragraph{Image sizes variables reconstruction}
-After implementing the python code for the size images (2.4.10) we created almost 700 different variables. This number is almost prohibited when it comes to regression models especially when the actual number of the examined cases are a lot fewer (500). That is why we decide to group this 700 variables to 5 new ones that we will be able to incorporate to this analysis.
+After implementing the python code for the size images \ref{dif_img_s} we created almost 700 different variables. This number is almost prohibited when it comes to regression models especially when the actual number of the examined cases are a lot fewer (500 that became 408 after the cleansing that we performed).\\
+The first step in order to examine those 700 different variables is by grouping them into two teams. In the first team we are keeping the ones that more of the half of the sites do not use and in the other one the ones that most of the sites are using. For example if we have a variable of the size 300x300 and from the 408 sites that we kept after the cleansing the 250 are using this size then the variable will be pointed to the second group.\\
+After separating the two groups we visualized the results for each variable. In the tables that follows we can see the distribution of the variables and also the correlation with the revenues.\footnote{Note: In the following tables we have only four examples from each group due to the vast number of variables. The total charts are available in the Appendix}
+\begin{table}[H]
+\centering
+\caption{Sizes that are not used from the majority of the websites}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/64_size_no.png}    \\
+\textit{The images are used from low revenue companies.}
+\end{center}
+\end{table}
+\begin{table}[H]
+\centering
+\caption{Sizes that are used from the majority of the websites}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/65_size_yes.png}    \\
+\textit{The images are not used from high revenue companies.}
+\end{center}
+\end{table}
+From the two tables we can see that for the sizes that are not used from the majority of the companies there is not a specific pattern that can help us further along in the analysis. While in the table for the sizes that are being used from the majority of the companies we can observe a very interesting pattern. Even though most of the companies are using those sizes, the ones that do not use them are those with the highest revenues. This could indicate a negative correlation between those sizes and the revenues of a company.\\
+Moreover even though it is not quite clear in the example table above as we proceed in other variables the number of high revenue companies that are not using the sizes increase. So in order to restrict the sizes in a number of variables that can be manipulated and retrieve some useful information we decide to keep the first 24 sites of the second team (the one that contains the sizes that occur in more than half of the sites). Those sizes are the following ones:
+\begin{table}[H]
+\centering
+\caption{Sizes that will be examined}
+\begin{tabular}{lll}
+\hline
+ \\
+15x75 
+& 8x15
+& 44x556 
+\\1x1
+& 800x1200
+& 100x100\footnote{In the analysis is written as autox100}
+\\24pxx133px
+& 21pxx173px
+& 46x214
+\\49x49
+& 50x45
+& 400x300
+\\292pxx292px
+& 200pxx200px
+& 1279pxx984px
+\\300pxx1500px
+& 29x29
+& 115x223
+\\160x233
+& 300x993
+& 41x192
+\\28x221
+& 15x12
+& 60x60
+\\ \hline
+\end{tabular}
+\end{table}
+ 
 \paragraph{Remove variables}
-Now that we have created and analysed all the needed variables we can subtract from the data frame the variables that we have decide not to include in the regression analysis that will follow.
+Now that we have created and analysed all the needed variables we can subtract from the data frame the variables that we have decide not to include in the regression analysis that will follow. Those are all the image sizes except from the 24 that were mentioned in the above section as well as the following ones:
+\begin{enumerate}
+\item Market Value 
+\item Assets
+\item Ranking
+\item Total Stockholder Equity
+\item The page not opened variable
+\end{enumerate}
+Those variables are being removed for the following reasons. The first four variables are data from the fortune 500 pages of the companies and we downloaded in order to determine which of those metrics we will use in order to see if the performance indicators of the websites effect the companys' status. Since we have already reach to the conclusion that the variable we are going to use for this purpose is the Revenues there is no need keeping the other ones as well.\\
+Regarding the fifth variable, the reason we will remove it is that the prices of the variable do not differ in any site. For all the sites they are the same so there is no point in further examining it.
+
 \subsubsection{Logistic Regression}
 In this chapter we will perform logistic regression to the chosen data frame in order to determine the variables that affect most the price of the Revenues of a company
 \paragraph{Training and test set creation}
