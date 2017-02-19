@@ -46,25 +46,25 @@
 \contentsline {subsubsection}{\numberline {3.2.3}Data manipulation}{71}{subsubsection.3.2.3}
 \contentsline {paragraph}{\numberline {3.2.3.1}Image sizes variables reconstruction}{71}{paragraph.3.2.3.1}
 \contentsline {paragraph}{\numberline {3.2.3.2}Remove variables}{73}{paragraph.3.2.3.2}
-\contentsline {subsubsection}{\numberline {3.2.4}Logistic Regression}{74}{subsubsection.3.2.4}
-\contentsline {paragraph}{\numberline {3.2.4.1}Training and test set creation}{74}{paragraph.3.2.4.1}
-\contentsline {paragraph}{\numberline {3.2.4.2}Null and Full model creation}{74}{paragraph.3.2.4.2}
-\contentsline {paragraph}{\numberline {3.2.4.3}Lasso Method}{74}{paragraph.3.2.4.3}
-\contentsline {paragraph}{\numberline {3.2.4.4}Both Method}{74}{paragraph.3.2.4.4}
-\contentsline {paragraph}{\numberline {3.2.4.5}Predictions and comparison of models}{74}{paragraph.3.2.4.5}
-\contentsline {subsubsection}{\numberline {3.2.5}Comparisons and other methods}{74}{subsubsection.3.2.5}
-\contentsline {paragraph}{\numberline {3.2.5.1}Correlation testing}{74}{paragraph.3.2.5.1}
-\contentsline {paragraph}{\numberline {3.2.5.2}Clustering testing}{74}{paragraph.3.2.5.2}
-\contentsline {paragraph}{\numberline {3.2.5.3}Final testing}{75}{paragraph.3.2.5.3}
-\contentsline {paragraph}{\numberline {3.2.5.4}Final model}{75}{paragraph.3.2.5.4}
-\contentsline {section}{\numberline {4}Conclusions}{76}{section.4}
-\contentsline {section}{\numberline {5}Bibliography}{77}{section.5}
-\contentsline {section}{\numberline {A}Appendix A: Fortune 500 Companies}{78}{appendix.A}
-\contentsline {section}{\numberline {B}Appendix B: Python Scripts}{82}{appendix.B}
-\contentsline {section}{\numberline {C}Appendix C: R Scripts}{82}{appendix.C}
-\contentsline {subsubsection}{\numberline {C.0.1}Data cleansing}{82}{subsubsection.C.0.1}
-\contentsline {subsubsection}{\numberline {C.0.2}Variable analysis and correlation}{83}{subsubsection.C.0.2}
-\contentsline {paragraph}{\numberline {C.0.2.1}Fortune variables correlation}{83}{paragraph.C.0.2.1}
-\contentsline {paragraph}{\numberline {C.0.2.2}Social media analysis}{84}{paragraph.C.0.2.2}
-\contentsline {paragraph}{\numberline {C.0.2.3}Links analysis}{85}{paragraph.C.0.2.3}
-\contentsline {paragraph}{\numberline {C.0.2.4}Loadin time analysis}{86}{paragraph.C.0.2.4}
+\contentsline {subsubsection}{\numberline {3.2.4}Regression models}{74}{subsubsection.3.2.4}
+\contentsline {paragraph}{\numberline {3.2.4.1}Training and test set creation}{75}{paragraph.3.2.4.1}
+\contentsline {paragraph}{\numberline {3.2.4.2}Null and Full model creation}{75}{paragraph.3.2.4.2}
+\contentsline {paragraph}{\numberline {3.2.4.3}Lasso Method}{80}{paragraph.3.2.4.3}
+\contentsline {paragraph}{\numberline {3.2.4.4}Both Method}{82}{paragraph.3.2.4.4}
+\contentsline {paragraph}{\numberline {3.2.4.5}Predictions and comparison of models}{82}{paragraph.3.2.4.5}
+\contentsline {subsubsection}{\numberline {3.2.5}Comparisons and other methods}{82}{subsubsection.3.2.5}
+\contentsline {paragraph}{\numberline {3.2.5.1}Correlation testing}{82}{paragraph.3.2.5.1}
+\contentsline {paragraph}{\numberline {3.2.5.2}Clustering testing}{83}{paragraph.3.2.5.2}
+\contentsline {paragraph}{\numberline {3.2.5.3}Final testing}{83}{paragraph.3.2.5.3}
+\contentsline {paragraph}{\numberline {3.2.5.4}Final model}{83}{paragraph.3.2.5.4}
+\contentsline {section}{\numberline {4}Conclusions}{84}{section.4}
+\contentsline {section}{\numberline {5}Bibliography}{85}{section.5}
+\contentsline {section}{\numberline {A}Appendix A: Fortune 500 Companies}{86}{appendix.A}
+\contentsline {section}{\numberline {B}Appendix B: Python Scripts}{90}{appendix.B}
+\contentsline {section}{\numberline {C}Appendix C: R Scripts}{90}{appendix.C}
+\contentsline {subsubsection}{\numberline {C.0.1}Data cleansing}{90}{subsubsection.C.0.1}
+\contentsline {subsubsection}{\numberline {C.0.2}Variable analysis and correlation}{91}{subsubsection.C.0.2}
+\contentsline {paragraph}{\numberline {C.0.2.1}Fortune variables correlation}{91}{paragraph.C.0.2.1}
+\contentsline {paragraph}{\numberline {C.0.2.2}Social media analysis}{92}{paragraph.C.0.2.2}
+\contentsline {paragraph}{\numberline {C.0.2.3}Links analysis}{93}{paragraph.C.0.2.3}
+\contentsline {paragraph}{\numberline {C.0.2.4}Loadin time analysis}{94}{paragraph.C.0.2.4}

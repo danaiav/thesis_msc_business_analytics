@@ -13,9 +13,9 @@
 \usepackage{xcolor}
 \hypersetup{
     colorlinks,
-    linkcolor={red!50!black},
-    citecolor={blue!50!black},
-    urlcolor={blue!80!black}
+    linkcolor={black!50!black},
+    citecolor={black!50!black},
+    urlcolor={black!50!black}
 }
 \begin{document}
 \title{Metrics of successful websites and companies}
@@ -130,7 +130,7 @@ The environment that is going to be used is from the Anaconda package which is a
 In order to gather all the needed metrics we had to create a variety of small scripts so as to collect them. In this section we will present in detail the procedure and the actual scripts that were used in order to extract the information that later will help us contact the analysis of the relationship between those metrics and the company's status.
 \subsubsection{Companies ranking, names and url}
 For starters we need to create a list with the names, the ranking and the URL of the sites that we will later download and extract the necessary info from them. So as it was mentioned in the previous section\ref{ds:f500} the first step that needs to be done is to download and gather those informations into a data frame\footnote{a table in Python environment with rows and columns} so as to be able to use them later on.\\
-The most easy way to obtain those informations is by extracting them from an already existing list. This list in our case was available in the following link:\href{url}{http://www.zyxware.com/articles/4344/list-of-fortune-500-companies-and-their-websites}.\\
+The most easy way to obtain those informations is by extracting them from an already existing list. This list in our case was available in the following link: \href{url}{http://www.zyxware.com/articles/4344/list-of-fortune-500-companies-and-their-websites}.\\
 The way to keep only those three informations as three different variables is by separating from the html code of this page the needed information.\\
 The first step is to create 3 empty lists where we will include the informations we are going to extract. The first list will contain the rank of each site, the second one will contain the name of the company and the 3rd one will contain the actual link of the company's site:
 
@@ -1851,18 +1851,192 @@ Now that we have created and analysed all the needed variables we can subtract f
 Those variables are being removed for the following reasons. The first four variables are data from the fortune 500 pages of the companies and we downloaded in order to determine which of those metrics we will use in order to see if the performance indicators of the websites effect the companys' status. Since we have already reach to the conclusion that the variable we are going to use for this purpose is the Revenues there is no need keeping the other ones as well.\\
 Regarding the fifth variable, the reason we will remove it is that the prices of the variable do not differ in any site. For all the sites they are the same so there is no point in further examining it.
 
-\subsubsection{Logistic Regression}
-In this chapter we will perform logistic regression to the chosen data frame in order to determine the variables that affect most the price of the Revenues of a company
+\subsubsection{Regression models}
+By completing the variable analysis we have ended up with 52 variables that are key performance indicators for the websites of the companies we are examining and 1 variable that shows the status of the companies. The names of the variables are available in the following table:
+\begin{table}[H]
+\centering
+\caption{Final Variables for Regression}
+\begin{tabular}{lll}
+\hline & & \\
+1.	Revenues
+& 2.	Non document error
+& 3.	Number of errors
+\\4.	Number of warnings
+& 5.	Facebook
+& 6.	Instagram
+\\7.	Linkedin
+& 8.	Pinterest
+& 9.	Twitter
+\\10.	Youtube
+& 11.	Flesh Measure
+& 12.	Readability
+\\13.	Sentences
+& 14.	Unique words
+& 15.	Words
+\\16.	external
+& 17.	internal
+& 18.	total links
+\\19.	15x75
+& 20.	8x15
+& 21.	44x556
+\\22.	1x1
+& 23.	800x1200
+& 24.	100x100\footnote{In the analysis is being refereed as autox100}
+\\25.	24pxx133px
+& 26.	21pxx173px
+& 27.	46x214
+\\28.	49x49
+& 29.	50x45
+& 30.	400x300
+\\31.	292pxx292px
+& 32.	200pxx200px
+& 33.	1279pxx984px
+\\34.	300pxx1500px
+& 35.	29x29
+& 36.	115x223
+\\37.	160x233
+& 38.	300x993
+& 39.	41x192
+\\40.	28x221
+& 41.	15x12
+& 42.	60x60
+\\43.	bmp
+& 44.	dib
+& 45.	gif
+\\46.	jpe
+& 47.	jpeg
+& 48.	jpg
+\\49.	png
+& 50.	tif
+& 51.	tiff
+\\52.	total images
+& 53.	loading time     
+\\ \hline
+\end{tabular}
+\end{table}
+As we can see from the above table the final variables are from almost every group of information that we manage to gather. There are variables concerning the html validation, the social media existence, the image types and sizes, the number of links, the content in terms of text and readability and the loading time of the websites.\\
+In this chapter we will perform some regression models to the chosen data frame in order to determine the variables that effect most the price of the Revenues of a company.In statistics there are two main types of regressions the linear and the logistic regression.\\
+The linear regression is an approach for modelling the relationship between a scalar dependent variable y and one or more explanatory variables (or independent variables) denoted X. The case of one explanatory variable is called simple linear regression. For more than one explanatory variable, the process is called multiple linear regression.\\
+The logistic regression, or logit regression, is a regression model where the dependent variable (DV) is categorical.Cases where the dependent variable has more than two outcome categories may be analysed in multinomial logistic regression, or, if the multiple categories are ordered, in ordinal logistic regression.\\
+Since the variable Revenues which is the dependent variable we have chosen is a scalar numeric variable we will perform linear regression to the final data frame we have created.
 \paragraph{Training and test set creation}
-Before we begin with the regression we have to divide the data frame to 2 data frames so as to be able to test the model we will create. We will make a training set and a test set.
+Before we begin with the regression we have to divide the data frame to 2 data frames so as to be able to test the model we will create. We will make a training set and a test set:
+\begin{itemize}
+\item \textbf{Training set:} We will use this set in order for the model to learn how to fit the parameters of the classifier.
+\item \textbf{Test set:} This set will be used only to assess the performance of the models that we will create.
+\end{itemize}  
+The sets will be separated in proportions: 15\% -85\% where the 15\% will be the test set in which we will test our findings and the 85\% will be the set we will use in order to create the regression models. After separating the two sets we ended up with 348 observations in the training set and 60 observations in the test set.
 \paragraph{Null and Full model creation}
-The first step is by using the training set to create a null model (that includes only the Revenues) and a full model (that includes all the variables)
+The first step is by using the training set to create a null regression model and a full regression model.\\
+The null regression model contains only the dependent variable y where in our case is the Revenues. The null model we created is the one in the following table:
+\begin{table}[H]
+\centering
+\caption{Null regression model}
+\begin{center}
+\includegraphics[scale=0.6]{../R/photos/65_null_model.PNG}   \\
+\end{center}
+\end{table}
+From the null regression model we can see that the intercept is positive. That means that even without any other variable the Revenues of a company start at 22.25 million dollars. This is normal if we consider that we are examining the most successful enterprises in the United States and even the ones that have low revenues in this examination do not seize to be considered high enough in comparison with other companies that are not included in the fortune 500 most successful ones.\\
+The next step is to create a full model where we used the dependent variable Revenues against all 52 independent variables of the final data frame. The full model we created is available in the following table. From this model we can see that the intercept initial value has been increased a lot in comparison to the null model. It went from 22 to 438. Nevertheless it is obvious that some of the independent variables have negative values which means that based on the prices they get they can lower the final Revenues of the company.\\
+Moreover we can see that some variables have NAs in the estimate. This could be happening because they are highly correlated to other variables. That is why we begin with the full model so as to see which variables would be wise to keep or to remove.\\
+In the bottom of the regression model there are some prices that will help us evaluate the model.
+\begin{itemize}
+\item \textbf{Residual Standard Error}: is a measure of the quality of a linear regression fit. Theoretically, every linear model is assumed to contain an error term E. Due to the presence of this error term, we are not capable of perfectly predicting our response variable (Revenues) from the predictors (independent variables). The Residual Standard Error is the average amount that the dependent variable will deviate from the true regression line. In our example, the actual revenues of a company can deviate from the true regression line by approximately 14.37 million dollars, on average. In other words, given that the mean revenues for all companies is 438.83 million dollars (the intercept estimate of the full model) and that the Residual Standard Error is 14.38, we can say that the percentage error is (any prediction would still be off by) 3.27\%. It’s also worth noting that the Residual Standard Error was calculated with 309 degrees of freedom. Simplistically, degrees of freedom are the number of data points that went into the estimation of the parameters used after taking into account these parameters (restriction). In our case, we had 348 data points and 39 parameters (intercept and variables that do not have NA in the estimate column)so the degrees of freedom are 348 - 39 = 309.
+\item \textbf{Multiple R-squared:} is a statistical measure of how close the data are to the fitted regression line. It is also known as the coefficient of determination, or the coefficient of multiple determination for multiple regression.The definition of R-squared is the percentage of the response variable variation that is explained by a linear model:
+\begin{center}
+\textit{R-squared = Explained variation / Total variation}
+\end{center}
+R-squared is always between 0 and 100\%:
+\begin{itemize}
+\item 0\% indicates that the model explains none of the variability of the response data around its mean.
+\item 100\% indicates that the model explains all the variability of the response data around its mean.
+\end{itemize}
+In general, the higher the R-squared, the better the model fits your data. However, sometimes the R squared can be misleading that is why we should also take into account the next measure.
+\item \textbf{The adjusted R-squared}: is a modified version of R-squared that has been adjusted for the number of predictors in the model. The adjusted R-squared increases only if the new term improves the model more than would be expected by chance. It decreases when a predictor improves the model by less than expected by chance. As in the R squared so for the Adjusted R Squared the bigger the price the better the result.
+\item \textbf{The p-value}:is the probability that, using a given statistical model, the statistical summary (such as the sample mean difference between two compared groups) would be the same as or more extreme than the actual observed results.In other words it shows whether or not having this model could give better results from not having it at all and depend only to chance. If the price of p - value is lower than 0.05 the model could be characterized as significant or in other word the model fits the data well.
+\end{itemize}  
+The four scenarios that we can meet regarding the relation between the Adjusted R square and the p value are the following:
+\begin{enumerate}
+\item low Adjusted R square and low p-value (p-value $<=$ 0.05)
+\item low Adjusted R square and high p-value (p-value $>$ 0.05)
+\item high Adjusted R square and low p-value
+\item high Adjusted R square and high p-value
+\end{enumerate}
+This scenarios are respectively interpreted as follows:
+\begin{enumerate}
+\item The model doesn't explain much of variation of the data but it is significant (better than not having a model)
+\item The model doesn't explain much of variation of the data and it is not significant (worst scenario)
+\item The model explains a lot of variation within the data and is significant (best scenario)
+\item The model explains a lot of variation within the data but is not significant (model is worthless)
+\end{enumerate}
+In our case the model has an Adjusted R Square of 79\% and a p value $<$ 0.05. This means that we are in the best case scenario. 
+\begin{table}[H]
+\centering
+\caption{Full regression model}
+\begin{center}
+\includegraphics[scale=0.6]{../R/photos/66_FULL_PART1.PNG} 
+\includegraphics[scale=0.6]{../R/photos/66_FULL_PART2.PNG}  \\
+\end{center}
+\end{table}
 \paragraph{Lasso Method}
-The next step is to implement the Lasso method
+Even though the results of the full model indicates that the model is quite good we shouldn't be contained with these results. Since this is the full model we could also try some other methods in order to see if we can make it even better.\\
+The first method we are going to implement is the Lasso (least absolute shrinkage and selection operator). The Lasso method is a regression analysis method that performs both variable selection and regularization in order to enhance the prediction accuracy and interpretability of the statistical model it produces.\\
+In the regression model, we were looking to find the $β$ that minimizes the following relationship:
+\begin{center}
+$(Y${-}$X1\beta 1${-}$X2\beta 2−...)^{2}$
+\end{center}
+While LASSO applies a penalty term to the problem:
+\begin{center}
+$(Y${-}$X1\beta 1${-}$X2\beta 2−...)^{2}+\alpha\Sigma i|\beta i|$
+\end{center}
+So when $\alpha$ is zero, there is no penalization, and you have the ordinary least squares (OLS\footnote{(OLS is a method for estimating the unknown parameters in a linear regression model, with the goal of minimizing the sum of the squares of the differences between the observed responses (values of the variable being predicted) in the given dataset and those predicted by a linear function of a set of explanatory variables.}) solution. As the penalization $\alpha$ increases, $\Sigma|\beta i|$ is pulled towards zero, with the less important parameters being pulled to zero earlier. At some level of $\alpha$, all the $βi$ have been pulled to zero.\\
+So in order to choose the variables we are going to include in the second model we would advice the next graph. Where we can see when a variable has been pulled to zero. Of course firstly we remove the variables that were NA in the full model so as to focus on the ones that play a part on the outcome. 
+\begin{table}[H]
+\centering
+\caption{Lasso variables}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/70_lasso.png}   \\
+\end{center}
+\end{table}
+From the graph we can see that there are some variables that make the make the longest to be pulled to zero and those are the variables that we should keep for this model.
+Another graph that we should take into account before choosing the variables for the model is the following one:
+\begin{table}[H]
+\centering
+\caption{Lasso Mean square error}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/71_lassob.png}    \\
+\textit{Includes the cross-validation curve (red dotted line), and upper and lower standard deviation curves along the $\lambda$ sequence - error bars. Two selected $\lambda$’s are indicated by the vertical dotted lines.}
+\end{center}
+\end{table}
+The two selected $\lambda$’s that are indicated by the vertical dotted lines are the following:
+\begin{itemize}
+ \item \textbf{lambda.min} is the value of $\lambda$ that gives minimum mean cross-validated error
+ \item \textbf{lambda.1se} is the value of $\lambda$ which gives the most regularized model such that error is within one standard error of the minimum.
+ \end{itemize}  
+We can use either one in order to see which variables we can keep. We used both of them and we created 2 models. The analytical models are available in the Appendix but you can see the actual variables and their estimates below as well as the measures that indicate how well performed are the models.
+\begin{itemize}
+\item \textbf{Lasso Min model}:
+
+
+\item \textbf{Lasso One standard deviation model}:
+
+
+\end{itemize}
 \paragraph{Both Method}
-We will continue by applying the both method of the logistic regression in order to see if the variables that will be kept are the same or less than the lasso method.
+We will continue by applying the both method to the full model (after we subtract the variables that were NAs) in order to see if the variables that will be kept give the same or better results than the models we have already created.
+\begin{itemize}
+\item \textbf{Both method model}:
+\end{itemize}
 \paragraph{Predictions and comparison of models}
-Now we will make the predictions using the test set in order to compare how well do the model that we created work in practise.
+Now that we have created three models we should check in actual data which of them works better. Based on the measures we have already seen that the model of the both method has better perspectives to be the most accurate one. Now we will try to predict the revenue prices of the test set by looking only at the independent values and by implementing the models. Then we will compare those results with the actual revenues to see how well did the models perform.In the following table we can see the results of the predictions:
+\begin{table}[H]
+\centering
+\caption{Lasso variables}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/85_pred_mod.png}    \\
+\end{center}
+\end{table}
+
 \subsubsection{Comparisons and other methods}
 Now that we have a first idea of the metrics that are considered more important it would be wise to use other methods to double check the results.
 \paragraph{Correlation testing}
