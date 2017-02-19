@@ -2015,22 +2015,60 @@ The two selected $\lambda$’s that are indicated by the vertical dotted lines a
  \end{itemize}  
 We can use either one in order to see which variables we can keep. We used both of them and we created 2 models. The analytical models are available in the Appendix but you can see the actual variables and their estimates below as well as the measures that indicate how well performed are the models.
 \begin{itemize}
-\item \textbf{Lasso Min model}:
-
-
-\item \textbf{Lasso One standard deviation model}:
-
-
-\end{itemize}
-\paragraph{Both Method}
-We will continue by applying the both method to the full model (after we subtract the variables that were NAs) in order to see if the variables that will be kept give the same or better results than the models we have already created.
+\item \textbf{Lasso Min model}:\\
+\textit{Revenues = 428.89 - 41.027 (8x15) - 24.134 (44x556) - 5.37 (800x1200)- 15.7302 (24px x 133px) - 4.8865 (50x45) - 29.5016 (400x300) - 85.9726 (60x60) + 2.5989 (bmp) + 0.9183 (dib)}\\
 \begin{itemize}
-\item \textbf{Both method model}:
+\item Residuals standard error : 14.28 on 338 degrees of freedom (any prediction will be off by 3.33\%)
+\item Adjusted R-squared : 0.7979 (79,79\%)
+\item p-value $<$ 0.05
 \end{itemize}
-\paragraph{Predictions and comparison of models}
-Now that we have created three models we should check in actual data which of them works better. Based on the measures we have already seen that the model of the both method has better perspectives to be the most accurate one. Now we will try to predict the revenue prices of the test set by looking only at the independent values and by implementing the models. Then we will compare those results with the actual revenues to see how well did the models perform.In the following table we can see the results of the predictions:
 
- make the predictions using the test set in order to compare how well do the model that we created work in practise.
+\item \textbf{Lasso One standard deviation model}:\\
+\textit{Revenues = 428.5 - 41.027 (8x15) - 24.134 (44x556) - 5.372 (800x1200)- 15.730 (24px x 133px) - 4.887 (50x45) - 28 (400x300) - 87.0776 (60x60)}
+\begin{itemize}
+\item Residuals standard error : 14.73 on 340 degrees of freedom (any prediction will be off by 3.4\%)
+\item Adjusted R-squared : 0.7851 (78,51\%)
+\item p-value $<$ 0.05
+\end{itemize}
+\end{itemize}
+From those two models we can see that the one for the min $\lambda$ is better regarding the Adjusted R-squared and also the prediction accuracy is a little higher from the full model that we have already created. This means that we were able to improve the model a little.
+\paragraph{Both Method}
+Nevertheless we still can check if the model can be improved even more. This time we will apply the both method to the full model (after we subtract the variables that were NAs) in order to see if the variables that will be kept give the same or better results than the models we have already created.\\
+This method takes as inputs the null model and the full model and it goes back and forth and checks which combinations of the variables brings the best results. The model that was created after applying the method is the following one:\\
+\begin{itemize}
+\item \textbf{Both method model}:\\
+\textit{Revenues = 422 - 88.85 (60x60) - 25.93 (44x556) - 43.04 (8x15)- 21.05 (24px x 133px) - 27.14 (400x300) + 2.53 (bmp) - 5.41 (loading time) + 0.039 (jpeg)+ 1.257 (readability) + 2.956 (instagram) }
+\begin{itemize}
+\item Residuals standard error : 14 on 337 degrees of freedom (any prediction will be off by 3.31\%)
+\item Adjusted R-squared : 0.8059 (80,59\%)
+\item p-value $<$ 0.05
+\end{itemize}
+\end{itemize}
+As it is easily observed the model is better than the one we found with the Lasso method and as a result even better from the full one we created in the begging.
+\paragraph{Predictions and comparison of models}
+Now that we have created three models we should check in actual data which of them works better. Based on the measures, we have already seen that the model of the both method has better perspectives to be the most accurate one. Now we will try to predict the revenue prices of the test set by looking only at the independent values and by implementing the models. Then we will compare those results with the actual revenues to see how well did the models perform.In the following table we can see the results of the predictions:
+\begin{table}[H]
+\centering
+\caption{Lasso variables}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/85_pred_mod.png}    \\
+\end{center}
+\end{table}
+From the above table we can see that the highest price of the actual revenues in close to 100. The only model that goes close but do not supersedes this number is the one from the both method (model a). The other two while they are doing quite well predictions we can see that in the high revenue sites they reach the 120 million dollars which are bigger than the actual ones and also in the low prices they do not differentiate at all all the predictions are close to zero, unlike the model of the method both where the predictions, while they seem to differ a little from the actuals they seem to have a better capture of the correct revenues.\\
+As a result we can conclude that from the models we created the best one is the one created by the method both. The variables that were used in the model are the following:
+\begin{enumerate}
+\item Image size: 60 x 60 (negative correlation with Revenues)
+\item Image size: 44 x 556 (negative correlation with Revenues)
+\item Image size: 8 x 15 (negative correlation with Revenues)
+\item Image size: 24px x 133px (negative correlation with Revenues)
+\item Image size: 400 x 300 (negative correlation with Revenues)
+\item Image type: bmp (positive correlation with Revenues)
+\item Loading time (negative correlation with Revenues)
+\item Image type: jpeg (positive correlation with Revenues)
+\item Readability (positive correlation with Revenues)
+\item Instagram (positive correlation with Revenues) 
+\end{enumerate}
+Revenues = 422 - 88.85 (60x60) - 25.93 (44x556) - 43.04 (8x15)- 21.05 (24px x 133px) - 27.14 (400x300) + 2.53 (bmp) - 5.41 (loading time) + 0.039 (jpeg)+ 1.257 (readability) + 2.956 (instagram)
 \subsubsection{Comparisons and other methods}
 Now that we have a first idea of the metrics that are considered more important it would be wise to use other methods to double check the results.
 \paragraph{Correlation testing}

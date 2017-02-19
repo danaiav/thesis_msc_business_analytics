@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.9.24)  19 FEB 2017 14:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.9.24)  19 FEB 2017 18:08
 entering extended mode
 **"./Metrics of successful websites and companies.tex"
 ("Metrics of successful websites and companies.tex"
@@ -1436,123 +1436,133 @@ l.2010 \end{table}
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
- [81pdfTeX warning (ext4): destination with the same identifier (name{table.51}
-) has been already used, duplicate ignored
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.2027 \begin{itemize}
-                       <../R/photos/71_lassob.png>]
-<../R/photos/85_pred_mod.png, id=1693, 505.89pt x 361.35pt>
-File: ../R/photos/85_pred_mod.png Graphic file (type png)
+Underfull \hbox (badness 10000) in paragraph at lines 2018--2020
 
-<use ../R/photos/85_pred_mod.png>
-Package pdftex.def Info: ../R/photos/85_pred_mod.png used on input line 2036.
-(pdftex.def)             Requested size: 252.94437pt x 180.67456pt.
- [82pdfTeX warning (ext4): destination with the same identifier (name{table.52}
-) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.2046 \paragraph{Final testing}
-                                 <../R/photos/85_pred_mod.png>] [83] [84]
-[85]
-Overfull \hbox (77.1674pt too wide) in paragraph at lines 2078--2151
- [][] 
  []
 
-
-Overfull \hbox (94.19533pt too wide) in paragraph at lines 2156--2212
- [][] 
- []
-
-
-Overfull \hbox (102.90353pt too wide) in paragraph at lines 2217--2272
- [][] 
- []
-
-[86pdfTeX warning (ext4): destination with the same identifier (name{table.53})
+[81pdfTeX warning (ext4): destination with the same identifier (name{table.51})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.2273 
+l.2022 \item A
+              djusted R-squared : 0.7979 (79,79\%) <../R/photos/71_lassob.png>]
+
+Underfull \hbox (badness 10000) in paragraph at lines 2036--2038
+
+ []
+
+<../R/photos/85_pred_mod.png, id=1693, 505.89pt x 361.35pt>
+File: ../R/photos/85_pred_mod.png Graphic file (type png)
+
+<use ../R/photos/85_pred_mod.png>
+Package pdftex.def Info: ../R/photos/85_pred_mod.png used on input line 2054.
+(pdftex.def)             Requested size: 252.94437pt x 180.67456pt.
+ [82] [83pdfTeX warning (ext4): destination with the same identifier (name{tabl
+e.52}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2064 \item I
+              mage size: 400 x 300 (negative correlation with Revenues) <../R/p
+hotos/85_pred_mod.png>] [84] [85] [86]
+Overfull \hbox (77.1674pt too wide) in paragraph at lines 2110--2183
+ [][] 
+ []
+
+
+Overfull \hbox (94.19533pt too wide) in paragraph at lines 2188--2244
+ [][] 
+ []
+
+
+Overfull \hbox (102.90353pt too wide) in paragraph at lines 2249--2304
+ [][] 
+ []
+
+[87pdfTeX warning (ext4): destination with the same identifier (name{table.53})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.2305 
        pdfTeX warning (ext4): destination with the same identifier (name{table.
 54}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.2273 
+l.2305 
        ]
-Overfull \hbox (83.07025pt too wide) in paragraph at lines 2277--2333
+Overfull \hbox (83.07025pt too wide) in paragraph at lines 2309--2365
  [][] 
  []
 
 
-Overfull \hbox (110.59805pt too wide) in paragraph at lines 2338--2394
+Overfull \hbox (110.59805pt too wide) in paragraph at lines 2370--2426
  [][] 
  []
 
-[87pdfTeX warning (ext4): destination with the same identifier (name{table.55})
+[88pdfTeX warning (ext4): destination with the same identifier (name{table.55})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.2395 
+l.2427 
        pdfTeX warning (ext4): destination with the same identifier (name{table.
 56}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.2395 
+l.2427 
        ]
-Overfull \hbox (97.54259pt too wide) in paragraph at lines 2399--2455
+Overfull \hbox (97.54259pt too wide) in paragraph at lines 2431--2487
  [][] 
  []
 
 
-Overfull \hbox (100.97313pt too wide) in paragraph at lines 2460--2516
+Overfull \hbox (100.97313pt too wide) in paragraph at lines 2492--2548
  [][] 
  []
 
-[88pdfTeX warning (ext4): destination with the same identifier (name{table.57})
+[89pdfTeX warning (ext4): destination with the same identifier (name{table.57})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.2517 
+l.2549 
        pdfTeX warning (ext4): destination with the same identifier (name{table.
 58}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.2517 
+l.2549 
        ]
-Overfull \hbox (100.3897pt too wide) in paragraph at lines 2521--2577
+Overfull \hbox (100.3897pt too wide) in paragraph at lines 2553--2609
  [][] 
  []
 
 
-Overfull \hbox (79.23694pt too wide) in paragraph at lines 2582--2638
+Overfull \hbox (79.23694pt too wide) in paragraph at lines 2614--2670
  [][] 
  []
 
-[89pdfTeX warning (ext4): destination with the same identifier (name{table.59})
+[90pdfTeX warning (ext4): destination with the same identifier (name{table.59})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.2639 
+l.2671 
        pdfTeX warning (ext4): destination with the same identifier (name{table.
 60}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.2639 
+l.2671 
        ]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 2655.
+(hyperref)                than one, level fixed on input line 2687.
 
 ("F:\Downloads\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
@@ -1564,143 +1574,143 @@ File: lstlang2.sty 2015/06/04 1.6 listings language file
 File: lstlang3.sty 2015/06/04 1.6 listings language file
 )
 LaTeX Font Info:    Font shape `OML/cmr/bx/n' in size <10> not available
-(Font)              Font shape `OML/cmm/b/it' tried instead on input line 2658.
+(Font)              Font shape `OML/cmm/b/it' tried instead on input line 2690.
 
 
-Overfull \hbox (27.00378pt too wide) in paragraph at lines 2658--2659
+Overfull \hbox (27.00378pt too wide) in paragraph at lines 2690--2691
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (15.00366pt too wide) in paragraph at lines 2660--2661
+Overfull \hbox (15.00366pt too wide) in paragraph at lines 2692--2693
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (3.00354pt too wide) in paragraph at lines 2671--2672
+Overfull \hbox (3.00354pt too wide) in paragraph at lines 2703--2704
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[90pdfTeX warning (ext4): destination with the same identifier (name{table.61})
+[91pdfTeX warning (ext4): destination with the same identifier (name{table.61})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.2676 for(
+l.2708 for(
            i in 20:730){]
-Overfull \hbox (27.00378pt too wide) in paragraph at lines 2682--2683
+Overfull \hbox (27.00378pt too wide) in paragraph at lines 2714--2715
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (45.00397pt too wide) in paragraph at lines 2691--2692
+Overfull \hbox (45.00397pt too wide) in paragraph at lines 2723--2724
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (261.00616pt too wide) in paragraph at lines 2703--2704
+Overfull \hbox (261.00616pt too wide) in paragraph at lines 2735--2736
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][] 
  []
 
 
-Overfull \hbox (45.00397pt too wide) in paragraph at lines 2706--2707
+Overfull \hbox (45.00397pt too wide) in paragraph at lines 2738--2739
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (27.00378pt too wide) in paragraph at lines 2708--2709
+Overfull \hbox (27.00378pt too wide) in paragraph at lines 2740--2741
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (39.0039pt too wide) in paragraph at lines 2710--2711
+Overfull \hbox (39.0039pt too wide) in paragraph at lines 2742--2743
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (27.00378pt too wide) in paragraph at lines 2712--2714
+Overfull \hbox (27.00378pt too wide) in paragraph at lines 2744--2746
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (207.00562pt too wide) in paragraph at lines 2714--2715
+Overfull \hbox (207.00562pt too wide) in paragraph at lines 2746--2747
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
 
  []
 
 
-Overfull \hbox (645.01007pt too wide) in paragraph at lines 2723--2724
+Overfull \hbox (645.01007pt too wide) in paragraph at lines 2755--2756
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[91]
-Overfull \hbox (87.0044pt too wide) in paragraph at lines 2724--2725
+[92]
+Overfull \hbox (87.0044pt too wide) in paragraph at lines 2756--2757
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (201.00555pt too wide) in paragraph at lines 2731--2732
+Overfull \hbox (201.00555pt too wide) in paragraph at lines 2763--2764
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (69.00421pt too wide) in paragraph at lines 2737--2738
+Overfull \hbox (69.00421pt too wide) in paragraph at lines 2769--2770
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (57.00409pt too wide) in paragraph at lines 2747--2748
+Overfull \hbox (57.00409pt too wide) in paragraph at lines 2779--2780
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (81.00433pt too wide) in paragraph at lines 2757--2758
+Overfull \hbox (81.00433pt too wide) in paragraph at lines 2789--2790
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (81.00433pt too wide) in paragraph at lines 2767--2768
+Overfull \hbox (81.00433pt too wide) in paragraph at lines 2799--2800
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-[92]
-Overfull \hbox (57.00409pt too wide) in paragraph at lines 2777--2778
-[][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (69.00421pt too wide) in paragraph at lines 2787--2788
-[][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (33.00385pt too wide) in paragraph at lines 2810--2811
-[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (21.00372pt too wide) in paragraph at lines 2814--2815
-[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [93]
-Overfull \hbox (45.00397pt too wide) in paragraph at lines 2818--2819
+Overfull \hbox (57.00409pt too wide) in paragraph at lines 2809--2810
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (69.00421pt too wide) in paragraph at lines 2819--2820
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (33.00385pt too wide) in paragraph at lines 2842--2843
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (15.00366pt too wide) in paragraph at lines 2836--2837
+Overfull \hbox (21.00372pt too wide) in paragraph at lines 2846--2847
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2840.
 [94]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2840.
+Overfull \hbox (45.00397pt too wide) in paragraph at lines 2850--2851
+[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (15.00366pt too wide) in paragraph at lines 2868--2869
+[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2872.
+[95]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2872.
  ("Metrics of successful websites and companies.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2840.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2840.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2872.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2872.
 
 Package rerunfilecheck Info: File `"Metrics of successful websites and companie
 s".out' has not changed.
@@ -1709,11 +1719,11 @@ s".out' has not changed.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2840.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2872.
  ) 
 Here is how much of TeX's memory you used:
- 9969 strings out of 493334
- 144022 string characters out of 3140972
+ 9980 strings out of 493334
+ 144099 string characters out of 3140972
  284473 words of memory out of 3000000
  12040 multiletter control sequences out of 15000+200000
  8958 words of font info for 31 fonts, out of 3000000 for 9000
@@ -1737,10 +1747,10 @@ TeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><F:/Downloads/MiKTeX 2.9/fonts
 amsfonts/cm/cmr7.pfb><F:/Downloads/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
 r8.pfb><F:/Downloads/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><F:/D
 ownloads/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on "Metrics of successful websites and companies.pdf" (94 pages,
- 1409282 bytes).
+Output written on "Metrics of successful websites and companies.pdf" (95 pages,
+ 1414147 bytes).
 PDF statistics:
- 2258 PDF objects out of 2487 (max. 8388607)
- 1348 named destinations out of 1440 (max. 500000)
+ 2274 PDF objects out of 2487 (max. 8388607)
+ 1359 named destinations out of 1440 (max. 500000)
  548 words of extra memory for PDF output out of 10000 (max. 10000000)
 
