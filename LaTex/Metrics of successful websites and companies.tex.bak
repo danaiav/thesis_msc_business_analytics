@@ -2016,7 +2016,7 @@ The two selected $\lambda$’s that are indicated by the vertical dotted lines a
 We can use either one in order to see which variables we can keep. We used both of them and we created 2 models. The analytical models are available in the Appendix but you can see the actual variables and their estimates below as well as the measures that indicate how well performed are the models.
 \begin{itemize}
 \item \textbf{Lasso Min model}:\\
-\textit{Revenues = 428.89 - 41.027 (8x15) - 24.134 (44x556) - 5.37 (800x1200)- 15.7302 (24px x 133px) - 4.8865 (50x45) - 29.5016 (400x300) - 85.9726 (60x60) + 2.5989 (bmp) + 0.9183 (dib)}\\
+\textit{Revenues = 222.268 - 41.027 (8x15) - 24.134 (44x556) - 5.37 (800x1200)- 15.7302 (24px x 133px) - 4.8865 (50x45) - 29.5016 (400x300) - 85.9726 (60x60) + 2.5989 (bmp) + 0.9183 (dib)}\\
 \begin{itemize}
 \item Residuals standard error : 14.28 on 338 degrees of freedom (any prediction will be off by 3.33\%)
 \item Adjusted R-squared : 0.7979 (79,79\%)
@@ -2024,7 +2024,7 @@ We can use either one in order to see which variables we can keep. We used both 
 \end{itemize}
 
 \item \textbf{Lasso One standard deviation model}:\\
-\textit{Revenues = 428.5 - 41.027 (8x15) - 24.134 (44x556) - 5.372 (800x1200)- 15.730 (24px x 133px) - 4.887 (50x45) - 28 (400x300) - 87.0776 (60x60)}
+\textit{Revenues = 222.268 - 41.027 (8x15) - 24.134 (44x556) - 5.372 (800x1200)- 15.730 (24px x 133px) - 4.887 (50x45) - 28 (400x300) - 87.077 (60x60)}
 \begin{itemize}
 \item Residuals standard error : 14.73 on 340 degrees of freedom (any prediction will be off by 3.4\%)
 \item Adjusted R-squared : 0.7851 (78,51\%)
@@ -2037,7 +2037,7 @@ Nevertheless we still can check if the model can be improved even more. This tim
 This method takes as inputs the null model and the full model and it goes back and forth and checks which combinations of the variables brings the best results. The model that was created after applying the method is the following one:\\
 \begin{itemize}
 \item \textbf{Both method model}:\\
-\textit{Revenues = 422 - 88.85 (60x60) - 25.93 (44x556) - 43.04 (8x15)- 21.05 (24px x 133px) - 27.14 (400x300) + 2.53 (bmp) - 5.41 (loading time) + 0.039 (jpeg)+ 1.257 (readability) + 2.956 (instagram) }
+\textit{Revenues = 216.04 - 88.85 (60x60) - 25.93 (44x556) - 43.04 (8x15)- 21.05 (24px x 133px) - 27.14 (400x300) + 2.53 (bmp) - 5.41 (loading time) + 0.039 (jpeg)+ 1.257 (readability) + 2.956 (instagram) }
 \begin{itemize}
 \item Residuals standard error : 14 on 337 degrees of freedom (any prediction will be off by 3.31\%)
 \item Adjusted R-squared : 0.8059 (80,59\%)
@@ -2084,7 +2084,7 @@ From the table we can see that as expected the revenues are quite correlated wit
 The highest correlations are between the variables 8x15 and 44x556 (82\% correlated positive) and also between the variables 24px x 133px and 400x300 (83\% positive correlation). From those four variables we will subtract one of each pair in order to see if the model that will be created will perform the same, better or worse from the initial one. We decided to remove from the model the variables 8x15 and 24px x 133px and the new model that was created is the following one:
 \begin{itemize}
 \item \textbf{New model (from the both method) without the 2 variables}:\\
-\textit{Revenues = 394.88 - 88.71 (60x60) - 63.78 (44x556) - 39.25 (400x300) + 2.53 (bmp) - 5.54 (loading time) + 0.039 (jpeg)+ 1.04 (readability) + 2.3284 (instagram) }
+\textit{Revenues = 203.12 - 88.71 (60x60) - 63.78 (44x556) - 39.25 (400x300) + 2.53 (bmp) - 5.54 (loading time) + 0.039 (jpeg)+ 1.04 (readability) + 2.3284 (instagram) }
 \begin{itemize}
 \item Residuals standard error : 14.16 on 339 degrees of freedom (any prediction will be off by 4.17\%)
 \item Adjusted R-squared : 0.8014 (80,14\%)
@@ -2143,7 +2143,7 @@ The next graphs are from the image sizes that are included in the model. As we h
 \includegraphics[scale=0.5]{../R/photos/96_clust_60.png}   \\
 \end{center}
 \end{table}
-
+From the table for the image size 60 x 60 we can see that the 1st cluster has only zero prices which means that the companies with the highest revenues under consideration do not have this image size in their site's homepage.
 \begin{table}[H]
 \centering
 \caption{Image size: 44 x 556 vs Revenues Clustering}
@@ -2151,7 +2151,7 @@ The next graphs are from the image sizes that are included in the model. As we h
 \includegraphics[scale=0.5]{../R/photos/97_clust_44.png}   \\
 \end{center}
 \end{table}
-
+For the image size 44 x 556 we can see that only the 3 sites with the biggest revenues do not use this size of image in their initial pages on their websites.
 \begin{table}[H]
 \centering
 \caption{Image size: 400 x 300 vs Revenues Clustering}
@@ -2159,7 +2159,7 @@ The next graphs are from the image sizes that are included in the model. As we h
 \includegraphics[scale=0.5]{../R/photos/98_clust_400.png}   \\
 \end{center}
 \end{table}
-
+Almost half of the sites that belong to the first cluster which is the one with the highest revenues do not use this size on the images they use on their site.
 \begin{table}[H]
 \centering
 \caption{Image size: 8 x 15 vs Revenues Clustering}
@@ -2167,7 +2167,7 @@ The next graphs are from the image sizes that are included in the model. As we h
 \includegraphics[scale=0.5]{../R/photos/99_clust_8x15.png}   \\
 \end{center}
 \end{table}
-
+With the exception of the two most successful companies that we are examining all the other sites, regardless of the cluster they belong to do use the image size 8 x 15.
 \begin{table}[H]
 \centering
 \caption{Image size: 24px x 133px vs Revenues Clustering}
@@ -2175,17 +2175,43 @@ The next graphs are from the image sizes that are included in the model. As we h
 \includegraphics[scale=0.5]{../R/photos/99_clust_24px.png}   \\
 \end{center}
 \end{table}
+Finally the only size of image that we are using in our analysis  in pixels (24px x 133px) is used from the majority of the sites at hand with the exception of the 6 most successful ones.\\
+From those graphs we can see that the image sizes have a negative relation regarding the revenues as the most successful ones do not use those dimensions even though the specific sizes are being used from the majority of the companies we are examining.\\
+The variables that are not very clear on the correlation with the revenues is the readability and the instagram. While the bmp and the jpeg while they are not being used from the majority of the companies the ones that do use them belong in the cluster with the high revenues.
 \paragraph{Final testing}
-Now we will compare the results to see if we can test any other theory so as to be sure about the final results.
+After clustering the variables in order to see if they can explain indeed the revenues we can also try a final different approach to see if we can improve our model. Based on the model we created the variable that has the highest value regarding the price it gets is the image size (60 x 60) which is (-88.85). So we will extract this variable from the model in order to see how this change effect the accuracy of the model that will be created. The new model is the following one:
+\begin{itemize}
+\item \textbf{New model without the 60 x 60 variable}:\\
+\textit{Revenues = 206.82 - 63.96 (44x556) - 126.11 (400x300) + 2.44 (bmp) - 4.19 (loading time) + 0.036 (jpeg)+ 0.42 (readability) + 0.84 (instagram) }
+\begin{itemize}
+\item Residuals standard error : 19.48 on 340 degrees of freedom (any prediction will be off by 5.72\%)
+\item Adjusted R-squared : 0.624 (80,14\%)
+\item p-value $<$ 0.05
+\end{itemize}
+\end{itemize}
+We can see from the model that the weight of image size 400 x 300 has changed dramatically. But the final result is a lot worst than the original model we have created. This means that the variable 60 x 60 is very important and we should keep it in the model.
 \paragraph{Final model}
 After completing the analysis we can conclude that the most important variable of the websites that can play a crucial role to the actual revenues of a company are the images. More specifically the sizes and the type of the images along with the external links.
 \pagebreak  
 \section{Conclusions}
-This conclusion can be easily explained from the fact that the eye is drowned to specific stimulations. There are many studies that shows that where the eye is going in the first seconds that a user is visiting a page can be crucial. So the right type of image with a correct structure and use of specific image sizes can make a site more likeable and friendly to the users.\\
-Example - Testing of where does the eye drops first\\
-Example - Images and the importance to the psychology\\
-Example - Type of images more easily and rapid loading\\
-Example - Information that the user is looking for not confined only inside the same website\\
+With the completion of the analysis of the variables that we gathered from the python scripts, that were created in order to download the needed information from the html code behind the home pages of the companies, that were ranked as the 500 most successful ones from the Fortune 500, we can reach to the conclusion that the most important indicators that can be related to the actual success of a company are the following ones:
+\begin{itemize}
+\item  \textbf{The loading time of the home page:} \\
+Page loading time is obviously an important part of any website’s user experience. And in many cases companies let it slide to accommodate better aesthetic design, new nifty functionality or to add more content to web pages. Unfortunately, website visitors tend to care more about speed than the rest of the spectaculars that a website can offer. Additionally, page loading time is becoming a more important factor when it comes to search engine rankings.\\
+Search engines like Google use page loading time in algorithms that determine search engine rankings, meaning that they are more likely to guide users to sites that load quickly. This can explain the importance of the loading time on a company's status. 
+\item  \textbf{How easily comprehensible is the text on the site:} \\
+While a website’s visual design is how a company looks online, the site’s writing is how it sounds online. Tone of voice and great content are crucial for communicating on the Internet. Nevertheless, the best copywriting is for nothing if users don’t read the text. As with other areas of user experience, content has to survive a cost–benefit analysis on the part of users:
+Cost: how much hassle and pain do I have to suffer on this website?
+Benefits: What’s in it for me, what will I gain if I read this information?
+For online copy, the barriers to use fall into 3 categories: legibility, readability, and comprehension, each of which is defined and discussed below.
+Readability measures the complexity of the words and sentence structure in a piece of content. The assumption behind this metric is that complex sentences are harder to parse and read than simpler ones. It’s usually reported as the reading level (stated as years of formal education) needed to easily read the text. For example, a 12th grade reading level means that somebody with a good high-school diploma will be able to read the text without difficulty.
+\item \textbf{ Whether or not the company choose to have an instagram account}: \\
+For social media natives, an Instagram account is a stamp of authority and authenticity. These connected customers will often search for an Instagram profile *before* searching for a website. The assumption is that a website is a static PR/Advertising fabrication, as authentic as a classified ad.  Instagram shows and tells more, and more is what today’s consumers expect.
+\item \textbf{Whether or not a company uses specific image sizes}:\\
+The fact that the sizes of the images are extremely important on the status of a company is not a surprise. There has been several studies that shows that when a user is visiting a site he usually focus on specific parts of it. The content/ images the company chooses to use can be crusial to how the user will  
+\item \textbf{Whether or not the images that are being used are of specific types}:
+The type of images are correlated with the loading time of the website in a very high level. 
+\end{itemize}
 \pagebreak  
 \section{Bibliography}
 \begin{thebibliography}{widest-label}
