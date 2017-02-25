@@ -26,12 +26,36 @@
 \tableofcontents
 \newpage
 \section{Introduction}
+
+Over the past two decades, the uncanny growth of the World Wide Web (the Web or WWW),along with the expansion of the users that have access to this medium attracted the attention of enterprises and organisations. The popularity of the Web has created new opportunities for companies to attract new customers or even retain their existing ones through their websites.\\ 
+Even though before the expansion of the Web the on-line presence of a company was not an important factor of the overall success that the enterprise would have in nowadays the vast spread of the impact that internet has on consumers regarding their choices render this hypothesis invalid.\\
+Companies are obliged by the trends to be active on-line and to maintain a website that depicts the image they want their consumers to perceive. By creating a more consumer oriented website they lead the users to create a positive idea regarding the company and this could potentially lead to bigger sales.\\
+The purpose of this paper is to understand the relationship that exists between a company's' website and the overall company's success. A measure that can be comparable between enterprises are the company's' revenues. Trying to comprehend this relationship a comparison will take place between the enterprises that were deemed as the more successful ones from Fortune 500 (based on their revenues) and a number of website metrics in order to understand through the performance of statistical analysis which metrics affect the most a company's success.
+\newpage
+\section{Literature Review }
+The World Wide Web was created and developed in the United States of America and initially it was used from the government and educational and non commercial research institutions only. The first commercial use of the Web was not until 1993.\cite{key1} From then on the Web had an explosive growth that led to the existence of more than 200 million sites by 2005.\cite{key3} By now this number has been increased even more and it keeps growing daily. Taking into account this fact the research around the impact of the web pages into an organisation success is undoubtedly an interesting topic for examination.
+\subsection{Empirical Studies}
+Until now many studies have been conducted in the attempt to provide information regarding a vast number of different aspects of the Web and the trends that exist on it regarding the commercial behaviour of the users.\\
+Many researchers thought that the internet and more specifically the Web is the best platform to attract more visitors and to reach new clients.\cite{key4} Based on this idea there has been many studies that have examined the best way to create websites based on a consumer friendly design in order to add value to the users. Since a user interface that is perceived as very good is a vital factor in the retention rate of the visitors\cite{key6} there has been many studies that investigate what constitutes an excellent interface.Wei-Shang Fan and Ming-Chun Tsai\cite{key5} in 2010 studied the relation between the internet customisation with the web design and the internet marketing strategy. This research showed that organisations should engage in internet customization planning and create their internet marketing strategies with the goal to attract consumers to browse and even purchase products from their websites. In order to make the operations of the website successful and appealing to consumers they should provide product information and offer them services that will cover their needs, as a result they should focus on the websites overall design.\\
+Nevertheless even though there are previous studies that have investigates the critical success factors of a website overall design, most of those findings were derived from questionnaires that were implemented on internet users or even web designers. A content analysis of a website features was conducted in 1997\cite{key7} where the authors examined the companies of the Fortune 500 to see how many of those had web sites, in which industries did they belong, whether or not where there any differences in the revenues regarding the existence of a site and content of the pages. The findings of this research showed that even in 1997 the two thirds of the companies in the list had already set up their web pages regardless their industries. This findings shows a high correlation of successful companies with the use of web sites as a mean to reach potential customers.\\
+Moreover in 2006 there has been a study that compared the use of websites in the top 1000 successful companies between two different countries\cite{key2} Us and Taiwan in order to understand the diversities in the web practices. The results showed that the countries are in different stages regarding the maturity of the internet usage for consumer attraction.\\
+Regarding the web sitee
+
+
  
-An on-line presence of a company was not an important factor of the overall success that the enterprise would have until a few years ago. Taking although into account the vast spread of the impact that internet has on consumers regarding their brand choices and their products this hypothesis is not valid any more. Companies are obliged by the trends to be active on-line and to maintain a website that depicts the image they want their consumers to perceive. By creating a more consumer orientated image they lead the users to create a positive idea regarding the company and this could potentially lead to bigger sales. The purpose of this paper is to understand the relationship that exists between the website of a company and its success. As success we will consider the amount of revenues of the company. Trying to comprehend this relationship a comparison will take place between the enterprises that were deemed as the more successful ones from Fortune 500  based on their revenues and a number of website metrics in order to see by performing regression models and statistical analysis which metrics do affect the most or are related the most with a company's success.
+\subsection{Thesis hypothesis}
+This study extends beyond previous studies by devoting most effort on examining specific web site metrics that were deemed important from previous studies that were based on the perceptions of web users in relation only to the revenues of a company regardless any other information for the enterprise.\\
+The questions of the research were the following:
+\begin{enumerate}
+\item Does revenues of companies relate to the presence of the website?
+\item Which of the metrics under examination are correlated the most with the revenues of each company of the Fortune 500 ones?
+\item Can there be a predictive model that, based on the prices of the metrics that will be characterized as the more important ones from the findings, could forecast the revenues of an enterprise?
+\end{enumerate}
+
 \newpage
 \section{Data gathering}
 The first step in order to contact this research is to find which companies we are going to examine. Since the purpose of this paper is to see if the website metrics that will be examined are influencing the success of the company it is a good idea to examine websites of some already successful companies and try to find out what they have in common. Thus as it is mentioned in the introduction we will examine the 500 companies that were ranked as the most successful ones from Fortune 500.
-\subsection{Data Source - Fortune 500}\label{ds:f500}
+\subsection{Data Source}\label{ds:f500}
 The Fortune 500 is an annual list compiled and published by Fortune magazine that ranks 500 of the largest United States corporations by total revenue for their respective fiscal years. The list includes public companies, along with privately held companies for which revenues are publicly available.\cite{key1, key2}\\ 
 For the purposes of this paper we will use this list of companies and we will examine their websites in order to understand if they indeed have something in common or if their success is irrelevant with their on-line presence.\\
 The first thing that we will need is a list of the names that are include in the fortune 500. The easiest way to obtain this list is from the following article:
@@ -119,14 +143,14 @@ Since the site is the first thing that a user will see for the company and there
 They say a picture worth a thousand words but that is not enough in our case. After exploring the number, sizes and type of pictures that a website is using we should also explore the number of words it is using to accompany the images and complete the outcome that a user will come across. The metrics we will use will be two. The first one will be the total words that are being used in the landing page and the other one will be the total unique words that are being used. When we are referring to unique words we mean words that are not so commonly use such as "a" or "and" and they give an air of individuality to the text. By using this metric we would try to see if the words that are being used are just as important as the actual content and if the words can make a difference.\\
 Furthermore we should also take under consideration how comprehending is the text used in the websites for the users. This information can be obtained by calculating the readability index of the website and also the number of sentences that exists in a page (a metric that comes to complete the previous ones).How the readability index is being calculating will be furthered explained in another section.
 \subsubsection{HTML Validation:} \label{M:HTML Validation} Moreover we will have to check the quality of the html code behind the website we are seeing. Are there any mistakes in the code for example any brackets that opened and never closed or any links that do not work. We will examine again two different metrics here the number of errors and the number of warnings. The warning are parts of the code that even though they work at the time there is a good chance to malfunction if any changes or addition are to be made to the html code. 
-\subsection{Python}
+\subsection{Python Language}
 After having a first look into the variables/ metrics we will use in order to contact this research we should now see how we are going to obtain all this information.\\
 Since all of this information can be subtract from the html code of a company's website we should use a programming language in order to download the html pages and then to extract the specific metrics we want to examine from them.\\
 For the purposes of this paper the programming language that will be used for downloading the metrics from the websites is Python. More specifically the version of Python that will be used is the 2.7 one.\\
 Python is a widely used high-level programming language used for general-purpose programming, created by Guido van Rossum and first released in 1991. An interpreted language, Python has a design philosophy which emphasizes code readability (notably using white space indentation to delimit code blocks rather than curly braces or keywords), and a syntax which allows programmers to express concepts in fewer lines of code than possible in languages such as C++ or Java. \\
 The language provides constructs intended to enable writing clear programs on both a small and large scale. Furthermore the way that Python allows a user to programming is common to all users which gives this language a leverage as a program build in Python can be easily understood from another user without any difficulty.\\
 The environment that is going to be used is from the Anaconda package which is a free open source distribution of the Python and R programming languages for large-scale data processing, predictive analytics, and scientific computing, that aims to simplify package management and deployment. To be more precise from this package we are going to use the Jupyter Notebook.\cite{key4} \\
-\subsection{Scripts}
+\subsection{Variables collection}
 In order to gather all the needed metrics we had to create a variety of small scripts so as to collect them. In this section we will present in detail the procedure and the actual scripts that were used in order to extract the information that later will help us contact the analysis of the relationship between those metrics and the company's status.
 \subsubsection{Companies ranking, names and url}
 For starters we need to create a list with the names, the ranking and the URL of the sites that we will later download and extract the necessary info from them. So as it was mentioned in the previous section\ref{ds:f500} the first step that needs to be done is to download and gather those informations into a data frame\footnote{a table in Python environment with rows and columns} so as to be able to use them later on.\\
@@ -1337,7 +1361,7 @@ final.to_csv('total_500_new.csv', sep=';')
 \newpage  
 \section{Data Analysis}
 Now that we have gathered all the information needed the next step is to proceed to their analysis. For the purposes of this assignment we will use the programming language R to perform this analysis.
-\subsection{R and R-Studio}
+\subsection{R Language}
 R is a programming language and software environment for statistical computing and graphics supported by the R Foundation for Statistical Computing. The R language is widely used among statisticians and data miners for developing statistical software and data analysis.\\ 
 Furthermore R is freely available under the GNU General Public License, and pre-compiled binary versions are provided for various operating systems. While R has a command line interface, there are several graphical front-ends available.\\
 For the purpose of this paper we will use the R-Studio which  is a free and open-source integrated development environment (IDE) for R.
@@ -2208,27 +2232,42 @@ Readability measures the complexity of the words and sentence structure in a pie
 \item \textbf{ Whether or not the company choose to have an instagram account}: \\
 For social media natives, an Instagram account is a stamp of authority and authenticity. These connected customers will often search for an Instagram profile *before* searching for a website. The assumption is that a website is a static PR/Advertising fabrication, as authentic as a classified ad.  Instagram shows and tells more, and more is what today’s consumers expect.
 \item \textbf{Whether or not a company uses specific image sizes}:\\
-The fact that the sizes of the images are extremely important on the status of a company is not a surprise. There has been several studies that shows that when a user is visiting a site he usually focus on specific parts of it. The content/ images the company chooses to use can be crusial to how the user will  
-\item \textbf{Whether or not the images that are being used are of specific types}:
+The fact that the sizes of the images are extremely important on the status of a company is not a surprise. There has been several studies that shows that when a user is visiting a site he usually focus on specific parts of it. The content/ images the company chooses to use can be crucial to how the user will perceive the website an whether or not he will choose to continue looking around on it. 
+\item \textbf{Whether or not the images that are being used are of specific types}:\\
 The type of images are correlated with the loading time of the website in a very high level. 
 \end{itemize}
+\subsection{Findings summary}
+\subsection{Findings contribution}
+\subsubsection{Theoretical level}
+\subsubsection{Managerial level}
+\pagebreak
+\section{Further Research}
+
+
 \pagebreak  
 \section{Bibliography}
 \begin{thebibliography}{widest-label}
+\bibitem{key6}Fan X., Salvendy G. (2003). Customer-centered rules for design of e-commerce Web sites. Communications of the ACM, 46(12), 332-336
+\bibitem{key1}Forte R. M.(2015). Mastering Predictive Analytics with R. Packt Publishing Ltd.
+\bibitem{key4}Hoffman D. L., Novak T.P.(2000). How to acquire customers on the Web. Harvard Business Review, 78(3), 179-188
+\bibitem{key2} Liao C., To P., Shih M.(2006). Web site practices: A comparison between the top 1000 companies in the US and Taiwan. Information Systems Research, 26, 196-211
+\bibitem{key7} Liu, C., Arnett, K. P., Capella, L. M., Beatty, R. C. (1997). Web sites of the Fortune 500 companies: Facing customers through home pages. Information and Management, 31(6), 335–345
+\bibitem{key8} Monideepa T., Jie Z.(2005) Analysis of Critical Website Characteristics: A Cross-Category Study of Successful Websites, Journal of Computer Information Systems, 46:2, 14-24
+\bibitem{key3}Palmer J. W. (2002). Web site usability, design, and performance metrics. Information Systems Research, 13(2), 151-167
+\bibitem{key5}Wei-Shang Fan, Ming-Chun Tsai (2010). Factors driving website success: the key role of Internet customisation and the influence of website design quality and Internet
+marketing strategy. Total Quality Management and Business Excellence, 21:11, 1141-1159
 
-\bibitem{key1}$https://en.wikipedia.org/wiki/Fortune_500$
-\bibitem{key2}$http://beta.fortune.com/fortune500$
-\bibitem{key3}$http://www.tablesgenerator.com/$
-\bibitem{key4}$https://www.continuum.io/downloads$
-\bibitem{key5}$https://validator.w3.org/$
-\bibitem{key6}Rui Miguel Forte,Mastering Predictive Analytics with R,Packt Publishing Ltd.,June 2015
-
-
+\bibitem{A1}$https://en.wikipedia.org/wiki/Fortune_500$
+\bibitem{A2}$http://beta.fortune.com/fortune500$
+\bibitem{A3}$http://www.tablesgenerator.com/$
+\bibitem{A4}$https://www.continuum.io/downloads$
+\bibitem{A5}$https://validator.w3.org/$
 \end{thebibliography}
 
 \newpage
 \appendix
-\section{Appendix A: Fortune 500 Companies} \label{appA}
+\section{Appendix}
+\subsection{Appendix A: Fortune 500 Companies} \label{appA}
 % the \\ insures the section title is centered below the phrase: AppendixA
 \begin{table}[H]
 \centering
@@ -2794,22 +2833,8 @@ The type of images are correlated with the loading time of the website in a very
 
 \end{tabular}
 \end{table}
-
-
-
-
-
-
-
-
-
-
-
-
-
-\section{Appendix B: Python Scripts} \label{appP}
-
-\section{Appendix C: R Scripts} \label{appP}
+\subsection{Appendix B: Python Scripts} \label{appP}
+\subsection{Appendix C: R Scripts} \label{appP}
 \subsubsection{Data cleansing}\label{r:data cleansing}
 \begin{lstlisting}[language=R]
 #we upload the dataset
