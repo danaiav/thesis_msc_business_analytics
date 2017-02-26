@@ -61,7 +61,7 @@ Furthermore, due to this rapid evolution of the use of social media many differe
 \begin{itemize}
 \item \textbf{Twitter} : As of the fourth quarter of 2016, the microblogging service 319 million active users per month.\cite{key28}
 \item \textbf{Instagram} : As of December 2016, the mainly mobile photo sharing network had reached 600 million monthly active users.\cite{key29}
-\item \textbf{Pinterest} : As of October 2016, the content sharing service has reached 150 million monthly active users.\cite{key30}
+\item \textbf{Pinterest} : As of October 2016, the content sharing service has reached 150 million monthly active users.\cite{key47}
 \item\textbf{Linkedin}: As of the third quarter of 2016, the business and employment-oriented social networking service had reached 467 million members.\cite{key31}
 \item\textbf{Youtube} : As of January 2017,the 3rd most visited website in the world has reached over 1,3 billion active users.\cite{key32}
 \end{itemize}
@@ -343,7 +343,7 @@ Aside from the number of images and the types that are being used another import
 \textbf{Step 9}: We run this function as well\\\\
 \textbf{Step 10}: We create a new function where we want to make to variables that will give True or False depending on whether or not a specific company's website has a specific dimension of the ones we gathered in the previous script. Firstly we create the initial lists and then the function and the initial loop for the 500 sites.\\\\
 \textbf{Step 11}: Again in this function we create lists inside of lists since we have lists of different dimensions and lists of different sizes and we must combine them in one list with the results of True or False first for each site and further more for each dimension. In the end we print the duration of the function.\\\\
-\textbf{Step 12}: We run the function\\\
+\textbf{Step 12}: We run the function\\\\
 \textbf{Step 13}: We create an initial data frame where we will add the sizes later on.\\\\
 \textbf{Step 14}: As we said before we have created a final list that its results is other lists so what we need to do now is to create a function in order to break this variable that we created so as to add it in a proper manner in the data frame we created. Again we calculate the time it does for the function to be completed.\\\\
 \textbf{Step 15}: Run the last function and create the final data frame.\\
@@ -1010,15 +1010,7 @@ This scenarios are respectively interpreted as follows:
 \item The model explains a lot of variation within the data and is significant (best scenario)
 \item The model explains a lot of variation within the data but is not significant (model is worthless)
 \end{enumerate}
-In our case the model has an Adjusted R Square of 79\% and a p value $<$ 0.05. This means that we are in the best case scenario. 
-\begin{table}[H]
-\centering
-\caption{Full regression model}
-\begin{center}
-\includegraphics[scale=0.6]{../R/photos/66_FULL_PART1.PNG} 
-\includegraphics[scale=0.6]{../R/photos/66_FULL_PART2.PNG}  \\
-\end{center}
-\end{table}
+In our case the model has an Adjusted R Square of 79\% and a p value $<$ 0.05. This means that we are in the best case scenario. The model is available in the Appendix.\ref{d :r :1}
 \paragraph{Lasso Method}
 Even though the results of the full model indicates that the model is quite good we shouldn't be contained with these results. Since this is the full model we could also try some other methods in order to see if we can make it even better.\\
 The first method we are going to implement is the Lasso (least absolute shrinkage and selection operator). The Lasso method is a regression analysis method that performs both variable selection and regularization in order to enhance the prediction accuracy and interpret-ability of the statistical model it produces.\\
@@ -1090,9 +1082,9 @@ As it is easily observed the model is better than the one we found with the Lass
 Now that we have created three models we should check in actual data which of them works better. Based on the measures, we have already seen that the model of the both method has better perspectives to be the most accurate one. Now we will try to predict the revenue prices of the test set by looking only at the independent values and by implementing the models. Then we will compare those results with the actual revenues to see how well did the models perform.In the following table we can see the results of the predictions:
 \begin{table}[H]
 \centering
-\caption{Lasso variables}
+\caption{Model comparison}
 \begin{center}
-\includegraphics[scale=0.5]{../R/photos/85_pred_mod.png}    \\
+\includegraphics[scale=0.6]{../R/photos/85_pred_mod.png}    \\
 \end{center}
 \end{table}
 From the above table we can see that the highest price of the actual revenues in close to 100. The only model that goes close but do not supersedes this number is the one from the both method (model a). The other two while they are doing quite well predictions we can see that in the high revenue sites they reach the 120 million dollars which are bigger than the actual ones and also in the low prices they do not differentiate at all all the predictions are close to zero, unlike the model of the method both where the predictions, while they seem to differ a little from the actuals they seem to have a better capture of the correct revenues.\\
@@ -1140,7 +1132,7 @@ The observations of the variables should have a clear pattern regarding the reve
 \centering
 \caption{Loading time vs Revenues Clustering}
 \begin{center}
-\includegraphics[scale=0.4]{../R/photos/91_clust_ld.png}   \\
+\includegraphics[scale=0.6]{../R/photos/91_clust_ld.png}   \\
 \end{center}
 \end{table}
 In the graph regarding the loading time we can see that the clusters are divided very clearly. The first cluster contains all the companies that have revenues more than 75 million dollars while the 3rd cluster contains all the companies that have less than 75 million dollars in revenues. The second cluster contains only one observation. It is not clear from this graph why this observation has been clustered alone but by continuing with the further analysis of the clusters with the other variables it would be more clear why the groups were divided in this way.
@@ -1148,7 +1140,7 @@ In the graph regarding the loading time we can see that the clusters are divided
 \centering
 \caption{Readability vs Revenues Clustering}
 \begin{center}
-\includegraphics[scale=0.4]{../R/photos/92_clust_read.png}   \\
+\includegraphics[scale=0.5]{../R/photos/92_clust_read.png}   \\
 \end{center}
 \end{table}
 Again here the deviation happened in the revenue values of 75 million dollars except from the one observation of the second cluster.
@@ -1236,11 +1228,12 @@ After completing the analysis we can conclude that there are specific images dim
 \section{Conclusions}
 With the completion of all the stages of the paper's analysis we showed the correlation between some of the most important metrics of a website and the revenues of the firm that owns the specific website. By gathering the elements we wanted to examine ,with the help of the programming language Python, we were able to perform a statistical analysis on them, with the use of the programming language R in the environment of the R-Studio, and moreover create regression models and predictive models that can provide us with a better understanding of the variables relationship with the revenues. Based on those results we can answer the questions that were raised in the beginning of this paper:
 \begin{enumerate}
-\item Do the revenues of a company relate to specific metrics of the company's website?\\
-There were specific metrics that seems to be correlated in a high level with the revenues of the company. These metrics are the loading time of the web page, the readability index, the existence of an instagram account link in the home page of the site, the usage of specific image types and the non usage of specific image dimensions.
-\item Which of the metrics under examination are correlated the most with the revenues of each company of the Fortune 500 ones?
-
-\item Can there be a predictive model that, based on the prices of the metrics that will be characterized as the more important ones from the findings, could forecast the revenues of an enterprise?
+\item \textbf{\textit{Do the revenues of a company relate to specific metrics of the company's website?}}\\
+Based on the analysis that was conducted there were many variables that seem to be correlated with the revenues of a company. The were small and high correlations as well as negative and positive ones depending on the variable at hand. Most of them did show that can relate up to a specific point with the revenues of a firm.
+\item \textbf{\textit{Which of the metrics under examination are correlated the most with the revenues of each company of the Fortune 500 ones?}}\\
+Even though most of the metrics had even a small correlation with the revenues there were specific variables that seemed to be correlated in a high level with the revenues of the company. These metrics are the loading time of the web page, the readability index, the existence of an instagram account link in the home page of the site, the usage of specific image types and the non usage of specific image dimensions.
+\item \textbf{\textit{Can there be a predictive model that, based on the prices of the metrics that will be characterized as the more important ones from the findings, could forecast the revenues of an enterprise?}}\\
+In the analysis part of the paper that was conducted we created many models that can predict with a certain level of accuracy the revenues that a company will have based on the prices that will give to specific variables. The best model of the ones that we created can predict the revenues with an accuracy of 96,69\%.
 \end{enumerate}
 In the following sectors there will be a summary of the findings of this research along with an explanation on how those findings can contribute to the already existent studies.
 \subsection{Findings summary}
@@ -1250,23 +1243,37 @@ With the completion of the analysis we can reach to the conclusion that the most
 Page loading time is obviously an important part of any website's user experience. And in many cases companies let it slide to accommodate better aesthetic design, new nifty functionality or to add more content to web pages. Unfortunately, website visitors tend to care more about speed than the rest of the spectaculars that a website can offer. Additionally, page loading time is becoming a more important factor when it comes to search engine rankings.\\
 Search engines like Google use page loading time in algorithms that determine search engine rankings, meaning that they are more likely to guide users to sites that load quickly. This can explain the fact that the loading time has a negative correlation with the company's status (in terms of revenues). As a result the findings of this paper comes to confirm the already established theory that loading time is an important factor of how a user is perceiving a website. The user perception has to do with his future endeavours with the firm and if he has an ill formed opinion he most likely won't use the company's product again. Based on these facts it is obvious that this parameter can actually interfere with the company's future success. 
 \item  \textbf{How comprehensible is the text on the site:} \\
-While a website’s visual design is how a company looks online, the site’s writing is how it sounds online. Tone of voice and great content are crucial for communicating on the Internet. Nevertheless, the best copywriting is for nothing if users don’t read the text. As with other areas of user experience, content has to survive a cost–benefit analysis on the part of users:
-Cost: how much hassle and pain do I have to suffer on this website?
-Benefits: What’s in it for me, what will I gain if I read this information?
-For online copy, the barriers to use fall into 3 categories: legibility, readability, and comprehension, each of which is defined and discussed below.
-Readability measures the complexity of the words and sentence structure in a piece of content. The assumption behind this metric is that complex sentences are harder to parse and read than simpler ones. It’s usually reported as the reading level (stated as years of formal education) needed to easily read the text. For example, a 12th grade reading level means that somebody with a good high-school diploma will be able to read the text without difficulty.
+While a website's visual design is how a company looks on-line and is being perceived by the user's eye, the site's content in terms of the texts that it contains is how it sounds on-line. Tone of voice and great content are crucial for communicating on the Internet. Nevertheless, the best copy writing is for nothing if users don't read the text. As with other areas of user experience, content has to survive a cost benefit analysis on the part of the users. This analysis should answer two basic questions:
+\begin{enumerate}
+\item How much hassle and pain should the user suffer on the website?
+\item What should he gain from reading the text?
+\end{enumerate}
+This means that from a user point of view even though he wants to take the information from a website we wants to find the best balance between the energy he should spend in reading the content and the information he would receive. In other words the information quality and the navigation quality of the website should be high. Based on the results of this paper we can see that the readability index, for which the higher the price the more difficult the text in a website would be, has a positive correlation with the revenues. That can be translated and supported from the assumption that has already been made in previous researches that the information quality plays a very important role for the user. This means that a user do not mind to read a more difficult text as long as the information that it contains will provide him with useful knowledge that will be perceived as beneficial for him.
+
 \item \textbf{ Whether or not the company choose to have an instagram account}: \\
-For social media natives, an Instagram account is a stamp of authority and authenticity. These connected customers will often search for an Instagram profile *before* searching for a website. The assumption is that a website is a static PR/Advertising fabrication, as authentic as a classified ad.  Instagram shows and tells more, and more is what today’s consumers expect.
+The analysis showed that whether or not a company choose to have a hyperlink on it's website of it's instagram account has a positive correlation with it's revenues. This can be explained based on the users satisfaction. A user is more satisfied with a brand that he has come to trust. Brand trust can be defined\cite{key55} as the willingness of the average consumer to rely on the ability of the brand to perform it's state function. When a situation presents uncertainty, information asymmetry or fear of opportunism trust plays a crucial role in decreasing the uncertainty. \\
+For social media natives, an instagram account is a stamp of authority and authenticity. These connected customers will often search for an instagram profile *before* searching for a website. The assumption is that a website is a static PR/Advertising fabrication, as authentic as a classified ad.  Instagram shows and tells more for a firm, and more is what today’s consumers expect from a company.
 \item \textbf{Whether or not a company uses specific image sizes}:\\
-The fact that the sizes of the images are extremely important on the status of a company is not a surprise. There has been several studies that shows that when a user is visiting a site he usually focus on specific parts of it. The content/ images the company chooses to use can be crucial to how the user will perceive the website an whether or not he will choose to continue looking around on it. 
+The fact that the sizes of the images are extremely important on the status of a company is not a surprise. There has been several studies that have shown that the layout of a website is extremely important in how the user interacts wit hit. The ease of navigation is not only correlated with the hyper links as we have already mentioned but also with the structure and the layout of a website. This means that specific dimensions may render the site less attractive to the user and create a level of difficulty for him to navigate on it.\\
+Based on the results of this paper we located some specific dimensions that have negative correlation with the revenues of a firm. In other words if a company chooses to use these image sizes it is more likely to make it more difficult for the user to navigate on it's website and as a result to decrease his satisfaction regarding the specific company and it's home page.   
 \item \textbf{Whether or not the images that are being used are of specific types}:\\
-The type of images are correlated with the loading time of the website in a very high level. 
+The type of images are correlated with the loading time of the website in a very high level. There are specific image and multimedia files that can delay in a very high degree the time that a website will do to upload it's pages. As it has been mentioned before the importance of a fast loading site is extremely important for the users and this can also explain why there are specific image types that have positive correlation with the revenues of a firm.\\
+These types are two of the most widely used types globally. They are easily loadable and they do not cause any delays in the overall websites loading time. This fact combined with the user satisfaction regarding a fast loading site explains the reason that this correlation exists.
 \end{itemize}
 \subsection{Findings contribution}
+The findings that were analysed in the previous sections can be used in order to help in a theoretical level the existing studies but also in a managerial level.
 \subsubsection{Theoretical level}
+The findings of this paper are confirmed from previous studies that have been conducted regarding the relationship between a company's website and it's revenues. The adding value that this paper can give to the already existing research is the fact that the results are not grouped by any industry. Moreover the research did not involve any questionnaire in order to implement the perspective of the website users in it's results. This means that the metrics which proved to be related with the revenues are common among all successful firms.\\
+Furthermore while some already conducted researches showed that the readability level should be easy in order for the users to be satisfied with it, the actual results of the paper show that a user is willing to read a more difficult text. Of course this is also related to the information quality of the website. In other words while the user is willing to read a more complicated text he also wants to receive a certain amount of useful information from it (perceived value of the content). This finding can help researchers examine in more depth the way the user understand the content value of a website.
 \subsubsection{Managerial level}
+In terms of a managerial level the findings could help an enterprise that wants to either create or change its website, to find what they can implement and what to avoid in order to achieve the best possible website structure and layout so as to lead in a better satisfaction level of the future website users and this by it's turn can lead to bigger revenues in the future.\\
+Since we have already located specific does and dont's regarding the metrics that were examined we can advise companies to apply them in their websites and then let us know if those changes lead to better results regarding their revenues.\\
+Moreover the most accurate predictive model that was created during the analysis part of this paper, can be applied in a firm's choices on the variables that constitutes the independable variables of the model and give them a first idea of how the website can affect their success.
 \pagebreak
 \section{Further Research}
+Even though the results of this paper have helped to give a more clear understanding of which are the metrics that are more highly correlated with a company's revenue there is always place for further research.\\
+This paper has taken into account specific measurements of a website and also specific companies. It would be wise to conduct a further research in an even wider number of companies in order to verify the findings. Furthermore, with the collaboration of the firms a more thoroughly study regarding the metrics that will be analysed can take place. By the accordance of a company to provide even more metrics a more in depth analysis of this correlation can be conducted.\\
+The consideration of more companies should not only be from one country. The implementation of firms from a global level could lead to the creation of a predictive model that could apply to companies worldwide. This could also lead to locating the metrics that correlate with the revenues not only in an already successful company, such as the ones that are examined in this paper, but in any type of firm.\\
 
 
 \pagebreak  
@@ -1284,6 +1291,8 @@ Management Science, 29:5, 530-545
 
 \bibitem{key15}Cohen J.B. (1960). A Coefficient of Agreement for Nominal Scales. Educational and Psychology Measurement, 20,
 37-46
+
+\bibitem{key55}Chaudhuri A., Holbrook M. B. (2001). The chain of effects from brand trust and brand affect to brand performance: The role of brand loyalty. Journal of Marketing, 65(4), 81–93
 
 \bibitem{key16}Davis F.D., Bagozzi RP., Warshaw P.R. (1989). User Acceptance of Computer Technology: A Comparison of
 Two Theoretical Models. Management Science, 35:8, 982-1003
@@ -1349,7 +1358,7 @@ marketing strategy. Total Quality Management and Business Excellence, 21:11, 114
 
 \bibitem{key26}Forbes (2015). Retrieved February 26, 2017, from $https://www.forbes.com/sites/kathleenchaykowski/2015/12/08/facebook-business-pages-climb-to-50-million-with-new-messaging-tools/$\#$4b75d1d46991$
 
-\bibitem{key27}Forbes (2016). Retrieved February 26, 2017, from $https://www.forbes.com/sites/kathleenchaykowski/2016/10/13/pinterest-reaches-150-million-monthly-users/$\#$2a5f63f4732e$
+\bibitem{key47}Forbes (2016). Retrieved February 26, 2017, from $https://www.forbes.com/sites/kathleenchaykowski/2016/10/13/pinterest-reaches-150-million-monthly-users/$\#$2a5f63f4732e$
 
 \bibitem{key35}Fortune 500 (2017). Retrieved January 29, 2017, from $http://beta.fortune.com/fortune500$
 
@@ -1995,18 +2004,21 @@ marketing strategy. Total Quality Management and Business Excellence, 21:11, 114
 
 \end{tabular}
 \end{table}
-
 \newpage
 \subsection{Appendix B: Python Scripts} \label{appP}
 
-\paragraph{\textbf{Script 1: Initial lists}}\label{p1}
+\begin{center}
+\textit{\textbf{Script 1: Initial lists}}\label{p1}
+\end{center}
 \begin{lstlisting}[language=Python]
 list_company_number =[]
 list_company_name = []
 list_company_website = []
 \end{lstlisting}
 
-\paragraph{\textbf{Script 2: Python Libraries}}\label{p2}
+\begin{center}
+\textit{\textbf{Script 2: Python Libraries}}\label{p2}
+\end{center}
 \begin{lstlisting}[language=Python]
 import urllib
 import urllib2
@@ -2019,7 +2031,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 \end{lstlisting}
 
-\paragraph{\textbf{Script 3: Companies ranking, names and url}}\label{p3}
+\begin{center}
+\textit{\textbf{Script 3: Companies ranking, names and url}}\label{p3}
+\end{center}
 \begin{lstlisting}[language=Python]
 def websites (url): 
     from time import time
@@ -2062,7 +2076,9 @@ def websites (url):
     print 'The lists are ready in ', minutes, ' minutes'
 \end{lstlisting}
 
-\paragraph{\textbf{Script 4: URL Validation}}\label{p4}
+\begin{center}
+\textit{\textbf{Script 4: URL Validation}}\label{p4}
+\end{center}
 \begin{lstlisting}[language=Python]
 nv = 0
 for num in range(len(list_company_website)):
@@ -2074,7 +2090,9 @@ print "The validation is complete! There were" , nv,
  "not valid pages"
 \end{lstlisting}
 
-\paragraph{\textbf{Script 5: Download sites HTML}}\label{p5}
+\begin{center}
+\textit{\textbf{Script 5: Download sites HTML}}\label{p5}
+\end{center}
 \begin{lstlisting}[language=Python]
 import time
 browser2 = urllib2.build_opener()
@@ -2112,7 +2130,9 @@ for i in range (0,500):
         time.sleep(2)         
 \end{lstlisting}
 
-\paragraph{\textbf{Script 6: Not downloadable HTML}}\label{p6}
+\begin{center}
+\textit{\textbf{Script 6: Not downloadable HTML}}\label{p6}
+\end{center}
 \begin{lstlisting}[language=Python]
 not_d = []
 not_d_n = []
@@ -2135,7 +2155,9 @@ nd = pd.DataFrame(d)
 nd
 \end{lstlisting}
 
-\paragraph{{\textbf{Script 7: Content}}\label{p7}
+\begin{center}
+\textit{\textbf{Script 7: Content}}\label{p7}
+\end{center}
 \begin{lstlisting}[language=Python]
 flesch = []
 sentence = []
@@ -2239,7 +2261,9 @@ for num in range(0,500):
     time.sleep(2)
 \end{lstlisting}
 
-\paragraph{\textbf{Script 8: Readability variable}}\label{p8}
+\begin{center}
+\textit{\textbf{Script 8: Readability variable}}\label{p8}
+\end{center}
 \begin{lstlisting}[language=Python]
 readability = []
 def readable (flesch):
@@ -2277,7 +2301,9 @@ d1 = {'company' : pd.Series(list500_names, index=[list500_num]),
 fre = pd.DataFrame(d1)    
 \end{lstlisting}
 
-\paragraph{\textbf{Script 9: HTML Validation}}\label{p9}
+\begin{center}
+\textit{\textbf{Script 9: HTML Validation}}\label{p9}
+\end{center}
 \begin{lstlisting}[language=Python]
 num_errors = []
 num_info_warnings = []
@@ -2343,7 +2369,9 @@ html_val = pd.DataFrame(d8)
 html_val.head(3) 
 \end{lstlisting}
 
-\paragraph{\textbf{Script 10: Social media variables}}\label{p10}
+\begin{center}
+\textit{\textbf{Script 10: Social media variables}}\label{p10}
+\end{center}
 \begin{lstlisting}[language=Python]
 sm_f = []
 sm_t = []
@@ -2430,7 +2458,9 @@ d2 = {'company' : pd.Series(sm_nm, index=[nm]),
 social_media = pd.DataFrame(d2) 
 \end{lstlisting}
 
-\paragraph{\textbf{Script 11: Links Internal and External variables}} \label{p11}
+\begin{center}
+\textit{\textbf{Script 11: Links Internal and External variables}} \label{p11}
+\end{center}
 \begin{lstlisting}[language=Python]
 l_nm = []
 l_ex = []
@@ -2479,6 +2509,7 @@ sites_links = pd.DataFrame(d3)
 
 \begin{center}
 \textit{\textbf{Script 12: Loading time variable}}\label{p12}
+\end{center}
 \begin{lstlisting}[language=Python]
 lt_nm = [] 
 lt_time = []
@@ -2530,7 +2561,9 @@ d4 = {'company' : pd.Series(lt_nm, index=[nm]),
 loading_time = pd.DataFrame(d4)    
 \end{lstlisting}
 
-\paragraph{\textbf{Script 13: Types and Number of Images variables}}\label{p13}
+\begin{center}
+\textit{\textbf{Script 13: Types and Number of Images variables}}\label{p13}
+\end{center}
 \begin{lstlisting}[language=Python]
 p_p = []
 p_d = []
@@ -2627,7 +2660,9 @@ d5 = {'company' : pd.Series(p_nm, index=[nm]),
 images_types = pd.DataFrame(d5)    
 \end{lstlisting}
 
-\paragraph{\textbf{Script 14: Different image sizes per company function}}\label{p14}
+\begin{center}
+\textit{\textbf{Script 14: Different image sizes per company function}}\label{p14}
+\end{center}
 \begin{lstlisting}[language=Python]
 nm = []
 s_comp = []
@@ -2713,7 +2748,9 @@ def find_dif_sizes (list_company_website,list500_names,list500_url):
 find_dif_sizes (list500_sites,list500_names,list500_url)
 \end{lstlisting} 
 
-\paragraph{\textbf{Script 15: Unique Image Sizes across all companies function}}\label{p15}
+\begin{center}
+\textit{\textbf{Script 15: Unique Image Sizes across all companies function}}\label{p15}
+\end{center}
 \begin{lstlisting}[language=Python]
 dif_size = []  
 un_size = [] 
@@ -2739,7 +2776,9 @@ unique_dif_sizes (s_dimensions,list500_names)
 \end{lstlisting}
 
 
-\paragraph{\textbf{Script 16: The unique dimensions per company True or False function}}\label{p16}
+\begin{center}
+\textit{\textbf{Script 16: The unique dimensions per company True or False function}}\label{p16}
+\end{center}
 \begin{lstlisting}[language=Python]
 t_f_s = []
 ttf = []
@@ -2779,7 +2818,9 @@ def dimensions_per_company (un_size,list500_names):
 dimensions_per_company (un_size,list500_names)
 \end{lstlisting}
 
-\paragraph{\textbf{Script 17: Final data frame }}\label{p17}
+\begin{center}
+\textit{\textbf{Script 17: Final data frame }}\label{p17}
+\end{center}
 \begin{lstlisting}[language=Python]
 d6 = {'company' : pd.Series(com, index=[nm])}
 sizess = pd.DataFrame(d6)   
@@ -2803,7 +2844,9 @@ def final_dimensions_dataframe (un_size,t_f_s,list500_names):
 final_dimensions_dataframe (un_size,t_f_s,list500_names)
 \end{lstlisting}
 
-\paragraph{\textbf{Script 18: Names corrections}}\label{p18}
+\begin{center}
+\textit{\textbf{Script 18: Names corrections}}\label{p18}
+\end{center}
 \begin{lstlisting}[language=Python]
 list_company_name_new = []
 
@@ -2818,7 +2861,9 @@ for num in range (0,500):
     list_company_name_new.insert(num,cn)
 \end{lstlisting}     
 
-\paragraph{\textbf{Script 19: Fortune 500 - Pages Download}}\label{p19}
+\begin{center}
+\textit{\textbf{Script 19: Fortune 500 - Pages Download}}\label{p19}
+\end{center}
 \begin{lstlisting}[language=Python] 
 fortune_pages = []
 
@@ -2844,7 +2889,9 @@ def fortune500 (list_company_name_new):
 fortune500 (list_company_name_new)
 \end{lstlisting}    
 
-\paragraph{\textbf{Script 20: Fortune 500 - Initial variables}}\label{p20}
+\begin{center}
+\textit{\textbf{Script 20: Fortune 500 - Initial variables}}\label{p20}
+\end{center}
 \begin{lstlisting}[language=Python] 
 keyf =[]
 per =[]
@@ -2865,7 +2912,9 @@ urln = []
 empty = []
 \end{lstlisting}  
 
-\paragraph{\textbf{Script 21: Fortune 500 - Pages Download}}\label{p21}
+\begin{center}
+\textit{\textbf{Script 21: Fortune 500 - Pages Download}}\label{p21}
+\end{center}
 \begin{lstlisting}[language=Python]  
 def fortune_metrics (list_company_name,list_company_website):
     x = 0
@@ -2934,7 +2983,9 @@ def fortune_metrics (list_company_name,list_company_website):
 fortune_metrics (list_company_name,list_company_website)
 \end{lstlisting}
 
-\paragraph{\textbf{Script 22: Fortune 500 - Data frame}} \label{p22}
+\begin{center}
+\textit{\textbf{Script 22: Fortune 500 - Data frame}} \label{p22}
+\end{center}
 \begin{lstlisting}[language=Python]  
 d9 = {'company' : pd.Series(ln, index=[nm]),
       'Revenues $' : pd.Series(rev_dol, index=[nm]),
@@ -2945,7 +2996,9 @@ d9 = {'company' : pd.Series(ln, index=[nm]),
 fort500 = pd.DataFrame(d9)    
 \end{lstlisting}
 
-\paragraph{\textbf{Script 23: Final Data Frame and csv file}}\label{p23}
+\begin{center}
+\textit{\textbf{Script 23: Final Data Frame and csv file}}\label{p23}
+\end{center}
 \begin{lstlisting}[language=Python]
 result = pd.merge(fort500, html_val, how='inner',
  on=['company', 'company'])
@@ -3760,4 +3813,13 @@ summary(model_a)
 \end{lstlisting} 
 
 
+\subsection{Appendix D: R Tables} \label{appR}
+\begin{table}[H]
+\centering
+\caption{Full regression model}\label{d :r :1}
+\begin{center}
+\includegraphics[scale=0.6]{../R/photos/66_FULL_PART1.PNG} 
+\includegraphics[scale=0.6]{../R/photos/66_FULL_PART2.PNG}  \\
+\end{center}
+\end{table}
 \end{document}
