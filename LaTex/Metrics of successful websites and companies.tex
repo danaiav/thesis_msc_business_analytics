@@ -1,6 +1,8 @@
 \documentclass{article}
 \usepackage{titlesec}
 \setcounter{secnumdepth}{4}
+\usepackage{titlepic}
+\usepackage{graphicx}
 \titleformat{\paragraph}
 {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
 \titlespacing*{\paragraph}
@@ -18,10 +20,31 @@
     urlcolor={black!50!black}
 }
 \begin{document}
+\begin{titlepage}
 \title{Metrics of successful websites and companies}
 \author{Danai Avratoglou}
 \date{January 2017}
+\end{titlepage}
 \maketitle
+\newpage
+\begin{center}
+\textbf{CERTIFICATION OF THESIS DECLARATION}
+\end{center}
+This paper is submitted by the author as part of mandatory procedure of the Master in Business Analytics program from the department of Management Science and Technology of the Athens University of Business and Economics and it is available in the Electronic Library of the Athens University of Economics and Business.\\\\
+I  hereby  declare  that  this  particular  thesis  
+has  been  written  by  me,  in  order  to  obtain  the  
+Postgraduate Degree in Business Analytics, and has not been submitted to or approved by any other postgraduate or undergraduate program in Greece or abroad. This thesis presents my personal views  on  the  subject.  All  the  sources  I  have  used  for  the  preparation  of  this  particular  thesis  are mentioned  explicitly  with  references  being  made  either  to  their  authors,  or  to  the  URL’s  (if  found on the internet).\\\\\\\\\\
+\textbf{STUDENT'S FULL NAME}
+..............................................\\\\\\\\
+\textbf{SIGNATURE}
+........................................................................\\
+\newpage
+\begin{center}
+\textbf{THANK YOU NOTE}
+\end{center}
+This thesis, it would be impossible, without the contribution and assistance of many individuals. I would like to thank all the teachers of the Master in Business Analytics program for the knowledge they have given me throughout the course of my studies. Especially I would like to thank my supervisor, professor Diomidi Spinelli for his valuable guidance in choosing the particular topic and all the helpful tips when drawing the entire work.\\
+Additionally, I would like to thank all my fellow students, but especially the members of my group, which embellish all the experience in the graduate program. \\
+Finally, I would like to thank Nick, my friends, and family, my mother, my sister, and finally my father, who unfortunately is no longer with us. Thanks to them I was able to achieve another one of my goals.
 \newpage
 \tableofcontents
 \newpage
@@ -60,9 +83,30 @@ Another important part of the Web usage from enterprises that should be taken in
 Furthermore, due to this rapid evolution of the use of social media many different platforms have been created in the last few years. Some of the most popular ones, besides from Facebook, are:
 \begin{itemize}
 \item \textbf{Twitter} : As of the fourth quarter of 2016, the microblogging service 319 million active users per month.\cite{key28}
+\begin{table}[H]
+\centering
+\caption{Twitter users by quarter}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/twitter_q_users.png}   
+\end{center}
+\end{table}
 \item \textbf{Instagram} : As of December 2016, the mainly mobile photo sharing network had reached 600 million monthly active users.\cite{key29}
+\begin{table}[H]
+\centering
+\caption{Instagram users by month}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/instagram_q_users.png}   
+\end{center}
+\end{table}
 \item \textbf{Pinterest} : As of October 2016, the content sharing service has reached 150 million monthly active users.\cite{key47}
 \item\textbf{Linkedin}: As of the third quarter of 2016, the business and employment-oriented social networking service had reached 467 million members.\cite{key31}
+\begin{table}[H]
+\centering
+\caption{LinkedIn users by quarter}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/linkedin_q_users.png}   
+\end{center}
+\end{table}
 \item\textbf{Youtube} : As of January 2017,the 3rd most visited website in the world has reached over 1,3 billion active users.\cite{key32}
 \end{itemize}
 Our goal is to show how all those aforementioned metrics can be used to show the relevance of a website with the success of an enterprise. We can now develop our hypothesis. 
@@ -112,7 +156,31 @@ In order to gather the need information from all the sites in the Fortune 500 we
  \\ \hline
 \end{tabular}
 \end{table}
-It is obvious even from the first twenty companies that the firms that are included in the Fortune 500 list are from different industries. In previous studies the researchers tended to take into account the industry and divide the companies in groups. In this paper we will not create such a deviation since we want to see if there are some common variables across all the successful enterprises, regardless the industry they belong to, that can correlate with their success.
+Just to have a clearer idea of what do the companies under examination stands for we will analyse the first 20 ones so as to comprehend the industries and the type of firms that are included in the Fortune 500:
+\begin{enumerate}
+\item \textbf{Walmart }: is an American multinational retailing corporation that operates as a chain of hypermarkets, discount department stores, and grocery stores.
+\item \textbf{Exxon Mobil } : is an American multinational oil and gas corporation.
+\item \textbf{Apple } : is an American multinational technology company that designs, develops, and sells consumer electronics, computer software, and online services. The company's hardware products include the iPhone smart phone, the iPad tablet computer, the Mac personal computer, the iPod portable media player, the Apple smart watch, and the Apple TV digital media player. 
+\item \textbf{Berkshire Hathaway } : is an American multinational conglomerate holding company. The company wholly owns GEICO, BNSF Railway, Lubrizol, Dairy Queen, Fruit of the Loom, Helzberg Diamonds, FlightSafety International, Pampered Chef, and NetJets, and also owns 43.63\% of the Kraft Heinz Company, an undisclosed percentage of Mars, Incorporated, and significant minority holdings in American Express, The Coca-Cola Company, Wells Fargo, IBM and Restaurant Brands International. 
+\item \textbf{McKesson } : is an American company distributing pharmaceuticals at a retail sale level and providing health information technology, medical supplies, and care management tools.
+\item \textbf{UnitedHealth Group } :  is an American managed health care company that offers products and services through two operating businesses, UnitedHealthcare and Optum, both subsidiaries of UnitedHealth Group. 
+\item \textbf{CVS Health }:  is an American retail pharmacy and health care company. 
+\item \textbf{General Motors }: is an American multinational corporation that designs, manufactures, markets, and distributes vehicles and vehicle parts, and sells financial services. 
+\item \textbf{Ford Motor } :  is an American multinational automaker. The company sells automobiles and commercial vehicles under the Ford brand and most luxury cars under the Lincoln brand. Ford also owns Brazilian SUV manufacturer, Troller, and Australian performance car manufacturer FPV. 
+\item \textbf{AT\& T } :  is an American multinational telecommunications conglomerate.
+\item \textbf{General Electric }: is an American multinational conglomerate corporation. As of 2016, the company operates through the following segments: Power \& Water, Oil and Gas, Aviation, Healthcare, Transportation and Capital which cater to the needs of Financial services, Medical devices, Life Sciences, Pharmaceutical, Automotive, Software Development and Engineering industries.
+\item \textbf{AmerisourceBergen } :  is an American drug wholesale company. They provide drug distribution and related services designed to reduce costs and improve patient outcomes, distribute a line of brand name and generic pharmaceuticals, over-the-counter (OTC) health care products and home health care supplies and equipment to a wide variety of health care providers located throughout the United States, including acute care hospitals and health systems, independent and chain retail pharmacies, mail-order facilities, physicians, clinics and other alternate site facilities, as well as skilled nursing and assisted living centers. They also provide pharmaceuticals and pharmacy services to long-term care, workers' compensation and specialty drug patients.
+\item \textbf{Verizon } :  is a broadband telecommunications company and the largest U.S. wireless communications service provider.
+\item \textbf{Chevron } :  is an American multinational energy corporation and active in more than 180 countries.
+\item \textbf{Costco } :  is the largest American membership-only warehouse club that provides a wide selection of merchandise.
+\item \textbf{Fannie Mae } : The Federal National Mortgage Association, commonly known as Fannie Mae, is a United States government-sponsored enterprise that provides financial products and services.
+\item \textbf{Kroger } :  is an American retailing company. Kroger operates, either directly or through its subsidiaries, 2,778 supermarkets and multi-department stores. It maintains markets in 34 states, with store formats that include supermarkets, superstores, department stores, 786 convenience stores, and 326 jewelry stores.
+\item \textbf{Amazon.com } :  is an American electronic commerce and cloud computing company.
+\item \textbf{Walgreens Boots Alliance } :  is an American holding company that owns Walgreens, Boots and a number of pharmaceutical manufacturing, wholesale and distribution companies. 
+\item \textbf{HP }: or Hewlett-Packard is an American multinational information technology company.
+\end{enumerate}
+
+It is obvious even from the first twenty companies that the firms that are included in the Fortune 500 list are from different industries and provide different products and services to the consumers. In previous studies the researchers tended to take into account the industry and divide the companies in groups. In this paper we will not create such a deviation since we want to see if there are some common variables across all the successful enterprises, regardless the industry they belong to, that can correlate with their success. This would mean that regardless of the specific needs that each industry should cover to its consumers there could be common needs to the website users that should be fulfilled prior to the specific industrial ones.
 \newpage
 \subsection{Metrics}
 The next step is to identify the website metrics that will be examined. When a firm is referring to website metrics it usually means elements such as the number of page views, the number of visits, the number of unique visitors and also the geographical distributional of the users. These types of measurements are not available outside of the company, which is usually using a tool such as Google analytics\cite{key36} in order to track them. Since we cannot gather this kind of metrics we will have to examine metrics that are more related to how the site is structure and what exactly does the home page of each site includes. Those information can be retrieved from the html code of a company's site which is available for each internet user to see.\\
@@ -259,7 +327,7 @@ As every speaking language,so the computer languages do have their own grammar, 
 However, just as texts in a natural language can include spelling or grammar errors, documents using computer languages may (for various reasons) not be following these rules as well.\\
 The process of verifying whether or not a document actually follows the rules for the language it uses is called validation, and the tool used for that is a validator. A document that passes this process with success is called valid.\\
 With these concepts in mind, we can define "validation" as the process of checking a web document against the grammar (generally a DTD\footnote{DTT: Document Type definition}) it claims to be using.\\
-For the purposes of this paper we will use an on-line validator site called W3C\footnote{https://validator.w3.org/} which will help as see how many errors and warnings does each site have. \\\\
+For the purposes of this paper we will use an on-line validator site called W3C\cite{key50} which will help as see how many errors and warnings does each site have. \\\\
 \textbf{Step 1} : Initially we create the empty lists in which we will save the variables we will extract that will give as a clear glance on how many errors does each page has, how many warnings, how many pages weren't recognized as documents and how many pages did open during the process.\\\\
 \textbf{Step 2} : The next step is to create a function that will do a similar job as the script we used to extract the previous variables. Initially we locate the part of the url that remains the same when the check is completed and we see the part that does change where the name of the url we want to examine should go. In order for the code to recognize that we save the result in a variable that in the end is a new url that when we open it, it will show as the page of the results for each site in each loop that we are examining.\\\\
 \textbf{Step 3} : One difference in this script is that now the part of the code that we need is not between $<tr>..</tr>$ but between $<div>...</div>$ parts of the code. So we follow the same procedure as before and we locate in the list of all the divs that we create with the help of the Beatuful soup package the parts that gives us the informations we want to keep.\\\\
@@ -506,7 +574,7 @@ Now that we have reach to the conclusion that the metric we will use from the Fo
 \centering
 \caption{Facebook}
 \begin{center}
-\includegraphics[scale=0.5]{../R/photos/10_facebook_dist.png}   \\
+\includegraphics[scale=0.6]{../R/photos/10_facebook_dist.png}   \\
 \textit{Almost the 65 percent of the companies that we are examining have Facebook links on their home page.}
 \end{center}
 \end{table}
@@ -515,7 +583,7 @@ Now that we have reach to the conclusion that the metric we will use from the Fo
 \centering
 \caption{Twitter}
 \begin{center}
-\includegraphics[scale=0.5]{../R/photos/12_tw_dist.png}  \\
+\includegraphics[scale=0.6]{../R/photos/12_tw_dist.png}  \\
 \textit{Almost the 67 percent of the companies that we are examining have Twitter links on their home page.}
 \end{center}
 \end{table}
@@ -524,7 +592,7 @@ Now that we have reach to the conclusion that the metric we will use from the Fo
 \centering
 \caption{Instagram}
 \begin{center}
-\includegraphics[scale=0.5]{../R/photos/14_inst_dist.png}  \\
+\includegraphics[scale=0.6]{../R/photos/14_inst_dist.png}  \\
 \textit{Only the 22 percent of the companies that we are examining have instagram links on their home page.}
 \end{center}
 \end{table}
@@ -533,7 +601,7 @@ Now that we have reach to the conclusion that the metric we will use from the Fo
 \centering
 \caption{Pinterest}
 \begin{center}
-\includegraphics[scale=0.5]{../R/photos/16_pint_dist.png}  \\
+\includegraphics[scale=0.6]{../R/photos/16_pint_dist.png}  \\
 \textit{Only a small 10 percent of the companies that we are examining have pinterest links on their home page.}
 \end{center}
 \end{table}
@@ -542,7 +610,7 @@ Now that we have reach to the conclusion that the metric we will use from the Fo
 \centering
 \caption{YouTube}
 \begin{center}
-\includegraphics[scale=0.5]{../R/photos/18_yt_dist.png}  \\
+\includegraphics[scale=0.6]{../R/photos/18_yt_dist.png}  \\
 \textit{The 58 percent of the companies that we are examining have YouTube links on their home page.}
 \end{center}
 \end{table}
@@ -551,7 +619,7 @@ Now that we have reach to the conclusion that the metric we will use from the Fo
 \centering
 \caption{LinkedIn}
 \begin{center}
-\includegraphics[scale=0.5]{../R/photos/20_linkedin_dist.png}  \\
+\includegraphics[scale=0.6]{../R/photos/20_linkedin_dist.png}  \\
 \textit{The 57 percent of the companies that we are examining have YouTube links on their home page.}
 \end{center}
 \end{table}
@@ -956,7 +1024,7 @@ By completing the variable analysis we have ended up with 52 variables that are 
 \end{tabular}
 \end{table}
 As we can see from the above table the final variables are from almost every group of information that we manage to gather. There are variables concerning the html validation, the social media existence, the image types and sizes, the number of links, the content in terms of text and readability and the loading time of the websites.\\
-In this chapter we will perform some regression models to the chosen data frame in order to determine the variables that effect most the price of the revenues of a company.The code that was created for the regression models is available in the Appendix\ref{r: van: rg}.\\
+In this chapter we will perform some regression models to the chosen data frame in order to determine the variables that effect most the price of the revenues of a company.The code that was created for the regression models is available in the Appendix\ref{r: van: rg}.While the summary of the models that will be analysed in this section are available in the Appendix\ref{d :r :1a}\\
 In statistics there are two main types of regressions the linear and the logistic regression. The linear regression is an approach for modelling the relationship between a scalar dependent variable y and one or more explanatory variables (or independent variables) denoted X. The case of one explanatory variable is called simple linear regression. For more than one explanatory variable, the process is called multiple linear regression.\\
 The logistic regression, or logit regression, is a regression model where the dependent variable (DV) is categorical.Cases where the dependent variable has more than two outcome categories may be analysed in multinomial logistic regression, or, if the multiple categories are ordered, in ordinal logistic regression.\\
 Since the variable Revenues which is the dependent variable we have chosen is a scalar numeric variable we will perform linear regression to the final data frame we have created.
@@ -1268,7 +1336,8 @@ Furthermore while some already conducted researches showed that the readability 
 \subsubsection{Managerial level}
 In terms of a managerial level the findings could help an enterprise that wants to either create or change its website, to find what they can implement and what to avoid in order to achieve the best possible website structure and layout so as to lead in a better satisfaction level of the future website users and this by it's turn can lead to bigger revenues in the future.\\
 Since we have already located specific does and dont's regarding the metrics that were examined we can advise companies to apply them in their websites and then let us know if those changes lead to better results regarding their revenues.\\
-Moreover the most accurate predictive model that was created during the analysis part of this paper, can be applied in a firm's choices on the variables that constitutes the independable variables of the model and give them a first idea of how the website can affect their success.
+Moreover the most accurate predictive model that was created during the analysis part of this paper, can be applied in a firm's choices on the variables that constitutes the independable variables of the model and give them a first idea of how the website can affect their success.\\\\
+\textit{The files that were created during the research period of this paper are also available in github: $https://github.com/danaiav/thesis_msc_business_analytics.git$ }
 \pagebreak
 \section{Further Research}
 Even though the results of this paper have helped to give a more clear understanding of which are the metrics that are more highly correlated with a company's revenue there is always place for further research.\\
@@ -1292,6 +1361,8 @@ Management Science, 29:5, 530-545
 \bibitem{key15}Cohen J.B. (1960). A Coefficient of Agreement for Nominal Scales. Educational and Psychology Measurement, 20,
 37-46
 
+\bibitem{key41}Continuum (2017). Retrieved January 29, 2017, from $https://www.continuum.io/downloads$
+
 \bibitem{key55}Chaudhuri A., Holbrook M. B. (2001). The chain of effects from brand trust and brand affect to brand performance: The role of brand loyalty. Journal of Marketing, 65(4), 81–93
 
 \bibitem{key16}Davis F.D., Bagozzi RP., Warshaw P.R. (1989). User Acceptance of Computer Technology: A Comparison of
@@ -1301,7 +1372,19 @@ Two Theoretical Models. Management Science, 35:8, 982-1003
 
 \bibitem{key6}Fan X., Salvendy G. (2003). Customer-centered rules for design of e-commerce Web sites. Communications of the ACM, 46(12), 332-336
 
+\bibitem{key26}Forbes (2015). Retrieved February 26, 2017, from $https://www.forbes.com/sites/kathleenchaykowski/2015/12/08/facebook-business-pages-climb-to-50-million-with-new-messaging-tools/$\#$4b75d1d46991$
+
+\bibitem{key31}Forbes (2016). Retrieved February 26, 2017, from $https://www.forbes.com/sites/kathleenchaykowski/2016/10/13/pinterest-reaches-150-million-monthly-users/$\#$269f39e0732e$
+
+\bibitem{key47}Forbes (2016). Retrieved February 26, 2017, from $https://www.forbes.com/sites/kathleenchaykowski/2016/10/13/pinterest-reaches-150-million-monthly-users/$\#$2a5f63f4732e$
+
 \bibitem{key1}Forte R. M.(2015). Mastering Predictive Analytics with R. Packt Publishing Ltd.
+
+\bibitem{key35}Fortune 500 (2017). Retrieved January 29, 2017, from $http://beta.fortune.com/fortune500$
+
+\bibitem{key32}Fortune Lords (2017). Retrieved February 26, 2017, from $https://fortunelords.com/youtube-statistics/$
+
+\bibitem{key36}Gaur L., Singh G., Kumar S. (2016). Google Analytics: A tool to make website more Robust. ICTCS
 
 \bibitem{key4}Hoffman D. L., Novak T.P.(2000). How to acquire customers on the Web. Harvard Business Review, 78(3), 179-188
 
@@ -1326,11 +1409,26 @@ Measurement of Web-Customer Satisfaction: An Expectation and Dis confirmation Ap
 
 \bibitem{key3}Palmer J. W. (2002). Web site usability, design, and performance metrics. Information Systems Research, 13(2), 151-167
 
+\bibitem{key34}Readability test tool (2017). Retrieved January 29, 2017, from $http://www.webpagefx.com/tools/read-able/$
+
 \bibitem{key22}Rose G.,Khoo H.,Straub D. (1999). Current Technological Impediments to Business-to-Consumer Electronic
 Commerce. Communications of the AIS, 1:16, 1-74
 
 \bibitem{key23}Shneiderman B. (1998). Designing the User Interface: Strategies for Effective Human-Computer Interaction. 
 MA: Addison-Wesley
+
+\bibitem{key21}Statista (2017). Retrieved February 26, 2017, from $https://www.statista.com/statistics/264810/number-of-monthly-active-facebook-users-worldwide/$
+
+\bibitem{key28}Statista (2017). Retrieved February 26, 2017, from $https://www.statista.com/statistics/282087/number-of-monthly-active-twitter-users/$
+
+\bibitem{key29}Statista (2017). Retrieved February 26, 2017, from $https://www.statista.com/statistics/253577/number-of-monthly-active-instagram-users/$
+
+\bibitem{key30}Statista (2017). Retrieved February 26, 2017, from $https://www.statista.com/statistics/274050/quarterly-numbers-of-linkedin-members/$
+
+\bibitem{key43}The Python Tutorial (2016). Available on line from $https://docs.python.org/3/tutorial/index.html$
+
+
+\bibitem{key50}Validator w3 (2017).Retrieved January 29, 2017, from $https://validator.w3.org/$
 
 \bibitem{key24}VonDran G.M, Zhang P.,Small R. (2002). Quality
 Websites: An Application of the Kano Model to Website Design. Proceedings of the Americas Conference on Information Systems, 898-900
@@ -1342,39 +1440,8 @@ marketing strategy. Total Quality Management and Business Excellence, 21:11, 114
 
 \bibitem{key10}Young D., Benamati J. (1999). Differences in Public Web sites: The Current State of Large U.S. Firms. Journal of Electronic Commerce Research, 94-105
 
-\bibitem{key21}Statista (2017). Retrieved February 26, 2017, from $https://www.statista.com/statistics/264810/number-of-monthly-active-facebook-users-worldwide/$
-
-\bibitem{key28}Statista (2017). Retrieved February 26, 2017, from $https://www.statista.com/statistics/282087/number-of-monthly-active-twitter-users/$
-
-\bibitem{key29}Statista (2017). Retrieved February 26, 2017, from $https://www.statista.com/statistics/253577/number-of-monthly-active-instagram-users/$
-
-\bibitem{key30}Statista (2017). Retrieved February 26, 2017, from $https://www.statista.com/statistics/274050/quarterly-numbers-of-linkedin-members/$
-
-\bibitem{key31}Forbes (2016). Retrieved February 26, 2017, from $https://www.forbes.com/sites/kathleenchaykowski/2016/10/13/pinterest-reaches-150-million-monthly-users/$\#$269f39e0732e$
-
-\bibitem{key32}Fortune Lords (2017). Retrieved February 26, 2017, from $https://fortunelords.com/youtube-statistics/$
-
 \bibitem{key33}Zyxware (2017). Retrieved January 29, 2017, from $http://www.zyxware.com/articles/4344/list-of-fortune-500-companies-and-their-websites$
-
-\bibitem{key26}Forbes (2015). Retrieved February 26, 2017, from $https://www.forbes.com/sites/kathleenchaykowski/2015/12/08/facebook-business-pages-climb-to-50-million-with-new-messaging-tools/$\#$4b75d1d46991$
-
-\bibitem{key47}Forbes (2016). Retrieved February 26, 2017, from $https://www.forbes.com/sites/kathleenchaykowski/2016/10/13/pinterest-reaches-150-million-monthly-users/$\#$2a5f63f4732e$
-
-\bibitem{key35}Fortune 500 (2017). Retrieved January 29, 2017, from $http://beta.fortune.com/fortune500$
-
-\bibitem{key34}Readability test tool (2017). Retrieved January 29, 2017, from $http://www.webpagefx.com/tools/read-able/$
-
-\bibitem{key36}Gaur L., Singh G., Kumar S. (2016). Google Analytics: A tool to make website more Robust. ICTCS
-
-\bibitem{key40}Tables Generator (2017). Retrieved January 29, 2017, from $http://www.tablesgenerator.com/$
-
-\bibitem{key41}Continuum (2017). Retrieved January 29, 2017, from $https://www.continuum.io/downloads$
-
-\bibitem{key42}Validator W3 (2017). Retrieved January 29, 2017, from $https://validator.w3.org/$
-
-\bibitem{key43}The Python Tutorial (2016). Available on line from $https://docs.python.org/3/tutorial/index.html$
 \end{thebibliography}
-
 \newpage
 \appendix
 \section{Appendix}
@@ -3816,10 +3883,73 @@ summary(model_a)
 \subsection{Appendix D: R Tables} \label{appR}
 \begin{table}[H]
 \centering
-\caption{Full regression model}\label{d :r :1}
+\caption{Full regression model part 1}\label{d :r :1a}
 \begin{center}
-\includegraphics[scale=0.6]{../R/photos/66_FULL_PART1.PNG} 
+\includegraphics[scale=0.6]{../R/photos/66_FULL_PART1.PNG} \\
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\caption{Full regression model part 2}\label{d :r :1b}
+\begin{center}
 \includegraphics[scale=0.6]{../R/photos/66_FULL_PART2.PNG}  \\
+\end{center}
+\end{table}
+
+
+
+\begin{table}[H]
+\centering
+\caption{Regression model full 2}\label{d :r :2}
+\begin{center}
+\includegraphics[scale=0.6]{../R/photos/69_full2.PNG}   \\
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\caption{Regression model full 3}\label{d :r :3}
+\begin{center}
+\includegraphics[scale=0.6]{../R/photos/72_full3.PNG}   \\
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\caption{Regression model full 4}\label{d :r :4}
+\begin{center}
+\includegraphics[scale=0.6]{../R/photos/77_full4.PNG}   \\
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\caption{Regression model a}\label{d :r :a}
+\begin{center}
+\includegraphics[scale=0.6]{../R/photos/81_modela.PNG}   \\
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\caption{Regression model full 5}\label{d :r :5}
+\begin{center}
+\includegraphics[scale=0.6]{../R/photos/87_full5.PNG}  \\
+\end{center}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\caption{Regression model full 6}\label{d :r :6}
+\begin{center}
+\includegraphics[scale=0.6]{../R/photos/99_model6.PNG}  \\
 \end{center}
 \end{table}
 \end{document}
