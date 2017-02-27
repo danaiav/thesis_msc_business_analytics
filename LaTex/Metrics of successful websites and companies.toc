@@ -70,10 +70,10 @@
 \contentsline {paragraph}{\numberline {A.3.2.2}Social media analysis}{117}{paragraph.A.3.2.2}
 \contentsline {paragraph}{\numberline {A.3.2.3}Links analysis}{119}{paragraph.A.3.2.3}
 \contentsline {paragraph}{\numberline {A.3.2.4}Loading time analysis}{119}{paragraph.A.3.2.4}
-\contentsline {paragraph}{\numberline {A.3.2.5}Content analysis}{119}{paragraph.A.3.2.5}
-\contentsline {paragraph}{\numberline {A.3.2.6}HTML validation analysis}{121}{paragraph.A.3.2.6}
-\contentsline {paragraph}{\numberline {A.3.2.7}Number, types and image sizes analysis}{121}{paragraph.A.3.2.7}
-\contentsline {subsubsection}{\numberline {A.3.3}Data manipulation}{124}{subsubsection.A.3.3}
-\contentsline {subsubsection}{\numberline {A.3.4}Regression models}{126}{subsubsection.A.3.4}
-\contentsline {subsubsection}{\numberline {A.3.5}Comparisons and other methods}{131}{subsubsection.A.3.5}
-\contentsline {subsection}{\numberline {A.4}Appendix D: R Tables}{133}{subsection.A.4}
+\contentsline {paragraph}{\numberline {A.3.2.5}Content analysis}{120}{paragraph.A.3.2.5}
+\contentsline {paragraph}{\numberline {A.3.2.6}HTML validation analysis}{122}{paragraph.A.3.2.6}
+\contentsline {paragraph}{\numberline {A.3.2.7}Number, types and image sizes analysis}{122}{paragraph.A.3.2.7}
+\contentsline {subsubsection}{\numberline {A.3.3}Data manipulation}{126}{subsubsection.A.3.3}
+\contentsline {subsubsection}{\numberline {A.3.4}Regression models}{129}{subsubsection.A.3.4}
+\contentsline {subsubsection}{\numberline {A.3.5}Comparisons and other methods}{134}{subsubsection.A.3.5}
+\contentsline {subsection}{\numberline {A.4}Appendix D: R Tables}{137}{subsection.A.4}
