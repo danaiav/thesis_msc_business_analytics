@@ -1,52 +1,52 @@
-\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
-\BOOKMARK [1][-]{section.2}{Literature Review }{}% 2
-\BOOKMARK [2][-]{subsection.2.1}{Empirical Studies}{section.2}% 3
-\BOOKMARK [2][-]{subsection.2.2}{Thesis hypothesis}{section.2}% 4
-\BOOKMARK [1][-]{section.3}{Data gathering}{}% 5
-\BOOKMARK [2][-]{subsection.3.1}{Data Source}{section.3}% 6
-\BOOKMARK [2][-]{subsection.3.2}{Metrics}{section.3}% 7
-\BOOKMARK [3][-]{subsubsection.3.2.1}{Loading time}{subsection.3.2}% 8
-\BOOKMARK [3][-]{subsubsection.3.2.2}{Number of links}{subsection.3.2}% 9
-\BOOKMARK [3][-]{subsubsection.3.2.3}{Social media}{subsection.3.2}% 10
-\BOOKMARK [3][-]{subsubsection.3.2.4}{Number, type and sizes of images}{subsection.3.2}% 11
-\BOOKMARK [3][-]{subsubsection.3.2.5}{Content}{subsection.3.2}% 12
-\BOOKMARK [3][-]{subsubsection.3.2.6}{HTML Validation}{subsection.3.2}% 13
-\BOOKMARK [2][-]{subsection.3.3}{Python Language}{section.3}% 14
-\BOOKMARK [2][-]{subsection.3.4}{Variables collection}{section.3}% 15
-\BOOKMARK [3][-]{subsubsection.3.4.1}{Companies ranking, names and url}{subsection.3.4}% 16
-\BOOKMARK [3][-]{subsubsection.3.4.2}{URL validation}{subsection.3.4}% 17
-\BOOKMARK [3][-]{subsubsection.3.4.3}{Download sites html code}{subsection.3.4}% 18
-\BOOKMARK [3][-]{subsubsection.3.4.4}{Not downloadable pages}{subsection.3.4}% 19
-\BOOKMARK [3][-]{subsubsection.3.4.5}{Content}{subsection.3.4}% 20
-\BOOKMARK [3][-]{subsubsection.3.4.6}{HTML Validation}{subsection.3.4}% 21
-\BOOKMARK [3][-]{subsubsection.3.4.7}{Social media}{subsection.3.4}% 22
-\BOOKMARK [3][-]{subsubsection.3.4.8}{Links - Internal and External}{subsection.3.4}% 23
-\BOOKMARK [3][-]{subsubsection.3.4.9}{Loading time}{subsection.3.4}% 24
-\BOOKMARK [3][-]{subsubsection.3.4.10}{Number, type and sizes of images}{subsection.3.4}% 25
-\BOOKMARK [3][-]{subsubsection.3.4.11}{Fortune 500 - Metrics download}{subsection.3.4}% 26
-\BOOKMARK [3][-]{subsubsection.3.4.12}{Merge data-frames and extract final csv file}{subsection.3.4}% 27
-\BOOKMARK [1][-]{section.4}{Data Analysis}{}% 28
-\BOOKMARK [2][-]{subsection.4.1}{R Language}{section.4}% 29
-\BOOKMARK [2][-]{subsection.4.2}{Analysis}{section.4}% 30
-\BOOKMARK [3][-]{subsubsection.4.2.1}{Data cleansing}{subsection.4.2}% 31
-\BOOKMARK [3][-]{subsubsection.4.2.2}{Variable analysis and correlation}{subsection.4.2}% 32
-\BOOKMARK [3][-]{subsubsection.4.2.3}{Data manipulation}{subsection.4.2}% 33
-\BOOKMARK [3][-]{subsubsection.4.2.4}{Regression models}{subsection.4.2}% 34
-\BOOKMARK [3][-]{subsubsection.4.2.5}{Comparisons and other methods}{subsection.4.2}% 35
-\BOOKMARK [1][-]{section.5}{Conclusions}{}% 36
-\BOOKMARK [2][-]{subsection.5.1}{Findings summary}{section.5}% 37
-\BOOKMARK [2][-]{subsection.5.2}{Findings contribution}{section.5}% 38
-\BOOKMARK [3][-]{subsubsection.5.2.1}{Theoretical level}{subsection.5.2}% 39
-\BOOKMARK [3][-]{subsubsection.5.2.2}{Managerial level}{subsection.5.2}% 40
-\BOOKMARK [1][-]{section.6}{Further Research}{}% 41
-\BOOKMARK [1][-]{section.7}{Bibliography}{}% 42
-\BOOKMARK [1][-]{appendix.A}{Appendix}{}% 43
-\BOOKMARK [2][-]{subsection.A.1}{Appendix A: Fortune 500 Companies}{appendix.A}% 44
-\BOOKMARK [2][-]{subsection.A.2}{Appendix B: Python Scripts}{appendix.A}% 45
-\BOOKMARK [2][-]{subsection.A.3}{Appendix C: R Scripts}{appendix.A}% 46
-\BOOKMARK [3][-]{subsubsection.A.3.1}{Data cleansing}{subsection.A.3}% 47
-\BOOKMARK [3][-]{subsubsection.A.3.2}{Variable analysis and correlation}{subsection.A.3}% 48
-\BOOKMARK [3][-]{subsubsection.A.3.3}{Data manipulation}{subsection.A.3}% 49
-\BOOKMARK [3][-]{subsubsection.A.3.4}{Regression models}{subsection.A.3}% 50
-\BOOKMARK [3][-]{subsubsection.A.3.5}{Comparisons and other methods}{subsection.A.3}% 51
-\BOOKMARK [2][-]{subsection.A.4}{Appendix D: R Tables}{appendix.A}% 52
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
+\BOOKMARK [0][-]{chapter.2}{Literature Review }{}% 2
+\BOOKMARK [1][-]{section.2.1}{Empirical Studies}{chapter.2}% 3
+\BOOKMARK [1][-]{section.2.2}{Thesis hypothesis}{chapter.2}% 4
+\BOOKMARK [0][-]{chapter.3}{Data gathering}{}% 5
+\BOOKMARK [1][-]{section.3.1}{Data Source}{chapter.3}% 6
+\BOOKMARK [1][-]{section.3.2}{Metrics}{chapter.3}% 7
+\BOOKMARK [2][-]{subsection.3.2.1}{Loading time}{section.3.2}% 8
+\BOOKMARK [2][-]{subsection.3.2.2}{Number of links}{section.3.2}% 9
+\BOOKMARK [2][-]{subsection.3.2.3}{Social media}{section.3.2}% 10
+\BOOKMARK [2][-]{subsection.3.2.4}{Number, type and sizes of images}{section.3.2}% 11
+\BOOKMARK [2][-]{subsection.3.2.5}{Content}{section.3.2}% 12
+\BOOKMARK [2][-]{subsection.3.2.6}{HTML Validation}{section.3.2}% 13
+\BOOKMARK [1][-]{section.3.3}{Python Language}{chapter.3}% 14
+\BOOKMARK [1][-]{section.3.4}{Variables collection}{chapter.3}% 15
+\BOOKMARK [2][-]{subsection.3.4.1}{Companies ranking, names and url}{section.3.4}% 16
+\BOOKMARK [2][-]{subsection.3.4.2}{URL validation}{section.3.4}% 17
+\BOOKMARK [2][-]{subsection.3.4.3}{Download sites html code}{section.3.4}% 18
+\BOOKMARK [2][-]{subsection.3.4.4}{Not downloadable pages}{section.3.4}% 19
+\BOOKMARK [2][-]{subsection.3.4.5}{Content}{section.3.4}% 20
+\BOOKMARK [2][-]{subsection.3.4.6}{HTML Validation}{section.3.4}% 21
+\BOOKMARK [2][-]{subsection.3.4.7}{Social media}{section.3.4}% 22
+\BOOKMARK [2][-]{subsection.3.4.8}{Links - Internal and External}{section.3.4}% 23
+\BOOKMARK [2][-]{subsection.3.4.9}{Loading time}{section.3.4}% 24
+\BOOKMARK [2][-]{subsection.3.4.10}{Number, type and sizes of images}{section.3.4}% 25
+\BOOKMARK [2][-]{subsection.3.4.11}{Fortune 500 - Metrics download}{section.3.4}% 26
+\BOOKMARK [2][-]{subsection.3.4.12}{Merge data-frames and extract final csv file}{section.3.4}% 27
+\BOOKMARK [0][-]{chapter.4}{Data Analysis}{}% 28
+\BOOKMARK [1][-]{section.4.1}{R Language}{chapter.4}% 29
+\BOOKMARK [1][-]{section.4.2}{Analysis}{chapter.4}% 30
+\BOOKMARK [2][-]{subsection.4.2.1}{Data cleansing}{section.4.2}% 31
+\BOOKMARK [2][-]{subsection.4.2.2}{Variable analysis and correlation}{section.4.2}% 32
+\BOOKMARK [2][-]{subsection.4.2.3}{Data manipulation}{section.4.2}% 33
+\BOOKMARK [2][-]{subsection.4.2.4}{Regression models}{section.4.2}% 34
+\BOOKMARK [2][-]{subsection.4.2.5}{Comparisons and other methods}{section.4.2}% 35
+\BOOKMARK [0][-]{chapter.5}{Conclusions}{}% 36
+\BOOKMARK [1][-]{section.5.1}{Findings summary}{chapter.5}% 37
+\BOOKMARK [1][-]{section.5.2}{Findings contribution}{chapter.5}% 38
+\BOOKMARK [2][-]{subsection.5.2.1}{Theoretical level}{section.5.2}% 39
+\BOOKMARK [2][-]{subsection.5.2.2}{Managerial level}{section.5.2}% 40
+\BOOKMARK [0][-]{chapter.6}{Further Research}{}% 41
+\BOOKMARK [0][-]{chapter.7}{Bibliography}{}% 42
+\BOOKMARK [0][-]{appendix.A}{Appendix}{}% 43
+\BOOKMARK [1][-]{section.A.1}{Appendix A: Fortune 500 Companies}{appendix.A}% 44
+\BOOKMARK [1][-]{section.A.2}{Appendix B: Python Scripts}{appendix.A}% 45
+\BOOKMARK [1][-]{section.A.3}{Appendix C: R Scripts}{appendix.A}% 46
+\BOOKMARK [2][-]{subsection.A.3.1}{Data cleansing}{section.A.3}% 47
+\BOOKMARK [2][-]{subsection.A.3.2}{Variable analysis and correlation}{section.A.3}% 48
+\BOOKMARK [2][-]{subsection.A.3.3}{Data manipulation}{section.A.3}% 49
+\BOOKMARK [2][-]{subsection.A.3.4}{Regression models}{section.A.3}% 50
+\BOOKMARK [2][-]{subsection.A.3.5}{Comparisons and other methods}{section.A.3}% 51
+\BOOKMARK [1][-]{section.A.4}{Appendix D: R Tables}{appendix.A}% 52
