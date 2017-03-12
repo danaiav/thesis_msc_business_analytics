@@ -905,7 +905,7 @@ Now that we have created and analysed all the needed variables we can subtract f
 Those variables are being removed for the following reasons. The first four variables are data from the fortune 500 pages of the companies and we downloaded in order to determine which of those metrics we will use in order to see if the performance indicators of the websites effect the company's status. Since we have already reach to the conclusion that the variable we are going to use for this purpose is the Revenues there is no need keeping the other ones as well.\\
 Regarding the fifth variable, the reason we will remove it is that the prices of the variable do not differ in any site. For all the sites they are the same so there is no point in further examining it.
 
-\subsection{Regression models}
+\subsection{Regression analysis}
 By completing the variable analysis we have ended up with 52 variables that are key performance indicators for the websites of the companies we are examining and 1 variable that shows the status of the companies. The names of the variables are available in the following table:
 \begin{table}[H]
 \centering
@@ -935,7 +935,7 @@ By completing the variable analysis we have ended up with 52 variables that are 
 & 21.	44x556
 \\22.	1x1
 & 23.	800x1200
-& 24.	100x100\footnote{In the analysis is being refereed as autox100}
+& 24.	100x100
 \\25.	24pxx133px
 & 26.	21pxx173px
 & 27.	46x214
@@ -968,13 +968,13 @@ By completing the variable analysis we have ended up with 52 variables that are 
 \\ \hline
 \end{tabular}
 \end{table}
-As we can see from the above table the final variables are from almost every group of information that we manage to gather. There are variables concerning the HTML validation, the social media existence, the image types and sizes, the number of links, the content in terms of text and readability and the loading time of the websites.\\
-In this chapter we will perform some regression models to the chosen data frame in order to determine the variables that effect most the price of the revenues of a company.The code that was created for the regression models is available in the Appendix\ref{r: van: rg}.While the summary of the models that will be analysed in this section are available in the Appendix\ref{d :r :1a}\\
+As we can see from the above table the final variables are from almost every group of information that we manage to gather. There are variables concerning the HTML validation, the social media existence, the image types and sizes, the number of links, the content in terms of text and readability and the loading time of the websites. All of those variables cover again all the six dimensions from which we began this research.\\
+In this chapter we will perform a regression analysis to the chosen data frame in order to determine the variables that correlate the most with the price of the revenues of a company. The code that was created for this section is available in the Appendix\ref{r: van: rg}. While the summary of the models that will be analysed in this section are available in the Appendix\ref{d :r :1a}\\
 In statistics there are two main types of regressions the linear and the logistic regression. The linear regression is an approach for modelling the relationship between a scalar dependent variable y and one or more explanatory variables (or independent variables) denoted X. The case of one explanatory variable is called simple linear regression. For more than one explanatory variable, the process is called multiple linear regression.\\
 The logistic regression, or logit regression, is a regression model where the dependent variable (DV) is categorical.Cases where the dependent variable has more than two outcome categories may be analysed in multinomial logistic regression, or, if the multiple categories are ordered, in ordinal logistic regression.\\
 Since the variable Revenues which is the dependent variable we have chosen is a scalar numeric variable we will perform linear regression to the final data frame we have created.
 \subsubsection{Training and test set creation}
-Before we begin with the regression we have to divide the data frame to 2 data frames so as to be able to test the model we will create. We will make a training set and a test set:
+Before we begin with the regression we have to divide the data frame to 2 data frames so as to be able to test the model we will create an also to make see if it can be a predictive model. We will make a training set and a test set:
 \begin{itemize}
 \item \textbf{Training set:} We will use this set in order for the model to learn how to fit the parameters of the classifier.
 \item \textbf{Test set:} This set will be used only to assess the performance of the models that we will create.
