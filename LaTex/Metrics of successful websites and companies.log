@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.9.24)  11 MAR 2017 22:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.9.24)  12 MAR 2017 00:56
 entering extended mode
 **"./Metrics of successful websites and companies.tex"
 ("Metrics of successful websites and companies.tex"
@@ -319,47 +319,47 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--56
+Underfull \hbox (badness 10000) in paragraph at lines 48--54
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--56
+Underfull \hbox (badness 10000) in paragraph at lines 48--54
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--56
+Underfull \hbox (badness 10000) in paragraph at lines 48--54
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--56
+Underfull \hbox (badness 10000) in paragraph at lines 48--54
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--56
+Underfull \hbox (badness 10000) in paragraph at lines 48--54
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--56
+Underfull \hbox (badness 10000) in paragraph at lines 48--54
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--56
+Underfull \hbox (badness 10000) in paragraph at lines 48--54
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--56
+Underfull \hbox (badness 10000) in paragraph at lines 48--54
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--56
+Underfull \hbox (badness 10000) in paragraph at lines 48--54
 
  []
 
@@ -381,10 +381,10 @@ File: ../R/photos/001_model_framework.png Graphic file (type png)
 
 <use ../R/photos/001_model_framework.png>
 Package pdftex.def Info: ../R/photos/001_model_framework.png used on input line
- 82.
+ 80.
 (pdftex.def)             Requested size: 357.96146pt x 132.49467pt.
 
-Overfull \hbox (12.96146pt too wide) in paragraph at lines 82--83
+Overfull \hbox (12.96146pt too wide) in paragraph at lines 80--81
  [] 
  []
 
@@ -399,7 +399,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.86 \newpage
+l.84 \newpage
               <../R/photos/001_model_framework.png>]
 Chapter 2.
 [9
@@ -409,22 +409,22 @@ File: ../R/photos/facebook_q_users.png Graphic file (type png)
 
 <use ../R/photos/facebook_q_users.png>
 Package pdftex.def Info: ../R/photos/facebook_q_users.png used on input line 10
-8.
+6.
 (pdftex.def)             Requested size: 255.57921pt x 170.88802pt.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 113.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 111.
 
 
 ("F:\Downloads\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 113.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 111.
  [11pdfTeX warning (ext4): destination with the same identifier (name{table.2.1
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.114 \item \textbf
+l.112 \item \textbf
                    {Instagram} : As of December 2016, the mainly mobile phot...
  <../R/photos/facebook_q_users.png>] [12] [13] [14
 
@@ -439,16 +439,16 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.176 \item \textbf
+l.174 \item \textbf
                    {Ford Motor } :  is an American multinational automaker. ...
 ]
-Overfull \hbox (4.75056pt too wide) in paragraph at lines 179--180
+Overfull \hbox (4.75056pt too wide) in paragraph at lines 177--178
 \OT1/cmr/m/n/10 health care sup-plies and equip-ment to a wide va-ri-ety of hea
 lth care providers
  []
 
 
-Overfull \hbox (3.52843pt too wide) in paragraph at lines 184--185
+Overfull \hbox (3.52843pt too wide) in paragraph at lines 182--183
 \OT1/cmr/m/n/10 rectly or through its sub-sidiaries, 2,778 su-per-mar-kets and 
 multi-department
  []
@@ -459,76 +459,76 @@ Underfull \vbox (badness 4518) has occurred while \output is active []
  [20]
 [21] [22] [23]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 230.
+(Font)              <8> on input line 228.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 230.
+(Font)              <6> on input line 228.
 
-Underfull \hbox (badness 10000) in paragraph at lines 230--235
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 230--235
+Underfull \hbox (badness 10000) in paragraph at lines 228--233
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 230--235
+Underfull \hbox (badness 10000) in paragraph at lines 228--233
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 228--233
 
  []
 
 [24]
-Underfull \hbox (badness 10000) in paragraph at lines 244--251
+Underfull \hbox (badness 10000) in paragraph at lines 242--249
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 244--251
+Underfull \hbox (badness 10000) in paragraph at lines 242--249
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 244--251
+Underfull \hbox (badness 10000) in paragraph at lines 242--249
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 244--251
+Underfull \hbox (badness 10000) in paragraph at lines 242--249
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 244--251
+Underfull \hbox (badness 10000) in paragraph at lines 242--249
 
  []
 
 [25]
-Underfull \hbox (badness 10000) in paragraph at lines 252--260
+Underfull \hbox (badness 10000) in paragraph at lines 250--258
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 252--260
+Underfull \hbox (badness 10000) in paragraph at lines 250--258
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 252--260
+Underfull \hbox (badness 10000) in paragraph at lines 250--258
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 252--260
+Underfull \hbox (badness 10000) in paragraph at lines 250--258
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 252--260
+Underfull \hbox (badness 10000) in paragraph at lines 250--258
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 252--260
+Underfull \hbox (badness 10000) in paragraph at lines 250--258
 
  []
 
@@ -540,47 +540,47 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ù in font cmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 298--300
+Underfull \hbox (badness 10000) in paragraph at lines 296--298
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 306--317
+Underfull \hbox (badness 10000) in paragraph at lines 304--315
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 306--317
+Underfull \hbox (badness 10000) in paragraph at lines 304--315
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 306--317
+Underfull \hbox (badness 10000) in paragraph at lines 304--315
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 306--317
+Underfull \hbox (badness 10000) in paragraph at lines 304--315
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 306--317
+Underfull \hbox (badness 10000) in paragraph at lines 304--315
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 306--317
+Underfull \hbox (badness 10000) in paragraph at lines 304--315
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 306--317
+Underfull \hbox (badness 10000) in paragraph at lines 304--315
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 306--317
+Underfull \hbox (badness 10000) in paragraph at lines 304--315
 
  []
 
@@ -589,174 +589,174 @@ Underfull \hbox (badness 10000) in paragraph at lines 306--317
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.317 \begin{itemize}
+l.315 \begin{itemize}
                      ] [28]
-Underfull \hbox (badness 10000) in paragraph at lines 326--329
+Underfull \hbox (badness 10000) in paragraph at lines 324--327
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 331--344
+Underfull \hbox (badness 10000) in paragraph at lines 329--342
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 331--344
+Underfull \hbox (badness 10000) in paragraph at lines 329--342
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 331--344
+Underfull \hbox (badness 10000) in paragraph at lines 329--342
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 331--344
+Underfull \hbox (badness 10000) in paragraph at lines 329--342
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 331--344
+Underfull \hbox (badness 10000) in paragraph at lines 329--342
 
  []
 
 [29]
-Underfull \hbox (badness 10000) in paragraph at lines 345--349
+Underfull \hbox (badness 10000) in paragraph at lines 343--347
 
  []
 
 [30]
-Underfull \hbox (badness 10000) in paragraph at lines 357--361
+Underfull \hbox (badness 10000) in paragraph at lines 355--359
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 357--361
+Underfull \hbox (badness 10000) in paragraph at lines 355--359
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 363--368
+Underfull \hbox (badness 10000) in paragraph at lines 361--366
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 363--368
+Underfull \hbox (badness 10000) in paragraph at lines 361--366
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 363--368
+Underfull \hbox (badness 10000) in paragraph at lines 361--366
 
  []
 
 [31]
-Underfull \hbox (badness 10000) in paragraph at lines 371--374
+Underfull \hbox (badness 10000) in paragraph at lines 369--372
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 376--382
+Underfull \hbox (badness 10000) in paragraph at lines 374--380
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 376--382
+Underfull \hbox (badness 10000) in paragraph at lines 374--380
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 376--382
+Underfull \hbox (badness 10000) in paragraph at lines 374--380
 
  []
 
 [32] [33]
-Underfull \hbox (badness 10000) in paragraph at lines 400--403
+Underfull \hbox (badness 10000) in paragraph at lines 398--401
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 400--403
+Underfull \hbox (badness 10000) in paragraph at lines 398--401
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 404--407
+Underfull \hbox (badness 10000) in paragraph at lines 402--405
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 409--426
+Underfull \hbox (badness 10000) in paragraph at lines 407--424
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 409--426
+Underfull \hbox (badness 10000) in paragraph at lines 407--424
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 409--426
+Underfull \hbox (badness 10000) in paragraph at lines 407--424
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 409--426
+Underfull \hbox (badness 10000) in paragraph at lines 407--424
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 409--426
+Underfull \hbox (badness 10000) in paragraph at lines 407--424
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 409--426
+Underfull \hbox (badness 10000) in paragraph at lines 407--424
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 409--426
+Underfull \hbox (badness 10000) in paragraph at lines 407--424
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 409--426
+Underfull \hbox (badness 10000) in paragraph at lines 407--424
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 409--426
+Underfull \hbox (badness 10000) in paragraph at lines 407--424
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 409--426
+Underfull \hbox (badness 10000) in paragraph at lines 407--424
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 409--426
+Underfull \hbox (badness 10000) in paragraph at lines 407--424
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 409--426
+Underfull \hbox (badness 10000) in paragraph at lines 407--424
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 409--426
+Underfull \hbox (badness 10000) in paragraph at lines 407--424
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 409--426
+Underfull \hbox (badness 10000) in paragraph at lines 407--424
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 409--426
+Underfull \hbox (badness 10000) in paragraph at lines 407--424
 
  []
 
@@ -764,52 +764,52 @@ Underfull \hbox (badness 10000) in paragraph at lines 409--426
 Underfull \vbox (badness 2635) has occurred while \output is active []
 
  [35]
-Underfull \hbox (badness 10000) in paragraph at lines 428--434
+Underfull \hbox (badness 10000) in paragraph at lines 426--432
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 428--434
+Underfull \hbox (badness 10000) in paragraph at lines 426--432
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 428--434
+Underfull \hbox (badness 10000) in paragraph at lines 426--432
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 428--434
+Underfull \hbox (badness 10000) in paragraph at lines 426--432
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 428--434
+Underfull \hbox (badness 10000) in paragraph at lines 426--432
 
  []
 
 [36]
-Underfull \hbox (badness 10000) in paragraph at lines 441--446
+Underfull \hbox (badness 10000) in paragraph at lines 439--444
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 441--446
+Underfull \hbox (badness 10000) in paragraph at lines 439--444
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 441--446
+Underfull \hbox (badness 10000) in paragraph at lines 439--444
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 441--446
+Underfull \hbox (badness 10000) in paragraph at lines 439--444
 
  []
 
 
-LaTeX Warning: Reference `23' on page 37 undefined on input line 451.
+LaTeX Warning: Reference `23' on page 37 undefined on input line 449.
 
 [37] [38
 
@@ -820,13 +820,13 @@ Chapter 4.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.509 \begin{itemize}
+l.507 \begin{itemize}
                      ]
 <../R/photos/05_rank_assets.png, id=662, 505.89pt x 361.35pt>
 File: ../R/photos/05_rank_assets.png Graphic file (type png)
 
 <use ../R/photos/05_rank_assets.png>
-Package pdftex.def Info: ../R/photos/05_rank_assets.png used on input line 534.
+Package pdftex.def Info: ../R/photos/05_rank_assets.png used on input line 532.
 
 (pdftex.def)             Requested size: 151.76816pt x 108.40584pt.
  [41pdfTeX warning (ext4): destination with the same identifier (name{table.4.2
@@ -834,116 +834,108 @@ Package pdftex.def Info: ../R/photos/05_rank_assets.png used on input line 534.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.537 \end{table}
+l.535 \end{table}
                  ]
 <../R/photos/06_rank_mark_val.png, id=669, 505.89pt x 361.35pt>
 File: ../R/photos/06_rank_mark_val.png Graphic file (type png)
 
 <use ../R/photos/06_rank_mark_val.png>
 Package pdftex.def Info: ../R/photos/06_rank_mark_val.png used on input line 54
-3.
-(pdftex.def)             Requested size: 151.76816pt x 108.40584pt.
+0.
+(pdftex.def)             Requested size: 202.3524pt x 144.53743pt.
 
 <../R/photos/07_rank_sh_eq.png, id=670, 505.89pt x 361.35pt>
 File: ../R/photos/07_rank_sh_eq.png Graphic file (type png)
 
 <use ../R/photos/07_rank_sh_eq.png>
-Package pdftex.def Info: ../R/photos/07_rank_sh_eq.png used on input line 552.
-(pdftex.def)             Requested size: 151.76816pt x 108.40584pt.
+Package pdftex.def Info: ../R/photos/07_rank_sh_eq.png used on input line 548.
+(pdftex.def)             Requested size: 202.3524pt x 144.53743pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+<../R/photos/08_rank_rev.png, id=671, 505.89pt x 361.35pt>
+File: ../R/photos/08_rank_rev.png Graphic file (type png)
+
+<use ../R/photos/08_rank_rev.png>
+Package pdftex.def Info: ../R/photos/08_rank_rev.png used on input line 556.
+(pdftex.def)             Requested size: 202.3524pt x 144.53743pt.
+
+Underfull \vbox (badness 3396) has occurred while \output is active []
 
  [42pdfTeX warning (ext4): destination with the same identifier (name{table.4.3
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.556 
-      pdfTeX warning (ext4): destination with the same identifier (name{table.4
-.4}) has been already used, duplicate ignored
+l.559 \end{table}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{table.4.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.556 
-       <../R/photos/05_rank_assets.png> <../R/photos/06_rank_mark_val.png>]
-<../R/photos/08_rank_rev.png, id=679, 505.89pt x 361.35pt>
-File: ../R/photos/08_rank_rev.png Graphic file (type png)
-
-<use ../R/photos/08_rank_rev.png>
-Package pdftex.def Info: ../R/photos/08_rank_rev.png used on input line 561.
-(pdftex.def)             Requested size: 151.76816pt x 108.40584pt.
-
-<../R/photos/09_rank_corplot_f500.png, id=680, 505.89pt x 361.35pt>
+l.559 \end{table}
+                  <../R/photos/05_rank_assets.png> <../R/photos/06_rank_mark_va
+l.png>] <../R/photos/09_rank_corplot_f500.png, id=681, 505.89pt x 361.35pt>
 File: ../R/photos/09_rank_corplot_f500.png Graphic file (type png)
 
 <use ../R/photos/09_rank_corplot_f500.png>
 Package pdftex.def Info: ../R/photos/09_rank_corplot_f500.png used on input lin
-e 572.
+e 566.
 (pdftex.def)             Requested size: 252.94437pt x 180.67456pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [43pdfTeX warning (ext4): destination with the same identifier (name{table.4.5
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.576 M
-       oreover the code that was used to create these diagrams is available ...
-pdfTeX warning (ext4): destination with the same identifier (name{table.4.6}) h
-as been already used, duplicate ignored
+l.569 \end{table}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{table.4.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.576 M
-       oreover the code that was used to create these diagrams is available ...
- <../R/photos/07_rank_sh_eq.png> <../R/photos/08_rank_rev.png>]
-<../R/photos/10_socialmedia.png, id=691, 470.75874pt x 257.29459pt>
+l.569 \end{table}
+                  <../R/photos/07_rank_sh_eq.png> <../R/photos/08_rank_rev.png>
+] [44pdfTeX warning (ext4): destination with the same identifier (name{table.4.
+7}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.570 \newpage
+               <../R/photos/09_rank_corplot_f500.png (PNG copy)>]
+<../R/photos/10_socialmedia.png, id=697, 470.75874pt x 257.29459pt>
 File: ../R/photos/10_socialmedia.png Graphic file (type png)
 
 <use ../R/photos/10_socialmedia.png>
-Package pdftex.def Info: ../R/photos/10_socialmedia.png used on input line 584.
+Package pdftex.def Info: ../R/photos/10_socialmedia.png used on input line 577.
 
 (pdftex.def)             Requested size: 282.45743pt x 154.37793pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 579--586
+Underfull \hbox (badness 10000) in paragraph at lines 572--579
 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [44pdfTeX warning (ext4): destination with the same identifier (name{table.4.7
-}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.587 
-       <../R/photos/09_rank_corplot_f500.png (PNG copy)>]
-<../R/photos/22_REV_SM.png, id=699, 505.89pt x 361.35pt>
+<../R/photos/22_REV_SM.png, id=698, 505.89pt x 361.35pt>
 File: ../R/photos/22_REV_SM.png Graphic file (type png)
 
 <use ../R/photos/22_REV_SM.png>
-Package pdftex.def Info: ../R/photos/22_REV_SM.png used on input line 592.
+Package pdftex.def Info: ../R/photos/22_REV_SM.png used on input line 584.
 (pdftex.def)             Requested size: 252.94437pt x 180.67456pt.
  [45pdfTeX warning (ext4): destination with the same identifier (name{table.4.8
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.598 
+l.591 
       pdfTeX warning (ext4): destination with the same identifier (name{table.4
 .9}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.598 
+l.591 
        <../R/photos/10_socialmedia.png> <../R/photos/22_REV_SM.png (PNG copy)>]
 <../R/photos/24_totlinks_rev.png, id=707, 505.89pt x 361.35pt>
 File: ../R/photos/24_totlinks_rev.png Graphic file (type png)
 
 <use ../R/photos/24_totlinks_rev.png>
-Package pdftex.def Info: ../R/photos/24_totlinks_rev.png used on input line 609
+Package pdftex.def Info: ../R/photos/24_totlinks_rev.png used on input line 599
 .
 (pdftex.def)             Requested size: 252.94437pt x 180.67456pt.
 
@@ -951,111 +943,105 @@ Package pdftex.def Info: ../R/photos/24_totlinks_rev.png used on input line 609
 File: ../R/photos/26_ext_rev.png Graphic file (type png)
 
 <use ../R/photos/26_ext_rev.png>
-Package pdftex.def Info: ../R/photos/26_ext_rev.png used on input line 618.
+Package pdftex.def Info: ../R/photos/26_ext_rev.png used on input line 608.
 (pdftex.def)             Requested size: 252.94437pt x 180.67456pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1377) has occurred while \output is active []
 
  [46pdfTeX warning (ext4): destination with the same identifier (name{table.4.1
 0}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.622 
+l.612 
        <../R/photos/24_totlinks_rev.png>]
 <../R/photos/28_int_rev.png, id=717, 505.89pt x 361.35pt>
 File: ../R/photos/28_int_rev.png Graphic file (type png)
 
 <use ../R/photos/28_int_rev.png>
-Package pdftex.def Info: ../R/photos/28_int_rev.png used on input line 627.
+Package pdftex.def Info: ../R/photos/28_int_rev.png used on input line 617.
+(pdftex.def)             Requested size: 252.94437pt x 180.67456pt.
+
+<../R/photos/29_rev_cor_links.png, id=718, 505.89pt x 361.35pt>
+File: ../R/photos/29_rev_cor_links.png Graphic file (type png)
+
+<use ../R/photos/29_rev_cor_links.png>
+Package pdftex.def Info: ../R/photos/29_rev_cor_links.png used on input line 62
+8.
 (pdftex.def)             Requested size: 252.94437pt x 180.67456pt.
  [47pdfTeX warning (ext4): destination with the same identifier (name{table.4.1
 1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.633 
-      pdfTeX warning (ext4): destination with the same identifier (name{table.4
-.12}) has been already used, duplicate ignored
+l.631 \end{table}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{table.4.12}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.633 
-       <../R/photos/26_ext_rev.png> <../R/photos/28_int_rev.png>]
-<../R/photos/29_rev_cor_links.png, id=726, 505.89pt x 361.35pt>
-File: ../R/photos/29_rev_cor_links.png Graphic file (type png)
+l.631 \end{table}
+                  <../R/photos/26_ext_rev.png> <../R/photos/28_int_rev.png>]
+[48pdfTeX warning (ext4): destination with the same identifier (name{table.4.13
+}) has been already used, duplicate ignored
 
-<use ../R/photos/29_rev_cor_links.png>
-Package pdftex.def Info: ../R/photos/29_rev_cor_links.png used on input line 63
-8.
-(pdftex.def)             Requested size: 252.94437pt x 180.67456pt.
-
-<../R/photos/31_ld_rev.png, id=728, 505.89pt x 361.35pt>
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.633 \newpage
+               <../R/photos/29_rev_cor_links.png (PNG copy)>]
+<../R/photos/31_ld_rev.png, id=734, 505.89pt x 361.35pt>
 File: ../R/photos/31_ld_rev.png Graphic file (type png)
 
 <use ../R/photos/31_ld_rev.png>
-Package pdftex.def Info: ../R/photos/31_ld_rev.png used on input line 649.
+Package pdftex.def Info: ../R/photos/31_ld_rev.png used on input line 640.
 (pdftex.def)             Requested size: 202.3524pt x 144.53743pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [48pdfTeX warning (ext4): destination with the same identifier (name{table.4.1
-3}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.653 F
-       rom the table above we can see that the loading time in relation to t...
- <../R/photos/29_rev_cor_links.png (PNG copy)>]
 <../R/photos/33_sent_rev.png, id=738, 505.89pt x 361.35pt>
 File: ../R/photos/33_sent_rev.png Graphic file (type png)
 
 <use ../R/photos/33_sent_rev.png>
-Package pdftex.def Info: ../R/photos/33_sent_rev.png used on input line 660.
+Package pdftex.def Info: ../R/photos/33_sent_rev.png used on input line 651.
 (pdftex.def)             Requested size: 202.3524pt x 144.53743pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [49pdfTeX warning (ext4): destination with the same identifier (name{table.4.1
 4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.664 F
-       rom the table we can see that most sites have less than 500 sentences...
- <../R/photos/31_ld_rev.png>]
-<../R/photos/37_w_rev.png, id=748, 505.89pt x 361.35pt>
+l.654 \end{table}
+                  <../R/photos/31_ld_rev.png>]
+<../R/photos/37_w_rev.png, id=751, 505.89pt x 361.35pt>
 File: ../R/photos/37_w_rev.png Graphic file (type png)
 
 <use ../R/photos/37_w_rev.png>
-Package pdftex.def Info: ../R/photos/37_w_rev.png used on input line 669.
+Package pdftex.def Info: ../R/photos/37_w_rev.png used on input line 660.
 (pdftex.def)             Requested size: 202.3524pt x 144.53743pt.
 
-<../R/photos/35_uw_rev.png, id=749, 505.89pt x 361.35pt>
+<../R/photos/35_uw_rev.png, id=753, 505.89pt x 361.35pt>
 File: ../R/photos/35_uw_rev.png Graphic file (type png)
 
 <use ../R/photos/35_uw_rev.png>
-Package pdftex.def Info: ../R/photos/35_uw_rev.png used on input line 678.
+Package pdftex.def Info: ../R/photos/35_uw_rev.png used on input line 669.
 (pdftex.def)             Requested size: 202.3524pt x 144.53743pt.
  [50pdfTeX warning (ext4): destination with the same identifier (name{table.4.1
 5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.681 \end{table}
+l.672 \end{table}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{table.4.16}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.681 \end{table}
+l.672 \end{table}
                   <../R/photos/33_sent_rev.png> <../R/photos/37_w_rev.png>]
-<../R/photos/38_words_corr.png, id=758, 505.89pt x 361.35pt>
-File: ../R/photos/38_words_corr.png Graphic file (type png)
+<../R/photos/38b_words_corr.png, id=763, 459.21562pt x 124.96687pt>
+File: ../R/photos/38b_words_corr.png Graphic file (type png)
 
-<use ../R/photos/38_words_corr.png>
-Package pdftex.def Info: ../R/photos/38_words_corr.png used on input line 687.
-(pdftex.def)             Requested size: 252.94437pt x 180.67456pt.
+<use ../R/photos/38b_words_corr.png>
+Package pdftex.def Info: ../R/photos/38b_words_corr.png used on input line 678.
+
+(pdftex.def)             Requested size: 321.44873pt x 87.47621pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1064,21 +1050,21 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.691 F
+l.682 F
        rom the correlation table we can also observe that the three variable...
  <../R/photos/35_uw_rev.png>]
-<../R/photos/41_read_dist.png, id=766, 505.89pt x 361.35pt>
+<../R/photos/41_read_dist.png, id=771, 505.89pt x 361.35pt>
 File: ../R/photos/41_read_dist.png Graphic file (type png)
 
 <use ../R/photos/41_read_dist.png>
-Package pdftex.def Info: ../R/photos/41_read_dist.png used on input line 697.
+Package pdftex.def Info: ../R/photos/41_read_dist.png used on input line 688.
 (pdftex.def)             Requested size: 252.94437pt x 180.67456pt.
 
-<../R/photos/42_read_rev.png, id=767, 505.89pt x 361.35pt>
+<../R/photos/42_read_rev.png, id=772, 505.89pt x 361.35pt>
 File: ../R/photos/42_read_rev.png Graphic file (type png)
 
 <use ../R/photos/42_read_rev.png>
-Package pdftex.def Info: ../R/photos/42_read_rev.png used on input line 705.
+Package pdftex.def Info: ../R/photos/42_read_rev.png used on input line 696.
 (pdftex.def)             Requested size: 252.94437pt x 180.67456pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1088,315 +1074,320 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.708 \end{table}
-                  <../R/photos/38_words_corr.png (PNG copy)>]
-<../R/photos/43_read_cor.png, id=774, 505.89pt x 361.35pt>
-File: ../R/photos/43_read_cor.png Graphic file (type png)
-
-<use ../R/photos/43_read_cor.png>
-Package pdftex.def Info: ../R/photos/43_read_cor.png used on input line 714.
-(pdftex.def)             Requested size: 252.94437pt x 180.67456pt.
- [53pdfTeX warning (ext4): destination with the same identifier (name{table.4.1
-9}) has been already used, duplicate ignored
+l.700 F
+       rom the above two charts we can see that firstly the most sites are d...
+pdfTeX warning (ext4): destination with the same identifier (name{table.4.19}) 
+has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.717 \end{table}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{table.4.20}) has been already used, duplicate ignored
+l.700 F
+       rom the above two charts we can see that firstly the most sites are d...
+ <../R/photos/38b_words_corr.png> <../R/photos/41_read_dist.png>]
+<../R/photos/43b_read_cor.png, id=781, 392.96812pt x 85.06781pt>
+File: ../R/photos/43b_read_cor.png Graphic file (type png)
+
+<use ../R/photos/43b_read_cor.png>
+Package pdftex.def Info: ../R/photos/43b_read_cor.png used on input line 705.
+(pdftex.def)             Requested size: 275.07579pt x 59.54704pt.
+ [53pdfTeX warning (ext4): destination with the same identifier (name{table.4.2
+0}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.717 \end{table}
-                  <../R/photos/41_read_dist.png> <../R/photos/42_read_rev.png>]
-<../R/photos/45_errors_rev.png, id=783, 505.89pt x 361.35pt>
-File: ../R/photos/45_errors_rev.png Graphic file (type png)
+l.710 ...ation variables analysis and correlation}
+                                                  pdfTeX warning (ext4): destin
+ation with the same identifier (name{table.4.21}) has been already used, duplic
+ate ignored
 
-<use ../R/photos/45_errors_rev.png>
-Package pdftex.def Info: ../R/photos/45_errors_rev.png used on input line 725.
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.710 ...ation variables analysis and correlation}
+                                                   <../R/photos/42_read_rev.png
+> <../R/photos/43b_read_cor.png>]
+<../R/photos/44_errors_dist.png, id=790, 505.89pt x 361.35pt>
+File: ../R/photos/44_errors_dist.png Graphic file (type png)
+
+<use ../R/photos/44_errors_dist.png>
+Package pdftex.def Info: ../R/photos/44_errors_dist.png used on input line 716.
+
 (pdftex.def)             Requested size: 252.94437pt x 180.67456pt.
 
-<../R/photos/47_warn_rev.png, id=784, 505.89pt x 361.35pt>
-File: ../R/photos/47_warn_rev.png Graphic file (type png)
+<../R/photos/46_warn_dist.png, id=791, 505.89pt x 361.35pt>
+File: ../R/photos/46_warn_dist.png Graphic file (type png)
 
-<use ../R/photos/47_warn_rev.png>
-Package pdftex.def Info: ../R/photos/47_warn_rev.png used on input line 733.
+<use ../R/photos/46_warn_dist.png>
+Package pdftex.def Info: ../R/photos/46_warn_dist.png used on input line 724.
+(pdftex.def)             Requested size: 252.94437pt x 180.67456pt.
+
+<../R/photos/49_nde_rev.png, id=792, 505.89pt x 361.35pt>
+File: ../R/photos/49_nde_rev.png Graphic file (type png)
+
+<use ../R/photos/49_nde_rev.png>
+Package pdftex.def Info: ../R/photos/49_nde_rev.png used on input line 732.
 (pdftex.def)             Requested size: 252.94437pt x 180.67456pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [54pdfTeX warning (ext4): destination with the same identifier (name{table.4.2
-1}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.736 \end{table}
-                  <../R/photos/43_read_cor.png (PNG copy)>]
-<../R/photos/49_nde_rev.png, id=791, 505.89pt x 361.35pt>
-File: ../R/photos/49_nde_rev.png Graphic file (type png)
-
-<use ../R/photos/49_nde_rev.png>
-Package pdftex.def Info: ../R/photos/49_nde_rev.png used on input line 741.
-(pdftex.def)             Requested size: 252.94437pt x 180.67456pt.
-
-<../R/photos/51_html_cor.png, id=792, 505.89pt x 361.35pt>
-File: ../R/photos/51_html_cor.png Graphic file (type png)
-
-<use ../R/photos/51_html_cor.png>
-Package pdftex.def Info: ../R/photos/51_html_cor.png used on input line 749.
-(pdftex.def)             Requested size: 252.94437pt x 180.67456pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [55pdfTeX warning (ext4): destination with the same identifier (name{table.4.2
 2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.752 \end{table}
-                 pdfTeX warning (ext4): destination with the same identifier (n
-ame{table.4.23}) has been already used, duplicate ignored
+l.735 \end{table}
+                  <../R/photos/44_errors_dist.png>]
+<../R/photos/51b_HTML_cor.png, id=800, 613.54219pt x 106.89937pt>
+File: ../R/photos/51b_HTML_cor.png Graphic file (type png)
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.752 \end{table}
-                  <../R/photos/45_errors_rev.png> <../R/photos/47_warn_rev.png>
-] [56pdfTeX warning (ext4): destination with the same identifier (name{table.4.
-24}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.754 ...ion{Image types analysis and correlation}
-                                                  pdfTeX warning (ext4): destin
-ation with the same identifier (name{table.4.25}) has been already used, duplic
-ate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.754 ...ion{Image types analysis and correlation}
-                                                   <../R/photos/49_nde_rev.png>
- <../R/photos/51_html_cor.png (PNG copy)>]
-<../R/photos/53_timg_rev.png, id=811, 505.89pt x 361.35pt>
-File: ../R/photos/53_timg_rev.png Graphic file (type png)
-
-<use ../R/photos/53_timg_rev.png>
-Package pdftex.def Info: ../R/photos/53_timg_rev.png used on input line 760.
-(pdftex.def)             Requested size: 252.94437pt x 180.67456pt.
-
-<../R/photos/54_bmp_rev.png, id=812, 505.89pt x 361.35pt>
-File: ../R/photos/54_bmp_rev.png Graphic file (type png)
-
-<use ../R/photos/54_bmp_rev.png>
-Package pdftex.def Info: ../R/photos/54_bmp_rev.png used on input line 769.
-(pdftex.def)             Requested size: 252.94437pt x 180.67456pt.
+<use ../R/photos/51b_HTML_cor.png>
+Package pdftex.def Info: ../R/photos/51b_HTML_cor.png used on input line 740.
+(pdftex.def)             Requested size: 306.77034pt x 53.44954pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [57pdfTeX warning (ext4): destination with the same identifier (name{table.4.2
-6}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.773 F
-       rom this chart we can see that only 4 sites actually uses bmp images. <.
-./R/photos/53_timg_rev.png>]
-<../R/photos/55_dib_rev.png, id=820, 505.89pt x 361.35pt>
-File: ../R/photos/55_dib_rev.png Graphic file (type png)
-
-<use ../R/photos/55_dib_rev.png>
-Package pdftex.def Info: ../R/photos/55_dib_rev.png used on input line 778.
-(pdftex.def)             Requested size: 252.94437pt x 180.67456pt.
-
-<../R/photos/56_gif_rev.png, id=821, 505.89pt x 361.35pt>
-File: ../R/photos/56_gif_rev.png Graphic file (type png)
-
-<use ../R/photos/56_gif_rev.png>
-Package pdftex.def Info: ../R/photos/56_gif_rev.png used on input line 787.
-(pdftex.def)             Requested size: 252.94437pt x 180.67456pt.
- [58pdfTeX warning (ext4): destination with the same identifier (name{table.4.2
-7}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.791 T
-       he .gif type is being used from many sites but in the highest revenue...
-pdfTeX warning (ext4): destination with the same identifier (name{table.4.28}) 
-has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.791 T
-       he .gif type is being used from many sites but in the highest revenue...
- <../R/photos/54_bmp_rev.png> <../R/photos/55_dib_rev.png>]
-<../R/photos/57_jpe_rev.png, id=830, 505.89pt x 361.35pt>
-File: ../R/photos/57_jpe_rev.png Graphic file (type png)
-
-<use ../R/photos/57_jpe_rev.png>
-Package pdftex.def Info: ../R/photos/57_jpe_rev.png used on input line 796.
-(pdftex.def)             Requested size: 252.94437pt x 180.67456pt.
-
-<../R/photos/58_jpeg_rev.png, id=831, 505.89pt x 361.35pt>
-File: ../R/photos/58_jpeg_rev.png Graphic file (type png)
-
-<use ../R/photos/58_jpeg_rev.png>
-Package pdftex.def Info: ../R/photos/58_jpeg_rev.png used on input line 805.
-(pdftex.def)             Requested size: 252.94437pt x 180.67456pt.
- [59pdfTeX warning (ext4): destination with the same identifier (name{table.4.2
-9}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.809 A
-       gain this type is being used by very few companies sites and all of t...
-pdfTeX warning (ext4): destination with the same identifier (name{table.4.30}) 
-has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.809 A
-       gain this type is being used by very few companies sites and all of t...
- <../R/photos/56_gif_rev.png> <../R/photos/57_jpe_rev.png>]
-<../R/photos/59_jpg_rev.png, id=840, 505.89pt x 361.35pt>
-File: ../R/photos/59_jpg_rev.png Graphic file (type png)
-
-<use ../R/photos/59_jpg_rev.png>
-Package pdftex.def Info: ../R/photos/59_jpg_rev.png used on input line 814.
-(pdftex.def)             Requested size: 252.94437pt x 180.67456pt.
-
-<../R/photos/60_png_rev.png, id=841, 505.89pt x 361.35pt>
-File: ../R/photos/60_png_rev.png Graphic file (type png)
-
-<use ../R/photos/60_png_rev.png>
-Package pdftex.def Info: ../R/photos/60_png_rev.png used on input line 823.
-(pdftex.def)             Requested size: 252.94437pt x 180.67456pt.
- [60pdfTeX warning (ext4): destination with the same identifier (name{table.4.3
-1}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.827 A
-       lso the .png type is being used from most companies. Here we can see ...
-pdfTeX warning (ext4): destination with the same identifier (name{table.4.32}) 
-has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.827 A
-       lso the .png type is being used from most companies. Here we can see ...
- <../R/photos/58_jpeg_rev.png> <../R/photos/59_jpg_rev.png>]
-<../R/photos/61_tif_rev.png, id=850, 505.89pt x 361.35pt>
-File: ../R/photos/61_tif_rev.png Graphic file (type png)
-
-<use ../R/photos/61_tif_rev.png>
-Package pdftex.def Info: ../R/photos/61_tif_rev.png used on input line 832.
-(pdftex.def)             Requested size: 252.94437pt x 180.67456pt.
-
-<../R/photos/62_tiff_rev.png, id=851, 505.89pt x 361.35pt>
-File: ../R/photos/62_tiff_rev.png Graphic file (type png)
-
-<use ../R/photos/62_tiff_rev.png>
-Package pdftex.def Info: ../R/photos/62_tiff_rev.png used on input line 841.
-(pdftex.def)             Requested size: 252.94437pt x 180.67456pt.
- [61pdfTeX warning (ext4): destination with the same identifier (name{table.4.3
+ [55pdfTeX warning (ext4): destination with the same identifier (name{table.4.2
 3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.844 \end{table}
+l.744 T
+       he table of the "document opened" variable which is available in the ...
+pdfTeX warning (ext4): destination with the same identifier (name{table.4.24}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.744 T
+       he table of the "document opened" variable which is available in the ...
+ <../R/photos/46_warn_dist.png> <../R/photos/49_nde_rev.png>]
+<../R/photos/53_timg_rev.png, id=811, 505.89pt x 361.35pt>
+File: ../R/photos/53_timg_rev.png Graphic file (type png)
+
+<use ../R/photos/53_timg_rev.png>
+Package pdftex.def Info: ../R/photos/53_timg_rev.png used on input line 751.
+(pdftex.def)             Requested size: 252.94437pt x 180.67456pt.
+
+<../R/photos/54_bmp_dist.png, id=812, 505.89pt x 361.35pt>
+File: ../R/photos/54_bmp_dist.png Graphic file (type png)
+
+<use ../R/photos/54_bmp_dist.png>
+Package pdftex.def Info: ../R/photos/54_bmp_dist.png used on input line 760.
+(pdftex.def)             Requested size: 202.3524pt x 144.53743pt.
+ [56pdfTeX warning (ext4): destination with the same identifier (name{table.4.2
+5}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.763 \end{table}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{table.4.26}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.763 \end{table}
+                  <../R/photos/51b_HTML_cor.png> <../R/photos/53_timg_rev.png>]
+<../R/photos/55_dib_dist.png, id=823, 505.89pt x 361.35pt>
+File: ../R/photos/55_dib_dist.png Graphic file (type png)
+
+<use ../R/photos/55_dib_dist.png>
+Package pdftex.def Info: ../R/photos/55_dib_dist.png used on input line 768.
+(pdftex.def)             Requested size: 202.3524pt x 144.53743pt.
+
+<../R/photos/56_gif_dist.png, id=824, 505.89pt x 361.35pt>
+File: ../R/photos/56_gif_dist.png Graphic file (type png)
+
+<use ../R/photos/56_gif_dist.png>
+Package pdftex.def Info: ../R/photos/56_gif_dist.png used on input line 776.
+(pdftex.def)             Requested size: 202.3524pt x 144.53743pt.
+
+<../R/photos/57_jpe_dist.png, id=825, 505.89pt x 361.35pt>
+File: ../R/photos/57_jpe_dist.png Graphic file (type png)
+
+<use ../R/photos/57_jpe_dist.png>
+Package pdftex.def Info: ../R/photos/57_jpe_dist.png used on input line 784.
+(pdftex.def)             Requested size: 202.3524pt x 144.53743pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [57pdfTeX warning (ext4): destination with the same identifier (name{table.4.2
+7}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.787 \end{table}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{table.4.28}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.787 \end{table}
+                  <../R/photos/54_bmp_dist.png> <../R/photos/55_dib_dist.png>]
+<../R/photos/58_jpeg_dist.png, id=834, 505.89pt x 361.35pt>
+File: ../R/photos/58_jpeg_dist.png Graphic file (type png)
+
+<use ../R/photos/58_jpeg_dist.png>
+Package pdftex.def Info: ../R/photos/58_jpeg_dist.png used on input line 792.
+(pdftex.def)             Requested size: 202.3524pt x 144.53743pt.
+
+<../R/photos/59_jpg_dist.png, id=835, 505.89pt x 361.35pt>
+File: ../R/photos/59_jpg_dist.png Graphic file (type png)
+
+<use ../R/photos/59_jpg_dist.png>
+Package pdftex.def Info: ../R/photos/59_jpg_dist.png used on input line 800.
+(pdftex.def)             Requested size: 202.3524pt x 144.53743pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [58pdfTeX warning (ext4): destination with the same identifier (name{table.4.2
+9}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.803 \end{table}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{table.4.30}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.803 \end{table}
+                  <../R/photos/56_gif_dist.png> <../R/photos/57_jpe_dist.png>]
+<../R/photos/60_png_dist.png, id=844, 505.89pt x 361.35pt>
+File: ../R/photos/60_png_dist.png Graphic file (type png)
+
+<use ../R/photos/60_png_dist.png>
+Package pdftex.def Info: ../R/photos/60_png_dist.png used on input line 808.
+(pdftex.def)             Requested size: 202.3524pt x 144.53743pt.
+
+<../R/photos/61_tif_dist.png, id=845, 505.89pt x 361.35pt>
+File: ../R/photos/61_tif_dist.png Graphic file (type png)
+
+<use ../R/photos/61_tif_dist.png>
+Package pdftex.def Info: ../R/photos/61_tif_dist.png used on input line 816.
+(pdftex.def)             Requested size: 202.3524pt x 144.53743pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [59pdfTeX warning (ext4): destination with the same identifier (name{table.4.3
+1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.819 \end{table}
+                 pdfTeX warning (ext4): destination with the same identifier (n
+ame{table.4.32}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.819 \end{table}
+                  <../R/photos/58_jpeg_dist.png> <../R/photos/59_jpg_dist.png>]
+<../R/photos/62_tiff_dist.png, id=854, 505.89pt x 361.35pt>
+File: ../R/photos/62_tiff_dist.png Graphic file (type png)
+
+<use ../R/photos/62_tiff_dist.png>
+Package pdftex.def Info: ../R/photos/62_tiff_dist.png used on input line 824.
+(pdftex.def)             Requested size: 202.3524pt x 144.53743pt.
+
+<../R/photos/63b_img_cor.png, id=855, 596.2275pt x 248.42813pt>
+File: ../R/photos/63b_img_cor.png Graphic file (type png)
+
+<use ../R/photos/63b_img_cor.png>
+Package pdftex.def Info: ../R/photos/63b_img_cor.png used on input line 832.
+(pdftex.def)             Requested size: 327.92613pt x 136.63588pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [60pdfTeX warning (ext4): destination with the same identifier (name{table.4.3
+3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.835 \end{table}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{table.4.34}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.844 \end{table}
-                  <../R/photos/60_png_rev.png> <../R/photos/61_tif_rev.png>]
-<../R/photos/63_img_cor.png, id=861, 505.89pt x 361.35pt>
-File: ../R/photos/63_img_cor.png Graphic file (type png)
-
-<use ../R/photos/63_img_cor.png>
-Package pdftex.def Info: ../R/photos/63_img_cor.png used on input line 850.
-(pdftex.def)             Requested size: 252.94437pt x 180.67456pt.
- [62pdfTeX warning (ext4): destination with the same identifier (name{table.4.3
-5}) has been already used, duplicate ignored
+l.835 \end{table}
+                  <../R/photos/60_png_dist.png> <../R/photos/61_tif_dist.png>]
+[61pdfTeX warning (ext4): destination with the same identifier (name{table.4.35
+}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.856 \subsection{Data manipulation}
+l.838 \subsection{Data manipulation}
                                     pdfTeX warning (ext4): destination with the
  same identifier (name{table.4.36}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.856 \subsection{Data manipulation}
-                                     <../R/photos/62_tiff_rev.png> <../R/photos
-/63_img_cor.png (PNG copy)>]
-<../R/photos/64_size_no.png, id=872, 505.89pt x 361.35pt>
+l.838 \subsection{Data manipulation}
+                                     <../R/photos/62_tiff_dist.png> <../R/photo
+s/63b_img_cor.png>] <../R/photos/64_size_no.png, id=876, 505.89pt x 361.35pt>
 File: ../R/photos/64_size_no.png Graphic file (type png)
 
 <use ../R/photos/64_size_no.png>
-Package pdftex.def Info: ../R/photos/64_size_no.png used on input line 866.
+Package pdftex.def Info: ../R/photos/64_size_no.png used on input line 848.
 (pdftex.def)             Requested size: 252.94437pt x 180.67456pt.
 
-<../R/photos/65_size_yes.png, id=873, 505.89pt x 361.35pt>
+<../R/photos/65_size_yes.png, id=877, 505.89pt x 361.35pt>
 File: ../R/photos/65_size_yes.png Graphic file (type png)
 
 <use ../R/photos/65_size_yes.png>
-Package pdftex.def Info: ../R/photos/65_size_yes.png used on input line 874.
+Package pdftex.def Info: ../R/photos/65_size_yes.png used on input line 856.
 (pdftex.def)             Requested size: 252.94437pt x 180.67456pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [63]
-[64pdfTeX warning (ext4): destination with the same identifier (name{table.4.37
+ [62]
+[63pdfTeX warning (ext4): destination with the same identifier (name{table.4.37
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.912 \end{table}
+l.894 \end{table}
                  pdfTeX warning (ext4): destination with the same identifier (n
 ame{table.4.38}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.912 \end{table}
+l.894 \end{table}
                   <../R/photos/64_size_no.png> <../R/photos/65_size_yes.png>]
-[65pdfTeX warning (ext4): destination with the same identifier (name{table.4.39
+[64pdfTeX warning (ext4): destination with the same identifier (name{table.4.39
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.988 \end{table}
-                 ] [66pdfTeX warning (ext4): destination with the same identifi
+l.970 \end{table}
+                 ] [65pdfTeX warning (ext4): destination with the same identifi
 er (name{table.4.40}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.994 ...ubsection{Training and test set creation}
+l.976 ...ubsection{Training and test set creation}
                                                   ]
-<../R/photos/65_null_model.PNG, id=911, 408.77719pt x 210.03468pt>
+<../R/photos/65_null_model.PNG, id=913, 408.77719pt x 210.03468pt>
 File: ../R/photos/65_null_model.PNG Graphic file (type png)
 
 <use ../R/photos/65_null_model.PNG>
-Package pdftex.def Info: ../R/photos/65_null_model.PNG used on input line 1008.
-
+Package pdftex.def Info: ../R/photos/65_null_model.PNG used on input line 990.
 (pdftex.def)             Requested size: 245.2682pt x 126.02177pt.
- [67pdfTeX warning (ext4): destination with the same identifier (name{table.4.4
+ [66pdfTeX warning (ext4): destination with the same identifier (name{table.4.4
 1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1015 \begin{itemize}
-                       <../R/photos/65_null_model.PNG>]
+l.997 \begin{itemize}
+                      <../R/photos/65_null_model.PNG>]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
- [68]
+ [67]
 
-LaTeX Warning: Reference `d :r :1' on page 69 undefined on input line 1044.
+LaTeX Warning: Reference `d :r :1' on page 68 undefined on input line 1026.
 
 Missing character: There is no Œ in font cmr10!
 Missing character: There is no ≤ in font cmr10!
-[69]
+[68]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no à in font cmr10!
 Missing character: There is no í in font cmr10!
@@ -1405,245 +1396,246 @@ Missing character: There is no à in font cmr10!
 Missing character: There is no í in font cmr10!
 Missing character: There is no Œ in font cmr10!
 Missing character: There is no ≤ in font cmr10!
- <../R/photos/70_lasso.png, id=938, 505.89pt x 361.35pt>
+ <../R/photos/70_lasso.png, id=940, 505.89pt x 361.35pt>
 File: ../R/photos/70_lasso.png Graphic file (type png)
 
 <use ../R/photos/70_lasso.png>
-Package pdftex.def Info: ../R/photos/70_lasso.png used on input line 1062.
+Package pdftex.def Info: ../R/photos/70_lasso.png used on input line 1044.
 (pdftex.def)             Requested size: 252.94437pt x 180.67456pt.
 
-<../R/photos/71_lassob.png, id=939, 505.89pt x 361.35pt>
+<../R/photos/71_lassob.png, id=941, 505.89pt x 361.35pt>
 File: ../R/photos/71_lassob.png Graphic file (type png)
 
 <use ../R/photos/71_lassob.png>
-Package pdftex.def Info: ../R/photos/71_lassob.png used on input line 1071.
+Package pdftex.def Info: ../R/photos/71_lassob.png used on input line 1053.
 (pdftex.def)             Requested size: 252.94437pt x 180.67456pt.
 Missing character: There is no ‚ in font cmti10!
 Missing character: There is no Ä in font cmti10!
 Missing character: There is no ô in font cmti10!
- [70pdfTeX warning (ext4): destination with the same identifier (name{table.4.4
+ [69pdfTeX warning (ext4): destination with the same identifier (name{table.4.4
 2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1074 \end{table}
+l.1056 \end{table}
                    <../R/photos/70_lasso.png>]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 1082--1084
+Underfull \hbox (badness 10000) in paragraph at lines 1064--1066
 
  []
 
-[71pdfTeX warning (ext4): destination with the same identifier (name{table.4.43
+[70pdfTeX warning (ext4): destination with the same identifier (name{table.4.43
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1086 \item A
+l.1068 \item A
               djusted R-squared : 0.7979 (79,79\%) <../R/photos/71_lassob.png>]
 
-Underfull \hbox (badness 10000) in paragraph at lines 1100--1102
+Underfull \hbox (badness 10000) in paragraph at lines 1082--1084
 
  []
 
-<../R/photos/85_pred_mod.png, id=954, 505.89pt x 361.35pt>
+<../R/photos/85_pred_mod.png, id=956, 505.89pt x 361.35pt>
 File: ../R/photos/85_pred_mod.png Graphic file (type png)
 
 <use ../R/photos/85_pred_mod.png>
-Package pdftex.def Info: ../R/photos/85_pred_mod.png used on input line 1118.
+Package pdftex.def Info: ../R/photos/85_pred_mod.png used on input line 1100.
 (pdftex.def)             Requested size: 303.53633pt x 216.81168pt.
- [72] [73pdfTeX warning (ext4): destination with the same identifier (name{tabl
+ [71] [72pdfTeX warning (ext4): destination with the same identifier (name{tabl
 e.4.44}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1126 \item I
+l.1108 \item I
               mage size: 8 x 15 (negative correlation with Revenues) <../R/phot
 os/85_pred_mod.png>]
-<../R/photos/86_model_cor.png, id=970, 505.89pt x 361.35pt>
+<../R/photos/86_model_cor.png, id=971, 505.89pt x 361.35pt>
 File: ../R/photos/86_model_cor.png Graphic file (type png)
 
 <use ../R/photos/86_model_cor.png>
-Package pdftex.def Info: ../R/photos/86_model_cor.png used on input line 1144.
+Package pdftex.def Info: ../R/photos/86_model_cor.png used on input line 1126.
 (pdftex.def)             Requested size: 252.94437pt x 180.67456pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1139--1146
+Underfull \hbox (badness 10000) in paragraph at lines 1121--1128
 
  []
 
 
 Underfull \vbox (badness 6364) has occurred while \output is active []
 
- [74]
-[75pdfTeX warning (ext4): destination with the same identifier (name{table.4.45
+ [73]
+[74pdfTeX warning (ext4): destination with the same identifier (name{table.4.45
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1159 \subsubsection{Clustering testing}
+l.1141 \subsubsection{Clustering testing}
                                           <../R/photos/86_model_cor.png (PNG co
-py)>] <../R/photos/91_clust_ld.png, id=990, 505.89pt x 361.35pt>
+py)>] <../R/photos/91_clust_ld.png, id=992, 505.89pt x 361.35pt>
 File: ../R/photos/91_clust_ld.png Graphic file (type png)
 
 <use ../R/photos/91_clust_ld.png>
-Package pdftex.def Info: ../R/photos/91_clust_ld.png used on input line 1166.
+Package pdftex.def Info: ../R/photos/91_clust_ld.png used on input line 1148.
 (pdftex.def)             Requested size: 303.53633pt x 216.81168pt.
 
-<../R/photos/92_clust_read.png, id=991, 505.89pt x 361.35pt>
+<../R/photos/92_clust_read.png, id=993, 505.89pt x 361.35pt>
 File: ../R/photos/92_clust_read.png Graphic file (type png)
 
 <use ../R/photos/92_clust_read.png>
-Package pdftex.def Info: ../R/photos/92_clust_read.png used on input line 1174.
+Package pdftex.def Info: ../R/photos/92_clust_read.png used on input line 1156.
 
 (pdftex.def)             Requested size: 252.94437pt x 180.67456pt.
 
 Underfull \vbox (badness 1796) has occurred while \output is active []
 
- [76pdfTeX warning (ext4): destination with the same identifier (name{table.4.4
+ [75pdfTeX warning (ext4): destination with the same identifier (name{table.4.4
 6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1177 A
+l.1159 A
         gain here the deviation happened in the revenue values of 75 million...
  <../R/photos/91_clust_ld.png>]
-<../R/photos/93_clust_inst.png, id=999, 505.89pt x 361.35pt>
+<../R/photos/93_clust_inst.png, id=1001, 505.89pt x 361.35pt>
 File: ../R/photos/93_clust_inst.png Graphic file (type png)
 
 <use ../R/photos/93_clust_inst.png>
-Package pdftex.def Info: ../R/photos/93_clust_inst.png used on input line 1182.
+Package pdftex.def Info: ../R/photos/93_clust_inst.png used on input line 1164.
 
 (pdftex.def)             Requested size: 252.94437pt x 180.67456pt.
 
-<../R/photos/94_clust_bmp.png, id=1000, 505.89pt x 361.35pt>
+<../R/photos/94_clust_bmp.png, id=1002, 505.89pt x 361.35pt>
 File: ../R/photos/94_clust_bmp.png Graphic file (type png)
 
 <use ../R/photos/94_clust_bmp.png>
-Package pdftex.def Info: ../R/photos/94_clust_bmp.png used on input line 1190.
+Package pdftex.def Info: ../R/photos/94_clust_bmp.png used on input line 1172.
 (pdftex.def)             Requested size: 252.94437pt x 180.67456pt.
- [77pdfTeX warning (ext4): destination with the same identifier (name{table.4.4
+ [76pdfTeX warning (ext4): destination with the same identifier (name{table.4.4
 7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1193 B
+l.1175 B
         y the same logic is the graph for the bmp image type divided. Here w...
 pdfTeX warning (ext4): destination with the same identifier (name{table.4.48}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1193 B
+l.1175 B
         y the same logic is the graph for the bmp image type divided. Here w...
  <../R/photos/92_clust_read.png> <../R/photos/93_clust_inst.png>]
-<../R/photos/95_clust_jpe.png, id=1009, 505.89pt x 361.35pt>
+<../R/photos/95_clust_jpe.png, id=1011, 505.89pt x 361.35pt>
 File: ../R/photos/95_clust_jpe.png Graphic file (type png)
 
 <use ../R/photos/95_clust_jpe.png>
-Package pdftex.def Info: ../R/photos/95_clust_jpe.png used on input line 1198.
+Package pdftex.def Info: ../R/photos/95_clust_jpe.png used on input line 1180.
 (pdftex.def)             Requested size: 252.94437pt x 180.67456pt.
 
-<../R/photos/96_clust_60.png, id=1010, 505.89pt x 361.35pt>
+<../R/photos/96_clust_60.png, id=1012, 505.89pt x 361.35pt>
 File: ../R/photos/96_clust_60.png Graphic file (type png)
 
 <use ../R/photos/96_clust_60.png>
-Package pdftex.def Info: ../R/photos/96_clust_60.png used on input line 1207.
+Package pdftex.def Info: ../R/photos/96_clust_60.png used on input line 1189.
 (pdftex.def)             Requested size: 202.3524pt x 144.53743pt.
- [78pdfTeX warning (ext4): destination with the same identifier (name{table.4.4
+ [77pdfTeX warning (ext4): destination with the same identifier (name{table.4.4
 9}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1209 \end{table}
+l.1191 \end{table}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{table.4.50}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1209 \end{table}
+l.1191 \end{table}
                    <../R/photos/94_clust_bmp.png> <../R/photos/95_clust_jpe.png
->] <../R/photos/97_clust_44.png, id=1019, 505.89pt x 361.35pt>
+>] <../R/photos/97_clust_44.png, id=1021, 505.89pt x 361.35pt>
 File: ../R/photos/97_clust_44.png Graphic file (type png)
 
 <use ../R/photos/97_clust_44.png>
-Package pdftex.def Info: ../R/photos/97_clust_44.png used on input line 1215.
+Package pdftex.def Info: ../R/photos/97_clust_44.png used on input line 1197.
 (pdftex.def)             Requested size: 202.3524pt x 144.53743pt.
 
-<../R/photos/98_clust_400.png, id=1020, 505.89pt x 361.35pt>
+<../R/photos/98_clust_400.png, id=1022, 505.89pt x 361.35pt>
 File: ../R/photos/98_clust_400.png Graphic file (type png)
 
 <use ../R/photos/98_clust_400.png>
-Package pdftex.def Info: ../R/photos/98_clust_400.png used on input line 1223.
+Package pdftex.def Info: ../R/photos/98_clust_400.png used on input line 1205.
 (pdftex.def)             Requested size: 202.3524pt x 144.53743pt.
- [79pdfTeX warning (ext4): destination with the same identifier (name{table.4.5
+ [78pdfTeX warning (ext4): destination with the same identifier (name{table.4.5
 1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1226 A
+l.1208 A
         lmost half of the sites that belong to the first cluster which is th...
 pdfTeX warning (ext4): destination with the same identifier (name{table.4.52}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1226 A
+l.1208 A
         lmost half of the sites that belong to the first cluster which is th...
  <../R/photos/96_clust_60.png> <../R/photos/97_clust_44.png>]
-<../R/photos/99_clust_8x15.png, id=1030, 505.89pt x 361.35pt>
+<../R/photos/99_clust_8x15.png, id=1031, 505.89pt x 361.35pt>
 File: ../R/photos/99_clust_8x15.png Graphic file (type png)
 
 <use ../R/photos/99_clust_8x15.png>
-Package pdftex.def Info: ../R/photos/99_clust_8x15.png used on input line 1231.
+Package pdftex.def Info: ../R/photos/99_clust_8x15.png used on input line 1213.
 
 (pdftex.def)             Requested size: 202.3524pt x 144.53743pt.
 
-<../R/photos/99_clust_24px.png, id=1031, 505.89pt x 361.35pt>
+<../R/photos/99_clust_24px.png, id=1032, 505.89pt x 361.35pt>
 File: ../R/photos/99_clust_24px.png Graphic file (type png)
 
 <use ../R/photos/99_clust_24px.png>
-Package pdftex.def Info: ../R/photos/99_clust_24px.png used on input line 1239.
+Package pdftex.def Info: ../R/photos/99_clust_24px.png used on input line 1221.
 
 (pdftex.def)             Requested size: 202.3524pt x 144.53743pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [80pdfTeX warning (ext4): destination with the same identifier (name{table.4.5
+ [79pdfTeX warning (ext4): destination with the same identifier (name{table.4.5
 3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1242 F
+l.1224 F
         inally the only size of image that we are using in our analysis  in ...
 pdfTeX warning (ext4): destination with the same identifier (name{table.4.54}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1242 F
+l.1224 F
         inally the only size of image that we are using in our analysis  in ...
- <../R/photos/98_clust_400.png> <../R/photos/99_clust_8x15.png>] [81pdfTeX warn
+ <../R/photos/98_clust_400.png> <../R/photos/99_clust_8x15.png>] [80pdfTeX warn
 ing (ext4): destination with the same identifier (name{table.4.55}) has been al
 ready used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1259 \chapter
+l.1241 \chapter
                {Conclusions} <../R/photos/99_clust_24px.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [82]
-Chapter 5.
-[83
+ [81]
+[82
 
-] [84]
+]
+Chapter 5.
+[83] [84]
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
  [85]
-Underfull \hbox (badness 10000) in paragraph at lines 1300--1305
+Underfull \hbox (badness 10000) in paragraph at lines 1282--1287
 
  []
 
@@ -1656,7 +1648,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]
 Chapter 6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1306--1309
+Underfull \hbox (badness 10000) in paragraph at lines 1288--1291
 
  []
 
@@ -1678,39 +1670,39 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ì in font cmr10!
 
-Underfull \hbox (badness 1137) in paragraph at lines 1338--1339
+Underfull \hbox (badness 1137) in paragraph at lines 1320--1321
 []\OT1/cmr/m/n/10 Forbes (2015). Re-trieved Febru-ary 26, 2017, from $\OML/cmm/
 m/it/10 https \OT1/cmr/m/n/10 :
  []
 
 
-Overfull \hbox (31.971pt too wide) in paragraph at lines 1338--1339
+Overfull \hbox (31.971pt too wide) in paragraph at lines 1320--1321
 \OML/cmm/m/it/10 ==www:forbes:com=sites=kathleenchaykowski=\OT1/cmr/m/n/10 2015
 \OML/cmm/m/it/10 =\OT1/cmr/m/n/10 12\OML/cmm/m/it/10 =\OT1/cmr/m/n/10 08\OML/cm
 m/m/it/10 =facebook \OMS/cmsy/m/n/10  
  []
 
 [93]
-Underfull \hbox (badness 1137) in paragraph at lines 1340--1341
+Underfull \hbox (badness 1137) in paragraph at lines 1322--1323
 []\OT1/cmr/m/n/10 Forbes (2016). Re-trieved Febru-ary 26, 2017, from $\OML/cmm/
 m/it/10 https \OT1/cmr/m/n/10 :
  []
 
 
-Overfull \hbox (32.71242pt too wide) in paragraph at lines 1340--1341
+Overfull \hbox (32.71242pt too wide) in paragraph at lines 1322--1323
 \OML/cmm/m/it/10 ==www:forbes:com=sites=kathleenchaykowski=\OT1/cmr/m/n/10 2016
 \OML/cmm/m/it/10 =\OT1/cmr/m/n/10 10\OML/cmm/m/it/10 =\OT1/cmr/m/n/10 13\OML/cm
 m/m/it/10 =pinterest \OMS/cmsy/m/n/10  
  []
 
 
-Underfull \hbox (badness 1137) in paragraph at lines 1342--1343
+Underfull \hbox (badness 1137) in paragraph at lines 1324--1325
 []\OT1/cmr/m/n/10 Forbes (2016). Re-trieved Febru-ary 26, 2017, from $\OML/cmm/
 m/it/10 https \OT1/cmr/m/n/10 :
  []
 
 
-Overfull \hbox (32.71242pt too wide) in paragraph at lines 1342--1343
+Overfull \hbox (32.71242pt too wide) in paragraph at lines 1324--1325
 \OML/cmm/m/it/10 ==www:forbes:com=sites=kathleenchaykowski=\OT1/cmr/m/n/10 2016
 \OML/cmm/m/it/10 =\OT1/cmr/m/n/10 10\OML/cmm/m/it/10 =\OT1/cmr/m/n/10 13\OML/cm
 m/m/it/10 =pinterest \OMS/cmsy/m/n/10  
@@ -1723,7 +1715,7 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ì in font cmr10!
 [94] [95]
-Underfull \hbox (badness 1215) in paragraph at lines 1406--1407
+Underfull \hbox (badness 1215) in paragraph at lines 1388--1389
 []\OT1/cmr/m/n/10 Zyxware (2017). Re-trieved Jan-uary 29, 2017, from $\OML/cmm/
 m/it/10 http \OT1/cmr/m/n/10 :
  []
@@ -1731,12 +1723,12 @@ m/it/10 http \OT1/cmr/m/n/10 :
 [96]
 Appendix A.
 
-Overfull \hbox (62.33409pt too wide) in paragraph at lines 1416--1471
+Overfull \hbox (62.33409pt too wide) in paragraph at lines 1398--1453
  [][] 
  []
 
 
-Overfull \hbox (77.1674pt too wide) in paragraph at lines 1476--1549
+Overfull \hbox (77.1674pt too wide) in paragraph at lines 1458--1531
  [][] 
  []
 
@@ -1750,14 +1742,14 @@ as been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1550 
+l.1532 
        ]
-Overfull \hbox (94.19533pt too wide) in paragraph at lines 1554--1610
+Overfull \hbox (94.19533pt too wide) in paragraph at lines 1536--1592
  [][] 
  []
 
 
-Overfull \hbox (102.90353pt too wide) in paragraph at lines 1615--1670
+Overfull \hbox (102.90353pt too wide) in paragraph at lines 1597--1652
  [][] 
  []
 
@@ -1769,20 +1761,20 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1671 
+l.1653 
        pdfTeX warning (ext4): destination with the same identifier (name{table.
 A.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1671 
+l.1653 
        ]
-Overfull \hbox (83.07025pt too wide) in paragraph at lines 1675--1731
+Overfull \hbox (83.07025pt too wide) in paragraph at lines 1657--1713
  [][] 
  []
 
 
-Overfull \hbox (110.59805pt too wide) in paragraph at lines 1736--1792
+Overfull \hbox (110.59805pt too wide) in paragraph at lines 1718--1774
  [][] 
  []
 
@@ -1794,20 +1786,20 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1793 
+l.1775 
        pdfTeX warning (ext4): destination with the same identifier (name{table.
 A.5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1793 
+l.1775 
        ]
-Overfull \hbox (97.54259pt too wide) in paragraph at lines 1797--1853
+Overfull \hbox (97.54259pt too wide) in paragraph at lines 1779--1835
  [][] 
  []
 
 
-Overfull \hbox (100.97313pt too wide) in paragraph at lines 1858--1914
+Overfull \hbox (100.97313pt too wide) in paragraph at lines 1840--1896
  [][] 
  []
 
@@ -1819,20 +1811,20 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1915 
+l.1897 
        pdfTeX warning (ext4): destination with the same identifier (name{table.
 A.7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1915 
+l.1897 
        ]
-Overfull \hbox (100.3897pt too wide) in paragraph at lines 1919--1975
+Overfull \hbox (100.3897pt too wide) in paragraph at lines 1901--1957
  [][] 
  []
 
 
-Overfull \hbox (79.23694pt too wide) in paragraph at lines 1980--2036
+Overfull \hbox (79.23694pt too wide) in paragraph at lines 1962--2018
  [][] 
  []
 
@@ -1844,249 +1836,249 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.2037 \newpage
+l.2019 \newpage
                pdfTeX warning (ext4): destination with the same identifier (nam
 e{table.A.9}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.2037 \newpage
+l.2019 \newpage
                ] [102pdfTeX warning (ext4): destination with the same identifie
 r (name{table.A.10}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.2037 \newpage
+l.2019 \newpage
                ] ("F:\Downloads\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 2089
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 2071
 .
 
 ("F:\Downloads\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 2089.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 2071.
 
  [103]
-Overfull \hbox (3.00354pt too wide) in paragraph at lines 2097--2098
+Overfull \hbox (3.00354pt too wide) in paragraph at lines 2079--2080
 [][][][][][][][][][][][] 
  []
 
 [104] [105]
-Overfull \hbox (3.00354pt too wide) in paragraph at lines 2203--2204
+Overfull \hbox (3.00354pt too wide) in paragraph at lines 2185--2186
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (27.00378pt too wide) in paragraph at lines 2207--2208
+Overfull \hbox (27.00378pt too wide) in paragraph at lines 2189--2190
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (51.00403pt too wide) in paragraph at lines 2220--2221
+Overfull \hbox (51.00403pt too wide) in paragraph at lines 2202--2203
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (33.00385pt too wide) in paragraph at lines 2232--2233
+Overfull \hbox (33.00385pt too wide) in paragraph at lines 2214--2215
 [][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (9.0036pt too wide) in paragraph at lines 2236--2237
+Overfull \hbox (9.0036pt too wide) in paragraph at lines 2218--2219
 [][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (15.00366pt too wide) in paragraph at lines 2238--2239
+Overfull \hbox (15.00366pt too wide) in paragraph at lines 2220--2221
 [][][][][][][][][][][][][][][][] 
  []
 
 [106]
-Overfull \hbox (9.0036pt too wide) in paragraph at lines 2240--2241
+Overfull \hbox (9.0036pt too wide) in paragraph at lines 2222--2223
 [][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (9.0036pt too wide) in paragraph at lines 2253--2254
+Overfull \hbox (9.0036pt too wide) in paragraph at lines 2235--2236
 [][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (9.0036pt too wide) in paragraph at lines 2279--2280
+Overfull \hbox (9.0036pt too wide) in paragraph at lines 2261--2262
 [][][][][][][][][][][][] 
  []
 
 [107]
-Overfull \hbox (135.00488pt too wide) in paragraph at lines 2286--2287
+Overfull \hbox (135.00488pt too wide) in paragraph at lines 2268--2269
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (15.00366pt too wide) in paragraph at lines 2315--2316
+Overfull \hbox (15.00366pt too wide) in paragraph at lines 2297--2298
 [][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (3.00354pt too wide) in paragraph at lines 2319--2320
+Overfull \hbox (3.00354pt too wide) in paragraph at lines 2301--2302
 [][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (39.0039pt too wide) in paragraph at lines 2324--2325
+Overfull \hbox (39.0039pt too wide) in paragraph at lines 2306--2307
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (3.00354pt too wide) in paragraph at lines 2325--2326
+Overfull \hbox (3.00354pt too wide) in paragraph at lines 2307--2308
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (51.00403pt too wide) in paragraph at lines 2326--2327
+Overfull \hbox (51.00403pt too wide) in paragraph at lines 2308--2309
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (27.00378pt too wide) in paragraph at lines 2327--2328
+Overfull \hbox (27.00378pt too wide) in paragraph at lines 2309--2310
 [][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (3.00354pt too wide) in paragraph at lines 2330--2331
+Overfull \hbox (3.00354pt too wide) in paragraph at lines 2312--2313
 [][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [108]
-Overfull \hbox (171.00525pt too wide) in paragraph at lines 2346--2347
+Overfull \hbox (171.00525pt too wide) in paragraph at lines 2328--2329
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][] 
  []
 
 
-Overfull \hbox (75.00427pt too wide) in paragraph at lines 2350--2351
+Overfull \hbox (75.00427pt too wide) in paragraph at lines 2332--2333
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (15.00366pt too wide) in paragraph at lines 2352--2353
+Overfull \hbox (15.00366pt too wide) in paragraph at lines 2334--2335
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (9.0036pt too wide) in paragraph at lines 2371--2372
+Overfull \hbox (9.0036pt too wide) in paragraph at lines 2353--2354
 [][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (9.0036pt too wide) in paragraph at lines 2373--2374
+Overfull \hbox (9.0036pt too wide) in paragraph at lines 2355--2356
 [][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (69.00421pt too wide) in paragraph at lines 2376--2377
+Overfull \hbox (69.00421pt too wide) in paragraph at lines 2358--2359
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [109]
-Overfull \hbox (27.00378pt too wide) in paragraph at lines 2394--2395
+Overfull \hbox (27.00378pt too wide) in paragraph at lines 2376--2377
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (27.00378pt too wide) in paragraph at lines 2395--2396
+Overfull \hbox (27.00378pt too wide) in paragraph at lines 2377--2378
 [][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (63.00415pt too wide) in paragraph at lines 2396--2397
+Overfull \hbox (63.00415pt too wide) in paragraph at lines 2378--2379
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (45.00397pt too wide) in paragraph at lines 2397--2398
+Overfull \hbox (45.00397pt too wide) in paragraph at lines 2379--2380
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (3.00354pt too wide) in paragraph at lines 2416--2417
+Overfull \hbox (3.00354pt too wide) in paragraph at lines 2398--2399
 [][][][][][][][][][][][][][] 
  []
 
 [110]
-Overfull \hbox (15.00366pt too wide) in paragraph at lines 2476--2477
+Overfull \hbox (15.00366pt too wide) in paragraph at lines 2458--2459
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [111]
-Overfull \hbox (15.00366pt too wide) in paragraph at lines 2516--2517
+Overfull \hbox (15.00366pt too wide) in paragraph at lines 2498--2499
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [112]
-Overfull \hbox (27.00378pt too wide) in paragraph at lines 2549--2550
+Overfull \hbox (27.00378pt too wide) in paragraph at lines 2531--2532
 [][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (81.00433pt too wide) in paragraph at lines 2571--2572
+Overfull \hbox (81.00433pt too wide) in paragraph at lines 2553--2554
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [113]
-Overfull \hbox (21.00372pt too wide) in paragraph at lines 2578--2579
+Overfull \hbox (21.00372pt too wide) in paragraph at lines 2560--2561
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (45.00397pt too wide) in paragraph at lines 2584--2585
+Overfull \hbox (45.00397pt too wide) in paragraph at lines 2566--2567
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [114]
-Overfull \hbox (3.00354pt too wide) in paragraph at lines 2656--2657
+Overfull \hbox (3.00354pt too wide) in paragraph at lines 2638--2639
 [][][][][][][][][][][][][][][][] 
  []
 
 [115]
-Overfull \hbox (63.00415pt too wide) in paragraph at lines 2707--2708
+Overfull \hbox (63.00415pt too wide) in paragraph at lines 2689--2690
 [][][][][][][][][][][][][][] 
  []
 
 [116]
-Overfull \hbox (27.00378pt too wide) in paragraph at lines 2758--2759
+Overfull \hbox (27.00378pt too wide) in paragraph at lines 2740--2741
 [][][][][][][][][][][][][][][][][][][][] 
  []
 
 [117]
-Overfull \hbox (3.00354pt too wide) in paragraph at lines 2762--2763
+Overfull \hbox (3.00354pt too wide) in paragraph at lines 2744--2745
 [][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (117.0047pt too wide) in paragraph at lines 2765--2766
+Overfull \hbox (117.0047pt too wide) in paragraph at lines 2747--2748
 [][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (87.0044pt too wide) in paragraph at lines 2768--2769
+Overfull \hbox (87.0044pt too wide) in paragraph at lines 2750--2751
 [][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (33.00385pt too wide) in paragraph at lines 2770--2771
+Overfull \hbox (33.00385pt too wide) in paragraph at lines 2752--2753
 [][][][][][][][][][][][] 
  []
 
 [118]
-Overfull \hbox (21.00372pt too wide) in paragraph at lines 2858--2859
+Overfull \hbox (21.00372pt too wide) in paragraph at lines 2840--2841
 [][][][][][][][][][][][][][] 
  []
 
 [119]
-Overfull \hbox (3.00354pt too wide) in paragraph at lines 2867--2868
+Overfull \hbox (3.00354pt too wide) in paragraph at lines 2849--2850
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -2099,32 +2091,32 @@ Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ñ in font cmr10!
 Missing character: There is no ¢ in font cmr10!
 
-Overfull \hbox (15.00366pt too wide) in paragraph at lines 2907--2908
+Overfull \hbox (15.00366pt too wide) in paragraph at lines 2889--2890
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (129.00482pt too wide) in paragraph at lines 2908--2909
+Overfull \hbox (129.00482pt too wide) in paragraph at lines 2890--2891
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (105.00458pt too wide) in paragraph at lines 2911--2912
+Overfull \hbox (105.00458pt too wide) in paragraph at lines 2893--2894
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [120]
-Overfull \hbox (21.00372pt too wide) in paragraph at lines 2949--2950
+Overfull \hbox (21.00372pt too wide) in paragraph at lines 2931--2932
 [][][][][][][][][][][][] 
  []
 
 [121] [122]
-Overfull \hbox (63.00415pt too wide) in paragraph at lines 3024--3025
+Overfull \hbox (63.00415pt too wide) in paragraph at lines 3006--3007
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (9.0036pt too wide) in paragraph at lines 3039--3040
+Overfull \hbox (9.0036pt too wide) in paragraph at lines 3021--3022
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -2138,30 +2130,30 @@ File: lstlang2.sty 2015/06/04 1.6 listings language file
 File: lstlang3.sty 2015/06/04 1.6 listings language file
 )
 LaTeX Font Info:    Font shape `OML/cmr/bx/n' in size <10> not available
-(Font)              Font shape `OML/cmm/b/it' tried instead on input line 3057.
+(Font)              Font shape `OML/cmm/b/it' tried instead on input line 3039.
 
 
-Overfull \hbox (27.00378pt too wide) in paragraph at lines 3057--3058
+Overfull \hbox (27.00378pt too wide) in paragraph at lines 3039--3040
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (15.00366pt too wide) in paragraph at lines 3059--3060
+Overfull \hbox (15.00366pt too wide) in paragraph at lines 3041--3042
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (3.00354pt too wide) in paragraph at lines 3070--3071
+Overfull \hbox (3.00354pt too wide) in paragraph at lines 3052--3053
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (27.00378pt too wide) in paragraph at lines 3081--3082
+Overfull \hbox (27.00378pt too wide) in paragraph at lines 3063--3064
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (45.00397pt too wide) in paragraph at lines 3090--3091
+Overfull \hbox (45.00397pt too wide) in paragraph at lines 3072--3073
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -2169,127 +2161,127 @@ Overfull \hbox (45.00397pt too wide) in paragraph at lines 3090--3091
 Underfull \vbox (badness 4859) has occurred while \output is active []
 
  [124]
-Overfull \hbox (99.00452pt too wide) in paragraph at lines 3102--3103
+Overfull \hbox (99.00452pt too wide) in paragraph at lines 3084--3085
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (45.00397pt too wide) in paragraph at lines 3105--3106
+Overfull \hbox (45.00397pt too wide) in paragraph at lines 3087--3088
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (27.00378pt too wide) in paragraph at lines 3107--3108
+Overfull \hbox (27.00378pt too wide) in paragraph at lines 3089--3090
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (39.0039pt too wide) in paragraph at lines 3109--3110
+Overfull \hbox (39.0039pt too wide) in paragraph at lines 3091--3092
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (27.00378pt too wide) in paragraph at lines 3111--3113
+Overfull \hbox (27.00378pt too wide) in paragraph at lines 3093--3095
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (33.00385pt too wide) in paragraph at lines 3123--3124
+Overfull \hbox (33.00385pt too wide) in paragraph at lines 3105--3106
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (111.00464pt too wide) in paragraph at lines 3124--3125
+Overfull \hbox (111.00464pt too wide) in paragraph at lines 3106--3107
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (33.00385pt too wide) in paragraph at lines 3133--3134
+Overfull \hbox (33.00385pt too wide) in paragraph at lines 3115--3116
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (63.00415pt too wide) in paragraph at lines 3134--3135
+Overfull \hbox (63.00415pt too wide) in paragraph at lines 3116--3117
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (69.00421pt too wide) in paragraph at lines 3141--3142
+Overfull \hbox (69.00421pt too wide) in paragraph at lines 3123--3124
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [125]
-Overfull \hbox (57.00409pt too wide) in paragraph at lines 3151--3152
+Overfull \hbox (57.00409pt too wide) in paragraph at lines 3133--3134
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (81.00433pt too wide) in paragraph at lines 3161--3162
+Overfull \hbox (81.00433pt too wide) in paragraph at lines 3143--3144
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (81.00433pt too wide) in paragraph at lines 3171--3172
+Overfull \hbox (81.00433pt too wide) in paragraph at lines 3153--3154
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (57.00409pt too wide) in paragraph at lines 3181--3182
+Overfull \hbox (57.00409pt too wide) in paragraph at lines 3163--3164
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (69.00421pt too wide) in paragraph at lines 3191--3192
+Overfull \hbox (69.00421pt too wide) in paragraph at lines 3173--3174
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [126]
-Overfull \hbox (33.00385pt too wide) in paragraph at lines 3214--3215
+Overfull \hbox (33.00385pt too wide) in paragraph at lines 3196--3197
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (21.00372pt too wide) in paragraph at lines 3218--3219
+Overfull \hbox (21.00372pt too wide) in paragraph at lines 3200--3201
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (45.00397pt too wide) in paragraph at lines 3222--3223
+Overfull \hbox (45.00397pt too wide) in paragraph at lines 3204--3205
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (15.00366pt too wide) in paragraph at lines 3240--3241
+Overfull \hbox (15.00366pt too wide) in paragraph at lines 3222--3223
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [127]
-Overfull \hbox (21.00372pt too wide) in paragraph at lines 3253--3254
+Overfull \hbox (21.00372pt too wide) in paragraph at lines 3235--3236
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (21.00372pt too wide) in paragraph at lines 3258--3259
+Overfull \hbox (21.00372pt too wide) in paragraph at lines 3240--3241
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (21.00372pt too wide) in paragraph at lines 3263--3264
+Overfull \hbox (21.00372pt too wide) in paragraph at lines 3245--3246
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (21.00372pt too wide) in paragraph at lines 3284--3285
+Overfull \hbox (21.00372pt too wide) in paragraph at lines 3266--3267
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [128]
-Overfull \hbox (9.0036pt too wide) in paragraph at lines 3305--3306
+Overfull \hbox (9.0036pt too wide) in paragraph at lines 3287--3288
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (81.00433pt too wide) in paragraph at lines 3323--3324
+Overfull \hbox (81.00433pt too wide) in paragraph at lines 3305--3306
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -2297,12 +2289,12 @@ Overfull \hbox (81.00433pt too wide) in paragraph at lines 3323--3324
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [129]
-Overfull \hbox (3.00354pt too wide) in paragraph at lines 3359--3360
+Overfull \hbox (3.00354pt too wide) in paragraph at lines 3341--3342
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (27.00378pt too wide) in paragraph at lines 3386--3387
+Overfull \hbox (27.00378pt too wide) in paragraph at lines 3368--3369
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -2314,75 +2306,75 @@ Underfull \vbox (badness 4193) has occurred while \output is active []
 
  [134]
 [135] [136]
-Overfull \hbox (3.00354pt too wide) in paragraph at lines 3683--3684
+Overfull \hbox (3.00354pt too wide) in paragraph at lines 3665--3666
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (3.00354pt too wide) in paragraph at lines 3684--3685
+Overfull \hbox (3.00354pt too wide) in paragraph at lines 3666--3667
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [137]
 LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 3727.
+(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 3709.
 
  [138] [139]
-Overfull \hbox (9.0036pt too wide) in paragraph at lines 3838--3839
+Overfull \hbox (9.0036pt too wide) in paragraph at lines 3820--3821
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (15.00366pt too wide) in paragraph at lines 3847--3848
+Overfull \hbox (15.00366pt too wide) in paragraph at lines 3829--3830
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [140]
-Overfull \hbox (9.0036pt too wide) in paragraph at lines 3859--3861
+Overfull \hbox (9.0036pt too wide) in paragraph at lines 3841--3843
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (9.0036pt too wide) in paragraph at lines 3862--3864
+Overfull \hbox (9.0036pt too wide) in paragraph at lines 3844--3846
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (21.00372pt too wide) in paragraph at lines 3875--3876
+Overfull \hbox (21.00372pt too wide) in paragraph at lines 3857--3858
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [141]
-Overfull \hbox (9.0036pt too wide) in paragraph at lines 3921--3922
+Overfull \hbox (9.0036pt too wide) in paragraph at lines 3903--3904
 [][][][][][][][][][][][][][][][][] 
  []
 
 [142] [143]
-Overfull \hbox (3.00354pt too wide) in paragraph at lines 4010--4011
+Overfull \hbox (3.00354pt too wide) in paragraph at lines 3992--3993
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (15.00366pt too wide) in paragraph at lines 4011--4013
+Overfull \hbox (15.00366pt too wide) in paragraph at lines 3993--3995
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-<../R/photos/66_FULL_PART1.PNG, id=3105, 340.27126pt x 493.0922pt>
+<../R/photos/66_FULL_PART1.PNG, id=3111, 340.27126pt x 493.0922pt>
 File: ../R/photos/66_FULL_PART1.PNG Graphic file (type png)
 
 <use ../R/photos/66_FULL_PART1.PNG>
-Package pdftex.def Info: ../R/photos/66_FULL_PART1.PNG used on input line 4030.
+Package pdftex.def Info: ../R/photos/66_FULL_PART1.PNG used on input line 4012.
 
 (pdftex.def)             Requested size: 272.21736pt x 394.47429pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [144]
-<../R/photos/66_FULL_PART2.PNG, id=3145, 347.04657pt x 368.87813pt>
+<../R/photos/66_FULL_PART2.PNG, id=3151, 347.04657pt x 368.87813pt>
 File: ../R/photos/66_FULL_PART2.PNG Graphic file (type png)
 
 <use ../R/photos/66_FULL_PART2.PNG>
-Package pdftex.def Info: ../R/photos/66_FULL_PART2.PNG used on input line 4039.
+Package pdftex.def Info: ../R/photos/66_FULL_PART2.PNG used on input line 4021.
 
 (pdftex.def)             Requested size: 277.63762pt x 295.10289pt.
 
@@ -2393,13 +2385,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.4042 
+l.4024 
         <../R/photos/66_FULL_PART1.PNG>]
-<../R/photos/69_full2.PNG, id=3152, 265.74281pt x 536.0025pt>
+<../R/photos/69_full2.PNG, id=3158, 265.74281pt x 536.0025pt>
 File: ../R/photos/69_full2.PNG Graphic file (type png)
 
 <use ../R/photos/69_full2.PNG>
-Package pdftex.def Info: ../R/photos/69_full2.PNG used on input line 4049.
+Package pdftex.def Info: ../R/photos/69_full2.PNG used on input line 4031.
 (pdftex.def)             Requested size: 212.59453pt x 428.80258pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -2409,13 +2401,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.4052 
+l.4034 
         <../R/photos/66_FULL_PART2.PNG>]
-<../R/photos/72_full3.PNG, id=3159, 488.57532pt x 329.73187pt>
+<../R/photos/72_full3.PNG, id=3165, 488.57532pt x 329.73187pt>
 File: ../R/photos/72_full3.PNG Graphic file (type png)
 
 <use ../R/photos/72_full3.PNG>
-Package pdftex.def Info: ../R/photos/72_full3.PNG used on input line 4058.
+Package pdftex.def Info: ../R/photos/72_full3.PNG used on input line 4040.
 (pdftex.def)             Requested size: 293.14745pt x 197.84064pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -2425,20 +2417,20 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.4061 
+l.4043 
         <../R/photos/69_full2.PNG>]
-<../R/photos/77_full4.PNG, id=3166, 385.44pt x 305.64188pt>
+<../R/photos/77_full4.PNG, id=3172, 385.44pt x 305.64188pt>
 File: ../R/photos/77_full4.PNG Graphic file (type png)
 
 <use ../R/photos/77_full4.PNG>
-Package pdftex.def Info: ../R/photos/77_full4.PNG used on input line 4067.
+Package pdftex.def Info: ../R/photos/77_full4.PNG used on input line 4049.
 (pdftex.def)             Requested size: 231.26578pt x 183.38652pt.
 
-<../R/photos/81_modela.PNG, id=3167, 350.81062pt x 356.0803pt>
+<../R/photos/81_modela.PNG, id=3173, 350.81062pt x 356.0803pt>
 File: ../R/photos/81_modela.PNG Graphic file (type png)
 
 <use ../R/photos/81_modela.PNG>
-Package pdftex.def Info: ../R/photos/81_modela.PNG used on input line 4076.
+Package pdftex.def Info: ../R/photos/81_modela.PNG used on input line 4058.
 (pdftex.def)             Requested size: 210.48799pt x 213.64983pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -2448,28 +2440,28 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.4079 
+l.4061 
        pdfTeX warning (ext4): destination with the same identifier (name{table.
 A.15}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.4079 
+l.4061 
         <../R/photos/72_full3.PNG> <../R/photos/77_full4.PNG>]
-<../R/photos/87_full5.PNG, id=3176, 438.13687pt x 318.43968pt>
+<../R/photos/87_full5.PNG, id=3182, 438.13687pt x 318.43968pt>
 File: ../R/photos/87_full5.PNG Graphic file (type png)
 
 <use ../R/photos/87_full5.PNG>
-Package pdftex.def Info: ../R/photos/87_full5.PNG used on input line 4085.
+Package pdftex.def Info: ../R/photos/87_full5.PNG used on input line 4067.
 (pdftex.def)             Requested size: 262.88414pt x 191.06528pt.
 
-<../R/photos/99_model6.PNG, id=3177, 380.92313pt x 304.88907pt>
+<../R/photos/99_model6.PNG, id=3183, 380.92313pt x 304.88907pt>
 File: ../R/photos/99_model6.PNG Graphic file (type png)
 
 <use ../R/photos/99_model6.PNG>
-Package pdftex.def Info: ../R/photos/99_model6.PNG used on input line 4094.
+Package pdftex.def Info: ../R/photos/99_model6.PNG used on input line 4076.
 (pdftex.def)             Requested size: 228.55562pt x 182.93484pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4097.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4079.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -2478,30 +2470,30 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.4097 \end{document}
+l.4079 \end{document}
                      pdfTeX warning (ext4): destination with the same identifie
 r (name{table.A.17}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.4097 \end{document}
+l.4079 \end{document}
                       <../R/photos/81_modela.PNG> <../R/photos/87_full5.PNG>]
 [150pdfTeX warning (ext4): destination with the same identifier (name{table.A.1
 8}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.4097 \end{document}
+l.4079 \end{document}
                       <../R/photos/99_model6.PNG>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 4097.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 4079.
 
 ("Metrics of successful websites and companies.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 4097.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 4097.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 4079.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 4079.
 
 Package rerunfilecheck Info: File `"Metrics of successful websites and companie
 s".out' has not changed.
-(rerunfilecheck)             Checksum: B4262AB28A160A17D346FB5AA7A4449A;3582.
+(rerunfilecheck)             Checksum: AACFE39BD52B7C51C430A9F34FBE8519;3582.
 
 
 LaTeX Warning: There were undefined references.
@@ -2509,21 +2501,18 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 4097.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 4079.
  ) 
 Here is how much of TeX's memory you used:
  11198 strings out of 493334
- 162344 string characters out of 3140972
- 286431 words of memory out of 3000000
- 12316 multiletter control sequences out of 15000+200000
+ 162412 string characters out of 3140972
+ 286499 words of memory out of 3000000
+ 12317 multiletter control sequences out of 15000+200000
  11114 words of font info for 38 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  29i,17n,47p,1384b,1699s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{Hfootnote.11} has been referenced but does not ex
+pdfTeX warning (dest): name{Hfootnote.10} has been referenced but does not ex
 ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.10} has been referenced but does not exis
-t, replaced by a fixed one
 
 <F:/Downloads/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><F:/Downloa
 ds/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><F:/Downloads/MiKTeX 2.
@@ -2541,9 +2530,9 @@ MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><F:/Downloads/MiKTeX 2.9/f
 onts/type1/public/amsfonts/cm/cmti10.pfb><F:/Downloads/MiKTeX 2.9/fonts/type1/p
 ublic/amsfonts/cm/cmti12.pfb>
 Output written on "Metrics of successful websites and companies.pdf" (150 pages
-, 2099825 bytes).
+, 1959721 bytes).
 PDF statistics:
- 3710 PDF objects out of 4296 (max. 8388607)
- 2279 named destinations out of 2487 (max. 500000)
+ 3716 PDF objects out of 4296 (max. 8388607)
+ 2278 named destinations out of 2487 (max. 500000)
  727 words of extra memory for PDF output out of 10000 (max. 10000000)
 

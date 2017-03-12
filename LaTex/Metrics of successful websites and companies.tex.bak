@@ -185,78 +185,78 @@ Just to have a clearer idea of what do the companies under examination stands fo
 \item \textbf{HP }: or Hewlett-Packard is an American multinational information technology company.
 \end{enumerate}
 
-It is obvious even from the first twenty companies that the firms that are included in the Fortune 500 list are from different industries and provide different products and services to the consumers. In previous studies the researchers tended to take into account the industry and divide the companies in groups. In this paper we will not create such a deviation since we want to see if there are some common variables across all the successful enterprises, regardless the industry they belong to, that can correlate with their success. This would mean that regardless of the specific needs that each industry should cover to its consumers there could be common needs to the website users that should be fulfilled prior to the specific industrial ones.
+It is obvious even from the first twenty companies that the firms that are included in the Fortune 500 list are from different industries and provide different products and services to the consumers. In previous studies the researchers tended to take into account the industry and divide the companies into groups. In this paper we will not create such a deviation since we want to see if there are some common variables across all the successful enterprises, regardless the industry they belong to, that can correlate with their success. This would mean that regardless of the specific needs that each industry should cover to its consumers there could be common needs to the website users that should be fulfilled prior to the specific industrial ones.
 \newpage
 \section{Metrics}
-The next step is to identify the website metrics that will be examined. When a firm is referring to website metrics it usually means elements such as the number of page views, the number of visits, the number of unique visitors and also the geographical distributional of the users. These types of measurements are not available outside of the company, which is usually using a tool such as Google analytics\cite{key36} in order to track them. Since we cannot gather this kind of metrics we will have to examine metrics that are more related to how the site is structure and what exactly does the home page of each site includes. Those information can be retrieved from the html code of a company's site which is available for each internet user to see.\\
-The two main categories in which we can divide the type of elements that we will retrieve from the website's html code are the following ones:
+The next step is to identify the website metrics that will be examined. When a firm is referring to website metrics it usually means elements such as the number of page views, the number of visits, the number of unique visitors and also the geographical distributional of the users. These types of measurements are not available outside of the company, which is usually using a tool such as Google analytics\cite{key36} in order to track them. Since we cannot gather this kind of metrics we will have to examine metrics that are more related to how the site is structure and what exactly does the home page of each site includes. Those information can be retrieved from the HTML code of a company's site which is available for each internet user to see.\\
+The two main categories in which we can divide the type of elements that we will retrieve from the website's HTML code are the following ones:
 \begin{itemize}
 \item \textbf{What we see:}\\
-In the first category we are referring to metrics that can easily be conceived by the naked eye as well. For example the number of images that a website is using in its landing page and their dimensions. From the empirical studies that have taken place we saw that these variables have been examined as part of the entertainment quality measure. This means that previous studies examined the impact that the existence of images had on the users and not the relation that the actual number of images that are being used have with a company's revenue. In other words researchers have already examined the users perspective of what constitutes a visually pleasant website but not what do the firms decide to actually implement on their websites.
+In the first category we are referring to metrics that can easily be conceived by the naked eye as well. For example the number of images that a website is using on its landing page and their dimensions. From the empirical studies that have taken place we saw that these variables have been examined as part of the entertainment quality measure. This means that previous studies examined the impact that the existence of images had on the users and not the relation that the actual number of images that are being used have with a company's revenue. In other words researchers have already examined the users perspective of what constitutes a visually pleasant website but not what do the firms decide to actually implement on their websites.
 \item \textbf{What lays behind of what we see:}\\
-The second category is not so obvious and it includes informations that usually is visible only to the web developer or the creator of the page. The information can only be taken by the html code and not with the naked eye. For instance we can see the type an image, an information not visible with the naked eye.
+The second category is not so obvious and it includes information that usually is visible only to the web developer or the creator of the page. The information can only be taken by the HTML code and not with the naked eye. For instance we can see the type an image, an information not visible with the naked eye.
 \end{itemize}
 Now that we have a first understanding of the two main categories that the metrics can be divided in, we can see in detail the metrics that will be examined in this paper:
 \subsection{Loading time}\label{M:Loading time}
 One aspect of a website that is crucial is the time it takes for it to load. Nowadays that the internet speed is going higher and higher most people do not have the patient to wait for a page to load. Several user experience studies evaluate how page load times impact user satisfaction. The ill effects of slow websites are well documented. Recent surveys suggest that 49\% of users will abandon a site or even switch to a competitor after experiencing performance issues. This highlights the importance of including this measurement to the study and determine it's relation with the company's status in terms of revenues.
 \subsection{Number of links}\label{M:Number of links}
-The overwhelming information that is available on line can render a user incapable of finding the piece of information he is looking for. Many internet users tend to browse across different sites searching for a particular information that they cannot remember where they have found it before. Considering this tendency firms should create hyper links that will make the navigation into the site easier for the user but will also give him the opportunity to grasp the highest level of information that he can. This translates to the existences of internal but also external hyper links. An internal link can direct the user in another page of the same site while an external link can lead the user to another site.\\
-The internal links are responsible mainly for the ease of navigation in the website. The better their structure the easier it gets for the user to find what he is looking for. The external links are mainly responsible for the quality of available information. Based on the industry that a firm belongs to, it has to provide the users with information that can be relevant not only for the specific company but also for the whole industry. Sometimes those informations are not available or cannot be available in the enterprise site so the firm should be proactive and create hyper links that will lead the user to the information that he is looking for regardless if this can be found in their site or not. With this approach the user gets a feeling of satisfaction that is connected with the firm's website that helped him find the information he needed.\\
+The overwhelming information that is available on line can render a user incapable of finding the piece of information he is looking for. Many internet users tend to browse across different sites searching for a particular information that they cannot remember where they have found it before. Considering this tendency firms should create hyper links that will make the navigation into the site easier for the user but will also give him the opportunity to grasp the highest level of information that he can. This translates to the existences of internal but also external hyper links. An internal link can direct the user to another page of the same site while an external link can lead the user to another site.\\
+The internal links are responsible mainly for the ease of navigation on the website. The better their structure the easier it gets for the user to find what he is looking for. The external links are mainly responsible for the quality of available information. Based on the industry that a firm belongs to, it has to provide the users with information that can be relevant not only for the specific company but also for the whole industry. Sometimes those information are not available or cannot be available in the enterprise site so the firm should be proactive and create hyper links that will lead the user to the information that he is looking for regardless if this can be found on their site or not. With this approach the user gets a feeling of satisfaction that is connected with the firm's website that helped him find the information he needed.\\
 For the purpose of this paper since it is not so clear which type of links are more important to a user we will examine both the internal and the external links and moreover the total links of a website to see which of those three indicators is correlated the most with a firm's success.
 \subsection{Social media}\label{M:Social media}
-Our era is marked by the social media wave that has changed our lifestyle and our daily habits. So it would be considered an oversight if we didn't take under consideration the number of social media that the company chooses to participate in. Even though they can also be considered as external links of the website we will examine them separately in order to see if any particular social medium effects the company's revenues. Since there is an ongoing debate on whether social media should be used from firms to attract customers or if their use should be only for connecting people with each other and not brands the results of this paper would give a perspective of what is really happening in terms of numbers and not from the users perspective.
+Our era is marked by the social media wave that has changed our lifestyle and our daily habits. So it would be considered an oversight if we didn't take into consideration the number of social media that the company chooses to participate in. Even though they can also be considered as external links of the website we will examine them separately in order to see if any particular social medium effects the company's revenues. Since there is an ongoing debate on whether social media should be used from firms to attract customers or if their use should be only for connecting people with each other and not brands the results of this paper would give a perspective of what is really happening in terms of numbers and not from the users perspective.
 \subsection{Number, type and sizes of images}\label{M:N,T,S Imgs}
 Since the site is the first thing that a user will see on line regarding a company and there is a famous quote that says that \textit{"First impressions counts"} we should also examine how the companies decide to visualize their landing page. In other words to see how many images they include in it and more on that what are the dimensions of those images.\\ 
-It is completely different to see only one huge image in the landing page of a site with not many words or descriptions than to see many small images with different information. The purpose is to examine if these type of diversities between the examined websites are actually related to how they are doing success wise.\\
-Moreover an information a little more complicated for a simple user to understand, but which  plays a very important role in many cases is the type of the image. For example some websites are using specific type of images or banners that are not compatible with all the browsers, leading the user to see some break points in the website and even stop visiting it. Based on those facts we will examine the most commonly known type of images and see in which degree they are being used from the companies under examination and whether or not there is a correlation with the revenues.
+It is completely different to see only one huge image on the landing page of a site with not many words or descriptions than to see many small images with different information. The purpose is to examine if these type of diversities between the examined websites are actually related to how they are doing success wise.\\
+Moreover an information a little more complicated for a simple user to understand, but which  plays a very important role in many cases is the type of the image. For example some websites are using specific type of images or banners that are not compatible with all the browsers, leading the user to see some break points on the website and even stop visiting it. Based on those facts we will examine the most commonly known type of images and see in which degree they are being used by the companies under examination and whether or not there is a correlation with the revenues.
 \subsection{Content} \label{M:Content}
-They say a picture worth a thousand words but that is not enough in our case. After exploring the number, sizes and type of pictures that a website is using we should also explore the number of words it is using to accompany the images and complete the outcome that a user will come across. The metrics we will use will be two. The first one will be the total words that are being used in the landing page and the other one will be the total unique words that are being used. When we are referring to unique words we mean words that are not so commonly use such as "a" or "and" and they give an air of individuality to the text. By using this metric we would try to see if the words that are being used are just as important as the actual content and if the words can make a difference.\\
-Furthermore we should also take under consideration how comprehending is the text used in the websites for the users. This information can be obtained by calculating the readability index of the website and also the number of sentences that exists in a page (a metric that comes to complete the previous ones).How the readability index is being calculating will be furthered explained in the variables collection section.
-\subsection{HTML Validation} \label{M:HTML Validation} Moreover we will have to check the quality of the html code behind the website we are seeing. Are there any mistakes in the code for example any brackets that opened and never closed or any links that do not work. We will examine again two different metrics here the number of errors and the number of warnings. The warning are parts of the code that even though they work at the time there is a good chance to malfunction if any changes or addition are to be made to the html code. 
+They say a picture worth a thousand words but that is not enough in our case. After exploring the number, sizes and type of pictures that a website is using we should also explore the number of words it is using to accompany the images and complete the outcome that a user will come across. The metrics we will use will be two. The first one will be the total words that are being used on the landing page and the other one will be the total unique words that are being used. When we are referring to unique words we mean words that are not so commonly use such as "a" or "and" and they give an air of individuality to the text. By using this metric we would try to see if the words that are being used are just as important as the actual content and if the words can make a difference.\\
+Furthermore we should also take into consideration how comprehending is the text used on the websites for the users. This information can be obtained by calculating the readability index of the website and also the number of sentences that exists in a page (a metric that comes to complete the previous ones).How the readability index is being calculating will be furthered explained in the variables collection section.
+\subsection{HTML Validation} \label{M:HTML Validation} Moreover we will have to check the quality of the HTML code behind the website we are seeing. Are there any mistakes in the code for example any brackets that opened and never closed or any links that do not work. We will examine again two different metrics here the number of errors and the number of warnings. The warning are parts of the code that even though they work at the time there is a good chance to malfunction if any changes or addition are to be made to the HTML code. 
 \newpage
 \section{Python Language}
 After explaining the reasons that we decide to explore the variables/ metrics that were mentioned in the previous section we should now see how we are going to obtain all these information.\\
-Since the needed information can be subtract from the html code of a company's website we should use a programming language in order to download the html pages and then to extract the specific metrics we want to examine.\\
-For the purposes of this paper,, the programming language that will be used for downloading the website's html code and then extract from them the metrics is Python. More specifically the version of Python that will be used is the 2.7 one.\cite{key43}\\
+Since the needed information can be subtract from the HTML code of a company's website we should use a programming language in order to download the HTML pages and then to extract the specific metrics we want to examine.\\
+For the purposes of this paper,, the programming language that will be used for downloading the website's HTML code and then extract from them the metrics is Python. More specifically the version of Python that will be used is the 2.7 one.\cite{key43}\\
 Python is a widely used high-level programming language used for general-purpose programming, created by Guido van Rossum and first released in 1991. An interpreted language, Python has a design philosophy which emphasizes code readability (notably using white space indentation to delimit code blocks rather than curly braces or keywords), and a syntax which allows programmers to express concepts in fewer lines of code than possible in languages such as C++ or Java. \\
-The language provides constructs intended to enable writing clear programs on both a small and large scale. Furthermore the way that Python allows a user to programming is common to all users which gives this language a leverage as a program build in Python can be easily understood from another user without any difficulty.\\
+The language provides constructs intended to enable writing clear programs on both a small and large scale. Furthermore the way that Python allows a user to programming is common to all users which gives this language a leverage as a program build in Python can be easily understood by another user without any difficulty.\\
 The environment that is going to be used is from the Anaconda package which is a free open source distribution of the Python and R programming languages for large-scale data processing, predictive analytics, and scientific computing, that aims to simplify package management and deployment. To be more precise from this package we are going to use the Jupyter Notebook. All the scripts that were created in the Jupyter Notebook are available in the Appendix.\ref{appP}
 \newpage
 \section{Variables collection}
 In order to gather all the needed metrics we had to create a variety of small scripts so as to collect them. In this section we will present in detail the procedures that were used in order to create the scripts and extract the information that later will help us contact the analysis of the relationship between those metrics and the company's status. 
 \subsection{Companies ranking, names and url}
-For starters we need to create a list with the names, the ranking and the URL of the sites that we will later download and extract the necessary info from them. So as it was mentioned in the previous section\ref{ds:f500} the first step that needs to be done is to download and gather those informations into a data frame\footnote{a table in Python environment with rows and columns} so as to be able to use them later on.\\
-The easiest way to obtain this list is by retrieving it from an already existing list that has been created in an article on line.\cite{key33}. The way to keep only those three informations as different variables is by separating from the html code of this page the needed elements.\\\\
-\textbf{Step 1} : The first step is to create three empty lists where we will include the informations we are going to extract. The first list will contain the rank of each site as a number, the second one will contain the name of the company as a text and the 3rd one will contain the actual link of the company's site again as a text and without the http:// in the beginning.\ref{p1}\\\\
+For starters we need to create a list of the names, the ranking and the URL of the sites that we will later download and extract the necessary info from them. So as it was mentioned in the previous section\ref{ds:f500} the first step that needs to be done is to download and gather those information into a data frame\footnote{a table in Python environment with rows and columns} so as to be able to use them later on.\\
+The easiest way to obtain this list is by retrieving it from an already existing list that has been created in an article on line.\cite{key33}. The way to keep only those three information as different variables is by separating from the HTML code of this page the needed elements.\\\\
+\textbf{Step 1} : The first step is to create three empty lists where we will include the information we are going to extract. The first list will contain the rank of each site as a number, the second one will contain the name of the company as a text and the 3rd one will contain the actual link of the company's site again as a text and without the http:// in the beginning.\ref{p1}\\\\
 \textbf{Step 2} : The second step is to upload some libraries that will help us create this function but also the rest ones that are going to follow.\ref{p2}\\\\
-\textbf{Step 3} : Finally the third step is to create the function that will firstly download the html code of the url at hand, secondly keep only the part of the code that we need to examine and thirdly save this part into the empty lists we created above. This function is called websites and takes as variable to work only the url of the site we need to examine.\ref{p3}. More specifically the methodology we followed to create the following function are the following:
+\textbf{Step 3} : Finally the third step is to create the function that will firstly download the HTML code of the url at hand, secondly keep only the part of the code that we need to examine and thirdly save this part into the empty lists we created above. This function is called websites and takes as variable to work only the url of the site we need to examine.\ref{p3}. More specifically the methodology we followed to create the following function are the following:
 \begin{enumerate}
-\item We create a fake browser that we are going to use in order to open the page and downloaded. The reason we do that is that many sites do not allow us to download their page because they are afraid of stealing important information. Since we are not using any private information we use this method to avoid issues while trying to open the html page at hand. 
+\item We create a fake browser that we are going to use in order to open the page and downloaded. The reason we do that is that many sites do not allow us to download their page because they are afraid of stealing important information. Since we are not using any private information we use this method to avoid issues while trying to open the HTML page at hand. 
 \item We open the url and we read it while saving it in the variable "myHTML".
-\item With the help of the Beautiful Soup library\footnote{Beautiful Soup is a Python library for pulling data out of HTML and XML files} we read the page as a lxml file and then for each row of this file we are looking for the "td" parts of the code where the informations we want are included.
-\item Since we need the names and the urls of all the 500 sites we created a loop from 0 to 500 where for each i we try to isolate the part of the code that contains the information that we want. Moreover even thought it seems that with this loop we calculate 501 numbers since in Python the second bracket is always open we actually count from zero to 499.
+\item With the help of the Beautiful Soup library\footnote{Beautiful Soup is a Python library for pulling data out of HTML and XML files} we read the page as a lxml file and then for each row of this file we are looking for the "td" parts of the code where the information we want are included.
+\item Since we need the names and the urls of all the 500 sites we created a loop from 0 to 500 where for each i we try to isolate the part of the code that contains the information that we want. Moreover even though it seems that with this loop we calculate 501 numbers since in Python the second bracket is always open we actually count from zero to 499.
 \item We use reg expressions\footnote{A regular expression is a special sequence of characters that helps you match or find other strings or sets of strings, using a specialized syntax held in a pattern.} in order to state precisely what part of the already selected code we want to keep.
 \item We insert with a specific order the names, the ranking and the url to the corresponding lists and finally we create a text that will appear when the function is completed. Here we have also calculated the time that this function took to be completed and we will appear it as well along with the text.
 \end{enumerate}
 \subsection{URL validation}
-Now that we have saved in the three lists the names, the ranking and the URL of the companies that we are going to examine we first have to check whether or not those URL are valid in order to proceed with the download of the html code behind the initial web page of each one of those companies.\\\\
+Now that we have saved in the three lists the names, the ranking and the URL of the companies that we are going to examine we first have to check whether or not those URL are valid in order to proceed with the download of the HTML code behind the initial web page of each one of those companies.\\\\
 \textbf{Step 1} : We first have to install the validators package in python so as to proceed with the validation of the url. In the command prompt window that opens when you open the Jupyter Notebook you have to write: "pip install validators" and then press enter in order for the package to be installed. This specific package currently supports python versions 2.7, 3.3, 3.4, 3.5 and PyPy.\footnote{https://validators.readthedocs.io/en/latest} The function that we are going to use from this package is called validators.url. This functions returns True if the url at hand is a valid url or False if it is not.\\\\
 \textbf{Step 2} : Next we created a loop that will run as many time as the length of the list that we created in the previous section.\\\\
 \textbf{Step 3} : During this loop we create a string variable where we use the URL that we have saved in the list, one at each time, and we add the "http://" prefix.\\\\
 \textbf{Step 4} : Now that we have create the correct way that a url is supposed to be written we will use the function of the validators package and we will create an if function that will check if the answer to a site is different from True and if it is it would add a unit in the variable nv so as to know at the end how many sites did not had valid URL.\\\\
 \textbf{Step 5} : Finally we ask from the programme to print the final result so as to know how many URL are not valid. The code that was created for this procedure is available in the Appendix.\ref{p4}\\
 In our case all the URL where valid so we are eligible to proceed at the next part of the code.
-\subsection{Download sites html code}
-After checking the validity of the URL that we have saved in the list the next step is to download the actual html code of the initial pages of each one of the 500 websites we want to examine.\\\\
-\textbf{Step 1} : As we did in the section 2.4.1 we have to create a fake browser so as the to be able to download the html code without contacting any problems. In our case we created a Mozilla browser.\\\\
+\subsection{Download sites HTML code}
+After checking the validity of the URL that we have saved in the list the next step is to download the actual HTML code of the initial pages of each one of the 500 websites we want to examine.\\\\
+\textbf{Step 1} : As we did in the section 2.4.1 we have to create a fake browser so as the to be able to download the HTML code without contacting any problems. In our case we created a Mozilla browser.\\\\
 \textbf{Step 2} : In order for the url to be opened we must first bring it to the correct form. Initially we create again a loop and for each loop we will examine a specific url. We first replace some symbols on the string that will not be recognized if we try to open the url in this form and then we add the "http://" in the begging of each url.\\ \\
-\textbf{Step 3} : Before starting downloading we create some rules for some exceptions. For example the sites 71 (Best Bay),119 (Arrow Electronics) and 465 (St. Jude Medical) in ranking create problem when we tried to download them and the code is stop working. So in order to avoid such incidents we created an exception and the python code will not even try to download these sites and in their position in the new list with the html pages that we will create a zero will be saved.The same thing would happen if an exception is thrown in the function if that we are creating. In any other case we will open the site and save this action in the variable response2.\\\\
-\textbf{Step 4} : After saving the action we will use the command read and we will save the html code which is essentially a long piece of text and then we will save this "text" in the list.\\\\
+\textbf{Step 3} : Before starting downloading we create some rules for some exceptions. For example the sites 71 (Best Bay),119 (Arrow Electronics) and 465 (St. Jude Medical) in ranking create problem when we tried to download them and the code is stop working. So in order to avoid such incidents we created an exception and the python code will not even try to download these sites and in their position in the new list of the HTML pages that we will create a zero will be saved.The same thing would happen if an exception is thrown in the function if that we are creating. In any other case we will open the site and save this action in the variable response2.\\\\
+\textbf{Step 4} : After saving the action we will use the command read and we will save the HTML code which is essentially a long piece of text and then we will save this "text" in the list.\\\\
 \textbf{Step 5} : Finally we will wait for 2 seconds in order for the browser not to be suspicious from the extreme speed that we are going to open the next page. In that way we avoid having any crushing incidents on the code.\\\\
-\textbf{Step 6} : After completing this procedure for all the site we will have a list that in each position the html code will be held as a very large text. Except from the sites that were not able to be opened.\\
+\textbf{Step 6} : After completing this procedure for all the site we will have a list that in each position the HTML code will be held as a very large text. Except from the sites that were not able to be opened.\\
 The code that was created for this procedure is available in the Appendix.\ref{p5}
 \subsection{Not downloadable pages}
-As we explained in the previous section there are some pages that were not able to be downloaded. In order to know which are those pages and more specifically which companies sites will not be available for further exploration we created this part of the code that creates a list with the names of those companies.\\
+As we explained in the previous section there are some pages that were not able to be downloaded. In order to know which are those pages and more specifically which companies sites will not be available for further exploration we created this part of the code that creates a list of the names of those companies.\\
 In the previous code we used a zero in each position that we weren't able to download the site. Here we will use this information in order to gather in a new list only the parts of the list that did get a zero.\\
 Here we created a small function that is called "not downloadables". In the first part of the code we create the function and in the second part we run the function for our lists. Finally we create a data frame with the results so as to be more easy on the eyes.\\
 The code that was created is available in the Appendix.\ref{p6}
@@ -293,7 +293,7 @@ In the following table we can see the sites that were not downloaded:
 \end{tabular}
 \end{table}
 \subsection{Content}\label{content}
-Now that we have downloaded the html code we should start extracting some of the variables we are going to use for the analysis in the next chapter.\\\\
+Now that we have downloaded the HTML code we should start extracting some of the variables we are going to use for the analysis in the next chapter.\\\\
 \textbf{Step 1} : The first thing we are going to check is how easy it is for a user to read the content of each site. In order to check this performance indicator we will need to gather 4 variables:
 \begin{enumerate}
 \item Number of Words
@@ -305,12 +305,12 @@ The three first are quite clear. The number of words are the total words that ap
 Finally regarding the forth variable the flesh score is referring to the Flesh reading ease test score.In the Flesch reading-ease test, higher scores indicate material that is easier to read; lower numbers mark passages that are more difficult to read. The formula for the Flesch reading-ease score (FRES) test is:\\ \\
 $206.835 - 1.015 (total words/total sentences) - 84.6 (total syllables/total words)$\\
 \\
-We will calculate the flesh reading test and the other three aforementioned variables with the help of an on-line readability test tool.\cite{key34} This site calculates and return all these results that we need. The way to implement them in a new data frame to our python code is by dividing the html code, behind the page with the results for each site, and keeping only the actual numbers and sizes that we seek. \\\\
-\textbf{Step 2} : We create four lists where we will save the variables that we are looking for. Then we start a loop for the 500 sites where in each loop we change the value of the 3 main variables the sites that contain the html code the url that contain the url of the company at hand each time and the url check where we save the part of the web address that remains the same while doing the on line check and we add at the end the url of the site we want to check. Also we open the browser as we have done in previous scripts as well.\\\\
+We will calculate the flesh reading test and the other three aforementioned variables with the help of an on-line readability test tool.\cite{key34} This site calculates and return all these results that we need. The way to implement them in a new data frame to our python code is by dividing the HTML code, behind the page with the results for each site, and keeping only the actual numbers and sizes that we seek. \\\\
+\textbf{Step 2} : We create four lists where we will save the variables that we are looking for. Then we start a loop for the 500 sites where in each loop we change the value of the 3 main variables the sites that contain the HTML code the url that contain the url of the company at hand each time and the url check where we save the part of the web address that remains the same while doing the on line check and we add at the end the url of the site we want to check. Also we open the browser as we have done in previous scripts as well.\\\\
 \textbf{Step 3} : Then we create an if part where we check that the variable site is not zero and that we will not examine the site 108 (Tech Data) as the code seems to have a problem in that case. In this check we put on the respective sites n/a values so as to be clear that we did not retrieve these info for them.\\\\
 \textbf{Step 4} : We open the browser link and we check whether or not we drop to any exception in which case we also put n/a values in the respective companies.\\\\
 \textbf{Step 5} : We read the link and after checking that it is not empty (this we  can check by comparing it with an empty list that we have created for this use) we use the Beautiful soup library to extract the part of the code that we need.\\\\
-\textbf{Step 6} : After taking a look at the html code of the pages we find out that the parts that we need are between the following brackets <tr>...</tr> so we will extract each such bracket from the code and save them in a list. By checking the list we found which numbers of the list items we want and we saved them in the variables we have created. Always of course checking first that the specific prices exist or in any other way we again put n/a.\\\\
+\textbf{Step 6} : After taking a look at the HTML code of the pages we find out that the parts that we need are between the following brackets <tr>...</tr> so we will extract each such bracket from the code and save them in a list. By checking the list we found which numbers of the list items we want and we saved them in the variables we have created. Always of course checking first that the specific prices exist or in any other way we again put n/a.\\\\
 \textbf{Step 7} : Now that we have the for key indicators that we will use later on the analysis we should also create a more easily comprehend variable that is related to the flesh measure variable we just created. The numbers that each site gathered mean different things. So we will try to create a correlation and build a variable called readability that will say in text how easily read or not a site is. The score can be interpreted by the following logic:
 \begin{itemize}
 \item Flesch measure $<$ 30 : Very Confusing
@@ -322,11 +322,11 @@ We will calculate the flesh reading test and the other three aforementioned vari
 \item Flesch measure $>$ 90 : Very Easy
 \end{itemize}
 \textbf{Step 8} : We created a function that creates a new list where the flesh measure variable is being saved as the above descriptions based on the scores each of the site achieved.\\\\
-\textbf{Step 9} : Now that we have all the needed informations in lists we should combine them by creating one data frame with the use of the variable company name again in order to have a common key so as to merge all the data frames that we will create in the end.\\
+\textbf{Step 9} : Now that we have all the needed information in lists we should combine them by creating one data frame with the use of the variable company name again in order to have a common key so as to merge all the data frames that we will create in the end.\\
 The code that was created is available in the Appendix.\ref{p7}\ref{p8}
 
 \subsection{HTML Validation}
-After downloading and saving in data frames the first batch of metrics that we will need for the analysis we should also check the quality of the html code.\\
+After downloading and saving in data frames the first batch of metrics that we will need for the analysis we should also check the quality of the HTML code.\\
 Most pages on the World Wide Web are written in computer languages (such as HTML). One of the advantages of writing in a computer language is that it allows the developer to structure text, add multimedia content, and specify what appearance, or style, the result should have based on his needs.\\
 As every speaking language,so the computer languages do have their own grammar, vocabulary and syntax too. Each document that is written in these computer languages is supposed to follow these rules in order to consider it well structure and written.\\
 However, just as texts in a natural language can include spelling or grammar errors, documents using computer languages may (for various reasons) not be following these rules as well.\\
@@ -335,13 +335,13 @@ With these concepts in mind, we can define "validation" as the process of checki
 For the purposes of this paper, we will use an on-line validator site called W3C\cite{key50} which will help as see how many errors and warnings does each site have. \\\\
 \textbf{Step 1} : Initially we create the empty lists in which we will save the variables we will extract that will give as a clear glance on how many errors does each page has, how many warnings, how many pages weren't recognized as documents and how many pages did open during the process.\\\\
 \textbf{Step 2} : The next step is to create a function that will do a similar job as the script we used to extract the previous variables. Initially we locate the part of the url that remains the same when the check is completed and we see the part that does change where the name of the url we want to examine should go. In order for the code to recognize that we save the result in a variable that in the end is a new url that when we open it, it will show as the page of the results for each site in each loop that we are examining.\\\\
-\textbf{Step 3} : One difference in this script is that now the part of the code that we need is not between $<tr>..</tr>$ but between $<div>...</div>$ parts of the code. So we follow the same procedure as before and we locate in the list of all the divs that we create with the help of the Beatuful soup package the parts that gives us the informations we want to keep.\\\\
+\textbf{Step 3} : One difference in this script is that now the part of the code that we need is not between $<tr>..</tr>$ but between $<div>...</div>$ parts of the code. So we follow the same procedure as before and we locate in the list of all the divs that we create with the help of the Beatuful soup package the parts that gives us the information we want to keep.\\\\
 \textbf{Step 4} : One other difference is that here after the procedure ends we have counted the actual time we needed to complete this procedure. Then next step is to run the function we created.\\\\
 \textbf{Step 5} : Finally we save the lists that we created in a new data frame where the common column remains the name of the company as it already is in the previous dataframes we have created.\\
 The code that was created is available in the Appendix.\ref{p9}
 \subsection{Social media}
 One other group of variables that we should include in our analysis is the social media that each company choose to use. Since this era is being characterized from the massive use of social media we can't help but wonder if some of them could actually play a crucial role in a business success.\\
-The way we are going to see which social media does a company use is quite simple. We will create a list with the name of each of the  six most well known social media with the suffix ".com" and then we will check if the expression appears in the html code of each company. If an expression does exists that means that the specific company does indeed uses this specific social media and as so it appears a respective link in it's home page so as the user to have the opportunity to subscribe in it.\\
+The way we are going to see which social media does a company use is quite simple. We will create a list of the name of each of the  six most well known social media with the suffix ".com" and then we will check if the expression appears in the HTML code of each company. If an expression does exists that means that the specific company does indeed uses this specific social media and as so it appears a respective link in it's home page so as the user to have the opportunity to subscribe in it.\\
 The procedure we will use is similar to the previous ones.\\\\
 \textbf{Step 1} : Firstly we create the lists for the social media that we want to examine. More specifically the social media we will search for are the following:
 \begin{itemize}
@@ -352,15 +352,15 @@ The procedure we will use is similar to the previous ones.\\\\
 \item\textbf{Instagram}: an online photo and video sharing social networking service. It allows users to take pictures and videos, apply digital filters to them and share them to their followers. 
 \item\textbf{Linkedin}: a social networking website for people in professional jobs. Users can make connections with other people they have worked with, post their work experience and skills, look for jobs, and look for workers.
 \end{itemize}
-\textbf{Step 2} : The next step is to create a function that first creates the lists with the 6 elements we would search on each html code. \\\\
-\textbf{Step 3} : Then after checking that the html code for each specific site has been downloaded properly (in other words is not equal to zero) we search in a loop for each of the social media at hand if it exists in the html code. If it exists we put True in the respective list.After completing this procedure we export also the time we did to run the function.\\\\
+\textbf{Step 2} : The next step is to create a function that first creates the lists with the 6 elements we would search on each HTML code. \\\\
+\textbf{Step 3} : Then after checking that the HTML code for each specific site has been downloaded properly (in other words is not equal to zero) we search in a loop for each of the social media at hand if it exists in the HTML code. If it exists we put True in the respective list.After completing this procedure we export also the time we did to run the function.\\\\
 \textbf{Step 4} : Now that we have the function ready we run it and afterwards we again save the results in a new data frame.\\
 The code that was created is available in the Appendix.\ref{p10}
 
 \subsection{Links - Internal and External}
-The navigation inside a website is extremely important as we mentioned in the literature review and highly correlated to the number of hyper links that are included in it. Thus, the next step is to see how many internal, external and finally total links each html code has. The links show in how many other pages does this home page leads to. If the links are external that means as we said in the Metrics section that they lead in a page that is not of this website. While the internal links lead to other pages in the same website.\\
+The navigation inside a website is extremely important as we mentioned in the literature review and highly correlated to the number of hyper links that are included in it. Thus, the next step is to see how many internal, external and finally total links each HTML code has. The links show in how many other pages does this home page leads to. If the links are external that means as we said in the Metrics section that they lead in a page that is not of this website. While the internal links lead to other pages in the same website.\\
 By extracting this information we want to see if it is important for the user to have the ability to browse in various pages inside the site from the home page and also if it plays any role the use of external links that give the user the opportunity to be transferred in another site that is relative of course with the one he is looking in.\\\\
-\textbf{Step 1} : A great way to spot the links in an html code is the prefix that they all use which is "href". So the first step (after creating the initial lists of course and the loop we do in each script) is to locate how many times does the expression "href" appears in the code. The result of this search will give us the total links of the site.\\\\
+\textbf{Step 1} : A great way to spot the links in an HTML code is the prefix that they all use which is "href". So the first step (after creating the initial lists of course and the loop we do in each script) is to locate how many times does the expression "href" appears in the code. The result of this search will give us the total links of the site.\\\\
 \textbf{Step 2} : Next step is to separate somehow the internal and the external ones. An easy way to do that is to find all the "href" references that are followed by "="https: ". By locating specifically those expressions we have located all the external links because unlike the internal links that do not need to be written in this form the external links since they lead to other sites they should always begin with this expression.\\\\
 \textbf{Step 3} : Now that we have the total links and the external links as well we can easily find the internal links with a simple subtraction:
 \begin{center}
@@ -379,7 +379,7 @@ We have already counted in previous scripts the time they did to be completed. I
 The code that was created is available in the Appendix.\ref{p12}
 
 \subsection{Number, type and sizes of images}
-We reach to the final group of variables that we are going to examine regarding the home pages of the websites of the 500 companies that ranked first in Fortune 500. This group has to do with the images of each site. We can divide the informations that we want to extract into 3 major categories:
+We reach to the final group of variables that we are going to examine regarding the home pages of the websites of the 500 companies that ranked first in Fortune 500. This group has to do with the images of each site. We can divide the information that we want to extract into 3 major categories:
 \begin{enumerate}
 \item Type of images
 \item Number of images
@@ -397,7 +397,7 @@ There are many different types of images that can be used in a site. Here we wil
 \end{itemize}
 As we can see some of the type of images have more than one ways that can appear so in order to be precise we will examine all nine different endings. The procedure we will follow is the same one. \\\\
 \textbf{Step 1} : Initially we create the lists we will use then we create the function and the loop for the 500 sites.\\\\
-\textbf{Step 2} :  For each site we check if the html code is not empty and then we search for all the endings that exists in each site and we save in the lists the number of times the ending appeared so as to know how many such images the site has.
+\textbf{Step 2} :  For each site we check if the HTML code is not empty and then we search for all the endings that exists in each site and we save in the lists the number of times the ending appeared so as to know how many such images the site has.
 \subsubsection{Number of images}
 \textbf{Step 3} : The total number of images is the sum of all the different types of images and the number of each of those in a site. So in order to catch to birds with one stone we create a variable in the same function where in each loop for each different type of image it adds them in this variable so as to have the total images in the end.\\\\
 \textbf{Step 4} : In the end of the function we export the time the function did to run again. The next step is to run the function and finally create the data frame with the variables we created.\\
@@ -406,13 +406,13 @@ The code that was created is available in the Appendix.\ref{p13}
 \subsubsection{Different image sizes}\label{dif_img_s} 
 Aside from the number of images and the types that are being used another important factor is the size of each image. There is a vast majority of different sizes and it won't be wise to restrict the research to specific sizes so in the following code will find the different sizes that are being used in the companies.\\\\
 \textbf{Step 1}: The first step is to find the different dimensions that each site uses. We initially create the lists that we will use for this first function. In the script there are also comments of what each list represents. Then we create a function that will gather all the different dimensions from all the sites and in another variable all the times each of this dimension appears. \\\\
-\textbf{Step 2}: Next with the help of the library Beautiful soup we read the html code as lxml and we save the result into a new variable. Then we search in this new variable with the help of the same library all the elements that are between the $<img>...</img>$ parts of the code.\\\\
+\textbf{Step 2}: Next with the help of the library Beautiful soup we read the HTML code as lxml and we save the result into a new variable. Then we search in this new variable with the help of the same library all the elements that are between the $<img>...</img>$ parts of the code.\\\\
 \textbf{Step 3}: Then we try to separate the height and the weight since in some cases there aren't available both the dimensions and in order to be more precise we will keep only the sizes that have both the dimensions available. We do that by counting in the next loop - that we will combine the two dimensions to a form like (300x300)- the length of the smallest list. \\\\
 \textbf{Step 4}: Now that we have the combinations first we check if the list is empty, so as to put zeros in the lists of dimentions and times that they occured for the specific site and then if it is not zero we create a counter to find how many different combinations we have for this site.\\\\
 \textbf{Step 5}: Then we the help of the split and replace packages we keep only the dimensions names and the times that they occured for each site in a list.\\\\
-\textbf{Step 6}: Then this list should go to the list with all the sites in the position of the site at hand. In other words we create another list for which each of the list's elements are other lists. Finally we extract the time the function did to run.\\\\
+\textbf{Step 6}: Then this list should go to the list of all the sites in the position of the site at hand. In other words we create another list for which each of the list's elements are other lists. Finally we extract the time the function did to run.\\\\
 \textbf{Step 7}: We run the function\\\\
-\textbf{Step 8}: Next we create a new function which will help us locate only the unique sizes from all the companies. We create the initial lists that we will need and then the loop for the 500 sites. For each site we put the different dimensions in a new variable. Then we check if the elements of this new list have already been added in the list with the unique sizes and if they haven't we add them. In the end we print the results.\\\\
+\textbf{Step 8}: Next we create a new function which will help us locate only the unique sizes from all the companies. We create the initial lists that we will need and then the loop for the 500 sites. For each site we put the different dimensions in a new variable. Then we check if the elements of this new list have already been added in the list of the unique sizes and if they haven't we add them. In the end we print the results.\\\\
 \textbf{Step 9}: We run this function as well\\\\
 \textbf{Step 10}: We create a new function where we want to make to variables that will give True or False depending on whether or not a specific company's website has a specific dimension of the ones we gathered in the previous script. Firstly we create the initial lists and then the function and the initial loop for the 500 sites.\\\\
 \textbf{Step 11}: Again in this function we create lists inside of lists since we have lists of different dimensions and lists of different sizes and we must combine them in one list with the results of True or False first for each site and further more for each dimension. In the end we print the duration of the function.\\\\
@@ -426,9 +426,9 @@ The codes that was created is available in the Appendix.\ref{p14}\ref{p15}\ref{p
 Just in order to have some metrics that will depict the status of the companies, we will also download some metrics from the Fortune 500 sites for each company.\cite{key35} In order to achieve that we should open the pages for each one of the sites separately. Since there is a pattern in the way the pages are named it shouldn't be difficult.\\\\
 \textbf{Step 1}: Firstly we should create the pattern with which we will download the pages. By running the code we can see that the names of each company are not written exactly as we have saved them.\\\\
 \textbf{Step 2}: So the second step we need to do is to alter the names that are not similar in order for the next functions to run.\\\\
-\textbf{Step 3}: Now that we have the correct names we can download the html code of each one of the fortune 500 companies pages from the fortune 500 site so as to extract the informations we need. Again here we follow the same steps. Firstly we create an initial list and then a function and a loop for the 500 sites. And for each loop turn we download and save the html code behind the fortune 500 page for the site at hand. Finally we run the function.\\\\
-\textbf{Step 4}: Now that we have saved the html codes we are going to extract some informations that we need from them. In order to do that initially we have to create the variables we will need.\\\\
-\textbf{Step 5}: Now that we have the initial variable we are going to create a function in order to extract the specific parts we need. More precisely we are going to download the following informations:
+\textbf{Step 3}: Now that we have the correct names we can download the HTML code of each one of the fortune 500 companies pages from the fortune 500 site so as to extract the information we need. Again here we follow the same steps. Firstly we create an initial list and then a function and a loop for the 500 sites. And for each loop turn we download and save the HTML code behind the fortune 500 page for the site at hand. Finally we run the function.\\\\
+\textbf{Step 4}: Now that we have saved the HTML codes we are going to extract some information that we need from them. In order to do that initially we have to create the variables we will need.\\\\
+\textbf{Step 5}: Now that we have the initial variable we are going to create a function in order to extract the specific parts we need. More precisely we are going to download the following information:
 \begin{itemize}
 \item Revenues in dollars
 \item Revenues in percentage
@@ -533,36 +533,32 @@ In order to see which variable we will use as the comparison metric we should ch
 \textit{We can see that there is no specific pattern that goes along with the Ranking here. Most companies have Assets until 100 million dollars.}
 \end{center}
 \end{table}
-
 \begin{table}[H]
 \centering
 \caption{Market Value vs Ranking}
 \begin{center}
-\includegraphics[scale=0.3]{../R/photos/06_rank_mark_val.png}   \\
+\includegraphics[scale=0.4]{../R/photos/06_rank_mark_val.png}   \\
 \textit{Market value even though in the most high ranking (the lowest prices of ranking) shows a small differentiation and is bigger that in the lowest ranking still there is not a clear pattern.}
 \end{center}
 \end{table}
-
 \begin{table}[H]
 \centering
 \caption{Total Stockholder Equity  vs Ranking}
 \begin{center}
-\includegraphics[scale=0.3]{../R/photos/07_rank_sh_eq.png}  \\
+\includegraphics[scale=0.4]{../R/photos/07_rank_sh_eq.png}  \\
 \textit{Most company total stockholder equity is until 50 million dollars but it does not change based on the Ranking.}
 \end{center}
 \end{table}
-
 \begin{table}[H]
 \centering
 \caption{Revenues vs Ranking}
 \begin{center}
-\includegraphics[scale=0.3]{../R/photos/08_rank_rev.png}  \\
-\textit{As it was expected the smaller the Ranking (closer to top1 the bigger the Revenues. We can see a linear correlation between the two variables}
+\includegraphics[scale=0.4]{../R/photos/08_rank_rev.png}  \\
+\textit{As it was expected the smaller the Ranking (closer to top 1) the bigger the Revenues. We can see a logarithmic correlation between the two variables.}
 \end{center}
 \end{table}
 
-Based on the above diagrams we can conclude that the variable that we will use in order to see the influence of the websites variables in the company is the Revenues. As it is clear from the last diagram the Revenues have a linear correlation with the Ranking. The better the ranking the highest the Revenues so it is the ideal variable to see the actual success of each company in relation to the variables we have created. We can double check those finding with the help of the libraries corrplot and caret. We run a correlation plot with all the variables we have seen above:
-
+Based on the above diagrams we can conclude that the variable that we will use in order to see the influence of the websites variables in the company is the Revenues. As it is clear from the last diagram the Revenues have a linear correlation with the Ranking. The better the ranking the highest the Revenues so it is the ideal variable to see the actual success of each company in relation to the variables we have created. We can double check those finding with the help of the libraries corrplot and caret. We run a correlation plot with all the variables we have seen above. Moreover, the code that was used to create these diagrams is available in the Appendix.\ref{r: van: fortune}:
 \begin{table}[H]
 \centering
 \caption{Fortune variables correlation plot}
@@ -571,10 +567,9 @@ Based on the above diagrams we can conclude that the variable that we will use i
 \textit{From the chart we see that the strongest negative correlation is between Ranking and Revenues as we already have seen.}
 \end{center}
 \end{table}
-Moreover the code that was used to create these diagrams is available in the Appendix.\ref{r: van: fortune}
-
+\newpage
 \subsubsection{Social media analysis and correlation}
-Now that we have reach to the conclusion that the metric we will use from the Fortune 500 is the Revenues we will proceed with analysing the social media variables to see how they are distributed and then to see how they are correlated with the chosen variable.\\
+Now that we have reach to the conclusion that the metric we will use from the Fortune 500 is the Revenues we will proceed with analysing the social media variables to see how they are distributed and then to see how they are correlated with the Revenues variable.\\
 \begin{table}[H]
 \centering
 \caption{Social media (link existence on the site)}
@@ -582,21 +577,18 @@ Now that we have reach to the conclusion that the metric we will use from the Fo
 \includegraphics[scale=0.6]{../R/photos/10_socialmedia.png}
 \end{center}
 \end{table}
-
 \begin{table}[H]
 \centering
 \caption{Social media correlation}
 \begin{center}
 \includegraphics[scale=0.5]{../R/photos/22_REV_SM.png}  \\
-\textit{Facebook has correlation more than 50 percent with twitter, youtube and linkedin and that the smallest correlations are those of pinterest and instagram.}
+\textit{High correlation between different social media existences.}
 \end{center}
 \end{table}
-Almost the 65 percent of the companies that we are examining have Facebook links on their home page. Almost the 67 percent of the companies that we are examining have Twitter links on their home page.Only the 22 percent of the companies that we are examining have instagram links on their home page. Only a small 10 percent of the companies that we are examining have pinterest links on their home page. The 58 percent of the companies that we are examining have YouTube links on their home page.The 57 percent of the companies that we are examining have YouTube links on their home page. From the above data we can conclude that the most frequently used social media is Facebook and Twitter and the least used ones is Instagram and Pinterest. The first conclusion can be easily confirmed since those two first social media are the most widely known. Nevertheless instagram is being used from a great majority of people and many companies use it for campaigns.\\
-The next step is to create a correlation chart with all the social media and the Ranking variable so as to see their relation:
+Almost the 65 percent of the companies that we are examining have Facebook links on their home page. Almost the 67 percent of the companies that we are examining have Twitter links on their home page.Only the 22 percent of the companies that we are examining have instagram links on their home page. Only a small 10 percent of the companies that we are examining have pinterest links on their home page. The 58 percent of the companies that we are examining have YouTube links on their home page.The 57 percent of the companies that we are examining have YouTube links on their home page.\\
+From the above data we can conclude that the most frequently used social media is Facebook and Twitter and the least used ones is Instagram and Pinterest. The first conclusion can be easily confirmed since those two first social media are the most widely known.\\
+From the correlation plot we can see that the Revenues are correlated 8\% with instagram, 10\% with pinterest and 7\% with Youtube. Moreover, there are some high correlations between different social media such as Facebook and Twitter (67\%) and Twitter and LinkedIn (58\%). The code we used to create this chart is available in the Appendix.\ref{r: van: sm}
 
-
-
-The same conclusions can derive from the correlation plot as well. The code we used to create those charts is available in the Appendix.\ref{r: van: sm}
 \subsubsection{Links analysis and correlations}
 Next step is to analyse the distribution of the internal, external and total links and of course their correlation with each other and with the Revenues. We begin with the distribution of the variables in correlation with the Revenue variable:
 
@@ -614,7 +606,7 @@ Next step is to analyse the distribution of the internal, external and total lin
 \caption{External links}
 \begin{center}
 \includegraphics[scale=0.5]{../R/photos/26_ext_rev.png}  \\
-\textit{Again as in the previous table as the Revenues increase the external links tend to go very low.}
+\textit{Here the correlation is not so clear as in the total links.}
 \end{center}
 \end{table}
 
@@ -634,10 +626,11 @@ Now that we have the first glimpse of the variables and we understand that when 
 \caption{Links correlation table}
 \begin{center}
 \includegraphics[scale=0.5]{../R/photos/29_rev_cor_links.png}  \\
-\textit{The internal links are extremely correlated with the total links.}
+\textit{The internal links are extremely correlated with the total links which as we said is logical since the one is a subset of the other.}
 \end{center}
 \end{table}
 From the correlation table we can see that the observation we made based on the previous charts, that the internal links distribution in relation to the Revenues is very similar to the one of the total links, can also be supported from this table were the correlation between the 2 variables is 95\%. This information might come handy later on when we are going to create regression models. The code for this section is available in the Appendix.\ref{r: van: l}
+\newpage
 \subsubsection{Loading time analysis and correlation}
 The loading time of the sites is a very important key performance indicator usually in website performance so it is very interesting to see if it has any strong correlation with the Revenues of these very successful companies that we are examining.:
 \begin{table}[H]
@@ -648,7 +641,7 @@ The loading time of the sites is a very important key performance indicator usua
 \textit{Low loading time in the sites with the most Revenues.}
 \end{center}
 \end{table}
-From the table above we can see that the loading time in relation to the Revenues has a small correlation. The companies that have the highest Revenues have also a very small loading time. Moreover we can see that the companies that have more than 100 million Revenues have loading times under 1 second. This observation shows that maybe the loading time is in fact a very important factor regarding the success of a website and moreover of a company overall success. The code for this table is available in the Appendix.\ref{r: van: load}
+From the table above we can see that the loading time in relation to the Revenues has a small correlation. The companies that have the highest Revenues have also a very small loading time. Moreover we can see that the companies that have more than 100 million Revenues have loading times under 1 second. Moreover, in the correlation table in the next section we can see that the loading time has indeed a negative relation with the Revenues (-12\%)(\pageref{lod}).This means that when the one variable price is going up the others' variable price should go down. This is also an expected outcome since as we said before the time a site does to open is very important to the users as they can easily grow impatient and look somewhere else. This is due to the grand variety of choices available on-line that makes the user feeling powerful. The code for this table is available in the Appendix.\ref{r: van: load}
 \subsubsection{Content analysis and correlation}
 The next step is to analyse the distribution of the variables that are related to the content and the text of the websites in relation to the Revenues of the companies at hand. As we explained in the Python chapter\ref{M:Content} we gathered 3 variables that are related to the grammatical overview of the text that is being used in the sites - which are the numbers of words, the number of unique words and the number of sentences - and 2 variables that are trying to explain if the content of this text is comprehensible from the majority of the users or not. Following below we have the charts with the distribution of those variables prices across the sites under examination and their relation to the Revenues.
 \begin{table}[H]
@@ -659,7 +652,7 @@ The next step is to analyse the distribution of the variables that are related t
 \textit{In high Revenues the number of sentences is smaller that 500.}
 \end{center}
 \end{table}
-From the table we can see that most sites have less than 500 sentences in their home page. Moreover while the Revenues price is going up the number of sentences seems to getting lower. For the sites that have more than 100 million dollars in Revenues the number of sentences drops under 250. Half the number of sentences that we can see in sites with lower Revenues.
+From the table we can see that most sites have less than 500 sentences in their home page. Moreover while the Revenues price is going up the number of sentences seems to getting lower. For the sites that have more than 100 million dollars in Revenues the number of sentences drops under 250. Half the number of sentences that we can see in sites with lower Revenues. Moreover, in the correlation table in the that will follow we can see that the number of sentences have indeed a negative relation with the Revenues (-1\%)(\pageref{lod}).
 \begin{table}[H]
 \centering
 \caption{Number of Words vs Revenues}
@@ -668,7 +661,7 @@ From the table we can see that most sites have less than 500 sentences in their 
 \textit{In high Revenues the number of words is smaller that 1000.}
 \end{center}
 \end{table}
-By the same logic as the sentences in relation to the revenues so does the number of words seems to drop when the revenues go up. Furthermore here we can see that the decrease starts in lower revenues prices (around the 50 million dollars). This is expected if we take under consideration that the number of words is always correlated to the number of sentences. Most sites do not want to have very long sentences in order not to bore the reader. So since the number of sentences incline when the revenues are increasing we anticipate that the number of words will have the same reaction to the revenues.
+By the same logic as the sentences in relation to the revenues so does the number of words seems to drop when the revenues go up. Furthermore here we can see that the decrease starts in lower revenues prices (around the 50 million dollars). This is expected if we take into consideration that the number of words is always correlated to the number of sentences. Most sites do not want to have very long sentences in order not to bore the reader. So since the number of sentences incline when the revenues are increasing we anticipate that the number of words will have the same reaction to the revenues.Moreover, in the correlation table in the that will follow we can see that the number of words have indeed a negative relation with the Revenues (-3\%)(\pageref{lod}).
 \begin{table}[H]
 \centering
 \caption{Number of Unique Words vs Revenues}
@@ -677,16 +670,16 @@ By the same logic as the sentences in relation to the revenues so does the numbe
 \textit{In high Revenues the number of unique words is close to zero.}
 \end{center}
 \end{table}
-The number of unique words differs from the actual number of all the words. Here we are trying to see how many not commonly used words does each site uses. Here the distribution is not so clear as it was for the two previous variables but still we can see that in the most sites that have high Revenues the number of unique words are very small. 
+The number of unique words differs from the actual number of all the words. Here we are trying to see how many not commonly used words does each site uses. Here the distribution is not so clear as it was for the two previous variables but still we can see that in the most sites that have high Revenues the number of unique words are very small. Moreover, in the correlation table in the that will follow we can see that the number of unique words have indeed a negative relation with the Revenues (-4\%)(\pageref{lod}).
 \begin{table}[H]
 \centering
-\caption{Correlation table}
+\caption{Correlation table}\label{lod}
 \begin{center}
-\includegraphics[scale=0.5]{../R/photos/38_words_corr.png}    \\
+\includegraphics[scale=0.7]{../R/photos/38b_words_corr.png}    \\
 \textit{Sentences, words and unique words are highly correlated.}
 \end{center}
 \end{table}
-From the correlation table we can also observe that the three variables we examined regarding the text of the websites are highly correlated with each other which as we already explained is an expected outcome.Moreover we can see that the Revenues with the loading time has a small negative correlation. This means that when the one variable price is going up the others' variable price should go down. This is also an expected outcome since as we said before the time a site does to open is very important to the users as they can easily grow impatient and look somewhere else. This is due to the grand variety of choices available on-line that makes the user feeling powerful.\\
+From the correlation table we can also observe that the three variables we examined regarding the text of the websites are highly correlated with each other which as we already explained is an expected outcome. \\
 Now that we analysed the 3 variables regarding the text attributes we should also analyse the 2 variables regarding the readability index of the websites' texts. Since of course the flesch measure variable was the source for calculating the readability variable we will analyse here only the readability variable thoroughly while the diagrammatically analysis of the flesh measure variable will be available in the Appendix.\ref{r: van: cont}
 \begin{table}[H]
 \centering
@@ -709,27 +702,27 @@ From the above two charts we can see that firstly the most sites are difficult t
 \centering
 \caption{Correlation table}
 \begin{center}
-\includegraphics[scale=0.5]{../R/photos/43_read_cor.png}    \\
+\includegraphics[scale=0.7]{../R/photos/43b_read_cor.png}    \\
 \textit{Flesh measure and readability variables are negative correlated.}
 \end{center}
 \end{table}
-From the correlation plot we can see that the Revenues have a very small negative correlation with the readability variable. While the readability variable and the flesh measure variable as it was expected they have a negative correlation. This means that the bigger the price in the flesch measure the lower the price in the readability variable. If we consider that the best prices of the flesh measure are the highest while respectively for the readability variable are the lowest then it is a normal correlation.
+From the correlation plot we can see that the Revenues have a very small negative correlation with the readability variable (-3\%). While the readability variable and the flesh measure variable as it was expected they have a negative correlation (-17\%). This means that the bigger the price in the flesch measure the lower the price in the readability variable. If we consider that the best prices of the flesh measure are the highest while respectively for the readability variable are the lowest then it is a normal correlation.
 \subsubsection{HTML validation variables analysis and correlation}
-During the extraction of the html validation variables we created 4 different metrics: the number of errors, the number of warnings the non document error and the page not opened one. In this section we are going to analyse the distributions of those variables and also their correlation with the Revenues.
+During the extraction of the HTML validation variables we created 4 different metrics: the number of errors, the number of warnings the non document error and the page not opened one. In this section we are going to analyse the distributions of those variables and also their correlation with the Revenues:
 \begin{table}[H]
 \centering
-\caption{Number of errors vs Revenues table}
+\caption{Number of errors distribution}
 \begin{center}
-\includegraphics[scale=0.5]{../R/photos/45_errors_rev.png}    \\
-\textit{Number of errors in highest revenues are small.}
+\includegraphics[scale=0.5]{../R/photos/44_errors_dist.png}    \\
+\textit{Very few companies have big number of errors.}
 \end{center}
 \end{table}
 \begin{table}[H]
 \centering
-\caption{Number of warnings vs Revenues table}
+\caption{Number of warnings distribution}
 \begin{center}
-\includegraphics[scale=0.5]{../R/photos/47_warn_rev.png}    \\
-\textit{Number of warnings in highest revenues are relatively small.}
+\includegraphics[scale=0.5]{../R/photos/46_warn_dist.png}    \\
+\textit{The majority of the companies have less than 25 warnings.}
 \end{center}
 \end{table}
 \begin{table}[H]
@@ -744,11 +737,11 @@ During the extraction of the html validation variables we created 4 different me
 \centering
 \caption{Correlation table}
 \begin{center}
-\includegraphics[scale=0.5]{../R/photos/51_html_cor.png}    \\
-\textit{Number of errors positive correlated with number of warnings.}
+\includegraphics[scale=0.5]{../R/photos/51b_HTML_cor.png}    \\
+\textit{Positive correlation of Revenues with the number of errors and the number of warnings.}
 \end{center}
 \end{table}
-The table of the document opened variable which is available in the Appendix\ref{r: van: html} is not included since it has the same price for all the sites thus it has no meaning examine its impact to the revenues. Regarding the four tables above we can see that the number of errors and the number of warning in the majority of the websites are getting smaller while the revenues are getting bigger - although a small number of sites doesn't seem to follow that logic and this can be seen from the correlation table as well that shows a very small (next to zero) positive relation between the pair of variables. Moreover the variable non document error has a negative correlation to the revenues since as the revenues increase the variable tends to become zero. This means that in sites with high revenues the documents of their sites had no errors.
+The table of the "document opened" variable which is available in the Appendix\ref{r: van: HTML} is not included since it has the same price for all the sites thus there were no meaning examining its correlation to the revenues. Regarding the four tables above we can see that the number of errors and the number of warning have a small positive correlation with the Revenues (8\% and 10\% respectively). Moreover the variable non document error has a negative correlation to the revenues (-7\%) as well as with the number of errors and the number of warnings.
 \subsubsection{Image types analysis and correlation}
 Last but not least we should analyse the distribution of the different types of images that are being used on the websites we are examining and also compare the total images with the Revenues to see their correlation.
 \begin{table}[H]
@@ -762,95 +755,86 @@ Last but not least we should analyse the distribution of the different types of 
 From the above chart we can see that the most sites have less than 250 images. Although there is one site that has more than 2000 images. Moreover we can see that the sites with more than 100 million dollars revenues have even less than 175 images one their home page. Now that we have a first glance of the total images in the sites we should examine the nine different types of images that we have gathered.
 \begin{table}[H]
 \centering
-\caption{BMP vs Revenue table}
+\caption{BMP distribution}
 \begin{center}
-\includegraphics[scale=0.5]{../R/photos/54_bmp_rev.png}    \\
-\textit{Most sites do not have bmp images.}
+\includegraphics[scale=0.4]{../R/photos/54_bmp_dist.png}    \\
+\textit{Most sites do not have bmp images.Only 4 sites actually uses bmp images.}
 \end{center}
 \end{table}
-From this chart we can see that only 4 sites actually uses bmp images.
 \begin{table}[H]
 \centering
-\caption{DIB vs Revenue table}
+\caption{DIB distribution}
 \begin{center}
-\includegraphics[scale=0.5]{../R/photos/55_dib_rev.png}    \\
-\textit{Only used by sites with small revenues.}
+\includegraphics[scale=0.4]{../R/photos/55_dib_dist.png}    \\
+\textit{Very small number of companies use this type of images.80\% of the websites do not use this format.}
 \end{center}
 \end{table}
-The .dib type is being used from more sites but all of them are making less than 100 million dollars.
 \begin{table}[H]
 \centering
-\caption{GIF vs Revenue table}
+\caption{GIF distribution}
 \begin{center}
-\includegraphics[scale=0.5]{../R/photos/56_gif_rev.png}    \\
-\textit{Used a lot in companies with the smallest revenues.}
+\includegraphics[scale=0.4]{../R/photos/56_gif_dist.png}    \\
+\textit{60\% of the websites use this format.}
 \end{center}
 \end{table}
-The .gif type is being used from many sites but in the highest revenues the number of gif images are being reduced to very small numbers.
 \begin{table}[H]
 \centering
-\caption{JPE vs Revenue table}
+\caption{JPE distribution}
 \begin{center}
-\includegraphics[scale=0.5]{../R/photos/57_jpe_rev.png}    \\
-\textit{Very small number of companies use this type of images.}
+\includegraphics[scale=0.4]{../R/photos/57_jpe_dist.png}    \\
+\textit{Very small number of companies use this type of images.80\% of the websites do not use this format.}
 \end{center}
 \end{table}
-The jpe images is not being used from many sites and the ones that are using them are under 100 million dollars of revenues
 \begin{table}[H]
 \centering
-\caption{JPEG vs Revenue table}
+\caption{JPEG distribution}
 \begin{center}
-\includegraphics[scale=0.5]{../R/photos/58_jpeg_rev.png}    \\
-\textit{Very small number of companies use this type of images.}
+\includegraphics[scale=0.4]{../R/photos/58_jpeg_dist.png}    \\
+\textit{Very small number of companies use this type of images.80\% of the websites do not use this format.}
 \end{center}
 \end{table}
-Again this type is being used by very few companies sites and all of them have less than 100 million dollars revenues.
 \begin{table}[H]
 \centering
-\caption{JPG vs Revenue table}
+\caption{JPG distribution}
 \begin{center}
-\includegraphics[scale=0.5]{../R/photos/59_jpg_rev.png}    \\
-\textit{Frequent use in websites.}
+\includegraphics[scale=0.4]{../R/photos/59_jpg_dist.png}    \\
+\textit{85\% of the websites use this image type.}
 \end{center}
 \end{table}
-The jpg type of image is widely used in almost every website. We can see that when the revenues decrease the number of jpg images is increasing. 
 \begin{table}[H]
 \centering
-\caption{PNG vs Revenue table}
+\caption{PNG distribution}
 \begin{center}
-\includegraphics[scale=0.5]{../R/photos/60_png_rev.png}    \\
-\textit{Frequent use in websites.}
+\includegraphics[scale=0.4]{../R/photos/60_png_dist.png}    \\
+\textit{90\% of the websites use this image type.}
 \end{center}
 \end{table}
-Also the .png type is being used from most companies. Here we can see that companies with more than 100 million dollars use a large amount of png photos in their home page.
 \begin{table}[H]
 \centering
-\caption{TIF vs Revenue table}
+\caption{TIF distribution}
 \begin{center}
-\includegraphics[scale=0.5]{../R/photos/61_tif_rev.png}    \\
-\textit{Used by low revenue sites.}
+\includegraphics[scale=0.4]{../R/photos/61_tif_dist.png}    \\
+\textit{More than 50\% of the companies do not use this image format.}
 \end{center}
 \end{table}
-The tif type even though it doesn't seem to be as widely used as the png one it appears to be used from many sites but most of them belong to companies with less than 150 million dollars.
 \begin{table}[H]
 \centering
-\caption{TIFF vs Revenue table}
+\caption{TIFF distribution}
 \begin{center}
-\includegraphics[scale=0.5]{../R/photos/62_tiff_rev.png}    \\
-\textit{Not used often in websites.}
+\includegraphics[scale=0.4]{../R/photos/62_tiff_dist.png}    \\
+\textit{Almost zero occurrences to all websites.}
 \end{center}
 \end{table}
-The .tiff type is used only in four sites and in very low quantity of images. while the companies that are using this type have less than 25(\$M)revenues.
 \begin{table}[H]
 \centering
 \caption{Correlation table}
 \begin{center}
-\includegraphics[scale=0.5]{../R/photos/63_img_cor.png}    \\
+\includegraphics[scale=0.55]{../R/photos/63b_img_cor.png}    \\
 \textit{Number of errors positive correlated with number of warnings.}
 \end{center}
 \end{table}
-From the correlation table we can see that the revenues are positively related to every type of images except from the .tif and the .gif. A hypothesis that if we take into account that the largest number of those type of photos occurred in companies with small revenues can be easily supported.\\
-Furthermore it seems to be a very high correlation between three types of images the .dib the .jpe and the .jpeg. Also the total images is highly correlated with all the types which is logical since the total images is an outcome of the sum of all the occurrences of all the types of images at hand. In addition based on all the previous tables of this section we can conclude that from all the types of images that were examined the most commonly used types are the .png and the .jpg.
+From the correlation table we can see that the revenues are positively related to every type of images except from .tif, .tiff) and .gif. A hypothesis that if we take into account that the largest number of those type of photos occurred in companies that have the smallest revenues from the examined ones can be easily supported. Moreover, the highest positive correlation (8\%) is with .bmp image format. \\
+Furthermore as expected the total images is highly correlated with all the formats since they are the outcome of the sum of all the occurrences of all the types of images at hand. In addition based on all the previous tables of this section we can conclude that from all the types of images that were examined the most commonly used types are the .png (in 90\% of the websites)and the .jpg(in 85\% of the websites).
 \subsection{Data manipulation}
 Even though we concluded the analysis part of the variables we still haven't examined the different image sizes we have gathered from the python scripts. Due to the very large amount of different sizes that we were able to gather we should find a way to reduce those variables in order to make it possible to run regression models. In this chapter we are going to examine those variables that we have created in order to see which ones are more meaningful to take further along on the analysis.
 \subsubsection{Image sizes variables reconstruction}
@@ -886,7 +870,7 @@ Moreover even though it is not quite clear in the example table above as we proc
 & 44x556 
 \\1x1
 & 800x1200
-& 100x100\footnote{In the analysis is written as autox100}
+& 100x100
 \\24pxx133px
 & 21pxx173px
 & 46x214
@@ -921,7 +905,7 @@ Now that we have created and analysed all the needed variables we can subtract f
 Those variables are being removed for the following reasons. The first four variables are data from the fortune 500 pages of the companies and we downloaded in order to determine which of those metrics we will use in order to see if the performance indicators of the websites effect the company's status. Since we have already reach to the conclusion that the variable we are going to use for this purpose is the Revenues there is no need keeping the other ones as well.\\
 Regarding the fifth variable, the reason we will remove it is that the prices of the variable do not differ in any site. For all the sites they are the same so there is no point in further examining it.
 
-\subsection{Regression models}
+\subsection{Regression analysis}
 By completing the variable analysis we have ended up with 52 variables that are key performance indicators for the websites of the companies we are examining and 1 variable that shows the status of the companies. The names of the variables are available in the following table:
 \begin{table}[H]
 \centering
@@ -951,7 +935,7 @@ By completing the variable analysis we have ended up with 52 variables that are 
 & 21.	44x556
 \\22.	1x1
 & 23.	800x1200
-& 24.	100x100\footnote{In the analysis is being refereed as autox100}
+& 24.	100x100
 \\25.	24pxx133px
 & 26.	21pxx173px
 & 27.	46x214
@@ -984,13 +968,13 @@ By completing the variable analysis we have ended up with 52 variables that are 
 \\ \hline
 \end{tabular}
 \end{table}
-As we can see from the above table the final variables are from almost every group of information that we manage to gather. There are variables concerning the html validation, the social media existence, the image types and sizes, the number of links, the content in terms of text and readability and the loading time of the websites.\\
-In this chapter we will perform some regression models to the chosen data frame in order to determine the variables that effect most the price of the revenues of a company.The code that was created for the regression models is available in the Appendix\ref{r: van: rg}.While the summary of the models that will be analysed in this section are available in the Appendix\ref{d :r :1a}\\
+As we can see from the above table the final variables are from almost every group of information that we manage to gather. There are variables concerning the HTML validation, the social media existence, the image types and sizes, the number of links, the content in terms of text and readability and the loading time of the websites. All of those variables cover again all the six dimensions from which we began this research.\\
+In this chapter we will perform a regression analysis to the chosen data frame in order to determine the variables that correlate the most with the price of the revenues of a company. The code that was created for this section is available in the Appendix\ref{r: van: rg}. While the summary of the models that will be analysed in this section are available in the Appendix\ref{d :r :1a}\\
 In statistics there are two main types of regressions the linear and the logistic regression. The linear regression is an approach for modelling the relationship between a scalar dependent variable y and one or more explanatory variables (or independent variables) denoted X. The case of one explanatory variable is called simple linear regression. For more than one explanatory variable, the process is called multiple linear regression.\\
 The logistic regression, or logit regression, is a regression model where the dependent variable (DV) is categorical.Cases where the dependent variable has more than two outcome categories may be analysed in multinomial logistic regression, or, if the multiple categories are ordered, in ordinal logistic regression.\\
 Since the variable Revenues which is the dependent variable we have chosen is a scalar numeric variable we will perform linear regression to the final data frame we have created.
 \subsubsection{Training and test set creation}
-Before we begin with the regression we have to divide the data frame to 2 data frames so as to be able to test the model we will create. We will make a training set and a test set:
+Before we begin with the regression we have to divide the data frame to 2 data frames so as to be able to test the model we will create an also to make see if it can be a predictive model. We will make a training set and a test set:
 \begin{itemize}
 \item \textbf{Training set:} We will use this set in order for the model to learn how to fit the parameters of the classifier.
 \item \textbf{Test set:} This set will be used only to assess the performance of the models that we will create.
@@ -1153,7 +1137,7 @@ The highest correlations are between the variables 8x15 and 44x556 (82\% correla
 \item p-value $<$ 0.05
 \end{itemize}
 \end{itemize}
-From the results of the new model we can see that by this subtraction the model became a little worse. The Adjusted R squared decreased while the percentage of not accuracy went up. So we can conclude that this change wasn't the best solution and even thought the variables are correlated they are also contribute to the better description of the dependent variable. 
+From the results of the new model we can see that by this subtraction the model became a little worse. The Adjusted R squared decreased while the percentage of not accuracy went up. So we can conclude that this change wasn't the best solution and even though the variables are correlated they are also contribute to the better description of the dependent variable. 
 \subsubsection{Clustering testing}
 The next step is to create three clusters of the variables that are included in the model we created and to see if the way that they are grouping can also explain the revenues. If this hypothesis can be confirmed this means that the model we examined is indeed quite accurate.\\
 The observations of the variables should have a clear pattern regarding the revenues in the way that they are grouped together. In order to check that we created the following plots:
@@ -1386,7 +1370,7 @@ MA: Addison-Wesley
 
 \bibitem{key30}Statista (2017). Retrieved February 26, 2017, from $https://www.statista.com/statistics/274050/quarterly-numbers-of-linkedin-members/$
 
-\bibitem{key43}The Python Tutorial (2016). Available on line from $https://docs.python.org/3/tutorial/index.html$
+\bibitem{key43}The Python Tutorial (2016). Available on line from $https://docs.python.org/3/tutorial/index.HTML$
 
 
 \bibitem{key50}Validator w3 (2017).Retrieved January 29, 2017, from $https://validator.w3.org/$
@@ -2073,7 +2057,7 @@ def websites (url):
     soup = BeautifulSoup(myHTML,"lxml")    
     o = 0
     td_list =[]
-    for row2 in soup.html.body.findAll('td'):
+    for row2 in soup.HTML.body.findAll('td'):
         td_list.insert(o, row2)
         o = o + 1
     a = 0
@@ -2217,13 +2201,13 @@ for num in range(0,500):
             unique_w.insert(num,"n/a")
             print("Site", str(num), "is not validated from check")
             continue        
-        html_r = response.read()
-        check = str(html_r)       
+        HTML_r = response.read()
+        check = str(HTML_r)       
         if check != empty:                
                 soup = BeautifulSoup(check,"lxml")
                 o = 0
                 keyf = []
-                for row in soup.html.body.findAll('tr'):
+                for row in soup.HTML.body.findAll('tr'):
                     keyf.insert(o,row)
                     o = o + 1
                 if keyf != empty:                        
@@ -2340,7 +2324,7 @@ nm = []
 num_open_page = []
 empty = ""
  
-def html_validation (list500_url,list500_names):
+def HTML_validation (list500_url,list500_names):
     from time import time # I used it to see how much time it does to run the function
     start = time ()
     for num in range(len(list500_names)):
@@ -2349,9 +2333,9 @@ def html_validation (list500_url,list500_names):
         browser = urllib2.build_opener()
         browser.addheaders = [('User-agent', 'Mozilla/5.0')]
         response = browser.open(url_check)
-        html_check = response.read()
-        html_check
-        check = str(html_check)
+        HTML_check = response.read()
+        HTML_check
+        check = str(HTML_check)
         er = 0
         err = 0
         errr = 0
@@ -2361,7 +2345,7 @@ def html_validation (list500_url,list500_names):
             soup = BeautifulSoup(check,"lxml")
             o = 0
             keyf = []
-            for row in soup.html.body.findAll('div'):
+            for row in soup.HTML.body.findAll('div'):
                 keyf.insert(o,row)
                 o = o + 1                    
             if len(keyf) != 0:       
@@ -2385,7 +2369,7 @@ def html_validation (list500_url,list500_names):
     print 'The lists are ready in ', minutes, ' minutes'
  
 
-html_validation (list500_url,list500_names)
+HTML_validation (list500_url,list500_names)
  
 
 d8 = {'company' : pd.Series(list500_names, index=[nm]),
@@ -2393,8 +2377,8 @@ d8 = {'company' : pd.Series(list500_names, index=[nm]),
       ,'number_of_errors' : pd.Series(num_errors, index=[nm]),
       'number_of_warning' : pd.Series(num_info_warnings, index=[nm])
       ,'non-document-error' : pd.Series(num_non_doc, index=[nm])}
-html_val = pd.DataFrame(d8)    
-html_val.head(3) 
+HTML_val = pd.DataFrame(d8)    
+HTML_val.head(3) 
 \end{lstlisting}
 
 \begin{center}
@@ -2905,9 +2889,9 @@ def fortune500 (list_company_name_new):
         browser.addheaders = [('User-agent', 'Mozilla/5.0')]
         site_fortune = "http://beta.fortune.com/fortune500/"+companyname+"-"+ i    
         page_fortune = browser.open(site_fortune)
-        html_fortune = page_fortune.read()    
+        HTML_fortune = page_fortune.read()    
         #print("fortune page for company: ", list_company_name_new[num3],i)
-        fortune_pages.insert(num3, html_fortune)
+        fortune_pages.insert(num3, HTML_fortune)
     end = time ()
     duration = round (end - start, 3)
     minutes = round (duration /60, 1)
@@ -2953,7 +2937,7 @@ def fortune_metrics (list_company_name,list_company_website):
         files = fortune_pages[x]
         soup = BeautifulSoup(files,"lxml")
         o=0
-        for row in soup.html.body.findAll('tbody'):
+        for row in soup.HTML.body.findAll('tbody'):
             keyf.insert(o,row)
             o=o+1
         keyfin = keyf[0] 
@@ -3028,7 +3012,7 @@ fort500 = pd.DataFrame(d9)
 \textit{\textbf{Script 23: Final Data Frame and csv file}}\label{p23}
 \end{center}
 \begin{lstlisting}[language=Python]
-result = pd.merge(fort500, html_val, how='inner',
+result = pd.merge(fort500, HTML_val, how='inner',
  on=['company', 'company'])
 result2 = pd.merge(social_media, fre, how='inner',
  on=['company', 'company'])
@@ -3335,7 +3319,7 @@ corrplot(cor(total_500_r),method="number")
  \end{lstlisting} 
 
 
-\subsubsection{HTML validation analysis}\label{r: van: html}
+\subsubsection{HTML validation analysis}\label{r: van: HTML}
 \begin{lstlisting}[language=R]  
 ```{r}
 #Now we will see the number of errors and warnings alone 
@@ -3366,12 +3350,12 @@ ggplot(total_500_final, aes(Revenues, The_page_opened))
 #does not affect the outcome
 
 #And we can also see for correlations
-total_500_html <- total_500_final[,c(4,7:9)]
+total_500_HTML <- total_500_final[,c(4,7:9)]
 library(corrplot)
 library(caret)
-tl <- cor(total_500_html)
+tl <- cor(total_500_HTML)
 tl
-corrplot(cor(total_500_html),method="number")
+corrplot(cor(total_500_HTML),method="number")
 ```
 \end{lstlisting} 
 

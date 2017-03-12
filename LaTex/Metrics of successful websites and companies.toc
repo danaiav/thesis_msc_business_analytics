@@ -15,7 +15,7 @@
 \contentsline {section}{\numberline {3.4}Variables collection}{24}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}Companies ranking, names and url}{24}{subsection.3.4.1}
 \contentsline {subsection}{\numberline {3.4.2}URL validation}{25}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}Download sites html code}{26}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.3}Download sites HTML code}{26}{subsection.3.4.3}
 \contentsline {subsection}{\numberline {3.4.4}Not downloadable pages}{27}{subsection.3.4.4}
 \contentsline {subsection}{\numberline {3.4.5}Content}{27}{subsection.3.4.5}
 \contentsline {subsection}{\numberline {3.4.6}HTML Validation}{29}{subsection.3.4.6}
@@ -34,25 +34,25 @@
 \contentsline {subsection}{\numberline {4.2.1}Data cleansing}{40}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}Variable analysis and correlation}{41}{subsection.4.2.2}
 \contentsline {subsubsection}{\numberline {4.2.2.1}Fortune variables correlation}{41}{subsubsection.4.2.2.1}
-\contentsline {subsubsection}{\numberline {4.2.2.2}Social media analysis and correlation}{44}{subsubsection.4.2.2.2}
+\contentsline {subsubsection}{\numberline {4.2.2.2}Social media analysis and correlation}{45}{subsubsection.4.2.2.2}
 \contentsline {subsubsection}{\numberline {4.2.2.3}Links analysis and correlations}{46}{subsubsection.4.2.2.3}
-\contentsline {subsubsection}{\numberline {4.2.2.4}Loading time analysis and correlation}{48}{subsubsection.4.2.2.4}
+\contentsline {subsubsection}{\numberline {4.2.2.4}Loading time analysis and correlation}{49}{subsubsection.4.2.2.4}
 \contentsline {subsubsection}{\numberline {4.2.2.5}Content analysis and correlation}{49}{subsubsection.4.2.2.5}
 \contentsline {subsubsection}{\numberline {4.2.2.6}HTML validation variables analysis and correlation}{54}{subsubsection.4.2.2.6}
-\contentsline {subsubsection}{\numberline {4.2.2.7}Image types analysis and correlation}{57}{subsubsection.4.2.2.7}
-\contentsline {subsection}{\numberline {4.2.3}Data manipulation}{63}{subsection.4.2.3}
-\contentsline {subsubsection}{\numberline {4.2.3.1}Image sizes variables reconstruction}{63}{subsubsection.4.2.3.1}
-\contentsline {subsubsection}{\numberline {4.2.3.2}Remove variables}{65}{subsubsection.4.2.3.2}
-\contentsline {subsection}{\numberline {4.2.4}Regression models}{66}{subsection.4.2.4}
-\contentsline {subsubsection}{\numberline {4.2.4.1}Training and test set creation}{67}{subsubsection.4.2.4.1}
-\contentsline {subsubsection}{\numberline {4.2.4.2}Null and Full model creation}{67}{subsubsection.4.2.4.2}
-\contentsline {subsubsection}{\numberline {4.2.4.3}Lasso Method}{70}{subsubsection.4.2.4.3}
-\contentsline {subsubsection}{\numberline {4.2.4.4}Both Method}{72}{subsubsection.4.2.4.4}
-\contentsline {subsubsection}{\numberline {4.2.4.5}Predictions and comparison of models}{73}{subsubsection.4.2.4.5}
-\contentsline {subsection}{\numberline {4.2.5}Comparisons and other methods}{74}{subsection.4.2.5}
-\contentsline {subsubsection}{\numberline {4.2.5.1}Correlation testing}{74}{subsubsection.4.2.5.1}
-\contentsline {subsubsection}{\numberline {4.2.5.2}Clustering testing}{76}{subsubsection.4.2.5.2}
-\contentsline {subsubsection}{\numberline {4.2.5.3}Final testing}{81}{subsubsection.4.2.5.3}
+\contentsline {subsubsection}{\numberline {4.2.2.7}Image types analysis and correlation}{56}{subsubsection.4.2.2.7}
+\contentsline {subsection}{\numberline {4.2.3}Data manipulation}{62}{subsection.4.2.3}
+\contentsline {subsubsection}{\numberline {4.2.3.1}Image sizes variables reconstruction}{62}{subsubsection.4.2.3.1}
+\contentsline {subsubsection}{\numberline {4.2.3.2}Remove variables}{64}{subsubsection.4.2.3.2}
+\contentsline {subsection}{\numberline {4.2.4}Regression models}{65}{subsection.4.2.4}
+\contentsline {subsubsection}{\numberline {4.2.4.1}Training and test set creation}{66}{subsubsection.4.2.4.1}
+\contentsline {subsubsection}{\numberline {4.2.4.2}Null and Full model creation}{66}{subsubsection.4.2.4.2}
+\contentsline {subsubsection}{\numberline {4.2.4.3}Lasso Method}{69}{subsubsection.4.2.4.3}
+\contentsline {subsubsection}{\numberline {4.2.4.4}Both Method}{71}{subsubsection.4.2.4.4}
+\contentsline {subsubsection}{\numberline {4.2.4.5}Predictions and comparison of models}{72}{subsubsection.4.2.4.5}
+\contentsline {subsection}{\numberline {4.2.5}Comparisons and other methods}{73}{subsection.4.2.5}
+\contentsline {subsubsection}{\numberline {4.2.5.1}Correlation testing}{73}{subsubsection.4.2.5.1}
+\contentsline {subsubsection}{\numberline {4.2.5.2}Clustering testing}{75}{subsubsection.4.2.5.2}
+\contentsline {subsubsection}{\numberline {4.2.5.3}Final testing}{80}{subsubsection.4.2.5.3}
 \contentsline {chapter}{\numberline {5}Conclusions}{83}{chapter.5}
 \contentsline {section}{\numberline {5.1}Findings summary}{84}{section.5.1}
 \contentsline {section}{\numberline {5.2}Findings contribution}{86}{section.5.2}
