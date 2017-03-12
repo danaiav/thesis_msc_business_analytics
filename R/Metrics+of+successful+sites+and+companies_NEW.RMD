@@ -2,7 +2,9 @@
 title: "Metrics of Succesful websites and companies"
 author: "Danai Avratoglou"
 date: "18 February 2017"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r}
