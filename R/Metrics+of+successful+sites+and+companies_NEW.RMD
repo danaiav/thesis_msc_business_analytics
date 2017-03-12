@@ -726,14 +726,14 @@ Actual_Revenues<- total_500_final_test$Revenues
 
 ```{r}
 par(mfrow=c(2,2))
-plot (Actual_Revenues, col = "blue")
-plot (predictions_ma, col = "Red",main = "Model A")
+plot (Actual_Revenues, col = "blue",main = "Actual Revenues prices")
+plot (predictions_ma, col = "Red",main = "Model Both method")
 #####################################
 predictions_full_6 <- predict(full_6,total_500_final_test)
-plot (predictions_full_6, col = "Red",main = "Full_6 model")
+plot (predictions_full_6, col = "Red",main = "Model only image size 15x12")
 #######################################################
 predictions_full_5 <- predict(full_5,total_500_final_test)
-plot (predictions_full_5, col = "Red",main = "Full_5 model")
+plot (predictions_full_5, col = "Red",main = "Model only image size 400x300")
 ```
 
 ```{r}
@@ -753,5 +753,10 @@ cor(total_500_final_reg_2)
 corrplot(cor(total_500_final_reg_2),method="number")
 ```
 
-
+```{r}
+par(mfrow=c(1,1))
+total_500_final_reg_3 <- total_500_final_reg[,c(1,4,5,7,8,10,11)]
+cor(total_500_final_reg_3)
+corrplot(cor(total_500_final_reg_2),method="number")
+```
 

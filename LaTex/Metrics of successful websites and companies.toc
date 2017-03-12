@@ -1,79 +1,78 @@
 \contentsline {chapter}{\numberline {1}Introduction}{7}{chapter.1}
 \contentsline {chapter}{\numberline {2}Literature Review }{9}{chapter.2}
 \contentsline {section}{\numberline {2.1}Empirical Studies}{9}{section.2.1}
-\contentsline {section}{\numberline {2.2}Thesis hypothesis}{13}{section.2.2}
-\contentsline {chapter}{\numberline {3}Data gathering}{15}{chapter.3}
-\contentsline {section}{\numberline {3.1}Data Source}{15}{section.3.1}
-\contentsline {section}{\numberline {3.2}Metrics}{19}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Loading time}{19}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Number of links}{20}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Social media}{20}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Number, type and sizes of images}{21}{subsection.3.2.4}
-\contentsline {subsection}{\numberline {3.2.5}Content}{21}{subsection.3.2.5}
-\contentsline {subsection}{\numberline {3.2.6}HTML Validation}{21}{subsection.3.2.6}
-\contentsline {section}{\numberline {3.3}Python Language}{23}{section.3.3}
-\contentsline {section}{\numberline {3.4}Variables collection}{24}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Companies ranking, names and url}{24}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}URL validation}{25}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}Download sites HTML code}{26}{subsection.3.4.3}
-\contentsline {subsection}{\numberline {3.4.4}Not downloadable pages}{27}{subsection.3.4.4}
-\contentsline {subsection}{\numberline {3.4.5}Content}{27}{subsection.3.4.5}
-\contentsline {subsection}{\numberline {3.4.6}HTML Validation}{29}{subsection.3.4.6}
-\contentsline {subsection}{\numberline {3.4.7}Social media}{30}{subsection.3.4.7}
-\contentsline {subsection}{\numberline {3.4.8}Links - Internal and External}{32}{subsection.3.4.8}
-\contentsline {subsection}{\numberline {3.4.9}Loading time}{32}{subsection.3.4.9}
-\contentsline {subsection}{\numberline {3.4.10}Number, type and sizes of images}{33}{subsection.3.4.10}
-\contentsline {subsubsection}{\numberline {3.4.10.1}Type of images}{33}{subsubsection.3.4.10.1}
-\contentsline {subsubsection}{\numberline {3.4.10.2}Number of images}{34}{subsubsection.3.4.10.2}
-\contentsline {subsubsection}{\numberline {3.4.10.3}Different image sizes}{35}{subsubsection.3.4.10.3}
-\contentsline {subsection}{\numberline {3.4.11}Fortune 500 - Metrics download}{36}{subsection.3.4.11}
-\contentsline {subsection}{\numberline {3.4.12}Merge data-frames and extract final csv file}{37}{subsection.3.4.12}
-\contentsline {chapter}{\numberline {4}Data Analysis}{39}{chapter.4}
-\contentsline {section}{\numberline {4.1}R Language}{39}{section.4.1}
-\contentsline {section}{\numberline {4.2}Analysis}{39}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Data cleansing}{40}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Variable analysis and correlation}{41}{subsection.4.2.2}
-\contentsline {subsubsection}{\numberline {4.2.2.1}Fortune variables correlation}{41}{subsubsection.4.2.2.1}
-\contentsline {subsubsection}{\numberline {4.2.2.2}Social media analysis and correlation}{45}{subsubsection.4.2.2.2}
-\contentsline {subsubsection}{\numberline {4.2.2.3}Links analysis and correlations}{46}{subsubsection.4.2.2.3}
-\contentsline {subsubsection}{\numberline {4.2.2.4}Loading time analysis and correlation}{49}{subsubsection.4.2.2.4}
-\contentsline {subsubsection}{\numberline {4.2.2.5}Content analysis and correlation}{49}{subsubsection.4.2.2.5}
-\contentsline {subsubsection}{\numberline {4.2.2.6}HTML validation variables analysis and correlation}{54}{subsubsection.4.2.2.6}
-\contentsline {subsubsection}{\numberline {4.2.2.7}Image types analysis and correlation}{56}{subsubsection.4.2.2.7}
-\contentsline {subsection}{\numberline {4.2.3}Data manipulation}{62}{subsection.4.2.3}
-\contentsline {subsubsection}{\numberline {4.2.3.1}Image sizes variables reconstruction}{62}{subsubsection.4.2.3.1}
-\contentsline {subsubsection}{\numberline {4.2.3.2}Remove variables}{64}{subsubsection.4.2.3.2}
-\contentsline {subsection}{\numberline {4.2.4}Regression analysis}{65}{subsection.4.2.4}
-\contentsline {subsubsection}{\numberline {4.2.4.1}Training and test set creation}{66}{subsubsection.4.2.4.1}
-\contentsline {subsubsection}{\numberline {4.2.4.2}Null and Full model creation}{66}{subsubsection.4.2.4.2}
-\contentsline {subsubsection}{\numberline {4.2.4.3}Lasso Method}{69}{subsubsection.4.2.4.3}
-\contentsline {subsubsection}{\numberline {4.2.4.4}Both Method}{72}{subsubsection.4.2.4.4}
-\contentsline {subsubsection}{\numberline {4.2.4.5}Predictions and comparison of models}{72}{subsubsection.4.2.4.5}
-\contentsline {subsection}{\numberline {4.2.5}Comparisons and other methods}{74}{subsection.4.2.5}
-\contentsline {subsubsection}{\numberline {4.2.5.1}Correlation testing}{74}{subsubsection.4.2.5.1}
-\contentsline {subsubsection}{\numberline {4.2.5.2}Clustering testing}{75}{subsubsection.4.2.5.2}
-\contentsline {subsubsection}{\numberline {4.2.5.3}Final testing}{80}{subsubsection.4.2.5.3}
-\contentsline {chapter}{\numberline {5}Conclusions}{83}{chapter.5}
-\contentsline {section}{\numberline {5.1}Findings summary}{84}{section.5.1}
-\contentsline {section}{\numberline {5.2}Findings contribution}{86}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Theoretical level}{86}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Managerial level}{86}{subsection.5.2.2}
-\contentsline {chapter}{\numberline {6}Further Research}{89}{chapter.6}
-\contentsline {chapter}{\numberline {7}Bibliography}{91}{chapter.7}
-\contentsline {chapter}{\numberline {A}Appendix}{97}{appendix.A}
-\contentsline {section}{\numberline {A.1}Appendix A: Fortune 500 Companies}{97}{section.A.1}
-\contentsline {section}{\numberline {A.2}Appendix B: Python Scripts}{103}{section.A.2}
-\contentsline {section}{\numberline {A.3}Appendix C: R Scripts}{124}{section.A.3}
-\contentsline {subsection}{\numberline {A.3.1}Data cleansing}{124}{subsection.A.3.1}
-\contentsline {subsection}{\numberline {A.3.2}Variable analysis and correlation}{125}{subsection.A.3.2}
-\contentsline {subsubsection}{\numberline {A.3.2.1}Fortune variables correlation}{125}{subsubsection.A.3.2.1}
-\contentsline {subsubsection}{\numberline {A.3.2.2}Social media analysis}{125}{subsubsection.A.3.2.2}
-\contentsline {subsubsection}{\numberline {A.3.2.3}Links analysis}{127}{subsubsection.A.3.2.3}
-\contentsline {subsubsection}{\numberline {A.3.2.4}Loading time analysis}{127}{subsubsection.A.3.2.4}
-\contentsline {subsubsection}{\numberline {A.3.2.5}Content analysis}{128}{subsubsection.A.3.2.5}
-\contentsline {subsubsection}{\numberline {A.3.2.6}HTML validation analysis}{130}{subsubsection.A.3.2.6}
-\contentsline {subsubsection}{\numberline {A.3.2.7}Number, types and image sizes analysis}{130}{subsubsection.A.3.2.7}
-\contentsline {subsection}{\numberline {A.3.3}Data manipulation}{134}{subsection.A.3.3}
-\contentsline {subsection}{\numberline {A.3.4}Regression models}{137}{subsection.A.3.4}
-\contentsline {subsection}{\numberline {A.3.5}Comparisons and other methods}{142}{subsection.A.3.5}
-\contentsline {section}{\numberline {A.4}Appendix D: R Tables}{145}{section.A.4}
+\contentsline {section}{\numberline {2.2}Thesis hypothesis}{12}{section.2.2}
+\contentsline {chapter}{\numberline {3}Data gathering}{13}{chapter.3}
+\contentsline {section}{\numberline {3.1}Data Source}{13}{section.3.1}
+\contentsline {section}{\numberline {3.2}Metrics}{17}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Loading time}{17}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Number of links}{18}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Social media}{18}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Number, type and sizes of images}{19}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}Content}{19}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.6}HTML Validation}{19}{subsection.3.2.6}
+\contentsline {section}{\numberline {3.3}Python Language}{21}{section.3.3}
+\contentsline {section}{\numberline {3.4}Variables collection}{22}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Companies ranking, names and url}{22}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}URL validation}{23}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Download sites HTML code}{24}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.4}Not downloadable pages}{25}{subsection.3.4.4}
+\contentsline {subsection}{\numberline {3.4.5}Content}{25}{subsection.3.4.5}
+\contentsline {subsection}{\numberline {3.4.6}HTML Validation}{27}{subsection.3.4.6}
+\contentsline {subsection}{\numberline {3.4.7}Social media}{28}{subsection.3.4.7}
+\contentsline {subsection}{\numberline {3.4.8}Links - Internal and External}{30}{subsection.3.4.8}
+\contentsline {subsection}{\numberline {3.4.9}Loading time}{30}{subsection.3.4.9}
+\contentsline {subsection}{\numberline {3.4.10}Number, type and sizes of images}{31}{subsection.3.4.10}
+\contentsline {subsubsection}{\numberline {3.4.10.1}Type of images}{31}{subsubsection.3.4.10.1}
+\contentsline {subsubsection}{\numberline {3.4.10.2}Number of images}{32}{subsubsection.3.4.10.2}
+\contentsline {subsubsection}{\numberline {3.4.10.3}Different image sizes}{33}{subsubsection.3.4.10.3}
+\contentsline {subsection}{\numberline {3.4.11}Fortune 500 - Metrics download}{34}{subsection.3.4.11}
+\contentsline {subsection}{\numberline {3.4.12}Merge data-frames and extract final csv file}{35}{subsection.3.4.12}
+\contentsline {chapter}{\numberline {4}Data Analysis}{37}{chapter.4}
+\contentsline {section}{\numberline {4.1}R Language}{37}{section.4.1}
+\contentsline {section}{\numberline {4.2}Analysis}{37}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Data cleansing}{38}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Variable analysis and correlation}{39}{subsection.4.2.2}
+\contentsline {subsubsection}{\numberline {4.2.2.1}Fortune variables correlation}{39}{subsubsection.4.2.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2.2}Social media analysis and correlation}{43}{subsubsection.4.2.2.2}
+\contentsline {subsubsection}{\numberline {4.2.2.3}Links analysis and correlations}{44}{subsubsection.4.2.2.3}
+\contentsline {subsubsection}{\numberline {4.2.2.4}Loading time analysis and correlation}{47}{subsubsection.4.2.2.4}
+\contentsline {subsubsection}{\numberline {4.2.2.5}Content analysis and correlation}{47}{subsubsection.4.2.2.5}
+\contentsline {subsubsection}{\numberline {4.2.2.6}HTML validation variables analysis and correlation}{52}{subsubsection.4.2.2.6}
+\contentsline {subsubsection}{\numberline {4.2.2.7}Image types analysis and correlation}{54}{subsubsection.4.2.2.7}
+\contentsline {subsection}{\numberline {4.2.3}Data manipulation}{60}{subsection.4.2.3}
+\contentsline {subsubsection}{\numberline {4.2.3.1}Image sizes variables reconstruction}{60}{subsubsection.4.2.3.1}
+\contentsline {subsubsection}{\numberline {4.2.3.2}Remove variables}{62}{subsubsection.4.2.3.2}
+\contentsline {subsection}{\numberline {4.2.4}Regression analysis}{63}{subsection.4.2.4}
+\contentsline {subsubsection}{\numberline {4.2.4.1}Training and test set creation}{64}{subsubsection.4.2.4.1}
+\contentsline {subsubsection}{\numberline {4.2.4.2}Null and Full model creation}{64}{subsubsection.4.2.4.2}
+\contentsline {subsubsection}{\numberline {4.2.4.3}Lasso Method}{67}{subsubsection.4.2.4.3}
+\contentsline {subsubsection}{\numberline {4.2.4.4}Both Method}{70}{subsubsection.4.2.4.4}
+\contentsline {subsubsection}{\numberline {4.2.4.5}Predictions and comparison of models}{71}{subsubsection.4.2.4.5}
+\contentsline {subsection}{\numberline {4.2.5}Comparisons and other methods}{72}{subsection.4.2.5}
+\contentsline {subsubsection}{\numberline {4.2.5.1}Correlation testing}{72}{subsubsection.4.2.5.1}
+\contentsline {subsubsection}{\numberline {4.2.5.2}Clustering testing}{73}{subsubsection.4.2.5.2}
+\contentsline {subsubsection}{\numberline {4.2.5.3}Final testing}{78}{subsubsection.4.2.5.3}
+\contentsline {chapter}{\numberline {5}Conclusions}{79}{chapter.5}
+\contentsline {section}{\numberline {5.1}Findings summary}{80}{section.5.1}
+\contentsline {section}{\numberline {5.2}Findings contribution}{82}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Theoretical level}{82}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Managerial level}{82}{subsection.5.2.2}
+\contentsline {chapter}{\numberline {6}Further Research}{85}{chapter.6}
+\contentsline {chapter}{\numberline {7}Bibliography}{87}{chapter.7}
+\contentsline {chapter}{\numberline {A}Appendix}{93}{appendix.A}
+\contentsline {section}{\numberline {A.1}Appendix A: Fortune 500 Companies}{93}{section.A.1}
+\contentsline {section}{\numberline {A.2}Appendix B: Python Scripts}{99}{section.A.2}
+\contentsline {section}{\numberline {A.3}Appendix C: R Scripts}{120}{section.A.3}
+\contentsline {subsection}{\numberline {A.3.1}Data cleansing}{120}{subsection.A.3.1}
+\contentsline {subsection}{\numberline {A.3.2}Variable analysis and correlation}{121}{subsection.A.3.2}
+\contentsline {subsubsection}{\numberline {A.3.2.1}Fortune variables correlation}{121}{subsubsection.A.3.2.1}
+\contentsline {subsubsection}{\numberline {A.3.2.2}Social media analysis}{121}{subsubsection.A.3.2.2}
+\contentsline {subsubsection}{\numberline {A.3.2.3}Links analysis}{123}{subsubsection.A.3.2.3}
+\contentsline {subsubsection}{\numberline {A.3.2.4}Loading time analysis}{123}{subsubsection.A.3.2.4}
+\contentsline {subsubsection}{\numberline {A.3.2.5}Content analysis}{124}{subsubsection.A.3.2.5}
+\contentsline {subsubsection}{\numberline {A.3.2.6}HTML validation analysis}{125}{subsubsection.A.3.2.6}
+\contentsline {subsubsection}{\numberline {A.3.2.7}Number, types and image sizes analysis}{126}{subsubsection.A.3.2.7}
+\contentsline {subsection}{\numberline {A.3.3}Data manipulation}{129}{subsection.A.3.3}
+\contentsline {subsection}{\numberline {A.3.4}Regression, Clustering and Correlation analysis}{129}{subsection.A.3.4}
+\contentsline {section}{\numberline {A.4}Appendix D: R Tables}{135}{section.A.4}
