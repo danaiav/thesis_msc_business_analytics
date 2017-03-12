@@ -3,8 +3,8 @@ title: "Metrics of Succesful websites and companies"
 author: "Danai Avratoglou"
 date: "18 February 2017"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 ```{r}
@@ -496,41 +496,11 @@ summary(full)
 ```
 
 ```{r}
-x <- model.matrix(full) [,-1]
-dim(x)
-lasso <- glmnet (x, total_500_final_train$Revenues)
-par(mfrow=c(1,1),no.readonly = TRUE)
-plot(lasso, xvar='lambda', label=T)
-```
-```{r}
-lassob <- cv.glmnet(x,total_500_final_train$Revenues)
-lassob$lambda.min
-lassob$lambda.1se
-```
-
-
-```{r}
-plot(lassob)
-```
-
-```{r}
-#We see the coefficients for lamda min
-blasso <- coef(lassob, s="lambda.min")
-blasso
-dim(blasso)
-zblasso <- blasso[-1] * apply(x,2,sd)
-zbolt <- coef (full) [-1] * apply (x,2,sd)
-azbolt <- abs(zbolt)
-sum(azbolt)
-#since the sum is NA that means we have to substract some variables
-# in order to find which variables to substract we run the coefficients and we see which of them has NA as result
-coef(full)
-```
-
-```{r}
-#Now we create a new model with only the variables with coef different from NA
+#Now we create a new model with only the variables with coef different from NA so as to have a cleare look
 full_2 <- lm(Revenues~. - total.images - total.links - X1x1 - X21pxx173px - X49x49 - X200pxx200px - X1279pxx984px - X300pxx1500px - X160x233 -  X300x993 - X41x192 - X28x221 - X60x60,data=total_500_final_train)
 summary(full_2)
+aic_f <- AIC(full_2)
+aic_f
 ```
 
 ```{r}
@@ -544,6 +514,7 @@ plot(lasso, xvar='lambda', label=T)
 ```
 
 ```{r}
+x <- model.matrix(full_2) [,-c(18,22,28,26,34,32,33,42,37,38,39,40,52)]
 lassob <- cv.glmnet(x,total_500_final_train$Revenues)
 lassob$lambda.min
 lassob$lambda.1se
@@ -653,12 +624,12 @@ par(mfrow=c(1,1))
 total_500_final_reg <- total_500_final_train[,c(1,41,21,30,43,20,10,53,27,45,3)]
 cor(total_500_final_reg)
 corrplot(cor(total_500_final_reg),method="number")
-#We can see here that the variable x8x15 has a very high correlation with the variable x44x556 and also the variable X15x12 has also a very high correlation with the variable x400x300.
+#We can see here that some of the variables are correlated also with each other so we can try keeping only the variables that are not correlated with each other so as to avoid multicollinearity. The variables that are correlated with each other are the image sizes that are included in the model so we will keep only one of those variables. The one that is correlated the most with all the others so as to keep the biggest part of the information.
 ```
 
 ```{r}
-#So we can try creating a new model excluding the 2 variables that are correlated from each pair to see if there will be any improvement in the model
-full_5 <- lm(Revenues~1 +X44x556 +X400x300 + .bmp + youtube +loading.time + X46x214 + .gif + number_of_errors ,data=total_500_final_train)
+#So we can try creating a new model includind only the 400x300 image size 
+full_5 <- lm(Revenues~1 +X400x300 + .bmp + youtube +loading.time + .gif + number_of_errors ,data=total_500_final_train)
 summary(full_5)
 adj_r_square_full5 <- summary(full_5)$adj.r.squared
 aic_full5 <- AIC(full_5)
@@ -733,14 +704,11 @@ ggplot(total_500_final_reg, aes(Revenues, X8x15, color = fortuneCluster$cluster)
 
 ```{r}
 #From the clustering we can see that the variables do indeed devide the most high revenues from the smallest ones
-summary(model_a)
+#Here the image size that is devided in the best way is 15x12 so we will create a model that we will put only this size
 ```
 
 ```{r}
-#We can see from the model that the basic variable that effect a companys ranking
-#is whether or not it has an image in size X15x12
-#We will try to make a model that we will not take into consideration this variable at all just in order to see how it will explain the revenues
-full_6 <- lm(Revenues~1 +X44x556 +X400x300 + .bmp + X8x15+ youtube +loading.time + X46x214 + .gif + number_of_errors ,data=total_500_final_train)
+full_6 <- lm(Revenues~1 +X15x12 + .bmp + youtube +loading.time + .gif + number_of_errors ,data=total_500_final_train)
 summary(full_6)
 adj_r_square_full6 <- summary(full_6)$adj.r.squared
 aic_full6 <- AIC(full_6)
@@ -764,11 +732,26 @@ plot (predictions_ma, col = "Red",main = "Model A")
 predictions_full_6 <- predict(full_6,total_500_final_test)
 plot (predictions_full_6, col = "Red",main = "Full_6 model")
 #######################################################
+predictions_full_5 <- predict(full_5,total_500_final_test)
+plot (predictions_full_5, col = "Red",main = "Full_5 model")
 ```
 
 ```{r}
-#We can see that here the prediction of the new model is not as good as the previous one so now that we have checked this option as well we can conclude that the most important factors are the ones of model_a
-summary(model_a)
+adj_r_square_full5 
+aic_full5 
+adj_r_square_full6 
+aic_full6
 ```
+```{r}
+names(total_500_final_reg)
+```
+
+```{r}
+par(mfrow=c(1,1))
+total_500_final_reg_2 <- total_500_final_reg[,c(1,2,5,7,8,10,11)]
+cor(total_500_final_reg_2)
+corrplot(cor(total_500_final_reg_2),method="number")
+```
+
 
 

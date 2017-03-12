@@ -43,7 +43,7 @@
 \contentsline {subsection}{\numberline {4.2.3}Data manipulation}{62}{subsection.4.2.3}
 \contentsline {subsubsection}{\numberline {4.2.3.1}Image sizes variables reconstruction}{62}{subsubsection.4.2.3.1}
 \contentsline {subsubsection}{\numberline {4.2.3.2}Remove variables}{64}{subsubsection.4.2.3.2}
-\contentsline {subsection}{\numberline {4.2.4}Regression models}{65}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.4}Regression analysis}{65}{subsection.4.2.4}
 \contentsline {subsubsection}{\numberline {4.2.4.1}Training and test set creation}{66}{subsubsection.4.2.4.1}
 \contentsline {subsubsection}{\numberline {4.2.4.2}Null and Full model creation}{66}{subsubsection.4.2.4.2}
 \contentsline {subsubsection}{\numberline {4.2.4.3}Lasso Method}{69}{subsubsection.4.2.4.3}
