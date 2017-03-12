@@ -600,16 +600,16 @@ aic_ma #Best
 #######################################################################################################
 par(mfrow=c(2,2))
 Actual_Revenues<- total_500_final_test$Revenues
-plot (Actual_Revenues, col = "blue")
+plot (Actual_Revenues, col = "blue",main ="True Prices")
 ###########################################
 predictions_ma <- predict(model_a,total_500_final_test)
-plot (predictions_ma, col = "Red",main = "Model a")
+plot (predictions_ma, col = "Red",main = "Both method model")
 #####################################
 predictions_full3 <- predict(full_3,total_500_final_test)
-plot (predictions_full3, col = "Red",main = "Full_3 model")
+plot (predictions_full3, col = "Red",main = "Lasso Min model")
 #####################################
 predictions_full4 <- predict(full_4,total_500_final_test)
-plot (predictions_full4, col = "Red",main = "Full_4 model")
+plot (predictions_full4, col = "Red",main = "Lasso One SD model")
 #####################################
 #From the plots above we can see that the actual Revenues have a more smooth way of leveling up except from the Revenues of the #1 ranking company that are extremely high in relationship with the other sites.
 #The prediction model that is more smooth is the model a which has as we said before the best Adjusted R Square and the best AIC price

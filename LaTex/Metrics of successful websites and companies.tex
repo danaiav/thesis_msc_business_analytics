@@ -487,20 +487,10 @@ In this section we will present the steps that we followed to contact this analy
 \end{enumerate}
 \subsection{Data cleansing}
 Before we will be able to begin the analysis we should first check the data that we have gathered.\\
-The first step is to upload in the R environment the csv file we have created and see how many variables and observations we have.
-\begin{table}[H]
-\centering
-\caption{Data}
-\begin{tabular}{ll}
-  & \\
-Observations & Variables \\
-500 & 730 \\
-\end{tabular}
-\end{table}
-The data have 500 observations as it was expected since we will examine 500 companies and 730 variables. The variables are far too many so in the next sections we should find a way to remove some of them that will not be useful in our research.\\
+The first step is to upload in the R environment the csv file we have created and see how many variables and observations we have. The data have 500 observations as it was expected since we will examine 500 companies and 730 variables. The variables are far too many so in the next sections we should find a way to remove some of them that will not be useful in our research.\\
 Another change that we have to make is to change the decimal point in the variables we gathered from the Fortune 500 site in order to be read correctly from R.\\
 The next thing we should do is to make all the variables numeric in order to be more easy to compare them. The only variable that we keep as factor is the Readability one since we made it on purpose like that so as to have a clear view of what the flesch test results really mean.\\
-Moreover we should omit all the variables and observations that contain nas from this analysis so as for the results to have a point.\\
+Moreover we should omit all the variables and observations that contain na's from this analysis so as for the results to have a point.\\
 The next step is to rename some variables in order to have a better and clearer understanding of what they represent. For example a variable named X that was added when we extracted the csv from Python represents the actual ranking of each company, an information that will prove to be very useful later on. So it will be a good idea to rename this variable to Ranking.\\
 Some of the variables while they were important during the python scripts they do not actually play any important role in this analysis and we should remove them from the data that we are going to analyse. For example the company's url was an important variable while we ran the python scripts but since there are unique for each site they cannot give us any useful information for the analysis we want to perform.\\
 Another important step before going on with the analysis is to upload the libraries that we are going to use further along. More specifically we will upload the following libraries for starters:
@@ -512,12 +502,8 @@ Another important step before going on with the analysis is to upload the librar
 Finally we see how many observations and variables we have now.
 \begin{table}[H]
 \centering
-\caption{Data after cleansing}
-\begin{tabular}{ll}
-  & \\
-Observations & Variables \\
-408 & 708 \\
-\end{tabular}
+\caption{Dataset initial and after cleansing}
+\includegraphics[scale=0.6]{../R/photos/002_dataset.PNG} 
 \end{table}
 The script we used to perform all the above steps could be found in the Appendix.\ref{r:data cleansing}
 \subsection{Variable analysis and correlation}
@@ -974,12 +960,17 @@ In statistics there are two main types of regressions the linear and the logisti
 The logistic regression, or logit regression, is a regression model where the dependent variable (DV) is categorical.Cases where the dependent variable has more than two outcome categories may be analysed in multinomial logistic regression, or, if the multiple categories are ordered, in ordinal logistic regression.\\
 Since the variable Revenues which is the dependent variable we have chosen is a scalar numeric variable we will perform linear regression to the final data frame we have created.
 \subsubsection{Training and test set creation}
-Before we begin with the regression we have to divide the data frame to 2 data frames so as to be able to test the model we will create an also to make see if it can be a predictive model. We will make a training set and a test set:
+Before we begin with the regression we have to divide the data frame to 2 data frames so as to be able to test the model we will create and also to test it. We will make a training set and a test set:
 \begin{itemize}
 \item \textbf{Training set:} We will use this set in order for the model to learn how to fit the parameters of the classifier.
 \item \textbf{Test set:} This set will be used only to assess the performance of the models that we will create.
 \end{itemize}  
-The sets will be separated in proportions: 15\% -85\% where the 15\% will be the test set in which we will test our findings and the 85\% will be the set we will use in order to create the regression models. After separating the two sets we ended up with 348 observations in the training set and 60 observations in the test set.
+The sets will be separated in proportions: 30\% - 70\% where the 30\% will be the test set in which we will test our findings and the 70\% will be the set we will use in order to create the regression models. After separating the two sets we ended up with the following two datasets:
+\begin{table}[H]
+\centering
+\caption{Training and Test datasets}
+\includegraphics[scale=0.6]{../R/photos/002_dataset_tr_t.PNG} 
+\end{table}
 \subsubsection{Null and Full model creation}
 The first step is by using the training set to create a null regression model and a full regression model.\\
 The null regression model contains only the dependent variable y where in our case is the Revenues. The null model we created is the one in the following table:
@@ -987,13 +978,13 @@ The null regression model contains only the dependent variable y where in our ca
 \centering
 \caption{Null regression model}
 \begin{center}
-\includegraphics[scale=0.6]{../R/photos/65_null_model.PNG}   \\
+\includegraphics[scale=0.8]{../R/photos/65_null_model.PNG}   \\
 \end{center}
 \end{table}
 From the null regression model we can see that the intercept is positive. That means that even without any other variable the Revenues of a company start at 22.25 million dollars. This is normal if we consider that we are examining the most successful enterprises in the United States and even the ones that have low revenues in this examination do not seize to be considered high enough in comparison with other companies that are not included in the fortune 500 most successful ones.\\
 The next step is to create a full model where we used the dependent variable Revenues against all 52 independent variables of the final data frame. The full model we created is available in the following table. From this model we can see that the intercept initial value has been increased a lot in comparison to the null model. It went from 22 to 438. Nevertheless it is obvious that some of the independent variables have negative values which means that based on the prices they get they can lower the final Revenues of the company.\\
 Moreover we can see that some variables have NAs in the estimate. This could be happening because they are highly correlated to other variables. That is why we begin with the full model so as to see which variables would be wise to keep or to remove.\\
-In the bottom of the regression model there are some prices that will help us evaluate the model.
+In the bottom of each regression model there are some prices that will help us evaluate the model.
 \begin{itemize}
 \item \textbf{Residual Standard Error}: is a measure of the quality of a linear regression fit. Theoretically, every linear model is assumed to contain an error term E. Due to the presence of this error term, we are not capable of perfectly predicting our response variable (Revenues) from the predictors (independent variables). The Residual Standard Error is the average amount that the dependent variable will deviate from the true regression line. In our example, the actual revenues of a company can deviate from the true regression line by approximately 14.37 million dollars, on average. In other words, given that the mean revenues for all companies is 438.83 million dollars (the intercept estimate of the full model) and that the Residual Standard Error is 14.38, we can say that the percentage error is (any prediction would still be off by) 3.27\%. It’s also worth noting that the Residual Standard Error was calculated with 309 degrees of freedom. Simplistically, degrees of freedom are the number of data points that went into the estimation of the parameters used after taking into account these parameters (restriction). In our case, we had 348 data points and 39 parameters (intercept and variables that do not have NA in the estimate column)so the degrees of freedom are 348 - 39 = 309.
 \item \textbf{Multiple R-squared:} is a statistical measure of how close the data are to the fitted regression line. It is also known as the coefficient of determination, or the coefficient of multiple determination for multiple regression.The definition of R-squared is the percentage of the response variable variation that is explained by a linear model:
@@ -1023,7 +1014,14 @@ This scenarios are respectively interpreted as follows:
 \item The model explains a lot of variation within the data and is significant (best scenario)
 \item The model explains a lot of variation within the data but is not significant (model is worthless)
 \end{enumerate}
-In our case the model has an Adjusted R Square of 79\% and a p value $<$ 0.05. This means that we are in the best case scenario. The model is available in the Appendix.\ref{d :r :1}
+Another factor that will take under consideration, but is not included in the summary of each model, is the AIC price of each model that we will create.The Akaike information criterion (AIC) is a measure of the relative quality of statistical models for a given set of data. Given a collection of models for the data, AIC estimates the quality of each model, relative to each of the other models. Hence, AIC provides a means for model selection. AIC is a goodness of fit measure that favours smaller residual error in the model, but penalises for including further predictors and helps avoiding overfitting. The smaller its price the smaller residual error we will have. In R it can be easily calculate.\\
+Regarding the full model, it is available in the Appendix\ref{d :r :2}. The prices of the factors that we will examine in order to see how good the model is, are the following ones:
+\begin{table}[H]
+\centering
+\caption{Full Regression model factors}
+\includegraphics[scale=0.6]{../R/photos/0001_f.PNG} 
+\end{table}
+
 \subsubsection{Lasso Method}
 Even though the results of the full model indicates that the model is quite good we shouldn't be contained with these results. Since this is the full model we could also try some other methods in order to see if we can make it even better.\\
 The first method we are going to implement is the Lasso (least absolute shrinkage and selection operator). The Lasso method is a regression analysis method that performs both variable selection and regularization in order to enhance the prediction accuracy and interpret-ability of the statistical model it produces.\\
@@ -1050,7 +1048,7 @@ Another graph that we should take into account before choosing the variables for
 \centering
 \caption{Lasso Mean square error}
 \begin{center}
-\includegraphics[scale=0.5]{../R/photos/71_lassob.png}    \\
+\includegraphics[scale=0.6]{../R/photos/71_lassob.png}    \\
 \textit{Includes the cross-validation curve (red dotted line), and upper and lower standard deviation curves along the $\lambda$ sequence - error bars. Two selected $\lambda$’s are indicated by the vertical dotted lines.}
 \end{center}
 \end{table}
@@ -1063,19 +1061,20 @@ We can use either one in order to see which variables we can keep. We used both 
 \begin{itemize}
 \item \textbf{Lasso Min model}:\\
 \textit{Revenues = 222.268 - 41.027 (8x15) - 24.134 (44x556) - 5.37 (800x1200)- 15.7302 (24px x 133px) - 4.8865 (50x45) - 29.5016 (400x300) - 85.9726 (60x60) + 2.5989 (bmp) + 0.9183 (dib)}\\
-\begin{itemize}
-\item Residuals standard error : 14.28 on 338 degrees of freedom (any prediction will be off by 3.33\%)
-\item Adjusted R-squared : 0.7979 (79,79\%)
-\item p-value $<$ 0.05
-\end{itemize}
+\begin{table}[H]
+\centering
+\caption{Lasso Min model factors}
+\includegraphics[scale=0.6]{../R/photos/0001_f_f3.PNG} 
+\end{table}
+
 
 \item \textbf{Lasso One standard deviation model}:\\
 \textit{Revenues = 222.268 - 41.027 (8x15) - 24.134 (44x556) - 5.372 (800x1200)- 15.730 (24px x 133px) - 4.887 (50x45) - 28 (400x300) - 87.077 (60x60)}
-\begin{itemize}
-\item Residuals standard error : 14.73 on 340 degrees of freedom (any prediction will be off by 3.4\%)
-\item Adjusted R-squared : 0.7851 (78,51\%)
-\item p-value $<$ 0.05
-\end{itemize}
+\begin{table}[H]
+\centering
+\caption{Lasso One standard deviation model factors}
+\includegraphics[scale=0.6]{../R/photos/0001_f_f3_f4.PNG} 
+\end{table}
 \end{itemize}
 From those two models we can see that the one for the min $\lambda$ is better regarding the Adjusted R-squared and also the prediction accuracy is a little higher from the full model that we have already created. This means that we were able to improve the model a little.
 \subsubsection{Both Method}
@@ -1084,11 +1083,11 @@ This method takes as inputs the null model and the full model and it goes back a
 \begin{itemize}
 \item \textbf{Both method model}:\\
 \textit{Revenues = 216.04 - 88.85 (60x60) - 25.93 (44x556) - 43.04 (8x15)- 21.05 (24px x 133px) - 27.14 (400x300) + 2.53 (bmp) - 5.41 (loading time) + 0.039 (jpeg)+ 1.257 (readability) + 2.956 (instagram) }
-\begin{itemize}
-\item Residuals standard error : 14 on 337 degrees of freedom (any prediction will be off by 3.31\%)
-\item Adjusted R-squared : 0.8059 (80,59\%)
-\item p-value $<$ 0.05
-\end{itemize}
+\begin{table}[H]
+\centering
+\caption{Both method model factors}
+\includegraphics[scale=0.6]{../R/photos/0001_f_f3_f4_ma.PNG} 
+\end{table}
 \end{itemize}
 As it is easily observed the model is better than the one we found with the Lasso method and as a result even better from the full one we created in the begging.
 \subsubsection{Predictions and comparison of models}
@@ -1097,7 +1096,7 @@ Now that we have created three models we should check in actual data which of th
 \centering
 \caption{Model comparison}
 \begin{center}
-\includegraphics[scale=0.6]{../R/photos/85_pred_mod.png}    \\
+\includegraphics[scale=0.8]{../R/photos/85_pred_mod.png}    \\
 \end{center}
 \end{table}
 From the above table we can see that the highest price of the actual revenues in close to 100. The only model that goes close but do not supersedes this number is the one from the both method (model a). The other two while they are doing quite well predictions we can see that in the high revenue sites they reach the 120 million dollars which are bigger than the actual ones and also in the low prices they do not differentiate at all all the predictions are close to zero, unlike the model of the method both where the predictions, while they seem to differ a little from the actuals they seem to have a better capture of the correct revenues.\\
@@ -4005,28 +4004,10 @@ summary(model_a)
 
 
 \section{Appendix D: R Tables} \label{appR}
-\begin{table}[H]
-\centering
-\caption{Full regression model part 1}\label{d :r :1a}
-\begin{center}
-\includegraphics[scale=0.8]{../R/photos/66_FULL_PART1.PNG} \\
-\end{center}
-\end{table}
-
 
 \begin{table}[H]
 \centering
-\caption{Full regression model part 2}\label{d :r :1b}
-\begin{center}
-\includegraphics[scale=0.8]{../R/photos/66_FULL_PART2.PNG}  \\
-\end{center}
-\end{table}
-
-
-
-\begin{table}[H]
-\centering
-\caption{Regression model full 2}\label{d :r :2}
+\caption{Regression model Full model}\label{d :r :2}
 \begin{center}
 \includegraphics[scale=0.8]{../R/photos/69_full2.PNG}   \\
 \end{center}
