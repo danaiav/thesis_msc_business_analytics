@@ -115,17 +115,15 @@ Furthermore, due to this rapid evolution of the use of social media many differe
 \item\textbf{Youtube} : As of January 2017,the 3rd most visited website in the world has reached over 1,3 billion active users.\cite{key32}
 \end{itemize}
 Our goal is to show how all those aforementioned metrics can be used to show the correlation of a website with the success of an enterprise. We can now develop our hypothesis. 
-\newpage
+
 \section{Thesis hypothesis}
 While there are quite a few previous researches that tried to correlated the success of a website with the overall success of a firm, most of the findings were derived from the perceptions of web users or web designers. Furthermore most of the variables at hand had to do with how those groups perceived the impact of them on their choices and not the actual prices of the variables that the company decided to use.\\
 This paper extends beyond previous studies by devoting most effort on examining specific web site metrics that were deemed important from previous researches, not from the users perspective but from the actual metrics prices in relation to each enterprise's revenues.The questions that this study would try to answer are the following ones:
 \begin{enumerate}
 \item Do the revenues of a company correlate to specific metrics (or to some of the 6 dimensions of a website's design quality based on the user's perception) of the company's website?
-\item Which of the metrics under examination are correlated the most with the revenues of each company of the Fortune 500 ones?
-\item Can there be a predictive model that, based on the prices of the metrics that will be characterized as the more important ones from the findings, could forecast up to a specific level with good accuracy the revenues of an enterprise?
+\item Which of the metrics under examination are correlated (individually) the most with the revenues of each company of the Fortune 500 ones?
+\item Which of the metrics under examination are correlated (in groups) the most with the revenues of each company of the Fortune 500 ones?
 \end{enumerate}
-
-\newpage
 \chapter{Data gathering}
 
 \section{Data Source}\label{ds:f500}
@@ -205,10 +203,9 @@ The internal links are responsible mainly for the ease of navigation on the webs
 For the purpose of this paper since it is not so clear which type of links are more important to a user we will examine both the internal and the external links and moreover the total links of a website to see which of those three indicators is correlated the most with a firm's success.
 \subsection{Social media}\label{M:Social media}
 Our era is marked by the social media wave that has changed our lifestyle and our daily habits. So it would be considered an oversight if we didn't take into consideration the number of social media that the company chooses to participate in. Even though they can also be considered as external links of the website we will examine them separately in order to see if any particular social medium effects the company's revenues. Since there is an ongoing debate on whether social media should be used from firms to attract customers or if their use should be only for connecting people with each other and not brands the results of this paper would give a perspective of what is really happening in terms of numbers and not from the users perspective.
-\subsection{Number, type and sizes of images}\label{M:N,T,S Imgs}
-Since the site is the first thing that a user will see on line regarding a company and there is a famous quote that says that \textit{"First impressions counts"} we should also examine how the companies decide to visualize their landing page. In other words to see how many images they include in it and more on that what are the dimensions of those images.\\ 
-It is completely different to see only one huge image on the landing page of a site with not many words or descriptions than to see many small images with different information. The purpose is to examine if these type of diversities between the examined websites are actually related to how they are doing success wise.\\
-Moreover an information a little more complicated for a simple user to understand, but which  plays a very important role in many cases is the type of the image. For example some websites are using specific type of images or banners that are not compatible with all the browsers, leading the user to see some break points on the website and even stop visiting it. Based on those facts we will examine the most commonly known type of images and see in which degree they are being used by the companies under examination and whether or not there is a correlation with the revenues.
+\subsection{Number, format and pixels of site's images}\label{M:N,T,S Imgs}
+Since the site is the first thing that a user will see on line regarding a company and there is a famous quote that says that \textit{"First impressions counts"} we should also examine how the companies decide to visualize their landing page. In other words to see how many images they include in it. An great way to see that is to count the number of pixels that appear in the web page under examination.The purpose is to examine if the pixels diversities between the examined websites are actually correlated to how they are doing success wise.\\
+Moreover an information a little more complicated for a simple user to understand, but which  plays a very important role in many cases is the type of the image. For example some websites are using specific formats of images or banners that are not compatible with all the browsers, leading the user to see some break points on the website and even stop visiting it. Based on those facts we will examine the most commonly known type of images and see in which degree they are being used by the companies under examination and whether or not there is a correlation with the revenues.
 \subsection{Content} \label{M:Content}
 They say a picture worth a thousand words but that is not enough in our case. After exploring the number, sizes and type of pictures that a website is using we should also explore the number of words it is using to accompany the images and complete the outcome that a user will come across. The metrics we will use will be two. The first one will be the total words that are being used on the landing page and the other one will be the total unique words that are being used. When we are referring to unique words we mean words that are not so commonly use such as "a" or "and" and they give an air of individuality to the text. By using this metric we would try to see if the words that are being used are just as important as the actual content and if the words can make a difference.\\
 Furthermore we should also take into consideration how comprehending is the text used on the websites for the users. This information can be obtained by calculating the readability index of the website and also the number of sentences that exists in a page (a metric that comes to complete the previous ones).How the readability index is being calculating will be furthered explained in the variables collection section.
@@ -385,7 +382,7 @@ We reach to the final group of variables that we are going to examine regarding 
 \item Number of images
 \item Different image sizes
 \end{enumerate}
-\subsubsection{Type of images}
+\subsubsection{Images formats}
 There are many different types of images that can be used in a site. Here we will try to see between the most common types which ones are the most preferable from the sites and later on in the analysis to see if this has any correlation to their success. The type of images that we will examine are the following ones:
 \begin{itemize}
 \item \textbf{PNG}: Portable Network Graphics (PNG) is a raster graphics file format that supports lossless data compression\footnote{Lossless compression is a class of data compression algorithms that allows the original data to be perfectly reconstructed from the compressed data}.
@@ -403,27 +400,18 @@ As we can see some of the type of images have more than one ways that can appear
 \textbf{Step 4} : In the end of the function we export the time the function did to run again. The next step is to run the function and finally create the data frame with the variables we created.\\
 The code that was created is available in the Appendix.\ref{p13}
 
-\subsubsection{Different image sizes}\label{dif_img_s} 
-Aside from the number of images and the types that are being used another important factor is the size of each image. There is a vast majority of different sizes and it won't be wise to restrict the research to specific sizes so in the following code will find the different sizes that are being used in the companies.\\\\
-\textbf{Step 1}: The first step is to find the different dimensions that each site uses. We initially create the lists that we will use for this first function. In the script there are also comments of what each list represents. Then we create a function that will gather all the different dimensions from all the sites and in another variable all the times each of this dimension appears. \\\\
-\textbf{Step 2}: Next with the help of the library Beautiful soup we read the HTML code as lxml and we save the result into a new variable. Then we search in this new variable with the help of the same library all the elements that are between the $<img>...</img>$ parts of the code.\\\\
-\textbf{Step 3}: Then we try to separate the height and the weight since in some cases there aren't available both the dimensions and in order to be more precise we will keep only the sizes that have both the dimensions available. We do that by counting in the next loop - that we will combine the two dimensions to a form like (300x300)- the length of the smallest list. \\\\
-\textbf{Step 4}: Now that we have the combinations first we check if the list is empty, so as to put zeros in the lists of dimentions and times that they occured for the specific site and then if it is not zero we create a counter to find how many different combinations we have for this site.\\\\
-\textbf{Step 5}: Then we the help of the split and replace packages we keep only the dimensions names and the times that they occured for each site in a list.\\\\
-\textbf{Step 6}: Then this list should go to the list of all the sites in the position of the site at hand. In other words we create another list for which each of the list's elements are other lists. Finally we extract the time the function did to run.\\\\
-\textbf{Step 7}: We run the function\\\\
-\textbf{Step 8}: Next we create a new function which will help us locate only the unique sizes from all the companies. We create the initial lists that we will need and then the loop for the 500 sites. For each site we put the different dimensions in a new variable. Then we check if the elements of this new list have already been added in the list of the unique sizes and if they haven't we add them. In the end we print the results.\\\\
-\textbf{Step 9}: We run this function as well\\\\
-\textbf{Step 10}: We create a new function where we want to make to variables that will give True or False depending on whether or not a specific company's website has a specific dimension of the ones we gathered in the previous script. Firstly we create the initial lists and then the function and the initial loop for the 500 sites.\\\\
-\textbf{Step 11}: Again in this function we create lists inside of lists since we have lists of different dimensions and lists of different sizes and we must combine them in one list with the results of True or False first for each site and further more for each dimension. In the end we print the duration of the function.\\\\
-\textbf{Step 12}: We run the function\\\\
-\textbf{Step 13}: We create an initial data frame where we will add the sizes later on.\\\\
-\textbf{Step 14}: As we said before we have created a final list that its results is other lists so what we need to do now is to create a function in order to break this variable that we created so as to add it in a proper manner in the data frame we created. Again we calculate the time it does for the function to be completed.\\\\
-\textbf{Step 15}: Run the last function and create the final data frame.\\
+\subsubsection{Pixels of images}\label{dif_img_s} 
+Aside from the number of images and the types that are being used another important factor is the pixels of an image. In digital imaging, a pixel, or picture element is a physical point in a raster image, or the smallest addressable element in an all points addressable display device. So it is the smallest controllable element of a picture represented on the screen. The more pixels used to represent an image, the closer the result can resemble the original. In the following code we will find the array of the pixels of all the images of each site and then we will sum them up to a final result that will be comparable across different web pages. \\\\
+\textbf{Step 1}: The first step is import the libraries that we are going to use which are the numphy library and the urllib one. \\\\
+\textbf{Step 2}: Next we open the url of the website we want to examine.\\\\
+\textbf{Step 3}: Then we use the numphy library to create a numphy array that will contain all the pixels of all the images in the web page under examination. \\\\
+\textbf{Step 4}: Now that we have all the pixels we create a loop and we add them up in order to end up with one total number of the pixels that are containing in the web page at hand..\\\\
+\textbf{Step 5}: We run the function.\\\\
+\textbf{Step 6}: We create the data frame with the informations that we gathered.\\\\
 The codes that was created is available in the Appendix.\ref{p14}\ref{p15}\ref{p16}\ref{p17}                 
 
 \subsection{Fortune 500 - Metrics download}
-Just in order to have some metrics that will depict the status of the companies, we will also download some metrics from the Fortune 500 sites for each company.\cite{key35} In order to achieve that we should open the pages for each one of the sites separately. Since there is a pattern in the way the pages are named it shouldn't be difficult.\\\\
+Just in order to have some metrics that will depict the status of the companies, we will also download some metrics from the Fortune 500 sites for each company.\cite{key35} In order to achieve that we should open the pages for each one of the sites separately. Since there is a pattern in the way the pages are named it shouldn't be difficult.\\
 \textbf{Step 1}: Firstly we should create the pattern with which we will download the pages. By running the code we can see that the names of each company are not written exactly as we have saved them.\\\\
 \textbf{Step 2}: So the second step we need to do is to alter the names that are not similar in order for the next functions to run.\\\\
 \textbf{Step 3}: Now that we have the correct names we can download the HTML code of each one of the fortune 500 companies pages from the fortune 500 site so as to extract the information we need. Again here we follow the same steps. Firstly we create an initial list and then a function and a loop for the 500 sites. And for each loop turn we download and save the HTML code behind the fortune 500 page for the site at hand. Finally we run the function.\\\\
@@ -431,24 +419,24 @@ Just in order to have some metrics that will depict the status of the companies,
 \textbf{Step 5}: Now that we have the initial variable we are going to create a function in order to extract the specific parts we need. More precisely we are going to download the following information:
 \begin{itemize}
 \item Revenues in dollars
-\item Revenues in percentage
 \item Assets in dollars
 \item Total Stockholder Equity in dollars
 \item Market Value in dollars
+\item Profits in dollars
+\item 
+\item
 \end{itemize}
 For each loop we use the library Beautiful soup to find all the parts between $<tbody>...</tbody>$ and we locate in which of the parts do the elements we want to extract lies on.\\\\
-\textbf{Step 6}: After locating them we find in this specific part all the parts that are between $<td>...</td>$. Then we locate in those new parts where each of the information we need is and with the help of the regular expressions\footnote{A regular expression, regex or regexp is  a sequence of characters that define a search pattern. Usually this pattern is then used by string searching algorithms for "find" or "find and replace" operations on strings} we keep only the numbers of each part.\\\\\textbf{Step 7}: We do that separately for each one of the five variables we want to create and finally we print that the function is completed.\\\\
+\textbf{Step 6}: After locating them we find in this specific part all the parts that are between $<td>...</td>$. Then we locate in those new parts where each of the information we need is and with the help of the regular expressions\footnote{A regular expression is  a sequence of characters that define a search pattern. Usually this pattern is then used by string searching algorithms for "find" or "find and replace" operations on strings} we keep only the numbers of each part.\\\\\textbf{Step 7}: We do that separately for each one of the five variables we want to create and finally we print that the function is completed.\\\\
 \textbf{Step 8}: Next we run the function\\\\
 \textbf{Step 9}: Finally we create the data frame with the elements we extracted.\\
 The codes that was created is available in the Appendix.\ref{p18}\ref{p19}\ref{p20}\ref{p21}\ref{p22} 
 
-
 \subsection{Merge data-frames and extract final csv file}
 The final step in order to conclude the section with the downloading and gathering of the data is to create a final data frame which will include all the information gathered and then create a csv file that will be used for the further analysis that will be take place with the use of the program language R.\\
-In order to do that we merge the data frames we created by two using the company name as key and then we repeat the merging procedure until we end up with only one data frame that will include all the others.\\
-Finally we create the csv file that we will use in the analysis in R in the next chapter. The code that was created is available in the Appendix.\ref{23}
-
-\newpage  
+In order to do that we merge the data frames we created by two using the company name as key and then we repeat the merging procedure until we end up with only one data frame that will include all the others.
+Finally we create the csv file that we will use in the analysis in R in the next chapter. The code that was created is available in the Appendix.\ref{p23}
+ 
 \chapter{Data Analysis}
 By concluding the gathering of all the information needed the next step is to proceed to their analysis. For the purposes of this assignment we will use the programming language R to perform this analysis.\cite{key1}
 \section{R Language}
@@ -487,20 +475,10 @@ In this section we will present the steps that we followed to contact this analy
 \end{enumerate}
 \subsection{Data cleansing}
 Before we will be able to begin the analysis we should first check the data that we have gathered.\\
-The first step is to upload in the R environment the csv file we have created and see how many variables and observations we have.
-\begin{table}[H]
-\centering
-\caption{Data}
-\begin{tabular}{ll}
-  & \\
-Observations & Variables \\
-500 & 730 \\
-\end{tabular}
-\end{table}
-The data have 500 observations as it was expected since we will examine 500 companies and 730 variables. The variables are far too many so in the next sections we should find a way to remove some of them that will not be useful in our research.\\
+The first step is to upload in the R environment the csv file we have created and see how many variables and observations we have. The data have 500 observations as it was expected since we will examine 500 companies and 730 variables. The variables are far too many so in the next sections we should find a way to remove some of them that will not be useful in our research.\\
 Another change that we have to make is to change the decimal point in the variables we gathered from the Fortune 500 site in order to be read correctly from R.\\
 The next thing we should do is to make all the variables numeric in order to be more easy to compare them. The only variable that we keep as factor is the Readability one since we made it on purpose like that so as to have a clear view of what the flesch test results really mean.\\
-Moreover we should omit all the variables and observations that contain nas from this analysis so as for the results to have a point.\\
+Moreover we should omit all the variables and observations that contain na's from this analysis so as for the results to have a point.\\
 The next step is to rename some variables in order to have a better and clearer understanding of what they represent. For example a variable named X that was added when we extracted the csv from Python represents the actual ranking of each company, an information that will prove to be very useful later on. So it will be a good idea to rename this variable to Ranking.\\
 Some of the variables while they were important during the python scripts they do not actually play any important role in this analysis and we should remove them from the data that we are going to analyse. For example the company's url was an important variable while we ran the python scripts but since there are unique for each site they cannot give us any useful information for the analysis we want to perform.\\
 Another important step before going on with the analysis is to upload the libraries that we are going to use further along. More specifically we will upload the following libraries for starters:
@@ -512,12 +490,8 @@ Another important step before going on with the analysis is to upload the librar
 Finally we see how many observations and variables we have now.
 \begin{table}[H]
 \centering
-\caption{Data after cleansing}
-\begin{tabular}{ll}
-  & \\
-Observations & Variables \\
-408 & 708 \\
-\end{tabular}
+\caption{Dataset initial and after cleansing}
+\includegraphics[scale=0.6]{../R/photos/002_dataset.PNG} 
 \end{table}
 The script we used to perform all the above steps could be found in the Appendix.\ref{r:data cleansing}
 \subsection{Variable analysis and correlation}
@@ -974,12 +948,17 @@ In statistics there are two main types of regressions the linear and the logisti
 The logistic regression, or logit regression, is a regression model where the dependent variable (DV) is categorical.Cases where the dependent variable has more than two outcome categories may be analysed in multinomial logistic regression, or, if the multiple categories are ordered, in ordinal logistic regression.\\
 Since the variable Revenues which is the dependent variable we have chosen is a scalar numeric variable we will perform linear regression to the final data frame we have created.
 \subsubsection{Training and test set creation}
-Before we begin with the regression we have to divide the data frame to 2 data frames so as to be able to test the model we will create an also to make see if it can be a predictive model. We will make a training set and a test set:
+Before we begin with the regression we have to divide the data frame to 2 data frames so as to be able to test the model we will create and also to test it. We will make a training set and a test set:
 \begin{itemize}
 \item \textbf{Training set:} We will use this set in order for the model to learn how to fit the parameters of the classifier.
 \item \textbf{Test set:} This set will be used only to assess the performance of the models that we will create.
 \end{itemize}  
-The sets will be separated in proportions: 15\% -85\% where the 15\% will be the test set in which we will test our findings and the 85\% will be the set we will use in order to create the regression models. After separating the two sets we ended up with 348 observations in the training set and 60 observations in the test set.
+The sets will be separated in proportions: 30\% - 70\% where the 30\% will be the test set in which we will test our findings and the 70\% will be the set we will use in order to create the regression models. After separating the two sets we ended up with the following two datasets:
+\begin{table}[H]
+\centering
+\caption{Training and Test datasets}
+\includegraphics[scale=0.6]{../R/photos/002_dataset_tr_t.PNG} 
+\end{table}
 \subsubsection{Null and Full model creation}
 The first step is by using the training set to create a null regression model and a full regression model.\\
 The null regression model contains only the dependent variable y where in our case is the Revenues. The null model we created is the one in the following table:
@@ -987,15 +966,15 @@ The null regression model contains only the dependent variable y where in our ca
 \centering
 \caption{Null regression model}
 \begin{center}
-\includegraphics[scale=0.6]{../R/photos/65_null_model.PNG}   \\
+\includegraphics[scale=0.8]{../R/photos/65_null_model.PNG}   \\
 \end{center}
 \end{table}
 From the null regression model we can see that the intercept is positive. That means that even without any other variable the Revenues of a company start at 22.25 million dollars. This is normal if we consider that we are examining the most successful enterprises in the United States and even the ones that have low revenues in this examination do not seize to be considered high enough in comparison with other companies that are not included in the fortune 500 most successful ones.\\
 The next step is to create a full model where we used the dependent variable Revenues against all 52 independent variables of the final data frame. The full model we created is available in the following table. From this model we can see that the intercept initial value has been increased a lot in comparison to the null model. It went from 22 to 438. Nevertheless it is obvious that some of the independent variables have negative values which means that based on the prices they get they can lower the final Revenues of the company.\\
 Moreover we can see that some variables have NAs in the estimate. This could be happening because they are highly correlated to other variables. That is why we begin with the full model so as to see which variables would be wise to keep or to remove.\\
-In the bottom of the regression model there are some prices that will help us evaluate the model.
+In the bottom of each regression model there are some prices that will help us evaluate the model.
 \begin{itemize}
-\item \textbf{Residual Standard Error}: is a measure of the quality of a linear regression fit. Theoretically, every linear model is assumed to contain an error term E. Due to the presence of this error term, we are not capable of perfectly predicting our response variable (Revenues) from the predictors (independent variables). The Residual Standard Error is the average amount that the dependent variable will deviate from the true regression line. In our example, the actual revenues of a company can deviate from the true regression line by approximately 14.37 million dollars, on average. In other words, given that the mean revenues for all companies is 438.83 million dollars (the intercept estimate of the full model) and that the Residual Standard Error is 14.38, we can say that the percentage error is (any prediction would still be off by) 3.27\%. It’s also worth noting that the Residual Standard Error was calculated with 309 degrees of freedom. Simplistically, degrees of freedom are the number of data points that went into the estimation of the parameters used after taking into account these parameters (restriction). In our case, we had 348 data points and 39 parameters (intercept and variables that do not have NA in the estimate column)so the degrees of freedom are 348 - 39 = 309.
+\item \textbf{Residual Standard Error}: is a measure of the quality of a linear regression fit. Theoretically, every linear model is assumed to contain an error term E. Due to the presence of this error term, we are not capable of perfectly predicting our response variable (Revenues) from the predictors (independent variables). The Residual Standard Error is the average amount that the dependent variable will deviate from the true regression line. In our example, the actual revenues of a company can deviate from the true regression line by approximately 14.38 million dollars, on average. It’s also worth noting that the Residual Standard Error was calculated with 248 degrees of freedom. Simplistically, degrees of freedom are the number of data points that went into the estimation of the parameters used after taking into account these parameters (restriction). .
 \item \textbf{Multiple R-squared:} is a statistical measure of how close the data are to the fitted regression line. It is also known as the coefficient of determination, or the coefficient of multiple determination for multiple regression.The definition of R-squared is the percentage of the response variable variation that is explained by a linear model:
 \begin{center}
 \textit{R-squared = Explained variation / Total variation}
@@ -1023,7 +1002,14 @@ This scenarios are respectively interpreted as follows:
 \item The model explains a lot of variation within the data and is significant (best scenario)
 \item The model explains a lot of variation within the data but is not significant (model is worthless)
 \end{enumerate}
-In our case the model has an Adjusted R Square of 79\% and a p value $<$ 0.05. This means that we are in the best case scenario. The model is available in the Appendix.\ref{d :r :1}
+Another factor that will take under consideration, but is not included in the summary of each model, is the AIC price of each model that we will create.The Akaike information criterion (AIC) is a measure of the relative quality of statistical models for a given set of data. Given a collection of models for the data, AIC estimates the quality of each model, relative to each of the other models. Hence, AIC provides a means for model selection. AIC is a goodness of fit measure that favours smaller residual error in the model, but penalises for including further predictors and helps avoiding overfitting. The smaller its price the smaller residual error we will have. In R it can be easily calculate.\\
+Regarding the full model, it is available in the Appendix\ref{d :r :2}. The prices of the factors that we will examine in order to see how good the model is, are the following ones:
+\begin{table}[H]
+\centering
+\caption{Full Regression model factors}
+\includegraphics[scale=0.6]{../R/photos/0001_f.PNG} 
+\end{table}
+
 \subsubsection{Lasso Method}
 Even though the results of the full model indicates that the model is quite good we shouldn't be contained with these results. Since this is the full model we could also try some other methods in order to see if we can make it even better.\\
 The first method we are going to implement is the Lasso (least absolute shrinkage and selection operator). The Lasso method is a regression analysis method that performs both variable selection and regularization in order to enhance the prediction accuracy and interpret-ability of the statistical model it produces.\\
@@ -1050,7 +1036,7 @@ Another graph that we should take into account before choosing the variables for
 \centering
 \caption{Lasso Mean square error}
 \begin{center}
-\includegraphics[scale=0.5]{../R/photos/71_lassob.png}    \\
+\includegraphics[scale=0.6]{../R/photos/71_lassob.png}    \\
 \textit{Includes the cross-validation curve (red dotted line), and upper and lower standard deviation curves along the $\lambda$ sequence - error bars. Two selected $\lambda$’s are indicated by the vertical dotted lines.}
 \end{center}
 \end{table}
@@ -1062,191 +1048,174 @@ The two selected $\lambda$’s that are indicated by the vertical dotted lines a
 We can use either one in order to see which variables we can keep. We used both of them and we created 2 models. The analytical models are available in the Appendix but you can see the actual variables and their estimates below as well as the measures that indicate how well performed are the models.
 \begin{itemize}
 \item \textbf{Lasso Min model}:\\
-\textit{Revenues = 222.268 - 41.027 (8x15) - 24.134 (44x556) - 5.37 (800x1200)- 15.7302 (24px x 133px) - 4.8865 (50x45) - 29.5016 (400x300) - 85.9726 (60x60) + 2.5989 (bmp) + 0.9183 (dib)}\\
-\begin{itemize}
-\item Residuals standard error : 14.28 on 338 degrees of freedom (any prediction will be off by 3.33\%)
-\item Adjusted R-squared : 0.7979 (79,79\%)
-\item p-value $<$ 0.05
-\end{itemize}
+\textit{Revenues = 220,7 +0,009 (number of errors) - 2,59 (facebook) -1,96 (pinterest) + 5,72 (youtube) - 0,02 (flesh measure) + 0,003 (sentences) - 43,59 (8x15) - 16,35 (44x556) - 12,9 (800x1200)- 2,07 (24px x 133px) - 20,46 (46x214) - 15,29 (115x223) - 73,3 (15x12) + 2,43 (bmp) + 0,015(jpg)}\\
+\begin{table}[H]
+\centering
+\caption{Lasso Min model factors}
+\includegraphics[scale=0.6]{../R/photos/0001_f_f3.PNG} 
+\end{table}
 
 \item \textbf{Lasso One standard deviation model}:\\
-\textit{Revenues = 222.268 - 41.027 (8x15) - 24.134 (44x556) - 5.372 (800x1200)- 15.730 (24px x 133px) - 4.887 (50x45) - 28 (400x300) - 87.077 (60x60)}
-\begin{itemize}
-\item Residuals standard error : 14.73 on 340 degrees of freedom (any prediction will be off by 3.4\%)
-\item Adjusted R-squared : 0.7851 (78,51\%)
-\item p-value $<$ 0.05
+\textit{Revenues = 222,26 - 41,027 (8x15) - 24,13 (44x556) - 5,37 (800x1200)- 4,93 (24px x 133px) - 10,79 (46x214) -12,34 (50x45) - 19,57 (292px x 292px) - 15,56 (115x223) - 72,75 (15x12)}
+\begin{table}[H]
+\centering
+\caption{Lasso One standard deviation model factors}
+\includegraphics[scale=0.6]{../R/photos/0001_f_f3_f4.PNG} 
+\end{table}
 \end{itemize}
-\end{itemize}
-From those two models we can see that the one for the min $\lambda$ is better regarding the Adjusted R-squared and also the prediction accuracy is a little higher from the full model that we have already created. This means that we were able to improve the model a little.
+From those two models we can see that the one for the min $\lambda$ is better regarding the Adjusted R-squared and also regarding the AIC factor. This means that we were able to improve the model a little with the lasso method.
 \subsubsection{Both Method}
-Nevertheless we still can check if the model can be improved even more. This time we will apply the both method to the full model (after we subtract the variables that were NAs) in order to see if the variables that will be kept give the same or better results than the models we have already created.\\
+Nevertheless we still can check if the model can be improved even more. This time we will apply the both method to the full model in order to see if the variables that will be kept give the same or better results than the models we have already created.\\
 This method takes as inputs the null model and the full model and it goes back and forth and checks which combinations of the variables brings the best results. The model that was created after applying the method is the following one:\\
 \begin{itemize}
 \item \textbf{Both method model}:\\
-\textit{Revenues = 216.04 - 88.85 (60x60) - 25.93 (44x556) - 43.04 (8x15)- 21.05 (24px x 133px) - 27.14 (400x300) + 2.53 (bmp) - 5.41 (loading time) + 0.039 (jpeg)+ 1.257 (readability) + 2.956 (instagram) }
-\begin{itemize}
-\item Residuals standard error : 14 on 337 degrees of freedom (any prediction will be off by 3.31\%)
-\item Adjusted R-squared : 0.8059 (80,59\%)
-\item p-value $<$ 0.05
+\textit{Revenues = 220,27 - 87,81 (15x12) - 29,57 (44x556) - 28,44(400x300) + 2,47 (bmp) - 41,31 (8x15) + 4,05 (youtube) - 4,49 (loading time) - 18,47 (46x214) - 0,12 (gif) + 0,013 (number of errors)}
+\begin{table}[H]
+\centering
+\caption{Both method model factors}
+\includegraphics[scale=0.6]{../R/photos/0001_f_f3_f4_ma.PNG} 
+\end{table}
 \end{itemize}
-\end{itemize}
-As it is easily observed the model is better than the one we found with the Lasso method and as a result even better from the full one we created in the begging.
+As it is easily observed the model is better than the one we found with the Lasso method, in respect of the Adjusted R Square and the AIC measure, and as a result even better from the full one we created in the begging.
 \subsubsection{Predictions and comparison of models}
-Now that we have created three models we should check in actual data which of them works better. Based on the measures, we have already seen that the model of the both method has better perspectives to be the most accurate one. Now we will try to predict the revenue prices of the test set by looking only at the independent values and by implementing the models. Then we will compare those results with the actual revenues to see how well did the models perform.In the following table we can see the results of the predictions:
+Now that we have created three models we should check in actual data which of them works better. Based on the measures, we have already seen that the model of the both method has better perspectives to be the most accurate one. Now we will try to predict the revenue prices of the test set, that we have kept aside, by looking only at the independent values and by implementing the models. Then we will compare those results with the actual revenues that the test set already have for each of the company that are in it, to see how well did the models perform.In the following table we can see the results of the predictions:
 \begin{table}[H]
 \centering
 \caption{Model comparison}
 \begin{center}
-\includegraphics[scale=0.6]{../R/photos/85_pred_mod.png}    \\
+\includegraphics[scale=0.8]{../R/photos/85_pred_mod.png}    \\
 \end{center}
 \end{table}
-From the above table we can see that the highest price of the actual revenues in close to 100. The only model that goes close but do not supersedes this number is the one from the both method (model a). The other two while they are doing quite well predictions we can see that in the high revenue sites they reach the 120 million dollars which are bigger than the actual ones and also in the low prices they do not differentiate at all all the predictions are close to zero, unlike the model of the method both where the predictions, while they seem to differ a little from the actuals they seem to have a better capture of the correct revenues.\\
+From the above table we can see that the highest price of the actual revenues in the test set is close to 100. All of the three models do not supersede this number. The Lasso min model has an outlier prediction of a company that should be close to zero and it has predicted it as 100. The lasso one standard error do not differentiate in the oredictions, since the yare all bellow 20 except from 3. While the both model, has a smaller higher price (around 90) it seems to have a little better approach in each predictions from the other two models.\\
 As a result we can conclude that from the models we created the best one is the one created by the method both. The variables that were used in the model are the following:
 \begin{enumerate}
-\item Image size: 60 x 60 (negative correlation with Revenues)
+\item Image size: 15 x 12 (negative correlation with Revenues)
 \item Image size: 44 x 556 (negative correlation with Revenues)
 \item Image size: 8 x 15 (negative correlation with Revenues)
-\item Image size: 24px x 133px (negative correlation with Revenues)
 \item Image size: 400 x 300 (negative correlation with Revenues)
+\item Image size: 46 x 214 (negative correlation with Revenues)
 \item Image type: bmp (positive correlation with Revenues)
 \item Loading time (negative correlation with Revenues)
-\item Image type: jpeg (positive correlation with Revenues)
-\item Readability (positive correlation with Revenues)
-\item Instagram (positive correlation with Revenues) 
+\item Image type: gif (negative correlation with Revenues)
+\item youtube (positive correlation with Revenues)
+\item number of errors (positive correlation with Revenues) 
 \end{enumerate}
 Before we explain the results more elaborately we should first test some other methods as well just to make sure that we cannot improve even more the results of our model.
 \subsection{Comparisons and other methods}
-Now that we have analysed the metrics that are considered more important it would be wise to use other methods to double check the results. The code that was created for those models is available in the Appendix\ref{r: van: cm}.
+Now that we have analysed the metrics and found some of them that seem to have a higher correlation with the revenues, it would be wise to use other methods to double check the results. The code that was created for those models is available in the Appendix\ref{r: van: rg}.
 \subsubsection{Correlation testing}
 The next step of the analysis is to create a correlation table with the variables that are included in the model that had the best accuracy.\\
 \begin{table}[H]
 \centering
 \caption{Correlation graph of the best models' variables}
 \begin{center}
-\includegraphics[scale=0.5]{../R/photos/86_model_cor.png}     \\
+\includegraphics[scale=0.5]{../R/photos/86_model_cor_2.png}     \\
 \end{center}
 \end{table}
-From the table we can see that as expected the revenues are quite correlated with all the variables. But another observation that we can make is that some variables are highly correlated with each other as well. This means that we can try subtracting some of the variables (that are highly correlated with other variables) of the model and test whether or not it makes a difference in the final accuracy of it.\\
-The highest correlations are between the variables 8x15 and 44x556 (82\% correlated positive) and also between the variables 24px x 133px and 400x300 (83\% positive correlation). From those four variables we will subtract one of each pair in order to see if the model that will be created will perform the same, better or worse from the initial one. We decided to remove from the model the variables 8x15 and 24px x 133px and the new model that was created is the following one:
+From the table we can see that as expected the revenues are quite correlated with all the variables. But another observation that we can make is that some variables are highly correlated with each other as well. This means that, in order to avoid multicollinearity, we can try subtracting some of the variables (that are highly correlated with other variables) of the model and test whether or not it makes a difference in the final accuracy of it.\\
+The variables that seem to be more correlated with each other are the image sizes. From them we can see that the size 400 x 300 seems to have a very high correlation with all the other image sizes. So we will create a model keeping only this image size to see if we will eclipse the multicollinearity. The new model that was created is the following one:
 \begin{itemize}
-\item \textbf{New model (from the both method) without the 2 variables}:\\
-\textit{Revenues = 203.12 - 88.71 (60x60) - 63.78 (44x556) - 39.25 (400x300) + 2.53 (bmp) - 5.54 (loading time) + 0.039 (jpeg)+ 1.04 (readability) + 2.3284 (instagram) }
-\begin{itemize}
-\item Residuals standard error : 14.16 on 339 degrees of freedom (any prediction will be off by 4.17\%)
-\item Adjusted R-squared : 0.8014 (80,14\%)
-\item p-value $<$ 0.05
+\item \textbf{New model (from the both method) only 400x300}:\\
+\textit{Revenues = 160,89 - 143,32 (400x300) + 2,37(bmp) + 3,22 (youtube) - 5,8 (loading time) - 0,12 (gif) + 0,012 (number of errors)}
+\begin{table}[H]
+\centering
+\caption{Both method model (only 400x300) factors}
+\includegraphics[scale=0.6]{../R/photos/0001_f_f3_f4_ma_f5.PNG} 
+\end{table}
 \end{itemize}
-\end{itemize}
-From the results of the new model we can see that by this subtraction the model became a little worse. The Adjusted R squared decreased while the percentage of not accuracy went up. So we can conclude that this change wasn't the best solution and even though the variables are correlated they are also contribute to the better description of the dependent variable. 
+
+From the results of the new model we can see that by this subtraction the model became a little worse. The Adjusted R squared decreased while the AIC price went up. Although if we look the correlation table again we can see that we do not have so high collinearity any more: 
+\begin{table}[H]
+\centering
+\caption{Correlation graph of the new model's variables}
+\begin{center}
+\includegraphics[scale=0.6]{../R/photos/86_model_cor_3.png}     \\
+\end{center}
+\end{table}
 \subsubsection{Clustering testing}
-The next step is to create three clusters of the variables that are included in the model we created and to see if the way that they are grouping can also explain the revenues. If this hypothesis can be confirmed this means that the model we examined is indeed quite accurate.\\
-The observations of the variables should have a clear pattern regarding the revenues in the way that they are grouped together. In order to check that we created the following plots:
+The next step is to create two clusters of variable revenues and compare how the variables of the model that dirived from the btoh method are being clustered based on it. This will help us understand if the image size that we choose to keep was the best idea.\\
+The observations of the variables should have a clear pattern regarding the revenues in the way that they are grouped together. In order to check that we created the following plots. For the purpose of this examination we will show only the plots that are relevant to the variables of the image sizes and not all the variables.:
 \begin{table}[H]
 \centering
-\caption{Loading time vs Revenues Clustering}
+\caption{Image size: 15 x 12 vs Revenues Clustering}
 \begin{center}
-\includegraphics[scale=0.6]{../R/photos/91_clust_ld.png}   \\
+\includegraphics[scale=0.6]{../R/photos/96_clust_15x12_new_this.png}   \\
 \end{center}
 \end{table}
-In the graph regarding the loading time we can see that the clusters are divided very clearly. The first cluster contains all the companies that have revenues more than 75 million dollars while the 3rd cluster contains all the companies that have less than 75 million dollars in revenues. The second cluster contains only one observation. It is not clear from this graph why this observation has been clustered alone but by continuing with the further analysis of the clusters with the other variables it would be more clear why the groups were divided in this way.
-\begin{table}[H]
-\centering
-\caption{Readability vs Revenues Clustering}
-\begin{center}
-\includegraphics[scale=0.5]{../R/photos/92_clust_read.png}   \\
-\end{center}
-\end{table}
-Again here the deviation happened in the revenue values of 75 million dollars except from the one observation of the second cluster.
-\begin{table}[H]
-\centering
-\caption{Instagram vs Revenues Clustering}
-\begin{center}
-\includegraphics[scale=0.5]{../R/photos/93_clust_inst.png}   \\
-\end{center}
-\end{table}
-The same pattern also appears in the instagram variable graph. Here we can see that the variables of the cluster 1 that have the biggest revenues do not have instagram.
-\begin{table}[H]
-\centering
-\caption{Bmp vs Revenues Clustering}
-\begin{center}
-\includegraphics[scale=0.5]{../R/photos/94_clust_bmp.png}   \\
-\end{center}
-\end{table}
-By the same logic is the graph for the bmp image type divided. Here we can see that the only site that have many bmp images is part of the high revenues cluster.
-\begin{table}[H]
-\centering
-\caption{Jpeg vs Revenues Clustering}
-\begin{center}
-\includegraphics[scale=0.5]{../R/photos/95_clust_jpe.png}   \\
-\end{center}
-\end{table}
-From the jpeg graph we can finally understand which variable was responsible for the second cluster. The number of jpeg images in this specific site were extremely high and that lead the clustering algorithm to create a unique group for the specific observation.\\
-The next graphs are from the image sizes that are included in the model. As we have already seen in the analysis before we expect that the observations with the highest revenues won't have those type of images. And we expect the clustering to show this clearly.
-\begin{table}[H]
-\centering
-\caption{Image size: 60 x 60 vs Revenues Clustering}
-\begin{center}
-\includegraphics[scale=0.4]{../R/photos/96_clust_60.png}   \\
-\end{center}
-\end{table}
-From the table for the image size 60 x 60 we can see that the 1st cluster has only zero prices which means that the companies with the highest revenues under consideration do not have this image size in their site's homepage.
+In the graph we can see that the clusters are divided very clearly. Excepts from a few sites all the companies that are group in cluster one do not have this image size while all the companies grouped in the second cluster based on the revenues do have those image size in their website.
 \begin{table}[H]
 \centering
 \caption{Image size: 44 x 556 vs Revenues Clustering}
 \begin{center}
-\includegraphics[scale=0.4]{../R/photos/97_clust_44.png}   \\
+\includegraphics[scale=0.5]{../R/photos/97_clust_44.png}   \\
 \end{center}
 \end{table}
-For the image size 44 x 556 we can see that only the 3 sites with the biggest revenues do not use this size of image in their initial pages on their websites.
+Here the grouping is not so clear. All the variables aside of clusters seems to have this type of image except only from three of the variables that belong to group 1.
 \begin{table}[H]
 \centering
 \caption{Image size: 400 x 300 vs Revenues Clustering}
 \begin{center}
-\includegraphics[scale=0.4]{../R/photos/98_clust_400.png}   \\
+\includegraphics[scale=0.5]{../R/photos/98_clust_400.png}   \\
 \end{center}
 \end{table}
-Almost half of the sites that belong to the first cluster which is the one with the highest revenues do not use this size on the images they use on their site.
+In this variable while the group 2 is clear that all the variables that belong to it have those image size in their website the first cluster is not so obvious. Half of the observations in this cluster have the image size and the other half do not have them.
 \begin{table}[H]
 \centering
-\caption{Image size: 8 x 15 vs Revenues Clustering}
+\caption{Image size: 8 x 15  vs Revenues Clustering}
 \begin{center}
-\includegraphics[scale=0.4]{../R/photos/99_clust_8x15.png}   \\
+\includegraphics[scale=0.5]{../R/photos/99_clust_8x15.png}   \\
 \end{center}
 \end{table}
-With the exception of the two most successful companies that we are examining all the other sites, regardless of the cluster they belong to do use the image size 8 x 15.
+Here the grouping is similar as for the image size 44 x 556. All the variables aside of clusters seems to have this type of image except only from two of the variables, this time, that belong to group 1.
 \begin{table}[H]
 \centering
-\caption{Image size: 24px x 133px vs Revenues Clustering}
+\caption{Image size: 46 x 214  vs Revenues Clustering}
 \begin{center}
-\includegraphics[scale=0.4]{../R/photos/99_clust_24px.png}   \\
+\includegraphics[scale=0.5]{../R/photos/95_clust_46x214_new.png}   \\
 \end{center}
 \end{table}
-Finally the only size of image that we are using in our analysis  in pixels (24px x 133px) is used from the majority of the sites at hand with the exception of the 6 most successful ones.\\
-From those graphs we can see that the image sizes have a negative relation regarding the revenues as the most successful ones do not use those dimensions even though the specific sizes are being used from the majority of the companies we are examining.\\
-The variables that are not very clear on the correlation with the revenues is the readability and the instagram. While the bmp and the jpeg while they are not being used from the majority of the companies the ones that do use them belong in the cluster with the high revenues.
+Finally the image size 46 x 214 has a similar grouping as the 400 x 300 size. While the group 2 is clear that all the variables that belong to it have those image size in their website the first cluster is not so obvious. A little more than half of the observations in this cluster have the image size and the other ones do not have them.\\
+From those tables we can see that the image size variable that follows with the best accuracy the grouping of the revenues is the 15 x 12. So we will create a model based on the bnoth method one that we have created and this time instead of keeping the 400x300 image size we will keep this one. The new model that was created is the following one:
+\begin{itemize}
+\item \textbf{New model (from the both method) only 12 x 12}:\\
+\textit{Revenues = 139,5 - 124,94 (15x12) + 2,45(bmp) + 4,48 (youtube) - 4,83 (loading time) - 0,13 (gif) + 0,012 (number of errors) }
+\begin{table}[H]
+\centering
+\caption{Both method model (only 15 x 12) factors}
+\includegraphics[scale=0.6]{../R/photos/0001_f_f3_f4_ma_f5_f6.PNG} 
+\end{table}
+\end{itemize}
+
+From the results of the new model we can see that by this subtraction the model became a little better in comparison with the previous one. The Adjusted R squared increased while the AIC price decreased. Nevertheless the results are still not as good as the model's of the both method, but with this model we avoid high collinearity between the variables as we can see in the above correlation table:
+\begin{table}[H]
+\centering
+\caption{Correlation graph of the new model's variables}
+\begin{center}
+\includegraphics[scale=0.6]{../R/photos/86_model_cor_4.png}     \\
+\end{center}
+\end{table}
+\newpage
 \subsubsection{Final testing}
-After clustering the variables in order to see if they can explain indeed the revenues we can also try a final different approach to see if we can improve our model. Based on the model we created the variable that has the highest value regarding the price it gets is the image size (60 x 60) which is (-88.85). So we will extract this variable from the model in order to see how this change effect the accuracy of the model that will be created. The new model is the following one:
-\begin{itemize}
-\item \textbf{New model without the 60 x 60 variable}:\\
-\textit{Revenues = 206.82 - 63.96 (44x556) - 126.11 (400x300) + 2.44 (bmp) - 4.19 (loading time) + 0.036 (jpeg)+ 0.42 (readability) + 0.84 (instagram) }
-\begin{itemize}
-\item Residuals standard error : 19.48 on 340 degrees of freedom (any prediction will be off by 5.72\%)
-\item Adjusted R-squared : 0.624 (80,14\%)
-\item p-value $<$ 0.05
-\end{itemize}
-\end{itemize}
-We can see from the model that the weight of image size 400 x 300 has changed dramatically. But the final result is a lot worst than the original model we have created. This means that the variable 60 x 60 is very important and we should keep it in the model.\\
-After completing the analysis we can conclude that there are specific images dimensions that are correlated negative with a firm's revenues. Also there are two specific image types that has positive correlation with the revenues if they are used by the websites. More over the loading time of a site has a negative correlation with the revenues which means the most time it takes for a web site to upload it's pages the less revenues the company at hand will have. Also the only social media that seems to have a positive correlation with a company's revenues worth mentioning is instagram. That means that whether or not a company chooses to participate in the specific social medium is crucial for it's future success. Finally the ease of readability seems to have a positive correlation with the revenues. If we take into consideration that the way the readability variable was ranked this means that the more difficult a websites content is the more revenues will this firm have. That can be confirm if we consider that the users want to gain as much information as possible and they do not mind the difficulty of the text if the actual content is in fact informative.
+After using the correlation plots and the clustering method to see if we can improve the model we created now we have to see how well or not do the two new models predict the revenues in the test set. In the below table we can see that the model where we kept only the image size 400x300 is not predicting the observation very well. While the model in which we only kept the image size 15x12 is predicting the observation quite similar with the model of the both method. One difference is that the sites with the high values in the both method are predicted a little lower than the actual while in the other model a little higher that the actuals. Of course if we take into account that the model with the image size 15x12 only, has a very small collinearity between the independent variables we can conclude that even thought the Adjusted R Square and the AIC prices are worse than the both method model's one it is safer to work with this model.:
+\begin{table}[H]
+\centering
+\caption{Prediction tables}
+\begin{center}
+\includegraphics[scale=1]{../R/photos/103_mod_comp.png}
+\end{center}
+\end{table}
+ 
+
 \pagebreak  
 \chapter{Conclusions}
-With the completion of all the stages of the paper's analysis we showed the correlation between some of the most important metrics of a website and the revenues of the firm that owns the specific website. By gathering the elements we wanted to examine ,with the help of the programming language Python, we were able to perform a statistical analysis on them, with the use of the programming language R in the environment of the R-Studio, and moreover create regression models and predictive models that can provide us with a better understanding of the variables relationship with the revenues. Based on those results we can answer the questions that were raised in the beginning of this paper:
+With the completion of all the stages of the paper's analysis we showed if there were any correlation between some of the most important metrics of a website and the revenues of the firm that owns the specific website. By gathering the elements we wanted to examine, with the help of the programming language Python, we were able to perform a statistical analysis on them, with the use of the programming language R in the environment of the R-Studio, and moreover create regression models and predictive models that can provide us with a better understanding of the variables correlation with the revenues. Based on those results we can answer the questions that were raised in the beginning of this paper:
 \begin{enumerate}
-\item \textbf{\textit{Do the revenues of a company relate to specific metrics of the company's website?}}\\
-Based on the analysis that was conducted there were many variables that seem to be correlated with the revenues of a company. The were small and high correlations as well as negative and positive ones depending on the variable at hand. Most of them did show that can relate up to a specific point with the revenues of a firm.
+\item \textbf{\textit{Do the revenues of a company correlate to specific metrics (or to some of the 6 dimensions of a website's design quality based on the user's perception) of the company's website?}}\\
+Based on the analysis that was conducted there were many variables that seem to be correlated with the revenues of a company. The were small and high correlations as well as negative and positive ones depending on the variable at hand. Most of them did show that can correlate up to a specific point with the revenues of a firm. The variables that seem to correlate with the revenues were from all six dimensions of a website's design quality that have been deemed important by the users.
 \item \textbf{\textit{Which of the metrics under examination are correlated the most with the revenues of each company of the Fortune 500 ones?}}\\
-Even though most of the metrics had even a small correlation with the revenues there were specific variables that seemed to be correlated in a high level with the revenues of the company. These metrics are the loading time of the web page, the readability index, the existence of an instagram account link in the home page of the site, the usage of specific image types and the non usage of specific image dimensions.
+Even though most of the metrics had even a small correlation with the revenues there were specific variables that seemed to be correlated in a high level with the revenues of the company. These metrics are the loading time of the web page, the number of errors, the existence of a youtube channel link in the home page of the site, the usage of specific image types and the non usage of specific image dimensions. This findings can be supported by the initial study we were based our model on since the metrics are part of the 6 dimensions of a website's design quality that have been deemed important by the users from a previous research.\cite{key9}
 \item \textbf{\textit{Can there be a predictive model that, based on the prices of the metrics that will be characterized as the more important ones from the findings, could forecast up to a specific level with good accuracy the revenues of an enterprise?}}\\
-In the analysis part of the paper that was conducted we created many models that can predict with a certain level of accuracy the revenues that a company will have based on the prices that will give to specific variables. The best model of the ones that we created can predict the revenues with an accuracy of 96,69\%.
+In the analysis part of the paper that was conducted we created six regression models, by using the 70\% of the observations and then we checked how well they can predict the revenues of the test set's observations (the remaining 30\% of the dataset). The best model that was created and for which also applied the rule of collinearity has an Adjusted R Squared 76,51\%.
 \end{enumerate}
 In the following sectors there will be a summary of the findings of this research along with an explanation on how those findings can contribute to the already existent studies.
 \section{Findings summary}
@@ -1254,24 +1223,23 @@ With the completion of the analysis we can reach to the conclusion that the most
 \begin{itemize}
 \item  \textbf{The loading time of the home page:} \\
 Page loading time is obviously an important part of any website's user experience. And in many cases companies let it slide to accommodate better aesthetic design, new nifty functionality or to add more content to web pages. Unfortunately, website visitors tend to care more about speed than the rest of the spectaculars that a website can offer. Additionally, page loading time is becoming a more important factor when it comes to search engine rankings.\\
-Search engines like Google use page loading time in algorithms that determine search engine rankings, meaning that they are more likely to guide users to sites that load quickly. This can explain the fact that the loading time has a negative correlation with the company's status (in terms of revenues). As a result the findings of this paper comes to confirm the already established theory that loading time is an important factor in how a user is perceiving a website. The user perception has to do with his future endeavours with the firm and if he has an ill formed opinion he most likely won't use the company's product again. Based on these facts it is obvious that this parameter can actually interfere with the company's future success. 
-\item  \textbf{How comprehensible is the text on the site:} \\
-While a website's visual design is how a company looks on-line and is being perceived by the user's eye, the site's content in terms of the texts that it contains is how it sounds on-line. Tone of voice and great content are crucial for communicating on the Internet. Nevertheless, the best copy writing is for nothing if users don't read the text. As with other areas of user experience, content has to survive a cost benefit analysis on the part of the users. This analysis should answer two basic questions:
-\begin{enumerate}
-\item How much hassle and pain should the user suffer on the website?
-\item What should he gain from reading the text?
-\end{enumerate}
-This means that from a user point of view even though he wants to take the information from a website we wants to find the best balance between the energy he should spend in reading the content and the information he would receive. In other words the information quality and the navigation quality of the website should be high. Based on the results of this paper we can see that the readability index, for which the higher the price the more difficult the text in a website would be, has a positive correlation with the revenues. That can be translated and supported from the assumption that has already been made in previous researches that the information quality plays a very important role for the user. This means that a user do not mind to read a more difficult text as long as the information that it contains will provide him with useful knowledge that will be perceived as beneficial for him.
-
-\item \textbf{ Whether or not the company choose to have an instagram account}: \\
-The analysis showed that whether or not a company choose to have a hyperlink on it's website of it's instagram account has a positive correlation with its revenues. This can be explained based on the users satisfaction. A user is more satisfied with a brand that he has come to trust. Brand trust can be defined\cite{key55} as the willingness of the average consumer to rely on the ability of the brand to perform it's state function. When a situation presents uncertainty, information asymmetry or fear of opportunism trust plays a crucial role in decreasing the uncertainty. \\
-For social media natives, an instagram account is a stamp of authority and authenticity. These connected customers will often search for an instagram profile *before* searching for a website. The assumption is that a website is a static PR/Advertising fabrication, as authentic as a classified ad.  Instagram shows and tells more for a firm, and more is what today’s consumers expect from a company.
+Search engines like Google use page loading time in algorithms that determine search engine rankings, meaning that they are more likely to guide users to sites that load quickly. This can explain the fact that the loading time has a negative correlation with the company's status (in terms of revenues). As a result the findings of this paper comes to confirm the already established theory that loading time is an important factor in how a user is perceiving a website. The user perception has to do with his future endeavours with the firm and if he has an ill formed opinion he most likely won't use the company's product again. Based on these facts and the system quality dimension of a website's quality from a user perspective this finding can easily be supported.
+\item \textbf{ Whether or not the company choose to have an YouTube channel account}: \\
+The analysis showed that whether or not a company choose to have a hyperlink on its website of its youtube channel account has a positive correlation with its revenues. YouTube is arguably the most popular online videos sharing site nowadays. To further augment its service with better revenue, it has started working with content owners (known as YouTube partners) whose copyrighted videos and channels have pulled massive audience. By uploading high-quality premium videos, the partners have essentially changed the user-generated content feature of YouTube and further increased YouTube's popularity.\cite{key89} This fact along with the findings of another paper\cite{key12}, that state that a user seeks to be entertained in a website through multimedia, can support this findings.
 \item \textbf{Whether or not a company uses specific image sizes}:\\
-The fact that the sizes of the images are extremely important on the status of a company is not a surprise. There has been several studies that have shown that the layout of a website is extremely important in how the user interacts wit hit. The ease of navigation is not only correlated with the hyper links as we have already mentioned but also with the structure and the layout of a website. This means that specific dimensions may render the site less attractive to the user and create a level of difficulty for him to navigate on it.\\
+The fact that the sizes of the images are extremely important on the status of a company is not a surprise. There has been several studies that have shown that the layout of a website is extremely important in how the user interacts with it. The ease of navigation is not only correlated with the hyper links as we have already mentioned but also with the structure and the layout of a website. This means that specific dimensions may render the site less attractive to the user and create a level of difficulty for him to navigate on it.\cite{key11,key20,key23,key24,key25}\\
 Based on the results of this paper we located some specific dimensions that have negative correlation with the revenues of a firm. In other words if a company chooses to use these image sizes it is more likely to make it more difficult for the user to navigate on it's website and as a result to decrease his satisfaction regarding the specific company and it's home page.   
 \item \textbf{Whether or not the images that are being used are of specific types}:\\
-The type of images are correlated with the loading time of the website in a very high level. There are specific image and multimedia files that can delay in a very high degree the time that a website will do to upload it's pages. As it has been mentioned before the importance of a fast loading site is extremely important for the users and this can also explain why there are specific image types that have positive correlation with the revenues of a firm.\\
-These types are two of the most widely used types globally. They are easily loadable and they do not cause any delays in the overall websites loading time. This fact combined with the user satisfaction regarding a fast loading site explains the reason that this correlation exists.
+The type of images are correlated with the loading time of the website in a very high level. There are specific image and multimedia files that can delay in a very high degree the time that a website will do to upload it's pages. As it has been mentioned before the importance of a fast loading site is extremely important for the users.\cite{key19,key3,key22}\\
+The two image formats that seems to correlate the most with the revenues are the bmp format, which is widely used and easy to load and as a result the correlation with the revenues is positive and the gif formats. Those formats are a little harder to load as they have movement in them. That is why the correlation in this case is negative. These facts, combined with the user satisfaction regarding a fast loading site explains the reason that those correlations exists.
+\item \textbf{The number of errors of the HTML code of a website}:\\
+Here we found an unusual correlation with the revenues. The number of errors seems to have a small positive correlation with them. That can only be explained by the complexity of the modern websites. In order to make the layouts and the structure of the websites more appealing to the user's so as to cover the navigation quality dimension\cite{key11,key20,key23,key24,key25} of the visitors, is inevitable for the web designers not to make a mistake in the code. This finding although can be researched even more in order to verify this hypothesis.
+\end{itemize}
+Based on those results the model we created in the beginning of the paper shows that by founding the metrics, that we then compared with the revenues of the companies (or in other words with its status), based on the six web design's quality dimensions, shows that even though all six dimensions plays an important role from a user's perspective, from the company's status perspective the dimensions that do have a correlation are the following ones:
+\begin{itemize}
+\item The system quality
+\item The entertainment quality
+\item The navigation quality
 \end{itemize}
 \section{Findings contribution}
 The findings that were analysed in the previous sections can be used in order to help in a theoretical level the existing studies but also in a managerial level.
@@ -1280,19 +1248,19 @@ The findings of this paper are confirmed by previous studies that have been cond
 Furthermore while some already conducted researches showed that the readability level should be easy in order for the users to be satisfied with it, the actual results of the paper show that a user is willing to read a more difficult text. Of course this is also related to the information quality of the website. In other words while the user is willing to read a more complicated text he also wants to receive a certain amount of useful information from it (perceived value of the content). This finding can help researchers examine in more depth the way the user understand the content value of a website.
 \subsection{Managerial level}
 In terms of a managerial level the findings could help an enterprise that wants to either create or change its website, to find what they can implement and what to avoid in order to achieve the best possible website structure and layout so as to lead in a better satisfaction level of the future website users and this by it's turn can lead to bigger revenues in the future.\\
-Since we have already located specific does and dont's regarding the metrics that were examined we can advise companies to apply them in their websites and then let us know if those changes lead to better results regarding their revenues.\\
-Moreover the most accurate predictive model that was created during the analysis part of this paper, can be applied in a firm's choices on the variables that constitutes the independable variables of the model and give them a first idea of how the website can affect their success.\\\\
-\textit{The files that were created during the research period of this paper are also available in github: $https://github.com/danaiav/thesis_msc_business_analytics.git$ }
-\pagebreak
+Since we have already located specific does and don't s regarding the metrics that were examined we can advise companies to apply them in their websites and then let us know if those changes lead to better results.\\
+Moreover, the most trustworthy predictive model that was created during the analysis part of this paper, can be applied in a firm's choices on the variables that constitutes the independent variables of the model and give them a first idea of how the website can affect their future status.\\
+Furthermore, regarding the web designers they can apply those findings while they are constructing a website. For example, they can insist on implementing the images only in a bmp format so as to speed the loading time of the page, or to create specific pages in the website where relevant YouTube videos will be available so as to augment the entertainment satisfaction of the visitors. After implementing this tips on a website, they can actually check to see if the visits will be increased so as to verify the correlation we found.\
+\textit{The files that were created during the research period of this paper are also available in github: \url{https://github.com/danaiav/thesis_msc_business_analytics.git}}
+
 \chapter{Further Research}
-Even though the results of this paper have helped to give a more clear understanding of which are the metrics that are more highly correlated with a company's revenue there is always place for further research.\\
-This paper has taken into account specific measurements of a website and also specific companies. It would be wise to conduct a further research in an even wider number of companies in order to verify the findings. Furthermore, with the collaboration of the firms a more thoroughly study regarding the metrics that will be analysed can take place. By the accordance of a company to provide even more metrics a more in depth analysis of this correlation can be conducted.\\
-The consideration of more companies should not only be from one country. The implementation of firms from a global level could lead to the creation of a predictive model that could apply to companies worldwide. This could also lead to locating the metrics that correlate with the revenues not only in an already successful company, such as the ones that are examined in this paper, but in any type of firm.\\
-
-
-\pagebreak  
+Even though the results of this paper have helped to give a better understanding of which are the metrics that are more highly correlated with a company's revenue, or in other words with each status, there is always place for further research.\\
+This paper has taken into account specific measurements of a website, that were derived based on the six dimension model of the website quality parameters based on the user's perception, and specific companies, that were included in the Fortune 500 2016 list. It would be wise to conduct a further research in an even wider number of companies in order to verify the findings.\\ Furthermore, with the collaboration of the firms a more thoroughly study regarding the metrics that will be analysed can take place. By the accordance of a company to provide even more metrics a more in depth analysis of this correlation can be conducted.\\
+The consideration of more companies should not only be from one country. The implementation of firms from a global level could lead to the creation of a predictive model that could apply to companies worldwide. This could also lead to locating the metrics that correlate with the revenues not only in an already successful company, such as the ones that are examined in this paper, but in any type of firm.
+\pagebreak
 \chapter{Bibliography}
 \begin{thebibliography}{widest-label}
+
 \bibitem{key11}Abels E. G.,White M. D. ,Hahn K. (1997). Identifying user‐based criteria for Web pages. Internet Research, 7:4, 252-262
 
 \bibitem{key12}Agarwal R. and Venkatesh V. (2002). Assessing a Firm's Web Presence: A Heuristic Evaluation Procedure for the
@@ -1302,6 +1270,8 @@ Measurement of Usability. Information Systems Research, 13:2,168-186
 Management Science, 29:5, 530-545
 
 \bibitem{key14}Bruce H. (1998). User Satisfaction with Information Seeking on the Internet. Journal of the American Society of Information Sciences, 49:6, 541-556
+
+\bibitem{key89}Cheng X., Fatourechi M., Ma X., Zhang C., Zhang L., Liu J. (2014). Insight Data of YouTube from a Partner’s View. NOSSDAV '14
 
 \bibitem{key15}Cohen J.B. (1960). A Coefficient of Agreement for Nominal Scales. Educational and Psychology Measurement, 20,
 37-46
@@ -3258,50 +3228,24 @@ corrplot(cor(total_500_lt_w),method="number")
 ```
 
 ```{r}
-
-
 #Next we will check the Flesh Measure alone and in 
 #relationship with revenues
 ggplot(data=total_500_final,aes(x=Flesh_Mesaure))
 +geom_histogram(binwidth=50, colour = "darkred", fill ="red")
 ggplot(total_500_final, aes(Revenues, Flesh_Mesaure)) 
 + geom_point(size=3, colour = "purple")
-
 ```
 
 ```{r}
+#An example of value changing
 total_500_final$Readability <- gsub("Very easy",
  "01_VE", total_500_final$Readability )
-total_500_final$Readability <- gsub("Easy",
- "02_E", total_500_final$Readability )
-total_500_final$Readability <- gsub("Fairly easy",
- "03_FE", total_500_final$Readability )
-total_500_final$Readability <- gsub("Standard",
- "04_St", total_500_final$Readability )
-total_500_final$Readability <- gsub("Fairly difficult"
-, "05_FD", total_500_final$Readability )
-total_500_final$Readability <- gsub("Difficult",
- "06_D", total_500_final$Readability )
-total_500_final$Readability <- gsub("Very Confusing",
- "07_VC", total_500_final$Readability )
-barplot(table(total_500_final$Readability),col ="dark red")
 ```
 
 ```{r}
+#An example of value changing
 total_500_final$Readability <- gsub("01_VE","1",
  total_500_final$Readability )
-total_500_final$Readability <- gsub("02_E", "2",
- total_500_final$Readability )
-total_500_final$Readability <- gsub("03_FE", "3",
- total_500_final$Readability )
-total_500_final$Readability <- gsub("04_St", "4",
- total_500_final$Readability )
-total_500_final$Readability <- gsub("05_FD", "5",
- total_500_final$Readability )
-total_500_final$Readability <- gsub("06_D", "6"
- ,total_500_final$Readability )
-total_500_final$Readability <- gsub("07_VC", "7",
-total_500_final$Readability )
 total_500_final$Readability <- as.numeric(total_500_final$Readability )
 ggplot(data=total_500_final,aes(x=Readability))
 +geom_bar(binwidth=1, colour = "darkred", fill ="red")
@@ -3390,24 +3334,8 @@ for(i in 1:9){
 #It is obvious that the most common images type are 
 #.jpg, gif and .png
 #We will check now the types in relationship with the 
-#revenues
+#revenues. Below an example of the ggplots we created
 ggplot(total_500_final, aes(Revenues, .bmp)) 
-+ geom_point(size=3, colour = "dark blue")
-ggplot(total_500_final, aes(Revenues, .dib)) 
-+ geom_point(size=3, colour = "dark blue")
-ggplot(total_500_final, aes(Revenues, .gif)) 
-+ geom_point(size=3, colour = "dark blue")
-ggplot(total_500_final, aes(Revenues, .jpe)) 
-+ geom_point(size=3, colour = "dark blue")
-ggplot(total_500_final, aes(Revenues, .jpeg)) 
-+ geom_point(size=3, colour = "dark blue")
-ggplot(total_500_final, aes(Revenues, .jpg)) 
-+ geom_point(size=3, colour = "dark blue")
-ggplot(total_500_final, aes(Revenues, .png)) 
-+ geom_point(size=3, colour = "dark blue")
-ggplot(total_500_final, aes(Revenues, .tif)) 
-+ geom_point(size=3, colour = "dark blue")
-ggplot(total_500_final, aes(Revenues, .tiff)) 
 + geom_point(size=3, colour = "dark blue")
 ```
 ```{r}
@@ -3434,7 +3362,7 @@ for(i in 24:716){
     k <- union(k, c(i))
   }}
 
-#Number 24 is all onw price so we want use it
+#Number 24 is all one price so we want use it
 names(total_500_final)[24]
 total_500_final$X144x144 <- NULL
 ```
@@ -3518,134 +3446,12 @@ total_500_final$Total_SH_Equity <- NULL
 total_500_final$The_page_opened <- NULL
 ```
 ```{R}
-summary(total_500_final)
-```
-```{r}
-names(total_500_final)
-```
-
-```{R}
+#An example of how we change the prices of the variables of the 
+#image sizes from 1 - 2 to 0 -1
 total_500_final$X15x12<- gsub("1","0", 
 total_500_final$X15x12)
 total_500_final$X15x12 <- gsub("2", "1", 
 total_500_final$X15x12 )
-
-total_500_final$X60x60<- gsub("1","0", 
-total_500_final$X60x60)
-total_500_final$X60x60 <- gsub("2", "1", 
-total_500_final$X60x60 )
-
-total_500_final$X15x75<- gsub("1","0", 
-total_500_final$X15x75)
-total_500_final$X15x75 <- gsub("2", "1", 
-total_500_final$X15x75 )
-
-total_500_final$X28x221<- gsub("1","0", 
-total_500_final$X28x221)
-total_500_final$X28x221 <- gsub("2", "1",
- total_500_final$X28x221 )
-
-total_500_final$X41x192 <- gsub("1","0", 
-total_500_final$X41x192 )
-total_500_final$X41x192 <- gsub("2", "1",
- total_500_final$X41x192 )
-
-total_500_final$X300x993 <- gsub("1","0",
- total_500_final$X300x993 )
-total_500_final$X300x993 <- gsub("2", "1",
- total_500_final$X300x993 )
-
-total_500_final$X160x233 <- gsub("1","0",
- total_500_final$X160x233 )
-total_500_final$X160x233 <- gsub("2", "1",
- total_500_final$X160x233 )
-
-total_500_final$X29x29 <- gsub("1","0",
- total_500_final$X29x29 )
-total_500_final$X29x29 <- gsub("2", "1",
- total_500_final$X29x29 )
-
-total_500_final$X300pxx1500px <- gsub("1","0",
- total_500_final$X300pxx1500px )
-total_500_final$X300pxx1500px <- gsub("2", "1",
- total_500_final$X300pxx1500px )
-
-total_500_final$X200pxx200px<- gsub("1","0",
- total_500_final$X200pxx200px )
-total_500_final$X200pxx200px <- gsub("2", "1",
- total_500_final$X200pxx200px )
-
-total_500_final$X292pxx292px <- gsub("1","0",
- total_500_final$X292pxx292px )
-total_500_final$X292pxx292px <- gsub("2", "1",
- total_500_final$X292pxx292px )
-
-total_500_final$X400x300 <- gsub("1","0",
- total_500_final$X400x300 )
-total_500_final$X400x300 <- gsub("2", "1",
- total_500_final$X400x300 )
-
-total_500_final$X115x223 <- gsub("1","0",
- total_500_final$X115x223 )
-total_500_final$X115x223 <- gsub("2", "1",
- total_500_final$X115x223 )
-
-total_500_final$X1279pxx984px <- gsub("1","0",
- total_500_final$X1279pxx984px )
-total_500_final$X1279pxx984px<- gsub("2", "1",
- total_500_final$X1279pxx984px )
-
-total_500_final$X8x15 <- gsub("1","0",
- total_500_final$X8x15 )
-total_500_final$X8x15 <- gsub("2", "1",
- total_500_final$X8x15 )
-
-total_500_final$X44x556 <- gsub("1","0",
- total_500_final$X44x556 )
-total_500_final$X44x556 <- gsub("2", "1",
- total_500_final$X44x556 )
-
-total_500_final$X1x1 <- gsub("1","0",
- total_500_final$X1x1 )
-total_500_final$X1x1 <- gsub("2", "1",
- total_500_final$X1x1 )
-
-total_500_final$autox100. <- gsub("1","0",
- total_500_final$autox100. )
-total_500_final$autox100. <- gsub("2", "1",
- total_500_final$autox100. )
-colnames(total_500_final)[24] <- "X100x100"
-
-total_500_final$X800x1200 <- gsub("1","0",
- total_500_final$X800x1200 )
-total_500_final$X800x1200 <- gsub("2", "1",
- total_500_final$X800x1200 )
-
-total_500_final$X24pxx133px <- gsub("1","0",
- total_500_final$X24pxx133px )
-total_500_final$X24pxx133px <- gsub("2", "1",
- total_500_final$X24pxx133px )
-
-total_500_final$X21pxx173px <- gsub("1","0",
- total_500_final$X21pxx173px )
-total_500_final$X21pxx173px <- gsub("2", "1",
- total_500_final$X21pxx173px )
-
-total_500_final$X46x214 <- gsub("1","0",
- total_500_final$X46x214)
-total_500_final$X46x214 <- gsub("2", "1",
- total_500_final$X46x214 )
-
-total_500_final$X49x49 <- gsub("1","0",
- total_500_final$X49x49)
-total_500_final$X49x49 <- gsub("2", "1",
- total_500_final$X49x49 )
-
-total_500_final$X50x45 <- gsub("1","0",
- total_500_final$X50x45)
-total_500_final$X50x45 <- gsub("2", "1",
- total_500_final$X50x45 )
-
 ```
 
 ```{r}
@@ -3654,22 +3460,22 @@ for(i in 19:42){
 ```
 \end{lstlisting} 
 
-\subsection{Regression models}\label{r: van: rg}
+\subsection{Regression, Clustering and Correlation analysis}\label{r: van: rg}
 \begin{lstlisting}[language=R]
 ```{r}
 #We split the set to training and test set
 library(caret)
 set.seed(20)
-sampling_vector <- createDataPartition(total_500_final
-$Revenues, p = 0.85, list = FALSE)
+sampling_vector <- createDataPartition(total_500_final$Revenues
+, p = 0.70, list = FALSE)
 total_500_final_train <- total_500_final[sampling_vector,]
 total_500_final_test <- total_500_final[-sampling_vector,]
 ```
 
 ```{r}
-#We will try to create a regression model to see which 
-#of the variables of the websites play the most 
-#important part regarding the Ranking of the company. 
+#We will try to create a regression model to see which of the 
+#variables of the websites play the most important part regarding 
+#the Ranking of the company. 
 #We create the empty lm model
 model_null = lm(Revenues~1,data=total_500_final_train)
 summary(model_null)
@@ -3684,54 +3490,20 @@ summary(full)
 ```
 
 ```{r}
-x <- model.matrix(full) [,-1]
-dim(x)
-lasso <- glmnet (x, total_500_final_train$Revenues)
-par(mfrow=c(1,1),no.readonly = TRUE)
-plot(lasso, xvar='lambda', label=T)
-```
-```{r}
-lassob <- cv.glmnet(x,total_500_final_train$Revenues)
-lassob$lambda.min
-lassob$lambda.1se
-```
-
-
-```{r}
-plot(lassob)
-```
-
-```{r}
-#We see the coefficients for lamda min
-blasso <- coef(lassob, s="lambda.min")
-blasso
-dim(blasso)
-zblasso <- blasso[-1] * apply(x,2,sd)
-zbolt <- coef (full) [-1] * apply (x,2,sd)
-azbolt <- abs(zbolt)
-sum(azbolt)
-#since the sum is NA that means we have to substract 
-#some variables
-# in order to find which variables to substract we run 
-#the coefficients and we see which of them has NA as 
-#result
-coef(full)
-```
-
-```{r}
-#Now we create a new model with only the variables with 
-#coef different from NA
-full_2 <- lm(Revenues~. - total.images - total.links -
- X1x1 - X21pxx173px - X46x214 - X49x49 - X200pxx200px -
-  X1279pxx984px - X300pxx1500px - X160x233 -  X300x993 -
-   X41x192 - X28x221 - X15x12,
-   data=total_500_final_train)
+#Now we create a new model with only the variables with coef 
+#different from NA so as to have a clear look
+full_2 <- lm(Revenues~. - total.images - total.links - X1x1 -
+ X21pxx173px - X49x49 - X200pxx200px - X1279pxx984px -
+  X300pxx1500px - X160x233 -  X300x993 - X41x192 - X28x221 -
+   X60x60,data=total_500_final_train)
 summary(full_2)
+aic_f <- AIC(full_2)
+aic_f
 ```
 
 ```{r}
-x <- model.matrix(full_2) [,-c(18,22,28,26,27,34,32,33,
-41,37,38,39,40,52)]
+x <- model.matrix(full_2) [,
+-c(18,22,28,26,34,32,33,42,37,38,39,40,52)]
 dim(x)
 lasso <- glmnet (x, total_500_final_train$Revenues)
 ```
@@ -3741,6 +3513,8 @@ plot(lasso, xvar='lambda', label=T)
 ```
 
 ```{r}
+x <- model.matrix(full_2) [,
+-c(18,22,28,26,34,32,33,42,37,38,39,40,52)]
 lassob <- cv.glmnet(x,total_500_final_train$Revenues)
 lassob$lambda.min
 lassob$lambda.1se
@@ -3764,9 +3538,10 @@ s
 ```
 
 ```{r}
-full_3 <- lm(Revenues~1 +X8x15  +X44x556 +X800x1200
- +X24pxx133px +X50x45 +X400x300 +X60x60  +.bmp +.dib
-  ,data=total_500_final_train)
+full_3 <- lm(Revenues~1 +number_of_errors +facebook +pinterest
+ +youtube+ Flesh_Mesaure +Sentences +X8x15  +X44x556 +X800x1200
+  +X24pxx133px +X46x214 +X50x45 +X292pxx292px +X115x223 +X15x12 
+   +.bmp +.jpg ,data=total_500_final_train)
 summary(full_3)
 ad_r_sq_f3 <- summary(full_3)$adj.r.squared
 aic_f3 <- AIC(full_3)
@@ -3777,20 +3552,21 @@ plot(full_3,which=1:3)
 ```
 
 ```{r}
+##############################################
 blassob <- coef(lassob, s="lambda.1se")
 blassob
 zblassob <- blassob[-1] * apply(x,2,sd)
 zboltb <- coef (full_2) [-1] * apply (x,2,sd)
 s <- sum(abs(zblassob))/sum(abs(zboltb))
 s
-#The model based on the lasso method by taking the 
-#lambda.1se is the null model only with the intercept
+#The model based on the lasso method by taking the lambda.1se is 
+#the null model only with the intercept
 ```
 
 ```{r}
-full_4 <- lm(Revenues~1 +X8x15  +X44x556 +X800x1200
- +X24pxx133px +X50x45 +X400x300 +X60x60
-  ,data=total_500_final_train)
+full_4 <- lm(Revenues~1 +X8x15  +X44x556 +X800x1200 
++X24pxx133px +X46x214 +X50x45 +X292pxx292px +X115x223 
++X15x12 ,data=total_500_final_train)
 summary(full_4)
 ad_r_sq_f4 <- summary(full_4)$adj.r.squared
 aic_f4 <- AIC(full_4)
@@ -3801,11 +3577,10 @@ plot(full_4,which=1:3)
 ```
 
 ```{r}
-#We use the "both" method to compare the full_2 model 
-#with the null model to see how many variables are 
-#indeed important
-model_a <- step(model_null, scope = list(lower =
- model_null, upper=full_2), direction = "both")
+#We use the "both" method to compare the full_3 model with the 
+#null model to see how many variables are indeed important
+model_a <- step(model_null, scope = list(lower = model_null,
+ upper=full_2), direction = "both")
 summary(model_a)
 ad_r_sq_ma <- summary(model_a)$adj.r.squared
 aic_ma <- AIC(model_a)
@@ -3816,68 +3591,65 @@ plot(model_a,which=1:3)
 ```
 
 ```{r}
-#We compare the Adjusted R squares of the models and 
-#also the AIC of the models we created to find the best one
+#We compare the Adjusted R squares of the models and also the AIC 
+#of the models we created to find the best one
 ad_r_sq_f3 
 ad_r_sq_f4 
-ad_r_sq_ma
-#The best Adjusted R square is the one in ma 
-#(the closer to 1 the better)
+ad_r_sq_ma #BEST
+#The best Adkusted R square is the one in model a (the closer to 1 
+#the better)
 aic_f3
 aic_f4
-aic_ma 
+aic_ma #Best
 #The best AIC and the best Adjusted R square is for model ma
 ```
 
 ```{r}
+#Create the prediction plots so as to compare them
 par(mfrow=c(2,2))
 Actual_Revenues<- total_500_final_test$Revenues
-plot (Actual_Revenues, col = "blue")
+plot (Actual_Revenues, col = "blue",main ="True Prices")
 
 predictions_ma <- predict(model_a,total_500_final_test)
-plot (predictions_ma, col = "Red",main = "Model a")
+plot (predictions_ma, col = "Red",main = "Both method model")
 
 predictions_full3 <- predict(full_3,total_500_final_test)
-plot (predictions_full3, col = "Red",main = "Full_3 model")
+plot (predictions_full3, col = "Red",main = "Lasso Min model")
 
 predictions_full4 <- predict(full_4,total_500_final_test)
-plot (predictions_full4, col = "Red",main = "Full_4 model")
+plot (predictions_full4, col = "Red",main = "Lasso One SD model")
 
-#From the plots above we can see that the actual 
-#Revenues have a more smooth way of levelling up except 
-#from the Revenues of the #1 ranking company that are 
-#extremely high in relationship with the other sites.
-#The prediction model that is more smooth is the model a 
-#which has as we said before the best Adjusted R Square 
-#and the best AIC price
+#From the plots above we can see that the actual Revenues have a 
+#more smooth way of levelling up.
 ```
-
 ```{r}
 par(mfrow=c(1,1))
-total_500_final_reg <- total_500_final_train[,c(1,6,12,20,21,
-25,30,42,43,47,53)]
+total_500_final_reg <- 
+total_500_final_train[,c(1,41,21,30,43,20,10,53,27,45,3)]
+cor(total_500_final_reg)
 corrplot(cor(total_500_final_reg),method="number")
-#We can see here that the variable x8x15 has a very high 
-#correlation with the variable x44x556 and also the 
-#variable x24pxx133px has also a very high correlation 
-#with the variable x400x300.
+#We can see here that some of the variables are correlated also 
+#with each other so we can try keeping only the variables that are 
+#not correlated with each other so as to avoid multicollinearity. 
+#The variables that are correlated with each other are the image 
+#sizes that are included in the model so we will keep only one of 
+#those variables. The one that is correlated the most with all the 
+#others so as to keep the biggest part of the information.
 ```
 
 ```{r}
-#So we can try creating a new model excluding the 2 
-#variables that are correlated from each pair to see if 
-#there will be any improvement in the model
-full_5 <- lm(Revenues~1 +X60x60 +X44x556 +X400x300 +
- .bmp +loading.time + .jpeg + Readability + instagram
-  ,data=total_500_final_train)
+#So we can try creating a new model includind only the 400x300 
+#image size 
+full_5 <- lm(Revenues~1 +X400x300 + .bmp + youtube +loading.time 
++ .gif + number_of_errors ,data=total_500_final_train)
 summary(full_5)
 adj_r_square_full5 <- summary(full_5)$adj.r.squared
 aic_full5 <- AIC(full_5)
 ```
 
 ```{r}
-#We create the 2 basic plots so as to be able to explain 
-#the regression model
+#We create the 2 basic plots so as to be able to explain the 
+#regression model
 plot(full_5,which=1:3)
 ```
 
@@ -3886,147 +3658,62 @@ ad_r_sq_ma
 adj_r_square_full5 
 aic_ma 
 aic_full5 
-#The adjusted R square and the aic are a little worse 
-#than before
+#The adjusted R square and the aic are a little worse than before
 ```
-\end{lstlisting} 
-
-\subsection{Comparisons and other methods}\label{r: van: cm}
-\begin{lstlisting}[language=R]
-#Clustering
-#Based on those results we will try to cluster the 
-#companies based on the results of the regression
+```{r}
+#Clustering 
+#Kmeans clustering
+#Based on those results we will try to cluster the companies based 
+#on the results of the regression
 set.seed(220)
-fortuneCluster <- kmeans(total_500_final_reg[, 1:11],
- 3, iter.max = 100,nstart = 1)
+clusters <- hclust(dist(total_500_final_reg[, 1]))
+plot(clusters)
+```
+```{r}
+fortuneCluster <- kmeans(total_500_final_reg[, 1], 2, 
+iter.max = 500,nstart = 1)
 cluster <- table(fortuneCluster$cluster)
 fortuneCluster$cluster <- as.factor(fortuneCluster$cluster)
 ```
-
 ```{r}
-ggplot(total_500_final_reg, aes(Revenues, loading.time,
- color = fortuneCluster$cluster)) + geom_point(size=3)
-```
-
-```{r}
-ggplot(total_500_final_reg, aes(Revenues, Readability,
- color = fortuneCluster$cluster)) + geom_point(size=3)
-```
-
-```{r}
-ggplot(total_500_final_reg, aes(Revenues, instagram,
- color = fortuneCluster$cluster)) + geom_point(size=3)
-```
-
-```{r}
-ggplot(total_500_final_reg, aes(Revenues, .bmp,
- color = fortuneCluster$cluster)) + geom_point(size=3)
-```
-
-```{r}
-ggplot(total_500_final_reg, aes(Revenues, .jpeg,
- color = fortuneCluster$cluster)) + geom_point(size=3)
+#We saw here an example of how we created the ggplots with the 
+#variables against the revenues
+ggplot(total_500_final_reg, aes(Revenues, X15x12, color = fortuneCluster$cluster)) + geom_point(size=3)
 ```
 ```{r}
-ggplot(total_500_final_reg, aes(Revenues, X60x60,
- color = fortuneCluster$cluster)) + geom_point(size=3)
-```
-
-```{r}
-ggplot(total_500_final_reg, aes(Revenues, X44x556,
- color = fortuneCluster$cluster)) + geom_point(size=3)
-```
-
-```{r}
-ggplot(total_500_final_reg, aes(Revenues, X400x300,
- color = fortuneCluster$cluster)) + geom_point(size=3)
-```
-```{r}
-ggplot(total_500_final_reg, aes(Revenues, X8x15,
- color = fortuneCluster$cluster)) + geom_point(size=3)
-```
-
-```{r}
-ggplot(total_500_final_reg, aes(Revenues, X24pxx133px,
- color = fortuneCluster$cluster)) + geom_point(size=3)
-```
-
-```{r}
-#From the clustering we can see that the variables do 
-#indeed devide the most high revenues from the smallest 
-#ones
-summary(model_a)
-```
-
-```{r}
-#We can see from the model that the basic variable that 
-#effect a companys ranking is whether or not it has an 
-#image in size X60x60
-#We will try to make a model that we will not take into 
-#consideration this variable at all just in order to see 
-#how it will explain the revenues
-full_6 <- lm(Revenues~1 +X44x556 +X400x300 + .bmp
- +loading.time + .jpeg + Readability + instagram
-  ,data=total_500_final_train)
+#From the clustering we can see that the variables do indeed
+#devide the most high revenues from the smallest ones
+#Here the image size that is divided in the best way is 15x12 so 
+#we will create a model that we will put only this size
+full_6 <- lm(Revenues~1 +X15x12 + .bmp + youtube +loading.time + 
+.gif + number_of_errors ,data=total_500_final_train)
 summary(full_6)
 adj_r_square_full6 <- summary(full_6)$adj.r.squared
 aic_full6 <- AIC(full_6)
 ```
 
 ```{r}
-#We create the 2 basic plots so as to be able to explain 
-#the regression model
-plot(full_6,which=1:3)
+#The corrplots for the two models that we created lastly
+par(mfrow=c(1,1))
+total_500_final_reg_2 <- total_500_final_reg[,c(1,2,5,7,8,10,11)]
+cor(total_500_final_reg_2)
+corrplot(cor(total_500_final_reg_2),method="number")
 ```
-
 ```{r}
-predictions_ma <- predict(model_a,total_500_final_test)
-Actual_Revenues<- total_500_final_test$Revenues
+par(mfrow=c(1,1))
+total_500_final_reg_3 <- total_500_final_reg[,c(1,4,5,7,8,10,11)]
+cor(total_500_final_reg_3)
+corrplot(cor(total_500_final_reg_2),method="number")
 ```
 
-```{r}
-par(mfrow=c(2,2))
-plot (Actual_Revenues, col = "blue")
-plot (predictions_ma, col = "Red",main = "Model A")
-
-predictions_full_6 <- predict(full_6,total_500_final_test)
-plot (predictions_full_6, col = "Red",main = "Full_6 model")
-
-```
-
-```{r}
-#We can see that here the prediction of the new model is 
-#not as good as the previous one so now that we have 
-#checked this option as well we can conclude that the 
-#most important factors are the ones of model_a
-summary(model_a)
-```
 \end{lstlisting} 
 
 
 \section{Appendix D: R Tables} \label{appR}
-\begin{table}[H]
-\centering
-\caption{Full regression model part 1}\label{d :r :1a}
-\begin{center}
-\includegraphics[scale=0.8]{../R/photos/66_FULL_PART1.PNG} \\
-\end{center}
-\end{table}
-
 
 \begin{table}[H]
 \centering
-\caption{Full regression model part 2}\label{d :r :1b}
-\begin{center}
-\includegraphics[scale=0.8]{../R/photos/66_FULL_PART2.PNG}  \\
-\end{center}
-\end{table}
-
-
-
-\begin{table}[H]
-\centering
-\caption{Regression model full 2}\label{d :r :2}
+\caption{Regression model Full model}\label{d :r :2}
 \begin{center}
 \includegraphics[scale=0.8]{../R/photos/69_full2.PNG}   \\
 \end{center}
@@ -4035,45 +3722,45 @@ summary(model_a)
 
 \begin{table}[H]
 \centering
-\caption{Regression model full 3}\label{d :r :3}
+\caption{Regression model Lasso Min}\label{d :r :3}
 \begin{center}
-\includegraphics[scale=0.6]{../R/photos/72_full3.PNG}   \\
+\includegraphics[scale=0.8]{../R/photos/72_full3.PNG}   \\
 \end{center}
 \end{table}
 
 
 \begin{table}[H]
 \centering
-\caption{Regression model full 4}\label{d :r :4}
+\caption{Regression model Lasso One SD}\label{d :r :4}
 \begin{center}
-\includegraphics[scale=0.6]{../R/photos/77_full4.PNG}   \\
+\includegraphics[scale=0.8]{../R/photos/77_full4.PNG}   \\
 \end{center}
 \end{table}
 
 
 \begin{table}[H]
 \centering
-\caption{Regression model a}\label{d :r :a}
+\caption{Regression model Both method}\label{d :r :a}
 \begin{center}
-\includegraphics[scale=0.6]{../R/photos/81_modela.PNG}   \\
+\includegraphics[scale=0.8]{../R/photos/81_modela.PNG}   \\
 \end{center}
 \end{table}
 
 
 \begin{table}[H]
 \centering
-\caption{Regression model full 5}\label{d :r :5}
+\caption{Regression model Both method (image size only 400x300)}\label{d :r :5}
 \begin{center}
-\includegraphics[scale=0.6]{../R/photos/87_full5.PNG}  \\
+\includegraphics[scale=0.8]{../R/photos/87_full5.PNG}  \\
 \end{center}
 \end{table}
 
 
 \begin{table}[H]
 \centering
-\caption{Regression model full 6}\label{d :r :6}
+\caption{Regression model Both method (image size only 15x12)}\label{d :r :6}
 \begin{center}
-\includegraphics[scale=0.6]{../R/photos/99_model6.PNG}  \\
+\includegraphics[scale=0.8]{../R/photos/99_model6.PNG}  \\
 \end{center}
 \end{table}
 \end{document}

@@ -920,162 +920,118 @@ final_dimensions_dataframe (un_size,t_f_s,list500_names)
 
 sizess.tail(3)
 
-# In[43]:
-from bs4 import BeautifulSoup as bs
-import urlparse
-from urllib2 import urlopen
-from urllib import urlretrieve
-import os
-import sys
 
-def main(url, out_folder="/photos/"):
-    """Downloads all the images at 'url' to /test/"""
-    soup = bs(urlopen(url))
-    parsed = list(urlparse.urlparse(url))    
-    for image in soup.findAll("img"):
-        print (image)
-        image_url = urlparse.urljoin(url, image['src'])
-        filename = image["src"].split("/")[-1]
-        outpath = os.path.join(out_folder, filename)
-        urlretrieve(image_url, outpath)
-
-ending = image_url[-3:]      
-        print (ending)
-        namefile = str(n) + "_"+ companiesname + "." + ending
-        urllib.urlretrieve(image_url, namefile)
-        n = n +1
 
 # In[43]:
-    from PIL import Image
+im_nm = []
+im_pix = []    
+
+def url_to_image(list500_names, list500_url):
+    import numpy as np
     import urllib
-    url = "https://www.walmart.com/"
-    companiesname = "walmart"
-    out_folder = "/photos"
-    soup = bs(urlopen(url))
-    parsed = list(urlparse.urlparse(url)) 
-    n = 1
-    for image in soup.findAll("img"):       
-        image_url = urlparse.urljoin(url, image['src'])
-        print (image_url)
-        browser = urllib2.build_opener() 
-        browser.addheaders = [('User-agent', 'Mozilla/5.0')]
-        response = browser.open(image_url)# this might throw an exception if something goes wrong.
-        myHTML = response.read()
-        
-        
-       
+    for num in range(len(list500_names)):
+     url= 'http://' + list500_url[num]
+	# download the image, convert it to a NumPy array	
+     resp = urllib.urlopen(url)
+     image = np.asarray(bytearray(resp.read()), dtype="uint8")
+     print(image)
+     pixels = 0
+     #add up all the pixels of the page
+     for n in range (len(image)):
+         pixels = pixels + image[n]
+     print (pixels)
+     im_nm.insert(num,list500_names[num])            
+     im_pix.insert(num,pixels)  
+               
+ 
 
+# In[43]:     
+ 
+url_to_image(list500_names, list500_url) 
     
 
-# In[43]:   
-   img = Image.open(filename)
-        width, height = img.size
-        print "Dimensions:", img.size, "Total pixels:", width * height  
-    
- image_url = urlparse.urljoin(url, image['src'])
-        filename = image["src"]
-        name = filename[2]
-        outpath = os.path.join(out_folder, name)
-        urlretrieve(image_url, outpath)
-    
-    
-def find_dif_sizes (list_company_website,list500_names,list500_url):
-    from time import time # I used it to see how much time it does to run the function
+# In[31]:
+
+#Finally we create a dataframe in order to see the results of the function
+dpix = {'company' : pd.Series(im_nm, index=[list500_num]),
+      'pixels' : pd.Series(im_pix, index=[list500_num])}
+images_pixels = pd.DataFrame(dpix)    
+images_pixels.head(3) #we see the first 3 in the data frame
+
+
+# In[43]:     
+ 
+ 
+url ='http://www.apple.com'   
+url_to_image(url)    
+                
+
+ def images (list500_sites,list500_names,list500_url):
+    from time import time # I used it to see 
+    #how much time it does to run the function
     start = time ()
     for num in range(len(list500_names)):
-            nm.insert(num,num)                  
-            s_comp.insert(num,list500_names[num])
-            s_url.insert(num,list500_url[num])
             myHTML = list500_sites[num] 
+            image = ['.png','.dib','.jpg','.jpeg',
+                     '.bmp','.jpe','.gif','.tif','.tiff'] 
+            totalnumber = 0 
             if myHTML == 0:
-                s_dimensions.insert(num,0)
-                s_times.insert(num,0)    
+                p_nm.insert(num,list500_names[num])            
+                p_p.insert(num,'n/a')  
+                p_d.insert(num,'n/a')  
+                p_jpg.insert(num,'n/a')  
+                p_jpeg.insert(num,'n/a')  
+                p_gif.insert(num,'n/a')  
+                p_tif.insert(num,'n/a')  
+                p_tiff.insert(num,'n/a')  
+                p_bmp.insert(num,'n/a')  
+                p_jpe.insert(num,'n/a')  
+                p_tt.insert(num,'n/a')
+                nm.insert(num,num)
+                p_url.insert(num,list500_url[num])          
             else: 
-                soup = BeautifulSoup(myHTML, "lxml")
-                # we create 2 local variables so as to gather the 
-                #different dimensions and occurencies  of each page seperately
-                s_dimensions_local = []
-                s_times_local = []
-                hw = 0 
-                # we use it for the lists of height and width
-                # find all the img in the first site html.Since in some 
-                #cases either the height or the width is missing we would 
-                #like to keep only the ones that have both dimensions
-                for tag in soup.find_all('img'):
-                    h = tag.attrs.get('height', None)
-                    w = tag.attrs.get('width', None)
-                    #we use if to check which ones have both 
-                    if h != None:
-                        if w != None:
-                            ht.insert(hw,h)
-                            wt.insert(hw,w)
-                            hw = hw + 1                        
-                hw2 = 0
-                for l in range(len(ht)):
-                    h_w_c = ht[l] + 'x' + wt[l]    
-                    #we create a str with the form (300x300) 
-                    #so as to be more easily to read later on 
-                    h_w.insert(hw2,h_w_c)  
-                    #we put it in a new list
-                    hw2 = hw2 + 1    
-                if h_w == []:#we check if there are not any dimensions available
-                    nm.insert(num,num)                  
-                    s_comp.insert(num,list500_names[num])
-                    s_dimensions.insert(num,0)
-                    s_times.insert(num,0)    
-                if h_w != []:#now we continue with the cases 
-                    #where the dimensions are indeed available             
-                    from collections import Counter
-                    hw_unique = Counter(h_w)
-                    hw_unique2 = str(hw_unique) 
-                    #the unique different dimensions for the specific site
-                    #Due to the fact that we are talking about 
-                    #a list we have to split the parts we need 
-                    split1 = hw_unique2.split('{')
-                    a = split1[1]
-                    split2 = a.split('}')
-                    b = split2[0]
-                    split3 = b.split(',')
-                    finalsplit = []
-                    fs = []
-                    z = 0
-                    m = 1
-                    j = 0
-                    z1 = 0
-                    m1 = 1
-                    #each of the items in split3 has a form '300x300 : 15'
-                    #and in order to create the dataframe we have 
-                    #to split this form and keep the informations in different list
-                    for numb in split3:                
-                        oldstring = numb
-                        newstring = oldstring.replace("'", "")
-                        new = newstring.replace("'","")
-                        string = new.replace(" ","")
-                        finalstring = string.split(':')
-                        #the finalstring is a list that contains the dimensions
-                        #and the occurencies in order toseperate in different
-                        #lists we create an additional loop
-                        for xx in range(len(finalstring)):
-                            ax = finalstring[xx]
-                            if 'x' in ax:
-                                s_dimensions_local.insert(z1,finalstring[xx])
-                                z1 = z1 + 1
-                            else:
-                                s_times_local.insert(m1,finalstring[xx])
-                                m1 = m1 + 1  
-                    #Now we can add to the lists the parts we created so as
-                    #to have them all gathered together             
-                    s_dimensions.insert(num,s_dimensions_local)
-                    s_times.insert(num,s_times_local)                
+                for index in range(len(image)):
+                    x = image[index]
+                    photo = re.findall(x,myHTML)
+                    if x == '.png':
+                        p = str (len(photo))
+                    if x == '.dib':
+                        d = str (len(photo))
+                    if x == '.jpg':
+                        jpg = str (len(photo))
+                    if x == '.jpeg':
+                        jpeg = str (len(photo))
+                    if x == '.gif':
+                        gif = str (len(photo))
+                    if x == '.tif':
+                        tif = str (len(photo))
+                    if x == '.tiff':
+                        tiff = str (len(photo))
+                    if x == '.bmp':
+                        bmp = str (len(photo))
+                    if x == '.jpe':
+                        jpe = str (len(photo))
+                    totalnumber = len(photo) + totalnumber
+                total = str (totalnumber)
+                p_nm.insert(num,list500_names[num])            
+                p_p.insert(num,p)  
+                p_d.insert(num,d)  
+                p_jpg.insert(num,jpg)  
+                p_jpeg.insert(num,jpeg)  
+                p_gif.insert(num,gif)  
+                p_tif.insert(num,tif)  
+                p_tiff.insert(num,tiff)  
+                p_bmp.insert(num,bmp)  
+                p_jpe.insert(num,jpe)  
+                p_tt.insert(num,total)
+                nm.insert(num,num)
+                p_url.insert(num,list500_url[num])
     end = time ()
     duration = round (end - start, 3)
     minutes = round (duration /60, 1)
     print 'The lists are ready in ', minutes, ' minutes'
     print 'The lists are ready in ', duration, ' seconds'
-
-# In[43]:   
-    
-    
+   
     
     
     
