@@ -423,19 +423,16 @@ ggplot(total_500_final, aes(Revenues, pixels)) + geom_point(size=3, colour = "da
 model_revenue_pixels <- lm(Revenues~1 +pixels ,data=total_500_final)
 summary(model_revenue_pixels)
 ```
-```{r}
-names(total_500_final)
-```
 
 ```{r}
 #########################################################################################################
 #We will see now the frequency of image types that is being used
 
 par(mfrow=c(1,1))
-k = c(24:32)
+k = c(717:725)
 for(i in 1:9){
   a <- k[i]
-  image_type<- round(table(total_500_final[,a])/402,3)
+  image_type<- round(table(total_500_final[,a])/408,3)
   barplot(image_type,xlab=names(total_500_final)[a],ylab = "Shares of images per site", col = "dark green")}
 ```
 
@@ -497,7 +494,7 @@ summary(model_revenue_.tiff)
 
 ```{r}
 #And we can also see for correlations
-total_500_im<- total_500_final[,c(4,24:32)]
+total_500_im<- total_500_final[,c(4,717:726)]
 library(corrplot)
 library(caret)
 tl <- cor(total_500_im)
@@ -511,128 +508,199 @@ summary(model_revenue_im)
 
 
 ```{r}
-#Now that we have analyzed each variable we will remove the other Fortune 500 variables since they will interfer in the outcome of the model and we keep only the variable we want to examine the Revenues
-total_500_final_train <- total_500_final
-total_500_final_train$Market_Value <- NULL
-total_500_final_train$Assets <- NULL
-total_500_final_train$Ranking <- NULL 
-total_500_final_train$Total_SH_Equity <- NULL
-total_500_final_train$The_page_opened <- NULL
-total_500_final_train$aRanking <- NULL
-total_500_final_train$Profit_per_Revenue <- NULL
-total_500_final_train$total.links <- NULL
-total_500_final_train$total.images <- NULL
+#We will see now the frequency of image sizes that is being used
+k = c()
+#Check for sizes that are half and half divided in existing and not
+for(i in 24:716){
+  image_size<- round(table(total_500_final[,i]))
+  if ((image_size[[1]]==408)==TRUE){
+    k <- union(k, c(i))
+  }}
+#####################
+#Number 24 is all onw price so we want use it
+names(total_500_final)[24]
+total_500_final$X144x144 <- NULL
 ```
 
 ```{r}
-names(total_500_final_train)
+false_not_existing = c()
+#Check for sizes that are less than half divided in existing and not
+for(i in 24:715){
+  image_size<- round(table(total_500_final[,i]))
+  if ((image_size[[2]]<204)==TRUE){
+    false_not_existing <- union(false_not_existing, c(i))
+  }}
+########################
 ```
+
+```{r}
+#Now we will take the sizes that exist in less than half the instances and check graphically the deviations between the 408 sites
+par(mfrow=c(3,3))
+for(i in 1:416){
+  a = false_not_existing[i]
+  plot(total_500_final[,a],total_500_final$Revenues)
+  image_size<- round(table(total_500_final[,a]))
+  barplot(image_size,xlab=names(total_500_final)[a],ylab = "Has or not the size", col = "dark green")}
+```
+
+```{r}
+true_existing = c()
+#Check for sizes that are more than half divided in existing and not
+for(i in 24:715){
+  image_size<- round(table(total_500_final[,i]))
+  if ((image_size[[2]]>204)==TRUE){
+    true_existing <- union(true_existing, c(i))
+  }}
+```
+
+```{r}
+#Now we will take the sizes that exist in more than half the instances and check graphically the deviations between the 408 sites
+par(mfrow=c(3,3))
+for(i in 1:276){
+  a = true_existing[i]
+  image_size<- round(table(total_500_final[,a]))
+  plot(total_500_final[,a],total_500_final$Revenues)
+  barplot(image_size,xlab=names(total_500_final)[a],ylab = "Has or not the size", col = "dark green")}
+```
+
+```{r}
+#By checking the above plots we can see that the 24 first sizes do appear to have some differentiation regarding the revenues. While most sites do have those sizes when it comes to the high revienues they do not have them
+par(mfrow=c(3,3))
+keep = c()
+for(i in 1:24){
+  a = true_existing[i]
+  keep = union (keep, c(a))}
+keep
+#As we can see they are the variables from 24 to 47 and these are the only sizes we are going to keep for the further analysis
+total_500_final <- total_500_final[,-c(48:715)]
+```
+
+```{r}
+#Also we remove the other Fortune 500 variables since they will interfer in the outcome of the model and we keep only the variable we want to examine the Revenues
+total_500_final$Market_Value <- NULL
+total_500_final$Assets <- NULL
+total_500_final$Ranking <- NULL 
+total_500_final$Total_SH_Equity <- NULL
+total_500_final$The_page_opened <- NULL
+```
+
+```{R}
+summary(total_500_final)
+```
+
+```{r}
+names(total_500_final)
+```
+
+```{R}
+total_500_final$X15x12<- gsub("1","0", total_500_final$X15x12)
+total_500_final$X15x12 <- gsub("2", "1", total_500_final$X15x12 )
+
+total_500_final$X60x60<- gsub("1","0", total_500_final$X60x60)
+total_500_final$X60x60 <- gsub("2", "1", total_500_final$X60x60 )
+
+total_500_final$X15x75<- gsub("1","0", total_500_final$X15x75)
+total_500_final$X15x75 <- gsub("2", "1", total_500_final$X15x75 )
+
+total_500_final$X28x221<- gsub("1","0", total_500_final$X28x221)
+total_500_final$X28x221 <- gsub("2", "1", total_500_final$X28x221 )
+
+total_500_final$X41x192 <- gsub("1","0", total_500_final$X41x192 )
+total_500_final$X41x192 <- gsub("2", "1", total_500_final$X41x192 )
+
+total_500_final$X300x993 <- gsub("1","0", total_500_final$X300x993 )
+total_500_final$X300x993 <- gsub("2", "1", total_500_final$X300x993 )
+
+total_500_final$X160x233 <- gsub("1","0", total_500_final$X160x233 )
+total_500_final$X160x233 <- gsub("2", "1", total_500_final$X160x233 )
+
+total_500_final$X29x29 <- gsub("1","0", total_500_final$X29x29 )
+total_500_final$X29x29 <- gsub("2", "1", total_500_final$X29x29 )
+
+total_500_final$X300pxx1500px <- gsub("1","0", total_500_final$X300pxx1500px )
+total_500_final$X300pxx1500px <- gsub("2", "1", total_500_final$X300pxx1500px )
+
+total_500_final$X200pxx200px<- gsub("1","0", total_500_final$X200pxx200px )
+total_500_final$X200pxx200px <- gsub("2", "1", total_500_final$X200pxx200px )
+
+total_500_final$X292pxx292px <- gsub("1","0", total_500_final$X292pxx292px )
+total_500_final$X292pxx292px <- gsub("2", "1", total_500_final$X292pxx292px )
+
+total_500_final$X400x300 <- gsub("1","0", total_500_final$X400x300 )
+total_500_final$X400x300 <- gsub("2", "1", total_500_final$X400x300 )
+
+total_500_final$X115x223 <- gsub("1","0", total_500_final$X115x223 )
+total_500_final$X115x223 <- gsub("2", "1", total_500_final$X115x223 )
+
+total_500_final$X1279pxx984px <- gsub("1","0", total_500_final$X1279pxx984px )
+total_500_final$X1279pxx984px<- gsub("2", "1", total_500_final$X1279pxx984px )
+
+total_500_final$X8x15 <- gsub("1","0", total_500_final$X8x15 )
+total_500_final$X8x15 <- gsub("2", "1", total_500_final$X8x15 )
+
+total_500_final$X44x556 <- gsub("1","0", total_500_final$X44x556 )
+total_500_final$X44x556 <- gsub("2", "1", total_500_final$X44x556 )
+
+total_500_final$X1x1 <- gsub("1","0", total_500_final$X1x1 )
+total_500_final$X1x1 <- gsub("2", "1", total_500_final$X1x1 )
+
+total_500_final$autox100. <- gsub("1","0", total_500_final$autox100. )
+total_500_final$autox100. <- gsub("2", "1", total_500_final$autox100. )
+colnames(total_500_final)[24] <- "X100x100"
+
+total_500_final$X800x1200 <- gsub("1","0", total_500_final$X800x1200 )
+total_500_final$X800x1200 <- gsub("2", "1", total_500_final$X800x1200 )
+
+total_500_final$X24pxx133px <- gsub("1","0", total_500_final$X24pxx133px )
+total_500_final$X24pxx133px <- gsub("2", "1", total_500_final$X24pxx133px )
+
+total_500_final$X21pxx173px <- gsub("1","0", total_500_final$X21pxx173px )
+total_500_final$X21pxx173px <- gsub("2", "1", total_500_final$X21pxx173px )
+
+total_500_final$X46x214 <- gsub("1","0", total_500_final$X46x214)
+total_500_final$X46x214 <- gsub("2", "1", total_500_final$X46x214 )
+
+total_500_final$X49x49 <- gsub("1","0", total_500_final$X49x49)
+total_500_final$X49x49 <- gsub("2", "1", total_500_final$X49x49 )
+
+total_500_final$X50x45 <- gsub("1","0", total_500_final$X50x45)
+total_500_final$X50x45 <- gsub("2", "1", total_500_final$X50x45 )
+
+```
+
+```{r}
+for(i in 19:42){
+ total_500_final[,i] <- as.numeric(total_500_final[,i])}  
+```
+
 
 ```{r}
 #We will now do a regression model with all the variables
 library(caret)
+total_500_final_train <- total_500_final
+
+```
+
+```{r}
+#We will try to create a regression model to see which of the variables of the websites play the most important part regarding the Ranking of the company. 
+#We create the empty lm model
+model_null = lm(Revenues~1,data=total_500_final_train)
+summary(model_null)
+```
+
+```{r}
+#####################################################################################################
+#Logistic Regression model
 library(glmnet)
-#We create a full model for the variable Revenues
-full_Revenues <- lm(Revenues~.,data=total_500_final_train)
-summary(full_Revenues)
+#We create a full model for the variable Ranking
+full <- lm(Revenues~.,data=total_500_final_train)
+summary(full)
 ```
 
 ```{r}
-#We will now try a new model but with a different dependent variable
-total_500_final_train2 <- total_500_final
-total_500_final_train2$Market_Value <- NULL
-total_500_final_train2$Assets <- NULL
-total_500_final_train2$Revenues <- NULL 
-total_500_final_train2$Total_SH_Equity <- NULL
-total_500_final_train2$The_page_opened <- NULL
-total_500_final_train2$aRanking <- NULL
-total_500_final_train2$Profit_per_Revenue <- NULL
-total_500_final_train2$total.links <- NULL
-total_500_final_train2$total.images <- NULL
-```
-
-```{r}
-#We create a full model for the variable Revenues
-full_Ranking <- lm(Ranking~.,data=total_500_final_train2)
-summary(full_Ranking)
-```
-```{r}
-#We will now try a new model but with a different dependent variable
-total_500_final_train3 <- total_500_final
-total_500_final_train3$Market_Value <- NULL
-total_500_final_train3$Assets <- NULL
-total_500_final_train3$Revenues <- NULL 
-total_500_final_train3$Total_SH_Equity <- NULL
-total_500_final_train3$The_page_opened <- NULL
-total_500_final_train3$aRanking <- NULL
-total_500_final_train3$Ranking <- NULL
-total_500_final_train3$total.links <- NULL
-total_500_final_train3$total.images <- NULL
-```
-
-```{r}
-#We create a full model for the variable Profit_per_Revenue
-full_Profit_per_Revenue <- lm(Profit_per_Revenue~.,data=total_500_final_train3)
-summary(full_Profit_per_Revenue)
-```
-```{r}
-#We will now try a new model but with a different dependent variable
-total_500_final_train4 <- total_500_final
-total_500_final_train4$Profit_per_Revenue <- NULL
-total_500_final_train4$Assets <- NULL
-total_500_final_train4$Revenues <- NULL 
-total_500_final_train4$Total_SH_Equity <- NULL
-total_500_final_train4$The_page_opened <- NULL
-total_500_final_train4$aRanking <- NULL
-total_500_final_train4$Ranking <- NULL
-total_500_final_train4$total.links <- NULL
-total_500_final_train4$total.images <- NULL
-```
-
-```{r}
-#We create a full model for the variable Profit_per_Revenue
-full_Market_Value <- lm(Market_Value~.,data=total_500_final_train4)
-summary(full_Market_Value)
-```
-
-```{r}
-#We will now try a new model but with a different dependent variable
-total_500_final_train5 <- total_500_final
-total_500_final_train5$Market_Value <- NULL
-total_500_final_train5$Profit_per_Revenue <- NULL
-total_500_final_train5$Revenues <- NULL 
-total_500_final_train5$Total_SH_Equity <- NULL
-total_500_final_train5$The_page_opened <- NULL
-total_500_final_train5$aRanking <- NULL
-total_500_final_train5$Ranking <- NULL
-total_500_final_train5$total.links <- NULL
-total_500_final_train5$total.images <- NULL
-```
-
-```{r}
-#We create a full model for the variable Assets
-full_Assets <- lm(Assets~.,data=total_500_final_train5)
-summary(full_Assets)
-```
-
-```{r}
-#We will now try a new model but with a different dependent variable
-total_500_final_train3 <- total_500_final
-total_500_final_train3$Market_Value <- NULL
-total_500_final_train3$Assets <- NULL
-total_500_final_train3$Revenues <- NULL 
-total_500_final_train3$Profit_per_Revenue <- NULL
-total_500_final_train3$The_page_opened <- NULL
-total_500_final_train3$aRanking <- NULL
-total_500_final_train3$Ranking <- NULL
-total_500_final_train3$total.links <- NULL
-total_500_final_train3$total.images <- NULL
-```
-
-```{r}
-#We create a full model for the variable Total_SH_Equity
-full_Total_SH_Equity <- lm(Total_SH_Equity~.,data=total_500_final_train3)
-summary(full_Total_SH_Equity)
+#Now we create a new model with only the variables with coef different from NA so as to have a cleare look
+full_2 <- lm(Revenues~. - total.images - total.links - X1x1 - X21pxx173px - X49x49 - X200pxx200px - X1279pxx984px - X300pxx1500px - X160x233 -  X300x993 - X41x192 - X28x221 - X60x60,data=total_500_final_train)
+summary(full_2)
 ```
 
 
@@ -643,13 +711,13 @@ summary(full_Total_SH_Equity)
 #Kmeans clustering
 #Based on those results we will try to cluster the companies based on the results of the regression
 set.seed(220)
-clusters <- hclust(dist(total_500_final))
+clusters <- hclust(dist(total_500_final[, 1]))
 plot(clusters)
 ```
 
 
 ```{r}
-fortuneCluster <- kmeans(total_500_final, 10, iter.max = 500,nstart = 1)
+fortuneCluster <- kmeans(total_500_final[, 1], 4, iter.max = 500,nstart = 1)
 cluster <- table(fortuneCluster$cluster)
 fortuneCluster$cluster <- as.factor(fortuneCluster$cluster)
 
@@ -657,9 +725,6 @@ fortuneCluster$cluster <- as.factor(fortuneCluster$cluster)
 
 
 ```{r}
-ggplot(total_500_final, aes(pixels, pixels, color = fortuneCluster$cluster)) + geom_point(size=3)
-#We create a full model for the variable pixels
-full_pixels <- lm(pixels~.,data=total_500_final)
-summary(full_pixels)
+ggplot(total_500_final, aes(.bmp, loading.time, color = fortuneCluster$cluster)) + geom_point(size=3)
 ```
 
