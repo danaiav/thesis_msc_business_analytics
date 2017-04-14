@@ -72,15 +72,16 @@ Over the past two decades, the uncanny growth of the World Wide Web (the Web or 
 Even though before the expansion of the Web the on-line presence of a company was not an important factor in the overall success that the enterprise would have in nowadays the vast spread of the impact that internet has on consumers, regarding their choices, render this hypothesis invalid.\\
 Companies are obliged by the trends to be active on-line and to maintain a website that depicts the image they want their consumers to perceive. By creating a more consumer oriented website they lead the users to create a positive idea regarding the company and this could potentially lead to the increase of their revenues.\\
 The purpose of this paper is to understand the correlation that exists between a company's website and the overall company's success. A measure that can be comparable between enterprises are their revenues. Trying to comprehend this relationship a comparison will take place between the enterprises that were deemed as the more successful ones from Fortune 500 (based on their revenues) in 2016 and a number of website metrics in order to understand through the performance of statistical analysis which of those metrics are correlated the most with the company's success.\\
-In order to find the metrics that will be examined we created a model based on the six dimension separation of a website's design that have been captured by Liu and Arnette in 2000 \cite{key9}. Based on those 6 dimensions that have already been proved that are correlated to the user's perception of a website we picked the metrics that we will examine to see which of those dimensions are correlated to the company's success (status). In the following table the framework of the model that we created is available, where one can see the dimensions that indeed are correlated with a company's status:
-\begin{table}[H]
+In order to find the metrics that will be examined we created a model based on the six dimension separation of a website's design that have been captured by Liu and Arnette in 2000 \cite{key9}. Based on those 6 dimensions that have already been proved that are correlated to the user's perception of a website we picked the metrics that we will examine to see which of those dimensions are correlated to the company's success (status). In the following figure the research model that we created is available, where one can see the dimensions that indeed are correlated with a company's status:
+\begin{figure}[H]
 \centering
-\caption{Model's Framework}
+\caption{Research model}
 \begin{center}
-\includegraphics[scale=0.5]{../R/photos/001_model_framework.png} 
+\includegraphics[scale=0.4]{../R/photos/001_model_framework.png} 
 \end{center}
-\end{table}
-In the chapter \textit{Literature Review} a retrospect of previous studies will take place and the thesis hypothesis will be presented. Moreover in the chapter \textit{Data Gathering} an analytical description of the way that the data were collected from the website pages will be take place. Furthermore in the next chapter called \textit{Data Analysis} the steps that were followed for the performance of the analytical part of the paper will be explained as well as the finding of this analysis. Finally in the \textit{Conclusion} chapter there will be a summarized version of the papers findings and its contribution to the already existing researches. The last chapter \textit{Further Research} will give some ideas of what the next steps should be regarding the current state of the field's research.
+\end{figure}
+Moreover the research framework that we will follow is to first identify the data that we will use, then gather them, following that we will proceed with the cleansing of the data and afterwards with their analysis in order to reach to the final stage of the results extraction.\\
+In the chapter \textit{Literature Review} a retrospect of previous studies will take place and the thesis hypothesis will be presented. Moreover, in the chapter \textit{Data Gathering} an analytical description of the way we identified the data that we will collected and the way that they were collected from the website pages will be take place. Furthermore, in the next chapter called \textit{Data Analysis} the steps that were followed for the performance of the analytical part of the paper will be explained as well as the finding of this analysis. Finally in the \textit{Conclusion} chapter there will be a summarized version of the papers findings and its contribution to the already existing researches. The last chapter \textit{Further Research} will give some ideas of what the next steps should be regarding the current state of the field's research.
 \newpage
 \chapter{Literature Review }
 The World Wide Web was created and developed in the United States of America and initially it was used from the government for educational and non commercial research institutions only. The first commercial use of the Web was not until 1993.\cite{key1} From then on there was an explosive growth that led to the existence of more than 200 million sites by 2005.\cite{key3} By now this number has been increased even more and it keeps growing daily. Nowadays it has become a part of the every day life of an average consumer. Taking into account this fact the research around the impact of the web pages into an organisation success is undoubtedly an interesting topic for examination.
@@ -375,7 +376,7 @@ We have already counted in previous scripts the time they did to be completed. I
 \textbf{Step 3} : Next step is to run the function and finally create a data frame with the results.\\
 The code that was created is available in the Appendix.\ref{p12}
 
-\subsection{Number, type and sizes of images}
+\subsection{Number, format and pixels of site's images}
 We reach to the final group of variables that we are going to examine regarding the home pages of the websites of the 500 companies that ranked first in Fortune 500. This group has to do with the images of each site. We can divide the information that we want to extract into 3 major categories:
 \begin{enumerate}
 \item Type of images
@@ -408,7 +409,7 @@ Aside from the number of images and the types that are being used another import
 \textbf{Step 4}: Now that we have all the pixels we create a loop and we add them up in order to end up with one total number of the pixels that are containing in the web page at hand..\\\\
 \textbf{Step 5}: We run the function.\\\\
 \textbf{Step 6}: We create the data frame with the informations that we gathered.\\\\
-The codes that was created is available in the Appendix.\ref{p14}\ref{p15}\ref{p16}\ref{p17}                 
+The codes that was created is available in the Appendix.\ref{p14}                
 
 \subsection{Fortune 500 - Metrics download}
 Just in order to have some metrics that will depict the status of the companies, we will also download some metrics from the Fortune 500 sites for each company.\cite{key35} In order to achieve that we should open the pages for each one of the sites separately. Since there is a pattern in the way the pages are named it shouldn't be difficult.\\
@@ -424,13 +425,12 @@ Just in order to have some metrics that will depict the status of the companies,
 \item Market Value in dollars
 \item Profit in dollars
 \item Profit as \% of Revenues
-\item P/E Ratio
 \end{itemize}
 For each loop we use the library Beautiful soup to find all the parts between $<tbody>...</tbody>$ and we locate in which of the parts do the elements we want to extract lies on.\\\\
 \textbf{Step 6}: After locating them we find in this specific part all the parts that are between $<td>...</td>$. Then we locate in those new parts where each of the information we need is and with the help of the regular expressions\footnote{A regular expression is  a sequence of characters that define a search pattern. Usually this pattern is then used by string searching algorithms for "find" or "find and replace" operations on strings} we keep only the numbers of each part.\\\\\textbf{Step 7}: We do that separately for each one of the five variables we want to create and finally we print that the function is completed.\\\\
 \textbf{Step 8}: Next we run the function\\\\
 \textbf{Step 9}: Finally we create the data frame with the elements we extracted.\\
-The codes that was created is available in the Appendix.\ref{p18}\ref{p19}\ref{p20}\ref{p21}\ref{p22} 
+The codes that was created is available in the Appendix.\ref{p18}
 
 \subsection{Merge data-frames and extract final csv file}
 The final step in order to conclude the section with the downloading and gathering of the data is to create a final data frame which will include all the information gathered and then create a csv file that will be used for the further analysis that will be take place with the use of the program language R.\\
@@ -460,19 +460,19 @@ In this section we will present the steps that we followed to contact this analy
 \end{enumerate}
 \subsection{Data cleansing}
 Before we will be able to begin the analysis we should first check the data that we have gathered.\\
-The first step is to upload in the R environment the csv file we have created and see how many variables and observations we have. The data have 500 observations as it was expected since we will examine 500 companies and 730 variables. The variables are far too many so in the next sections we should find a way to remove some of them that will not be useful in our research.\\
-Another change that we have to make is to change the decimal point in the variables we gathered from the Fortune 500 site in order to be read correctly from R.\\
-The next thing we should do is to make all the variables numeric in order to be more easy to compare them. The only variable that we keep as factor is the Readability one since we made it on purpose like that so as to have a clear view of what the flesch test results really mean.\\
+The first step is to upload in the R environment the csv file we have created and see how many variables and observations we have. The data have 500 observations as it was expected since we will examine 500 companies and 38 variables.\\
+The next step is to change the decimal point in the variables we gathered from the Fortune 500 site in order to be read correctly from R.\\
+Moreover, we should make all the variables numeric in order to be more easy to compare them. The only variable that we keep as factor is the Readability one since we made it on purpose like that so as to have a clear view of what the flesch test results really mean.\\
 Moreover we should omit all the variables and observations that contain na's from this analysis so as for the results to have a point.\\
 The next step is to rename some variables in order to have a better and clearer understanding of what they represent. For example a variable named X that was added when we extracted the csv from Python represents the actual ranking of each company, an information that will prove to be very useful later on. So it will be a good idea to rename this variable to Ranking.\\
-Some of the variables while they were important during the python scripts they do not actually play any important role in this analysis and we should remove them from the data that we are going to analyse. For example the company's url was an important variable while we ran the python scripts but since there are unique for each site they cannot give us any useful information for the analysis we want to perform.\\
+Some of the variables while they were important during the python scripts they do not actually play any important role in this analysis and we should remove them from the beginning of the analysis. For instance the company's url was an important variable while we ran the python scripts but since there are unique for each site they cannot give us any useful information for the analysis we want to perform.\\
 Another important step before going on with the analysis is to upload the libraries that we are going to use further along. More specifically we will upload the following libraries for starters:
 \begin{itemize}
 \item \textbf{ggplot2}: The ggplot2 package, created by Hadley Wickham, offers a powerful graphics language for creating elegant and complex plots.
 \item \textbf{reshape2}: The reshape2 is an R package written by Hadley Wickham that makes it easy to transform data between wide and long formats.
 \item \textbf{DAAG}:This package is called Data Analysis and Graphics Data and Functions and it consists of data sets and functions.
 \end{itemize}
-Finally we see how many observations and variables we have now.
+Finally the number of the observations and the variables that we are going to use in the analysis have been change to the following ones:
 \begin{table}[H]
 \centering
 \caption{Dataset initial and after cleansing}
@@ -480,50 +480,83 @@ Finally we see how many observations and variables we have now.
 \end{table}
 The script we used to perform all the above steps could be found in the Appendix.\ref{r:data cleansing}
 \subsection{Variable analysis and correlation}
-Now that the variables are cleansed we can perform the first step of the analysis which is the analysis of the variables so as to have a first look of how they are distributed and how they are correlated to each other. In order to proceed with this analysis we have to separate the variables into same groups as we did when we downloaded them and examine them together to see if some of those prices are correlated.
+Now that the variables are cleansed we can perform the first step of the analysis which is the analysis of the variables so as to have a first look of how they are distributed and how they are correlated to each other. In order to proceed with this analysis we have to separate the variables into same groups as we did when we downloaded them and examine them together to see if some of those prices are correlated.\\
+The procedure is to first take a look of each variable of each group separately and then in relation to the variable of the fortune 500 that we will choose and then see the correlation of all the variables in each group with the fortune 500 variables.
 \subsubsection{Fortune variables analysis and correlation}
 The first step is to determine the variable with which we will compare all the other ones. Obviously this variable will be one of the metrics we downloaded from the fortune 500 site so as to have an actual variable that shows the status of the company and compare the rest of the variables with it.\\
-In order to see which variable we will use as the comparison metric we should check which of them is better correlated with the Ranking of the companies. Since the Fortune 500 magazine is ranking the sites based on the revenues we expect to see that this variable will be the most correlated with the Ranking. In the following diagrams we can see the correlation of the Ranking with each one of the Fortune 500 variables and finally with all of them:
+First of all we should see the summary of the variables we have downloaded in order to have an initial idea of the prices we are going to see. In the below table we can see the min price, the max price, the mean and the medium of each one of the fortune 500 variables:
+
 \begin{table}[H]
 \centering
-\caption{Assets vs Ranking}
-\begin{center}
-\includegraphics[scale=0.3]{../R/photos/05_rank_assets.png}  \\
-\textit{We can see that there is no specific pattern that goes along with the Ranking here. Most companies have Assets until 100 million dollars.}
-\end{center}
-\end{table}
-\begin{table}[H]
-\centering
-\caption{Market Value vs Ranking}
-\begin{center}
-\includegraphics[scale=0.4]{../R/photos/06_rank_mark_val.png}   \\
-\textit{Market value even though in the most high ranking (the lowest prices of ranking) shows a small differentiation and is bigger that in the lowest ranking still there is not a clear pattern.}
-\end{center}
-\end{table}
-\begin{table}[H]
-\centering
-\caption{Total Stockholder Equity  vs Ranking}
-\begin{center}
-\includegraphics[scale=0.4]{../R/photos/07_rank_sh_eq.png}  \\
-\textit{Most company total stockholder equity is until 50 million dollars but it does not change based on the Ranking.}
-\end{center}
-\end{table}
-\begin{table}[H]
-\centering
-\caption{Revenues vs Ranking}
-\begin{center}
-\includegraphics[scale=0.4]{../R/photos/08_rank_rev.png}  \\
-\textit{As it was expected the smaller the Ranking (closer to top 1) the bigger the Revenues. We can see a logarithmic correlation between the two variables.}
-\end{center}
+\caption{Fortune 500 variables summary}
+\includegraphics[scale=0.4]{../R/photos/01_summary.PNG} 
 \end{table}
 
-Based on the above diagrams we can conclude that the variable that we will use in order to see the influence of the websites variables in the company is the Revenues. As it is clear from the last diagram the Revenues have a linear correlation with the Ranking. The better the ranking the highest the Revenues so it is the ideal variable to see the actual success of each company in relation to the variables we have created. We can double check those finding with the help of the libraries corrplot and caret. We run a correlation plot with all the variables we have seen above. Moreover, the code that was used to create these diagrams is available in the Appendix.\ref{r: van: fortune}:
+From this table we can see that even though some of the observations were removed from the cleansing the mean and the median are still very close to 250 and even though the first and the 500 websites are not included the way that the ranking is distributed is perfect for the rest of the analysis.\\
+\begin{figure}[H]
+\centering
+\caption{Ranking}
+\begin{center}
+\includegraphics[scale=0.35]{../R/photos/4_2_ranking.png}  \\
+\end{center}
+\end{figure}
+Regarding the Assets that are calculated in millions of dollars we can see that the min price that we can meet is 1 million dollars while the max price is 877 million dollars. Moreover the mean and the median are not very close to each other. This can mean that more than half of the companies at hand have less than 17 million in assets while due to the large gap between the min and the max price the mean is a lot bigger that this price.\\
+\begin{figure}[H]
+\centering
+\caption{Assets}
+\begin{center}
+\includegraphics[scale=0.35]{../R/photos/4_2_assets.png}  \\
+\end{center}
+\end{figure}
+Furthermore, the market value of the companies seems to have even larger deviation between the max and the min price and it actually follows the same logic as the assets.\\
+\begin{figure}[H]
+\centering
+\caption{Market Value}
+\begin{center}
+\includegraphics[scale=0.35]{../R/photos/4_2_market_value.png}  \\
+\end{center}
+\end{figure}
+Moreover, the total stockholder equity variable has a min value of -978 millions and a max value of 998 millions. Again here the medium and the mean have a very large distance of almost 54 million dollars.\\
+\begin{figure}[H]
+\centering
+\caption{Total stockholder equity}
+\begin{center}
+\includegraphics[scale=0.35]{../R/photos/4_2_equity.png}  \\
+\end{center}
+\end{figure}
+Now regarding the revenues of each company we can see that they begin from 5 million dollars and reach 233 million dollars. Also here the mean and the median have a distance of 10 million dollars again due to the large deviation of prices.\\
+\begin{figure}[H]
+\centering
+\caption{Revenues}
+\begin{center}
+\includegraphics[scale=0.35]{../R/photos/4_2_revenues.png}  \\
+\end{center}
+\end{figure}
+Finally, the profit per revenue variable shows the percentage of profit in regards to revenues. Here we can see that the min price is negative, which means that while this company has some revenues it doesn't actually have any profit. Here the biggest price is 45 while the mean and the median are very close to each other despite the big deviance between the min and the max.\\
+\begin{figure}[H]
+\centering
+\caption{Profit \% Revenues}
+\begin{center}
+\includegraphics[scale=0.35]{../R/photos/4_2_ppp.png}  \\
+\end{center}
+\end{figure}
+Now that we had a glimpse of the variables distribution we should see which one is more correlated to the ranking variable in order to see which variable we will use as the comparison metric. Since the Fortune 500 magazine is ranking the sites based on the revenues we expect to see that this variable will be the most correlated with the Ranking. Although we should also check the correlations of the other variables as well in order to be sure. In the following table we can see the correlation of the Ranking with each one of the Fortune 500 variables. The table was created by performing regression analysis with each variable against the ranking variable:
+\begin{table}[H]
+\centering
+\caption{Ranking Regression models}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/4_2_reg_mod.png}  \\
+\end{center}
+\end{table}
+Based on the above regression models that we ran we can conclude that the variable that we will use in order to see the influence of the websites variables in the company is the Revenues. As it is clear from the table that it has the best adjusted R square in relation to the ranking and a p-value lower than 0.05.\\
+In the last line of the table we have performed a regression model for all the variables of the fortune 500 that we have downloaded using as the dependent variable again the ranking. Here we can see that the model has a little worse adjusted r square from the model we created for just the ranking and the revenues.\\
+We can double check those finding with the help of the libraries corrplot and caret. We run a correlation plot with all the variables we have seen above. Moreover, the code that was used to create these tables is available in the Appendix.\ref{r: van: fortune}:
 \begin{table}[H]
 \centering
 \caption{Fortune variables correlation plot}
 \begin{center}
 \includegraphics[scale=0.5]{../R/photos/09_rank_corplot_f500.png}   \\
-\textit{From the chart we see that the strongest negative correlation is between Ranking and Revenues as we already have seen.}
+\textit{From the table we see that the strongest negative correlation is between Ranking and Revenues as we already have seen.}
 \end{center}
 \end{table}
 \newpage
@@ -1682,9 +1715,7 @@ import os
 from bs4 import BeautifulSoup
 import re
 import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-\end{lstlisting}
+import pandas as pd\end{lstlisting}
 
 \begin{center}
 \textit{\textbf{Script 3: Companies ranking, names and url}}\label{p3}
@@ -1749,6 +1780,11 @@ print "The validation is complete! There were" , nv,
 \textit{\textbf{Script 5: Download sites HTML}}\label{p5}
 \end{center}
 \begin{lstlisting}[language=Python]
+list500_sites = []
+list500_names = []
+list500_num = []
+list500_url = []
+
 import time
 browser2 = urllib2.build_opener()
 browser2.addheaders = [('User-agent', 'Mozilla/5.0')]
@@ -1829,7 +1865,8 @@ for num in range(0,500):
     browser = urllib2.build_opener()
     browser.addheaders = [('User-agent', 'Mozilla/5.0')]
     if site == 0 or num == 107:
-        print("Site", str(num), "is not validated from sites")
+        print("Site", str(num),
+         "is not validated from sites")
         flesch.insert(num,"n/a")
         sentence.insert(num,"n/a")
         word.insert(num,"n/a")
@@ -1921,6 +1958,7 @@ for num in range(0,500):
 \end{center}
 \begin{lstlisting}[language=Python]
 readability = []
+
 def readable (flesch):
     for i in range (len(flesch)):
             f_n = flesch[i]
@@ -1953,8 +1991,13 @@ d1 = {'company' : pd.Series(list500_names, index=[list500_num]),
 'Sentences' : pd.Series(sentence, index=[list500_num]),
 'Words' : pd.Series(word, index=[list500_num]),
 'Unique words' : pd.Series(unique_w, index=[list500_num])}
-fre = pd.DataFrame(d1)    
+fre = pd.DataFrame(d1)
+fre.head(3) 
+#we see the first 3 in the data frame
+fre.to_csv('total_500_words.csv', sep=';')    
 \end{lstlisting}
+
+
 
 \begin{center}
 \textit{\textbf{Script 9: HTML Validation}}\label{p9}
@@ -1968,7 +2011,9 @@ num_open_page = []
 empty = ""
  
 def HTML_validation (list500_url,list500_names):
-    from time import time # I used it to see how much time it does to run the function
+    from time import time 
+    # I used it to see how much time it does
+    # to run the function
     start = time ()
     for num in range(len(list500_names)):
         line = list500_url[num] 
@@ -1998,8 +2043,8 @@ def HTML_validation (list500_url,list500_names):
                     doll= re.findall('class="info warning"'
                                      ,keyfin)            
                     err = err + len(doll)
-                    dolll= re.findall('class="non-document-error io"'
-                                      ,keyfin)            
+                    dolll= re.findall
+                    ('class="non-document-error io"',keyfin)            
                     errr = errr + len(dolll)
         num_errors.insert(num,er)
         num_info_warnings.insert(num,err)
@@ -2021,7 +2066,8 @@ d8 = {'company' : pd.Series(list500_names, index=[nm]),
       'number_of_warning' : pd.Series(num_info_warnings, index=[nm])
       ,'non-document-error' : pd.Series(num_non_doc, index=[nm])}
 HTML_val = pd.DataFrame(d8)    
-HTML_val.head(3) 
+html_val.head(3) 
+html_val.to_csv('html_val.csv', sep=';') 
 \end{lstlisting}
 
 \begin{center}
@@ -2110,7 +2156,10 @@ d2 = {'company' : pd.Series(sm_nm, index=[nm]),
       'pinterest' : pd.Series(sm_p, index=[nm]),
      'youtube' : pd.Series(sm_y, index=[nm]),
       'linkedin' : pd.Series(sm_l, index=[nm]),}
-social_media = pd.DataFrame(d2) 
+social_media = pd.DataFrame(d2)
+social_media.tail(3) 
+#we see the first 3 in the data frame
+social_media.to_csv('total_500_sm.csv', sep=';') 
 \end{lstlisting}
 
 \begin{center}
@@ -2160,6 +2209,9 @@ d3 = {'company' : pd.Series(l_nm, index=[nm]),
       'internal' : pd.Series(l_in, index=[nm]),
      'total links' : pd.Series(l_t, index=[nm])}
 sites_links = pd.DataFrame(d3)    
+sites_links.tail(3) 
+#we see the first 3 in the data frame
+sites_links.to_csv('total_500_sites_links.csv', sep=';')
 \end{lstlisting}
 
 \begin{center}
@@ -2214,6 +2266,9 @@ loadtime (list_company_website,list500_names,list500_url)
 d4 = {'company' : pd.Series(lt_nm, index=[nm]),
       'loading time' : pd.Series(lt_time, index=[nm])}
 loading_time = pd.DataFrame(d4)    
+loading_time.head(3) 
+#we see the first 3 in the data frame
+loading_time.to_csv('loading_time.csv', sep=';')
 \end{lstlisting}
 
 \begin{center}
@@ -2312,195 +2367,59 @@ d5 = {'company' : pd.Series(p_nm, index=[nm]),
       '.tif' : pd.Series(p_tif, index=[nm]),
       '.tiff' : pd.Series(p_tiff, index=[nm]), 
       'total images' : pd.Series(p_tt, index=[nm])}
-images_types = pd.DataFrame(d5)    
+images_types = pd.DataFrame(d5)
+images_types.head(3) 
+#we see the first 3 in the data frame
+images_types.to_csv('images_types.csv', sep=';')    
 \end{lstlisting}
 
 \begin{center}
-\textit{\textbf{Script 14: Different image sizes per company function}}\label{p14}
+\textit{\textbf{Script 14: Number of pixels}}\label{p14}
 \end{center}
 \begin{lstlisting}[language=Python]
-nm = []
-s_comp = []
-s_dimensions = []
-s_times = []
-s_tt_dif_dim = []
-ht = [] #list of different heights in each case
-wt = [] #list of different widths in each case
-h_w = [] # combinations of height and width
-s_url = []
-
-def find_dif_sizes (list_company_website,list500_names,list500_url):
-    from time import time 
-    start = time ()
+im_nm = []
+im_pix = []    
+import time
+def url_to_image(list500_names, list500_url):
+    import numpy as np
+    import urllib
     for num in range(len(list500_names)):
-            nm.insert(num,num)                  
-            s_comp.insert(num,list500_names[num])
-            s_url.insert(num,list500_url[num])
-            myHTML = list500_sites[num] 
-            if myHTML == 0:
-                s_dimensions.insert(num,0)
-                s_times.insert(num,0)    
-            else: 
-                soup = BeautifulSoup(myHTML, "lxml") 
-                s_dimensions_local = []
-                s_times_local = []
-                hw = 0  
-                for tag in soup.find_all('img'):
-                    h = tag.attrs.get('height', None)
-                    w = tag.attrs.get('width', None)
-                    if h != None:
-                        if w != None:
-                            ht.insert(hw,h)
-                            wt.insert(hw,w)
-                            hw = hw + 1                        
-                hw2 = 0
-                for l in range(len(ht)):
-                    h_w_c = ht[l] + 'x' + wt[l]
-                    h_w.insert(hw2,h_w_c)                     
-                    hw2 = hw2 + 1    
-                if h_w == []:
-                    nm.insert(num,num)                  
-                    s_comp.insert(num,list500_names[num])
-                    s_dimensions.insert(num,0)
-                    s_times.insert(num,0)    
-                if h_w != []:
-                    hw_unique = Counter(h_w)
-                    hw_unique2 = str(hw_unique)                    
-                    split1 = hw_unique2.split('{')
-                    a = split1[1]
-                    split2 = a.split('}')
-                    b = split2[0]
-                    split3 = b.split(',')
-                    finalsplit = []
-                    fs = []
-                    z = 0
-                    m = 1
-                    j = 0
-                    z1 = 0
-                    m1 = 1                    
-                    for numb in split3:                
-                        oldstring = numb
-                        newstring = oldstring.replace("'", "")
-                        new = newstring.replace("'","")
-                        string = new.replace(" ","")
-                        finalstring = string.split(':')                       
-                        for xx in range(len(finalstring)):
-                            ax = finalstring[xx]
-                            if 'x' in ax:
-                                s_dimensions_local.insert(z1,finalstring[xx])
-                                z1 = z1 + 1
-                            else:
-                                s_times_local.insert(m1,finalstring[xx])
-                                m1 = m1 + 1  
-                    s_dimensions.insert(num,s_dimensions_local)
-                    s_times.insert(num,s_times_local)                
-    end = time ()
-    duration = round (end - start, 3)
-    minutes = round (duration /60, 1)
-    print 'The lists are ready in ', minutes, ' minutes'
-    print 'The lists are ready in ', duration, ' seconds'
+        url= 'http://' + list500_url[num]
+        if num == 45 or num == 118 or num == 390:
+            print (str(num), "Exception")
+            im_pix.insert(num,"n/a")
+            im_nm.insert(num,list500_names[num]) 
+        else:
+            try: # download the image, convert it to a NumPy array 
+                resp = urllib.urlopen(url)
+            except Exception:
+                print (str(num), "Exception")
+                im_pix.insert(num,"n/a")
+                im_nm.insert(num,list500_names[num]) 
+                continue
+            image = np.asarray(bytearray(resp.read()), dtype="uint8")
+            #print(image)
+            pixels = 0
+            #add up all the pixels of the page
+            for n in range (len(image)):
+                pixels = pixels + image[n]
+            print (str(num), pixels)
+            im_nm.insert(num,list500_names[num])            
+            im_pix.insert(num,pixels)
+        time.sleep(2)
+        
+url_to_image(list500_names, list500_url) 
 
-find_dif_sizes (list500_sites,list500_names,list500_url)
+dpix = {'company' : pd.Series(im_nm, index=[list500_num]),
+      'pixels' : pd.Series(im_pix, index=[list500_num])}
+images_pixels = pd.DataFrame(dpix)    
+images_pixels.head(3) 
+#we see the first 3 in the data frame
+images_pixels.to_csv('images_pixels.csv', sep=';')
 \end{lstlisting} 
 
 \begin{center}
-\textit{\textbf{Script 15: Unique Image Sizes across all companies function}}\label{p15}
-\end{center}
-\begin{lstlisting}[language=Python]
-dif_size = []  
-un_size = [] 
-
-def unique_dif_sizes (s_dimensions,list500_names):
-    ds = 0
-    for num in range(len(list500_names)):
-        asw = s_dimensions[num]
-        if asw != 0 :
-            for s in range(len(asw)):
-                ss = asw[s]
-                dif_size.insert(ds,ss)
-                ds = ds + 1    
-    dsu = 0
-    for i in dif_size:
-        if i not in un_size:
-            un_size.insert(dsu,i)
-            dsu = dsu + 1
-    print(un_size)          
- 
-
-unique_dif_sizes (s_dimensions,list500_names)
-\end{lstlisting}
-
-
-\begin{center}
-\textit{\textbf{Script 16: The unique dimensions per company True or False function}}\label{p16}
-\end{center}
-\begin{lstlisting}[language=Python]
-t_f_s = []
-ttf = []
-nm = []
-com = []
-
-def dimensions_per_company (un_size,list500_names):
-    from time import time     
-    start = time ()
-    for num in range(len(list500_names)): 
-        s1a = s_dimensions[num] 
-        where = [] #empty list
-        wh = 0
-        haveornot = []
-        for er in range (len(un_size)):
-            if s1a != 0 :
-                for sizea in s1a:
-                    if sizea == un_size[er]:
-                        where.insert(wh,str(er))
-                        wh = wh +1
-                        break
-            if str(er) in where:
-                haveornot.insert(er,True)                    
-            else:
-                haveornot.insert(er,False)
-                    
-        t_f_s.insert(num,haveornot)
-        ttf.insert(num,t_f_s)
-        nm.insert(num,num)
-        com.insert(num,list500_names[num])
-    end = time ()
-    duration = round (end - start, 3)
-    minutes = round (duration /60, 1)
-    print 'The lists are ready in ', minutes, ' minutes'
-    print 'The lists are ready in ', duration, ' seconds'
-
-dimensions_per_company (un_size,list500_names)
-\end{lstlisting}
-
-\begin{center}
-\textit{\textbf{Script 17: Final data frame }}\label{p17}
-\end{center}
-\begin{lstlisting}[language=Python]
-d6 = {'company' : pd.Series(com, index=[nm])}
-sizess = pd.DataFrame(d6)   
-
-def final_dimensions_dataframe (un_size,t_f_s,list500_names):
-    from time import time 
-    start = time ()
-    for q in range(len(un_size)):
-        names = un_size[q]
-        var = []
-        for num in range(len(list500_names)):
-            a = t_f_s[num]
-            var.insert(num,a[q])
-        sizess[names] = pd.Series(var, index=sizess.index) 
-    end = time ()
-    duration = round (end - start, 3)
-    minutes = round (duration /60, 1)
-    print 'The lists are ready in ', minutes, ' minutes'
-    print 'The lists are ready in ', duration, ' seconds'
-
-final_dimensions_dataframe (un_size,t_f_s,list500_names)
-\end{lstlisting}
-
-\begin{center}
-\textit{\textbf{Script 18: Names corrections}}\label{p18}
+\textit{\textbf{Script 15: Names corrections}}\label{p18}
 \end{center}
 \begin{lstlisting}[language=Python]
 list_company_name_new = []
@@ -2517,7 +2436,7 @@ for num in range (0,500):
 \end{lstlisting}     
 
 \begin{center}
-\textit{\textbf{Script 19: Fortune 500 - Pages Download}}\label{p19}
+\textit{\textbf{Script 16: Fortune 500 - Pages Download}}\label{p19}
 \end{center}
 \begin{lstlisting}[language=Python] 
 fortune_pages = []
@@ -2530,10 +2449,12 @@ def fortune500 (list_company_name_new):
         companyname =  list_company_name_new[num3]
         browser = urllib2.build_opener() 
         browser.addheaders = [('User-agent', 'Mozilla/5.0')]
-        site_fortune = "http://beta.fortune.com/fortune500/"+companyname+"-"+ i    
+        site_fortune = "http://beta.fortune.com/fortune500/"
+        + companyname +"-"+ i    
         page_fortune = browser.open(site_fortune)
         HTML_fortune = page_fortune.read()    
-        #print("fortune page for company: ", list_company_name_new[num3],i)
+        #print("fortune page for company: ", 
+        list_company_name_new[num3],i)
         fortune_pages.insert(num3, HTML_fortune)
     end = time ()
     duration = round (end - start, 3)
@@ -2545,48 +2466,60 @@ fortune500 (list_company_name_new)
 \end{lstlisting}    
 
 \begin{center}
-\textit{\textbf{Script 20: Fortune 500 - Initial variables}}\label{p20}
+\textit{\textbf{Script 17: Fortune 500 - Initial variables}}\label{p20}
 \end{center}
 \begin{lstlisting}[language=Python] 
 keyf =[]
+keyfaw = []
 per =[]
 rev_dol = []
-rev_per = []
 prof_dol = []
-prof_per = []
 assets_dol = []
-assets_per = []
 tse_dol = []
 tse_per = []
 mar_dol = []
-mar_per = []
 market = []
 nm = []
 ln = []
 urln = []
 empty = []
+pef = []
+pe_rat =[]
+pr_r = []
+peratio = []
+empty = []
+keyfawin = 0
 \end{lstlisting}  
 
 \begin{center}
-\textit{\textbf{Script 21: Fortune 500 - Pages Download}}\label{p21}
+\textit{\textbf{Script 18: Fortune 500 - Pages Download}}\label{p21}
 \end{center}
 \begin{lstlisting}[language=Python]  
 def fortune_metrics (list_company_name,list_company_website):
-    x = 0
-    for n in range (0,500):  
-        nm.insert(x,x)
+    for n in range (0,500):          
+        print("site",str(n), list_company_website[n])
+        x = 0        
+        nm.insert(x,n)
         ln.insert(x,list_company_name[n])
         urln.insert(x,list_company_website[n])
-        files = fortune_pages[x]
-        soup = BeautifulSoup(files,"lxml")
+        files = fortune_pages[n]
+        soup = BeautifulSoup(files, 'lxml')     
+        ###############################################
         o=0
-        for row in soup.HTML.body.findAll('tbody'):
+        for row in soup.html.body.findAll('tbody'):
             keyf.insert(o,row)
-            o=o+1
-        keyfin = keyf[0] 
+            o = o + 1
+        keyfin = keyf[0]  
+        #the elements we need is in the first 
+        #tbody of the code  
+        keyfon = keyf[1]
         data = keyfin.findAll('td')
-        two = str(data[1]) # revenue 
+        ##################################
+        # revenue
+        two = str(data[1]) 
+        # revenue in dollars we need to extract this
         revdol= re.findall('>\$(.+?)</td>',two) 
+        #we keep only the numbers
         if revdol[0] != empty:
             w = revdol[0]
             a = w.replace("[", "")
@@ -2594,17 +2527,24 @@ def fortune_metrics (list_company_name,list_company_website):
             rev_dol.insert(x,r)
         else:
             rev_dol.insert(x,'not available')
-        tria = str(data[2])# revenue in percentage
-        revper= re.findall('>(.+?)%</td>',tria) 
-        if revper != empty:    
-            w = revper[0]
+        five = str(data[5])
+        #################################
+        # profit in dollars we need to extract this   
+        profdol= re.findall('>\$(.+?)</td>',five) 
+        #we keep only the numbers
+        if profdol != empty:
+            w = profdol[0]
             a = w.replace("[", "")
-            r1 = a.replace("]","")    
-            rev_per.insert(x,r1) 
+            p = a.replace("]","")
+            prof_dol.insert(x,p)
         else:
-            rev_per.insert(x,'not available')
-        eight = str(data[7]) #assets in dollars 
+            prof_dol.insert(x,'not available')
+        ###############################
+        #assets in dollard
+        eight = str(data[7]) 
+        #assets in dollars we need to extract this
         assetsdol= re.findall('>\$(.+?)</td>',eight) 
+        #we keep only the numbers
         if assetsdol != empty:
             w = assetsdol[0]
             a = w.replace("[", "")
@@ -2612,9 +2552,13 @@ def fortune_metrics (list_company_name,list_company_website):
             assets_dol.insert(x,ass)
         else:
             assets_dol.insert(x,'not available')
-        ten = str(data[9]) #Total Stockholder Equity   
+        ###################################
+       #Total Stockholder Equity ($M)    
         eleven = str(data[10]) 
+        #Total Stockholder Equity ($M) in dollars 
+        #we need to extract this
         tsedol= re.findall('>\$(.+?)</td>',eleven) 
+        #we keep only the numbers
         if tsedol != empty:
             w = tsedol[0]
             a = w.replace("[", "")
@@ -2622,9 +2566,12 @@ def fortune_metrics (list_company_name,list_company_website):
             tse_dol.insert(x,ts)
         else:
             tse_dol.insert(x,'not available')
-        thirteen = str(data[12]) # market value
+        ########################################
+        # market value
         fourteen = str(data[13]) 
+        # market value in dollars we need to extract this
         mardol= re.findall('>\$(.+?)</td>',fourteen) 
+        #we keep only the numbers
         if mardol != empty:
             w = mardol[0]
             a = w.replace("[", "")
@@ -2632,6 +2579,19 @@ def fortune_metrics (list_company_name,list_company_website):
             mar_dol.insert(x,mar)
         else:
             mar_dol.insert(x,'not available')
+        #########################################
+        datao = keyfon.findAll('td')        
+        # Profit as % of Revenues
+        twoo = str(datao[2]) 
+        prof_rev= re.findall('>(.+?)%</td>',twoo) 
+        #we keep only the numbers
+        if  prof_rev[0] != empty:
+            w = prof_rev[0]
+            a = w.replace("[", "")
+            r = a.replace("]","")
+            pr_r.insert(x,r)
+        else:
+            pr_r.insert(x,'not available')
         x = x + 1
     print "The function is complete!"
 
@@ -2639,36 +2599,39 @@ fortune_metrics (list_company_name,list_company_website)
 \end{lstlisting}
 
 \begin{center}
-\textit{\textbf{Script 22: Fortune 500 - Data frame}} \label{p22}
+\textit{\textbf{Script 19: Fortune 500 - Data frame}} \label{p22}
 \end{center}
 \begin{lstlisting}[language=Python]  
 d9 = {'company' : pd.Series(ln, index=[nm]),
       'Revenues $' : pd.Series(rev_dol, index=[nm]),
-      'Revenues %' : pd.Series(rev_per, index=[nm]),
+      'Profits $' : pd.Series(prof_dol, index=[nm]),
       'Assets $' : pd.Series(assets_dol, index=[nm]),
-      'Total Stockholder Equity $' : pd.Series(tse_dol, index=[nm]),
+      'Total Stockholder Equity $' : pd.Series(tse_dol, index=[nm]),      
+'Proft_%_Revenues' : pd.Series(pr_r, index=[nm]),
       'Market value $' : pd.Series(mar_dol, index=[nm])}
 fort500 = pd.DataFrame(d9)    
+fort500.head(3)
+fort500.to_csv('fort500.csv', sep=';')  
 \end{lstlisting}
 
 \begin{center}
-\textit{\textbf{Script 23: Final Data Frame and csv file}}\label{p23}
+\textit{\textbf{Script 20: Final Data Frame and csv file}}\label{p23}
 \end{center}
 \begin{lstlisting}[language=Python]
-result = pd.merge(fort500, HTML_val, how='inner',
- on=['company', 'company'])
-result2 = pd.merge(social_media, fre, how='inner',
- on=['company', 'company'])
-result3 = pd.merge(sites_links, sizess, how='inner', 
-on=['company', 'company'])
-result4 = pd.merge(images_types, loading_time, how='inner',
- on=['company', 'company'])
-result5 = pd.merge(result,result2 , how='inner',
- on=['company', 'company'])
-result6 = pd.merge(result3, result4, how='inner',
- on=['company', 'company'])
-final = pd.merge(result5, result6, how='inner',
- on=['company', 'company'])
+result = pd.merge(fort500, html_val, 
+how='inner', on=['company', 'company'])
+result2 = pd.merge(social_media, fre, 
+how='inner', on=['company', 'company'])
+result3 = pd.merge(sites_links, images_pixels, 
+how='inner', on=['company', 'company'])
+result4 = pd.merge(images_types, loading_time, 
+how='inner', on=['company', 'company'])
+result5 = pd.merge(result,result2 , 
+how='inner', on=['company', 'company'])
+result6 = pd.merge(result3, result4, 
+how='inner', on=['company', 'company'])
+final = pd.merge(result5, result6, 
+how='inner', on=['company', 'company'])
 final.head(3)
 
 final.to_csv('total_500_new.csv', sep=';')
@@ -2679,25 +2642,22 @@ final.to_csv('total_500_new.csv', sep=';')
 \subsection{Data cleansing}\label{r:data cleansing}
 \begin{lstlisting}[language=R]
 #we upload the dataset
-total_500 <- read.csv("~/GitHub/thesis_msc_business_analytics/
-Python/total_500_new.csv", sep=";", na.strings="n/a")
+total_500 <- read.csv("~/GitHub/thesis_msc_business_analytics/Python/total_500_new.csv", sep=";", na.strings="n/a")
 #we see how many observations and how many variables we have
 dim(total_500)
+
 #We create a subset to make some changes to the data
 total_500_sub <- total_500
 #Change the decimal point for the 4 variables
-total_500_sub$Assets.. <- gsub(",", ".",
- total_500_sub$Assets.. )
-total_500_sub$Market.value.. <- gsub(",", ".",
- total_500_sub$Market.value.. )
-total_500_sub$Revenues.. <- gsub(",", ".",
- total_500_sub$Revenues.. )
-total_500_sub$Total.Stockholder.Equity.. <- gsub(",", ".",
- total_500_sub$Total.Stockholder.Equity.. )
+total_500_sub$Assets.. <- gsub(",", ".", total_500_sub$Assets.. )
+total_500_sub$Market.value.. <- gsub(",", ".", total_500_sub$Market.value.. )
+total_500_sub$Revenues.. <- gsub(",", ".", total_500_sub$Revenues.. )
+total_500_sub$Total.Stockholder.Equity.. <- gsub(",", ".", total_500_sub$Total.Stockholder.Equity.. )
 #Make the variables numeric
 for(i in 1:18){
  total_500_sub[,i] <- as.numeric(total_500_sub[,i])}  
-for(i in 20:730){
+ 
+for(i in 20:38){
  total_500_sub[,i] <- as.numeric(total_500_sub[,i])} 
 #We omit the nas from the analysis
 total_500_final <- na.omit(total_500_sub)
@@ -2707,15 +2667,16 @@ colnames(total_500_final)[1] <- "Ranking"
 colnames(total_500_final)[2] <- "Assets"
 colnames(total_500_final)[3] <- "Market_Value"
 colnames(total_500_final)[4] <- "Revenues"
-colnames(total_500_final)[6] <- "Total_SH_Equity"
+colnames(total_500_final)[5] <- "Total_SH_Equity"
+colnames(total_500_final)[38] <- "Profit_per_Revenue"
 #Delete the variables we will not need
-total_500_final$Revenues...1 <- NULL #Revenues %
 total_500_final$company <- NULL #company name
 total_500_final$url<- NULL # company url
 #we upload the libraries beneath that we will use in the analysis
 library(ggplot2)
 library(reshape2)
 library(DAAG)
+
 #Final number of observation and variables we will use
 dim(total_500_final)
 \end{lstlisting}

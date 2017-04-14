@@ -214,7 +214,7 @@ for num in range(0,500):
                     keyf.insert(o,row)
                     o = o + 1
                 if keyf != empty:                        
-                        print("Site", str(num), "is validated")
+                        #print("Site", str(num), "is validated")
                         #Flesh measurement
                         if keyf[0] != empty:
                             readability = str(keyf[0])
@@ -325,6 +325,7 @@ fre = pd.DataFrame(d1)
 fre.head(3) #we see the first 3 in the data frame
 fre.to_csv('total_500_words.csv', sep=';')
 
+
 # In[16]:
 
 #Retreiving the social media from each site
@@ -430,6 +431,7 @@ social_media = pd.DataFrame(d2)
 social_media.tail(3) #we see the first 3 in the data frame
 social_media.to_csv('total_500_sm.csv', sep=';')
 
+
 # In[20]:
 
 #Create the lists we will need for the data frame
@@ -494,6 +496,7 @@ sites_links = pd.DataFrame(d3)
 sites_links.tail(3) #we see the first 3 in the data frame
 sites_links.to_csv('total_500_sites_links.csv', sep=';')
 
+
 # In[24]:
 
 #The initial lists we will need in order 
@@ -517,11 +520,10 @@ def loadtime (list_company_website,list500_names,list500_url):
         lc = lc.replace("[","")
         lc = lc.replace("]","")
         url2 = 'http://' + lc
-        if num == 118 or num == 464 or num == 70 or num == 268:
+        if num == 118 or num == 464 or num == 70:
             #The site 118(119) has a problem and the whole code 
             #is stacking when I run it so we will thing of this 
             #site as a not downloadable
-            print ("The site " + str(num)+ " has NOT been loaded!")
             lt_nm.insert(num,list500_names[num])            
             lt_time.insert(num,'n/a')
             nm.insert(num,num)
@@ -546,7 +548,7 @@ def loadtime (list_company_website,list500_names,list500_url):
             lt_time.insert(num,loadt)
             nm.insert(num,num)
             lt_url.insert(num,list500_url[num])
-            print ("The site " + str(num) + " has been loaded!")
+            #print ("The site " + str(num) + " has been loaded!")
     print "The function is completed!"
 
 
@@ -564,6 +566,7 @@ d4 = {'company' : pd.Series(lt_nm, index=[nm]),
 loading_time = pd.DataFrame(d4)    
 loading_time.head(3) #we see the first 3 in the data frame
 loading_time.to_csv('loading_time.csv', sep=';')
+
 
 # In[ ]:
 
@@ -679,6 +682,7 @@ images_types = pd.DataFrame(d5)
 images_types.head(3) #we see the first 3 in the data frame
 images_types.to_csv('images_types.csv', sep=';')
 
+
 # In[ ]:
 
 #Now we will gather the total number of pixels that exist
@@ -730,6 +734,7 @@ dpix = {'company' : pd.Series(im_nm, index=[list500_num]),
 images_pixels = pd.DataFrame(dpix)    
 images_pixels.head(3) #we see the first 3 in the data frame
 images_pixels.to_csv('images_pixels.csv', sep=';')
+
 
 # In[ ]:
 
@@ -812,6 +817,7 @@ d8 = {'company' : pd.Series(list500_names, index=[nm]),
 html_val = pd.DataFrame(d8)    
 html_val.head(3) 
 html_val.to_csv('html_val.csv', sep=';')
+
 
 # In[ ]:
 
@@ -897,6 +903,7 @@ pr_r = []
 peratio = []
 empty = []
 keyfawin = 0
+
 
 # In[ ]:
 
@@ -1014,6 +1021,7 @@ d9 = {'company' : pd.Series(ln, index=[nm]),
 fort500 = pd.DataFrame(d9)    
 fort500.head(3)
 fort500.to_csv('fort500.csv', sep=';')
+
 
 # In[ ]:
 
