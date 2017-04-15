@@ -438,12 +438,7 @@ In order to do that we merge the data frames we created by two using the company
 Finally we create the csv file that we will use in the analysis in R in the next chapter. The code that was created is available in the Appendix.\ref{p23}
  
 \chapter{Data Analysis}
-By concluding the gathering of all the information needed the next step is to proceed to their analysis. For the purposes of this assignment we will use the programming language R to perform this analysis.\cite{key1}
-\section{R Language}
-R is a programming language and software environment for statistical computing and graphics supported by the R Foundation for Statistical Computing. The R language is widely used among statisticians and data miners for developing statistical software and data analysis.\\ 
-Furthermore R is freely available under the GNU General Public License, and pre-compiled binary versions are provided for various operating systems. While R has a command line interface, there are several graphical front-ends available.\\
-For the purpose of this paper we will use the R-Studio which  is a free and open-source integrated development environment (IDE) for R.
-\section{Analysis}
+By concluding the gathering of all the information needed the next step is to proceed to their analysis. For the purposes of this assignment we will use the programming language R to perform this analysis.\cite{key1}\\
 In this section we will present the steps that we followed to contact this analysis and also we will explain elaborately the findings. The analysis that we are going to perform will be explained by the following order as it was performed:
 \begin{enumerate}
 \item Data cleansing
@@ -458,7 +453,11 @@ In this section we will present the steps that we followed to contact this analy
 \end{enumerate}
 \item Logistic Regression
 \end{enumerate}
-\subsection{Data cleansing}
+\section{R Language}
+R is a programming language and software environment for statistical computing and graphics supported by the R Foundation for Statistical Computing. The R language is widely used among statisticians and data miners for developing statistical software and data analysis.\\ 
+Furthermore R is freely available under the GNU General Public License, and pre-compiled binary versions are provided for various operating systems. While R has a command line interface, there are several graphical front-ends available.\\
+For the purpose of this paper we will use the R-Studio which  is a free and open-source integrated development environment (IDE) for R.
+\section{Data cleansing}
 Before we will be able to begin the analysis we should first check the data that we have gathered.\\
 The first step is to upload in the R environment the csv file we have created and see how many variables and observations we have. The data have 500 observations as it was expected since we will examine 500 companies and 38 variables.\\
 The next step is to change the decimal point in the variables we gathered from the Fortune 500 site in order to be read correctly from R.\\
@@ -478,14 +477,16 @@ Finally the number of the observations and the variables that we are going to us
 \caption{Dataset initial and after cleansing}
 \includegraphics[scale=0.6]{../R/photos/002_dataset.PNG} 
 \end{table}
-The script we used to perform all the above steps could be found in the Appendix.\ref{r:data cleansing}
-\subsection{Variable analysis and correlation}
+The script we used to perform all the above steps could be found in the Appendix.\ref{r1}
+\section{Fortune variables analysis}
 Now that the variables are cleansed we can perform the first step of the analysis which is the analysis of the variables so as to have a first look of how they are distributed and how they are correlated to each other. In order to proceed with this analysis we have to separate the variables into same groups as we did when we downloaded them and examine them together to see if some of those prices are correlated.\\
-The procedure is to first take a look of each variable of each group separately and then in relation to the variable of the fortune 500 that we will choose and then see the correlation of all the variables in each group with the fortune 500 variables.
-\subsubsection{Fortune variables analysis and correlation}
+The procedure is to first take a look of each variable of each group separately and then in relation to the variable of the fortune 500 that we will choose and then see the correlation of all the variables in each group with the fortune 500 variables.\\
+In statistics there are two main types of regressions the linear and the logistic regression. The linear regression is an approach for modelling the relationship between a scalar dependent variable y and one or more explanatory variables (or independent variables) denoted X. The case of one explanatory variable is called simple linear regression. For more than one explanatory variable, the process is called multiple linear regression.\\
+The logistic regression, or logit regression, is a regression model where the dependent variable (DV) is categorical.Cases where the dependent variable has more than two outcome categories may be analysed in multinomial logistic regression, or, if the multiple categories are ordered, in ordinal logistic regression.\\
+Moreover when a regression analysis is being done with one independent variable and one dependent one we call it simple regression analysis. While when the regression analysis is being done with multiple independent variables and one dependent variable we call this analysis multiple regression analysis.\\
+In this chapter we will perform both of these analyses in order to get a full picture of the correlations between the variables of the websites and the variables of the fortune 500 we have collected.\\
 The first step is to determine the variable with which we will compare all the other ones. Obviously this variable will be one of the metrics we downloaded from the fortune 500 site so as to have an actual variable that shows the status of the company and compare the rest of the variables with it.\\
 First of all we should see the summary of the variables we have downloaded in order to have an initial idea of the prices we are going to see. In the below table we can see the min price, the max price, the mean and the medium of each one of the fortune 500 variables:
-
 \begin{table}[H]
 \centering
 \caption{Fortune 500 variables summary}
@@ -550,7 +551,7 @@ Now that we had a glimpse of the variables distribution we should see which one 
 \end{table}
 Based on the above regression models that we ran we can conclude that the variable that we will use in order to see the influence of the websites variables in the company is the Revenues. As it is clear from the table that it has the best adjusted R square in relation to the ranking and a p-value lower than 0.05.\\
 In the last line of the table we have performed a regression model for all the variables of the fortune 500 that we have downloaded using as the dependent variable again the ranking. Here we can see that the model has a little worse adjusted r square from the model we created for just the ranking and the revenues.\\
-We can double check those finding with the help of the libraries corrplot and caret. We run a correlation plot with all the variables we have seen above. Moreover, the code that was used to create these tables is available in the Appendix.\ref{r: van: fortune}:
+We can double check those finding with the help of the libraries corrplot and caret. We run a correlation plot with all the variables we have seen above. Moreover, the code that was used to create these tables is available in the Appendix.\ref{r2}:
 \begin{table}[H]
 \centering
 \caption{Fortune variables correlation plot}
@@ -560,368 +561,360 @@ We can double check those finding with the help of the libraries corrplot and ca
 \end{center}
 \end{table}
 \newpage
-\subsubsection{Social media analysis and correlation}
-Now that we have reach to the conclusion that the metric we will use from the Fortune 500 is the Revenues we will proceed with analysing the social media variables to see how they are distributed and then to see how they are correlated with the Revenues variable.\\
-\begin{table}[H]
+\section{Social media variables analysis}
+Now that we have seen the correlations between the fortune variables and we reached to the conclusion that the metric that is more correlated to the ranking is the revenues we will proceed with analysing the social media variables to see how they are distributed and then to see how they are correlated with the Revenues variable.
+\begin{figure}[H]
 \centering
 \caption{Social media (link existence on the site)}
 \begin{center}
 \includegraphics[scale=0.6]{../R/photos/10_socialmedia.png}
 \end{center}
-\end{table}
+\end{figure}
+From the above figure we can see that the most widely used social media link in the companies web page is the twitter, followed in close proximity by the facebook link. More precicly while almost the 65\% of the companies that we are examining have facebook links on their home page, almost the 67\% of the companies have Twitter links on their home page.\\
+Furthermore regarding the social media that are less used by the companies we see that only the 25\% of the companies that we are examining have instagram links on their home page, while when it comes to pinterest only a small 10\% of the companies have links to this social media on their home page.\\
+Finally the 58\% of the companies that we are examining have YouTube links on their home page and the 57\% of the companies that we are examining have YouTube links on their home page.\\
+Now that we have seen how widely or not the social media links appear in the web pages under examination we have to check the correlation with the revenue variable. In the below table we can see the regression model for each one of the social media against the revenues variable and also the regression model with all the social media as a group against the revenues variable.
 \begin{table}[H]
 \centering
-\caption{Social media correlation}
+\caption{Social media regression models}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/4_2_reg_sm.png}  \\
+\end{center}
+\end{table}
+From the regression models we can see that the only one with a p-value smaller than 0,05 is the model with the pinterest variable. Nevertheless even though the p-value is adequate the adjusted R-squared is extremely small. From these regression models we can see that the existence or not of a social media link is not correlated with the company's success. We didn't see any improvement not even in the multi regression model where we included all the social media variables.\\
+In order to conclude the analysis of the social media with the help again of the corrplot library we will create also a correlation table with all the variables in order to duplicate our results.
+\begin{table}[H]
+\centering
+\caption{Social media correlation table}
 \begin{center}
 \includegraphics[scale=0.5]{../R/photos/22_REV_SM.png}  \\
-\textit{High correlation between different social media existences.}
 \end{center}
 \end{table}
-Almost the 65 percent of the companies that we are examining have Facebook links on their home page. Almost the 67 percent of the companies that we are examining have Twitter links on their home page.Only the 22 percent of the companies that we are examining have instagram links on their home page. Only a small 10 percent of the companies that we are examining have pinterest links on their home page. The 58 percent of the companies that we are examining have YouTube links on their home page.The 57 percent of the companies that we are examining have YouTube links on their home page.\\
-From the above data we can conclude that the most frequently used social media is Facebook and Twitter and the least used ones is Instagram and Pinterest. The first conclusion can be easily confirmed since those two first social media are the most widely known.\\
-From the correlation plot we can see that the Revenues are correlated 8\% with instagram, 10\% with pinterest and 7\% with Youtube. Moreover, there are some high correlations between different social media such as Facebook and Twitter (67\%) and Twitter and LinkedIn (58\%). The code we used to create this chart is available in the Appendix.\ref{r: van: sm}
+From the correlation table we can see that the Revenues do not have any high correlation with the social media variables as we already have seen from the regression models. Again we can see that even if it is small and not important the highest correlation is again with the pinterest variable.\\
+Moreover what we can observe here is that the existence of specific social media is highly correlated with the existence of other social media. For instance there is a 69\% correlation between the existence of a twitter link and a facebook link, which can be explained due to the fact that the majority of the sites use both of these social media links.\\
+The code we used to create this chart is available in the Appendix.\ref{r3}
 
-\subsubsection{Links analysis and correlations}
-Next step is to analyse the distribution of the internal, external and total links and of course their correlation with each other and with the Revenues. We begin with the distribution of the variables in correlation with the Revenue variable:
-
+\section{Links variables analysis}
+The category that we are going to analyse now is the mink variables. More specifically we are going to analyse the distribution of the internal, external and total links and of course their correlation with each other and with the Revenues. First step is to see the distribution of the variables at hand:
 \begin{table}[H]
 \centering
-\caption{Total Links}
+\caption{Links variables summary}
 \begin{center}
-\includegraphics[scale=0.5]{../R/photos/24_totlinks_rev.png}  \\
-\textit{We can see that as the Revenues increase the total links are steadily going under 400.}
+\includegraphics[scale=0.4]{../R/photos/4_2_reg_links.png}  
 \end{center}
 \end{table}
-
+From the summary table we can see that the external links are distributed between 0 to 545. The mean and the median are not very close. Also we can see that the 75\% of the sites have 13 or less external links.\\
+\begin{figure}[H]
+\centering
+\caption{External links distribution}
+\begin{center}
+\includegraphics[scale=0.4]{../R/photos/4_2_ex.png}  
+\end{center}
+\end{figure}
+Regarding the internal links we can see that the prices are distributed in a more wide range between 0 and 1254 with the mean being 154 and the median 116.\\
+\begin{figure}[H]
+\centering
+\caption{Internal links distribution}
+\begin{center}
+\includegraphics[scale=0.4]{../R/photos/4_2_in.png}  
+\end{center}
+\end{figure}
+Finally the total links distribution is more close to the internal links one with the range being from 0 to 1255 and the mean 172 while the median is 133.\\
+\begin{figure}[H]
+\centering
+\caption{Total links distribution}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/4_2_tl_dist.png}  
+\end{center}
+\end{figure}
+Now that we saw the distribution of the variables we should see their correlation with the revenues variable by performing regression analysis with each variable and then with all the 3 variables together against the revenues one.\
 \begin{table}[H]
 \centering
-\caption{External links}
+\caption{Links regression models}
 \begin{center}
-\includegraphics[scale=0.5]{../R/photos/26_ext_rev.png}  \\
-\textit{Here the correlation is not so clear as in the total links.}
+\includegraphics[scale=0.6]{../R/photos/4_2_reg_mod_links.png}
 \end{center}
 \end{table}
-
-\begin{table}[H]
-\centering
-\caption{Internal links}
-\begin{center}
-\includegraphics[scale=0.5]{../R/photos/28_int_rev.png}  \\
-\textit{The internal links have a very similar distribution to the total links which is logical since the one is a subset of the other.}
-\end{center}
-\end{table}
-
-Now that we have the first glimpse of the variables and we understand that when the Revenues are increasing the number of the link is under some specific margins we can create also the correlation table to see if we can extract any other useful information:
-
+From the regression models we can see that non of the models show any correlation between the revenues variable and the variables at hand. In order to double check we will again create a correlation table:
 \begin{table}[H]
 \centering
 \caption{Links correlation table}
 \begin{center}
-\includegraphics[scale=0.5]{../R/photos/29_rev_cor_links.png}  \\
-\textit{The internal links are extremely correlated with the total links which as we said is logical since the one is a subset of the other.}
+\includegraphics[scale=0.6]{../R/photos/29_rev_cor_links.png}  \\
 \end{center}
 \end{table}
-From the correlation table we can see that the observation we made based on the previous charts, that the internal links distribution in relation to the Revenues is very similar to the one of the total links, can also be supported from this table were the correlation between the 2 variables is 95\%. This information might come handy later on when we are going to create regression models. The code for this section is available in the Appendix.\ref{r: van: l}
-\newpage
-\subsubsection{Loading time analysis and correlation}
-The loading time of the sites is a very important key performance indicator usually in website performance so it is very interesting to see if it has any strong correlation with the Revenues of these very successful companies that we are examining.:
+From the correlation table we can see that the observation we made based on the regression models that we created is true. We do not se any high correlation with the revenues variable. What we can see is an extremely high correlation with the internal links and the total links which was expected since the total links is the combination of the external and the internal ones and the total links have a very similar distribution with the internal links as we show before.The code for this section is available in the Appendix.\ref{r4}
+\section{Loading time variable analysis}
+The loading time of the sites is a very important key performance indicator usually in website performance so it is very interesting to see if it has any strong correlation with the revenues variable. The first step is to check the variables distribution:
+\begin{figure}[H]
+\centering
+\caption{Loading time distribution}
+\begin{center}
+\includegraphics[scale=0.4]{../R/photos/30_ld_dist.png}
+\end{center}
+\end{figure}
+From the above figure we can see that the range of the loading time for the companies at hand is between 0 and 4.06 with the mean price being 0.36 and the median being 0.26.\\
+The next step is to create a regression model against the revenues variable to see if there is any correlation.
 \begin{table}[H]
 \centering
-\caption{Loading time}
+\caption{Loading time regression model}
 \begin{center}
-\includegraphics[scale=0.4]{../R/photos/31_ld_rev.png}  \\
-\textit{Low loading time in the sites with the most Revenues.}
+\includegraphics[scale=0.9]{../R/photos/31_ld_rev.png}
 \end{center}
 \end{table}
-From the table above we can see that the loading time in relation to the Revenues has a small correlation. The companies that have the highest Revenues have also a very small loading time. Moreover we can see that the companies that have more than 100 million Revenues have loading times under 1 second. Moreover, in the correlation table in the next section we can see that the loading time has indeed a negative relation with the Revenues (-12\%)(\pageref{lod}).This means that when the one variable price is going up the others' variable price should go down. This is also an expected outcome since as we said before the time a site does to open is very important to the users as they can easily grow impatient and look somewhere else. This is due to the grand variety of choices available on-line that makes the user feeling powerful. The code for this table is available in the Appendix.\ref{r: van: load}
-\subsubsection{Content analysis and correlation}
-The next step is to analyse the distribution of the variables that are related to the content and the text of the websites in relation to the Revenues of the companies at hand. As we explained in the Python chapter\ref{M:Content} we gathered 3 variables that are related to the grammatical overview of the text that is being used in the sites - which are the numbers of words, the number of unique words and the number of sentences - and 2 variables that are trying to explain if the content of this text is comprehensible from the majority of the users or not. Following below we have the charts with the distribution of those variables prices across the sites under examination and their relation to the Revenues.
+From the regression model we can see that the p-value is smaller than 0.05 and the Adjusted R-square is 0.012 which is very low again. The code for this table is available in the Appendix.\ref{r5}
+\section{Content variable analysis}
+The next step is to analyse the distribution of the variables that are related to the content and the text of the websites in relation to the Revenues of the companies at hand. As we explained in the Python chapter\ref{M:Content} we gathered 3 variables that are related to the grammatical overview of the text that is being used in the sites - which are the numbers of words, the number of unique words and the number of sentences - and 2 variables that are trying to explain if the content of this text is comprehensible from the majority of the users or not. Following below we have the table with the distributions of those variables prices across the sites under examination:
 \begin{table}[H]
 \centering
-\caption{Number of Sentences vs Revenues}
+\caption{Content variables distribution}
 \begin{center}
-\includegraphics[scale=0.4]{../R/photos/33_sent_rev.png}  \\
-\textit{In high Revenues the number of sentences is smaller that 500.}
+\includegraphics[scale=0.4]{../R/photos/4_2_dist_content.png}
 \end{center}
 \end{table}
-From the table we can see that most sites have less than 500 sentences in their home page. Moreover while the Revenues price is going up the number of sentences seems to getting lower. For the sites that have more than 100 million dollars in Revenues the number of sentences drops under 250. Half the number of sentences that we can see in sites with lower Revenues. Moreover, in the correlation table in the that will follow we can see that the number of sentences have indeed a negative relation with the Revenues (-1\%)(\pageref{lod}).
+From the distribution table we can see that the sentences in each site are between 1 and 1350 with the mean being 176 and the median 139.
+\begin{figure}[H]
+\centering
+\caption{Sentences distribution}
+\begin{center}
+\includegraphics[scale=0.4]{../R/photos/4_2_s.png}   
+\end{center}
+\end{figure}
+The distribution of words as it was expected is wider than the sentences. It begins from only 1 word and reaching 8306 words in a site. Although the max price is an outsider if we take into account that the mean is 685 and the median 500.
+\begin{figure}[H]
+\centering
+\caption{Words distribution}
+\begin{center}
+\includegraphics[scale=0.4]{../R/photos/4_2_w.png}   
+\end{center}
+\end{figure}
+The unique words we expect to be a lot lower than the total words and that's exactly the case. The unique words are between 0 to 1910 with a mean of 151 and a median of 109.
+\begin{figure}[H]
+\centering
+\caption{Unique words distribution}
+\begin{center}
+\includegraphics[scale=0.4]{../R/photos/4_2_uw.png}   
+\end{center}
+\end{figure}
+Now regarding the flesh measure we can see that the price range is between -3422 to 121. Although in order to better understand and comprehend the explanation of the flesh measure we created the readability index as well which goes from 1 (which means very easy to read) to 7 which is very confusing text. The mean and the median are close to 3. We can see in the below figure that the most companies choose to have a very easily readable text:
+\begin{figure}[H]
+\centering
+\caption{Readability distribution}
+\begin{center}
+\includegraphics[scale=0.5]{../R/photos/41_read_dist.png}   
+\end{center}
+\end{figure}
+Now that we have seen the distribution of the variables at hand we should also check their correlation with the revenues variable by performing simple regression models with the dependent variable being the revenues and also multi regression models with all the variables of the group plus the loading time variable from the previous sector to see if in combination the variables are correlated more with the revenues. In the following table we can see the results of these regression models:
 \begin{table}[H]
 \centering
-\caption{Number of Words vs Revenues}
+\caption{Content variables regression models}
 \begin{center}
-\includegraphics[scale=0.4]{../R/photos/37_w_rev.png}   \\
-\textit{In high Revenues the number of words is smaller that 1000.}
+\includegraphics[scale=0.6]{../R/photos/4_2_reg_content.png}   \\
 \end{center}
 \end{table}
-By the same logic as the sentences in relation to the revenues so does the number of words seems to drop when the revenues go up. Furthermore here we can see that the decrease starts in lower revenues prices (around the 50 million dollars). This is expected if we take into consideration that the number of words is always correlated to the number of sentences. Most sites do not want to have very long sentences in order not to bore the reader. So since the number of sentences incline when the revenues are increasing we anticipate that the number of words will have the same reaction to the revenues.Moreover, in the correlation table in the that will follow we can see that the number of words have indeed a negative relation with the Revenues (-3\%)(\pageref{lod}).
-\begin{table}[H]
-\centering
-\caption{Number of Unique Words vs Revenues}
-\begin{center}
-\includegraphics[scale=0.4]{../R/photos/35_uw_rev.png}    \\
-\textit{In high Revenues the number of unique words is close to zero.}
-\end{center}
-\end{table}
-The number of unique words differs from the actual number of all the words. Here we are trying to see how many not commonly used words does each site uses. Here the distribution is not so clear as it was for the two previous variables but still we can see that in the most sites that have high Revenues the number of unique words are very small. Moreover, in the correlation table in the that will follow we can see that the number of unique words have indeed a negative relation with the Revenues (-4\%)(\pageref{lod}).
+From the above table we can see that the only model with a p value lower than 0,05 is the loading time model which we have already seen in the previous chapter and we said that regardless the fact that the p value is low the adjusted r-square is too low so as to see a specific correlation. Moreover we will do here as well a correlation plot to see if we will see the same results there as well:
 \begin{table}[H]
 \centering
 \caption{Correlation table}\label{lod}
 \begin{center}
-\includegraphics[scale=0.7]{../R/photos/38b_words_corr.png}    \\
-\textit{Sentences, words and unique words are highly correlated.}
+\includegraphics[scale=0.45]{../R/photos/43b_read_cor.png}    
 \end{center}
 \end{table}
-From the correlation table we can also observe that the three variables we examined regarding the text of the websites are highly correlated with each other which as we already explained is an expected outcome. \\
-Now that we analysed the 3 variables regarding the text attributes we should also analyse the 2 variables regarding the readability index of the websites' texts. Since of course the flesch measure variable was the source for calculating the readability variable we will analyse here only the readability variable thoroughly while the diagrammatically analysis of the flesh measure variable will be available in the Appendix.\ref{r: van: cont}
+From the correlation table we can also observe that the three variables we examined regarding the text of the websites are highly correlated with each other which as we already explained is an expected outcome.\\
+Moreover the biggest correlation is -12\% with the loading time and the revenues as we have already seen from the simple regression models we created. The code for this section is available in the Appendix.\ref{r6}
+
+\section{HTML validation variables analysis}
+During the extraction of the HTML validation variables we created 4 different metrics: the "number of errors", the "number of warnings", the "non document error" and "the page opened" one. In this section we are going to analyse the distributions of the three of those variable since the variable "the page opened" has the same price across all websites under examination and it would not offer us any further assistance in this analysis. In the below table we can see the distribution of the three html variables:
 \begin{table}[H]
 \centering
-\caption{Readability distribution table}
+\caption{HTML validation variables distribution}
 \begin{center}
-\includegraphics[scale=0.5]{../R/photos/41_read_dist.png}    \\
-\textit{Most sites are difficult to read.}
+\includegraphics[scale=0.5]{../R/photos/4_2_sum_html.png}    
 \end{center}
 \end{table}
-\begin{table}[H]
+From the above table we can see that the non document error can take either 1 or 0 prices and each mean is 0.22.\\
+\begin{figure}[H]
 \centering
-\caption{Readability vs Revenues table}
+\caption{Non document error distribution}
 \begin{center}
-\includegraphics[scale=0.5]{../R/photos/42_read_rev.png}   \\
-\textit{Most sites are difficult to read.}
+\includegraphics[scale=0.4]{../R/photos/4_2_n.png}   
 \end{center}
-\end{table}
-From the above two charts we can see that firstly the most sites are difficult to be read and secondly that the readability index in relation to the Revenues does not show a clear pattern. The two sites with the most Revenues seems to be fairly difficult to read. What we can definitely see is that the sites that are very easy to be read all have revenues under 50 million dollars. This could mean that even though the users do not want to read very difficult texts they also do not want extremely easy ones. Maybe the correlation plot could help us have a clearer view of the relationship between the 2 variables.
-\begin{table}[H]
-\centering
-\caption{Correlation table}
-\begin{center}
-\includegraphics[scale=0.7]{../R/photos/43b_read_cor.png}    \\
-\textit{Flesh measure and readability variables are negative correlated.}
-\end{center}
-\end{table}
-From the correlation plot we can see that the Revenues have a very small negative correlation with the readability variable (-3\%). While the readability variable and the flesh measure variable as it was expected they have a negative correlation (-17\%). This means that the bigger the price in the flesch measure the lower the price in the readability variable. If we consider that the best prices of the flesh measure are the highest while respectively for the readability variable are the lowest then it is a normal correlation.
-\subsubsection{HTML validation variables analysis and correlation}
-During the extraction of the HTML validation variables we created 4 different metrics: the number of errors, the number of warnings the non document error and the page not opened one. In this section we are going to analyse the distributions of those variables and also their correlation with the Revenues:
-\begin{table}[H]
+\end{figure}
+The number of errors variable has a range of 0 to 995 while the 75\% of the observations are equal or less to 37 errors which is almost equal to the mean while the median is 13.\\
+\begin{figure}[H]
 \centering
 \caption{Number of errors distribution}
 \begin{center}
-\includegraphics[scale=0.5]{../R/photos/44_errors_dist.png}    \\
-\textit{Very few companies have big number of errors.}
+\includegraphics[scale=0.4]{../R/photos/4_2_ne.png}   
 \end{center}
-\end{table}
-\begin{table}[H]
+\end{figure}
+The number of warning are less than the number of errors and their range is from 0 to 214 with a mean 8.6 and a median 3. Again here the mean is very close to the 3rd quarter value which is 9 and means that the 75\% of the variables have equal or less warnings than 9.\\
+\begin{figure}[H]
 \centering
 \caption{Number of warnings distribution}
 \begin{center}
-\includegraphics[scale=0.5]{../R/photos/46_warn_dist.png}    \\
-\textit{The majority of the companies have less than 25 warnings.}
+\includegraphics[scale=0.4]{../R/photos/4_2_nw.png}   
 \end{center}
-\end{table}
+\end{figure}
+Now that we have understand the distribution of the html validation variables we should perform the simple and the multiple regression models to see the correlation of those variables with the companies revenues in an atomic level but also as a group of variables. In the below table we can see the results of the regression models that were performed:
 \begin{table}[H]
 \centering
-\caption{Non document error vs Revenues table}
+\caption{Html validation variables regression models}
 \begin{center}
-\includegraphics[scale=0.5]{../R/photos/49_nde_rev.png}    \\
-\textit{In highest revenues there is no document error.}
+\includegraphics[scale=0.6]{../R/photos/4_2_reg_html.png}    \\
 \end{center}
 \end{table}
+From the regression models we can see that the only one that has 0.05 p value is the one with the number of warning but still it has a very low Adjusted R-square. In order to double check the results we will create a correlation table as well with the help of the library corrplot:
 \begin{table}[H]
 \centering
-\caption{Correlation table}
+\caption{Html validation correlation table}
 \begin{center}
-\includegraphics[scale=0.5]{../R/photos/51b_HTML_cor.png}    \\
-\textit{Positive correlation of Revenues with the number of errors and the number of warnings.}
+\includegraphics[scale=0.6]{../R/photos/51b_html_cor.PNG} 
 \end{center}
 \end{table}
-The table of the "document opened" variable which is available in the Appendix\ref{r: van: HTML} is not included since it has the same price for all the sites thus there were no meaning examining its correlation to the revenues. Regarding the four tables above we can see that the number of errors and the number of warning have a small positive correlation with the Revenues (8\% and 10\% respectively). Moreover the variable non document error has a negative correlation to the revenues (-7\%) as well as with the number of errors and the number of warnings.
-\subsubsection{Image types, number and pixels analysis and correlation}
+From the correlation table we can firstly see that the regression models where correct as the biggest correlation is between the number of warnings variable but still the correlation is pretty small. Moreover we can also see that there is not any important correlation between the variables as well. The code for this section is available in the Appendix\ref{r7} 
+\section{Image variables analysis}
 Last but not least we should analyse the distribution of the different types of images that are being used on the websites we are examining and also compare the total images with the Revenues to see their correlation.
 \begin{table}[H]
 \centering
-\caption{Total images vs Revenue table}
+\caption{Image variables distribution}
 \begin{center}
-\includegraphics[scale=0.5]{../R/photos/53_timg_rev.png}    \\
-\textit{Most sites under 250 images.}
+\includegraphics[scale=0.5]{../R/photos/4_2_sum_img_1.png}    
+\includegraphics[scale=0.5]{../R/photos/4_2_sum_img_2.png}    
 \end{center}
 \end{table}
-From the above chart we can see that the most sites have less than 250 images. Although there is one site that has more than 2000 images. Moreover we can see that the sites with more than 100 million dollars revenues have even less than 175 images one their home page. Now that we have a first glance of the total images in the sites we should examine the nine different types of images that we have gathered.
+From the above tables we can see that the bmp image type price range is between 0 to 23 with a median 0 and a mean 0.069.
+\begin{figure}[H]
+\centering
+\caption{Bmp format distribution}
+\begin{center}
+\includegraphics[scale=0.4]{../R/photos/4_2_bmp.png}   
+\end{center}
+\end{figure}
+The dib image type has a bigger range between 0 to 35 with a same median 0 and a mean 0.186.
+\begin{figure}[H]
+\centering
+\caption{Dib format distribution}
+\begin{center}
+\includegraphics[scale=0.4]{../R/photos/4_2_dib.png}   
+\end{center}
+\end{figure}
+The gif image type has a wider range of 0 to 143 with a median 1 and a mean 4.
+\begin{figure}[H]
+\centering
+\caption{Gif format distribution}
+\begin{center}
+\includegraphics[scale=0.4]{../R/photos/4_2_gif.png}   
+\end{center}
+\end{figure}
+The jpe image type has an even bigger range between 0 to 968 with a median 0 and mean 2.9.
+\begin{figure}[H]
+\centering
+\caption{Jpe format distribution}
+\begin{center}
+\includegraphics[scale=0.4]{../R/photos/4_2_jpe.png}   
+\end{center}
+\end{figure}
+Similar distribution follows also the jpeg format with the only difference being that here the mean is 2.8.
+\begin{figure}[H]
+\centering
+\caption{Jpeg format distribution}
+\begin{center}
+\includegraphics[scale=0.4]{../R/photos/4_2_jpeg.png}   
+\end{center}
+\end{figure}
+The jpg format has a smaller range of 0 to 363 with a bigger median 8 and a mean of 18.
+\begin{figure}[H]
+\centering
+\caption{Jpg format distribution}
+\begin{center}
+\includegraphics[scale=0.4]{../R/photos/4_2_jpg.png}   
+\end{center}
+\end{figure}
+The png format is very similar to the jpg with a range from 0 to 304 and a median 8 and a mean 15.46.
+\begin{figure}[H]
+\centering
+\caption{Png format distribution}
+\begin{center}
+\includegraphics[scale=0.4]{../R/photos/4_2_png.png}   
+\end{center}
+\end{figure}
+The tif format while has a similar range with the previous 2 formats from 0 to 301 the mean is quite smaller 4.21 and the median is 0.
+\begin{figure}[H]
+\centering
+\caption{Tif format distribution}
+\begin{center}
+\includegraphics[scale=0.4]{../R/photos/4_2_tif.png}   
+\end{center}
+\end{figure}
+The tiff format has a range of 0 to 2 which means that is not used in abundance from the websites at hand. The mean and the median are close to 0 that means that most of the sites are not using this format at all.
+\begin{figure}[H]
+\centering
+\caption{Tiff format distribution}
+\begin{center}
+\includegraphics[scale=0.4]{../R/photos/4_2_tiff.png}   
+\end{center}
+\end{figure}
+The total images us the results from all the images we have selected and we can see that the variable has a range from 0 to 2162 with a median 34 and a mean 47. The 75\% of the websites use 42 or less images in their home page.
+\begin{figure}[H]
+\centering
+\caption{Total images distribution}
+\begin{center}
+\includegraphics[scale=0.4]{../R/photos/4_2_tim.png}   
+\end{center}
+\end{figure}
+Finally the pixels variable has a range from 13220 to 55 million pixels per site. With a median of 4 million and a mean of 5 million pixels. The 75\% of the sites have 6 million pixels or less.
+\begin{figure}[H]
+\centering
+\caption{Pixels distribution}
+\begin{center}
+\includegraphics[scale=0.4]{../R/photos/4_2_pix.png}   
+\end{center}
+\end{figure}
+Now that we show the distribution of the variables in this category we can now proceed with the creation of the simple regression models and then with a multiple regression models that will contain as independent variables all the variables of the group and as dependent variable the revenues. In the below table we can see the results of the regression models that were created:
 \begin{table}[H]
 \centering
-\caption{BMP distribution}
+\caption{Image variables regression models}
 \begin{center}
-\includegraphics[scale=0.4]{../R/photos/54_bmp_dist.png}    \\
-\textit{Most sites do not have bmp images.Only 4 sites actually uses bmp images.}
+\includegraphics[scale=0.6]{../R/photos/4_2_reg_img.png}    
 \end{center}
 \end{table}
+From the regression models we can see that none of the models we created have a p-value lower than 0,05. Nevertheless the models for the dib format and the bmp format have p-value lower than 0,1 but still have very low adjusted R-squares. The next step is to create also the correlation table in order to double check our findings. In the following table we can see the correlations between all the variables of the image group with the revenues:
 \begin{table}[H]
 \centering
-\caption{DIB distribution}
+\caption{Image variables correlation plot}
 \begin{center}
-\includegraphics[scale=0.4]{../R/photos/55_dib_dist.png}    \\
-\textit{Very small number of companies use this type of images.80\% of the websites do not use this format.}
+\includegraphics[scale=0.3]{../R/photos/4_2_cor_img.png}    
 \end{center}
 \end{table}
+From the correlation table we can see that even though all the variables under examination are not highly correlated with the revenues the two more correlated are the dib and the bmp format as we already have seen from the regression models as well. Furthermore we can see that the total images areas expected very high correlated with all the image formats and also with the pixels of the websites. The code for this section is available in the Appendix. \ref{r8}
+\section{Multiple Regression analysis with different fortune 500 variables}
+By completing the variable analysis and correlation comparison in groups with the revenues now we will continue with the multiple regression analysis where we will use for independent variables all the website variable we have collected and as dependent variable one of the fortune 500 variables each time. In that way we want to test if in combination there will be some variables that do correlate with some of the status variables we have gathered. In the following table we can see the p-value and the adjusted r-squared prices from the regression models we have created:
 \begin{table}[H]
 \centering
-\caption{GIF distribution}
+\caption{Fortune 500 regression models}
 \begin{center}
-\includegraphics[scale=0.4]{../R/photos/56_gif_dist.png}    \\
-\textit{60\% of the websites use this format.}
+\includegraphics[scale=0.5]{../R/photos/4_2_reg_f500.png}    
 \end{center}
 \end{table}
-\begin{table}[H]
-\centering
-\caption{JPE distribution}
-\begin{center}
-\includegraphics[scale=0.4]{../R/photos/57_jpe_dist.png}    \\
-\textit{Very small number of companies use this type of images.80\% of the websites do not use this format.}
-\end{center}
-\end{table}
-\begin{table}[H]
-\centering
-\caption{JPEG distribution}
-\begin{center}
-\includegraphics[scale=0.4]{../R/photos/58_jpeg_dist.png}    \\
-\textit{Very small number of companies use this type of images.80\% of the websites do not use this format.}
-\end{center}
-\end{table}
-\begin{table}[H]
-\centering
-\caption{JPG distribution}
-\begin{center}
-\includegraphics[scale=0.4]{../R/photos/59_jpg_dist.png}    \\
-\textit{85\% of the websites use this image type.}
-\end{center}
-\end{table}
-\begin{table}[H]
-\centering
-\caption{PNG distribution}
-\begin{center}
-\includegraphics[scale=0.4]{../R/photos/60_png_dist.png}    \\
-\textit{90\% of the websites use this image type.}
-\end{center}
-\end{table}
-\begin{table}[H]
-\centering
-\caption{TIF distribution}
-\begin{center}
-\includegraphics[scale=0.4]{../R/photos/61_tif_dist.png}    \\
-\textit{More than 50\% of the companies do not use this image format.}
-\end{center}
-\end{table}
-\begin{table}[H]
-\centering
-\caption{TIFF distribution}
-\begin{center}
-\includegraphics[scale=0.4]{../R/photos/62_tiff_dist.png}    \\
-\textit{Almost zero occurrences to all websites.}
-\end{center}
-\end{table}
-\begin{table}[H]
-\centering
-\caption{Correlation table}
-\begin{center}
-\includegraphics[scale=0.55]{../R/photos/63b_img_cor.png}    \\
-\textit{Number of errors positive correlated with number of warnings.}
-\end{center}
-\end{table}
-From the correlation table we can see that the revenues are positively related to every type of images except from .tif, .tiff) and .gif. A hypothesis that if we take into account that the largest number of those type of photos occurred in companies that have the smallest revenues from the examined ones can be easily supported. Moreover, the highest positive correlation (8\%) is with .bmp image format. \\
-Furthermore as expected the total images is highly correlated with all the formats since they are the outcome of the sum of all the occurrences of all the types of images at hand. In addition based on all the previous tables of this section we can conclude that from all the types of images that were examined the most commonly used types are the .png (in 90\% of the websites)and the .jpg(in 85\% of the websites).
-\subsection{Data manipulation}
-Even though we concluded the analysis part of the variables we still haven't examined the different image sizes we have gathered from the python scripts. Due to the very large amount of different sizes that we were able to gather we should find a way to reduce those variables in order to make it possible to run regression models. In this chapter we are going to examine those variables that we have created in order to see which ones are more meaningful to take further along on the analysis. 
-\subsubsection{Remove variables}
-Now that we have created and analysed all the needed variables we can subtract from the data frame the variables that we have decide not to include in the regression analysis that will follow. Those are all the image sizes except from the 24 that were mentioned in the above section as well as the following ones:
-\begin{enumerate}
-\item Market Value 
-\item Assets
-\item Ranking
-\item Total Stockholder Equity
-\item The page not opened variable
-\end{enumerate}
-Those variables are being removed for the following reasons. The first four variables are data from the fortune 500 pages of the companies and we downloaded in order to determine which of those metrics we will use in order to see if the performance indicators of the websites effect the company's status. Since we have already reach to the conclusion that the variable we are going to use for this purpose is the Revenues there is no need keeping the other ones as well.\\
-Regarding the fifth variable, the reason we will remove it is that the prices of the variable do not differ in any site. For all the sites they are the same so there is no point in further examining it.
-
-\subsection{Regression analysis}
-By completing the variable analysis we have ended up with 52 variables that are key performance indicators for the websites of the companies we are examining and 1 variable that shows the status of the companies. The names of the variables are available in the following table:
-\begin{table}[H]
-\centering
-\caption{Final Variables for Regression}
-\begin{tabular}{lll}
-\hline & & \\
-1.	Revenues
-& 2.	Non document error
-& 3.	Number of errors
-\\4.	Number of warnings
-& 5.	Facebook
-& 6.	Instagram
-\\7.	Linkedin
-& 8.	Pinterest
-& 9.	Twitter
-\\10.	Youtube
-& 11.	Flesh Measure
-& 12.	Readability
-\\13.	Sentences
-& 14.	Unique words
-& 15.	Words
-\\16.	external
-& 17.	internal
-& 18.	total links
-\\19.	15x75
-& 20.	8x15
-& 21.	44x556
-\\22.	1x1
-& 23.	800x1200
-& 24.	100x100
-\\25.	24pxx133px
-& 26.	21pxx173px
-& 27.	46x214
-\\28.	49x49
-& 29.	50x45
-& 30.	400x300
-\\31.	292pxx292px
-& 32.	200pxx200px
-& 33.	1279pxx984px
-\\34.	300pxx1500px
-& 35.	29x29
-& 36.	115x223
-\\37.	160x233
-& 38.	300x993
-& 39.	41x192
-\\40.	28x221
-& 41.	15x12
-& 42.	60x60
-\\43.	bmp
-& 44.	dib
-& 45.	gif
-\\46.	jpe
-& 47.	jpeg
-& 48.	jpg
-\\49.	png
-& 50.	tif
-& 51.	tiff
-\\52.	total images
-& 53.	loading time     
-\\ \hline
-\end{tabular}
-\end{table}
-As we can see from the above table the final variables are from almost every group of information that we manage to gather. There are variables concerning the HTML validation, the social media existence, the image types and sizes, the number of links, the content in terms of text and readability and the loading time of the websites. All of those variables cover again all the six dimensions from which we began this research.\\
-In this chapter we will perform a regression analysis to the chosen data frame in order to determine the variables that correlate the most with the price of the revenues of a company. The code that was created for this section is available in the Appendix\ref{r: van: rg}. While the summary of the models that will be analysed in this section are available in the Appendix\ref{d :r :1a}\\
-In statistics there are two main types of regressions the linear and the logistic regression. The linear regression is an approach for modelling the relationship between a scalar dependent variable y and one or more explanatory variables (or independent variables) denoted X. The case of one explanatory variable is called simple linear regression. For more than one explanatory variable, the process is called multiple linear regression.\\
-The logistic regression, or logit regression, is a regression model where the dependent variable (DV) is categorical.Cases where the dependent variable has more than two outcome categories may be analysed in multinomial logistic regression, or, if the multiple categories are ordered, in ordinal logistic regression.\\
-Since the variable Revenues which is the dependent variable we have chosen is a scalar numeric variable we will perform linear regression to the final data frame we have created.
-
+From the regression models above we can see that the only model we created that has a p-value lower than 0,05 is the one we used as dependent variable the market value. Nevertheless the adjusted r-square remains low even in this model.\\
+From the models we created we can see that in the one where the Revenues were used as an independent variable the variables of the websites that were considered to be more correlated and important for the model were the image format dib and the loading time.\\
+Moreover in the model where the Ranking was used as an independent variable the variables of the websites that were considered to be more correlated and important for the model were the number of errors, the existence of a link in the youtube channel and the loading time.\\
+In the model where the Profit per Revenues variable was used as an independent variable there was not a specific variable that was more important for the model.\\
+Additionally in the model where the Market value was used as an independent variable the variables of the websites that were considered to be more correlated and important for the model were the image formats bmp, jpe,jpeg, tiff.\\
+Finally in the model where the Total stockholders equity variable was used as an independent variable the variables of the websites that were considered to be more correlated and important for the model were the non document error, the facebook existence, the linkedIn existence and the loading time.\\
+The codes and the regression models that were created for this section are available in the Appendix.\ref{r9} While the full regression models of this sections are also available in the Appendix.\ref{appRT}
  
-
-\pagebreak  
+ 
 \chapter{Conclusions}
-With the completion of all the stages of the paper's analysis we showed if there were any correlation between some of the most important metrics of a website and the revenues of the firm that owns the specific website. By gathering the elements we wanted to examine, with the help of the programming language Python, we were able to perform a statistical analysis on them, with the use of the programming language R in the environment of the R-Studio, and moreover create regression models and predictive models that can provide us with a better understanding of the variables correlation with the revenues. Based on those results we can answer the questions that were raised in the beginning of this paper:
+With the completion of all the stages of the analysis we showed if there were any correlation between some of the most important metrics of a website and the status (in terms of specific metrics that we have gathered) of the firm that owns the specific website. By gathering the elements we wanted to examine, with the help of the programming language Python, we were able to perform a statistical analysis on them, with the use of the programming language R in the environment of the R-Studio, and moreover create regression models that can provide us with a better understanding of the variables correlation. Based on those results we can answer the questions that were raised in the beginning of this paper:
 \begin{enumerate}
 \item \textbf{\textit{Do the revenues of a company correlate to specific metrics (or to some of the 6 dimensions of a website's design quality based on the user's perception) of the company's website?}}\\
-Based on the analysis that was conducted there were many variables that seem to be correlated with the revenues of a company. The were small and high correlations as well as negative and positive ones depending on the variable at hand. Most of them did show that can correlate up to a specific point with the revenues of a firm. The variables that seem to correlate with the revenues were from all six dimensions of a website's design quality that have been deemed important by the users.
-\item \textbf{\textit{Which of the metrics under examination are correlated the most with the revenues of each company of the Fortune 500 ones?}}\\
-Even though most of the metrics had even a small correlation with the revenues there were specific variables that seemed to be correlated in a high level with the revenues of the company. These metrics are the loading time of the web page, the number of errors, the existence of a youtube channel link in the home page of the site, the usage of specific image types and the non usage of specific image dimensions. This findings can be supported by the initial study we were based our model on since the metrics are part of the 6 dimensions of a website's design quality that have been deemed important by the users from a previous research.\cite{key9}
-\item \textbf{\textit{Can there be a predictive model that, based on the prices of the metrics that will be characterized as the more important ones from the findings, could forecast up to a specific level with good accuracy the revenues of an enterprise?}}\\
-In the analysis part of the paper that was conducted we created six regression models, by using the 70\% of the observations and then we checked how well they can predict the revenues of the test set's observations (the remaining 30\% of the dataset). The best model that was created and for which also applied the rule of collinearity has an Adjusted R Squared 76,51\%.
+Based on the analysis that was conducted most of the variables do not have very high correlation when they are examined in an one to one bases with the revenues of the companies. Nevertheless the variables among the ones we analysed that seemed to have even a slight correlation with the revenues are from two of the six dimensions that we are examining and more specifically the entertainment quality, the system quality.
+\item \textbf{\textit{Which of the metrics under examination are correlated (individually) the most with the revenues of each company of the Fortune 500 ones?}}\\
+Even though most of the metrics had even a small correlation with the revenues there were specific variables that seemed to be correlated more than the others, in the simple regression models that we performed, with the revenues of the company. These metrics are the loading time of the web page, the number of warnings, the image format dib and the image format bmp. This findings can be supported by the initial study we were based our model on since the metrics are part of the 6 dimensions of a website's design quality that have been deemed important by the users from a previous research, as it is also mentioned in the previous hypothesis answer.\cite{key9}
+\item \textbf{\textit{Which of the metrics under examination are correlated (in groups) the most with the revenues of each company of the Fortune 500 ones?}}\\
+When we examined the variable by splitting them in group based on their purpose, for instance all the social media variables together, we didn't found any correlation with the revenues worth mentioning. Although when we used all the variables together against one variable of the fortune 500 variables we have gathered we could see that based on the best model we created the variables that seem to correlate the most in combination with the market value this time are specific image formats. Moreover in the 5 models we created we saw some similarities in terms of the variables that were deemed important the loading time for example, and specific format were important in more than one model.
 \end{enumerate}
 In the following sectors there will be a summary of the findings of this research along with an explanation on how those findings can contribute to the already existent studies.
 \section{Findings summary}
@@ -929,39 +922,32 @@ With the completion of the analysis we can reach to the conclusion that the most
 \begin{itemize}
 \item  \textbf{The loading time of the home page:} \\
 Page loading time is obviously an important part of any website's user experience. And in many cases companies let it slide to accommodate better aesthetic design, new nifty functionality or to add more content to web pages. Unfortunately, website visitors tend to care more about speed than the rest of the spectaculars that a website can offer. Additionally, page loading time is becoming a more important factor when it comes to search engine rankings.\\
-Search engines like Google use page loading time in algorithms that determine search engine rankings, meaning that they are more likely to guide users to sites that load quickly. This can explain the fact that the loading time has a negative correlation with the company's status (in terms of revenues). As a result the findings of this paper comes to confirm the already established theory that loading time is an important factor in how a user is perceiving a website. The user perception has to do with his future endeavours with the firm and if he has an ill formed opinion he most likely won't use the company's product again. Based on these facts and the system quality dimension of a website's quality from a user perspective this finding can easily be supported.
-\item \textbf{ Whether or not the company choose to have an YouTube channel account}: \\
-The analysis showed that whether or not a company choose to have a hyperlink on its website of its youtube channel account has a positive correlation with its revenues. YouTube is arguably the most popular online videos sharing site nowadays. To further augment its service with better revenue, it has started working with content owners (known as YouTube partners) whose copyrighted videos and channels have pulled massive audience. By uploading high-quality premium videos, the partners have essentially changed the user-generated content feature of YouTube and further increased YouTube's popularity.\cite{key89} This fact along with the findings of another paper\cite{key12}, that state that a user seeks to be entertained in a website through multimedia, can support this findings.
-\item \textbf{Whether or not a company uses specific image sizes}:\\
-The fact that the sizes of the images are extremely important on the status of a company is not a surprise. There has been several studies that have shown that the layout of a website is extremely important in how the user interacts with it. The ease of navigation is not only correlated with the hyper links as we have already mentioned but also with the structure and the layout of a website. This means that specific dimensions may render the site less attractive to the user and create a level of difficulty for him to navigate on it.\cite{key11,key20,key23,key24,key25}\\
-Based on the results of this paper we located some specific dimensions that have negative correlation with the revenues of a firm. In other words if a company chooses to use these image sizes it is more likely to make it more difficult for the user to navigate on it's website and as a result to decrease his satisfaction regarding the specific company and it's home page.   
-\item \textbf{Whether or not the images that are being used are of specific types}:\\
+Search engines like Google use page loading time in algorithms that determine search engine rankings, meaning that they are more likely to guide users to sites that load quickly. This can explain the fact that the loading time has a negative correlation with the company's status (in terms of revenues). As a result the findings of this paper comes to confirm the already established theory that loading time is an important factor in how a user is perceiving a website. The user perception has to do with his future endeavours with the firm and if he has an ill formed opinion he most likely won't use the company's product again. Based on these facts and the system quality dimension of a website's quality from a user perspective this finding can easily be supported. 
+\item \textbf{Whether or not the images that are being used are of specific formats}:\\
 The type of images are correlated with the loading time of the website in a very high level. There are specific image and multimedia files that can delay in a very high degree the time that a website will do to upload it's pages. As it has been mentioned before the importance of a fast loading site is extremely important for the users.\cite{key19,key3,key22}\\
-The two image formats that seems to correlate the most with the revenues are the bmp format, which is widely used and easy to load and as a result the correlation with the revenues is positive and the gif formats. Those formats are a little harder to load as they have movement in them. That is why the correlation in this case is negative. These facts, combined with the user satisfaction regarding a fast loading site explains the reason that those correlations exists.
-\item \textbf{The number of errors of the HTML code of a website}:\\
-Here we found an unusual correlation with the revenues. The number of errors seems to have a small positive correlation with them. That can only be explained by the complexity of the modern websites. In order to make the layouts and the structure of the websites more appealing to the user's so as to cover the navigation quality dimension\cite{key11,key20,key23,key24,key25} of the visitors, is inevitable for the web designers not to make a mistake in the code. This finding although can be researched even more in order to verify this hypothesis.
+The two image formats that seems to correlate the most with the revenues are the bmp format, which is widely used and easy to load and also the dib format which is quite similar to the bmp one. Based on this information and in combination with the user satisfaction regarding a fast loading site we can understand and explain the existence of this correlation. 
+\item \textbf{The number of warnings of the HTML code of a website}:\\
+Here we found an unusual correlation with the revenues. The number of warnings seems to have a small positive correlation with them. That can only be explained by the complexity of the modern websites. In order to make the layouts and the structure of the websites more appealing to the user's so as to cover the navigation quality dimension\cite{key11,key20,key23,key24,key25} of the visitors, is inevitable for the web designers not to make a mistake in the code. This finding although can be researched even more in order to verify this hypothesis.
 \end{itemize}
-Based on those results the model we created in the beginning of the paper shows that by founding the metrics, that we then compared with the revenues of the companies (or in other words with its status), based on the six web design's quality dimensions, shows that even though all six dimensions plays an important role from a user's perspective, from the company's status perspective the dimensions that do have a correlation are the following ones:
+Based on those results the model we created in the beginning of the paper shows that by founding the metrics, that we then compared with the revenues of the companies (or in other words with its status), based on the six web design's quality dimensions, shows that the dimensions of the framework that do have a correlation are the following ones:
 \begin{itemize}
 \item The system quality
 \item The entertainment quality
-\item The navigation quality
 \end{itemize}
 \section{Findings contribution}
 The findings that were analysed in the previous sections can be used in order to help in a theoretical level the existing studies but also in a managerial level.
 \subsection{Theoretical level}
-The findings of this paper are confirmed by previous studies that have been conducted regarding the relationship between a company's website and its revenues. The adding value that this paper can give to the already existing research is the fact that the results are not grouped by any industry. Moreover the research did not involve any questionnaire in order to implement the perspective of the website users in it's results. This means that the metrics which proved to be related with the revenues are common among all successful firms.\\
-Furthermore while some already conducted researches showed that the readability level should be easy in order for the users to be satisfied with it, the actual results of the paper show that a user is willing to read a more difficult text. Of course this is also related to the information quality of the website. In other words while the user is willing to read a more complicated text he also wants to receive a certain amount of useful information from it (perceived value of the content). This finding can help researchers examine in more depth the way the user understand the content value of a website.
+The findings of this paper are confirmed by previous studies that have been conducted regarding the relationship between a company's website and its revenues. The adding value that this paper can give to the already existing research is the fact that the results are not grouped by any industry and that we also tried to see the correlation with other variables as well besides of the revenues. Moreover the research did not involve any questionnaire in order to implement the perspective of the website users in it's results. This means that the metrics which proved to be related with the revenues are common among all successful firms.\\
+Furthermore we saw that even though there are some variables that seems to have a slight correlation with the revenues we did not actually found a variable that has an extremely high correlation with the revenues in an individual level while the best model we created was one that containing all the variables which means that in combination the metrics of a website can correlate better with the status of a company.
 \subsection{Managerial level}
 In terms of a managerial level the findings could help an enterprise that wants to either create or change its website, to find what they can implement and what to avoid in order to achieve the best possible website structure and layout so as to lead in a better satisfaction level of the future website users and this by it's turn can lead to bigger revenues in the future.\\
-Since we have already located specific does and don't s regarding the metrics that were examined we can advise companies to apply them in their websites and then let us know if those changes lead to better results.\\
-Moreover, the most trustworthy predictive model that was created during the analysis part of this paper, can be applied in a firm's choices on the variables that constitutes the independent variables of the model and give them a first idea of how the website can affect their future status.\\
-Furthermore, regarding the web designers they can apply those findings while they are constructing a website. For example, they can insist on implementing the images only in a bmp format so as to speed the loading time of the page, or to create specific pages in the website where relevant YouTube videos will be available so as to augment the entertainment satisfaction of the visitors. After implementing this tips on a website, they can actually check to see if the visits will be increased so as to verify the correlation we found.\
+Furthermore, regarding the web designers they can apply those findings while they are constructing a website. For example, they can insist on implementing the images only in a bmp or dip format so as to speed the loading time of the page. After implementing this tips on a website, they can actually check to see if the visits will be increased so as to verify the correlation we found.\
 \textit{The files that were created during the research period of this paper are also available in github: \url{https://github.com/danaiav/thesis_msc_business_analytics.git}}
 
 \chapter{Further Research}
-Even though the results of this paper have helped to give a better understanding of which are the metrics that are more highly correlated with a company's revenue, or in other words with each status, there is always place for further research.\\
-This paper has taken into account specific measurements of a website, that were derived based on the six dimension model of the website quality parameters based on the user's perception, and specific companies, that were included in the Fortune 500 2016 list. It would be wise to conduct a further research in an even wider number of companies in order to verify the findings.\\ Furthermore, with the collaboration of the firms a more thoroughly study regarding the metrics that will be analysed can take place. By the accordance of a company to provide even more metrics a more in depth analysis of this correlation can be conducted.\\
+Even though the results of this paper have helped to give a better understanding of the correlation between the metrics of a website and a company's status, there is always place for further research.\\
+This paper has taken into account specific measurements of a website, that were derived based on the six dimension model of the website quality parameters based on the user's perception, and specific companies, that were included in the Fortune 500 2016 list. It would be wise to conduct a further research in an even wider number of companies in order to verify the findings.\\ 
+Furthermore, with the collaboration of the firms a more thoroughly study regarding the metrics that will be analysed can take place. By the accordance of a company to provide even more metrics a more in depth analysis of this correlation can be conducted.\\
 The consideration of more companies should not only be from one country. The implementation of firms from a global level could lead to the creation of a predictive model that could apply to companies worldwide. This could also lead to locating the metrics that correlate with the revenues not only in an already successful company, such as the ones that are examined in this paper, but in any type of firm.
 \pagebreak
 \chapter{Bibliography}
@@ -2638,32 +2624,40 @@ final.to_csv('total_500_new.csv', sep=';')
 \end{lstlisting}
 
 \newpage
-\section{Appendix C: R Scripts} \label{appR}
-\subsection{Data cleansing}\label{r:data cleansing}
+\section{Appendix C: R Scripts} \label{appRS}
+
+\begin{center}
+\textit{\textbf{Script 1: Data cleansing}}\label{r1}
+\end{center}
 \begin{lstlisting}[language=R]
 #we upload the dataset
-total_500 <- read.csv("~/GitHub/thesis_msc_business_analytics/Python/total_500_new.csv", sep=";", na.strings="n/a")
+total_500 <- read.csv("~/GitHub/
+thesis_msc_business_analytics/Python/total_500_new.csv", 
+sep=";", na.strings="n/a")
 #we see how many observations and how many variables we have
 dim(total_500)
-
 #We create a subset to make some changes to the data
 total_500_sub <- total_500
 #Change the decimal point for the 4 variables
-total_500_sub$Assets.. <- gsub(",", ".", total_500_sub$Assets.. )
-total_500_sub$Market.value.. <- gsub(",", ".", total_500_sub$Market.value.. )
-total_500_sub$Revenues.. <- gsub(",", ".", total_500_sub$Revenues.. )
-total_500_sub$Total.Stockholder.Equity.. <- gsub(",", ".", total_500_sub$Total.Stockholder.Equity.. )
+total_500_sub$Assets.. <- gsub(",", ".", total_500_sub
+$Assets.. )
+total_500_sub$Market.value.. <- gsub(",", ".", total_500_sub
+$Market.value.. )
+total_500_sub$Revenues.. <- gsub(",", ".", total_500_sub
+$Revenues.. )
+total_500_sub$Total.Stockholder.Equity.. <- gsub(",", ".", 
+total_500_sub$Total.Stockholder.Equity.. )
 #Make the variables numeric
 for(i in 1:18){
  total_500_sub[,i] <- as.numeric(total_500_sub[,i])}  
- 
 for(i in 20:38){
  total_500_sub[,i] <- as.numeric(total_500_sub[,i])} 
 #We omit the nas from the analysis
 total_500_final <- na.omit(total_500_sub)
 #We rename variable X as Ranking
 colnames(total_500_final)[1] <- "Ranking"
-#Change the names of some variables to be more easily readable
+#Change the names of some variables to be more easily 
+#readable
 colnames(total_500_final)[2] <- "Assets"
 colnames(total_500_final)[3] <- "Market_Value"
 colnames(total_500_final)[4] <- "Revenues"
@@ -2672,117 +2666,256 @@ colnames(total_500_final)[38] <- "Profit_per_Revenue"
 #Delete the variables we will not need
 total_500_final$company <- NULL #company name
 total_500_final$url<- NULL # company url
-#we upload the libraries beneath that we will use in the analysis
+#we upload the libraries beneath that we will use in the 
+#analysis
 library(ggplot2)
 library(reshape2)
 library(DAAG)
-
 #Final number of observation and variables we will use
 dim(total_500_final)
+#two of the variables were nas
+```
+```{r}
+summary(total_500_final)
+``` =[]
+list_company_name = []
+list_company_website = []
 \end{lstlisting}
 
-\subsection{Variable analysis and correlation}
-
-\subsubsection{Fortune variables correlation}\label{r: van: fortune}
-\begin{lstlisting}[language=R] 
-#summary of the Fortune variables and then their histogram so as to have a 
+\begin{center}
+\textit{\textbf{Script 2: Fortune variables analysis}}\label{r2}
+\end{center}
+\begin{lstlisting}[language=R]
+```{r}
+#######################################################################################################
+#we first see the summary of the Fortune variables and then 
+#we create their histogram so as to have a 
 #good grasp of how they are distributed
+plot(total_500_final$Ranking, col = "red")
 ggplot(data=total_500_final,aes(x=Revenues))
-+geom_histogram(binwidth=50, colour = "green", fill ="darkgreen")
++geom_histogram(binwidth=10, colour = "green", fill 
+="darkgreen")
 ggplot(data=total_500_final,aes(x=Assets))
-+geom_histogram(binwidth=100, colour = "red", fill ="darkred")
++geom_histogram(binwidth=80, colour = "red", fill 
+="darkred")
 ggplot(data=total_500_final,aes(x=Market_Value))
-+geom_histogram(binwidth=100, colour = "blue", fill ="darkblue")
++geom_histogram(binwidth=90, colour = "blue", fill 
+="darkblue")
 ggplot(data=total_500_final,aes(x=Total_SH_Equity))
-+geom_histogram(binwidth=100, colour = "purple", fill ="pink")
++geom_histogram(binwidth=100, colour = "purple", fill 
+="pink")
+ggplot(data=total_500_final,aes(x=Profit_per_Revenue))
++geom_histogram(binwidth=5, colour = "purple", fill ="pink")
+```
 
-#We make plots to see how the variables we got from
-#Fortune 500 are related with the Ranking
-ggplot(total_500_final, aes(Assets,Ranking)) 
-+ geom_point(colour = "red")
-ggplot(total_500_final, aes(Market_Value, Ranking)) 
-+ geom_point(colour = "blue")
-ggplot(total_500_final, aes(Total_SH_Equity, Ranking))
- + geom_point(colour = "purple")
-ggplot(total_500_final, aes(Revenues, Ranking))
- + geom_point(colour = "green")
-#We can see that the Ranking has a linear relationship with the 
-#Revenues so we will use one of those 2 variables to check the relationships 
-#with the websites metrics In order to have a more 
-#clear look we also create a correlation diagram
-total_500_fortune <- total_500_final[,c(1:5)]
+```{r}
+###############################################################################################
+#We make plots to see how the variables we got from Fortune 
+#500 are related with the Ranking
+ggplot(total_500_final, aes(Assets,Ranking)) + 
+geom_point(colour = "red")
+ggplot(total_500_final, aes(Market_Value, Ranking)) + 
+geom_point(colour = "blue")
+ggplot(total_500_final, aes(Total_SH_Equity, Ranking)) + 
+geom_point(colour = "purple")
+ggplot(total_500_final, aes(Revenues, Ranking)) + 
+geom_point(colour = "green")
+ggplot(total_500_final, aes(Profit_per_Revenue, Ranking)) + 
+geom_point(colour = "green")
+#We can see that the Ranking has a linear relationship with 
+#the Revenues so we will use one of those 2 variables to 
+#check the relationships with the websites metrics
+```
+```{r}
+#In order to see more clearly what type of relationship is 
+#there between the Revenues 
+#and the Ranking we will create a variable where the gihest 
+#price would be of the most succesful companys
+a = c(1:402)
+for(i in 1:402){
+  a[i] <- total_500_final$Ranking[403-i]
+}
+total_500_final$aRanking <- a
+```
+
+```{r}
+###############################################################################################
+#We make plots to see how the variables we got from Fortune 
+#500 are related with the Ranking now
+ggplot(total_500_final, aes(Assets,aRanking)) + 
+geom_point(colour = "red")
+ggplot(total_500_final, aes(Market_Value, aRanking)) + 
+geom_point(colour = "blue")
+ggplot(total_500_final, aes(Total_SH_Equity, aRanking)) + 
+geom_point(colour = "purple")
+ggplot(total_500_final, aes(Revenues, aRanking)) + 
+geom_point(colour = "green")
+ggplot(total_500_final, aes(Profit_per_Revenue, aRanking)) + 
+geom_point(colour = "green")
+#We can see that the Ranking has a linear relationship with 
+#the Revenues so we will use one of those 2 variables to 
+#check the relationships with the websites metrics
+```
+
+```{r}
+#In order to have a more clear look we also create a 
+#correlation diagram
+total_500_fortune <- total_500_final[,c(1:5,36)]
 library(corrplot)
 library(caret)
 sm <- cor(total_500_fortune)
 sm
 corrplot(cor(total_500_fortune),method="number")
-#From this plot we understand that the Ranking and the Revenues 
-#have very high correlation which was expected since the Fortune 500
-#rank the companies based on the revenues. 
+#From this plot we understand that the Ranking and the 
+#Revenues have very high correlation.
+##########################################################################################################
+```
+```{r}
+model_ranking_revenues <- lm(Ranking~1 +Revenues 
+,data=total_500_fortune)
+summary(model_ranking_revenues)
+```
+
+```{r}
+model_ranking_Profit_per_Revenue <- lm(Ranking~1 
++Profit_per_Revenue ,data=total_500_fortune)
+summary(model_ranking_Profit_per_Revenue)
+```
+```{r}
+model_ranking_assets <- lm(Ranking~1 +Assets 
+,data=total_500_fortune)
+summary(model_ranking_assets)
+```
+
+```{r}
+model_ranking_market <- lm(Ranking~1 +Market_Value 
+,data=total_500_fortune)
+summary(model_ranking_market)
+```
+
+```{r}
+model_ranking_equity <- lm(Ranking~1 +Total_SH_Equity 
+,data=total_500_fortune)
+summary(model_ranking_equity)
+```
+```{r}
+model_ranking <- lm(Ranking~. ,data=total_500_fortune)
+summary(model_ranking)
+```
 \end{lstlisting}
 
-\subsubsection{Social media analysis}\label{r: van: sm}
-\begin{lstlisting}[language=R] 
+\begin{center}
+\textit{\textbf{Script 3: Social media variables analysis}}\label{r3}
+\end{center}
+\begin{lstlisting}[language=R]
+```{r}
+#Firstly we will analyze the social media relevance with the 
+#sites.
+#We will see how many of the sites have social media and 
+#what type of social media
 #Facebook
-social_media_facebook <- round(table(total_500_final$facebook)/408,3)
+social_media_facebook <- round(table(total_500_final
+$facebook)/402,3)
 social_media_facebook
-slicelable <- c(paste(35.3,"% no"),paste(64.7,"% yes"))
-pie(social_media_facebook,label = slicelable,
-main="Share of companies with Facebook",
-col=rainbow(length(social_media_facebook)))
-ggplot(total_500_final, aes(Revenues, facebook)) 
-+ geom_point(size=3, colour = "darkblue")
+slicelable <- c(paste(35.6,"% no"),paste(64.4,"% yes"))
+pie(social_media_facebook,label = slicelable,main="Share of 
+companies with 
+Facebook",col=rainbow(length(social_media_facebook)))
+ggplot(total_500_final, aes(Revenues, facebook)) + 
+geom_point(size=3, colour = "darkblue")
 
+model_revenue_facebook <- lm(Revenues~1 +facebook 
+,data=total_500_final)
+summary(model_revenue_facebook)
+```
+
+```{r}
 #Twitter
-social_media_twitter <- round(table(total_500_final$twitter)/408,3)
+social_media_twitter <- round(table(total_500_final
+$twitter)/402,3)
 social_media_twitter
-slicelable <- c(paste(31.4,"% no"),paste(68.6,"% yes"))
-pie(social_media_twitter,label = slicelable,
-main="Share of companies with Twitter",
-col=rainbow(length(social_media_twitter)))
-ggplot(total_500_final, aes(Revenues, twitter)) 
-+ geom_point(size=3, colour = "darkgreen")
+slicelable <- c(paste(31.3,"% no"),paste(68.7,"% yes"))
+pie(social_media_twitter,label = slicelable,main="Share of 
+companies with 
+Twitter",col=rainbow(length(social_media_twitter)))
+ggplot(total_500_final, aes(Revenues, twitter)) + 
+geom_point(size=3, colour = "darkgreen")
 
+model_revenue_twitter <- lm(Revenues~1 +twitter 
+,data=total_500_final)
+summary(model_revenue_twitter)
+```
+
+```{r}
 #Instagram
-social_media_instagram <- round(table(total_500_final$instagram)/408,3)
+social_media_instagram <- round(table(total_500_final
+$instagram)/402,3)
 social_media_instagram
-slicelable <- c(paste(77.7,"% no"),paste(22.3,"% yes"))
-pie(social_media_instagram,label = slicelable,
-main="Share of companies with Instagram",
-col=rainbow(length(social_media_instagram)))
-ggplot(total_500_final, aes(Revenues, instagram)) 
-+ geom_point(size=3, colour = "pink")
+slicelable <- c(paste(77.4,"% no"),paste(22.6,"% yes"))
+pie(social_media_instagram,label = slicelable,main="Share of 
+companies with 
+Instagram",col=rainbow(length(social_media_instagram)))
+ggplot(total_500_final, aes(Revenues, instagram)) + 
+geom_point(size=3, colour = "pink")
 
+model_revenue_instagram <- lm(Revenues~1 +instagram 
+,data=total_500_final)
+summary(model_revenue_instagram)
+```
+
+```{r}
 #Pinterest
-social_media_pinterest <- round(table(total_500_final$pinterest)/408,3)
+social_media_pinterest <- round(table(total_500_final
+$pinterest)/402,3)
 social_media_pinterest
-slicelable <- c(paste(90.2,"% no"),paste(9.8,"% yes"))
-pie(social_media_pinterest,label = slicelable,
-main="Share of companies with Pinterest",
-col=rainbow(length(social_media_pinterest)))
-ggplot(total_500_final, aes(Revenues, pinterest)) 
-+ geom_point(size=3, colour = "darkred")
+slicelable <- c(paste(90.3,"% no"),paste(9.7,"% yes"))
+pie(social_media_pinterest,label = slicelable,main="Share of 
+companies with 
+Pinterest",col=rainbow(length(social_media_pinterest)))
+ggplot(total_500_final, aes(Revenues, pinterest)) + 
+geom_point(size=3, colour = "darkred")
 
+model_revenue_pinterest <- lm(Revenues~1 +pinterest 
+,data=total_500_final)
+summary(model_revenue_pinterest)
+```
+
+```{r}
 #Youtube
-social_media_youtube <- round(table(total_500_final$youtube)/408,3)
+social_media_youtube <- round(table(total_500_final
+$youtube)/402,3)
 social_media_youtube
-slicelable <- c(paste(41.7,"% no"),paste(58.3,"% yes"))
-pie(social_media_youtube,label = slicelable,
-main="Share of companies with Youtube",
-col=rainbow(length(social_media_youtube)))
-ggplot(total_500_final, aes(Revenues, youtube)) 
-+ geom_point(size=3, colour = "red")
+slicelable <- c(paste(41.8,"% no"),paste(58.2,"% yes"))
+pie(social_media_youtube,label = slicelable,main="Share of 
+companies with 
+Youtube",col=rainbow(length(social_media_youtube)))
+ggplot(total_500_final, aes(Revenues, youtube)) + 
+geom_point(size=3, colour = "red")
 
+model_revenue_youtube <- lm(Revenues~1 +youtube 
+,data=total_500_final)
+summary(model_revenue_youtube)
+```
+
+```{r}
 #LinkedIn
-social_media_linkedin <- round(table(total_500_final$linkedin)/408,3)
+social_media_linkedin <- round(table(total_500_final
+$linkedin)/402,3)
 social_media_linkedin
-slicelable <- c(paste(42.9,"% no"),paste(57.1,"% yes"))
-pie(social_media_linkedin,label = slicelable,
-main="Share of companies with Linkedin",
-col=rainbow(length(social_media_linkedin)))
-ggplot(total_500_final, aes(Revenues, linkedin)) 
-+ geom_point(size=3, colour = "blue")
+slicelable <- c(paste(43.3,"% no"),paste(56.7,"% yes"))
+pie(social_media_linkedin,label = slicelable,main="Share of 
+companies with 
+Linkedin",col=rainbow(length(social_media_linkedin)))
+ggplot(total_500_final, aes(Revenues, linkedin)) + 
+geom_point(size=3, colour = "blue")
 
+model_revenue_linkedin <- lm(Revenues~1 +linkedin 
+,data=total_500_final)
+summary(model_revenue_linkedin)
+```
+
+
+```{r}
 #And we can also see for correlations
 total_500_social_media <- total_500_final[,c(4,10:15)]
 library(corrplot)
@@ -2790,25 +2923,53 @@ library(caret)
 sm <- cor(total_500_social_media)
 sm
 corrplot(cor(total_500_social_media),method="number")
+model_revenue_socialmedia <- lm(Revenues~. 
+,data=total_500_social_media)
+summary(model_revenue_socialmedia)
+#########################################################################################################
 \end{lstlisting}
 
-\subsubsection{Links analysis}\label{r: van: l}
-\begin{lstlisting}[language=R] 
+\begin{center}
+\textit{\textbf{Script 4: Links variables analysis}}\label{r4}
+\end{center}
+\begin{lstlisting}[language=R]
+```{r}
 par(mfrow=c(1,1))
 library(ggplot2)
 ggplot(data=total_500_final,aes(x=total.links))
-+geom_histogram(binwidth=50, colour = "darkblue", fill ="blue")
-ggplot(total_500_final, aes(Revenues, total.links)) 
-+ geom_point(size=3, colour = "darkblue")
-ggplot(data=total_500_final,aes(x=external))
-+geom_histogram(binwidth=50, colour = "darkred", fill ="red")
-ggplot(total_500_final, aes(Revenues, external)) 
-+ geom_point(size=3, colour = "darkred")
-ggplot(data=total_500_final,aes(x=internal))
-+geom_histogram(binwidth=50, colour = "darkgreen", fill ="green")
-ggplot(total_500_final, aes(Revenues, internal)) 
-+ geom_point(size=3, colour = "darkgreen")
++geom_histogram(binwidth=50, colour = "darkblue", fill 
+="blue")
+ggplot(total_500_final, aes(Revenues, total.links)) + 
+geom_point(size=3, colour = "darkblue")
+model_revenue_totallinks <- lm(Revenues~1 +total.links 
+,data=total_500_final)
+summary(model_revenue_totallinks)
+```
 
+```{r}
+ggplot(data=total_500_final,aes(x=external))
++geom_histogram(binwidth=50, colour = "darkred", fill 
+="red")
+ggplot(total_500_final, aes(Revenues, external)) + 
+geom_point(size=3, colour = "darkred")
+model_revenue_external <- lm(Revenues~1 +external 
+,data=total_500_final)
+summary(model_revenue_external)
+```
+
+```{r}
+ggplot(data=total_500_final,aes(x=internal))
++geom_histogram(binwidth=50, colour = "darkgreen", fill 
+="green")
+ggplot(total_500_final, aes(Revenues, internal)) + 
+geom_point(size=3, colour = "darkgreen")
+model_revenue_internal <- lm(Revenues~1 +internal 
+,data=total_500_final)
+summary(model_revenue_internal)
+
+```
+
+```{r}
 #And we can also see for correlations
 total_500_links <- total_500_final[,c(4,21:23)]
 library(corrplot)
@@ -2816,585 +2977,484 @@ library(caret)
 tl <- cor(total_500_links)
 tl
 corrplot(cor(total_500_links),method="number")
-
- \end{lstlisting}
- 
- 
-\subsubsection{Loading time analysis}\label{r: van: load}
-\begin{lstlisting}[language=R] 
-ggplot(data=total_500_final,aes(x=loading.time))
-+geom_histogram(binwidth=1, colour = "pink", fill ="purple")
-ggplot(total_500_final, aes(Revenues, loading.time)) 
-+ geom_point(size=3, colour = "purple")
- \end{lstlisting}
-
-
-\subsubsection{Content analysis}\label{r: van: cont}
-\begin{lstlisting}[language=R] 
-```{r}
-#Now we will see the total words, the unique words 
-#and the sentences how are distributed alone and 
-#in relationhsip with the revenues.
-ggplot(data=total_500_final,aes(x=Sentences))
-+geom_histogram(binwidth=50, colour = "darkred", fill ="red")
-ggplot(total_500_final, aes(Revenues, Sentences)) 
-+ geom_point(size=3, colour = "purple")
-
-ggplot(data=total_500_final,aes(x=Unique.words))
-+geom_histogram(binwidth=50, colour = "darkred", fill ="red")
-ggplot(total_500_final, aes(Revenues, Unique.words)) 
-+ geom_point(size=3, colour = "purple")
-
-ggplot(data=total_500_final,aes(x=Words))
-+geom_histogram(binwidth=50, colour = "darkred", fill ="red")
-ggplot(total_500_final, aes(Revenues, Words)) 
-+ geom_point(size=3, colour = "purple")
-
+model_revenue_links <- lm(Revenues~. ,data=total_500_links)
+summary(model_revenue_links)
 ```
+\end{lstlisting}
+
+\begin{center}
+\textit{\textbf{Script 5: Loading time variables analysis}}\label{r5}
+\end{center}
+\begin{lstlisting}[language=R]
+```{r}
+#########################################################################################################
+#Now we will see the loading time per site
+ggplot(data=total_500_final,aes(x=loading.time))
++geom_histogram(binwidth=0.2, colour = "pink", fill 
+="purple")
+ggplot(total_500_final, aes(Revenues, loading.time)) + 
+geom_point(size=3, colour = "purple")
+model_revenue_loading.time <- lm(Revenues~1 +loading.time 
+,data=total_500_final)
+summary(model_revenue_loading.time)
+```
+\end{lstlisting}
+
+\begin{center}
+\textit{\textbf{Script 6: Content variables analysis}}\label{r6}
+\end{center}
+\begin{lstlisting}[language=R]
+```{r}
+#########################################################################################################
+ggplot(data=total_500_final,aes(x=Sentences))
++geom_histogram(binwidth=50, colour = "darkred", fill 
+="red")
+ggplot(total_500_final, aes(Revenues, Sentences)) + 
+geom_point(size=3, colour = "purple")
+model_revenue_Sentences <- lm(Revenues~1 +Sentences 
+,data=total_500_final)
+summary(model_revenue_Sentences)
+```
+
+```{r}
+#########################
+ggplot(data=total_500_final,aes(x=Unique.words))
++geom_histogram(binwidth=50, colour = "darkred", fill 
+="red")
+ggplot(total_500_final, aes(Revenues, Unique.words)) + 
+geom_point(size=3, colour = "purple")
+model_revenue_Unique.words <- lm(Revenues~1 +Unique.words 
+,data=total_500_final)
+summary(model_revenue_Unique.words)
+```
+
+```{r}
+#########################
+ggplot(data=total_500_final,aes(x=Words))
++geom_histogram(binwidth=50, colour = "darkred", fill 
+="red")
+ggplot(total_500_final, aes(Revenues, Words)) + 
+geom_point(size=3, colour = "purple")
+model_revenue_Words <- lm(Revenues~1 +Words 
+,data=total_500_final)
+summary(model_revenue_Words)
+#############################
+```
+
+```{r}
+################################
+ggplot(data=total_500_final,aes(x=Flesh_Mesaure))
++geom_histogram(binwidth=50, colour = "darkred", fill 
+="red")
+ggplot(total_500_final, aes(Revenues, Flesh_Mesaure)) + 
+geom_point(size=3, colour = "purple")
+model_revenue_Flesh_Mesaure <- lm(Revenues~1 +Flesh_Mesaure 
+,data=total_500_final)
+summary(model_revenue_Flesh_Mesaure)
+############################
+```
+
+```{r}
+#Here we only out the first example
+total_500_final$Readability <- gsub("Very easy", "01_VE", 
+total_500_final$Readability )
+```
+
+```{r}
+total_500_final$Readability <- gsub("01_VE","1", 
+total_500_final$Readability )
+total_500_final$Readability <- as.numeric(total_500_final
+$Readability )
+ggplot(data=total_500_final,aes(x=Readability))
++geom_bar(binwidth=1, colour = "darkred", fill ="red")
+ggplot(total_500_final, aes(Revenues, Readability)) + 
+geom_point(size=3, colour = "purple")
+model_revenue_Readability <- lm(Revenues~1 +Readability 
+,data=total_500_final)
+summary(model_revenue_Readability)
+```
+
 ```{r}
 #And we can also see for correlations
-total_500_lt_w <- total_500_final[,c(4,18:20,727)]
+total_500_lt_w <- total_500_final[,c(4,16,17,18:20,34)]
 library(corrplot)
 library(caret)
 tl <- cor(total_500_lt_w)
 tl
 corrplot(cor(total_500_lt_w),method="number")
+
+model_revenue_lt_w <- lm(Revenues~. ,data=total_500_lt_w)
+summary(model_revenue_lt_w)
 ```
+\end{lstlisting}
 
+\begin{center}
+\textit{\textbf{Script 7: Html validation variables analysis}}\label{r7}
+\end{center}
+\begin{lstlisting}[language=R]
 ```{r}
-#Next we will check the Flesh Measure alone and in 
-#relationship with revenues
-ggplot(data=total_500_final,aes(x=Flesh_Mesaure))
-+geom_histogram(binwidth=50, colour = "darkred", fill ="red")
-ggplot(total_500_final, aes(Revenues, Flesh_Mesaure)) 
-+ geom_point(size=3, colour = "purple")
-```
-
-```{r}
-#An example of value changing
-total_500_final$Readability <- gsub("Very easy",
- "01_VE", total_500_final$Readability )
-```
-
-```{r}
-#An example of value changing
-total_500_final$Readability <- gsub("01_VE","1",
- total_500_final$Readability )
-total_500_final$Readability <- as.numeric(total_500_final$Readability )
-ggplot(data=total_500_final,aes(x=Readability))
-+geom_bar(binwidth=1, colour = "darkred", fill ="red")
-ggplot(total_500_final, aes(Revenues, Readability)) 
-+ geom_point(size=3, colour = "purple")
-#And we can also see for correlations
-total_500_r <- total_500_final[,c(4,16,17)]
-library(corrplot)
-library(caret)
-tl <- cor(total_500_r)
-tl
-corrplot(cor(total_500_r),method="number")
-
-```
- \end{lstlisting} 
-
-
-\subsubsection{HTML validation analysis}\label{r: van: HTML}
-\begin{lstlisting}[language=R]  
-```{r}
-#Now we will see the number of errors and warnings alone 
-#and in relationship with the Revenues
+#########################################################################################################
 ggplot(data=total_500_final,aes(x=number_of_errors))
 +geom_histogram(binwidth=50, colour = "red")
-ggplot(total_500_final, aes(Revenues, number_of_errors)) 
-+ geom_point(size=3, colour = "dark red")
+ggplot(total_500_final, aes(Revenues, number_of_errors)) + 
+geom_point(size=3, colour = "dark red")
+model_revenue_number_of_errors <- lm(Revenues~1 
++number_of_errors ,data=total_500_final)
+summary(model_revenue_number_of_errors)
+```
+
+```{r}
 ggplot(data=total_500_final,aes(x=number_of_warning))
 +geom_histogram(binwidth=20, colour = "red")
-ggplot(total_500_final, aes(Revenues, number_of_warning)) 
-+ geom_point(size=3, colour = "dark blue")
+ggplot(total_500_final, aes(Revenues, number_of_warning)) + 
+geom_point(size=3, colour = "dark blue")
+model_revenue_number_of_warning <- lm(Revenues~1 
++number_of_warning ,data=total_500_final)
+summary(model_revenue_number_of_warning)
+```
 
-#Now we will see the non.document.error and the page not 
-#opened variables alone and in relationship with the 
-#Revenues
+```{r}
 ggplot(data=total_500_final,aes(x=non.document.error))
 +geom_histogram(binwidth=1, colour = "red")
-ggplot(total_500_final, aes(Revenues, non.document.error)) 
-+ geom_point(size=1, colour = "dark red")
+ggplot(total_500_final, aes(Revenues, non.document.error)) + 
+geom_point(size=1, colour = "dark red")
+model_revenue_non.document.error <- lm(Revenues~1 
++non.document.error ,data=total_500_final)
+summary(model_revenue_non.document.error)
+```
+
+```{r}
 ggplot(data=total_500_final,aes(x=The_page_opened))
 +geom_histogram(binwidth=1, colour = "red")
-ggplot(total_500_final, aes(Revenues, The_page_opened)) 
-+ geom_point(size=3, colour = "dark blue")
-#In the page not opened we can see that the variable has 
-#only the price 1 that means that the page opened so 
-#there is no point in using it in the analysis as it 
-#does not affect the outcome
+ggplot(total_500_final, aes(Revenues, The_page_opened)) + 
+geom_point(size=3, colour = "dark blue")
 
+model_revenue_The_page_opened <- lm(Revenues~1 
++The_page_opened ,data=total_500_final)
+summary(model_revenue_The_page_opened)
+```
+
+```{r}
 #And we can also see for correlations
-total_500_HTML <- total_500_final[,c(4,7:9)]
+total_500_html <- total_500_final[,c(4,7:9)]
 library(corrplot)
 library(caret)
-tl <- cor(total_500_HTML)
+tl <- cor(total_500_html)
 tl
-corrplot(cor(total_500_HTML),method="number")
-```
-\end{lstlisting} 
+corrplot(cor(total_500_html),method="number")
 
-\subsubsection{Number, types and image sizes analysis}\label{r: van: img}
-\begin{lstlisting}[language=R]  
+model_revenue_html <- lm(Revenues~. ,data=total_500_html)
+summary(model_revenue_html)
+```
+\end{lstlisting}
+
+\begin{center}
+\textit{\textbf{Script 8: Image variables analysis}}\label{r8}
+\end{center}
+\begin{lstlisting}[language=R]
 ```{r}
-#Now we will see the total images alone and in 
-#relationship with the revenues
 ggplot(data=total_500_final,aes(x=total.images))
-+geom_histogram(binwidth=100, colour = "darkred", fill ="red")
++geom_histogram(binwidth=100, colour = "darkred", fill 
+="red")
+ggplot(total_500_final, aes(Revenues, total.images)) + 
+geom_point(size=3, colour = "dark blue")
+model_revenue_total.images <- lm(Revenues~1 +total.images 
+,data=total_500_final)
+summary(model_revenue_total.images)
 ```
 
 ```{r}
-ggplot(total_500_final, aes(Revenues, total.images)) 
-+ geom_point(size=3, colour = "dark blue")
+ggplot(data=total_500_final,aes(x=pixels))
++geom_histogram(binwidth=4000000, colour = "darkred", fill 
+="red")
+ggplot(total_500_final, aes(Revenues, pixels)) + 
+geom_point(size=3, colour = "dark blue")
+model_revenue_pixels <- lm(Revenues~1 +pixels 
+,data=total_500_final)
+summary(model_revenue_pixels)
+```
+```{r}
+names(total_500_final)
 ```
 
 ```{r}
-#We will see now the frequency of image types that is 
-#being used
-
+#########################################################################################################
 par(mfrow=c(1,1))
-k = c(717:725)
+k = c(24:32)
 for(i in 1:9){
   a <- k[i]
-  image_type<- round(table(total_500_final[,a])/408,3)
-  barplot(image_type,xlab=names(total_500_final)[a],ylab
-   = "Shares of images per site", col = "dark green")}
+  image_type<- round(table(total_500_final[,a])/402,3)
+  barplot(image_type,xlab=names(total_500_final)[a],ylab = 
+  "Shares of images per site", col = "dark green")}
 ```
 
 ```{r}
-#It is obvious that the most common images type are 
-#.jpg, gif and .png
-#We will check now the types in relationship with the 
-#revenues. Below an example of the ggplots we created
-ggplot(total_500_final, aes(Revenues, .bmp)) 
-+ geom_point(size=3, colour = "dark blue")
+ggplot(total_500_final, aes(Revenues, .bmp)) + 
+geom_point(size=3, colour = "dark blue")
+model_revenue_.bmp <- lm(Revenues~1 +.bmp 
+,data=total_500_final)
+summary(model_revenue_.bmp)
 ```
+
+```{r}
+ggplot(total_500_final, aes(Revenues, .dib)) + 
+geom_point(size=3, colour = "dark blue")
+model_revenue_.dib <- lm(Revenues~1 +.dib 
+,data=total_500_final)
+summary(model_revenue_.dib)
+```
+
+```{r}
+ggplot(total_500_final, aes(Revenues, .gif)) + 
+geom_point(size=3, colour = "dark blue")
+model_revenue_.gif <- lm(Revenues~1 +.gif 
+,data=total_500_final)
+summary(model_revenue_.gif)
+```
+
+```{r}
+ggplot(total_500_final, aes(Revenues, .jpe)) + 
+geom_point(size=3, colour = "dark blue")
+model_revenue_.jpe <- lm(Revenues~1 +.jpe 
+,data=total_500_final)
+summary(model_revenue_.jpe)
+```
+
+```{r}
+ggplot(total_500_final, aes(Revenues, .jpeg)) + 
+geom_point(size=3, colour = "dark blue")
+model_revenue_.jpeg <- lm(Revenues~1 +.jpeg 
+,data=total_500_final)
+summary(model_revenue_.jpeg)
+```
+
+```{r}
+ggplot(total_500_final, aes(Revenues, .jpg)) + 
+geom_point(size=3, colour = "dark blue")
+model_revenue_.jpg <- lm(Revenues~1 +.jpg 
+,data=total_500_final)
+summary(model_revenue_.jpg)
+```
+
+```{r}
+ggplot(total_500_final, aes(Revenues, .png)) + 
+geom_point(size=3, colour = "dark blue")
+model_revenue_.png <- lm(Revenues~1 +.png 
+,data=total_500_final)
+summary(model_revenue_.png)
+```
+
+```{r}
+ggplot(total_500_final, aes(Revenues, .tif)) + 
+geom_point(size=3, colour = "dark blue")
+model_revenue_.tif <- lm(Revenues~1 +.tif 
+,data=total_500_final)
+summary(model_revenue_.tif)
+```
+
+```{r}
+ggplot(total_500_final, aes(Revenues, .tiff)) + 
+geom_point(size=3, colour = "dark blue")
+model_revenue_.tiff <- lm(Revenues~1 +.tiff 
+,data=total_500_final)
+summary(model_revenue_.tiff)
+```
+
 ```{r}
 #And we can also see for correlations
-total_500_im<- total_500_final[,c(4,717:726)]
+total_500_im<- total_500_final[,c(4,24:33,35)]
 library(corrplot)
 library(caret)
 tl <- cor(total_500_im)
 tl
 corrplot(cor(total_500_im),method="number")
+
+model_revenue_im <- lm(Revenues~. ,data=total_500_im)
+summary(model_revenue_im)
 ```
+\end{lstlisting}
 
-
-
-```{r}
-#We will see now the frequency of image sizes that is 
-#being used
-k = c()
-#Check for sizes that are half and half divided in 
-#existing and not
-for(i in 24:716){
-  image_size<- round(table(total_500_final[,i]))
-  if ((image_size[[1]]==408)==TRUE){
-    k <- union(k, c(i))
-  }}
-
-#Number 24 is all one price so we want use it
-names(total_500_final)[24]
-total_500_final$X144x144 <- NULL
-```
-
-```{r}
-false_not_existing = c()
-#Check for sizes that are less than half divided in 
-#existing and not
-for(i in 24:715){
-  image_size<- round(table(total_500_final[,i]))
-  if ((image_size[[2]]<204)==TRUE){
-    false_not_existing <- union(false_not_existing, c(i))
-  }}
-```
-
-```{r}
-#Now we will take the sizes that exist in less than half 
-#the instances and check graphically the deviations 
-#between the 408 sites
-par(mfrow=c(3,3))
-for(i in 1:416){
-  a = false_not_existing[i]
-  plot(total_500_final[,a],total_500_final$Revenues)
-  image_size<- round(table(total_500_final[,a]))
-  barplot(image_size,xlab=names(total_500_final)[a],ylab
-   = "Has or not the size", col = "dark green")}
-```
-
-```{r}
-true_existing = c()
-#Check for sizes that are more than half divided in 
-#existing and not
-for(i in 24:715){
-  image_size<- round(table(total_500_final[,i]))
-  if ((image_size[[2]]>204)==TRUE){
-    true_existing <- union(true_existing, c(i))
-  }}
-```
-
-```{r}
-#Now we will take the sizes that exist in more than half 
-#the instances and check graphically the deviations 
-#between the 408 sites
-par(mfrow=c(3,3))
-for(i in 1:276){
-  a = true_existing[i]
-  image_size<- round(table(total_500_final[,a]))
-  plot(total_500_final[,a],total_500_final$Revenues)
-  barplot(image_size,xlab=names(total_500_final)[a],ylab
-   = "Has or not the size", col = "dark green")}
-```
-
-```{r}
-#By checking the above plots we can see that the 24 
-#first sizes do appear to have some differentiation 
-#regarding the revenues. While most sites do have those 
-#sizes when it comes to the high revienues they do not 
-#have them
-par(mfrow=c(3,3))
-keep = c()
-for(i in 1:24){
-  a = true_existing[i]
-  keep = union (keep, c(a))}
-keep
-#As we can see they are the variables from 24 to 47 and 
-#these are the only sizes we are going to keep for the 
-#further analysis
-total_500_final <- total_500_final[,-c(48:715)]
-\end{lstlisting} 
-
-\subsection{Data manipulation}\label{r: van: dm}
+\begin{center}
+\textit{\textbf{Script 9: Multiple regression analysis with different fortune 500 variables}}\label{r9}
+\end{center}
 \begin{lstlisting}[language=R]
 ```{r}
-#Also we remove the other Fortune 500 variables since 
-#they will interfer in the outcome of the model and we 
-#keep only the variable we want to examine the Revenues
-total_500_final$Market_Value <- NULL
-total_500_final$Assets <- NULL
-total_500_final$Ranking <- NULL 
-total_500_final$Total_SH_Equity <- NULL
-total_500_final$The_page_opened <- NULL
-```
-```{R}
-#An example of how we change the prices of the variables of the 
-#image sizes from 1 - 2 to 0 -1
-total_500_final$X15x12<- gsub("1","0", 
-total_500_final$X15x12)
-total_500_final$X15x12 <- gsub("2", "1", 
-total_500_final$X15x12 )
+total_500_final_train <- total_500_final
+total_500_final_train$Market_Value <- NULL
+total_500_final_train$Assets <- NULL
+total_500_final_train$Ranking <- NULL 
+total_500_final_train$Total_SH_Equity <- NULL
+total_500_final_train$The_page_opened <- NULL
+total_500_final_train$aRanking <- NULL
+total_500_final_train$Profit_per_Revenue <- NULL
+total_500_final_train$total.links <- NULL
+total_500_final_train$total.images <- NULL
 ```
 
 ```{r}
-for(i in 19:42){
- total_500_final[,i] <- as.numeric(total_500_final[,i])}  
+names(total_500_final_train)
 ```
-\end{lstlisting} 
 
-\subsection{Regression, Clustering and Correlation analysis}\label{r: van: rg}
-\begin{lstlisting}[language=R]
 ```{r}
-#We split the set to training and test set
+#We will now do a regression model with all the variables
 library(caret)
-set.seed(20)
-sampling_vector <- createDataPartition(total_500_final$Revenues
-, p = 0.70, list = FALSE)
-total_500_final_train <- total_500_final[sampling_vector,]
-total_500_final_test <- total_500_final[-sampling_vector,]
-```
-
-```{r}
-#We will try to create a regression model to see which of the 
-#variables of the websites play the most important part regarding 
-#the Ranking of the company. 
-#We create the empty lm model
-model_null = lm(Revenues~1,data=total_500_final_train)
-summary(model_null)
-```
-
-```{r}
-#LASSO and Logistic Regression models
 library(glmnet)
-#We create a full model for the variable Ranking
-full <- lm(Revenues~.,data=total_500_final_train)
-summary(full)
+#We create a full model for the variable Revenues
+full_Revenues <- lm(Revenues~.,data=total_500_final_train)
+summary(full_Revenues)
 ```
 
 ```{r}
-#Now we create a new model with only the variables with coef 
-#different from NA so as to have a clear look
-full_2 <- lm(Revenues~. - total.images - total.links - X1x1 -
- X21pxx173px - X49x49 - X200pxx200px - X1279pxx984px -
-  X300pxx1500px - X160x233 -  X300x993 - X41x192 - X28x221 -
-   X60x60,data=total_500_final_train)
-summary(full_2)
-aic_f <- AIC(full_2)
-aic_f
+total_500_final_train2 <- total_500_final
+total_500_final_train2$Market_Value <- NULL
+total_500_final_train2$Assets <- NULL
+total_500_final_train2$Revenues <- NULL 
+total_500_final_train2$Total_SH_Equity <- NULL
+total_500_final_train2$The_page_opened <- NULL
+total_500_final_train2$aRanking <- NULL
+total_500_final_train2$Profit_per_Revenue <- NULL
+total_500_final_train2$total.links <- NULL
+total_500_final_train2$total.images <- NULL
 ```
 
 ```{r}
-x <- model.matrix(full_2) [,
--c(18,22,28,26,34,32,33,42,37,38,39,40,52)]
-dim(x)
-lasso <- glmnet (x, total_500_final_train$Revenues)
+#We create a full model for the variable Revenues
+full_Ranking <- lm(Ranking~.,data=total_500_final_train2)
+summary(full_Ranking)
+```
+```{r}
+total_500_final_train3 <- total_500_final
+total_500_final_train3$Market_Value <- NULL
+total_500_final_train3$Assets <- NULL
+total_500_final_train3$Revenues <- NULL 
+total_500_final_train3$Total_SH_Equity <- NULL
+total_500_final_train3$The_page_opened <- NULL
+total_500_final_train3$aRanking <- NULL
+total_500_final_train3$Ranking <- NULL
+total_500_final_train3$total.links <- NULL
+total_500_final_train3$total.images <- NULL
 ```
 
 ```{r}
-plot(lasso, xvar='lambda', label=T)
+#We create a full model for the variable Profit_per_Revenue
+full_Profit_per_Revenue <- 
+lm(Profit_per_Revenue~.,data=total_500_final_train3)
+summary(full_Profit_per_Revenue)
+```
+```{r}
+total_500_final_train4 <- total_500_final
+total_500_final_train4$Profit_per_Revenue <- NULL
+total_500_final_train4$Assets <- NULL
+total_500_final_train4$Revenues <- NULL 
+total_500_final_train4$Total_SH_Equity <- NULL
+total_500_final_train4$The_page_opened <- NULL
+total_500_final_train4$aRanking <- NULL
+total_500_final_train4$Ranking <- NULL
+total_500_final_train4$total.links <- NULL
+total_500_final_train4$total.images <- NULL
 ```
 
 ```{r}
-x <- model.matrix(full_2) [,
--c(18,22,28,26,34,32,33,42,37,38,39,40,52)]
-lassob <- cv.glmnet(x,total_500_final_train$Revenues)
-lassob$lambda.min
-lassob$lambda.1se
+#We create a full model for the variable Profit_per_Revenue
+full_Market_Value <- 
+lm(Market_Value~.,data=total_500_final_train4)
+summary(full_Market_Value)
 ```
 
 ```{r}
-plot(lassob)
+total_500_final_train5 <- total_500_final
+total_500_final_train5$Market_Value <- NULL
+total_500_final_train5$Profit_per_Revenue <- NULL
+total_500_final_train5$Revenues <- NULL 
+total_500_final_train5$Total_SH_Equity <- NULL
+total_500_final_train5$The_page_opened <- NULL
+total_500_final_train5$aRanking <- NULL
+total_500_final_train5$Ranking <- NULL
+total_500_final_train5$total.links <- NULL
+total_500_final_train5$total.images <- NULL
 ```
 
 ```{r}
-#coefiecinets for lammda min
-blasso <- coef(lassob, s="lambda.min")
-blasso
-dim(blasso)
-zblasso <- blasso[-1] * apply(x,2,sd)
-zbolt <- coef (full_2) [-1] * apply (x,2,sd)
-azbolt <- abs(zbolt)
-sum(azbolt)
-s <- sum(abs(zblasso))/sum(abs(azbolt))
-s
+#We create a full model for the variable Assets
+full_Assets <- lm(Assets~.,data=total_500_final_train5)
+summary(full_Assets)
 ```
 
 ```{r}
-full_3 <- lm(Revenues~1 +number_of_errors +facebook +pinterest
- +youtube+ Flesh_Mesaure +Sentences +X8x15  +X44x556 +X800x1200
-  +X24pxx133px +X46x214 +X50x45 +X292pxx292px +X115x223 +X15x12 
-   +.bmp +.jpg ,data=total_500_final_train)
-summary(full_3)
-ad_r_sq_f3 <- summary(full_3)$adj.r.squared
-aic_f3 <- AIC(full_3)
+total_500_final_train3 <- total_500_final
+total_500_final_train3$Market_Value <- NULL
+total_500_final_train3$Assets <- NULL
+total_500_final_train3$Revenues <- NULL 
+total_500_final_train3$Profit_per_Revenue <- NULL
+total_500_final_train3$The_page_opened <- NULL
+total_500_final_train3$aRanking <- NULL
+total_500_final_train3$Ranking <- NULL
+total_500_final_train3$total.links <- NULL
+total_500_final_train3$total.images <- NULL
 ```
 
 ```{r}
-plot(full_3,which=1:3)
+#We create a full model for the variable Total_SH_Equity
+full_Total_SH_Equity <- 
+lm(Total_SH_Equity~.,data=total_500_final_train3)
+summary(full_Total_SH_Equity)
 ```
-
-```{r}
-##############################################
-blassob <- coef(lassob, s="lambda.1se")
-blassob
-zblassob <- blassob[-1] * apply(x,2,sd)
-zboltb <- coef (full_2) [-1] * apply (x,2,sd)
-s <- sum(abs(zblassob))/sum(abs(zboltb))
-s
-#The model based on the lasso method by taking the lambda.1se is 
-#the null model only with the intercept
-```
-
-```{r}
-full_4 <- lm(Revenues~1 +X8x15  +X44x556 +X800x1200 
-+X24pxx133px +X46x214 +X50x45 +X292pxx292px +X115x223 
-+X15x12 ,data=total_500_final_train)
-summary(full_4)
-ad_r_sq_f4 <- summary(full_4)$adj.r.squared
-aic_f4 <- AIC(full_4)
-```
-
-```{r}
-plot(full_4,which=1:3)
-```
-
-```{r}
-#We use the "both" method to compare the full_3 model with the 
-#null model to see how many variables are indeed important
-model_a <- step(model_null, scope = list(lower = model_null,
- upper=full_2), direction = "both")
-summary(model_a)
-ad_r_sq_ma <- summary(model_a)$adj.r.squared
-aic_ma <- AIC(model_a)
-```
-
-```{r}
-plot(model_a,which=1:3)
-```
-
-```{r}
-#We compare the Adjusted R squares of the models and also the AIC 
-#of the models we created to find the best one
-ad_r_sq_f3 
-ad_r_sq_f4 
-ad_r_sq_ma #BEST
-#The best Adkusted R square is the one in model a (the closer to 1 
-#the better)
-aic_f3
-aic_f4
-aic_ma #Best
-#The best AIC and the best Adjusted R square is for model ma
-```
-
-```{r}
-#Create the prediction plots so as to compare them
-par(mfrow=c(2,2))
-Actual_Revenues<- total_500_final_test$Revenues
-plot (Actual_Revenues, col = "blue",main ="True Prices")
-
-predictions_ma <- predict(model_a,total_500_final_test)
-plot (predictions_ma, col = "Red",main = "Both method model")
-
-predictions_full3 <- predict(full_3,total_500_final_test)
-plot (predictions_full3, col = "Red",main = "Lasso Min model")
-
-predictions_full4 <- predict(full_4,total_500_final_test)
-plot (predictions_full4, col = "Red",main = "Lasso One SD model")
-
-#From the plots above we can see that the actual Revenues have a 
-#more smooth way of levelling up.
-```
-```{r}
-par(mfrow=c(1,1))
-total_500_final_reg <- 
-total_500_final_train[,c(1,41,21,30,43,20,10,53,27,45,3)]
-cor(total_500_final_reg)
-corrplot(cor(total_500_final_reg),method="number")
-#We can see here that some of the variables are correlated also 
-#with each other so we can try keeping only the variables that are 
-#not correlated with each other so as to avoid multicollinearity. 
-#The variables that are correlated with each other are the image 
-#sizes that are included in the model so we will keep only one of 
-#those variables. The one that is correlated the most with all the 
-#others so as to keep the biggest part of the information.
-```
-
-```{r}
-#So we can try creating a new model includind only the 400x300 
-#image size 
-full_5 <- lm(Revenues~1 +X400x300 + .bmp + youtube +loading.time 
-+ .gif + number_of_errors ,data=total_500_final_train)
-summary(full_5)
-adj_r_square_full5 <- summary(full_5)$adj.r.squared
-aic_full5 <- AIC(full_5)
-```
-
-```{r}
-#We create the 2 basic plots so as to be able to explain the 
-#regression model
-plot(full_5,which=1:3)
-```
-
-```{r}
-ad_r_sq_ma
-adj_r_square_full5 
-aic_ma 
-aic_full5 
-#The adjusted R square and the aic are a little worse than before
-```
-```{r}
-#Clustering 
-#Kmeans clustering
-#Based on those results we will try to cluster the companies based 
-#on the results of the regression
-set.seed(220)
-clusters <- hclust(dist(total_500_final_reg[, 1]))
-plot(clusters)
-```
-```{r}
-fortuneCluster <- kmeans(total_500_final_reg[, 1], 2, 
-iter.max = 500,nstart = 1)
-cluster <- table(fortuneCluster$cluster)
-fortuneCluster$cluster <- as.factor(fortuneCluster$cluster)
-```
-```{r}
-#We saw here an example of how we created the ggplots with the 
-#variables against the revenues
-ggplot(total_500_final_reg, aes(Revenues, X15x12, color = fortuneCluster$cluster)) + geom_point(size=3)
-```
-```{r}
-#From the clustering we can see that the variables do indeed
-#devide the most high revenues from the smallest ones
-#Here the image size that is divided in the best way is 15x12 so 
-#we will create a model that we will put only this size
-full_6 <- lm(Revenues~1 +X15x12 + .bmp + youtube +loading.time + 
-.gif + number_of_errors ,data=total_500_final_train)
-summary(full_6)
-adj_r_square_full6 <- summary(full_6)$adj.r.squared
-aic_full6 <- AIC(full_6)
-```
-
-```{r}
-#The corrplots for the two models that we created lastly
-par(mfrow=c(1,1))
-total_500_final_reg_2 <- total_500_final_reg[,c(1,2,5,7,8,10,11)]
-cor(total_500_final_reg_2)
-corrplot(cor(total_500_final_reg_2),method="number")
-```
-```{r}
-par(mfrow=c(1,1))
-total_500_final_reg_3 <- total_500_final_reg[,c(1,4,5,7,8,10,11)]
-cor(total_500_final_reg_3)
-corrplot(cor(total_500_final_reg_2),method="number")
-```
-
-\end{lstlisting} 
+\end{lstlisting}
 
 
-\section{Appendix D: R Tables} \label{appR}
+\newpage
+\section{Appendix D: R Multiple Regression models} \label{appRT}
 
 \begin{table}[H]
 \centering
-\caption{Regression model Full model}\label{d :r :2}
+\caption{Model with Revenues}\label{rt1}
 \begin{center}
-\includegraphics[scale=0.8]{../R/photos/69_full2.PNG}   \\
+\includegraphics[scale=0.8]{../R/photos/a_r.PNG}   \\
 \end{center}
 \end{table}
 
 
 \begin{table}[H]
 \centering
-\caption{Regression model Lasso Min}\label{d :r :3}
+\caption{Model with Market value}\label{rt2}
 \begin{center}
-\includegraphics[scale=0.8]{../R/photos/72_full3.PNG}   \\
+\includegraphics[scale=0.8]{../R/photos/a_mv.PNG}   \\
 \end{center}
 \end{table}
 
 
 \begin{table}[H]
 \centering
-\caption{Regression model Lasso One SD}\label{d :r :4}
+\caption{Model with Ranking}\label{rt3}
 \begin{center}
-\includegraphics[scale=0.8]{../R/photos/77_full4.PNG}   \\
+\includegraphics[scale=0.8]{../R/photos/a_rank.PNG}   \\
 \end{center}
 \end{table}
 
 
 \begin{table}[H]
 \centering
-\caption{Regression model Both method}\label{d :r :a}
+\caption{Model with Profit \% Revenues}\label{rt4}
 \begin{center}
-\includegraphics[scale=0.8]{../R/photos/81_modela.PNG}   \\
+\includegraphics[scale=0.8]{../R/photos/a_rp.PNG}   \\
 \end{center}
 \end{table}
 
 
 \begin{table}[H]
 \centering
-\caption{Regression model Both method (image size only 400x300)}\label{d :r :5}
+\caption{Model with Total stockholder value}\label{rt5}
 \begin{center}
-\includegraphics[scale=0.8]{../R/photos/87_full5.PNG}  \\
+\includegraphics[scale=0.8]{../R/photos/a_e.PNG}  \\
 \end{center}
 \end{table}
 
 
 \begin{table}[H]
 \centering
-\caption{Regression model Both method (image size only 15x12)}\label{d :r :6}
+\caption{Model with Assets}\label{rt7}
 \begin{center}
-\includegraphics[scale=0.8]{../R/photos/99_model6.PNG}  \\
+\includegraphics[scale=0.8]{../R/photos/a_a.PNG}  \\
 \end{center}
 \end{table}
 \end{document}

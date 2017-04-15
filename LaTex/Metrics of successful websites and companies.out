@@ -27,24 +27,24 @@
 \BOOKMARK [2][-]{subsection.3.4.12}{Merge data-frames and extract final csv file}{section.3.4}% 27
 \BOOKMARK [0][-]{chapter.4}{Data Analysis}{}% 28
 \BOOKMARK [1][-]{section.4.1}{R Language}{chapter.4}% 29
-\BOOKMARK [1][-]{section.4.2}{Analysis}{chapter.4}% 30
-\BOOKMARK [2][-]{subsection.4.2.1}{Data cleansing}{section.4.2}% 31
-\BOOKMARK [2][-]{subsection.4.2.2}{Variable analysis and correlation}{section.4.2}% 32
-\BOOKMARK [2][-]{subsection.4.2.3}{Data manipulation}{section.4.2}% 33
-\BOOKMARK [2][-]{subsection.4.2.4}{Regression analysis}{section.4.2}% 34
-\BOOKMARK [0][-]{chapter.5}{Conclusions}{}% 35
-\BOOKMARK [1][-]{section.5.1}{Findings summary}{chapter.5}% 36
-\BOOKMARK [1][-]{section.5.2}{Findings contribution}{chapter.5}% 37
-\BOOKMARK [2][-]{subsection.5.2.1}{Theoretical level}{section.5.2}% 38
-\BOOKMARK [2][-]{subsection.5.2.2}{Managerial level}{section.5.2}% 39
-\BOOKMARK [0][-]{chapter.6}{Further Research}{}% 40
-\BOOKMARK [0][-]{chapter.7}{Bibliography}{}% 41
-\BOOKMARK [0][-]{appendix.A}{Appendix}{}% 42
-\BOOKMARK [1][-]{section.A.1}{Appendix A: Fortune 500 Companies}{appendix.A}% 43
-\BOOKMARK [1][-]{section.A.2}{Appendix B: Python Scripts}{appendix.A}% 44
-\BOOKMARK [1][-]{section.A.3}{Appendix C: R Scripts}{appendix.A}% 45
-\BOOKMARK [2][-]{subsection.A.3.1}{Data cleansing}{section.A.3}% 46
-\BOOKMARK [2][-]{subsection.A.3.2}{Variable analysis and correlation}{section.A.3}% 47
-\BOOKMARK [2][-]{subsection.A.3.3}{Data manipulation}{section.A.3}% 48
-\BOOKMARK [2][-]{subsection.A.3.4}{Regression, Clustering and Correlation analysis}{section.A.3}% 49
-\BOOKMARK [1][-]{section.A.4}{Appendix D: R Tables}{appendix.A}% 50
+\BOOKMARK [1][-]{section.4.2}{Data cleansing}{chapter.4}% 30
+\BOOKMARK [1][-]{section.4.3}{Fortune variables analysis}{chapter.4}% 31
+\BOOKMARK [1][-]{section.4.4}{Social media variables analysis}{chapter.4}% 32
+\BOOKMARK [1][-]{section.4.5}{Links variables analysis}{chapter.4}% 33
+\BOOKMARK [1][-]{section.4.6}{Loading time variable analysis}{chapter.4}% 34
+\BOOKMARK [1][-]{section.4.7}{Content variable analysis}{chapter.4}% 35
+\BOOKMARK [1][-]{section.4.8}{HTML validation variables analysis}{chapter.4}% 36
+\BOOKMARK [1][-]{section.4.9}{Image variables analysis}{chapter.4}% 37
+\BOOKMARK [1][-]{section.4.10}{Multiple Regression analysis with different fortune 500 variables}{chapter.4}% 38
+\BOOKMARK [0][-]{chapter.5}{Conclusions}{}% 39
+\BOOKMARK [1][-]{section.5.1}{Findings summary}{chapter.5}% 40
+\BOOKMARK [1][-]{section.5.2}{Findings contribution}{chapter.5}% 41
+\BOOKMARK [2][-]{subsection.5.2.1}{Theoretical level}{section.5.2}% 42
+\BOOKMARK [2][-]{subsection.5.2.2}{Managerial level}{section.5.2}% 43
+\BOOKMARK [0][-]{chapter.6}{Further Research}{}% 44
+\BOOKMARK [0][-]{chapter.7}{Bibliography}{}% 45
+\BOOKMARK [0][-]{appendix.A}{Appendix}{}% 46
+\BOOKMARK [1][-]{section.A.1}{Appendix A: Fortune 500 Companies}{appendix.A}% 47
+\BOOKMARK [1][-]{section.A.2}{Appendix B: Python Scripts}{appendix.A}% 48
+\BOOKMARK [1][-]{section.A.3}{Appendix C: R Scripts}{appendix.A}% 49
+\BOOKMARK [1][-]{section.A.4}{Appendix D: R Multiple Regression models}{appendix.A}% 50

@@ -205,6 +205,7 @@ model_revenue_linkedin <- lm(Revenues~1 +linkedin ,data=total_500_final)
 summary(model_revenue_linkedin)
 ```
 
+
 ```{r}
 #And we can also see for correlations
 total_500_social_media <- total_500_final[,c(4,10:15)]
@@ -265,7 +266,7 @@ summary(model_revenue_links)
 ```{r}
 #########################################################################################################
 #Now we will see the loading time per site
-ggplot(data=total_500_final,aes(x=loading.time))+geom_histogram(binwidth=1, colour = "pink", fill ="purple")
+ggplot(data=total_500_final,aes(x=loading.time))+geom_histogram(binwidth=0.2, colour = "pink", fill ="purple")
 ggplot(total_500_final, aes(Revenues, loading.time)) + geom_point(size=3, colour = "purple")
 model_revenue_loading.time <- lm(Revenues~1 +loading.time ,data=total_500_final)
 summary(model_revenue_loading.time)
@@ -297,20 +298,6 @@ ggplot(total_500_final, aes(Revenues, Words)) + geom_point(size=3, colour = "pur
 model_revenue_Words <- lm(Revenues~1 +Words ,data=total_500_final)
 summary(model_revenue_Words)
 #############################
-```
-
-
-```{r}
-#And we can also see for correlations
-total_500_lt_w <- total_500_final[,c(4,18:20,34)]
-library(corrplot)
-library(caret)
-tl <- cor(total_500_lt_w)
-tl
-corrplot(cor(total_500_lt_w),method="number")
-
-model_revenue_lt_w <- lm(Revenues~. ,data=total_500_lt_w)
-summary(model_revenue_lt_w)
 ```
 
 ```{r}
@@ -352,17 +339,16 @@ summary(model_revenue_Readability)
 
 ```{r}
 #And we can also see for correlations
-total_500_r <- total_500_final[,c(4,16,17)]
+total_500_lt_w <- total_500_final[,c(4,16,17,18:20,34)]
 library(corrplot)
 library(caret)
-tl <- cor(total_500_r)
+tl <- cor(total_500_lt_w)
 tl
-corrplot(cor(total_500_r),method="number")
+corrplot(cor(total_500_lt_w),method="number")
 
-model_revenue_r <- lm(Revenues~. ,data=total_500_r)
-summary(model_revenue_r)
+model_revenue_lt_w <- lm(Revenues~. ,data=total_500_lt_w)
+summary(model_revenue_lt_w)
 ```
-
 
 ```{r}
 #########################################################################################################
@@ -498,7 +484,7 @@ summary(model_revenue_.tiff)
 
 ```{r}
 #And we can also see for correlations
-total_500_im<- total_500_final[,c(4,24:32)]
+total_500_im<- total_500_final[,c(4,24:33,35)]
 library(corrplot)
 library(caret)
 tl <- cor(total_500_im)
@@ -635,32 +621,3 @@ total_500_final_train3$total.images <- NULL
 full_Total_SH_Equity <- lm(Total_SH_Equity~.,data=total_500_final_train3)
 summary(full_Total_SH_Equity)
 ```
-
-
-```{r}
-#######################################################################################################
-##################################################################################################
-#Clustering 
-#Kmeans clustering
-#Based on those results we will try to cluster the companies based on the results of the regression
-set.seed(220)
-clusters <- hclust(dist(total_500_final))
-plot(clusters)
-```
-
-
-```{r}
-fortuneCluster <- kmeans(total_500_final, 10, iter.max = 500,nstart = 1)
-cluster <- table(fortuneCluster$cluster)
-fortuneCluster$cluster <- as.factor(fortuneCluster$cluster)
-
-```
-
-
-```{r}
-ggplot(total_500_final, aes(pixels, pixels, color = fortuneCluster$cluster)) + geom_point(size=3)
-#We create a full model for the variable pixels
-full_pixels <- lm(pixels~.,data=total_500_final)
-summary(full_pixels)
-```
-
